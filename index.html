@@ -73,16 +73,16 @@
           </div>
         </div>
         <div class="user_info">
-          <div class="submitted_works mr"> 投稿作品
-            <div class="dropdown-toggle"> <img src="image/down.png" class="down_img" alt="Toggle Dropdown"> </div>
-            <div class="dropdown">
+          <div class="submitted_works mr"> <button id="submission" style="background-color:transparent;border:none;">投稿作品</button>
+            <div class="dropdown-toggle"><img src="image/down.png" class="down_img" alt="Toggle Dropdown"> </div>
+            <div class="dropdown" id="dropdown_1" style="display: none;">
               <!-- 注意这里不要添加额外的类名如"drown"，除非你在 CSS 中也使用了它 -->
               <a href="#"><img src="image/图像.png" class="icon">插图</a> <a href="#"><img src="image/视频-开始-播放.png" class="icon">动图</a> <a href="#"><img src="image/读小说.png" class="icon">小说</a> <a href="#"><img src="image/漫画 (1).png" class="icon">漫画</a> </div>
           </div>
           <div class="message mr"><img src="image/消息通知.png" class="icon"></div>
           <div class="notice mr"><img src="image/消息中心.png" class="icon"></div>
-          <div class="user_avatar"><img src="image/105716156_p0.jpg">
-            <div class="user_dropdown">
+          <div class="user_avatar"><button id="user_avatar_1" onclick="toggleUserDropdown()"  style="background-color: transparent;border:none;border-radius: 50%;"><img src="image/105716156_p0.jpg"></button>
+            <div class="user_dropdown" style="display: none;">
               <div class="user_center">
                 <div class="user_name" style="border-radius:15px;"><a href="#">user</a></div>
                 <div class="user_id"><a href="#">1111</a></div>
@@ -538,7 +538,7 @@
           <div class="follow_btn_left">
             <button onclick="scrollTabs1(-400)">←—</button>
           </div>
-          <div class="follow_user_works">
+          <div class="follow_user_works" id="follow_page_3">
               <div class="novel">
             <div class="novel_illustration">
               <div class="novel_image"><img src="image/80595176_p0(1).jpg"></div>

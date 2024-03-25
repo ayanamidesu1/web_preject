@@ -168,7 +168,21 @@ scroll-behavior: smooth;
 	height: 70%;
 	margin-top:5px;
 	width:auto;
+	white-space: nowrap;
 }  
+.submitted_works:hover {
+  background-color: rgba(142,136,136,0.8);
+  color: #fff;
+  cursor: pointer;
+}
+#submission:hover{
+	background-color: rgba(142,136,136,0.8);
+	color: #fff;
+	cursor: pointer;
+}
+.user{
+	white-space: nowrap;
+}
   
 .dropdown-toggle {  
   margin-left: 5px; /* 可选：根据需要调整 */  
@@ -244,6 +258,9 @@ scroll-behavior: smooth;
 	height: auto;
 	object-fit: cover;
 }
+#user_avatar_1:hover{
+    cursor: pointer;
+}
 
 .user_center{
 	width:150px;
@@ -259,9 +276,8 @@ scroll-behavior: smooth;
   
 .user_dropdown {  
   position: absolute;  
-  top: 60px; /* 定位到父元素的下方 */  
-  right: 70px; /* 对齐父元素的左侧 */  
-  display: none; /* 默认隐藏下拉列表 */  
+  top: 40px; /* 定位到父元素的下方 */  
+  right: 0px; /* 对齐父元素的左侧 */  
   background-color: #fff; /* 背景色 */  
   border: 1px solid #ccc; /* 边框 */  
   z-index: 1; /* 确保下拉列表显示在其他元素之上 */  
