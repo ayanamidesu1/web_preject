@@ -56,29 +56,36 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 //侧边栏显示切换
 document.addEventListener('DOMContentLoaded', function() {
-  var button=document.getElementById('head_mean');
-  var dropdown=document.querySelector('.mean');
+  var button = document.getElementById('head_mean');
+  var dropdown = document.querySelector('.mean');
+  var dropdownMean = document.querySelector('.dropdown_mean'); // 获取第二个下拉框元素
+  var button1=document.getElementById('show_more');
+
   button.addEventListener('click', function(event) {
     event.stopPropagation();
     toggleDropdown();
   });
+
   document.addEventListener('click', closeDropdown);
+
   function toggleDropdown() {
     if (dropdown.style.display === 'block') {
       dropdown.style.display = 'none';
-    }
-    else
-    {
+    } else {
       dropdown.style.display = 'block';
     }
   }
+
   function closeDropdown(event) {
     var target = event.target;
     if (target !== button && !dropdown.contains(target)) {
       dropdown.style.display = 'none';
+      dropdownMean.style.display = 'none'; // 隐藏第二个下拉框元素
+      button1.style.display = 'block';
     }
   }
 });
+
 
 //查看更多按钮展开
 document.addEventListener('DOMContentLoaded', function() {
@@ -91,10 +98,12 @@ document.addEventListener('DOMContentLoaded', function() {
   document.addEventListener('click', closeDropdown);
   function toggleDropdown() {
     if (dropdown.style.display === 'block') {
+      button.style.display='none';
       dropdown.style.display = 'none';
-    }
+        }
     else{
       dropdown.style.display = 'block';
+      button.style.display='none';
     }
   }
 });
@@ -102,6 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
 //隐藏更多
 document.addEventListener('DOMContentLoaded', function() {
   var button=document.getElementById('hide_title');
+  var button1=document.getElementById('show_more');
   var dropdown=document.querySelector('.dropdown_mean');
   button.addEventListener('click', function(event) {
     event.stopPropagation();
@@ -111,9 +121,11 @@ document.addEventListener('DOMContentLoaded', function() {
   function toggleDropdown() {
     if (dropdown.style.display === 'block') {
       dropdown.style.display = 'none';
+      button1.style.display='block';
     }
     else{
-      dropdown.style.display = 'block';
+      dropdown.style.display = 'none';
+      button1.style.display='block';
     }
   }
 });
