@@ -54,6 +54,23 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 });
+//切换页面
+function chosepage(button) {
+  var tag = button.getAttribute("tag-value");
+
+  // 遍历所有按钮，重置样式
+  document.querySelectorAll('.select_category_subitem button').forEach(function(btn) {
+    btn.style.borderTop = '';
+  });
+
+  // 设置选定的按钮样式
+  button.style.borderTop = '5px solid rgba(53,160,237,1.00)';
+
+  // 设置页面显示与隐藏
+  document.getElementById("page_1").style.display = tag === "插画" ? "block" : "none";
+  document.getElementById("page_2").style.display = tag === "漫画" ? "block" : "none";
+  document.getElementById("page_3").style.display = tag === "小说" ? "block" : "none";
+}
 
 
 
