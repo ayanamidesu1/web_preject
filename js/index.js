@@ -162,6 +162,15 @@ function scrollTabs1(distance) {//推荐栏滚动
       console.error('Container element not found');
   }
 }
+function scrollLeft_img2(distance) {
+  const container = document.querySelector('.re_novel_work'); // 使用正确的选择器
+  if (container) {
+    container.scrollBy({ left: distance, behavior: 'smooth' });
+  } else {
+    console.log('未找到容器元素');
+  }
+}
+
 
 //br自动换行
 //根据离散值计算每个字的宽度

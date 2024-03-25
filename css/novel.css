@@ -1,16 +1,11 @@
 @charset "utf-8";
 .recommended_works_by_editors{
 display: flex;  
-  overflow-x: hidden;  
-  white-space: nowrap;  
   width: 100%;  
   scroll-snap-type: x mandatory;  
-	overflow: hidden;
 	scroll-behavior: smooth;
-	border:1px solid rgba(247,0,4,1.00);
 	position: relative;
 	border-radius: 15px;
-	overflow: hidden;
 }
 .recommended_works_by_editors button{
 	background-color:transparent;
@@ -29,14 +24,20 @@ display: flex;
     background: linear-gradient(to left, rgba(255,255,255,1), rgba(255, 255, 255, 0.0));
 }
 .recommendation_novel{
-	border:1px solid rgba(253,0,4,1.00);
 	display: flex;
+	border-radius: 25px;
+	margin-right: 15px;
 	flex-direction: column;
 	flex-grow: 1;
 	height: 100%;
 	width:100%;
 	max-height: 100%;
 	max-width: 100%;
+	min-width:40vw;
+	background-color:rgba(204,204,204,0.5);
+}
+.recommendation_novel:last-child{
+	margin-right: 0;
 }
 .re_novel_information{
 	display: flex;
@@ -82,6 +83,32 @@ display: flex;
 	object-fit: cover;
 	border-radius: 50%;
 }
+.novle_love{
+	width:15px;
+	height: 15px;
+	margin-left:5px;
+}
+.novle_love:last-child{
+	margin-left:0px;
+}
+.novle_love img{
+    widht: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.novel_love{
+	width:25px;
+	height:25px;
+	position: relative;
+	right: 0px;
+	margin-left: 30px;
+}
+.novel_love img{
+	width:100%;
+	height: 100%;
+	object-fit: cover;
+}
+
 .re_user_information{
 	display: flex;
 }
@@ -103,6 +130,20 @@ display: flex;
 	max-width: 45vh;
 	display: flex;
     overflow-wrap: break-word;
+	overflow: visible;
+}
+.novel_tag{
+	overflow:visible;
+	width:100%;
+	height:atuo;
+}
+#work_status{
+	flex-grow: 1;
+	flex: 1;
+}
+.novel_name{
+	flex-grow: 1;
+	flex:1;
 }
 .follow_btn_left1,  
 .follow_btn_right1 {  
@@ -120,7 +161,7 @@ display: flex;
   opacity: 0; 
   transition: opacity 0.5s ease;
 	overflow: hidden;
-	border:1px solid rgba(239,0,3,1.00);
+
 }  
   
 .follow_btn_left1 {  
@@ -134,4 +175,13 @@ display: flex;
 .follow_btn_left1:hover,  
 .follow_btn_right1:hover {  
   opacity: 1; /* Change opacity on hover */  
+}
+.re_novel_work{
+		display: flex;
+		overflow-x: hidden;
+		white-space: nowrap;
+		width: 100%;
+		scroll-snap-type: x mandatory;
+		overflow: hidden;
+		scroll-behavior: smooth;
 }

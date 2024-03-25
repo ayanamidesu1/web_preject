@@ -542,7 +542,7 @@ scroll-behavior: smooth;
 	overflow: hidden;
 	border-radius:15px;
 	flex-grow: 1;
-	min-width: 12vw;
+	min-width: 15vw;
 }
 .novel_image img{
 	height: 100%;
