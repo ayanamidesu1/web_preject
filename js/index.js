@@ -175,24 +175,36 @@ function getCharWidth(char) {
   return finalWidth;
 }
 //获取字符
-function getchar()
+function getchar(id_value)
 {
-  var char=document.getElementById("edit_message_info");
+  var char=document.getElementById(id_value);
   return char;
 }
 //计算每行最大字数
-function maxlingchars()
+function maxlingchars(char)
 {
   var fiex_width=document.querySelector(".recommendation_novel");
   var fiex_width_num=fiex_width.offsetWidth;
-  var char_width=getCharWidth(getchar().innerText);
-  return Math.ceil(fiex_width_num/char_width);
+  var char_width=getCharWidth(getchar(char).innerText);
+  return Math.ceil(fiex_width_num/char_width-1);
 }
 //自动换行
-function autowrap() {
-  resetContent();
-  var value = document.getElementById("edit_message_info").innerText;
-  var max_num = maxlingchars()-1;
+function autowrap(id_value) {
+  var char="edit_message_info";
+  for(var j=1;true;j++){
+    char="edit_message_info";
+    char=char+j;
+    console.log(char);
+    var quit=document.getElementById(char);
+    console.log(quit);
+    getchar(char);
+    if(quit==null)
+    {
+      break;
+    }
+  resetContent(char);
+  var value = document.getElementById(char).innerText;
+  var max_num = maxlingchars(char)-1;
   var count = 0;
   var result = '';
 
@@ -205,12 +217,13 @@ function autowrap() {
       count = 0; // 重置计数器
     }
   }
-  document.getElementById("edit_message_info").innerHTML = result;
+  document.getElementById(char).innerHTML = result;
+}
 }
 
-function resetContent() {
-  var originalContent = document.getElementById("edit_message_info").textContent;
-  document.getElementById("edit_message_info").innerHTML = originalContent;
+function resetContent(id_value) {
+  var originalContent = document.getElementById(id_value).textContent;
+  document.getElementById(id_value).innerHTML = originalContent;
 }
 //自动调用
 setInterval(autowrap, 500);
