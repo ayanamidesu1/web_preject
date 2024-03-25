@@ -54,6 +54,70 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 });
+//侧边栏显示切换
+document.addEventListener('DOMContentLoaded', function() {
+  var button=document.getElementById('head_mean');
+  var dropdown=document.querySelector('.mean');
+  button.addEventListener('click', function(event) {
+    event.stopPropagation();
+    toggleDropdown();
+  });
+  document.addEventListener('click', closeDropdown);
+  function toggleDropdown() {
+    if (dropdown.style.display === 'block') {
+      dropdown.style.display = 'none';
+    }
+    else
+    {
+      dropdown.style.display = 'block';
+    }
+  }
+  function closeDropdown(event) {
+    var target = event.target;
+    if (target !== button && !dropdown.contains(target)) {
+      dropdown.style.display = 'none';
+    }
+  }
+});
+
+//查看更多按钮展开
+document.addEventListener('DOMContentLoaded', function() {
+  var button=document.getElementById('show_more');
+  var dropdown=document.querySelector('.dropdown_mean');
+  button.addEventListener('click', function(event) {
+    event.stopPropagation();
+    toggleDropdown();
+  });
+  document.addEventListener('click', closeDropdown);
+  function toggleDropdown() {
+    if (dropdown.style.display === 'block') {
+      dropdown.style.display = 'none';
+    }
+    else{
+      dropdown.style.display = 'block';
+    }
+  }
+});
+
+//隐藏更多
+document.addEventListener('DOMContentLoaded', function() {
+  var button=document.getElementById('hide_title');
+  var dropdown=document.querySelector('.dropdown_mean');
+  button.addEventListener('click', function(event) {
+    event.stopPropagation();
+    toggleDropdown();
+  });
+  document.addEventListener('click', closeDropdown);
+  function toggleDropdown() {
+    if (dropdown.style.display === 'block') {
+      dropdown.style.display = 'none';
+    }
+    else{
+      dropdown.style.display = 'block';
+    }
+  }
+});
+
 //切换页面
 function chosepage(button) {
   var tag = button.getAttribute("tag-value");
@@ -73,9 +137,6 @@ function chosepage(button) {
 }
 
 
-
-
-
 function scrollTabs(distance) {//标签滚动
     const tabBar = document.querySelector('.tab-bar');
     tabBar.scrollBy({ left: distance, behavior: 'smooth' });
@@ -89,6 +150,76 @@ function scrollTabs1(distance) {//推荐栏滚动
       console.error('Container element not found');
   }
 }
+
+//br自动换行
+//根据离散值计算每个字的宽度
+function getCharWidth(char) {
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  const fontSize = window.getComputedStyle(document.body).fontSize;
+  const fontFamily = '微软雅黑';
+  
+  ctx.font = `${fontSize} ${fontFamily}`;
+  const metrics = ctx.measureText(char);
+  const averageWidth = metrics.width / char.length;
+  
+  let sumOfSquaredDifferences = 0;
+  for (let i = 0; i < char.length; i++) {
+    const charWidth = ctx.measureText(char[i]).width;
+    sumOfSquaredDifferences += Math.pow((charWidth - averageWidth), 2);
+  }
+  
+  const standardDeviation = Math.sqrt(sumOfSquaredDifferences);
+  const finalWidth = averageWidth + standardDeviation;
+  
+  return finalWidth;
+}
+//获取字符
+function getchar()
+{
+  var char=document.getElementById("edit_message_info");
+  return char;
+}
+//计算每行最大字数
+function maxlingchars()
+{
+  var fiex_width=document.querySelector(".recommendation_novel");
+  var fiex_width_num=fiex_width.offsetWidth;
+  var char_width=getCharWidth(getchar().innerText);
+  return Math.ceil(fiex_width_num/char_width);
+}
+//自动换行
+function autowrap() {
+  resetContent();
+  var value = document.getElementById("edit_message_info").innerText;
+  var max_num = maxlingchars()-1;
+  var count = 0;
+  var result = '';
+
+  for (var i = 0; i < value.length; i++) {
+    result += value[i];
+    count++;
+
+    if (count === max_num) {
+      result += '<br>';
+      count = 0; // 重置计数器
+    }
+  }
+  document.getElementById("edit_message_info").innerHTML = result;
+}
+
+function resetContent() {
+  var originalContent = document.getElementById("edit_message_info").textContent;
+  document.getElementById("edit_message_info").innerHTML = originalContent;
+}
+//自动调用
+setInterval(autowrap, 500);
+
+
+
+
+
+
 
 
 
