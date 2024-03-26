@@ -1,133 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>淘画网</title>
-        <link rel="icon" type="image/png" href="image/87328997_p0.jpg">
-        <script src="js/jquery-3.7.1.js"></script>
-        <link rel="stylesheet" type="text/css" href="artwork_css/index.css">
-        <link rel="stylesheet" type="text/css" href="artwork_css/cur.css">
-        <link rel="stylesheet" type="text/css" href="artwork_css/artwork.css">
-      </head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>淘画网</title>
+    <link rel="icon" type="image/png" href="image/87328997_p0.jpg">
+    <script src="artwork_js/jquery-3.7.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="artwork_css/index.css">
+    <link rel="stylesheet" type="text/css" href="artwork_css/cur.css">
+    <link rel="stylesheet" type="text/css" href="artwork_css/artwork.css">
+</head>
+
 <body>
     <div class="head_mean">
         <button id="head_mean" style="width:100%;height:100%;background-color:transparent;border:none"><img
-            src="image/更多.png"></button>
-      </div>
-      <div class="mean">
+                src="image/更多.png"></button>
+    </div>
+    <div class="mean">
         <div class="mean_content">
-          <div>首页</div>
-          <br>
-          <div>
-            <button class="btn1" onclick="chose_page(this)" tag-value="插画"><img src="image/图像.png"
-                class="icon">&nbsp;插画</button>
-          </div>
-          <div>
-            <button class="btn2" onclick="chose_page(this)" tag-value="漫画"><img src="image/视频-开始-播放.png"
-                class="icon">&nbsp;漫画</button>
-          </div>
-          <div>
-            <button class="btn3" onclick="chose_page(this)" tag-value="小说"><img src="image/读小说.png"
-                class="icon">&nbsp;小说</button>
-          </div>
-          <br>
-          <div class="follow_user_new_work mt"><img src="image/群.png" class="icon">已关注用户的新作</div>
-          <div class="common_hover mt"><img src="image/compass.png" class="icon">发现</div>
-          <br>
-          <div class="common_hover mt"><img src="image/皇冠.png" class="icon">排行榜</div>
-          <div class="common_hover mt"><img src="image/闪亮.png" class="icon">大家的新作</div>
-          <div class="common_hover mt"><img src="image/勋章.png" class="icon">比赛</div>
-          <div class="common_hover mt"><img src="image/约稿.png" class="icon">约稿</div>
-          <br>
-          <div class="common_hover mt"><img src="image/约稿 (1).png" class="icon">用户企划</div>
-          <div class="common_hover mt"><img src="image/笔.png" class="icon">绘画方法</div>
-          <div class="common_hover mt"><img src="image/金点子.png" class="icon">创作电子</div>
-          <br>
-          <div class="common_hover content_mean mt" id="look_more">
-            <button id="show_more"><img src="image/查看更多.png" class="icon mr"><b>查看更多</b></button>
-            <div class="dropdown_mean" style="display:none;">
-              <div class="a1 mt">动态</div>
-              <div class="a1 mt">群组</div>
-              <div class="a1 mt">活动</div>
-              <div>
-                <div class="mt" style="margin-bottom: 5xp;"><button id="hide_title"><img src="image/向上占行.png"
-                      class="icon mr">隐藏</button></div>
-              </div>
+            <div>首页</div>
+            <br>
+            <div>
+                <button class="btn1" onclick="chose_page(this)" tag-value="插画"><img src="image/图像.png"
+                        class="icon">&nbsp;插画</button>
             </div>
-          </div>
-          <div>公告 &nbsp;帮助&nbsp;使用条款<br>
-            隐私政策<br>
-            基于特定商业交易法的注释<br>
-            运营公司&nbsp;刊登广告<br>
-            招聘信息<br>
-            © pixiv</div>
-          <div>公告
-            <div>【预告】插画自带樱花飞舞特效！「pixiv樱花祭2024」将自3月21日起期间限定登场</div>
-          </div>
+            <div>
+                <button class="btn2" onclick="chose_page(this)" tag-value="漫画"><img src="image/视频-开始-播放.png"
+                        class="icon">&nbsp;漫画</button>
+            </div>
+            <div>
+                <button class="btn3" onclick="chose_page(this)" tag-value="小说"><img src="image/读小说.png"
+                        class="icon">&nbsp;小说</button>
+            </div>
+            <br>
+            <div class="follow_user_new_work mt"><img src="image/群.png" class="icon">已关注用户的新作</div>
+            <div class="common_hover mt"><img src="image/compass.png" class="icon">发现</div>
+            <br>
+            <div class="common_hover mt"><img src="image/皇冠.png" class="icon">排行榜</div>
+            <div class="common_hover mt"><img src="image/闪亮.png" class="icon">大家的新作</div>
+            <div class="common_hover mt"><img src="image/勋章.png" class="icon">比赛</div>
+            <div class="common_hover mt"><img src="image/约稿.png" class="icon">约稿</div>
+            <br>
+            <div class="common_hover mt"><img src="image/约稿 (1).png" class="icon">用户企划</div>
+            <div class="common_hover mt"><img src="image/笔.png" class="icon">绘画方法</div>
+            <div class="common_hover mt"><img src="image/金点子.png" class="icon">创作电子</div>
+            <br>
+            <div class="common_hover content_mean mt" id="look_more">
+                <button id="show_more"><img src="image/查看更多.png" class="icon mr"><b>查看更多</b></button>
+                <div class="dropdown_mean" style="display:none;">
+                    <div class="a1 mt">动态</div>
+                    <div class="a1 mt">群组</div>
+                    <div class="a1 mt">活动</div>
+                    <div>
+                        <div class="mt" style="margin-bottom: 5xp;"><button id="hide_title"><img src="image/向上占行.png"
+                                    class="icon mr">隐藏</button></div>
+                    </div>
+                </div>
+            </div>
+            <div>公告 &nbsp;帮助&nbsp;使用条款<br>
+                隐私政策<br>
+                基于特定商业交易法的注释<br>
+                运营公司&nbsp;刊登广告<br>
+                招聘信息<br>
+                © pixiv</div>
+            <div>公告
+                <div>【预告】插画自带樱花飞舞特效！「pixiv樱花祭2024」将自3月21日起期间限定登场</div>
+            </div>
         </div>
-      </div>
+    </div>
     <div class="user_artwork_page">
         <div class="head">
             <div class="title">
-              <div class="title_img"><img src="image/主页.png"></div>
+                <div class="title_img"><img src="image/主页.png"></div>
             </div>
             <div class="search">
-              <div class="search_l">
-                <input placeholder="搜索作品" class="search_input">
-                <div>
-                  <button><img src="image/搜索.png" class="search_img"></button>
+                <div class="search_l">
+                    <input placeholder="搜索作品" class="search_input">
+                    <div>
+                        <button><img src="image/搜索.png" class="search_img"></button>
+                    </div>
                 </div>
-              </div>
             </div>
             <div class="user_info">
-              <div class="submitted_works mr"> <button id="submission"
-                  style="background-color:transparent;border:none;">投稿作品</button>
-                <div class="dropdown-toggle"><img src="image/down.png" class="down_img" alt="Toggle Dropdown"> </div>
-                <div class="dropdown" id="dropdown_1" style="display: none;">
-                  <!-- 注意这里不要添加额外的类名如"drown"，除非你在 CSS 中也使用了它 -->
-                  <a href="#"><img src="image/图像.png" class="icon">插图</a> <a href="#"><img src="image/视频-开始-播放.png"
-                      class="icon">动图</a> <a href="#"><img src="image/读小说.png" class="icon">小说</a> <a href="#"><img
-                      src="image/漫画 (1).png" class="icon">漫画</a>
-                </div>
-              </div>
-              <div class="message mr"><img src="image/消息通知.png" class="icon"></div>
-              <div class="notice mr"><img src="image/消息中心.png" class="icon"></div>
-              <div class="user_avatar"><button id="user_avatar_1"
-                  style="background-color: transparent;border:none;border-radius: 50%;"><img
-                    src="image/105716156_p0.jpg"></button>
-                <div class="user_dropdown" style="display: none;">
-                  <div class="user_center">
-                    <div class="user_name" style="border-radius:15px;"><a href="#">user</a></div>
-                    <div class="user_id"><a href="#">1111</a></div>
-                    <div class="follow_and_fans">
-                      <div class="follow"><a href="#">关注</a></div>
-                      <div class="fans"><a href="#">粉丝</a></div>
+                <div class="submitted_works mr"> <button id="submission"
+                        style="background-color:transparent;border:none;">投稿作品</button>
+                    <div class="dropdown-toggle"><img src="image/down.png" class="down_img" alt="Toggle Dropdown">
                     </div>
-                    <div class="data_analysis"><a href="#">数据分析</a></div>
-                    <div class="my_work"><a href="#">我的作品</a></div>
-                    <div class="collection"><a href="#">收藏</a></div>
-                    <div class="browsing_history"><a href="#">浏览记录</a></div>
-                    <div class="night_model"><a href="#">夜间模式</a></div>
-                    <div class="setting"><a href="#">设置</a></div>
-                    <div class="send_feedback"><a href="#">发送反馈</a></div>
-                    <div class="close_login" style="border-radius:15px;"><a href="#">退出登录</a></div>
-                  </div>
+                    <div class="dropdown" id="dropdown_1" style="display: none;">
+                        <!-- 注意这里不要添加额外的类名如"drown"，除非你在 CSS 中也使用了它 -->
+                        <a href="#"><img src="image/图像.png" class="icon">插图</a> <a href="#"><img
+                                src="image/视频-开始-播放.png" class="icon">动图</a> <a href="#"><img src="image/读小说.png"
+                                class="icon">小说</a> <a href="#"><img src="image/漫画 (1).png" class="icon">漫画</a>
+                    </div>
                 </div>
-              </div>
-              <div class="user mr"> 用户 </div>
+                <div class="message mr"><img src="image/消息通知.png" class="icon"></div>
+                <div class="notice mr"><img src="image/消息中心.png" class="icon"></div>
+                <div class="user_avatar"><button id="user_avatar_1"
+                        style="background-color: transparent;border:none;border-radius: 50%;"><img
+                            src="image/105716156_p0.jpg"></button>
+                    <div class="user_dropdown" style="display: none;">
+                        <div class="user_center">
+                            <div class="user_name" style="border-radius:15px;"><a href="#">user</a></div>
+                            <div class="user_id"><a href="#">1111</a></div>
+                            <div class="follow_and_fans">
+                                <div class="follow"><a href="#">关注</a></div>
+                                <div class="fans"><a href="#">粉丝</a></div>
+                            </div>
+                            <div class="data_analysis"><a href="#">数据分析</a></div>
+                            <div class="my_work"><a href="#">我的作品</a></div>
+                            <div class="collection"><a href="#">收藏</a></div>
+                            <div class="browsing_history"><a href="#">浏览记录</a></div>
+                            <div class="night_model"><a href="#">夜间模式</a></div>
+                            <div class="setting"><a href="#">设置</a></div>
+                            <div class="send_feedback"><a href="#">发送反馈</a></div>
+                            <div class="close_login" style="border-radius:15px;"><a href="#">退出登录</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="user mr"> 用户 </div>
             </div>
-          </div>
+        </div>
 
-          <div class="artwork_image_main">
-            <div class="user_art_work">1</div>
-            <div class="art_user">1</div>
-          </div>
-          <div class="re_artwork">1</div>
+        <div class="artwork_image_main">
+            <div class="user_art_work"><img src="image/105716156_p0.jpg"></div>
+            <div class="art_user">
+                <div class="artwork_user_avater"><img src="image/87328997_p0.jpg">
+                    <div style="align-self: center;">username</div>
+                </div>
+                <div class="following_btn">关注</div>
+                <div class="other_artwork">
+                    <div>其他作品</div>
+                    <div style="align-self: self-end;position: absolute;right: 0px;">作品目录</div>
+                </div>
+                <div style="position: relative;">
+                <div class="artwork_leftbtn"><img src="image/leftbtn.png"></div>
+                <div class="other_work_image">
+                    <div class="other_img"><img src="image/86604591_p0.png"></div>
+                    <div class="other_img"><img src="image/86604591_p0.png"></div>
+                    <div class="other_img"><img src="image/86604591_p0.png"></div>
+                    <div class="other_img"><img src="image/86604591_p0.png"></div>
+                </div>
+                <div class="artwork_rightbtn"><img src="image/rightbtn.png"></div>
+            </div>
+            </div>
+        </div>
+        <div class="artwork_look_more">查看更多<div style="margin-left:5px;">点赞</div>
+            <div style="margin-left:5px;">收藏</div>
+            <div style="margin-left:5px;">分享</div>
+            <div style="margin-left:5px;">更多</div>
+        </div>
+        <div class="re_artwork">1</div>
     </div>
-    
+
 
     <script src="artwork_js/artwork.js"></script>
     <script src="artwork_js/index.js"></script>
 </body>
+
 </html>

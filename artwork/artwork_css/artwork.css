@@ -19,16 +19,111 @@
 }
 .user_art_work{
     display: flex;
-    width:90%;
+    width:auto;
     height: auto;
     flex-direction: column;
     border:1px solid red;
+    max-width: 60vw;
+    align-self: center;
+}
+.user_art_work img{
+    align-self: center;
+    width: 100%;
+    height: auto;
+    object-fit:  cover;
 }
 .art_user{
-    width:10%;
+    width:20%;
     height: auto;
     display: flex;
     flex-direction: column;
+    border:1px solid red;
+}
+.artwork_user_avater
+{
+    display: flex;
+    width:auto;
+    height: auto;
+    margin-top:10px;
+}
+.artwork_user_avater img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.other_work_image{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    overflow-x: none;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+.other_img{
+    width:32%;
+    height: auto;
+    border:1px solid red;
+    margin-right: 2px;
+    min-width: 32%;
+}
+.other_img img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.following_btn{
+    width: 95%;
+    height: auto;
+    display: flex;
+    border-radius: 30px;
+    margin-top:5px;
+    justify-content: center;
+    align-self: center;
+    border:1px solid red;
+}
+.artwork_leftbtn,.artwork_rightbtn{
+    width: 32%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    border:1px solid red;
+    position: absolute;
+}
+.artwork_leftbtn:hover,.artwork_rightbtn:hover{
+    background-color: rgba(82, 80, 80, 0.5);
+}
+.artwork_leftbtn img,.artwork_rightbtn img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: none;
+}
+.artwork_leftbtn:hover img,.artwork_rightbtn:hover img{
+    display: block;
+}
+.artwork_leftbtn{
+    left:1px;
+    top:0px;
+}
+.artwork_rightbtn{
+    right:1px;
+    top:0px;
+}
+.other_artwork{
+    display: flex;
+    position: relative;
+    font-size: 12px;
+    margin-top:10px;
+}
+.artwork_look_more{
+    position: relative;
+    width: auto;
+    display: flex;
+    align-self: center;
     border:1px solid red;
 }
 .re_artwork{
@@ -38,4 +133,5 @@
     height: auto;
     justify-content: space-around;
     align-self: center;
+    margin-top:35px;
 }

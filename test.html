@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>获取点击位置的div中的元素内容</title>
+<style>
+    .container {
+        width: 300px;
+        height: 200px;
+        background-color: #eee;
+        border: 1px solid #ccc;
+        position: relative;
+    }
+    .element {
+        width: 50px;
+        height: 50px;
+        background-color: #007bff;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 16px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container" id="container">
+    <div class="element" style="top: 50px; left: 50px;">A</div>
+    <div class="element" style="top: 100px; left: 100px;">B</div>
+</div>
+
+<script>
+document.getElementById('container').addEventListener('click', function(event) {
+    var clickedElement = event.target;
+    if (clickedElement.classList.contains('element')) {
+        var elementContent = clickedElement.textContent;
+        console.log('点击位置的元素内容：', elementContent);
+    }
+});
+</script>
+
+</body>
+</html>
