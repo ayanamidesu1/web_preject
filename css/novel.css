@@ -111,6 +111,23 @@ display: flex;
 
 .re_user_information{
 	display: flex;
+	position:relative;
+}
+.love{
+	widht:50px;
+	height:auto;
+	align-self: center;
+	position:absolute;
+	right:0px;
+}
+.love button:hover{
+	cursor: pointer;
+}
+
+
+.love img{
+	width: 35px;
+	object-fit: cover;
 }
 .edit_message{
 	flex-grow: 1;

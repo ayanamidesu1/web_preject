@@ -249,7 +249,23 @@ function resetContent(id_value) {
 //自动调用
 setInterval(autowrap, 500);
 
+function re_boolean() {
+  var img_src = "file:///H:/web_preject/image/爱心.png";
+  var img_src_1 = "file:///H:/web_preject/image/爱心1.png";
+  var img_elm = document.getElementById("love_img");
+  var src = decodeURI(img_elm.src);
 
+  if (src == img_src) {
+    img_elm.src = img_src_1;
+    console.log(src+"0");
+    console.log(img_src_1);
+  } 
+  else{
+    img_elm.src = img_src;
+    console.log(src+"1");
+    console.log(img_src);
+  }
+}
 
 
 
