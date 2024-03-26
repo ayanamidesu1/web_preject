@@ -1,0 +1,41 @@
+/*用户内容主界面*/
+.user_artwork_page{
+    width: 90%;
+    height: atuo;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    border: 1px solid red;
+}
+.artwork_image_main{
+    border:1px solid red;
+    display: flex;
+    width:90%;
+    height: auto;
+    justify-content: space-around;
+    align-self: center;
+    position: relative;
+    margin-top:10px;
+}
+.user_art_work{
+    display: flex;
+    width:90%;
+    height: auto;
+    flex-direction: column;
+    border:1px solid red;
+}
+.art_user{
+    width:10%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border:1px solid red;
+}
+.re_artwork{
+    display: flex;
+    border:1px solid red;
+    width:90%;
+    height: auto;
+    justify-content: space-around;
+    align-self: center;
+}

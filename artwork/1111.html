@@ -8,7 +8,7 @@
         <script src="js/jquery-3.7.1.js"></script>
         <link rel="stylesheet" type="text/css" href="artwork_css/index.css">
         <link rel="stylesheet" type="text/css" href="artwork_css/cur.css">
-        <link rel="stylesheet" type="text/css" href="artwork/artwork_css/artwork.css">
+        <link rel="stylesheet" type="text/css" href="artwork_css/artwork.css">
       </head>
 <body>
     <div class="head_mean">
@@ -67,57 +67,65 @@
           </div>
         </div>
       </div>
-    <div class="user_artwork_page"></div>
-    <div class="head">
-        <div class="title">
-          <div class="title_img"><img src="image/主页.png"></div>
-        </div>
-        <div class="search">
-          <div class="search_l">
-            <input placeholder="搜索作品" class="search_input">
-            <div>
-              <button><img src="image/搜索.png" class="search_img"></button>
+    <div class="user_artwork_page">
+        <div class="head">
+            <div class="title">
+              <div class="title_img"><img src="image/主页.png"></div>
             </div>
-          </div>
-        </div>
-        <div class="user_info">
-          <div class="submitted_works mr"> <button id="submission"
-              style="background-color:transparent;border:none;">投稿作品</button>
-            <div class="dropdown-toggle"><img src="image/down.png" class="down_img" alt="Toggle Dropdown"> </div>
-            <div class="dropdown" id="dropdown_1" style="display: none;">
-              <!-- 注意这里不要添加额外的类名如"drown"，除非你在 CSS 中也使用了它 -->
-              <a href="#"><img src="image/图像.png" class="icon">插图</a> <a href="#"><img src="image/视频-开始-播放.png"
-                  class="icon">动图</a> <a href="#"><img src="image/读小说.png" class="icon">小说</a> <a href="#"><img
-                  src="image/漫画 (1).png" class="icon">漫画</a>
-            </div>
-          </div>
-          <div class="message mr"><img src="image/消息通知.png" class="icon"></div>
-          <div class="notice mr"><img src="image/消息中心.png" class="icon"></div>
-          <div class="user_avatar"><button id="user_avatar_1"
-              style="background-color: transparent;border:none;border-radius: 50%;"><img
-                src="image/105716156_p0.jpg"></button>
-            <div class="user_dropdown" style="display: none;">
-              <div class="user_center">
-                <div class="user_name" style="border-radius:15px;"><a href="#">user</a></div>
-                <div class="user_id"><a href="#">1111</a></div>
-                <div class="follow_and_fans">
-                  <div class="follow"><a href="#">关注</a></div>
-                  <div class="fans"><a href="#">粉丝</a></div>
+            <div class="search">
+              <div class="search_l">
+                <input placeholder="搜索作品" class="search_input">
+                <div>
+                  <button><img src="image/搜索.png" class="search_img"></button>
                 </div>
-                <div class="data_analysis"><a href="#">数据分析</a></div>
-                <div class="my_work"><a href="#">我的作品</a></div>
-                <div class="collection"><a href="#">收藏</a></div>
-                <div class="browsing_history"><a href="#">浏览记录</a></div>
-                <div class="night_model"><a href="#">夜间模式</a></div>
-                <div class="setting"><a href="#">设置</a></div>
-                <div class="send_feedback"><a href="#">发送反馈</a></div>
-                <div class="close_login" style="border-radius:15px;"><a href="#">退出登录</a></div>
               </div>
             </div>
+            <div class="user_info">
+              <div class="submitted_works mr"> <button id="submission"
+                  style="background-color:transparent;border:none;">投稿作品</button>
+                <div class="dropdown-toggle"><img src="image/down.png" class="down_img" alt="Toggle Dropdown"> </div>
+                <div class="dropdown" id="dropdown_1" style="display: none;">
+                  <!-- 注意这里不要添加额外的类名如"drown"，除非你在 CSS 中也使用了它 -->
+                  <a href="#"><img src="image/图像.png" class="icon">插图</a> <a href="#"><img src="image/视频-开始-播放.png"
+                      class="icon">动图</a> <a href="#"><img src="image/读小说.png" class="icon">小说</a> <a href="#"><img
+                      src="image/漫画 (1).png" class="icon">漫画</a>
+                </div>
+              </div>
+              <div class="message mr"><img src="image/消息通知.png" class="icon"></div>
+              <div class="notice mr"><img src="image/消息中心.png" class="icon"></div>
+              <div class="user_avatar"><button id="user_avatar_1"
+                  style="background-color: transparent;border:none;border-radius: 50%;"><img
+                    src="image/105716156_p0.jpg"></button>
+                <div class="user_dropdown" style="display: none;">
+                  <div class="user_center">
+                    <div class="user_name" style="border-radius:15px;"><a href="#">user</a></div>
+                    <div class="user_id"><a href="#">1111</a></div>
+                    <div class="follow_and_fans">
+                      <div class="follow"><a href="#">关注</a></div>
+                      <div class="fans"><a href="#">粉丝</a></div>
+                    </div>
+                    <div class="data_analysis"><a href="#">数据分析</a></div>
+                    <div class="my_work"><a href="#">我的作品</a></div>
+                    <div class="collection"><a href="#">收藏</a></div>
+                    <div class="browsing_history"><a href="#">浏览记录</a></div>
+                    <div class="night_model"><a href="#">夜间模式</a></div>
+                    <div class="setting"><a href="#">设置</a></div>
+                    <div class="send_feedback"><a href="#">发送反馈</a></div>
+                    <div class="close_login" style="border-radius:15px;"><a href="#">退出登录</a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="user mr"> 用户 </div>
+            </div>
           </div>
-          <div class="user mr"> 用户 </div>
-        </div>
-      </div>
+
+          <div class="artwork_image_main">
+            <div class="user_art_work">1</div>
+            <div class="art_user">1</div>
+          </div>
+          <div class="re_artwork">1</div>
+    </div>
+    
 
     <script src="artwork_js/artwork.js"></script>
     <script src="artwork_js/index.js"></script>
