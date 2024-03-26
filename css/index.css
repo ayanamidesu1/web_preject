@@ -23,6 +23,12 @@ body{
 	margin:10px;
 	overflow-y:auto;
 }
+.re_page{
+	margin-top:100px;
+}
+.rank_list_page{
+	margin-top:100px;
+}
 .head{
 	min-height: 5%;
 	width:98%;
@@ -519,7 +525,32 @@ scroll-behavior: smooth;
 	overflow:hidden;
 	 flex: 0 0 calc((100% / 6) - 0.8%);
 	 scroll-snap-align: start;
+	 position:relative;
 	 
+}
+.if_more_information{
+	position:absolute;
+	top:0px;
+	right: 0px;
+	width:40px;
+	height: auto;
+	background-color: rgba(156,150,150,0.8);
+	border-radius: 15px;
+	display: flex;
+}
+.if_more_information img{
+	width:100%;
+	height: auto;
+	object-fit: cover;
+}
+.if_more_img{
+	background-color: rgba(255,255,255,0.5);
+	border-radius: 15px;
+}
+.image_count{
+	align-self: center;
+	color:white;
+	font-size: 22px;
 }
 .novel{
 	display:flex;
