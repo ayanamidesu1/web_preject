@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* CSS Document */
+.mr{
+	margin-right:25px;
+}
+.mr:last-child{
+	margin-right:0px;
+}
+.ml{
+	margin-left:15px;
+}
+.ml:last-child{
+	margin-left:0px;
+}
+.mt{
+	margin-top:10px;
+}
+.mt:last-child{
+	margin-top:0px;
+}
+.common_hover:hover{
+	background-color:rgba(167,162,162,1.00);
+	transition: background-color 0.3s ease;
+}
