@@ -447,17 +447,46 @@ scroll-behavior: smooth;
     background: linear-gradient(to left, rgba(255,255,255,0), rgba(255, 255, 255, 1));
 }
 
+.follow_user_works_2 {  
+	display: flex;  
+	overflow-x: hidden;  
+	white-space: nowrap;  
+	width: 100%;  
+	scroll-snap-type: x mandatory;  
+	  overflow: hidden;
+	  scroll-behavior: smooth;
+  }  
+	
+  .follow_user_works_2::after {
+	  content: "";
+	  position: absolute;
+	  top: 0;
+	  right: 0px; /* 位于 .follow_user_works 右侧 */
+	  width: 100px;
+	  height: 100%;
+	  background: linear-gradient(to left, rgba(255,255,255,1), rgba(255, 255, 255, 0.0)); /* 从右向左的透明度渐变 */
+  }
+  .follow_user_works_2::before{
+		 content: "";
+	  position: absolute;
+	  top: 0;
+	  left: -15px; /* 位于 .follow_user_works 右侧 */
+	  width: 100px;
+	  height: 100%;
+	  background: linear-gradient(to left, rgba(255,255,255,0), rgba(255, 255, 255, 1));
+  }
+
 .follow_btn_left,  
 .follow_btn_right {  
   position: absolute;  
   top: 51%; 
   transform: translateY(-50%);  
-  height: 98%;
+  height: 100%;
   width: 50px;  
   display: flex;  
   justify-content: center;
   align-items: center; 
-  border-radius: 10px;  
+  border-radius: 15px;  
   background-color: rgba(106, 100, 101, 0.5);  
   z-index: 10; 
   opacity: 0; 

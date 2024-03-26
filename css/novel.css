@@ -19,7 +19,7 @@ display: flex;
     position: absolute;
     top: 0;
     right: 0px; /* 位于 .follow_user_works 右侧 */
-    width: 100px;
+    width: 45px;
     height: 100%;
     background: linear-gradient(to left, rgba(255,255,255,1), rgba(255, 255, 255, 0.0));
 }
@@ -118,7 +118,7 @@ display: flex;
 	height:auto;
 	align-self: center;
 	position:absolute;
-	right:0px;
+	right:50px;
 }
 .love button:hover{
 	cursor: pointer;

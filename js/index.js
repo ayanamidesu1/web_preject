@@ -148,6 +148,18 @@ function chosepage(button) {
   document.getElementById("page_3").style.display = tag === "小说" ? "block" : "none";
 }
 
+//page1
+function page_1_fl(distance)
+{
+  const tabBar = document.querySelector('.follow_user_works');
+    tabBar.scrollBy({ left: distance, behavior: 'smooth' });
+}
+
+function page_2_fl(distance)
+{
+  const tabBar = document.querySelector('.follow_user_works_2');
+  tabBar.scrollBy({ left: distance, behavior: 'smooth' });
+}
 
 function scrollTabs(distance) {//标签滚动
     const tabBar = document.querySelector('.tab-bar');
@@ -249,10 +261,10 @@ function resetContent(id_value) {
 //自动调用
 setInterval(autowrap, 500);
 
-function re_boolean() {
+function re_boolean(imgId) {
   var img_src = "file:///H:/web_preject/image/爱心.png";
   var img_src_1 = "file:///H:/web_preject/image/爱心1.png";
-  var img_elm = document.getElementById("love_img");
+  var img_elm = document.getElementById(imgId);
   var src = decodeURI(img_elm.src);
 
   if (src == img_src) {
