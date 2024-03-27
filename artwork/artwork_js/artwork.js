@@ -48,3 +48,19 @@ comment_section_input_box_textarea.addEventListener('input', function() {
     var scrollHeight = comment_section_input_box_textarea.scrollHeight;
     comment_section_input_box_textarea.style.height = Math.min(scrollHeight - charHeight, maxHeight) + 'px';
 });
+//回复的查看和收起
+document.addEventListener("DOMContentLoaded", function() {
+    var showReplyButton = document.querySelector(".show_reply");
+    var collapseReplyButton = document.querySelector(".collapse_reply");
+    var replyMessage = document.querySelector(".reply_message");
+
+    showReplyButton.addEventListener("click", function() {
+        showReplyButton.style.display = "none";
+        replyMessage.style.display = "block";
+    });
+
+    collapseReplyButton.addEventListener("click", function() {
+        showReplyButton.style.display = "block";
+        replyMessage.style.display = "none";
+    });
+});
