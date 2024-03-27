@@ -4,18 +4,36 @@ document.querySelector('.artwork_look_more').addEventListener('click', function(
 })
 
 //显示更多作品滚动实现
+// 第一个滚动容器
 const leftBtn = document.querySelector('.artwork_leftbtn');
-    const rightBtn = document.querySelector('.artwork_rightbtn');
-    const otherWorkImage = document.querySelector('.other_work_image');
+const rightBtn = document.querySelector('.artwork_rightbtn');
+const otherWorkImage = document.querySelector('.other_work_image');
 
-    leftBtn.addEventListener('click', function() {
-        scrollContainer(-100);
-    });
+leftBtn.addEventListener('click', function() {
+    scrollContainerArtwork(-100);
+});
 
-    rightBtn.addEventListener('click', function() {
-        scrollContainer(100);
-    });
+rightBtn.addEventListener('click', function() {
+    scrollContainerArtwork(100);
+});
 
-    function scrollContainer(scrollOffset) {
-        otherWorkImage.scrollBy({ left: scrollOffset, behavior: 'smooth' });
-    }
+function scrollContainerArtwork(scrollOffset) {
+    otherWorkImage.scrollBy({ left: scrollOffset, behavior: 'smooth' });
+}
+
+// 第二个滚动容器
+const leftBtnUser = document.querySelector('.artwork_thumbnail_leftbtn');
+const rightBtnUser = document.querySelector('.artwork_thumbnail_rightbtn');
+
+leftBtnUser.addEventListener('click', function() {
+    scrollContainerUser(-200);
+});
+
+rightBtnUser.addEventListener('click', function() {
+    scrollContainerUser(200);
+});
+
+function scrollContainerUser(scrollOffset) {
+    var otherWorkImageUser = document.querySelector('.artwork_thumbnail_img');
+    otherWorkImageUser.scrollBy({ left: scrollOffset, behavior: 'smooth' });
+}
