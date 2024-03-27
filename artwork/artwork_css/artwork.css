@@ -333,6 +333,15 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
     resize: none;
     word-wrap: break-word;
 }
+.comment_section_input_box textarea::placeholder{
+    content: attr(placeholder);
+    color: #999; /* 提示文字颜色 */
+    font-size: 16px; /* 提示文字大小 */
+    text-align: left; /* 靠左对齐 */
+    line-height: 40px; /* 设置行高等于输入框高度，实现上下居中 */
+    display: flex; /* 使用 flexbox */
+    align-items: center; /* 垂直居中 */
+}
 .comment_section_input_sendbtn{
     align-self: center;
     margin-left: 10px;
@@ -437,7 +446,7 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
     background-color: rgba(80,80,80,0.5);
     margin-top:5px;
     border-radius: 15px;
-    width:50%;
+    width:20%;
     align-self: center;
     text-align: center;
 }
