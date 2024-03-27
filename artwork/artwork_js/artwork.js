@@ -37,3 +37,14 @@ function scrollContainerUser(scrollOffset) {
     var otherWorkImageUser = document.querySelector('.artwork_thumbnail_img');
     otherWorkImageUser.scrollBy({ left: scrollOffset, behavior: 'smooth' });
 }
+
+var comment_section_input_box_textarea = document.querySelector('.textarea');
+var lineHeight = parseInt(window.getComputedStyle(comment_section_input_box_textarea).lineHeight);
+var charHeight = 16;
+var maxHeight = 300;
+
+comment_section_input_box_textarea.addEventListener('input', function() {
+    comment_section_input_box_textarea.style.height = 'auto';
+    var scrollHeight = comment_section_input_box_textarea.scrollHeight;
+    comment_section_input_box_textarea.style.height = Math.min(scrollHeight - charHeight, maxHeight) + 'px';
+});

@@ -3,42 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>获取点击位置的div中的元素内容</title>
+<title>Textarea自动拓宽</title>
 <style>
-    .container {
-        width: 300px;
-        height: 200px;
-        background-color: #eee;
-        border: 1px solid #ccc;
-        position: relative;
-    }
-    .element {
-        width: 50px;
-        height: 50px;
-        background-color: #007bff;
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        font-size: 16px;
-    }
+.textarea {
+    width: 300px;
+    min-height: 40px; /* 设置最小高度 */
+    resize: none; /* 禁止手动调整大小 */
+    overflow: hidden; /* 禁止出现滚动条 */
+    outline: none; /* 移除默认外边框 */
+    font-size: 16px;
+    padding: 10px;
+    line-height: 1.4; /* 调整行高，可以根据需要微调 */
+}
 </style>
 </head>
 <body>
 
-<div class="container" id="container">
-    <div class="element" style="top: 50px; left: 50px;">A</div>
-    <div class="element" style="top: 100px; left: 100px;">B</div>
-</div>
+<textarea class="textarea" placeholder="请输入内容"></textarea>
 
 <script>
-document.getElementById('container').addEventListener('click', function(event) {
-    var clickedElement = event.target;
-    if (clickedElement.classList.contains('element')) {
-        var elementContent = clickedElement.textContent;
-        console.log('点击位置的元素内容：', elementContent);
-    }
+// 获取 textarea 元素
+const textarea = document.querySelector('.textarea');
+const lineHeight = parseInt(window.getComputedStyle(textarea).lineHeight); // 获取行高
+const charHeight = 16; // 字符的高度，假设为16px
+const maxHeight = 300; // 设置最大高度
+
+// 添加 input 事件监听器，当输入框内容发生变化时，自动调整高度以适应内容
+textarea.addEventListener('input', function() {
+    // 重置 textarea 的高度，以便它能够根据内容自动调整
+    textarea.style.height = 'auto';
+    
+    // 将 textarea 的高度设置为内容的滚动高度减去一个字符的高度，但不超过最大高度
+    const scrollHeight = textarea.scrollHeight;
+    textarea.style.height = Math.min(scrollHeight - charHeight, maxHeight) + 'px'; // 设置最大高度为 300px
 });
 </script>
 

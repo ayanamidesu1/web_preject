@@ -270,3 +270,125 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
     margin-right: 5px;
     border-radius: 15px;
 }
+.comment_section{
+    width:80%;
+    height: auto;
+    border:1px solid red;
+    margin-top:50px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.comment_section_title{
+    position:absolute;
+    left:0px;
+    top:0px;
+    height: 20px;
+    border:1px solid red;
+}
+.comment_section_input{
+    display: flex;
+    margin-top:30px;
+    width:100%;
+    height: auto;
+    min-height: 50px;
+    align-self: center;
+    margin-bottom:10px;
+    position: relative;
+    border:1px solid red;
+}
+.send_user_avatar{
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    position:absolute;
+    left: 0px;
+}
+.send_user_avatar img{
+    width:50px;
+    height: 50px;
+    object-fit: cover;
+}
+.comment_section_input_box{
+    align-self: center;
+    margin-left:60px;
+    border:1px solid red;
+    flex-grow: 1;
+    margin-right: 60px;
+    max-width: 75%;
+}
+.comment_section_input_box textarea{ 
+    width:100%;
+    min-width: 50%;
+    height: auto;
+    min-height: 40px;
+    outline: none;
+    border-radius: 15px;
+    background: none;
+    font-size: 16px;
+    color:#000;
+    overflow-wrap: break-word;
+    overflow: hidden;
+    resize: none;
+    word-wrap: break-word;
+}
+.comment_section_input_sendbtn{
+    align-self: center;
+    margin-left: 10px;
+    right: 0px;
+    position: absolute;
+}
+.comment_section_input_sendbtn{
+    background-color: rgba(0,150,250,1);
+    width:75px;
+    height: 35px;
+    border-radius: 15px;
+    align-self: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.following_btn{
+    background-color: rgba(0,150,250,1);
+}
+.comment_section_details{
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.comment_section_details_user{
+    display: flex;
+    width:100%;
+    height: auto;
+    border:1px solid red;
+}
+.comment_section_details_user_avatar{
+    width:50px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 50%;
+    position: relative;
+    border:1px solid red;
+}
+.comment_section_details_user_name{
+    display: flex;
+    margin-top:15px;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    border:1px solid red;
+    position: relative;
+    flex-grow: 1;
+}
+.comment_section_details_details{
+    margin-top:20px;
+    border:1px solid red;
+    align-self:self-start;
+}
+.comment_section_details_details_time{
+    display: flex;
+    align-self: self-start;
+    border:1px solid red;
+}
