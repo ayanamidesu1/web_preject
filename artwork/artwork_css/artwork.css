@@ -26,6 +26,15 @@
     max-width: 60vw;
     align-self: center;
 }
+.user_art_work_hidden{
+    display: flex;
+    width:auto;
+    height: auto;
+    flex-direction: column;
+    border:1px solid red;
+    max-width: 60vw;
+    
+}
 .user_art_work img{
     align-self: center;
     width: 100%;
@@ -134,4 +143,87 @@
     justify-content: space-around;
     align-self: center;
     margin-top:35px;
+}
+.comment_section{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    align-self: center;
+}
+.artwork_introduction{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    margin-top:25px;
+}
+.artwork_data{
+    display: flex;
+}
+.more_artwork{
+    display: flex;
+    flex-direction: column;
+}
+.more_artwork_useravatar
+{
+    display: flex;
+}
+.artwork_thumbnail{
+    display: flex;
+    position: relative;
+    border:1px solid red;
+}
+.artwork_thumbnail_leftbtn,.artwork_thumbnail_rightbtn{
+    border:1px solid red;
+    align-self: center;
+    width:50px;
+    height: 100%;
+    display: flex;
+}
+.artwork_thumbnail_leftbtn:hover
+{
+background:linear-gradient(to right,rgba(80,80,80,0.5),rgba(80,80,80,0));
+}
+.artwork_thumbnail_rightbtn:hover
+{
+background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
+}
+
+.artwork_thumbnail_leftbtn img,.artwork_thumbnail_rightbtn img{
+    width: 50px;
+    height: auto;
+    object-fit: cover;
+    align-self:center;
+    opacity: 0;
+}
+.artwork_thumbnail_leftbtn:hover img,.artwork_thumbnail_rightbtn:hover img{
+    width: 50px;
+    height: auto;
+    object-fit: cover;
+    align-self:center;
+    opacity: 1;
+}
+.artwork_thumbnail_leftbtn{
+    position: absolute;
+    left:0px;
+}
+.artwork_thumbnail_rightbtn{
+    position: absolute;
+    right:0px; 
+}
+.artwork_thumbnail_img{
+    display:flex;
+    max-height: 15vh;
+    height: auto;
+    overflow:hidden;
+}
+.artwork_thumbnail_img img{
+    width: 150px;
+    height: auto;
+    object-fit: cover;
+}
+.artwork_thumbnail_img_1,
+.artwork_thumbnail_img_2{
+    position: relative;
+    margin-right: 5px;
+    border-radius: 15px;
 }
