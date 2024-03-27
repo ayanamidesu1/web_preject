@@ -169,9 +169,37 @@
     position: relative;
     width:100%;
 }
+.artwork_useravatar{
+    width:100%;
+    height: auto;
+    overflow: hidden;
+}
+.artwork_useravatar img{
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.artwork_username{
+    border:1px solid red;
+    flex-grow: 1;
+    min-width: 60px;
+    width:auto;
+    align-self: center;
+    text-align: center;
+    margin-left:10px;
+}
+.artwork_following{
+    border:1px solid red;
+    flex-grow: 1;
+    min-width: 60px;
+    width:auto;
+    align-self: center;
+    text-align: center;
+    margin-left:10px;
+}
 .more_artwork_username{
     display: flex;
-
+    justify-content: space-between;
 }
 .artwork_introduction_conntent{
     margin-right: 0px;
