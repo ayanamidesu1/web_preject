@@ -49,18 +49,38 @@ comment_section_input_box_textarea.addEventListener('input', function() {
     comment_section_input_box_textarea.style.height = Math.min(scrollHeight - charHeight, maxHeight) + 'px';
 });
 //回复的查看和收起
-document.addEventListener("DOMContentLoaded", function() {
-    var showReplyButton = document.querySelector(".show_reply");
-    var collapseReplyButton = document.querySelector(".collapse_reply");
-    var replyMessage = document.querySelector(".reply_message");
-
-    showReplyButton.addEventListener("click", function() {
-        showReplyButton.style.display = "none";
-        replyMessage.style.display = "block";
-    });
-
-    collapseReplyButton.addEventListener("click", function() {
-        showReplyButton.style.display = "block";
-        replyMessage.style.display = "none";
-    });
+document.addEventListener("DOMContentLoaded", function() {  
+    var commentSection = document.querySelector(".comment_section");  
+  
+    commentSection.addEventListener("click", function(event) {  
+        var target = event.target;  
+  
+        // 如果点击的是“查看回复”按钮  
+        if (target.classList.contains("show_reply")) {  
+            var showReplyButton = target;  
+            var replyMessage = showReplyButton.nextElementSibling;  
+            if (replyMessage) {  
+                showReplyButton.style.display = "none";  
+                replyMessage.style.display = "block";  
+            }  
+        }  
+        // 如果点击的是“收起回复”按钮  
+        else if (target.classList.contains("collapse_reply")) {  
+            var collapseReplyButton = target;  
+            var replyContainer = collapseReplyButton.closest('.reply_message');  
+            if (replyContainer) {  
+                var showReplyButton = replyContainer.previousElementSibling;  
+                if (showReplyButton && showReplyButton.classList.contains("show_reply")) {  
+                    replyContainer.style.display = "none";  
+                    showReplyButton.style.display = "block";  
+                }  
+            }  
+        }  
+    });  
 });
+
+
+
+
+
+
