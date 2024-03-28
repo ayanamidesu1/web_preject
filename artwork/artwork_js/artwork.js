@@ -51,10 +51,8 @@ comment_section_input_box_textarea.addEventListener('input', function() {
 //回复的查看和收起
 document.addEventListener("DOMContentLoaded", function() {  
     var commentSection = document.querySelector(".comment_section");  
-  
     commentSection.addEventListener("click", function(event) {  
         var target = event.target;  
-  
         // 如果点击的是“查看回复”按钮  
         if (target.classList.contains("show_reply")) {  
             var showReplyButton = target;  
@@ -77,6 +75,29 @@ document.addEventListener("DOMContentLoaded", function() {
             }  
         }  
     });  
+});
+//收藏状态切换
+document.addEventListener("DOMContentLoaded", function() {
+    var collectionButtons = document.querySelectorAll(".related_artwork_collection");
+
+    collectionButtons.forEach(function(button) {
+        button.addEventListener("click", function(event) {
+            var target = event.target;
+
+            // 检查点击的是否为相关的按钮元素
+            if (target.closest('.related_artwork_collection')) {
+                // 切换按钮的显示状态
+                var btn1 = this.querySelector('.collection_btn1');
+                var btn2 = this.querySelector('.collection_btn2');
+
+                if (btn2.style.display === "none") {
+                    btn2.style.display = "block";
+                } else {
+                    btn2.style.display = "none";
+                }
+            }
+        });
+    });
 });
 
 
