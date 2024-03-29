@@ -25,6 +25,7 @@
     border:1px solid red;
     max-width: 60vw;
     align-self: center;
+    position: relative;
 }
 .user_art_work_hidden{
     display: flex;
@@ -33,7 +34,7 @@
     flex-direction: column;
     border:1px solid red;
     max-width: 60vw;
-    
+    margin-top:20px;
 }
 .user_art_work img{
     align-self: center;
@@ -132,12 +133,25 @@
     font-size: 12px;
     margin-top:10px;
 }
-.artwork_look_more{
+.user_art_work_img{
     position: relative;
-    width: auto;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+    width: 100%;
+    height: auto;
+}
+.artwork_look_more{
+    position: absolute;
+    width: 100%;
     display: flex;
     align-self: center;
     border:1px solid red;
+    justify-content: center;
+    background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    z-index: 5;
+    min-height: 50px;
+    bottom: 0px;
 }
 .re_artwork{
     display: flex;
@@ -515,4 +529,68 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
     width:25px;
     height: auto;
     cursor: pointer;
+}
+/*查看更多部分*/
+.show_more_artwork{
+    display: flex;
+    position: relative;
+    white-space: nowrap;
+    background-color: rgba(53, 53, 53, 0.8);
+    border-radius: 20px;
+    color: azure;
+    min-width: 110px;
+    height: 100%;
+    min-height: 35px;
+    text-align: center;
+    align-self: center;
+    justify-content: center;
+    cursor: pointer;
+    border:1px solid red;
+}
+.show_more_artwork_text{
+    align-self: center;
+}
+.user_art_work_interaction{
+    border:1px solid red;
+    width: 100%;
+    position: relative;
+    min-height: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+.user_art_work_interaction_like{
+    display: flex;
+    border:1px solid red;
+    position: relative;
+}
+.user_art_work_interaction_like_img{
+    width:20px;
+    height: 20px;
+    left:0px;
+    top: 0px;
+}
+.user_art_work_interaction_like_img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.user_art_work_interaction_collection{
+    width:25px;
+    height: 25px;
+    border: 1px solid red;
+    position: relative;
+    margin-left:5px;
+}
+.user_art_work_interaction_collection_img{
+    position:absolute;
+    top: 0px;
+    left: 0px;
+    border: 1px solid red;
+}
+.user_art_work_interaction_share{
+    width:25px;
+    height: 25px;
+    border: 1px solid red;
+    position: relative;
+    margin-left:5px;
 }
