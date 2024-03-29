@@ -133,7 +133,90 @@ document.addEventListener("DOMContentLoaded", function() {
 }
 );
 
+//互动按钮的状态切换
+document.addEventListener("DOMContentLoaded", function() {
+   var like_btn=document.querySelectorAll('.user_art_work_interaction_like');
+   like_btn.forEach(function(btn){
+      btn.addEventListener('click',function(){
+        var like_img_divs = this.querySelectorAll('.user_art_work_interaction_like_img');
+        var like_text_div = this.querySelector('.user_art_work_interaction_like_text');
+        // 切换图片的显示状态
+        like_img_divs.forEach(function(img_div) {
+            if (img_div.style.display === 'block') {
+                img_div.style.display = 'none';
+            } else {
+                img_div.style.display = 'block';
+            }
+        });
+        // 根据第一张图片是否显示来决定是否要设置文字样式
+        if (like_img_divs[0].style.display === 'block') {
+            like_text_div.style = '';
+        } else {
+            like_text_div.style.color = 'rgba(12, 138, 241, 1)';
+        }
+      });
+   });
+});
 
+document.addEventListener("DOMContentLoaded", function() {
+    var collection_btns = document.querySelectorAll('.user_art_work_interaction_collection');
+    
+    collection_btns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var second_img_div = this.querySelector('.user_art_work_interaction_collection_img:nth-child(2)');
 
+            // 切换第二张图片的显示状态
+            if (second_img_div.style.display === 'block' || second_img_div.style.display === '') {
+                second_img_div.style.display = 'none';
+            } else {
+                second_img_div.style.display = 'block';
+            }
+        });
+    });
+});
+// 复制链接按钮点击事件
+document.addEventListener("DOMContentLoaded", function() {  
+    var copylink_btn = document.querySelector('.user_art_work_interaction_collection_img_copylink');  
+    copylink_btn.addEventListener('click', function() {  
+        var page_link = window.location.href;  
+          
+        // 使用 Clipboard API 复制文本到剪贴板  
+        navigator.clipboard.writeText(page_link)  
+            .then(function() {  
+                alert('链接已复制'); 
+            })  
+            .catch(function(error) {  
+                console.error('复制链接时出错:', error);  
+                alert('复制链接失败，请手动复制。'); 
+            });  
+    });  
+});
 
+//分享按钮下拉列表
+document.addEventListener("DOMContentLoaded", function() {
+    var share_btn = document.querySelector('.user_art_work_interaction_share_img');
+    var share_dropdown = document.querySelector('.user_art_work_interaction_collection_img_dropdown');
+
+    share_btn.addEventListener('click', function(event) {
+        event.stopPropagation(); 
+        toggleDropdown();
+    });
+
+    // 点击其他位置时隐藏下拉列表
+    document.addEventListener('click', function(event) {
+        var target = event.target;
+        if (!target.closest('.user_art_work_interaction_share')) {
+            share_dropdown.style.display = 'none';
+        }
+    });
+
+    // 切换下拉列表的显示状态
+    function toggleDropdown() {
+        if (share_dropdown.style.display === 'block') {
+            share_dropdown.style.display = 'none';
+        } else {
+            share_dropdown.style.display = 'block';
+        }
+    }
+});
 
