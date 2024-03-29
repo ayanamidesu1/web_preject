@@ -660,3 +660,97 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
     color:rgba(53, 53, 53, 0.8);
     cursor: pointer;
 }
+.float_interactive{
+    border:1px solid red;
+    width:60vw;
+    height: 40px;
+    position: fixed;
+    bottom: 0px;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: flex-end;
+    animation: slideUp 0.5s forwards; 
+    display: none;
+}
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(100%);
+    }
+}
+
+@keyframes slideDisappear {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+.float_interactive_like{
+ margin-right: 5px;
+ display: flex;
+}
+.float_interactive_like_svg{
+    display: flex;
+    align-self: center;
+}
+.float_interactive_like_svg_1{
+    margin-right: 5px;
+}
+.float_interactive_like_svg_2{
+    fill: rgba(12,138,241,1);
+}
+.float_interactive_collection{
+    display: flex;
+    margin-right: 5px;
+}
+.float_interactive_collection_svg{
+    display: flex;
+    margin-right: 5px;
+    align-self: center;
+}
+.float_interactive_share{
+    display: flex;
+    margin-right: 5px;
+    position: relative;
+    cursor: pointer;
+}
+.float_interactive_share_svg{
+    display: flex;
+    align-self: center;
+    margin-right: 5px;
+}
+.float_interactive_share_box{
+    position: absolute;
+    width: 150px;
+    height: 50px;
+    border: 1px solid red;
+    right: -75px;
+    bottom: 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 100;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.float_interactive_share_box_title{
+    margin-top:5px;
+}
+.float_interactive_share_box_copylink{
+    margin-top:5px;
+    cursor: pointer;
+}

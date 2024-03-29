@@ -286,13 +286,11 @@ document.addEventListener("DOMContentLoaded", function() {
     observer.observe(hiddenElement, { childList: true });
 
 });
-
 document.addEventListener("DOMContentLoaded", function() {
     var showMoreTexts = document.querySelectorAll('.show_more_artwork_text');
     var hiddenElements = document.querySelectorAll('.user_art_work_hidden');
     var interactive_btn1 = document.querySelector('.user_art_work_interaction');
     var interactive_btn2 = document.getElementById('user_art_work_interaction');
-
     // 点击show_more_artwork_text元素时隐藏artwork_look_more元素
     showMoreTexts.forEach(function(showMoreText) {
         showMoreText.addEventListener('click', function() {
@@ -314,6 +312,85 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+document.addEventListener("DOMContentLoaded", function(){
+    var dropdown_btn = document.querySelector('.float_interactive_share');
+    var dropdown_content = document.querySelector('.float_interactive_share_box'); // 添加一个点以指定类选择器
+    dropdown_btn.addEventListener('click', function(){
+        if(dropdown_content.style.display == 'none') {
+            dropdown_content.style.display = 'block';
+        } else {
+            dropdown_content.style.display = 'none';
+        }
+    });
+});
+document.addEventListener("DOMContentLoaded", function() {  
+    var copylink_btn = document.querySelector('.float_interactive_share_box_copylink');  
+    copylink_btn.addEventListener('click', function() {  
+        var page_link = window.location.href;  
+          
+        // 使用 Clipboard API 复制文本到剪贴板  
+        navigator.clipboard.writeText(page_link)  
+            .then(function() {  
+                alert('链接已复制'); 
+            })  
+            .catch(function(error) {  
+                console.error('复制链接时出错:', error);  
+                alert('复制链接失败，请手动复制。'); 
+            });  
+    });  
+});
+//滚动显示操作
+ // 检查条件并执行特定操作
+ document.addEventListener("DOMContentLoaded", function(){
+    var userArtWorkHidden = document.querySelector('.user_art_work_hidden');
+    // 创建 MutationObserver 实例
+    var observer = new MutationObserver(function(mutationsList, observer) {
+        // 检查每个变化
+        for(var mutation of mutationsList) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+                // 获取元素样式
+                var computedStyle = window.getComputedStyle(userArtWorkHidden);
+                var displayStyle = computedStyle.getPropertyValue('display');
+                var imgElements = userArtWorkHidden.querySelectorAll('img');
+                if (imgElements.length >= 1 && displayStyle !== 'none') {
+                    console.log('条件满足，执行操作');
+                    // 执行操作
+                    var floatInteractive = document.querySelector('.float_interactive');
+                    var lastScrollTop = 0;
+                    var isAnimatingUp = false;
+                    function handleScroll() {
+                        var currentScrollTop = window.scrollY;
+                        if (currentScrollTop > lastScrollTop) {
+                            // Scroll down
+                            isAnimatingUp = false;
+                            floatInteractive.style.display = 'none';
+                        } else {
+                            // Scroll up
+                            isAnimatingUp = true;
+                            floatInteractive.style.display = 'flex';
+                            floatInteractive.style.animation = 'slideUp 0.5s forwards';
+                        }
+                        lastScrollTop = currentScrollTop;
+                    }
+                    window.addEventListener('scroll', handleScroll);
+                }
+            }
+        }
+    });
+    // 配置 MutationObserver 监视属性变化
+    observer.observe(userArtWorkHidden, { attributes: true });
+});
+
+
+
+
+
+
+
+
+
+
+
 
 
 
