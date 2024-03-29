@@ -178,6 +178,32 @@
 }
 .artwork_data{
     display: flex;
+    width:auto;
+    white-space: nowrap;
+    justify-content: flex-start;
+    margin-top: 5px;
+}
+.artwork_data_createtime{
+    margin-top:5px;
+}
+.artwork_data_like{
+    display: flex;
+    margin-right: 10px;
+    width:auto;
+}
+.artwork_data_like_text{
+    margin-left: 2px;
+}
+.artwork_data_collection{
+    display: flex;
+    margin-right: 10px;
+    width: auto;;
+}
+.artwork_data_collection_text{
+    margin-left: 2px;
+}
+.artwork_data_lookcount_text{
+    margin-left: 2px;
 }
 .more_artwork{
     display: flex;
@@ -225,6 +251,10 @@
 }
 .artwork_introduction_conntent{
     margin-right: 0px;
+    margin-top: 5px;
+}
+.artwork_tag{
+    margin-top:5px;
 }
 .artwork_thumbnail{
     display: flex;

@@ -220,3 +220,28 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+//查看更多按钮的显示切换以及功能实现
+document.addEventListener("DOMContentLoaded", function() {
+    var hiddenElement = document.querySelector('.user_art_work_hidden');
+    var moreButton = document.querySelector('.artwork_look_more');
+
+    // 检查图片元素的数量并设置按钮的显示状态
+    function checkImageCount() {
+        var imageCount = hiddenElement.querySelectorAll('img').length;
+        if (imageCount === 0) {
+            moreButton.style.display = 'none';
+        } else {
+            moreButton.style.display = '';
+        }
+    }
+
+    // 页面加载时检查图片元素的数量
+    checkImageCount();
+
+    // 当有图片元素被添加或移除时重新检查图片数量
+    var observer = new MutationObserver(checkImageCount);
+    observer.observe(hiddenElement, { childList: true });
+
+});
+
+
