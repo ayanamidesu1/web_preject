@@ -5,10 +5,10 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    border: 1px solid red;
+    
 }
 .artwork_image_main{
-    border:1px solid red;
+    
     display: flex;
     width:90%;
     height: auto;
@@ -22,7 +22,7 @@
     width:auto;
     height: auto;
     flex-direction: column;
-    border:1px solid red;
+    
     max-width: 60vw;
     align-self: center;
     position: relative;
@@ -32,7 +32,7 @@
     width:auto;
     height: auto;
     flex-direction: column;
-    border:1px solid red;
+    
     max-width: 60vw;
     margin-top:20px;
     position: relative;
@@ -48,7 +48,7 @@
     height: auto;
     display: flex;
     flex-direction: column;
-    border:1px solid red;
+    
 }
 .artwork_user_avater
 {
@@ -74,7 +74,7 @@
 .other_img{
     width:32%;
     height: auto;
-    border:1px solid red;
+    
     margin-right: 2px;
     min-width: 32%;
 }
@@ -92,7 +92,7 @@
     margin-top:5px;
     justify-content: center;
     align-self: center;
-    border:1px solid red;
+    
     background-color: rgba(0, 173, 254, 0.8);
 }
 .following_btn:hover{
@@ -105,7 +105,7 @@
     justify-content: center;
     align-items: center;
     align-self: center;
-    border:1px solid red;
+    
     position: absolute;
 }
 .artwork_leftbtn:hover,.artwork_rightbtn:hover{
@@ -138,7 +138,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    border: 1px solid red;
+    
     width: 100%;
     height: auto;
 }
@@ -147,7 +147,7 @@
     width: 100%;
     display: flex;
     align-self: center;
-    border:1px solid red;
+    cursor: pointer;
     justify-content: center;
     background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
     z-index: 5;
@@ -156,7 +156,7 @@
 }
 .re_artwork{
     display: flex;
-    border:1px solid red;
+    
     flex-direction: column;
     width:90%;
     height: auto;
@@ -227,7 +227,7 @@
     border-radius: 50%;
 }
 .artwork_username{
-    border:1px solid red;
+    
     flex-grow: 1;
     min-width: 60px;
     width:auto;
@@ -236,7 +236,7 @@
     margin-left:10px;
 }
 .artwork_following{
-    border:1px solid red;
+    
     flex-grow: 1;
     min-width: 60px;
     width:auto;
@@ -260,10 +260,10 @@
 .artwork_thumbnail{
     display: flex;
     position: relative;
-    border:1px solid red;
+    
 }
 .artwork_thumbnail_leftbtn,.artwork_thumbnail_rightbtn{
-    border:1px solid red;
+    
     align-self: center;
     width:50px;
     height: 100%;
@@ -326,7 +326,7 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
 .comment_section{
     width:80%;
     height: auto;
-    border:1px solid red;
+    
     margin-top:50px;
     display: flex;
     flex-direction: column;
@@ -337,7 +337,7 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
     left:0px;
     top:0px;
     height: 20px;
-    border:1px solid red;
+    
 }
 .comment_section_input{
     display: flex;
@@ -348,7 +348,7 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
     align-self: center;
     margin-bottom:10px;
     position: relative;
-    border:1px solid red;
+    
 }
 .send_user_avatar{
     width:50px;
@@ -366,7 +366,7 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
 .comment_section_input_box{
     align-self: center;
     margin-left:60px;
-    border:1px solid red;
+    
     flex-grow: 1;
     margin-right: 60px;
     max-width: 75%;
@@ -422,7 +422,7 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
     display: flex;
     width:100%;
     height: auto;
-    border:1px solid red;
+    
 }
 .comment_section_details_user_avatar{
     width:50px;
@@ -430,7 +430,7 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
     overflow: hidden;
     border-radius: 50%;
     position: relative;
-    border:1px solid red;
+    
 }
 .comment_section_details_user_name{
     display: flex;
@@ -438,19 +438,19 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
     flex-direction: column;
     justify-content: start;
     align-items: center;
-    border:1px solid red;
+    
     position: relative;
     flex-grow: 1;
 }
 .comment_section_details_details{
     margin-top:20px;
-    border:1px solid red;
+    
     align-self:self-start;
 }
 .comment_section_details_details_time{
     display: flex;
     align-self: self-start;
-    border:1px solid red;
+    
 }
 .show_reply{
     align-self:self-start;
@@ -467,7 +467,7 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
     display: flex;
     width:100%;
     height: auto;
-    border:1px solid red;
+    
     align-self: self-start;
     margin-top:10px;
 }
@@ -485,15 +485,15 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
 .reply_user_username_details{
     align-self: center;
     margin-top:15px;
-    border:1px solid red;
+    
 }
 .reply_message_details{
     margin-top:20px;
-    border:1px solid red;
+    
 }
 .reply_message_details_time{
     display: flex;
-    border:1px solid red;
+    
 }
 .collapse_reply{
     background-color: rgba(80,80,80,0.5);
@@ -509,7 +509,7 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
     width:100%;
     height: auto;
     justify-content: space-between;
-    border:1px solid red;
+    
     margin-bottom: 5px;
 }
 .related_artwork{
@@ -518,7 +518,7 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
     width:18%;
     height: auto;
     max-height: 20vh;
-    border:1px solid red;
+    
     border-radius: 15px;
     overflow: hidden;
 }
@@ -576,13 +576,13 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
     align-self: center;
     justify-content: center;
     cursor: pointer;
-    border:1px solid red;
+    
 }
 .show_more_artwork_text{
     align-self: center;
 }
 .user_art_work_interaction{
-    border:1px solid red;
+    
     width: 100%;
     position: relative;
     min-height: 10px;
@@ -591,7 +591,7 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
 }
 .user_art_work_interaction_like{
     display: flex;
-    border:1px solid red;
+    
     position: relative;
     justify-content: space-between;
     cursor: pointer;
@@ -608,7 +608,7 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
 .user_art_work_interaction_collection{
     width:25px;
     height: 25px;
-    border: 1px solid red;
+    
     position: relative;
     margin-left:5px;
     cursor: pointer;
@@ -617,12 +617,12 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
     position:absolute;
     top: 0px;
     left: 0px;
-    border: 1px solid red;
+    
 }
 .user_art_work_interaction_share{
     width:25px;
     height: 25px;
-    border: 1px solid red;
+    
     position: relative;
     margin-left:5px;
     cursor: pointer;
@@ -630,7 +630,7 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
     flex-direction: column;
 }
 .user_art_work_interaction_collection_img_dropdown{
-    border: 1px solid red;
+    
     margin-top:10px;
     width:150px;
     height: auto;
@@ -644,7 +644,7 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
 .user_art_work_interaction_collection_img_title{
     width:100%;
     display: flex;
-    border: 1px solid red;
+    
     align-self: center;
     justify-content: center;
     margin-top:10px;
@@ -653,7 +653,7 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
 .user_art_work_interaction_collection_img_copylink{
     width:100%;
     display: flex;
-    border: 1px solid red;
+    
     align-self: center;
     justify-content: center;
     margin-top:10px;
@@ -661,7 +661,7 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
     cursor: pointer;
 }
 .float_interactive{
-    border:1px solid red;
+    
     width:60vw;
     height: 40px;
     position: fixed;
@@ -706,6 +706,7 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
 .float_interactive_like_svg{
     display: flex;
     align-self: center;
+    cursor: pointer;
 }
 .float_interactive_like_svg_1{
     margin-right: 5px;
@@ -716,6 +717,7 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
 .float_interactive_collection{
     display: flex;
     margin-right: 5px;
+    cursor: pointer;
 }
 .float_interactive_collection_svg{
     display: flex;
@@ -737,7 +739,7 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
     position: absolute;
     width: 150px;
     height: 50px;
-    border: 1px solid red;
+    
     right: -75px;
     bottom: 40px;
     background-color: rgba(255, 255, 255, 0.8);

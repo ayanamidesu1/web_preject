@@ -287,7 +287,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 document.addEventListener("DOMContentLoaded", function() {
-    var showMoreTexts = document.querySelectorAll('.show_more_artwork_text');
+    var showMoreTexts = document.querySelectorAll('.artwork_look_more');
     var hiddenElements = document.querySelectorAll('.user_art_work_hidden');
     var interactive_btn1 = document.querySelector('.user_art_work_interaction');
     var interactive_btn2 = document.getElementById('user_art_work_interaction');
@@ -379,6 +379,42 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     // 配置 MutationObserver 监视属性变化
     observer.observe(userArtWorkHidden, { attributes: true });
+});
+
+//浮动栏的显示切换
+document.addEventListener("DOMContentLoaded",function(){
+    var float_tab=document.querySelector('.float_interactive_like');
+    float_tab.addEventListener('click',function(){
+        var svg1=document.querySelector('.float_interactive_like_svg_1');
+        var svg2=document.querySelector('.float_interactive_like_svg_2');
+        var float_interactive_like_text=document.querySelector('.float_interactive_like_text');
+       if(svg1.style.display=='none')
+       {
+           svg1.style.display='block';
+           svg2.style.display='none';
+           float_interactive_like_text.style.color= '';
+        } 
+        else{
+            svg1.style.display='none';
+            svg2.style.display='block';
+            float_interactive_like_text.style.color= 'rgba(12, 138, 241,1)';
+        }
+    });
+});
+document.addEventListener("DOMContentLoaded", function(){
+    var float_tab = document.querySelector('.float_interactive_collection');
+    float_tab.addEventListener('click', function(){
+        var svg1 = document.querySelector('.float_interactive_collection_svg_1');
+        var svg2 = document.querySelector('.float_interactive_collection_svg_2');
+
+        if (svg1.style.display === 'none') {
+            svg1.style.display = 'block';
+            svg2.style.display = 'none';
+        } else {
+            svg1.style.display = 'none';
+            svg2.style.display = 'block';
+        }
+    });
 });
 
 
