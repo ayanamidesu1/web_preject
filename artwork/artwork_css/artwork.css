@@ -91,6 +91,10 @@
     justify-content: center;
     align-self: center;
     border:1px solid red;
+    background-color: rgba(0, 173, 254, 0.8);
+}
+.following_btn:hover{
+    cursor: pointer;
 }
 .artwork_leftbtn,.artwork_rightbtn{
     width: 32%;
@@ -198,6 +202,8 @@
     align-self: center;
     text-align: center;
     margin-left:10px;
+    background-color: rgba(0, 173, 254, 0.8);
+    cursor: pointer;
 }
 .more_artwork_username{
     display: flex;
@@ -360,9 +366,7 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.following_btn{
-    background-color: rgba(0,150,250,1);
+    cursor: pointer;
 }
 .comment_section_details{
     display: flex;
@@ -410,7 +414,9 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
     width:20%;
     text-align: center;
     border-radius: 10px;
+    cursor: pointer;
 }
+
 .reply_message
 {
     display: flex;
@@ -451,6 +457,7 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
     width:20%;
     align-self: center;
     text-align: center;
+    cursor: pointer;
 }
 .related_works{
     display: flex;
@@ -507,4 +514,5 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
     z-index: 11;
     width:25px;
     height: auto;
+    cursor: pointer;
 }

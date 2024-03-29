@@ -99,7 +99,39 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+document.addEventListener("DOMContentLoaded", function () {  
+    var followingButtons = document.querySelectorAll(".following_btn");  
+    followingButtons.forEach(function (button) {  
+        button.addEventListener("click", function (event) {  
+            var btn_text = this.innerText; // 直接使用this来获取按钮的文本  
+            if (btn_text == '关注') {  
+                this.innerText = '已关注';  
+                this.style.backgroundColor = 'rgba(172,172,172,0.8)'; 
+            } else if (btn_text == '已关注') {  
+                this.innerText = '关注';  
+                this.style.backgroundColor = 'rgba(0, 173, 254, 0.8)'; 
+            }  
+        });  
+    });  
+});
 
+document.addEventListener("DOMContentLoaded", function() {
+    var following_btn=document.querySelectorAll('.artwork_following');
+    following_btn.forEach(function(btn){
+        btn.addEventListener('click',function(){
+            var btn_text=this.innerText;
+            if(btn_text=='关注'){
+                this.innerText='已关注';
+                this.style.backgroundColor='rgba(172,172,172,0.8)';
+            }
+            else if(btn_text=='已关注'){
+                this.innerText='关注';
+                this.style.backgroundColor='rgba(0, 173, 254, 0.8)';
+            }
+        });
+    });
+}
+);
 
 
 
