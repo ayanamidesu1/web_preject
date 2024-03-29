@@ -209,7 +209,6 @@ document.addEventListener("DOMContentLoaded", function() {
             share_dropdown.style.display = 'none';
         }
     });
-
     // 切换下拉列表的显示状态
     function toggleDropdown() {
         if (share_dropdown.style.display === 'block') {
@@ -219,6 +218,50 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
+document.addEventListener("DOMContentLoaded", function() {  
+    var copylink_btn = document.getElementById('user_art_work_interaction_collection_img_copylink');  
+    copylink_btn.addEventListener('click', function() {  
+        var page_link = window.location.href;  
+          
+        // 使用 Clipboard API 复制文本到剪贴板  
+        navigator.clipboard.writeText(page_link)  
+            .then(function() {  
+                alert('链接已复制'); 
+            })  
+            .catch(function(error) {  
+                console.error('复制链接时出错:', error);  
+                alert('复制链接失败，请手动复制。'); 
+            });  
+    });  
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    var share_btn = document.getElementById('user_art_work_interaction_share_img');
+    var share_dropdown = document.getElementById('user_art_work_interaction_collection_img_dropdown');
+
+    share_btn.addEventListener('click', function(event) {
+        event.stopPropagation(); 
+        toggleDropdown();
+    });
+
+    // 点击其他位置时隐藏下拉列表
+    document.addEventListener('click', function(event) {
+        var target = event.target;
+        if (!target.closest('.user_art_work_interaction_share')) {
+            share_dropdown.style.display = 'none';
+        }
+    });
+    // 切换下拉列表的显示状态
+    function toggleDropdown() {
+        if (share_dropdown.style.display === 'block') {
+            share_dropdown.style.display = 'none';
+        } else {
+            share_dropdown.style.display = 'block';
+        }
+    }
+});
+
+
 
 //查看更多按钮的显示切换以及功能实现
 document.addEventListener("DOMContentLoaded", function() {
@@ -243,5 +286,37 @@ document.addEventListener("DOMContentLoaded", function() {
     observer.observe(hiddenElement, { childList: true });
 
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    var showMoreTexts = document.querySelectorAll('.show_more_artwork_text');
+    var hiddenElements = document.querySelectorAll('.user_art_work_hidden');
+    var interactive_btn1 = document.querySelector('.user_art_work_interaction');
+    var interactive_btn2 = document.getElementById('user_art_work_interaction');
+
+    // 点击show_more_artwork_text元素时隐藏artwork_look_more元素
+    showMoreTexts.forEach(function(showMoreText) {
+        showMoreText.addEventListener('click', function() {
+            var artworkLookMore = document.querySelector('.artwork_look_more');
+            if (artworkLookMore) {
+                artworkLookMore.style.display = 'none';
+            }
+            // 清除所有user_art_work_hidden元素的display属性
+            hiddenElements.forEach(function(hiddenElement) {
+                hiddenElement.removeAttribute('style');
+            });
+            // 隐藏第一个交互按钮，显示第二个交互按钮
+            if (interactive_btn1) {
+                interactive_btn1.style.display = 'none';
+            }
+            if (interactive_btn2) {
+                interactive_btn2.style.display = '';
+            }
+        });
+    });
+});
+
+
+
+
 
 
