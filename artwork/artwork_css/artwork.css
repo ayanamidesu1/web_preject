@@ -395,8 +395,8 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
 .comment_section_input_box textarea{ 
     width:85%;
     min-width: 50%;
-    height: auto;
-    min-height: 40px;
+    height: 25px;
+    min-height: 20px;
     outline: none;
     border-radius: 15px;
     background: none;
@@ -413,7 +413,7 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
     color: #999; /* 提示文字颜色 */
     font-size: 16px; /* 提示文字大小 */
     text-align: left; /* 靠左对齐 */
-    line-height: 40px; /* 设置行高等于输入框高度，实现上下居中 */
+    line-height: 20px; /* 设置行高等于输入框高度，实现上下居中 */
     display: flex; /* 使用 flexbox */
     align-items: center; /* 垂直居中 */
 }

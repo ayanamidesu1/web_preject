@@ -51,32 +51,48 @@ commentSectionTextareas.forEach(function(textarea) {
     });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    // 获取主元素
-    var main_reply_pages = document.querySelectorAll('.comment_section');
-    main_reply_pages.forEach(function (main_reply_page) {
-        // 获取当前主元素下的次级回复框
-        var reply_pages = main_reply_page.querySelectorAll('.comment_section_details');
-        reply_pages.forEach(function (reply_page) {
-            // 获取当前次级回复框内的回复按钮
-            var reply_buttons = reply_page.querySelectorAll('.comment_section_details_details_reply');
-            reply_buttons.forEach(function (reply_button) {
-                reply_button.addEventListener('click', function () {
-                    var reply_box = reply_button.closest('.comment_section_details').querySelector('.reply_message_box');
-                    if (reply_box) {
-                        if (reply_box.style.display === 'block') {
-                            reply_box.style.display = 'none';
-                            reply_button.innerHTML = '&nbsp;回复';
-                        } else {
-                            reply_box.style.display = 'block';
-                            reply_button.innerHTML = '&nbsp;收起';
+// 定义回复按钮点击事件绑定函数
+function bindReplyButtonEvents(reply_button) {
+    reply_button.addEventListener('click', function () {
+        var reply_box = reply_button.closest('.comment_section_details').querySelector('.reply_message_box');
+        if (reply_box) {
+            if (reply_box.style.display === 'block') {
+                reply_box.style.display = 'none';
+                reply_button.innerHTML = '&nbsp;回复';
+            } else {
+                reply_box.style.display = 'block';
+                reply_button.innerHTML = '&nbsp;收起';
+            }
+        }
+    });
+}
+
+// 定义观察器的回调函数
+var observerCallback = function (mutationsList, observer) {
+    mutationsList.forEach(function (mutation) {
+        if (mutation.type === 'childList') {
+            mutation.addedNodes.forEach(function (node) {
+                if (node.nodeType === Node.ELEMENT_NODE) {
+                    // 如果新增节点是.comment_section_details元素
+                    if (node.classList.contains('comment_section_details')) {
+                        // 获取新增节点内的回复按钮
+                        var reply_button = node.querySelector('.comment_section_details_details_reply');
+                        if (reply_button) {
+                            // 绑定点击事件
+                            bindReplyButtonEvents(reply_button);
                         }
                     }
-                });
+                }
             });
-        });
+        }
     });
-});
+};
+// 创建一个观察器实例并传入回调函数
+var observer = new MutationObserver(observerCallback);
+var targetNode = document.querySelector('.comment_section');
+var observerConfig = { childList: true, subtree: true };
+observer.observe(targetNode, observerConfig);
+
 //查看更多评论
 document.addEventListener("DOMContentLoaded", function() {
    var showmore_btn=document.querySelectorAll('.comment_section_showmore'); 
@@ -497,6 +513,73 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     });
 });
+
+//消息的发送逻辑
+
+function getdate(){
+    var datetime = new Date();  
+var year = datetime.getFullYear(); // 获取年份  
+var month = datetime.getMonth() + 1; // 获取月份（注意，月份是从0开始的，所以需要+1）  
+var day = datetime.getDate(); // 获取日  
+var hours = datetime.getHours(); // 获取小时  
+var minutes = datetime.getMinutes(); // 获取分钟  
+var seconds = datetime.getSeconds(); // 获取秒  
+// 为了保证格式统一，当值小于10时在前面补0  
+month = month < 10 ? '0' + month : month;  
+day = day < 10 ? '0' + day : day;  
+hours = hours < 10 ? '0' + hours : hours;  
+minutes = minutes < 10 ? '0' + minutes : minutes;  
+seconds = seconds < 10 ? '0' + seconds : seconds;  
+// 拼接字符串得到最终的日期时间格式  
+var formattedDateTime = year + '年' + month + '月' + day + '日' + hours + ':' + minutes + ':' + seconds; 
+return formattedDateTime;
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    var send_btn = document.getElementById('first_sendbtn');
+    send_btn.addEventListener('click', function () {
+        var input_box = document.getElementById('first_input_box');
+        var textarea = input_box.querySelector('textarea');
+        var input_text = textarea.value;
+        if (input_text === '') {
+            console.log('输入不能为空');
+            alert('输入不能为空');
+            return;
+        }
+        console.log(input_text + '132');
+        var datetime = getdate();
+        var ready_addtext = `<div class="comment_section_details">
+            <div class="comment_section_details_user">
+                <div class="comment_section_details_user_avatar"><img src="image/101092272_p0.jpg"></div>
+                <div class="comment_section_details_user_name">
+                    <div style="align-self: self-start;">username</div>
+                    <div class="comment_section_details_details">${input_text}</div>
+                    <div class="comment_section_details_details_time">${datetime}<div
+                            class="comment_section_details_details_reply">&nbsp;回复</div>
+                    </div>
+                    <div class="reply_message_box" style="display:none;">
+                        <div class="comment_section_input">
+                            <div class="send_user_avatar"><img src="image/101092272_p0.jpg"></div>
+                            <div class="comment_section_input_box"><textarea class="textarea" placeholder="发表评论"></textarea>
+                            </div>
+                            <div class="comment_section_input_sendbtn" id="second_sendbtn"><b>发送</b></div>
+                        </div>
+                    </div>
+                    <div class="show_reply">查看回复</div>
+                </div>
+            </div>
+        </div>`;
+        var main_pages = document.querySelectorAll('.comment_section');
+        main_pages.forEach(function (page) {
+            var first_comment = page.querySelector('.comment_section_details');
+            var newElement = document.createElement('div');
+            newElement.innerHTML = ready_addtext;
+            page.insertBefore(newElement.firstChild, first_comment);
+            textarea.value = '';
+        });
+    });
+});
+//次级回复功能的元素增加功能
 
 
 
