@@ -8,14 +8,15 @@
     
 }
 .artwork_image_main{
-    
+    background-color: rgba(255, 255, 255, 1);
     display: flex;
-    width:90%;
+    width:100%;
     height: auto;
     justify-content: space-around;
     align-self: center;
     position: relative;
     margin-top:10px;
+    border-radius: 5px;
 }
 .user_art_work{
     display: flex;
@@ -156,9 +157,10 @@
 }
 .re_artwork{
     display: flex;
-    
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 5px;
     flex-direction: column;
-    width:90%;
+    width:100%;
     height: auto;
     justify-content: space-around;
     align-self: center;
@@ -236,7 +238,7 @@
     margin-left:10px;
 }
 .artwork_following{
-    
+    border-radius: 15px;
     flex-grow: 1;
     min-width: 60px;
     width:auto;
