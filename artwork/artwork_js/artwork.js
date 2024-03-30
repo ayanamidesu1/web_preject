@@ -133,33 +133,61 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 //回复的查看和收起
-document.addEventListener("DOMContentLoaded", function() {  
-    var commentSection = document.querySelector(".comment_section");  
-    commentSection.addEventListener("click", function(event) {  
-        var target = event.target;  
-        // 如果点击的是“查看回复”按钮  
-        if (target.classList.contains("show_reply")) {  
-            var showReplyButton = target;  
-            var replyMessage = showReplyButton.nextElementSibling;  
-            if (replyMessage) {  
-                showReplyButton.style.display = "none";  
-                replyMessage.style.display = "block";  
-            }  
-        }  
-        // 如果点击的是“收起回复”按钮  
-        else if (target.classList.contains("collapse_reply")) {  
-            var collapseReplyButton = target;  
-            var replyContainer = collapseReplyButton.closest('.reply_message');  
-            if (replyContainer) {  
-                var showReplyButton = replyContainer.previousElementSibling;  
-                if (showReplyButton && showReplyButton.classList.contains("show_reply")) {  
-                    replyContainer.style.display = "none";  
-                    showReplyButton.style.display = "block";  
+/*document.addEventListener("DOMContentLoaded", function() {  
+    var commentSections = document.querySelectorAll(".comment_section");  
+    commentSections.forEach(function(commentSection) {
+        commentSection.addEventListener("click", function(event) {  
+            var target = event.target; 
+            // 如果点击的是“查看回复”按钮  
+            if (target.classList.contains("show_reply")) {  
+                var showReplyButton = target;  
+                var replyMessage = showReplyButton.nextElementSibling;  
+                if (replyMessage) {  
+                    showReplyButton.style.display = "none";  
+                    replyMessage.style.display = "block";  
                 }  
             }  
-        }  
-    });  
+            // 如果点击的是“收起回复”按钮  
+            else if (target.classList.contains("collapse_reply")) {  
+                var collapseReplyButton = target;  
+                var replyContainer = collapseReplyButton.closest('.reply_message');  
+                if (replyContainer) {  
+                    var showReplyButton = replyContainer.querySelector('.show_reply');  
+                    if (showReplyButton) {  
+                        replyContainer.style.display = "none";  
+                        showReplyButton.style.display = "block";  
+                    }  
+                }  
+            }  
+        });
+    });
+});*/
+document.addEventListener("DOMContentLoaded", function() {
+    var master=document.querySelectorAll('.comment_section');
+    master.forEach(function(master){
+        var mainpage=document.querySelectorAll('.comment_section_details');
+        mainpage.forEach(function(mainpage,index){
+         var subpage=mainpage.querySelector('.reply_message');
+         var showmore=mainpage.querySelector('.show_reply');
+         var closepage=mainpage.querySelector('.collapse_reply');
+         showmore.addEventListener('click',function(){
+             if(subpage.style.display=='none')
+             {
+                 subpage.style.display='block';
+                 showmore.style.display='none';
+                 closepage.style.display='block';
+             }
+         });
+         closepage.addEventListener('click',function(){
+             subpage.style.display='none';
+             showmore.style.display='block';
+             closepage.style.display='none';
+         });
+        }); 
+    });
 });
+
+
 //收藏状态切换
 document.addEventListener("DOMContentLoaded", function() {
     var collectionButtons = document.querySelectorAll(".related_artwork_collection");

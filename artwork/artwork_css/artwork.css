@@ -439,12 +439,13 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
     display: flex;
     margin-top: 10px;
     margin-bottom: 10px;
+    position: relative;
 }
 .comment_section_details_user{
     display: flex;
     width:100%;
     height: auto;
-    
+    position: relative;
 }
 .comment_section_details_user_avatar{
     width:50px;
@@ -524,6 +525,9 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
     align-self: center;
     text-align: center;
     cursor: pointer;
+    bottom: 0px;
+    right: 0px;
+    position: absolute;
 }
 .related_works{
     display: flex;
