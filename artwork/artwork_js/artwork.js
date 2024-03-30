@@ -91,6 +91,30 @@ document.addEventListener("DOMContentLoaded", function() {
    });
 });
 
+//查看更多的显示逻辑
+document.addEventListener("DOMContentLoaded", function() {
+    // 定义一个函数，用于检查并隐藏查看更多按钮
+    function checkAndHideShowReplyButtons() {
+        var main_pages = document.querySelectorAll('.comment_section');
+        main_pages.forEach(function(main_page) {
+            var subpages = main_page.querySelectorAll('.comment_section_details');
+            subpages.forEach(function(subpage) {
+                var show_reply_btn = subpage.querySelector('.show_reply');
+                var reply_boxes = subpage.querySelectorAll('.reply_message');
+                if (reply_boxes.length === 0 && show_reply_btn) {
+                    show_reply_btn.style.display = 'none';
+                }
+            });
+        });
+    }
+    checkAndHideShowReplyButtons();
+    var observer = new MutationObserver(function(mutationsList, observer) {
+        checkAndHideShowReplyButtons();
+    });
+    observer.observe(document.documentElement, { childList: true, subtree: true });
+});
+
+
 
 //回复的查看和收起
 document.addEventListener("DOMContentLoaded", function() {  

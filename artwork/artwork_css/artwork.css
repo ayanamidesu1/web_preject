@@ -488,7 +488,7 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
     display: flex;
     width:100%;
     height: auto;
-    
+    position: relative;
     align-self: self-start;
     margin-top:10px;
 }
@@ -785,4 +785,13 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
 }
 .comment_section_details_details_reply{
     cursor: pointer;
+}
+.reply_message_reply
+{
+    cursor: pointer;
+}
+.reply_user_username_details{
+   position: absolute;
+   top: 0px;
+   left:50px;
 }
