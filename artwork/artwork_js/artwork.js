@@ -358,15 +358,28 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 document.addEventListener("DOMContentLoaded", function(){
     var dropdown_btn = document.querySelector('.float_interactive_share');
-    var dropdown_content = document.querySelector('.float_interactive_share_box'); // 添加一个点以指定类选择器
-    dropdown_btn.addEventListener('click', function(){
+    var dropdown_content = document.querySelector('.float_interactive_share_box');
+    dropdown_btn.addEventListener('click', function(event){
+        event.stopPropagation(); // 阻止事件冒泡，避免下拉内容被隐藏
         if(dropdown_content.style.display == 'none') {
             dropdown_content.style.display = 'block';
         } else {
             dropdown_content.style.display = 'none';
         }
     });
+    // 点击页面其他地方时隐藏下拉内容
+    document.addEventListener('click', function(event) {
+        var target = event.target;
+        if (target !== dropdown_btn && target !== dropdown_content) {
+            dropdown_content.style.display = 'none';
+        }
+    });
+    // 点击下拉内容区域内的子元素时阻止事件冒泡
+    dropdown_content.addEventListener('click', function(event) {
+        event.stopPropagation();
+    });
 });
+
 document.addEventListener("DOMContentLoaded", function() {  
     var copylink_btn = document.querySelector('.float_interactive_share_box_copylink');  
     copylink_btn.addEventListener('click', function() {  
