@@ -374,7 +374,7 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
     max-width: 75%;
 }
 .comment_section_input_box textarea{ 
-    width:100%;
+    width:85%;
     min-width: 50%;
     height: auto;
     min-height: 40px;
@@ -387,6 +387,7 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
     overflow: hidden;
     resize: none;
     word-wrap: break-word;
+    padding:5px;
 }
 .comment_section_input_box textarea::placeholder{
     content: attr(placeholder);
@@ -440,7 +441,6 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
     flex-direction: column;
     justify-content: start;
     align-items: center;
-    
     position: relative;
     flex-grow: 1;
 }
@@ -756,5 +756,14 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
 }
 .float_interactive_share_box_copylink{
     margin-top:5px;
+    cursor: pointer;
+}
+/*回复框*/
+.reply_message_box{
+    align-self: self-start;
+    border:1px solid red;
+    width: 100%;
+}
+.comment_section_details_details_reply{
     cursor: pointer;
 }

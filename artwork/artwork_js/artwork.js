@@ -37,17 +37,50 @@ function scrollContainerUser(scrollOffset) {
     var otherWorkImageUser = document.querySelector('.artwork_thumbnail_img');
     otherWorkImageUser.scrollBy({ left: scrollOffset, behavior: 'smooth' });
 }
-
-var comment_section_input_box_textarea = document.querySelector('.textarea');
-var lineHeight = parseInt(window.getComputedStyle(comment_section_input_box_textarea).lineHeight);
+//评论的回复
+var commentSectionTextareas = document.querySelectorAll('.comment_section .textarea');
+var lineHeight = parseInt(window.getComputedStyle(commentSectionTextareas[0]).lineHeight);
 var charHeight = 16;
 var maxHeight = 300;
 
-comment_section_input_box_textarea.addEventListener('input', function() {
-    comment_section_input_box_textarea.style.height = 'auto';
-    var scrollHeight = comment_section_input_box_textarea.scrollHeight;
-    comment_section_input_box_textarea.style.height = Math.min(scrollHeight - charHeight, maxHeight) + 'px';
+commentSectionTextareas.forEach(function(textarea) {
+    textarea.addEventListener('input', function() {
+        textarea.style.height = 'auto';
+        var scrollHeight = textarea.scrollHeight;
+        textarea.style.height = Math.min(scrollHeight - charHeight, maxHeight) + 'px';
+    });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    // 获取主元素
+    var main_reply_pages = document.querySelectorAll('.comment_section');
+    main_reply_pages.forEach(function (main_reply_page) {
+        // 获取当前主元素下的次级回复框
+        var reply_pages = main_reply_page.querySelectorAll('.comment_section_details');
+        reply_pages.forEach(function (reply_page) {
+            // 获取当前次级回复框内的回复按钮
+            var reply_buttons = reply_page.querySelectorAll('.comment_section_details_details_reply');
+            reply_buttons.forEach(function (reply_button) {
+                reply_button.addEventListener('click', function () {
+                    var reply_box = reply_button.closest('.comment_section_details').querySelector('.reply_message_box');
+                    if (reply_box) {
+                        if (reply_box.style.display === 'block') {
+                            reply_box.style.display = 'none';
+                            reply_button.innerHTML = '&nbsp;回复';
+                        } else {
+                            reply_box.style.display = 'block';
+                            reply_button.innerHTML = '&nbsp;收起';
+                        }
+                    }
+                });
+            });
+        });
+    });
+});
+
+
+
+
 //回复的查看和收起
 document.addEventListener("DOMContentLoaded", function() {  
     var commentSection = document.querySelector(".comment_section");  
