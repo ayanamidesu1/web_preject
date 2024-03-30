@@ -77,8 +77,19 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
-
-
+//查看更多评论
+document.addEventListener("DOMContentLoaded", function() {
+   var showmore_btn=document.querySelectorAll('.comment_section_showmore'); 
+   var more_page=document.querySelectorAll('.comment_section_hideen');
+   showmore_btn.forEach(function(showmore_btn,index){
+      showmore_btn.addEventListener('click',function(){
+        if (more_page[index].style.display==='none'){
+           more_page[index].style.display='block';
+           showmore_btn.style.display='none';
+        }
+      }); 
+   });
+});
 
 
 //回复的查看和收起

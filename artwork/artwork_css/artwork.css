@@ -173,6 +173,25 @@
     width: auto;
     align-self: center;
 }
+.comment_section_hideen{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+}
+.comment_section_showmore{
+    width: 100%;
+    height: 40px;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    border: 1px solid red;
+    background-color: rgba(0,0,0,1);
+    border-radius: 28px;
+    color: rgba(255,255,255,1);
+    cursor: pointer;
+}
 .artwork_introduction{
     display: flex;
     flex-direction: column;
