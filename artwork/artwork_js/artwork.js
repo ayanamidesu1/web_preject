@@ -1,5 +1,5 @@
-document.querySelector('.artwork_look_more').addEventListener('click', function(event){
-    var text=event.target.innerText;
+document.querySelector('.artwork_look_more').addEventListener('click', function (event) {
+    var text = event.target.innerText;
     console.log(text);
 })
 
@@ -9,11 +9,11 @@ const leftBtn = document.querySelector('.artwork_leftbtn');
 const rightBtn = document.querySelector('.artwork_rightbtn');
 const otherWorkImage = document.querySelector('.other_work_image');
 
-leftBtn.addEventListener('click', function() {
+leftBtn.addEventListener('click', function () {
     scrollContainerArtwork(-100);
 });
 
-rightBtn.addEventListener('click', function() {
+rightBtn.addEventListener('click', function () {
     scrollContainerArtwork(100);
 });
 
@@ -25,11 +25,11 @@ function scrollContainerArtwork(scrollOffset) {
 const leftBtnUser = document.querySelector('.artwork_thumbnail_leftbtn');
 const rightBtnUser = document.querySelector('.artwork_thumbnail_rightbtn');
 
-leftBtnUser.addEventListener('click', function() {
+leftBtnUser.addEventListener('click', function () {
     scrollContainerUser(-200);
 });
 
-rightBtnUser.addEventListener('click', function() {
+rightBtnUser.addEventListener('click', function () {
     scrollContainerUser(200);
 });
 
@@ -43,8 +43,8 @@ var lineHeight = parseInt(window.getComputedStyle(commentSectionTextareas[0]).li
 var charHeight = 16;
 var maxHeight = 300;
 
-commentSectionTextareas.forEach(function(textarea) {
-    textarea.addEventListener('input', function() {
+commentSectionTextareas.forEach(function (textarea) {
+    textarea.addEventListener('input', function () {
         textarea.style.height = 'auto';
         var scrollHeight = textarea.scrollHeight;
         textarea.style.height = Math.min(scrollHeight - charHeight, maxHeight) + 'px';
@@ -94,27 +94,27 @@ var observerConfig = { childList: true, subtree: true };
 observer.observe(targetNode, observerConfig);
 
 //查看更多评论
-document.addEventListener("DOMContentLoaded", function() {
-   var showmore_btn=document.querySelectorAll('.comment_section_showmore'); 
-   var more_page=document.querySelectorAll('.comment_section_hideen');
-   showmore_btn.forEach(function(showmore_btn,index){
-      showmore_btn.addEventListener('click',function(){
-        if (more_page[index].style.display==='none'){
-           more_page[index].style.display='block';
-           showmore_btn.style.display='none';
-        }
-      }); 
-   });
+document.addEventListener("DOMContentLoaded", function () {
+    var showmore_btn = document.querySelectorAll('.comment_section_showmore');
+    var more_page = document.querySelectorAll('.comment_section_hideen');
+    showmore_btn.forEach(function (showmore_btn, index) {
+        showmore_btn.addEventListener('click', function () {
+            if (more_page[index].style.display === 'none') {
+                more_page[index].style.display = 'block';
+                showmore_btn.style.display = 'none';
+            }
+        });
+    });
 });
 
 //查看更多的显示逻辑
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     // 定义一个函数，用于检查并隐藏查看更多按钮
     function checkAndHideShowReplyButtons() {
         var main_pages = document.querySelectorAll('.comment_section');
-        main_pages.forEach(function(main_page) {
+        main_pages.forEach(function (main_page) {
             var subpages = main_page.querySelectorAll('.comment_section_details');
-            subpages.forEach(function(subpage) {
+            subpages.forEach(function (subpage) {
                 var show_reply_btn = subpage.querySelector('.show_reply');
                 var reply_boxes = subpage.querySelectorAll('.reply_message');
                 if (reply_boxes.length === 0 && show_reply_btn) {
@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
     checkAndHideShowReplyButtons();
-    var observer = new MutationObserver(function(mutationsList, observer) {
+    var observer = new MutationObserver(function (mutationsList, observer) {
         checkAndHideShowReplyButtons();
     });
     observer.observe(document.documentElement, { childList: true, subtree: true });
@@ -162,38 +162,37 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });*/
-document.addEventListener("DOMContentLoaded", function() {
-    var master=document.querySelectorAll('.comment_section');
-    master.forEach(function(master){
-        var mainpage=document.querySelectorAll('.comment_section_details');
-        mainpage.forEach(function(mainpage,index){
-         var subpage=mainpage.querySelector('.reply_message');
-         var showmore=mainpage.querySelector('.show_reply');
-         var closepage=mainpage.querySelector('.collapse_reply');
-         showmore.addEventListener('click',function(){
-             if(subpage.style.display=='none')
-             {
-                 subpage.style.display='block';
-                 showmore.style.display='none';
-                 closepage.style.display='block';
-             }
-         });
-         closepage.addEventListener('click',function(){
-             subpage.style.display='none';
-             showmore.style.display='block';
-             closepage.style.display='none';
-         });
-        }); 
+document.addEventListener("DOMContentLoaded", function () {
+    var master = document.querySelectorAll('.comment_section');
+    master.forEach(function (master) {
+        var mainpage = document.querySelectorAll('.comment_section_details');
+        mainpage.forEach(function (mainpage, index) {
+            var subpage = mainpage.querySelector('.reply_message');
+            var showmore = mainpage.querySelector('.show_reply');
+            var closepage = mainpage.querySelector('.collapse_reply');
+            showmore.addEventListener('click', function () {
+                if (subpage.style.display == 'none') {
+                    subpage.style.display = 'block';
+                    showmore.style.display = 'none';
+                    closepage.style.display = 'block';
+                }
+            });
+            closepage.addEventListener('click', function () {
+                subpage.style.display = 'none';
+                showmore.style.display = 'block';
+                closepage.style.display = 'none';
+            });
+        });
     });
 });
 
 
 //收藏状态切换
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     var collectionButtons = document.querySelectorAll(".related_artwork_collection");
 
-    collectionButtons.forEach(function(button) {
-        button.addEventListener("click", function(event) {
+    collectionButtons.forEach(function (button) {
+        button.addEventListener("click", function (event) {
             var target = event.target;
 
             // 检查点击的是否为相关的按钮元素
@@ -211,34 +210,34 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
-document.addEventListener("DOMContentLoaded", function () {  
-    var followingButtons = document.querySelectorAll(".following_btn");  
-    followingButtons.forEach(function (button) {  
-        button.addEventListener("click", function (event) {  
+document.addEventListener("DOMContentLoaded", function () {
+    var followingButtons = document.querySelectorAll(".following_btn");
+    followingButtons.forEach(function (button) {
+        button.addEventListener("click", function (event) {
             var btn_text = this.innerText; // 直接使用this来获取按钮的文本  
-            if (btn_text == '关注') {  
-                this.innerText = '已关注';  
-                this.style.backgroundColor = 'rgba(172,172,172,0.8)'; 
-            } else if (btn_text == '已关注') {  
-                this.innerText = '关注';  
-                this.style.backgroundColor = 'rgba(0, 173, 254, 0.8)'; 
-            }  
-        });  
-    });  
+            if (btn_text == '关注') {
+                this.innerText = '已关注';
+                this.style.backgroundColor = 'rgba(172,172,172,0.8)';
+            } else if (btn_text == '已关注') {
+                this.innerText = '关注';
+                this.style.backgroundColor = 'rgba(0, 173, 254, 0.8)';
+            }
+        });
+    });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    var following_btn=document.querySelectorAll('.artwork_following');
-    following_btn.forEach(function(btn){
-        btn.addEventListener('click',function(){
-            var btn_text=this.innerText;
-            if(btn_text=='关注'){
-                this.innerText='已关注';
-                this.style.backgroundColor='rgba(172,172,172,0.8)';
+document.addEventListener("DOMContentLoaded", function () {
+    var following_btn = document.querySelectorAll('.artwork_following');
+    following_btn.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var btn_text = this.innerText;
+            if (btn_text == '关注') {
+                this.innerText = '已关注';
+                this.style.backgroundColor = 'rgba(172,172,172,0.8)';
             }
-            else if(btn_text=='已关注'){
-                this.innerText='关注';
-                this.style.backgroundColor='rgba(0, 173, 254, 0.8)';
+            else if (btn_text == '已关注') {
+                this.innerText = '关注';
+                this.style.backgroundColor = 'rgba(0, 173, 254, 0.8)';
             }
         });
     });
@@ -246,35 +245,35 @@ document.addEventListener("DOMContentLoaded", function() {
 );
 
 //互动按钮的状态切换
-document.addEventListener("DOMContentLoaded", function() {
-   var like_btn=document.querySelectorAll('.user_art_work_interaction_like');
-   like_btn.forEach(function(btn){
-      btn.addEventListener('click',function(){
-        var like_img_divs = this.querySelectorAll('.user_art_work_interaction_like_img');
-        var like_text_div = this.querySelector('.user_art_work_interaction_like_text');
-        // 切换图片的显示状态
-        like_img_divs.forEach(function(img_div) {
-            if (img_div.style.display === 'block') {
-                img_div.style.display = 'none';
+document.addEventListener("DOMContentLoaded", function () {
+    var like_btn = document.querySelectorAll('.user_art_work_interaction_like');
+    like_btn.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var like_img_divs = this.querySelectorAll('.user_art_work_interaction_like_img');
+            var like_text_div = this.querySelector('.user_art_work_interaction_like_text');
+            // 切换图片的显示状态
+            like_img_divs.forEach(function (img_div) {
+                if (img_div.style.display === 'block') {
+                    img_div.style.display = 'none';
+                } else {
+                    img_div.style.display = 'block';
+                }
+            });
+            // 根据第一张图片是否显示来决定是否要设置文字样式
+            if (like_img_divs[0].style.display === 'block') {
+                like_text_div.style = '';
             } else {
-                img_div.style.display = 'block';
+                like_text_div.style.color = 'rgba(12, 138, 241, 1)';
             }
         });
-        // 根据第一张图片是否显示来决定是否要设置文字样式
-        if (like_img_divs[0].style.display === 'block') {
-            like_text_div.style = '';
-        } else {
-            like_text_div.style.color = 'rgba(12, 138, 241, 1)';
-        }
-      });
-   });
+    });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     var collection_btns = document.querySelectorAll('.user_art_work_interaction_collection');
-    
-    collection_btns.forEach(function(btn) {
-        btn.addEventListener('click', function() {
+
+    collection_btns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
             var second_img_div = this.querySelector('.user_art_work_interaction_collection_img:nth-child(2)');
 
             // 切换第二张图片的显示状态
@@ -287,35 +286,35 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 // 复制链接按钮点击事件
-document.addEventListener("DOMContentLoaded", function() {  
-    var copylink_btn = document.querySelector('.user_art_work_interaction_collection_img_copylink');  
-    copylink_btn.addEventListener('click', function() {  
-        var page_link = window.location.href;  
-          
+document.addEventListener("DOMContentLoaded", function () {
+    var copylink_btn = document.querySelector('.user_art_work_interaction_collection_img_copylink');
+    copylink_btn.addEventListener('click', function () {
+        var page_link = window.location.href;
+
         // 使用 Clipboard API 复制文本到剪贴板  
-        navigator.clipboard.writeText(page_link)  
-            .then(function() {  
-                alert('链接已复制'); 
-            })  
-            .catch(function(error) {  
-                console.error('复制链接时出错:', error);  
-                alert('复制链接失败，请手动复制。'); 
-            });  
-    });  
+        navigator.clipboard.writeText(page_link)
+            .then(function () {
+                alert('链接已复制');
+            })
+            .catch(function (error) {
+                console.error('复制链接时出错:', error);
+                alert('复制链接失败，请手动复制。');
+            });
+    });
 });
 
 //分享按钮下拉列表
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     var share_btn = document.querySelector('.user_art_work_interaction_share_img');
     var share_dropdown = document.querySelector('.user_art_work_interaction_collection_img_dropdown');
 
-    share_btn.addEventListener('click', function(event) {
-        event.stopPropagation(); 
+    share_btn.addEventListener('click', function (event) {
+        event.stopPropagation();
         toggleDropdown();
     });
 
     // 点击其他位置时隐藏下拉列表
-    document.addEventListener('click', function(event) {
+    document.addEventListener('click', function (event) {
         var target = event.target;
         if (!target.closest('.user_art_work_interaction_share')) {
             share_dropdown.style.display = 'none';
@@ -330,34 +329,34 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
-document.addEventListener("DOMContentLoaded", function() {  
-    var copylink_btn = document.getElementById('user_art_work_interaction_collection_img_copylink');  
-    copylink_btn.addEventListener('click', function() {  
-        var page_link = window.location.href;  
-          
+document.addEventListener("DOMContentLoaded", function () {
+    var copylink_btn = document.getElementById('user_art_work_interaction_collection_img_copylink');
+    copylink_btn.addEventListener('click', function () {
+        var page_link = window.location.href;
+
         // 使用 Clipboard API 复制文本到剪贴板  
-        navigator.clipboard.writeText(page_link)  
-            .then(function() {  
-                alert('链接已复制'); 
-            })  
-            .catch(function(error) {  
-                console.error('复制链接时出错:', error);  
-                alert('复制链接失败，请手动复制。'); 
-            });  
-    });  
+        navigator.clipboard.writeText(page_link)
+            .then(function () {
+                alert('链接已复制');
+            })
+            .catch(function (error) {
+                console.error('复制链接时出错:', error);
+                alert('复制链接失败，请手动复制。');
+            });
+    });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     var share_btn = document.getElementById('user_art_work_interaction_share_img');
     var share_dropdown = document.getElementById('user_art_work_interaction_collection_img_dropdown');
 
-    share_btn.addEventListener('click', function(event) {
-        event.stopPropagation(); 
+    share_btn.addEventListener('click', function (event) {
+        event.stopPropagation();
         toggleDropdown();
     });
 
     // 点击其他位置时隐藏下拉列表
-    document.addEventListener('click', function(event) {
+    document.addEventListener('click', function (event) {
         var target = event.target;
         if (!target.closest('.user_art_work_interaction_share')) {
             share_dropdown.style.display = 'none';
@@ -376,7 +375,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 //查看更多按钮的显示切换以及功能实现
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     var hiddenElement = document.querySelector('.user_art_work_hidden');
     var moreButton = document.querySelector('.artwork_look_more');
 
@@ -398,20 +397,20 @@ document.addEventListener("DOMContentLoaded", function() {
     observer.observe(hiddenElement, { childList: true });
 
 });
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     var showMoreTexts = document.querySelectorAll('.artwork_look_more');
     var hiddenElements = document.querySelectorAll('.user_art_work_hidden');
     var interactive_btn1 = document.querySelector('.user_art_work_interaction');
     var interactive_btn2 = document.getElementById('user_art_work_interaction');
     // 点击show_more_artwork_text元素时隐藏artwork_look_more元素
-    showMoreTexts.forEach(function(showMoreText) {
-        showMoreText.addEventListener('click', function() {
+    showMoreTexts.forEach(function (showMoreText) {
+        showMoreText.addEventListener('click', function () {
             var artworkLookMore = document.querySelector('.artwork_look_more');
             if (artworkLookMore) {
                 artworkLookMore.style.display = 'none';
             }
             // 清除所有user_art_work_hidden元素的display属性
-            hiddenElements.forEach(function(hiddenElement) {
+            hiddenElements.forEach(function (hiddenElement) {
                 hiddenElement.removeAttribute('style');
             });
             // 隐藏第一个交互按钮，显示第二个交互按钮
@@ -424,54 +423,54 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function () {
     var dropdown_btn = document.querySelector('.float_interactive_share');
     var dropdown_content = document.querySelector('.float_interactive_share_box');
-    dropdown_btn.addEventListener('click', function(event){
+    dropdown_btn.addEventListener('click', function (event) {
         event.stopPropagation(); // 阻止事件冒泡，避免下拉内容被隐藏
-        if(dropdown_content.style.display == 'none') {
+        if (dropdown_content.style.display == 'none') {
             dropdown_content.style.display = 'block';
         } else {
             dropdown_content.style.display = 'none';
         }
     });
     // 点击页面其他地方时隐藏下拉内容
-    document.addEventListener('click', function(event) {
+    document.addEventListener('click', function (event) {
         var target = event.target;
         if (target !== dropdown_btn && target !== dropdown_content) {
             dropdown_content.style.display = 'none';
         }
     });
     // 点击下拉内容区域内的子元素时阻止事件冒泡
-    dropdown_content.addEventListener('click', function(event) {
+    dropdown_content.addEventListener('click', function (event) {
         event.stopPropagation();
     });
 });
 
-document.addEventListener("DOMContentLoaded", function() {  
-    var copylink_btn = document.querySelector('.float_interactive_share_box_copylink');  
-    copylink_btn.addEventListener('click', function() {  
-        var page_link = window.location.href;  
-          
+document.addEventListener("DOMContentLoaded", function () {
+    var copylink_btn = document.querySelector('.float_interactive_share_box_copylink');
+    copylink_btn.addEventListener('click', function () {
+        var page_link = window.location.href;
+
         // 使用 Clipboard API 复制文本到剪贴板  
-        navigator.clipboard.writeText(page_link)  
-            .then(function() {  
-                alert('链接已复制'); 
-            })  
-            .catch(function(error) {  
-                console.error('复制链接时出错:', error);  
-                alert('复制链接失败，请手动复制。'); 
-            });  
-    });  
+        navigator.clipboard.writeText(page_link)
+            .then(function () {
+                alert('链接已复制');
+            })
+            .catch(function (error) {
+                console.error('复制链接时出错:', error);
+                alert('复制链接失败，请手动复制。');
+            });
+    });
 });
 //滚动显示操作
- // 检查条件并执行特定操作
- document.addEventListener("DOMContentLoaded", function(){
+// 检查条件并执行特定操作
+document.addEventListener("DOMContentLoaded", function () {
     var userArtWorkHidden = document.querySelector('.user_art_work_hidden');
     // 创建 MutationObserver 实例
-    var observer = new MutationObserver(function(mutationsList, observer) {
+    var observer = new MutationObserver(function (mutationsList, observer) {
         // 检查每个变化
-        for(var mutation of mutationsList) {
+        for (var mutation of mutationsList) {
             if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
                 // 获取元素样式
                 var computedStyle = window.getComputedStyle(userArtWorkHidden);
@@ -507,28 +506,27 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 //浮动栏的显示切换
-document.addEventListener("DOMContentLoaded",function(){
-    var float_tab=document.querySelector('.float_interactive_like');
-    float_tab.addEventListener('click',function(){
-        var svg1=document.querySelector('.float_interactive_like_svg_1');
-        var svg2=document.querySelector('.float_interactive_like_svg_2');
-        var float_interactive_like_text=document.querySelector('.float_interactive_like_text');
-       if(svg1.style.display=='none')
-       {
-           svg1.style.display='block';
-           svg2.style.display='none';
-           float_interactive_like_text.style.color= '';
-        } 
-        else{
-            svg1.style.display='none';
-            svg2.style.display='block';
-            float_interactive_like_text.style.color= 'rgba(12, 138, 241,1)';
+document.addEventListener("DOMContentLoaded", function () {
+    var float_tab = document.querySelector('.float_interactive_like');
+    float_tab.addEventListener('click', function () {
+        var svg1 = document.querySelector('.float_interactive_like_svg_1');
+        var svg2 = document.querySelector('.float_interactive_like_svg_2');
+        var float_interactive_like_text = document.querySelector('.float_interactive_like_text');
+        if (svg1.style.display == 'none') {
+            svg1.style.display = 'block';
+            svg2.style.display = 'none';
+            float_interactive_like_text.style.color = '';
+        }
+        else {
+            svg1.style.display = 'none';
+            svg2.style.display = 'block';
+            float_interactive_like_text.style.color = 'rgba(12, 138, 241,1)';
         }
     });
 });
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function () {
     var float_tab = document.querySelector('.float_interactive_collection');
-    float_tab.addEventListener('click', function(){
+    float_tab.addEventListener('click', function () {
         var svg1 = document.querySelector('.float_interactive_collection_svg_1');
         var svg2 = document.querySelector('.float_interactive_collection_svg_2');
 
@@ -544,23 +542,23 @@ document.addEventListener("DOMContentLoaded", function(){
 
 //消息的发送逻辑
 
-function getdate(){
-    var datetime = new Date();  
-var year = datetime.getFullYear(); // 获取年份  
-var month = datetime.getMonth() + 1; // 获取月份（注意，月份是从0开始的，所以需要+1）  
-var day = datetime.getDate(); // 获取日  
-var hours = datetime.getHours(); // 获取小时  
-var minutes = datetime.getMinutes(); // 获取分钟  
-var seconds = datetime.getSeconds(); // 获取秒  
-// 为了保证格式统一，当值小于10时在前面补0  
-month = month < 10 ? '0' + month : month;  
-day = day < 10 ? '0' + day : day;  
-hours = hours < 10 ? '0' + hours : hours;  
-minutes = minutes < 10 ? '0' + minutes : minutes;  
-seconds = seconds < 10 ? '0' + seconds : seconds;  
-// 拼接字符串得到最终的日期时间格式  
-var formattedDateTime = year + '年' + month + '月' + day + '日' + hours + ':' + minutes + ':' + seconds; 
-return formattedDateTime;
+function getdate() {
+    var datetime = new Date();
+    var year = datetime.getFullYear(); // 获取年份  
+    var month = datetime.getMonth() + 1; // 获取月份（注意，月份是从0开始的，所以需要+1）  
+    var day = datetime.getDate(); // 获取日  
+    var hours = datetime.getHours(); // 获取小时  
+    var minutes = datetime.getMinutes(); // 获取分钟  
+    var seconds = datetime.getSeconds(); // 获取秒  
+    // 为了保证格式统一，当值小于10时在前面补0  
+    month = month < 10 ? '0' + month : month;
+    day = day < 10 ? '0' + day : day;
+    hours = hours < 10 ? '0' + hours : hours;
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+    // 拼接字符串得到最终的日期时间格式  
+    var formattedDateTime = year + '年' + month + '月' + day + '日' + hours + ':' + minutes + ':' + seconds;
+    return formattedDateTime;
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -607,7 +605,108 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+//回复框的展开和收起
+
+//多重循环的视线击事件监听
+/*document.addEventListener("DOMContentLoaded", function() {
+    var main_pages = document.querySelectorAll('.comment_section');
+    main_pages.forEach(function(main_page) {
+        var subpages = main_page.querySelectorAll('.comment_section_details');
+        var reply_box = main_page.querySelectorAll('.comment_section_details_details_time'); // 次级发送框
+        subpages.forEach(function(subpage) {
+            var sub_subpages = subpage.querySelectorAll('.comment_section_details_user');
+            sub_subpages.forEach(function(sub_subpage) {
+                var reply_message_boxes = sub_subpage.querySelectorAll('.reply_message_box');
+                var reply_message_btns = sub_subpage.querySelectorAll('.comment_section_details_details_reply');
+                reply_message_btns.forEach(function(reply_btn, index) {
+                    reply_btn.addEventListener('click', function() {
+                        console.log(reply_btn);
+                        var sub_reply_sendbox = reply_message_boxes[index];
+                        if (sub_reply_sendbox.style.display === 'none' || sub_reply_sendbox.style.display === '') {
+                            sub_reply_sendbox.style.display = 'block';
+                            reply_btn.innerHTML = '收起';
+                        } else {
+                            sub_reply_sendbox.style.display = 'none';
+                            reply_btn.innerHTML = '回复';
+                        }
+                    });
+                });
+            });
+        });
+    });
+});*/
+//已经弃用
+document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener('click', function (event) {
+        var target = event.target;
+        if (target.classList.contains('comment_section_details_details_reply')) {
+            var reply_message_box = target.closest('.comment_section_details_user').querySelector('.reply_message_box');
+            if (reply_message_box) {
+                toggleReplyBox(reply_message_box, target);
+            }
+        }
+    });
+    function toggleReplyBox(reply_box, reply_btn) {
+        var computedStyle = window.getComputedStyle(reply_box);
+        if (computedStyle.display === 'none') {
+            reply_box.style.display = 'block';
+            reply_btn.innerHTML = '收起';
+        } else {
+            reply_box.style.display = 'none';
+            reply_btn.innerHTML = '回复';
+        }
+    }
+});
+
 //次级回复功能的元素增加功能
+document.addEventListener("DOMContentLoaded", function () {
+    var main_page = document.querySelectorAll('.comment_section');
+
+    main_page.forEach(function (main_pages) {
+        var subpage = main_pages.querySelectorAll('.comment_section_details');
+
+        subpage.forEach(function (subpages) {
+            var sub_subpage = subpages.querySelectorAll('.comment_section_details_user');
+
+            sub_subpage.forEach(function (sub_subpage) {
+                var reply_message_box = sub_subpage.querySelector('.reply_message_box');
+                var send_btn = reply_message_box.querySelector('.comment_section_input_sendbtn');
+                var reply_message_textarea = reply_message_box.querySelector('.comment_section_input_box textarea');
+
+                send_btn.addEventListener('click', function () {
+                    var date = getdate();
+                    var reply_message_text = reply_message_textarea.value.trim();
+
+                    if (reply_message_text) {
+                        var modle = `<div class="subreply_box">
+                            <div class="reply_user_avatar"><img src="image/101779890_p0.jpg"></div>
+                            <div class="reply_user_username">
+                                <div class="reply_user_username_details">username</div>
+                                <div class="reply_message_details">${reply_message_text}</div>
+                                <div class="reply_message_details_time">${date}
+                                    <div class="reply_message_reply">&nbsp;回复</div>
+                                </div>
+                            </div>
+                        </div>`;
+                        var reply_message = sub_subpage.querySelector('.reply_message');
+                        var first_subreply_box = reply_message.querySelector('.subreply_box:first-child');
+                        if (first_subreply_box) {
+                            first_subreply_box.insertAdjacentHTML('beforebegin', modle);
+                        } else {
+                            reply_message.innerHTML = modle + reply_message.innerHTML;
+                        }
+                        // 清空文本框
+                        reply_message_textarea.value = '';
+                    }
+                });
+            });
+        });
+    });
+});
+
+
+
 
 
 
