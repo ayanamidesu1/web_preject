@@ -1,43 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Textarea自动拓宽</title>
-<style>
-.textarea {
-    width: 300px;
-    min-height: 40px; /* 设置最小高度 */
-    resize: none; /* 禁止手动调整大小 */
-    overflow: hidden; /* 禁止出现滚动条 */
-    outline: none; /* 移除默认外边框 */
-    font-size: 16px;
-    padding: 10px;
-    line-height: 1.4; /* 调整行高，可以根据需要微调 */
-}
-</style>
-</head>
-<body>
-
-<textarea class="textarea" placeholder="请输入内容"></textarea>
-
-<script>
-// 获取 textarea 元素
-const textarea = document.querySelector('.textarea');
-const lineHeight = parseInt(window.getComputedStyle(textarea).lineHeight); // 获取行高
-const charHeight = 16; // 字符的高度，假设为16px
-const maxHeight = 300; // 设置最大高度
-
-// 添加 input 事件监听器，当输入框内容发生变化时，自动调整高度以适应内容
-textarea.addEventListener('input', function() {
-    // 重置 textarea 的高度，以便它能够根据内容自动调整
-    textarea.style.height = 'auto';
-    
-    // 将 textarea 的高度设置为内容的滚动高度减去一个字符的高度，但不超过最大高度
-    const scrollHeight = textarea.scrollHeight;
-    textarea.style.height = Math.min(scrollHeight - charHeight, maxHeight) + 'px'; // 设置最大高度为 300px
-});
-</script>
-
-</body>
+<html>
+    <body>
+        <div class="test1">
+            111
+        </div>
+        <script>
+            var test1=document.querySelector('.test1');
+            test1.addEventListener('click',function()
+            {
+                var newdiv=document.createElement('div');
+                newdiv.className='test2';
+                newdiv.textContent='222';
+                newdiv.addEventListener('click',function(){
+                    alert('test');
+                });
+               test1.appendChild(newdiv);
+            });
+        </script>
+    </body>
 </html>

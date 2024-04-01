@@ -608,8 +608,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //回复框的展开和收起
 
+//重新为回复添加监听
+function relistening(){
+    var main=document.querySelectorAll('.comment_section');
+    main.forEach(function(main,mian_index){
+        var main_subpage=main.querySelectorAll();
+    });
+}
+
 //多重循环的视线击事件监听
-/*document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() {
     var main_pages = document.querySelectorAll('.comment_section');
     main_pages.forEach(function(main_page) {
         var subpages = main_page.querySelectorAll('.comment_section_details');
@@ -635,8 +643,9 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     });
-});*/
+});
 //已经弃用
+/*
 document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener('click', function (event) {
         var target = event.target;
@@ -657,7 +666,7 @@ document.addEventListener("DOMContentLoaded", function () {
             reply_btn.innerHTML = '回复';
         }
     }
-});
+});*/
 
 //次级回复功能的元素增加功能
 document.addEventListener("DOMContentLoaded", function () {
