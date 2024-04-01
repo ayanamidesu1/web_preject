@@ -68,6 +68,8 @@ function bindReplyButtonEvents(reply_button) {
 }
 
 // 定义观察器的回调函数
+
+//重新监听的实现
 var observerCallback = function (mutationsList, observer) {
     mutationsList.forEach(function (mutation) {
         if (mutation.type === 'childList') {
@@ -669,52 +671,69 @@ document.addEventListener("DOMContentLoaded", function () {
 });*/
 
 //次级回复功能的元素增加功能
-document.addEventListener("DOMContentLoaded", function () {
-    var main_page = document.querySelectorAll('.comment_section');
-
-    main_page.forEach(function (main_pages) {
-        var subpage = main_pages.querySelectorAll('.comment_section_details');
-
-        subpage.forEach(function (subpages) {
-            var sub_subpage = subpages.querySelectorAll('.comment_section_details_user');
-
-            sub_subpage.forEach(function (sub_subpage) {
-                var reply_message_box = sub_subpage.querySelector('.reply_message_box');
-                var send_btn = reply_message_box.querySelector('.comment_section_input_sendbtn');
-                var reply_message_textarea = reply_message_box.querySelector('.comment_section_input_box textarea');
-
-                send_btn.addEventListener('click', function () {
-                    var date = getdate();
-                    var reply_message_text = reply_message_textarea.value.trim();
-
-                    if (reply_message_text) {
-                        var modle = `<div class="subreply_box">
-                            <div class="reply_user_avatar"><img src="image/101779890_p0.jpg"></div>
-                            <div class="reply_user_username">
-                                <div class="reply_user_username_details">username</div>
-                                <div class="reply_message_details">${reply_message_text}</div>
-                                <div class="reply_message_details_time">${date}
-                                    <div class="reply_message_reply">&nbsp;回复</div>
+function subpage_reply() {
+    var main_pages = document.querySelectorAll('.comment_section');
+    main_pages.forEach(function (main_page) {
+        var subpages = main_page.querySelectorAll('.comment_section_details');
+        subpages.forEach(function (subpage) {
+            var sub_subpages = subpage.querySelectorAll('.comment_section_details_user');
+            sub_subpages.forEach(function (sub_subpage) {
+                var reply_message_boxes = sub_subpage.querySelectorAll('.reply_message_box');
+                reply_message_boxes.forEach(function (reply_message_box) {
+                    var send_btn = reply_message_box.querySelector('.comment_section_input_sendbtn');
+                    var reply_message_textarea = reply_message_box.querySelector('.comment_section_input_box textarea');
+                    send_btn.addEventListener('click', function () {
+                        var date = getdate();
+                        var reply_message_text = reply_message_textarea.value.trim();
+                        if (reply_message_text) {
+                            var modle = `<div class="subreply_box">
+                                <div class="reply_user_avatar"><img src="image/101779890_p0.jpg"></div>
+                                <div class="reply_user_username">
+                                    <div class="reply_user_username_details">username</div>
+                                    <div class="reply_message_details">${reply_message_text}</div>
+                                    <div class="reply_message_details_time">${date}
+                                        <div class="reply_message_reply">&nbsp;回复</div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>`;
-                        var reply_message = sub_subpage.querySelector('.reply_message');
-                        var first_subreply_box = reply_message.querySelector('.subreply_box:first-child');
-                        if (first_subreply_box) {
-                            first_subreply_box.insertAdjacentHTML('beforebegin', modle);
-                        } else {
-                            reply_message.innerHTML = modle + reply_message.innerHTML;
+                            </div>`;
+                            var reply_message = sub_subpage.querySelector('.reply_message_box');
+                            var first_subreply_box = reply_message.querySelector('.subreply_box:first-child');
+                            if (first_subreply_box) {
+                                first_subreply_box.insertAdjacentHTML('beforebegin', modle);
+                            } else {
+                                reply_message.innerHTML = modle + reply_message.innerHTML;
+                            }
+                            // 清空文本框
+                            reply_message_textarea.value = '';
                         }
-                        // 清空文本框
-                        reply_message_textarea.value = '';
-                    }
+                    });
                 });
             });
         });
     });
-});
+}
 
+// 监控树的变化，为新增的回复按钮添加功能
+function subpage_reply_observer(mutationsList, observer) {
+    mutationsList.forEach(function (mutation) {
+        if (mutation.type === 'childList') {
+            mutation.addedNodes.forEach(function (node) {
+                if (node.nodeType === Node.ELEMENT_NODE) {
+                    var comment_section_input_sendbtn = node.querySelector('.comment_section_input_sendbtn');
+                    if (comment_section_input_sendbtn) {
+                        comment_section_input_sendbtn.addEventListener('click', subpage_reply);
+                    }
+                }
+            });
+        }
+    });
+}
 
+// 创建一个观察者实例，监控指定节点的子节点变化
+var sub_reply_btn_observer = new MutationObserver(subpage_reply_observer);
+var sub_reply_btn_targetNode = document.querySelector('.comment_section');
+var sub_reply_btn_observerConfig = { childList: true, subtree: true };
+sub_reply_btn_observer.observe(sub_reply_btn_targetNode, sub_reply_btn_observerConfig);
 
 
 
