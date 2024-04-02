@@ -611,26 +611,26 @@ document.addEventListener("DOMContentLoaded", function () {
 //回复框的展开和收起
 
 //重新为回复添加监听
-function relistening(){
-    var main=document.querySelectorAll('.comment_section');
-    main.forEach(function(main,mian_index){
-        var main_subpage=main.querySelectorAll();
+function relistening() {
+    var main = document.querySelectorAll('.comment_section');
+    main.forEach(function (main, mian_index) {
+        var main_subpage = main.querySelectorAll();
     });
 }
 
 //多重循环的视线击事件监听
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     var main_pages = document.querySelectorAll('.comment_section');
-    main_pages.forEach(function(main_page) {
+    main_pages.forEach(function (main_page) {
         var subpages = main_page.querySelectorAll('.comment_section_details');
         var reply_box = main_page.querySelectorAll('.comment_section_details_details_time'); // 次级发送框
-        subpages.forEach(function(subpage) {
+        subpages.forEach(function (subpage) {
             var sub_subpages = subpage.querySelectorAll('.comment_section_details_user');
-            sub_subpages.forEach(function(sub_subpage) {
+            sub_subpages.forEach(function (sub_subpage) {
                 var reply_message_boxes = sub_subpage.querySelectorAll('.reply_message_box');
                 var reply_message_btns = sub_subpage.querySelectorAll('.comment_section_details_details_reply');
-                reply_message_btns.forEach(function(reply_btn, index) {
-                    reply_btn.addEventListener('click', function() {
+                reply_message_btns.forEach(function (reply_btn, index) {
+                    reply_btn.addEventListener('click', function () {
                         console.log(reply_btn);
                         var sub_reply_sendbox = reply_message_boxes[index];
                         if (sub_reply_sendbox.style.display === 'none' || sub_reply_sendbox.style.display === '') {
@@ -728,16 +728,65 @@ function subpage_reply_observer(mutationsList, observer) {
         }
     });
 }
-
 // 创建一个观察者实例，监控指定节点的子节点变化
 var sub_reply_btn_observer = new MutationObserver(subpage_reply_observer);
 var sub_reply_btn_targetNode = document.querySelector('.comment_section');
 var sub_reply_btn_observerConfig = { childList: true, subtree: true };
 sub_reply_btn_observer.observe(sub_reply_btn_targetNode, sub_reply_btn_observerConfig);
 
+function sub_of_sub_replymsg_sendbtn() {
+    var model = `<div class="temp_reply_message">  
+        <div class="temp_reply_message_avatar"><img src="image/101092272_p0.jpg"></div>  
+        <div class="temp_reply_message_inputbox"><textarea placeholder="输入评论"></textarea></div>  
+        <div class="temp_reply_message_sendbtn">发送</div>  
+        </div>`;
 
+    document.addEventListener('DOMContentLoaded', function () {
+        var main = document.querySelectorAll('.comment_section');
+        main.forEach(function (mainElem) {
+            var sub_main = mainElem.querySelectorAll('.comment_section_details');
+            sub_main.forEach(function (sub_mainElem) {
+                var sub_page = sub_mainElem.querySelectorAll('.comment_section_details_user');
+                sub_page.forEach(function (sub_pageElem) {
+                    var sub_subpage = sub_pageElem.querySelectorAll('.comment_section_details_user_name');
+                    sub_subpage.forEach(function (sub_subpageElem) {
+                        var reply_message = sub_subpageElem.querySelectorAll('.reply_message');
+                        reply_message.forEach(function (reply_messageElem) {
+                            var subreply_box = reply_messageElem.querySelectorAll('.subreply_box');
+                            subreply_box.forEach(function (subreply_boxElem) {
+                                var reply_user_username = subreply_boxElem.querySelectorAll('.reply_user_username');
+                                // 为每个.reply_user_username后面的回复按钮添加事件监听器  
+                                reply_user_username.forEach(function (reply_user_usernameElem, index) {
+                                    var reply_message_send_btn = subreply_boxElem.querySelector('.reply_message_reply');
+                                    reply_message_send_btn.addEventListener('click', function () {
+                                        var buttonText = reply_message_send_btn.textContent.trim();
+                                        if (buttonText === '回复') {
+                                            // 如果按钮文字为回复，则添加模板
+                                            var tempdiv = document.createElement('div');
+                                            tempdiv.innerHTML = model;
+                                            var newReplyBox = tempdiv.firstElementChild;
+                                            subreply_boxElem.insertBefore(newReplyBox, reply_user_usernameElem.nextElementSibling);
+                                            reply_message_send_btn.textContent = '收起';
+                                        } else if (buttonText === '收起') {
+                                            // 如果按钮文字为收起，则删除已添加的所有模板
+                                            var tempReplyMessages = subreply_boxElem.querySelectorAll('.temp_reply_message');
+                                            tempReplyMessages.forEach(function (tempReplyMessage) {
+                                                tempReplyMessage.remove();
+                                            });
+                                            reply_message_send_btn.textContent = '回复';
+                                        }
+                                    });
+                                });
+                            });
+                        });
+                    });
+                });
+            });
+        });
+    });
+}
 
-
+sub_of_sub_replymsg_sendbtn();
 
 
 
