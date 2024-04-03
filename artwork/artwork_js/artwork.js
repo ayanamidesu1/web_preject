@@ -47,9 +47,14 @@ commentSectionTextareas.forEach(function (textarea) {
     textarea.addEventListener('input', function () {
         textarea.style.height = 'auto';
         var scrollHeight = textarea.scrollHeight;
-        textarea.style.height = Math.min(scrollHeight - charHeight, maxHeight) + 'px';
+        if (textarea.value.trim() === '') {
+            textarea.style.height = '20px'; // 如果内容为空，将高度设置为 18px
+        } else {
+            textarea.style.height = Math.min(scrollHeight - charHeight, maxHeight) + 'px';
+        }
     });
 });
+
 
 // 定义回复按钮点击事件绑定函数
 function bindReplyButtonEvents(reply_button) {
@@ -733,7 +738,8 @@ var sub_reply_btn_observer = new MutationObserver(subpage_reply_observer);
 var sub_reply_btn_targetNode = document.querySelector('.comment_section');
 var sub_reply_btn_observerConfig = { childList: true, subtree: true };
 sub_reply_btn_observer.observe(sub_reply_btn_targetNode, sub_reply_btn_observerConfig);
-
+//已经弃用
+/*
 function sub_of_sub_replymsg_sendbtn() {
     var model = `<div class="temp_reply_message">  
         <div class="temp_reply_message_avatar"><img src="image/101092272_p0.jpg"></div>  
@@ -760,6 +766,7 @@ function sub_of_sub_replymsg_sendbtn() {
                                     var reply_message_send_btn = subreply_boxElem.querySelector('.reply_message_reply');
                                     reply_message_send_btn.addEventListener('click', function () {
                                         var buttonText = reply_message_send_btn.textContent.trim();
+                                        console.log('test');
                                         if (buttonText === '回复') {
                                             // 如果按钮文字为回复，则添加模板
                                             var tempdiv = document.createElement('div');
@@ -785,8 +792,69 @@ function sub_of_sub_replymsg_sendbtn() {
         });
     });
 }
+sub_of_sub_replymsg_sendbtn();*/
 
-sub_of_sub_replymsg_sendbtn();
+document.addEventListener("DOMContentLoaded", function(){
+    var listenpage = document.querySelector('.comment_section');
+    var model = `<div class="temp_reply_message">  
+        <div class="temp_reply_message_avatar"><img src="image/101092272_p0.jpg"></div>  
+        <div class="temp_reply_message_inputbox"><textarea placeholder="输入评论"></textarea></div>  
+        <div class="temp_reply_message_sendbtn">发送</div>  
+    </div>`;
+
+    listenpage.addEventListener('click', function(event){
+        var target = event.target;
+        if(target.classList.contains('reply_message_reply')) {
+            var parentUser = target.closest('.reply_user_username');
+            if(parentUser) {
+                var replyBox = parentUser.nextElementSibling;
+                if(replyBox && replyBox.classList.contains('temp_reply_message')) {
+                    replyBox.remove();
+                    target.textContent = '回复';
+                } else {
+                    var subReplyBox = document.createElement('div');
+                    subReplyBox.classList.add('temp_reply_message');
+                    subReplyBox.innerHTML = model;
+                    parentUser.insertAdjacentElement('afterend', subReplyBox);
+                    target.textContent = '收起';
+                }
+            }
+        }
+    });
+    
+    // 创建 MutationObserver 实例
+    var observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            // 检查是否有子节点添加
+            if (mutation.addedNodes.length > 0) {
+                // 在添加的节点中找到 textarea
+                mutation.addedNodes.forEach(function(node) {
+                    var textarea = node.querySelector('textarea');
+                    if (textarea) {
+                        // 绑定 input 事件
+                        textarea.addEventListener('input', function () {
+                            textarea.style.height = 'auto';
+                            var scrollHeight = textarea.scrollHeight;
+                            if (textarea.value.trim() === '') {
+                                textarea.style.height = '22px'; // 如果内容为空，将高度设置为 22px
+                            } else {
+                                textarea.style.height = Math.min(scrollHeight - charHeight, maxHeight) + 'px';
+                            }
+                        });
+                    }
+                });
+            }
+        });
+    });
+
+    // 监听 .comment_section 的子节点变化
+    observer.observe(listenpage, { childList: true, subtree: true });
+
+});
+
+
+
+
 
 
 

@@ -186,7 +186,6 @@
     justify-content: center;
     align-items: center;
     font-size: 18px;
-    border: 1px solid red;
     background-color: rgba(0,0,0,1);
     border-radius: 28px;
     color: rgba(255,255,255,1);
@@ -784,7 +783,6 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
 /*回复框*/
 .reply_message_box{
     align-self: self-start;
-    border:1px solid red;
     width: 100%;
 }
 .comment_section_details_details_reply{
