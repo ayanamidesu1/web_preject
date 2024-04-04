@@ -1,5 +1,6 @@
 import pymysql
 
+
 class connMysql:
     def __init__(self):
         print("数据库连接初始化")
@@ -13,3 +14,6 @@ class connMysql:
             print(e)
             raise
 
+    def close(self, conn):
+        conn.close()
+        print("数据库连接已关闭")

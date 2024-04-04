@@ -32,3 +32,35 @@ body{
     width: 100%;
     object-fit: cover;
 }
+.login input{
+    width: 25vw;
+    height: 4vh;
+    border-radius: 5px;
+    flex-grow: 1;
+}
+#login{
+    width: 25vw;
+    height: 4vh;
+    border-radius: 15px;
+    background-color: rgba(173, 221, 253, 1);
+    margin-top:20px;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-align: center;
+}
+#password{
+    position: relative;
+}
+.reset_password{
+    align-self: flex-start;
+    margin-left: 10%;
+    width:25vw;
+    margin-top:5px;
+    display: flex;
+}
+.reset_password a{
+    text-decoration: none;
+}

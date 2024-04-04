@@ -4,6 +4,8 @@ import tornado.websocket
 import tornado.ioloop
 import tornado.template
 from model.connect_sqlsever import connMysql
+from model.login import do_select_query
+import json
 
 # WebSocket 处理器
 class WSHandler(tornado.websocket.WebSocketHandler):
@@ -11,10 +13,26 @@ class WSHandler(tornado.websocket.WebSocketHandler):
         print("WebSocket 连接已建立")
 
     def check_origin(self, origin):
-        return True
+         return True
+
     def on_message(self, message):
         print("收到消息：", message)
-        self.write_message(f"你发送的消息是：{message}")
+        # 在这里处理用户信息
+        userinfo = json.loads(message)
+        print(userinfo['username'])
+        print(userinfo['password'])
+        conn = do_select_query()
+        conn.conn()
+        # 构造 SQL 查询语句，并执行查询
+        sql_query = f"select username, password from user_table where username='{userinfo['username']}' and password='{userinfo['password']}'"
+        result = conn.select_query(sql_query)
+        print(result)
+        if result:
+            response = {"status": "success", "message": "登录成功"}
+        else:
+            response = {"status": "error", "message": "用户名或密码错误"}
+        # 将查询结果发送回客户端
+        self.write_message(json.dumps(response))
 
     def on_close(self):
         print("WebSocket 连接已关闭")
@@ -42,13 +60,6 @@ def make_app():
 
 if __name__ == "__main__":
     app = make_app()
-    db_ipaddr = '127.0.0.1'
-    db_name = 'web_user'
-    db_username = 'root'
-    db_password = 'root'
-
-    conn = connMysql()
-    conn.connect(db_ipaddr, db_name, db_username, db_password)
     app.listen(8888)
     print("服务器启动成功，请访问 http://localhost:8888")
     tornado.ioloop.IOLoop.current().start()
