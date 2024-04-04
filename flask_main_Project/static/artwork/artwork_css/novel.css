@@ -1,0 +1,204 @@
+@charset "utf-8";
+.recommended_works_by_editors{
+display: flex;  
+  width: 100%;  
+  scroll-snap-type: x mandatory;  
+	scroll-behavior: smooth;
+	position: relative;
+	border-radius: 15px;
+}
+.recommended_works_by_editors button{
+	background-color:transparent;
+	border: none;
+	width:100%;
+	height:100%;
+	justify-content:space-between;
+}
+.recommended_works_by_editors::after{
+	 content: "";
+    position: absolute;
+    top: 0;
+    right: 0px; /* 位于 .follow_user_works 右侧 */
+    width: 45px;
+    height: 100%;
+    background: linear-gradient(to left, rgba(255,255,255,1), rgba(255, 255, 255, 0.0));
+}
+.recommendation_novel{
+	display: flex;
+	border-radius: 25px;
+	margin-right: 15px;
+	flex-direction: column;
+	flex-grow: 1;
+	height: 100%;
+	width:100%;
+	max-height: 100%;
+	max-width: 100%;
+	min-width:40vw;
+	background-color:rgba(204,204,204,0.5);
+}
+.recommendation_novel:last-child{
+	margin-right: 0;
+}
+.re_novel_information{
+	display: flex;
+	flex-grow: 1;
+	max-height: 75%;
+	max-width: 100%;
+	justify-content: space-between;
+}
+.re_img{
+	width:100%;
+	height: 100%;
+	overflow: hidden;
+	flex-grow: 1;
+	max-width: 10vw;
+	max-height: 100%;
+}
+.re_img img{
+	
+	width:100%;
+	height: 100%;
+}
+.re_work{
+	flex-grow:1;
+	width:100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	align-self: center;
+	justify-content: space-between;
+}
+.re_user{
+	display:flex;
+	height: 50px;
+	width:50px;
+}
+.re_username{
+	align-self:center;
+}
+.re_user img{
+	max-width: 100%;
+	height: auto;
+	object-fit: cover;
+	border-radius: 50%;
+}
+.novle_love{
+	width:15px;
+	height: 15px;
+	margin-left:5px;
+}
+.novle_love:last-child{
+	margin-left:0px;
+}
+.novle_love img{
+    widht: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.novel_love{
+	width:25px;
+	height:25px;
+	position: relative;
+	right: 0px;
+	margin-left: 30px;
+}
+.novel_love img{
+	width:100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.re_user_information{
+	display: flex;
+	position:relative;
+}
+.love{
+	widht:50px;
+	height:auto;
+	align-self: center;
+	position:absolute;
+	right:50px;
+}
+.love button:hover{
+	cursor: pointer;
+}
+
+
+.love img{
+	width: 35px;
+	object-fit: cover;
+}
+.edit_message{
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	max-width: 45vw;
+	word-wrap: break-word; 
+    overflow-wrap: break-word;
+	max-height: 100%;
+}
+.edit_message_info{
+	max-height: 100%;
+	flex-grow: 1;
+	word-wrap: break-word; 
+	height: 100%;
+	width:100%;
+	max-width: 45vh;
+	display: flex;
+    overflow-wrap: break-word;
+	overflow: visible;
+}
+.novel_tag{
+	overflow:visible;
+	width:100%;
+	height:atuo;
+}
+#work_status{
+	flex-grow: 1;
+	flex: 1;
+}
+.novel_name{
+	flex-grow: 1;
+	flex:1;
+}
+.follow_btn_left1,  
+.follow_btn_right1 {  
+  position: absolute;  
+  top: 51%; 
+  transform: translateY(-50%);  
+  height: 98%;
+  width: 50px;  
+  display: flex;  
+  justify-content: center;
+  align-items: center; 
+  border-radius: 10px;  
+  background-color: rgba(106, 100, 101, 0.5);  
+  z-index: 10; 
+  opacity: 0; 
+  transition: opacity 0.5s ease;
+	overflow: hidden;
+
+}  
+  
+.follow_btn_left1 {  
+  left: 1px; /* Position the left button */  
+}  
+  
+.follow_btn_right1 {  
+  right: 1px; /* Position the right button */  
+}  
+  
+.follow_btn_left1:hover,  
+.follow_btn_right1:hover {  
+  opacity: 1; /* Change opacity on hover */  
+}
+.re_novel_work{
+		display: flex;
+		overflow-x: hidden;
+		white-space: nowrap;
+		width: 100%;
+		scroll-snap-type: x mandatory;
+		overflow: hidden;
+		scroll-behavior: smooth;
+}

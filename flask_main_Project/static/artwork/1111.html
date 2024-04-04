@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>淘画网</title>
+    <link rel="icon" type="image/png" href="image/87328997_p0.jpg">
+    <script src="artwork_js/jquery-3.7.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="artwork_css/index.css">
+    <link rel="stylesheet" type="text/css" href="artwork_css/cur.css">
+    <link rel="stylesheet" type="text/css" href="artwork_css/artwork.css">
+    <link rel="stylesheet" type="text/css" href="artwork_css/temp_value.css">
+</head>
+
+<body>
+    <div class="top_head_background"></div>
+    <div class="head_mean">
+        <button id="head_mean" style="width:100%;height:100%;background-color:transparent;border:none"><img
+                src="image/更多.png"></button>
+    </div>
+    <div class="mean">
+        <div class="mean_content">
+            <div>首页</div>
+            <br>
+            <div>
+                <button class="btn1" onclick="chose_page(this)" tag-value="插画"><img src="image/图像.png"
+                        class="icon">&nbsp;插画</button>
+            </div>
+            <div>
+                <button class="btn2" onclick="chose_page(this)" tag-value="漫画"><img src="image/视频-开始-播放.png"
+                        class="icon">&nbsp;漫画</button>
+            </div>
+            <div>
+                <button class="btn3" onclick="chose_page(this)" tag-value="小说"><img src="image/读小说.png"
+                        class="icon">&nbsp;小说</button>
+            </div>
+            <br>
+            <div class="follow_user_new_work mt"><img src="image/群.png" class="icon">已关注用户的新作</div>
+            <div class="common_hover mt"><img src="image/compass.png" class="icon">发现</div>
+            <br>
+            <div class="common_hover mt"><img src="image/皇冠.png" class="icon">排行榜</div>
+            <div class="common_hover mt"><img src="image/闪亮.png" class="icon">大家的新作</div>
+            <div class="common_hover mt"><img src="image/勋章.png" class="icon">比赛</div>
+            <div class="common_hover mt"><img src="image/约稿.png" class="icon">约稿</div>
+            <br>
+            <div class="common_hover mt"><img src="image/约稿 (1).png" class="icon">用户企划</div>
+            <div class="common_hover mt"><img src="image/笔.png" class="icon">绘画方法</div>
+            <div class="common_hover mt"><img src="image/金点子.png" class="icon">创作电子</div>
+            <br>
+            <div class="common_hover content_mean mt" id="look_more">
+                <button id="show_more"><img src="image/查看更多.png" class="icon mr"><b>查看更多</b></button>
+                <div class="dropdown_mean" style="display:none;">
+                    <div class="a1 mt">动态</div>
+                    <div class="a1 mt">群组</div>
+                    <div class="a1 mt">活动</div>
+                    <div>
+                        <div class="mt" style="margin-bottom: 5xp;"><button id="hide_title"><img src="image/向上占行.png"
+                                    class="icon mr">隐藏</button></div>
+                    </div>
+                </div>
+            </div>
+            <div>公告 &nbsp;帮助&nbsp;使用条款<br>
+                隐私政策<br>
+                基于特定商业交易法的注释<br>
+                运营公司&nbsp;刊登广告<br>
+                招聘信息<br>
+                © pixiv</div>
+            <div>公告
+                <div>【预告】插画自带樱花飞舞特效！「pixiv樱花祭2024」将自3月21日起期间限定登场</div>
+            </div>
+        </div>
+    </div>
+    <div class="user_artwork_page">
+        <div class="head">
+            <div class="title">
+                <div class="title_img"><img src="image/主页.png"></div>
+            </div>
+            <div class="search">
+                <div class="search_l">
+                    <input placeholder="搜索作品" class="search_input">
+                    <div>
+                        <button><img src="image/搜索.png" class="search_img"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="user_info">
+                <div class="submitted_works mr"> <button id="submission"
+                        style="background-color:transparent;border:none;">投稿作品</button>
+                    <div class="dropdown-toggle"><img src="image/down.png" class="down_img" alt="Toggle Dropdown">
+                    </div>
+                    <div class="dropdown" id="dropdown_1" style="display: none;">
+                        <!-- 注意这里不要添加额外的类名如"drown"，除非你在 CSS 中也使用了它 -->
+                        <a href="#"><img src="image/图像.png" class="icon">插图</a> <a href="#"><img
+                                src="image/视频-开始-播放.png" class="icon">动图</a> <a href="#"><img src="image/读小说.png"
+                                class="icon">小说</a> <a href="#"><img src="image/漫画 (1).png" class="icon">漫画</a>
+                    </div>
+                </div>
+                <div class="message mr"><img src="image/消息通知.png" class="icon"></div>
+                <div class="notice mr"><img src="image/消息中心.png" class="icon"></div>
+                <div class="user_avatar"><button id="user_avatar_1"
+                        style="background-color: transparent;border:none;border-radius: 50%;"><img
+                            src="image/105716156_p0.jpg"></button>
+                    <div class="user_dropdown" style="display: none;">
+                        <div class="user_center">
+                            <div class="user_name" style="border-radius:15px;"><a href="#">user</a></div>
+                            <div class="user_id"><a href="#">1111</a></div>
+                            <div class="follow_and_fans">
+                                <div class="follow"><a href="#">关注</a></div>
+                                <div class="fans"><a href="#">粉丝</a></div>
+                            </div>
+                            <div class="data_analysis"><a href="#">数据分析</a></div>
+                            <div class="my_work"><a href="#">我的作品</a></div>
+                            <div class="collection"><a href="#">收藏</a></div>
+                            <div class="browsing_history"><a href="#">浏览记录</a></div>
+                            <div class="night_model"><a href="#">夜间模式</a></div>
+                            <div class="setting"><a href="#">设置</a></div>
+                            <div class="send_feedback"><a href="#">发送反馈</a></div>
+                            <div class="close_login" style="border-radius:15px;"><a href="#">退出登录</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="user mr"> 用户 </div>
+            </div>
+        </div>
+
+        <div class="artwork_image_main">
+            <div class="user_art_work">
+                <div class="user_art_work_img"><img src="image/105716156_p0.jpg">
+                    <div class="artwork_look_more">
+                        <div class="show_more_artwork">
+                            <div class="show_more_artwork_text">查看更多</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="user_art_work_interaction">
+                    <div class="user_art_work_interaction_like">
+                        <div class="user_art_work_interaction_like_img" style="display: block;"><img src="image/微笑.png">
+                        </div>
+                        <div class="user_art_work_interaction_like_img" style="display: none;"><img src="image/正确.png">
+                        </div>
+                        <div class="user_art_work_interaction_like_text"><b>&nbsp;赞！</b></div>
+                    </div>
+                    <div class="user_art_work_interaction_collection">
+                        <div class="user_art_work_interaction_collection_img"><img src="image/爱心.png">
+                            <div class="user_art_work_interaction_collection_img" style="display: none;"><img
+                                    src="image/爱心1.png"></div>
+                        </div>
+                    </div>
+                    <div class="user_art_work_interaction_share">
+                        <div class="user_art_work_interaction_share_img"><img src="image/分享.png">
+                            <div class="user_art_work_interaction_collection_img_dropdown" style="display: none;">
+                                <div class="user_art_work_interaction_collection_img_title"><b>分享此作品</b></div>
+                                <div class="user_art_work_interaction_collection_img_copylink">复制链接</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="user_art_work_hidden" style="display: none;">
+                    <img src="image/105716156_p0.jpg">
+                    <div class="user_art_work_interaction" id="user_art_work_interaction">
+                        <div class="user_art_work_interaction_like">
+                            <div class="user_art_work_interaction_like_img" style="display: block;"><img
+                                    src="image/微笑.png"></div>
+                            <div class="user_art_work_interaction_like_img" style="display: none;"><img
+                                    src="image/正确.png"></div>
+                            <div class="user_art_work_interaction_like_text" style="color: rgba(12, 138, 241,1);">
+                                <b>&nbsp;赞！</b></div>
+                        </div>
+                        <div class="user_art_work_interaction_collection">
+                            <div class="user_art_work_interaction_collection_img"><img src="image/爱心.png">
+                                <div class="user_art_work_interaction_collection_img" style="display: none;"><img
+                                        src="image/爱心1.png"></div>
+                            </div>
+                        </div>
+                        <div class="user_art_work_interaction_share" id="user_art_work_interaction_share">
+                            <div class="user_art_work_interaction_share_img" id="user_art_work_interaction_share_img">
+                                <img src="image/分享.png">
+                                <div class="user_art_work_interaction_collection_img_dropdown"
+                                    id="user_art_work_interaction_collection_img_dropdown" style="display: none;">
+                                    <div class="user_art_work_interaction_collection_img_title"
+                                        id="user_art_work_interaction_collection_img_title"><b>分享此作品</b></div>
+                                    <div class="user_art_work_interaction_collection_img_copylink"
+                                        id="user_art_work_interaction_collection_img_copylink">复制链接</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="artwork_introduction">
+                    <div class="artwork_introduction_title"><b>爱月让我偷摸正常图</b></div>
+                    <div class="artwork_introduction_conntent">是爱月约的新衣服捏，总之就是想弄一套复活节相关的衣服，
+                        但是对于复活节的元素就知道个五颜六色的蛋，还有兔子？总之就是想不到什么活，加上我本身设计水平低下，
+                        然后搞出来的衣服就不是很好看。但是没关系，因为爱月是变态，说要加一个脱鞋子的差分给大伙看</div>
+                    <div class="artwork_tag">标签</div>
+                    <div class="artwork_data">
+                        <div class="artwork_data_like">
+                            <div class="artwork_data_like_svg">
+                                <svg t="1711721541307" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                    xmlns="http://www.w3.org/2000/svg" p-id="6415" width="200" height="200">
+                                    <path
+                                        d="M943.798 653.746c-8.204-7.333-19.016-11.374-30.437-11.374-14.296 0-27.943 6.08-37.444 16.681-91.716 106.856-224.395 168.194-363.925 168.194-140.53 0-273.215-61.351-364.031-168.317-9.165-10.763-22.292-16.942-36.014-16.942-11.251 0-22.12 4.175-30.606 11.759-10.123 8.6-16.111 20.257-16.981 32.942-0.847 12.384 3.298 24.35 11.671 33.693 110.401 128.613 269.694 202.321 437.12 202.321 168.465 0 327.328-73.28 435.855-201.055 17.151-20.15 14.863-49.969-5.208-67.902zM786.373 395.424c44.518 0 80.734-37.071 80.734-82.637V192.105c0-44.798-36.972-82.646-80.734-82.646-43.766 0-80.734 37.848-80.734 82.646v120.681c0 44.793 36.968 82.638 80.734 82.638zM238.467 395.424c43.771 0 80.746-37.845 80.746-82.637V192.105c0-44.798-36.975-82.646-80.746-82.646-43.761 0-80.731 37.848-80.731 82.646v120.681c-0.001 44.793 36.97 82.638 80.731 82.638z"
+                                        fill="#272536" p-id="6416"></path>
+                                </svg>
+                            </div>
+                            <div class="artwork_data_like_text">点赞数</div>
+                        </div>
+                        <div class="artwork_data_collection">
+                            <div class="artwork_data_collection_svg">
+                                <svg t="1711721801290" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                    xmlns="http://www.w3.org/2000/svg" p-id="7440" width="200" height="200">
+                                    <path
+                                        d="M533.504 268.288q33.792-41.984 71.68-75.776 32.768-27.648 74.24-50.176t86.528-19.456q63.488 5.12 105.984 30.208t67.584 63.488 34.304 87.04 6.144 99.84-17.92 97.792-36.864 87.04-48.64 74.752-53.248 61.952q-40.96 41.984-85.504 78.336t-84.992 62.464-73.728 41.472-51.712 15.36q-20.48 1.024-52.224-14.336t-69.632-41.472-79.872-61.952-82.944-75.776q-26.624-25.6-57.344-59.392t-57.856-74.24-46.592-87.552-21.504-100.352 11.264-99.84 39.936-83.456 65.536-61.952 88.064-35.328q24.576-5.12 49.152-1.536t48.128 12.288 45.056 22.016 40.96 27.648q45.056 33.792 86.016 80.896z"
+                                        p-id="7441"></path>
+                                </svg>
+                            </div>
+                            <div class="artwork_data_collection_text">
+                                收藏数
+                            </div>
+                        </div>
+                        <div class="artwork_data_lookcount">
+                            <div class="artwork_data_lookcount_svg">
+                                <svg t="1711722207663" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                    xmlns="http://www.w3.org/2000/svg" p-id="8661" width="200" height="200">
+                                    <path
+                                        d="M518.144 217.088c-192.512 0-360.448 104.448-450.56 260.096C157.696 632.832 325.632 737.28 518.144 737.28s360.448-104.448 450.56-260.096c-90.112-155.648-258.048-260.096-450.56-260.096z m0 382.976c-67.584 0-122.88-55.296-122.88-122.88s55.296-122.88 122.88-122.88 122.88 55.296 122.88 122.88-55.296 122.88-122.88 122.88z"
+                                        fill="#8a8a8a" p-id="8662"></path>
+                                    <path
+                                        d="M518.144 477.184m-61.44 0a61.44 61.44 0 1 0 122.88 0 61.44 61.44 0 1 0-122.88 0Z"
+                                        fill="#8a8a8a" p-id="8663"></path>
+                                </svg>
+                            </div>
+                            <div class="artwork_data_lookcount_text">
+                                观看数
+                            </div>
+                        </div>
+                    </div>
+                    <div class="artwork_data_createtime">2024年3月27日17:03:03</div>
+                    <div style="margin-top:50px;"></div>
+                    <div class="more_artwork">
+                        <div class="more_artwork_useravatar">
+                            <div class="more_artwork_username">
+                                <div class="artwork_useravatar"><img src="image/104309262_p0.jpg"></div>
+                                <div class="artwork_username">用户名</div>
+                                <div class="artwork_following">关注</div>
+                            </div>
+                            <div style="position: absolute;right: 0px;">作品列表</div>
+                        </div>
+                        <div class="artwork_thumbnail">
+                            <div class="artwork_thumbnail_leftbtn"><img src="image/leftbtn.png"></div>
+                            <div class="artwork_thumbnail_img">
+                                <div class="artwork_thumbnail_img_1"><img src="image/100213135_p0.jpg"></div>
+                                <div class="artwork_thumbnail_img_2"><img src="image/100213135_p1.jpg"></div>
+                                <div class="artwork_thumbnail_img_3"><img src="image/100213135_p0.jpg"></div>
+                                <div class="artwork_thumbnail_img_4"><img src="image/100213135_p1.jpg"></div>
+                                <div class="artwork_thumbnail_img_5"><img src="image/100213135_p0.jpg"></div>
+                                <div class="artwork_thumbnail_img_6"><img src="image/100213135_p1.jpg"></div>
+                                <div class="artwork_thumbnail_img_7"><img src="image/100213135_p0.jpg"></div>
+                                <div class="artwork_thumbnail_img_8"><img src="image/100213135_p1.jpg"></div>
+                                <div class="artwork_thumbnail_img_9"><img src="image/100213135_p0.jpg"></div>
+                                <div class="artwork_thumbnail_img_10"><img src="image/100213135_p1.jpg"></div>
+                            </div>
+                            <div class="artwork_thumbnail_rightbtn"><img src="image/rightbtn.png"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="comment_section">
+                    <div class="comment_section_title">评论</div>
+                    <div class="comment_section_input">
+                        <div class="send_user_avatar"><img src="image/101092272_p0.jpg"></div>
+                        <div class="comment_section_input_box" id="first_input_box"><textarea class="textarea"
+                                placeholder="发表评论"></textarea>
+                        </div>
+                        <div class="comment_section_input_sendbtn" id="first_sendbtn"><b>发送</b></div>
+                    </div>
+                    <div class="comment_section_details">
+                        <div class="comment_section_details_user">
+                            <div class="comment_section_details_user_avatar"><img src="image/101092272_p0.jpg"></div>
+                            <div class="comment_section_details_user_name">
+                                <div style="align-self: self-start;">username</div>
+                                <div class="comment_section_details_details">132456</div>
+                                <div class="comment_section_details_details_time">2024年3月27日22:21:03<div
+                                        class="comment_section_details_details_reply">&nbsp;回复</div>
+                                </div>
+                                
+                                <div class="show_reply">查看回复</div>
+                                <div class="reply_message" style="display: none;">
+                                    <div class="subreply_box">
+                                        <div class="reply_user_avatar"><img src="image/101779890_p0.jpg"></div>
+                                        <div class="reply_user_username">
+                                            <div class="reply_user_username_details">username</div>
+                                            <div class="reply_message_details">13131312</div>
+                                            <div class="reply_message_details_time">2024年3月27日23:13:01
+                                                <div class="reply_message_reply">&nbsp;回复</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="subreply_box">
+                                        <div class="reply_user_avatar"><img src="image/101779890_p0.jpg"></div>
+                                        <div class="reply_user_username">
+                                            <div class="reply_user_username_details">username</div>
+                                            <div class="reply_message_details">13131312</div>
+                                            <div class="reply_message_details_time">2024年3月27日23:13:01
+                                                <div class="reply_message_reply">&nbsp;回复</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="collapse_reply" style="display: none;">收起回复</div>
+                        </div>
+                    </div>
+                    <div class="comment_section_details">
+                        <div class="comment_section_details_user">
+                            <div class="comment_section_details_user_avatar"><img src="image/101092272_p0.jpg"></div>
+                            <div class="comment_section_details_user_name">
+                                <div style="align-self: self-start;">username</div>
+                                <div class="comment_section_details_details">132456</div>
+                                <div class="comment_section_details_details_time">2024年3月27日22:21:03<div
+                                        class="comment_section_details_details_reply">&nbsp;回复</div>
+                                </div>
+                             
+                                <div class="show_reply">查看回复</div>
+                                <div class="reply_message" style="display: none;">
+                                    <div class="reply_user_avatar"><img src="image/101779890_p0.jpg"></div>
+                                    <div class="reply_user_username">
+                                        <div class="reply_user_username_details">username</div>
+                                        <div class="reply_message_details">13131312</div>
+                                        <div class="reply_message_details_time">2024年3月27日23:13:01
+                                            <div class="reply_message_reply">&nbsp;回复</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="collapse_reply" style="display: none;">收起回复</div>
+                        </div>
+                    </div>
+                    <div class="comment_section_showmore"><b>查看更多</b></div>
+                    <div class="comment_section_hideen" style="display: none;">
+                        <div class="comment_section_details">
+                            <div class="comment_section_details_user">
+                                <div class="comment_section_details_user_avatar"><img src="image/101092272_p0.jpg">
+                                </div>
+                                <div class="comment_section_details_user_name">
+                                    <div style="align-self: self-start;">username</div>
+                                    <div class="comment_section_details_details">132456</div>
+                                    <div class="comment_section_details_details_time">2024年3月27日22:21:03<div
+                                            class="comment_section_details_details_reply">&nbsp;回复</div>
+                                    </div>
+                                   
+                                    <div class="show_reply">查看回复</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="float_interactive">
+                    <div class="float_interactive_like">
+                        <div class="float_interactive_like_svg">
+                            <div class="float_interactive_like_svg_1" style="display:block;">
+                                <svg t="1711727406724" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                    xmlns="http://www.w3.org/2000/svg" p-id="9770" width="200" height="200">
+                                    <path
+                                        d="M943.798 653.746c-8.204-7.333-19.016-11.374-30.437-11.374-14.296 0-27.943 6.08-37.444 16.681-91.716 106.856-224.395 168.194-363.925 168.194-140.53 0-273.215-61.351-364.031-168.317-9.165-10.763-22.292-16.942-36.014-16.942-11.251 0-22.12 4.175-30.606 11.759-10.123 8.6-16.111 20.257-16.981 32.942-0.847 12.384 3.298 24.35 11.671 33.693 110.401 128.613 269.694 202.321 437.12 202.321 168.465 0 327.328-73.28 435.855-201.055 17.151-20.15 14.863-49.969-5.208-67.902zM786.373 395.424c44.518 0 80.734-37.071 80.734-82.637V192.105c0-44.798-36.972-82.646-80.734-82.646-43.766 0-80.734 37.848-80.734 82.646v120.681c0 44.793 36.968 82.638 80.734 82.638zM238.467 395.424c43.771 0 80.746-37.845 80.746-82.637V192.105c0-44.798-36.975-82.646-80.746-82.646-43.761 0-80.731 37.848-80.731 82.646v120.681c-0.001 44.793 36.97 82.638 80.731 82.638z"
+                                        fill="#272536" p-id="9771"></path>
+                                </svg>
+                            </div>
+                            <div style="display: none;" class="float_interactive_like_svg_2">
+                                <svg t="1711727515010" class="icon" viewBox="0 0 1025 1024" version="1.1"
+                                    xmlns="http://www.w3.org/2000/svg" p-id="10766" width="200" height="200">
+                                    <path
+                                        d="M483.84768 867.808C466.37568 885.792 441.73568 896 415.87968 896 390.05568 896 365.41568 885.792 347.94368 867.808L27.46368 547.552C-9.17632 508.864-9.17632 450.336 27.46368 411.648 44.26368 394.944 67.30368 385.088 91.68768 384.256 118.72768 383.008 144.93568 393.024 163.46368 411.648L415.87968 664 860.61568 219.552C878.31168 201.952 902.88768 192 928.58368 192 954.24768 192 978.82368 201.952 996.51968 219.552 1033.15968 258.208 1033.15968 316.704 996.51968 355.36L483.84768 867.808Z"
+                                        p-id="10767"></path>
+                                </svg>
+                            </div>
+                            <div class="float_interactive_like_text"><b>&nbsp;赞！</b></div>
+                        </div>
+                    </div>
+                    <div class="float_interactive_collection">
+                        <div class="float_interactive_collection_svg">
+                            <div class="float_interactive_collection_svg_1">
+                                <svg t="1711728244691" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                    xmlns="http://www.w3.org/2000/svg" p-id="11789" width="200" height="200">
+                                    <path
+                                        d="M171.712 571.648l0.352 0.32 287.904 252.8a64 64 0 0 0 82.912 1.344l296.832-244.544a215.584 215.584 0 1 0-301.824-300.576L512 316.672l-25.888-35.616a215.584 215.584 0 1 0-314.4 290.624zM32 407.584a279.584 279.584 0 0 1 480-194.944 279.584 279.584 0 0 1 480 194.944 278.144 278.144 0 0 1-113.024 224.512l-295.36 243.392a128 128 0 0 1-165.888-2.592L129.984 620.16A278.976 278.976 0 0 1 32 407.584z"
+                                        fill="#000000" p-id="11790"></path>
+                                </svg>
+                            </div>
+                            <div class="float_interactive_collection_svg_2" style="display: none;">
+                                <svg t="1711728269950" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                    xmlns="http://www.w3.org/2000/svg" p-id="11951" width="200" height="200">
+                                    <path
+                                        d="M533.504 268.288q33.792-41.984 71.68-75.776 32.768-27.648 74.24-50.176t86.528-19.456q63.488 5.12 105.984 30.208t67.584 63.488 34.304 87.04 6.144 99.84-17.92 97.792-36.864 87.04-48.64 74.752-53.248 61.952q-40.96 41.984-85.504 78.336t-84.992 62.464-73.728 41.472-51.712 15.36q-20.48 1.024-52.224-14.336t-69.632-41.472-79.872-61.952-82.944-75.776q-26.624-25.6-57.344-59.392t-57.856-74.24-46.592-87.552-21.504-100.352 11.264-99.84 39.936-83.456 65.536-61.952 88.064-35.328q24.576-5.12 49.152-1.536t48.128 12.288 45.056 22.016 40.96 27.648q45.056 33.792 86.016 80.896z"
+                                        p-id="11952" fill="#d81e06"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="float_interactive_share">
+                        <div class="float_interactive_share_svg">
+                            <svg t="1711728532431" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                xmlns="http://www.w3.org/2000/svg" p-id="13887" width="200" height="200">
+                                <path
+                                    d="M483.555556 156.444444v480.711112c0 2.844444 0 2.844444 2.844444 2.844444h51.2c2.844444 0 2.844444 0 2.844444-2.844444v-483.555556l167.822223 142.222222c11.377778 5.688889 31.288889 8.533333 45.511111-8.533333 11.377778-14.222222 0-34.133333-11.377778-45.511111l-227.555556-196.266667c-2.844444-2.844444-5.688889-2.844444-5.688888 0l-219.022223 219.022222c-19.911111 19.911111 17.066667 62.577778 48.355556 34.133334l2.844444-2.844445 142.222223-139.377778z"
+                                    fill="#545E68" p-id="13888"></path>
+                                <path
+                                    d="M839.111111 355.555556v56.888888h113.777778v540.444445h-881.777778v-540.444445h113.777778v-56.888888h-113.777778c-36.977778 0-56.888889 31.288889-56.888889 56.888888v540.444445c2.844444 31.288889 14.222222 56.888889 56.888889 56.888889h881.777778c39.822222 0 56.888889-19.911111 56.888889-56.888889v-540.444445c-2.844444-51.2-56.888889-56.888889-56.888889-56.888888h-113.777778z"
+                                    fill="#545E68" p-id="13889"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="float_interactive_share_box" style="display: none;">
+                        <div class="float_interactive_share_box_title"><b>分享此作品</b></div>
+                        <div class="float_interactive_share_box_copylink">复制链接</div>
+                    </div>
+                </div>
+            </div>
+            <div class="art_user">
+                <div class="artwork_user_avater"><img src="image/87328997_p0.jpg">
+                    <div style="align-self: center;">username</div>
+                </div>
+                <div class="following_btn">关注</div>
+                <div class="other_artwork">
+                    <div>其他作品</div>
+                    <div style="align-self: self-end;position: absolute;right: 0px;">作品目录</div>
+                </div>
+                <div style="position: relative;">
+                    <div class="artwork_leftbtn"><img src="image/leftbtn.png"></div>
+                    <div class="other_work_image">
+                        <div class="other_img"><img src="image/86604591_p0.png"></div>
+                        <div class="other_img"><img src="image/86604591_p0.png"></div>
+                        <div class="other_img"><img src="image/86604591_p0.png"></div>
+                        <div class="other_img"><img src="image/86604591_p0.png"></div>
+                    </div>
+                    <div class="artwork_rightbtn"><img src="image/rightbtn.png"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="re_artwork">
+            <div style="margin-bottom: 20px;">相关作品</div>
+            <div class="related_works">
+                <div class="related_artwork mr"><img src="image/100213135_p0.jpg">
+                    <div class="age_segmentation">R-18</div>
+                    <div class="related_artwork_quantity"><img src="image/更多 (1).png">
+                        <div style="font-size: 22px;color:rgba(255,255,255,1);margin-left:-3px;">1</div>
+                    </div>
+                    <div class="related_artwork_collection">
+                        <div class="collection_btn1" style="display: block;"><img src="image/爱心.png"></div>
+                        <div class="collection_btn2" style="display: none; position: absolute; right:0px; bottom:0px;">
+                            <img src="image/爱心1.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="related_artwork mr"><img src="image/100213135_p0.jpg">
+                    <div class="age_segmentation">R-18</div>
+                    <div class="related_artwork_quantity"><img src="image/更多 (1).png">
+                        <div style="font-size: 22px;color:rgba(255,255,255,1);margin-left:-3px;">1</div>
+                    </div>
+                    <div class="related_artwork_collection">
+                        <div class="collection_btn1" style="display: block;"><img src="image/爱心.png"></div>
+                        <div class="collection_btn2" style="display: none; position: absolute; right:0px; bottom:0px;">
+                            <img src="image/爱心1.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="related_artwork mr"><img src="image/100213135_p0.jpg">
+                    <div class="age_segmentation">R-18</div>
+                    <div class="related_artwork_quantity"><img src="image/更多 (1).png">
+                        <div style="font-size: 22px;color:rgba(255,255,255,1);margin-left:-3px;">1</div>
+                    </div>
+                    <div class="related_artwork_collection">
+                        <div class="collection_btn1" style="display: block;"><img src="image/爱心.png"></div>
+                        <div class="collection_btn2" style="display: none; position: absolute; right:0px; bottom:0px;">
+                            <img src="image/爱心1.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="related_artwork mr"><img src="image/100213135_p0.jpg">
+                    <div class="age_segmentation">R-18</div>
+                    <div class="related_artwork_quantity"><img src="image/更多 (1).png">
+                        <div style="font-size: 22px;color:rgba(255,255,255,1);margin-left:-3px;">1</div>
+                    </div>
+                    <div class="related_artwork_collection">
+                        <div class="collection_btn1" style="display: block;"><img src="image/爱心.png"></div>
+                        <div class="collection_btn2" style="display: none; position: absolute; right:0px; bottom:0px;">
+                            <img src="image/爱心1.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="related_artwork mr"><img src="image/100213135_p0.jpg">
+                    <div class="age_segmentation">R-18</div>
+                    <div class="related_artwork_quantity"><img src="image/更多 (1).png">
+                        <div style="font-size: 22px;color:rgba(255,255,255,1);margin-left:-3px;">1</div>
+                    </div>
+                    <div class="related_artwork_collection">
+                        <div class="collection_btn1" style="display: block;"><img src="image/爱心.png"></div>
+                        <div class="collection_btn2" style="display: none; position: absolute; right:0px; bottom:0px;">
+                            <img src="image/爱心1.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="related_works">
+                <div class="related_artwork mr"><img src="image/100213135_p0.jpg">
+                    <div class="age_segmentation">R-18</div>
+                    <div class="related_artwork_quantity"><img src="image/更多 (1).png">
+                        <div style="font-size: 22px;color:rgba(255,255,255,1);margin-left:-3px;">1</div>
+                    </div>
+                    <div class="related_artwork_collection">
+                        <div class="collection_btn1" style="display: block;"><img src="image/爱心.png"></div>
+                        <div class="collection_btn2" style="display: none; position: absolute; right:0px; bottom:0px;">
+                            <img src="image/爱心1.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="related_artwork mr"><img src="image/100213135_p0.jpg">
+                    <div class="age_segmentation">R-18</div>
+                    <div class="related_artwork_quantity"><img src="image/更多 (1).png">
+                        <div style="font-size: 22px;color:rgba(255,255,255,1);margin-left:-3px;">1</div>
+                    </div>
+                    <div class="related_artwork_collection">
+                        <div class="collection_btn1" style="display: block;"><img src="image/爱心.png"></div>
+                        <div class="collection_btn2" style="display: none; position: absolute; right:0px; bottom:0px;">
+                            <img src="image/爱心1.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="related_artwork mr"><img src="image/100213135_p0.jpg">
+                    <div class="age_segmentation">R-18</div>
+                    <div class="related_artwork_quantity"><img src="image/更多 (1).png">
+                        <div style="font-size: 22px;color:rgba(255,255,255,1);margin-left:-3px;">1</div>
+                    </div>
+                    <div class="related_artwork_collection">
+                        <div class="collection_btn1" style="display: block;"><img src="image/爱心.png"></div>
+                        <div class="collection_btn2" style="display: none; position: absolute; right:0px; bottom:0px;">
+                            <img src="image/爱心1.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="related_artwork mr"><img src="image/100213135_p0.jpg">
+                    <div class="age_segmentation">R-18</div>
+                    <div class="related_artwork_quantity"><img src="image/更多 (1).png">
+                        <div style="font-size: 22px;color:rgba(255,255,255,1);margin-left:-3px;">1</div>
+                    </div>
+                    <div class="related_artwork_collection">
+                        <div class="collection_btn1" style="display: block;"><img src="image/爱心.png"></div>
+                        <div class="collection_btn2" style="display: none; position: absolute; right:0px; bottom:0px;">
+                            <img src="image/爱心1.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="related_artwork mr"><img src="image/100213135_p0.jpg">
+                    <div class="age_segmentation">R-18</div>
+                    <div class="related_artwork_quantity"><img src="image/更多 (1).png">
+                        <div style="font-size: 22px;color:rgba(255,255,255,1);margin-left:-3px;">1</div>
+                    </div>
+                    <div class="related_artwork_collection">
+                        <div class="collection_btn1" style="display: block;"><img src="image/爱心.png"></div>
+                        <div class="collection_btn2" style="display: none; position: absolute; right:0px; bottom:0px;">
+                            <img src="image/爱心1.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="artwork_js/artwork.js"></script>
+    <script src="artwork_js/index.js"></script>
+</body>
+
+</html>

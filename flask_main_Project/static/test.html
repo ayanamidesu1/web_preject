@@ -1,0 +1,21 @@
+<html>
+    <body>
+        <div class="test1">
+            111
+        </div>
+        <script>
+            var test1=document.querySelector('.test1');
+            test1.addEventListener('click',function()
+            {
+                var newdiv=document.createElement('div');
+                newdiv.className='test2';
+                newdiv.textContent='222';
+                newdiv.addEventListener('click',function(){
+                    alert('test');
+                });
+               test1.appendChild(newdiv);
+            });
+        </script>
+<textarea placeholder="输入评论"></textarea>    
+</body>
+</html>

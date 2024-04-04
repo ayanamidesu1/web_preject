@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>淘画网</title>
+  <link rel="icon" type="image/png" href="image/87328997_p0.jpg">
+  <script src="js/jquery-3.7.1.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/novel.css">
+</head>
+
+<body>
+  <div class="head_mean">
+    <button id="head_mean" style="width:100%;height:100%;background-color:transparent;border:none"><img
+        src="image/更多.png"></button>
+  </div>
+  <div class="mean">
+    <div class="mean_content">
+      <div>首页</div>
+      <br>
+      <div>
+        <button class="btn1" onclick="chose_page(this)" tag-value="插画"><img src="image/图像.png"
+            class="icon">&nbsp;插画</button>
+      </div>
+      <div>
+        <button class="btn2" onclick="chose_page(this)" tag-value="漫画"><img src="image/视频-开始-播放.png"
+            class="icon">&nbsp;漫画</button>
+      </div>
+      <div>
+        <button class="btn3" onclick="chose_page(this)" tag-value="小说"><img src="image/读小说.png"
+            class="icon">&nbsp;小说</button>
+      </div>
+      <br>
+      <div class="follow_user_new_work mt"><img src="image/群.png" class="icon">已关注用户的新作</div>
+      <div class="common_hover mt"><img src="image/compass.png" class="icon">发现</div>
+      <br>
+      <div class="common_hover mt"><img src="image/皇冠.png" class="icon">排行榜</div>
+      <div class="common_hover mt"><img src="image/闪亮.png" class="icon">大家的新作</div>
+      <div class="common_hover mt"><img src="image/勋章.png" class="icon">比赛</div>
+      <div class="common_hover mt"><img src="image/约稿.png" class="icon">约稿</div>
+      <br>
+      <div class="common_hover mt"><img src="image/约稿 (1).png" class="icon">用户企划</div>
+      <div class="common_hover mt"><img src="image/笔.png" class="icon">绘画方法</div>
+      <div class="common_hover mt"><img src="image/金点子.png" class="icon">创作电子</div>
+      <br>
+      <div class="common_hover content_mean mt" id="look_more">
+        <button id="show_more"><img src="image/查看更多.png" class="icon mr"><b>查看更多</b></button>
+        <div class="dropdown_mean" style="display:none;">
+          <div class="a1 mt">动态</div>
+          <div class="a1 mt">群组</div>
+          <div class="a1 mt">活动</div>
+          <div>
+            <div class="mt" style="margin-bottom: 5xp;"><button id="hide_title"><img src="image/向上占行.png"
+                  class="icon mr">隐藏</button></div>
+          </div>
+        </div>
+      </div>
+      <div>公告 &nbsp;帮助&nbsp;使用条款<br>
+        隐私政策<br>
+        基于特定商业交易法的注释<br>
+        运营公司&nbsp;刊登广告<br>
+        招聘信息<br>
+        © pixiv</div>
+      <div>公告
+        <div>【预告】插画自带樱花飞舞特效！「pixiv樱花祭2024」将自3月21日起期间限定登场</div>
+      </div>
+    </div>
+  </div>
+  <div class="main_page">
+    <div class="head">
+      <div class="title">
+        <div class="title_img"><img src="image/主页.png"></div>
+      </div>
+      <div class="search">
+        <div class="search_l">
+          <input placeholder="搜索作品" class="search_input">
+          <div>
+            <button><img src="image/搜索.png" class="search_img"></button>
+          </div>
+        </div>
+      </div>
+      <div class="user_info">
+        <div class="submitted_works mr"> <button id="submission"
+            style="background-color:transparent;border:none;">投稿作品</button>
+          <div class="dropdown-toggle"><img src="image/down.png" class="down_img" alt="Toggle Dropdown"> </div>
+          <div class="dropdown" id="dropdown_1" style="display: none;">
+            <!-- 注意这里不要添加额外的类名如"drown"，除非你在 CSS 中也使用了它 -->
+            <a href="#"><img src="image/图像.png" class="icon">插图</a> <a href="#"><img src="image/视频-开始-播放.png"
+                class="icon">动图</a> <a href="#"><img src="image/读小说.png" class="icon">小说</a> <a href="#"><img
+                src="image/漫画 (1).png" class="icon">漫画</a>
+          </div>
+        </div>
+        <div class="message mr"><img src="image/消息通知.png" class="icon"></div>
+        <div class="notice mr"><img src="image/消息中心.png" class="icon"></div>
+        <div class="user_avatar"><button id="user_avatar_1"
+            style="background-color: transparent;border:none;border-radius: 50%;"><img
+              src="image/105716156_p0.jpg"></button>
+          <div class="user_dropdown" style="display: none;">
+            <div class="user_center">
+              <div class="user_name" style="border-radius:15px;"><a href="#">user</a></div>
+              <div class="user_id"><a href="#">1111</a></div>
+              <div class="follow_and_fans">
+                <div class="follow"><a href="#">关注</a></div>
+                <div class="fans"><a href="#">粉丝</a></div>
+              </div>
+              <div class="data_analysis"><a href="#">数据分析</a></div>
+              <div class="my_work"><a href="#">我的作品</a></div>
+              <div class="collection"><a href="#">收藏</a></div>
+              <div class="browsing_history"><a href="#">浏览记录</a></div>
+              <div class="night_model"><a href="#">夜间模式</a></div>
+              <div class="setting"><a href="#">设置</a></div>
+              <div class="send_feedback"><a href="#">发送反馈</a></div>
+              <div class="close_login" style="border-radius:15px;"><a href="#">退出登录</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="user mr"> 用户 </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="left_btn">
+        <button onclick="scrollTabs(-400)">←</button>
+      </div>
+      <div class="tab-bar">
+        <div class="tab"><a href="#">标签123</a></div>
+        <div class="tab"><a href="#">标签123</a></div>
+        <div class="tab"><a href="#">标签123</a></div>
+        <div class="tab"><a href="#">标签123</a></div>
+        <div class="tab"><a href="#">标签123</a></div>
+        <div class="tab"><a href="#">标签123</a></div>
+        <div class="tab"><a href="#">标签123</a></div>
+        <div class="tab"><a href="#">标签123</a></div>
+        <div class="tab"><a href="#">标签123</a></div>
+        <div class="tab"><a href="#">标签123</a></div>
+        <div class="tab"><a href="#">标签123</a></div>
+        <div class="tab"><a href="#">标签123</a></div>
+        <div class="tab"><a href="#">标签123</a></div>
+        <div class="tab"><a href="#">标签123</a></div>
+        <div class="tab"><a href="#">标签123</a></div>
+        <div class="tab"><a href="#">标签123</a></div>
+        <div class="tab"><a href="#">标签123</a></div>
+        <div class="tab"><a href="#">标签123</a></div>
+        <div class="tab"><a href="#">标签123</a></div>
+        <div class="tab"><a href="#">标签123</a></div>
+      </div>
+      <div class="right_btn">
+        <button onclick="scrollTabs(400)">→</button>
+      </div>
+    </div>
+    <div class="select_category">
+      <div class="select_category_subitem">
+        <button id="ill" onclick="chosepage(this)" tag-value="插画"
+          style=" border-top:5px solid rgba(53,160,237,1.00);">插画</button>
+      </div>
+      <div class="select_category_subitem">
+        <button tag-value="漫画" id="car" onclick="chosepage(this)">漫画</button>
+      </div>
+      <div class="select_category_subitem">
+        <button tag-value="小说" id="nv" onclick="chosepage(this)">小说</button>
+      </div>
+    </div>
+    <div class="page_1" id="page_1" style="display: block;">
+      <!--插画-->
+      <div>已关注用户的作品1</div>
+      <div class="follow_user_works_container">
+        <div class="follow_btn_left">
+          <button onclick="page_1_fl(-400)">←—</button>
+        </div>
+        <div class="follow_user_works ml">
+          <div class="illustration">
+            <div class="if_more_information"><div class="if_more_img"><img src="image/更多 (1).png"></div><div class="image_count">1</div></div>
+            <div class="image"><img src="image/80595176_p0(1).jpg"></div>
+            <div class="illustration_name">开心</div>
+            <div class="illustration_user"><img src="image/80595176_p0(1).jpg"
+                style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+          </div>
+          <div class="illustration">
+            <div class="if_more_information"><div class="if_more_img"><img src="image/更多 (1).png"></div><div class="image_count">1</div></div>
+            <div class="image"><img src="image/87054455_p0.png"></div>
+            <div class="illustration_name">开心</div>
+            <div class="illustration_user"><img src="image/105716156_p0.jpg"
+                style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+          </div>
+          <div class="illustration">
+            <div class="if_more_information"><div class="if_more_img"><img src="image/更多 (1).png"></div><div class="image_count">1</div></div>
+            <div class="image"><img src="image/86604591_p0.png"></div>
+            <div class="illustration_name">开心</div>
+            <div class="illustration_user"><img src="image/105716156_p0.jpg"
+                style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+          </div>
+          <div class="illustration">
+            <div class="if_more_information"><div class="if_more_img"><img src="image/更多 (1).png"></div><div class="image_count">1</div></div>
+            <div class="image"><img src="image/87054455_p0.png"></div>
+            <div class="illustration_name">开心</div>
+            <div class="illustration_user"><img src="image/105716156_p0.jpg"
+                style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+          </div>
+          <div class="illustration">
+            <div class="image"><img src="image/86604591_p0.png"></div>
+            <div class="illustration_name">开心</div>
+            <div class="illustration_user"><img src="image/105716156_p0.jpg"
+                style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+          </div>
+          <div class="illustration">
+            <div class="image"><img src="image/87054455_p0.png"></div>
+            <div class="illustration_name">开心</div>
+            <div class="illustration_user"><img src="image/105716156_p0.jpg"
+                style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+          </div>
+          <div class="illustration">
+            <div class="image"><img src="image/86604591_p0.png"></div>
+            <div class="illustration_name">开心</div>
+            <div class="illustration_user"><img src="image/105716156_p0.jpg"
+                style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+          </div>
+          <div class="illustration">
+            <div class="image"><img src="image/87054455_p0.png"></div>
+            <div class="illustration_name">开心</div>
+            <div class="illustration_user"><img src="image/105716156_p0.jpg"
+                style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+          </div>
+          <div class="illustration">
+            <div class="image"><img src="image/86604591_p0.png"></div>
+            <div class="illustration_name">开心</div>
+            <div class="illustration_user"><img src="image/105716156_p0.jpg"
+                style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+          </div>
+          <div class="illustration">
+            <div class="image"><img src="image/87054455_p0.png"></div>
+            <div class="illustration_name">开心</div>
+            <div class="illustration_user"><img src="image/105716156_p0.jpg"
+                style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+          </div>
+          <div class="illustration">
+            <div class="image"><img src="image/86604591_p0.png"></div>
+            <div class="illustration_name">开心</div>
+            <div class="illustration_user"><img src="image/105716156_p0.jpg"
+                style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+          </div>
+          <div class="illustration">
+            <div class="image"><img src="image/87054455_p0.png"></div>
+            <div class="illustration_name">开心</div>
+            <div class="illustration_user"><img src="image/105716156_p0.jpg"
+                style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+          </div>
+        </div>
+        <div class="follow_btn_right">
+          <button onclick="page_1_fl(400)">—→</button>
+        </div>
+      </div>
+      <div class="re_page">
+      <div>推荐作品</div>
+      <div class="recommended_works">
+        <div class="recommendation_illustration">
+          <div class="image"><img src="image/82181448_p0(1).jpg"></div>
+          <div class="illustration_name">开心</div>
+          <div class="illustration_user"><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+        </div>
+        <div class="recommendation_illustration">
+          <div class="image"><img src="image/82181448_p0(1).jpg"></div>
+          <div class="illustration_name">开心</div>
+          <div class="illustration_user"><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+        </div>
+        <div class="recommendation_illustration">
+          <div class="image"><img src="image/82181448_p0(1).jpg"></div>
+          <div class="illustration_name">开心</div>
+          <div class="illustration_user"><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+        </div>
+        <div class="recommendation_illustration">
+          <div class="image"><img src="image/82181448_p0(1).jpg"></div>
+          <div class="illustration_name">开心</div>
+          <div class="illustration_user"><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+        </div>
+        <div class="recommendation_illustration">
+          <div class="image"><img src="image/82181448_p0(1).jpg"></div>
+          <div class="illustration_name">开心</div>
+          <div class="illustration_user"><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+        </div>
+        <div class="recommendation_illustration">
+          <div class="image"><img src="image/82181448_p0(1).jpg"></div>
+          <div class="illustration_name">开心</div>
+          <div class="illustration_user"><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+        </div>
+      </div>
+      <div class="recommended_works">
+        <div class="recommendation_illustration">
+          <div class="image"><img src="image/82181448_p0(1).jpg"></div>
+          <div class="illustration_name">开心</div>
+          <div class="illustration_user"><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+        </div>
+        <div class="recommendation_illustration">
+          <div class="image"><img src="image/82181448_p0(1).jpg"></div>
+          <div class="illustration_name">开心</div>
+          <div class="illustration_user"><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+        </div>
+        <div class="recommendation_illustration">
+          <div class="image"><img src="image/82181448_p0(1).jpg"></div>
+          <div class="illustration_name">开心</div>
+          <div class="illustration_user"><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+        </div>
+        <div class="recommendation_illustration">
+          <div class="image"><img src="image/82181448_p0(1).jpg"></div>
+          <div class="illustration_name">开心</div>
+          <div class="illustration_user"><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+        </div>
+        <div class="recommendation_illustration">
+          <div class="image"><img src="image/82181448_p0(1).jpg"></div>
+          <div class="illustration_name">开心</div>
+          <div class="illustration_user"><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+        </div>
+        <div class="recommendation_illustration">
+          <div class="image"><img src="image/82181448_p0(1).jpg"></div>
+          <div class="illustration_name">开心</div>
+          <div class="illustration_user"><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+        </div>
+      </div>
+      <div class="recommended_works">
+        <div class="recommendation_illustration">
+          <div class="image"><img src="image/82181448_p0(1).jpg"></div>
+          <div class="illustration_name">开心</div>
+          <div class="illustration_user"><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+        </div>
+        <div class="recommendation_illustration">
+          <div class="image"><img src="image/82181448_p0(1).jpg"></div>
+          <div class="illustration_name">开心</div>
+          <div class="illustration_user"><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+        </div>
+        <div class="recommendation_illustration">
+          <div class="image"><img src="image/82181448_p0(1).jpg"></div>
+          <div class="illustration_name">开心</div>
+          <div class="illustration_user"><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+        </div>
+        <div class="recommendation_illustration">
+          <div class="image"><img src="image/82181448_p0(1).jpg"></div>
+          <div class="illustration_name">开心</div>
+          <div class="illustration_user"><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+        </div>
+        <div class="recommendation_illustration">
+          <div class="image"><img src="image/82181448_p0(1).jpg"></div>
+          <div class="illustration_name">开心</div>
+          <div class="illustration_user"><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+        </div>
+        <div class="recommendation_illustration">
+          <div class="image"><img src="image/82181448_p0(1).jpg"></div>
+          <div class="illustration_name">开心</div>
+          <div class="illustration_user"><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+        </div>
+      </div>
+      </div>
+      <div class="rank_list_page">
+      <div>排行榜</div>
+      <div class="daily_leaderboard">
+        <div class="rank_list_illustration">
+          <div class="image"><img src="image/80595176_p0(1).jpg"></div>
+          <div class="rank_list_illustration_name ">插画名称</div>
+          <div class="rank_list_illustration_user "><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">插画的用户</div>
+        </div>
+        <div class="rank_list_illustration">
+          <div class="image"><img src="image/80625492_p0(1).jpg"></div>
+          <div class="rank_list_illustration_name ">插画名称</div>
+          <div class="rank_list_illustration_user "><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">插画的用户</div>
+        </div>
+        <div class="rank_list_illustration">
+          <div class="image"><img src="image/80625492_p0(1).jpg"></div>
+          <div class="rank_list_illustration_name ">插画名称</div>
+          <div class="rank_list_illustration_user "><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">插画的用户</div>
+        </div>
+        <div class="rank_list_illustration">
+          <div class="image"><img src="image/80595176_p0(1).jpg"></div>
+          <div class="rank_list_illustration_name ">插画名称</div>
+          <div class="rank_list_illustration_user "><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">插画的用户</div>
+        </div>
+      </div>
+    </div></div>
+   
+    <div class="page_2" id="page_2" style="display: none;">
+      <div>已关注用户的作品2</div>
+      <div class="follow_user_works_container">
+        <div class="follow_btn_left">
+          <button onclick="page_2_fl(-400)">←—</button>
+        </div>
+        <div class="follow_user_works_2">
+          <div class="illustration">
+            <div class="image"><img src="image/80595176_p0(1).jpg"></div>
+            <div class="illustration_name">开心</div>
+            <div class="illustration_user"><img src="image/80595176_p0(1).jpg"
+                style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+          </div>
+          <div class="illustration">
+            <div class="image"><img src="image/87054455_p0.png"></div>
+            <div class="illustration_name">开心</div>
+            <div class="illustration_user"><img src="image/105716156_p0.jpg"
+                style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+          </div>
+          <div class="illustration">
+            <div class="image"><img src="image/86604591_p0.png"></div>
+            <div class="illustration_name">开心</div>
+            <div class="illustration_user"><img src="image/105716156_p0.jpg"
+                style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+          </div>
+          <div class="illustration">
+            <div class="image"><img src="image/87054455_p0.png"></div>
+            <div class="illustration_name">开心</div>
+            <div class="illustration_user"><img src="image/105716156_p0.jpg"
+                style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+          </div>
+          <div class="illustration">
+            <div class="image"><img src="image/86604591_p0.png"></div>
+            <div class="illustration_name">开心</div>
+            <div class="illustration_user"><img src="image/105716156_p0.jpg"
+                style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+          </div>
+          <div class="illustration">
+            <div class="image"><img src="image/87054455_p0.png"></div>
+            <div class="illustration_name">开心</div>
+            <div class="illustration_user"><img src="image/105716156_p0.jpg"
+                style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+          </div>
+          <div class="illustration">
+            <div class="image"><img src="image/86604591_p0.png"></div>
+            <div class="illustration_name">开心</div>
+            <div class="illustration_user"><img src="image/105716156_p0.jpg"
+                style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+          </div>
+          <div class="illustration">
+            <div class="image"><img src="image/87054455_p0.png"></div>
+            <div class="illustration_name">开心</div>
+            <div class="illustration_user"><img src="image/105716156_p0.jpg"
+                style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+          </div>
+          <div class="illustration">
+            <div class="image"><img src="image/86604591_p0.png"></div>
+            <div class="illustration_name">开心</div>
+            <div class="illustration_user"><img src="image/105716156_p0.jpg"
+                style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+          </div>
+          <div class="illustration">
+            <div class="image"><img src="image/87054455_p0.png"></div>
+            <div class="illustration_name">开心</div>
+            <div class="illustration_user"><img src="image/105716156_p0.jpg"
+                style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+          </div>
+          <div class="illustration">
+            <div class="image"><img src="image/86604591_p0.png"></div>
+            <div class="illustration_name">开心</div>
+            <div class="illustration_user"><img src="image/105716156_p0.jpg"
+                style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+          </div>
+          <div class="illustration">
+            <div class="image"><img src="image/87054455_p0.png"></div>
+            <div class="illustration_name">开心</div>
+            <div class="illustration_user"><img src="image/105716156_p0.jpg"
+                style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+          </div>
+        </div>
+        <div class="follow_btn_right">
+          <button button="" onclick="page_2_fl(400)">—→</button>
+        </div>
+      </div>
+      <div class="re_page">
+      <div>推荐作品</div>
+      <div class="recommended_works">
+        <div class="recommendation_illustration">
+          <div class="image"><img src="image/82181448_p0(1).jpg"></div>
+          <div class="illustration_name">开心</div>
+          <div class="illustration_user"><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+        </div>
+        <div class="recommendation_illustration">
+          <div class="image"><img src="image/82181448_p0(1).jpg"></div>
+          <div class="illustration_name">开心</div>
+          <div class="illustration_user"><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+        </div>
+        <div class="recommendation_illustration">
+          <div class="image"><img src="image/82181448_p0(1).jpg"></div>
+          <div class="illustration_name">开心</div>
+          <div class="illustration_user"><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+        </div>
+        <div class="recommendation_illustration">
+          <div class="image"><img src="image/82181448_p0(1).jpg"></div>
+          <div class="illustration_name">开心</div>
+          <div class="illustration_user"><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+        </div>
+        <div class="recommendation_illustration">
+          <div class="image"><img src="image/82181448_p0(1).jpg"></div>
+          <div class="illustration_name">开心</div>
+          <div class="illustration_user"><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+        </div>
+        <div class="recommendation_illustration">
+          <div class="image"><img src="image/82181448_p0(1).jpg"></div>
+          <div class="illustration_name">开心</div>
+          <div class="illustration_user"><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+        </div>
+      </div>
+      <div class="recommended_works">
+        <div class="recommendation_illustration">
+          <div class="image"><img src="image/82181448_p0(1).jpg"></div>
+          <div class="illustration_name">开心</div>
+          <div class="illustration_user"><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+        </div>
+        <div class="recommendation_illustration">
+          <div class="image"><img src="image/82181448_p0(1).jpg"></div>
+          <div class="illustration_name">开心</div>
+          <div class="illustration_user"><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+        </div>
+        <div class="recommendation_illustration">
+          <div class="image"><img src="image/82181448_p0(1).jpg"></div>
+          <div class="illustration_name">开心</div>
+          <div class="illustration_user"><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+        </div>
+        <div class="recommendation_illustration">
+          <div class="image"><img src="image/82181448_p0(1).jpg"></div>
+          <div class="illustration_name">开心</div>
+          <div class="illustration_user"><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+        </div>
+        <div class="recommendation_illustration">
+          <div class="image"><img src="image/82181448_p0(1).jpg"></div>
+          <div class="illustration_name">开心</div>
+          <div class="illustration_user"><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+        </div>
+        <div class="recommendation_illustration">
+          <div class="image"><img src="image/82181448_p0(1).jpg"></div>
+          <div class="illustration_name">开心</div>
+          <div class="illustration_user"><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+        </div>
+      </div>
+      <div class="recommended_works">
+        <div class="recommendation_illustration">
+          <div class="image"><img src="image/82181448_p0(1).jpg"></div>
+          <div class="illustration_name">开心</div>
+          <div class="illustration_user"><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+        </div>
+        <div class="recommendation_illustration">
+          <div class="image"><img src="image/82181448_p0(1).jpg"></div>
+          <div class="illustration_name">开心</div>
+          <div class="illustration_user"><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+        </div>
+        <div class="recommendation_illustration">
+          <div class="image"><img src="image/82181448_p0(1).jpg"></div>
+          <div class="illustration_name">开心</div>
+          <div class="illustration_user"><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+        </div>
+        <div class="recommendation_illustration">
+          <div class="image"><img src="image/82181448_p0(1).jpg"></div>
+          <div class="illustration_name">开心</div>
+          <div class="illustration_user"><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+        </div>
+        <div class="recommendation_illustration">
+          <div class="image"><img src="image/82181448_p0(1).jpg"></div>
+          <div class="illustration_name">开心</div>
+          <div class="illustration_user"><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+        </div>
+        <div class="recommendation_illustration">
+          <div class="image"><img src="image/82181448_p0(1).jpg"></div>
+          <div class="illustration_name">开心</div>
+          <div class="illustration_user"><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+        </div>
+      </div>
+      </div>
+      <div class="rank_list_page">
+      <div>排行榜</div>
+      <div class="daily_leaderboard">
+        <div class="rank_list_illustration">
+          <div class="image"><img src="image/80595176_p0(1).jpg"></div>
+          <div class="rank_list_illustration_name ">插画名称</div>
+          <div class="rank_list_illustration_user "><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">插画的用户</div>
+        </div>
+        <div class="rank_list_illustration">
+          <div class="image"><img src="image/80625492_p0(1).jpg"></div>
+          <div class="rank_list_illustration_name ">插画名称</div>
+          <div class="rank_list_illustration_user "><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">插画的用户</div>
+        </div>
+        <div class="rank_list_illustration">
+          <div class="image"><img src="image/80625492_p0(1).jpg"></div>
+          <div class="rank_list_illustration_name ">插画名称</div>
+          <div class="rank_list_illustration_user "><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">插画的用户</div>
+        </div>
+        <div class="rank_list_illustration">
+          <div class="image"><img src="image/80595176_p0(1).jpg"></div>
+          <div class="rank_list_illustration_name ">插画名称</div>
+          <div class="rank_list_illustration_user "><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">插画的用户</div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="page_3" id="page_3" style="display: none;">
+      <div>已关注用户的作品3</div>
+      <div class="follow_user_works_container">
+        <div class="follow_btn_left">
+          <button onclick="scrollTabs1(-400)">←—</button>
+        </div>
+        <div class="follow_user_works" id="follow_page_3">
+          <div class="novel">
+            <div class="novel_illustration">
+              <div class="novel_image"><img src="image/80595176_p0(1).jpg"></div>
+              <div class="novel_information" id="novel_information">
+                <div id="work_status">单篇完结作品</div>
+                <div class="novel_name" id="work_title">小说的标题</div>
+                <div id="work_chapter">章节：第一章</div>
+                <div class="illustration_user" id="author_information"><img src="image/80595176_p0(1).jpg"
+                    style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+                <div class="novel_tag" id="work_tag">
+                  <a href="#" id="novel_tag1">#tag</a>
+                  <a href="#" id="novel_tag2">#tag1</a>
+                  <a href="#" id="novel_tag3">#tag2</a>
+                  <a href="#" id="novel_tag4">#tag3</a>
+                </div>
+                <div class="book_information">
+                  <div>10086字</div>
+                  <div>16:59:44</div>
+                  <div class="novle_love"> <img src="image/爱心.png"></div>
+                  <div>114</div>
+                  <div class="novel_love"><img src="image/爱心1.png"></div>
+                </div>
+              </div>
+            </div>
+            <div class="novel_illustration">
+              <div class="novel_image"><img src="image/80595176_p0(1).jpg"></div>
+              <div class="novel_information" id="novel_information">
+                <div id="work_status">单篇完结作品</div>
+                <div class="novel_name" id="work_title">小说的标题</div>
+                <div id="work_chapter">章节：第一章</div>
+                <div class="illustration_user" id="author_information"><img src="image/80595176_p0(1).jpg"
+                    style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+                <div class="novel_tag" id="work_tag">
+                  <a href="#" id="novel_tag1">#tag</a>
+                  <a href="#" id="novel_tag2">#tag1</a>
+                  <a href="#" id="novel_tag3">#tag2</a>
+                  <a href="#" id="novel_tag4">#tag3</a>
+                </div>
+                <div class="book_information">
+                  <div>10086字</div>
+                  <div>16:59:44</div>
+                  <div class="novle_love"> <img src="image/爱心.png"></div>
+                  <div>114</div>
+                  <div class="novel_love"><img src="image/爱心1.png"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="novel">
+            <div class="novel_illustration">
+              <div class="novel_image"><img src="image/80595176_p0(1).jpg"></div>
+              <div class="novel_information" id="novel_information">
+                <div id="work_status">单篇完结作品</div>
+                <div class="novel_name" id="work_title">小说的标题</div>
+                <div id="work_chapter">章节：第一章</div>
+                <div class="illustration_user" id="author_information"><img src="image/80595176_p0(1).jpg"
+                    style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+                <div class="novel_tag" id="work_tag">
+                  <a href="#" id="novel_tag1">#tag</a>
+                  <a href="#" id="novel_tag2">#tag1</a>
+                  <a href="#" id="novel_tag3">#tag2</a>
+                  <a href="#" id="novel_tag4">#tag3</a>
+                </div>
+                <div class="book_information">
+                  <div>10086字</div>
+                  <div>16:59:44</div>
+                  <div class="novle_love"> <img src="image/爱心.png"></div>
+                  <div>114</div>
+                  <div class="novel_love"><img src="image/爱心1.png"></div>
+                </div>
+              </div>
+            </div>
+            <div class="novel_illustration">
+              <div class="novel_image"><img src="image/80595176_p0(1).jpg"></div>
+              <div class="novel_information" id="novel_information">
+                <div id="work_status">单篇完结作品</div>
+                <div class="novel_name" id="work_title">小说的标题</div>
+                <div id="work_chapter">章节：第一章</div>
+                <div class="illustration_user" id="author_information"><img src="image/80595176_p0(1).jpg"
+                    style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+                <div class="novel_tag" id="work_tag">
+                  <a href="#" id="novel_tag1">#tag</a>
+                  <a href="#" id="novel_tag2">#tag1</a>
+                  <a href="#" id="novel_tag3">#tag2</a>
+                  <a href="#" id="novel_tag4">#tag3</a>
+                </div>
+                <div class="book_information">
+                  <div>10086字</div>
+                  <div>16:59:44</div>
+                  <div class="novle_love"> <img src="image/爱心.png"></div>
+                  <div>114</div>
+                  <div class="novel_love"><img src="image/爱心1.png"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="novel">
+            <div class="novel_illustration">
+              <div class="novel_image"><img src="image/80595176_p0(1).jpg"></div>
+              <div class="novel_information" id="novel_information">
+                <div id="work_status">单篇完结作品</div>
+                <div class="novel_name" id="work_title">小说的标题</div>
+                <div id="work_chapter">章节：第一章</div>
+                <div class="illustration_user" id="author_information"><img src="image/80595176_p0(1).jpg"
+                    style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+                <div class="novel_tag" id="work_tag">
+                  <a href="#" id="novel_tag1">#tag</a>
+                  <a href="#" id="novel_tag2">#tag1</a>
+                  <a href="#" id="novel_tag3">#tag2</a>
+                  <a href="#" id="novel_tag4">#tag3</a>
+                </div>
+                <div class="book_information">
+                  <div>10086字</div>
+                  <div>16:59:44</div>
+                  <div class="novle_love"> <img src="image/爱心.png"></div>
+                  <div>114</div>
+                  <div class="novel_love"><img src="image/爱心1.png"></div>
+                </div>
+              </div>
+            </div>
+            <div class="novel_illustration">
+              <div class="novel_image"><img src="image/80595176_p0(1).jpg"></div>
+              <div class="novel_information" id="novel_information">
+                <div id="work_status">单篇完结作品</div>
+                <div class="novel_name" id="work_title">小说的标题</div>
+                <div id="work_chapter">章节：第一章</div>
+                <div class="illustration_user" id="author_information"><img src="image/80595176_p0(1).jpg"
+                    style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">不知道</div>
+                <div class="novel_tag" id="work_tag">
+                  <a href="#" id="novel_tag1">#tag</a>
+                  <a href="#" id="novel_tag2">#tag1</a>
+                  <a href="#" id="novel_tag3">#tag2</a>
+                  <a href="#" id="novel_tag4">#tag3</a>
+                </div>
+                <div class="book_information">
+                  <div>10086字</div>
+                  <div>16:59:44</div>
+                  <div class="novle_love"> <img src="image/爱心.png"></div>
+                  <div>114</div>
+                  <div class="novel_love"><img src="image/爱心1.png"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="follow_btn_right">
+          <button button="" onclick="scrollTabs1(400)">—→</button>
+        </div>
+      </div>
+      <div class="re_page">
+      <div>编辑推荐作品</div>
+      <div class="recommended_works_by_editors">
+        <div class="follow_btn_left1">
+          <button onclick="scrollLeft_img2(-400)">←—</button>
+        </div>
+        <div class="re_novel_work">
+          <div class="recommendation_novel">
+            <div class="re_novel_information">
+              <div class="re_img"><img src="image/80662332_p0(1).png"></div>
+              <div class="re_work">
+                <div class="re_work_title">系列作品</div>
+                <div class="re_work_name">蝶はどこかで羽ばたいた</div>
+                <div class="re_user_information">
+                  <div class="re_user"><img src="image/87328997_p0.jpg"></div>
+                  <div class="re_username">孙源玲</div>
+                  <div class="love">
+                    <button class="love_button" id="love_button" onclick="re_boolean('love_img1')">
+                      <img id="love_img1" src="image/爱心.png">
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="edit_message" id="edit_message">小编寄语
+              <div class="edit_message_info" id="edit_message_info1"><span
+                  id="message_info1">この世界のダンジョンは人の手で作られている！故郷を盛り上げるためにダンジョン作りに初挑戦する主人公は果たして“良いダンジョン”を作れるのか。</span></div>
+            </div>
+          </div>
+          <div class="recommendation_novel">
+            <div class="re_novel_information">
+              <div class="re_img"><img src="image/80662332_p0(1).png"></div>
+              <div class="re_work">
+                <div class="re_work_title">系列作品</div>
+                <div class="re_work_name">蝶はどこかで羽ばたいた</div>
+                <div class="re_user_information">
+                  <div class="re_user"><img src="image/87328997_p0.jpg"></div>
+                  <div class="re_username">孙源玲</div>
+                  <div class="love">
+                    <button class="love_button" id="love_button" onclick="re_boolean('love_img2')">
+                      <img id="love_img2" src="image/爱心.png">
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="edit_message" id="edit_message">小编寄语
+              <div class="edit_message_info" id="edit_message_info2"><span
+                  id="message_info2">この世界のダンジョンは人の手で作られている！故郷を盛り上げるためにダンジョン作りに初挑戦する主人公は果たして“良いダンジョン”を作れるのか。</span></div>
+            </div>
+          </div>
+          <div class="recommendation_novel">
+            <div class="re_novel_information">
+              <div class="re_img"><img src="image/80662332_p0(1).png"></div>
+              <div class="re_work">
+                <div class="re_work_title">系列作品</div>
+                <div class="re_work_name">蝶はどこかで羽ばたいた</div>
+                <div class="re_user_information">
+                  <div class="re_user"><img src="image/87328997_p0.jpg"></div>
+                  <div class="re_username">孙源玲</div>
+                  <div class="love">
+                    <button class="love_button" id="love_button" onclick="re_boolean('love_img3')">
+                      <img id="love_img3" src="image/爱心.png">
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="edit_message" id="edit_message">小编寄语
+              <div class="edit_message_info" id="edit_message_info3"><span
+                  id="message_info3">この世界のダンジョンは人の手で作られている！故郷を盛り上げるためにダンジョン作りに初挑戦する主人公は果たして“良いダンジョン”を作れるのか。</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="follow_btn_right1">
+          <button button="" onclick="scrollLeft_img2(400)">—→</button>
+        </div>
+      </div>
+      </div>
+      <div class="rank_list_page">
+      <div>排行榜</div>
+      <div class="daily_leaderboard">
+        <div class="rank_list_illustration">
+          <div class="image"><img src="image/80595176_p0(1).jpg"></div>
+          <div class="rank_list_illustration_name ">插画名称</div>
+          <div class="rank_list_illustration_user "><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">插画的用户</div>
+        </div>
+        <div class="rank_list_illustration">
+          <div class="image"><img src="image/80625492_p0(1).jpg"></div>
+          <div class="rank_list_illustration_name ">插画名称</div>
+          <div class="rank_list_illustration_user "><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">插画的用户</div>
+        </div>
+        <div class="rank_list_illustration">
+          <div class="image"><img src="image/80625492_p0(1).jpg"></div>
+          <div class="rank_list_illustration_name ">插画名称</div>
+          <div class="rank_list_illustration_user "><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">插画的用户</div>
+        </div>
+        <div class="rank_list_illustration">
+          <div class="image"><img src="image/80595176_p0(1).jpg"></div>
+          <div class="rank_list_illustration_name ">插画名称</div>
+          <div class="rank_list_illustration_user "><img src="image/87054455_p0.png"
+              style="width:20px;height:20px;border-radius: 50%;object-fit: cover;overflow: hidden">插画的用户</div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <link rel="stylesheet" type="text/css" href="css/cur.css">
+  <script src="js/index.js"></script>
+
+</body>
+
+</html>

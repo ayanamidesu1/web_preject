@@ -1,0 +1,803 @@
+/*用户内容主界面*/
+.user_artwork_page{
+    width: 90%;
+    height: atuo;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    
+}
+.artwork_image_main{
+    background-color: rgba(255, 255, 255, 1);
+    display: flex;
+    width:100%;
+    height: auto;
+    justify-content: space-around;
+    align-self: center;
+    position: relative;
+    margin-top:10px;
+    border-radius: 5px;
+}
+.user_art_work{
+    display: flex;
+    width:auto;
+    height: auto;
+    flex-direction: column;
+    
+    max-width: 60vw;
+    align-self: center;
+    position: relative;
+}
+.user_art_work_hidden{
+    display: flex;
+    width:auto;
+    height: auto;
+    flex-direction: column;
+    
+    max-width: 60vw;
+    margin-top:20px;
+    position: relative;
+}
+.user_art_work img{
+    align-self: center;
+    width: 100%;
+    height: auto;
+    object-fit:  cover;
+}
+.art_user{
+    width:20%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    
+}
+.artwork_user_avater
+{
+    display: flex;
+    width:auto;
+    height: auto;
+    margin-top:10px;
+}
+.artwork_user_avater img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.other_work_image{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    overflow-x: none;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+.other_img{
+    width:32%;
+    height: auto;
+    
+    margin-right: 2px;
+    min-width: 32%;
+}
+.other_img img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.following_btn{
+    width: 95%;
+    height: auto;
+    display: flex;
+    border-radius: 30px;
+    margin-top:5px;
+    justify-content: center;
+    align-self: center;
+    
+    background-color: rgba(0, 173, 254, 0.8);
+}
+.following_btn:hover{
+    cursor: pointer;
+}
+.artwork_leftbtn,.artwork_rightbtn{
+    width: 32%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    
+    position: absolute;
+}
+.artwork_leftbtn:hover,.artwork_rightbtn:hover{
+    background-color: rgba(82, 80, 80, 0.5);
+}
+.artwork_leftbtn img,.artwork_rightbtn img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: none;
+}
+.artwork_leftbtn:hover img,.artwork_rightbtn:hover img{
+    display: block;
+}
+.artwork_leftbtn{
+    left:1px;
+    top:0px;
+}
+.artwork_rightbtn{
+    right:1px;
+    top:0px;
+}
+.other_artwork{
+    display: flex;
+    position: relative;
+    font-size: 12px;
+    margin-top:10px;
+}
+.user_art_work_img{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    
+    width: 100%;
+    height: auto;
+}
+.artwork_look_more{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    align-self: center;
+    cursor: pointer;
+    justify-content: center;
+    background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    z-index: 5;
+    min-height: 50px;
+    bottom: 0px;
+}
+.re_artwork{
+    display: flex;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 5px;
+    flex-direction: column;
+    width:100%;
+    height: auto;
+    justify-content: space-around;
+    align-self: center;
+    margin-top:35px;
+    margin-bottom: 20px;
+}
+.comment_section{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    align-self: center;
+}
+.comment_section_hideen{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+}
+.comment_section_showmore{
+    width: 100%;
+    height: 40px;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    background-color: rgba(0,0,0,1);
+    border-radius: 28px;
+    color: rgba(255,255,255,1);
+    cursor: pointer;
+}
+.artwork_introduction{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    margin-top:25px;
+}
+.artwork_data{
+    display: flex;
+    width:auto;
+    white-space: nowrap;
+    justify-content: flex-start;
+    margin-top: 5px;
+}
+.artwork_data_createtime{
+    margin-top:5px;
+}
+.artwork_data_like{
+    display: flex;
+    margin-right: 10px;
+    width:auto;
+}
+.artwork_data_like_text{
+    margin-left: 2px;
+}
+.artwork_data_collection{
+    display: flex;
+    margin-right: 10px;
+    width: auto;;
+}
+.artwork_data_collection_text{
+    margin-left: 2px;
+}
+.artwork_data_lookcount_text{
+    margin-left: 2px;
+}
+.more_artwork{
+    display: flex;
+    flex-direction: column;
+}
+.more_artwork_useravatar
+{
+    display: flex;
+    position: relative;
+    width:100%;
+}
+.artwork_useravatar{
+    width:100%;
+    height: auto;
+    overflow: hidden;
+}
+.artwork_useravatar img{
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.artwork_username{
+    
+    flex-grow: 1;
+    min-width: 60px;
+    width:auto;
+    align-self: center;
+    text-align: center;
+    margin-left:10px;
+}
+.artwork_following{
+    border-radius: 15px;
+    flex-grow: 1;
+    min-width: 60px;
+    width:auto;
+    align-self: center;
+    text-align: center;
+    margin-left:10px;
+    background-color: rgba(0, 173, 254, 0.8);
+    cursor: pointer;
+}
+.more_artwork_username{
+    display: flex;
+    justify-content: space-between;
+}
+.artwork_introduction_conntent{
+    margin-right: 0px;
+    margin-top: 5px;
+}
+.artwork_tag{
+    margin-top:5px;
+}
+.artwork_thumbnail{
+    display: flex;
+    position: relative;
+    
+}
+.artwork_thumbnail_leftbtn,.artwork_thumbnail_rightbtn{
+    
+    align-self: center;
+    width:50px;
+    height: 100%;
+    display: flex;
+    z-index: 11;
+}
+.artwork_thumbnail_leftbtn:hover
+{
+background:linear-gradient(to right,rgba(80,80,80,0.5),rgba(80,80,80,0));
+}
+.artwork_thumbnail_rightbtn:hover
+{
+background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
+}
+
+.artwork_thumbnail_leftbtn img,.artwork_thumbnail_rightbtn img{
+    width: 50px;
+    height: auto;
+    object-fit: cover;
+    align-self:center;
+    opacity: 0;
+}
+.artwork_thumbnail_leftbtn:hover img,.artwork_thumbnail_rightbtn:hover img{
+    width: 50px;
+    height: auto;
+    object-fit: cover;
+    align-self:center;
+    opacity: 1;
+}
+.artwork_thumbnail_leftbtn{
+    position: absolute;
+    left:0px;
+}
+.artwork_thumbnail_rightbtn{
+    position: absolute;
+    right:0px; 
+}
+.artwork_thumbnail_img{
+    display:flex;
+    max-height: 25vh;
+    height: 100%;
+    min-height: 15vh;
+    overflow:hidden;
+    overflow-x: auto;
+}
+.artwork_thumbnail_img img{
+    width: 150px;
+    height: auto;
+    object-fit: cover;
+}
+.artwork_thumbnail_img_1,
+.artwork_thumbnail_img_2,
+.artwork_thumbnail_img_3,
+.artwork_thumbnail_img_4,
+.artwork_thumbnail_img_5,.artwork_thumbnail_img_6,.artwork_thumbnail_img_7,.artwork_thumbnail_img_8,.artwork_thumbnail_img_9,.artwork_thumbnail_img_10{
+    position: relative;
+    margin-right: 5px;
+    border-radius: 15px;
+}
+.comment_section{
+    width:80%;
+    height: auto;
+    
+    margin-top:50px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.comment_section_title{
+    position:absolute;
+    left:0px;
+    top:0px;
+    height: 20px;
+    
+}
+.comment_section_input{
+    display: flex;
+    margin-top:30px;
+    width:100%;
+    height: auto;
+    min-height: 50px;
+    align-self: center;
+    margin-bottom:10px;
+    position: relative;
+    
+}
+.send_user_avatar{
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    position:absolute;
+    left: 0px;
+}
+.send_user_avatar img{
+    width:50px;
+    height: 50px;
+    object-fit: cover;
+}
+.comment_section_input_box{
+    align-self: center;
+    margin-left:60px;
+    
+    flex-grow: 1;
+    margin-right: 60px;
+    max-width: 75%;
+}
+.comment_section_input_box textarea{ 
+    width:85%;
+    min-width: 50%;
+    height: 25px;
+    min-height: 20px;
+    outline: none;
+    border-radius: 15px;
+    background: none;
+    font-size: 16px;
+    color:#000;
+    overflow-wrap: break-word;
+    overflow: hidden;
+    resize: none;
+    word-wrap: break-word;
+    padding:5px;
+}
+.comment_section_input_box textarea::placeholder{
+    content: attr(placeholder);
+    color: #999; /* 提示文字颜色 */
+    font-size: 16px; /* 提示文字大小 */
+    text-align: left; /* 靠左对齐 */
+    line-height: 20px; /* 设置行高等于输入框高度，实现上下居中 */
+    display: flex; /* 使用 flexbox */
+    align-items: center; /* 垂直居中 */
+}
+.comment_section_input_sendbtn{
+    align-self: center;
+    margin-left: 10px;
+    right: 0px;
+    position: absolute;
+}
+.comment_section_input_sendbtn{
+    background-color: rgba(0,150,250,1);
+    width:75px;
+    height: 35px;
+    border-radius: 15px;
+    align-self: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.comment_section_details{
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+.comment_section_details_user{
+    display: flex;
+    width:100%;
+    height: auto;
+    position: relative;
+}
+.comment_section_details_user_avatar{
+    width:50px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 50%;
+    position: relative;
+    
+}
+.comment_section_details_user_name{
+    display: flex;
+    margin-top:15px;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+    flex-grow: 1;
+}
+.comment_section_details_details{
+    margin-top:20px;
+    
+    align-self:self-start;
+}
+.comment_section_details_details_time{
+    display: flex;
+    align-self: self-start;
+    
+}
+.show_reply{
+    align-self:self-start;
+    background-color: rgba(80,80,80,0.5);
+    margin-top:5px;
+    width:20%;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.reply_message
+{
+    display: flex;
+    width:100%;
+    height: auto;
+    position: relative;
+    align-self: self-start;
+    margin-top:10px;
+}
+.reply_user_avatar{
+    width:50px;
+    height:50px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.reply_user_avatar img{
+    width:50px;
+    height: 50px;
+    object-fit: cover;
+}
+.reply_user_username_details{
+    align-self: center;
+    margin-top:15px;
+    
+}
+.reply_message_details{
+    margin-top:20px;
+    
+}
+.reply_message_details_time{
+    display: flex;
+    
+}
+.collapse_reply{
+    background-color: rgba(80,80,80,0.5);
+    margin-top:5px;
+    border-radius: 15px;
+    width:20%;
+    align-self: center;
+    text-align: center;
+    cursor: pointer;
+    bottom: 0px;
+    right: 0px;
+    position: absolute;
+}
+.related_works{
+    display: flex;
+    width:100%;
+    height: auto;
+    justify-content: space-between;
+    
+    margin-bottom: 5px;
+}
+.related_artwork{
+    display: flex;
+    position: relative;
+    width:18%;
+    height: auto;
+    max-height: 20vh;
+    
+    border-radius: 15px;
+    overflow: hidden;
+}
+.related_artwork img{
+    width:100%;
+    height: auto;
+    object-fit: cover;
+}
+.age_segmentation{
+    position: absolute;
+   left:10px;
+   top: 2px;
+   z-index:11;
+   border-radius: 7px;
+   background-color:rgba(255,0,0);
+}
+.related_artwork_quantity{
+    position: absolute;
+    right:5px;
+    top: 2px;
+    z-index:11;
+    border-radius: 5px;
+    background-color: rgba(80,80,80,0.5);
+    width:35px;
+    height: 35px;
+   
+    font-size: 16px;
+    display: flex;
+}
+.related_artwork_quantity img{
+    width: 100%;
+    object-fit: cover;
+}
+.related_artwork_collection{
+    position: absolute;
+    right: 10px;
+    bottom: 0px;
+    z-index: 11;
+    width:25px;
+    height: auto;
+    cursor: pointer;
+}
+/*查看更多部分*/
+.show_more_artwork{
+    display: flex;
+    position: relative;
+    white-space: nowrap;
+    background-color: rgba(53, 53, 53, 0.8);
+    border-radius: 20px;
+    color: azure;
+    min-width: 110px;
+    height: 100%;
+    min-height: 35px;
+    text-align: center;
+    align-self: center;
+    justify-content: center;
+    cursor: pointer;
+    
+}
+.show_more_artwork_text{
+    align-self: center;
+}
+.user_art_work_interaction{
+    
+    width: 100%;
+    position: relative;
+    min-height: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+.user_art_work_interaction_like{
+    display: flex;
+    
+    position: relative;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.user_art_work_interaction_like_img{
+    width:20px;
+    height: 20px;
+}
+.user_art_work_interaction_like_img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.user_art_work_interaction_collection{
+    width:25px;
+    height: 25px;
+    
+    position: relative;
+    margin-left:5px;
+    cursor: pointer;
+}
+.user_art_work_interaction_collection_img{
+    position:absolute;
+    top: 0px;
+    left: 0px;
+    
+}
+.user_art_work_interaction_share{
+    width:25px;
+    height: 25px;
+    
+    position: relative;
+    margin-left:5px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+.user_art_work_interaction_collection_img_dropdown{
+    
+    margin-top:10px;
+    width:150px;
+    height: auto;
+    z-index: 10;
+    left:-65px;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 1);
+    display: flex;
+    flex-direction: column;
+}
+.user_art_work_interaction_collection_img_title{
+    width:100%;
+    display: flex;
+    
+    align-self: center;
+    justify-content: center;
+    margin-top:10px;
+    color:rgba(53, 53, 53, 0.8);
+}
+.user_art_work_interaction_collection_img_copylink{
+    width:100%;
+    display: flex;
+    
+    align-self: center;
+    justify-content: center;
+    margin-top:10px;
+    color:rgba(53, 53, 53, 0.8);
+    cursor: pointer;
+}
+.float_interactive{
+    
+    width:60vw;
+    height: 40px;
+    position: fixed;
+    bottom: 0px;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: flex-end;
+    animation: slideUp 0.5s forwards; 
+    display: none;
+}
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(100%);
+    }
+}
+
+@keyframes slideDisappear {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+.float_interactive_like{
+ margin-right: 5px;
+ display: flex;
+}
+.float_interactive_like_svg{
+    display: flex;
+    align-self: center;
+    cursor: pointer;
+}
+.float_interactive_like_svg_1{
+    margin-right: 5px;
+}
+.float_interactive_like_svg_2{
+    fill: rgba(12,138,241,1);
+}
+.float_interactive_collection{
+    display: flex;
+    margin-right: 5px;
+    cursor: pointer;
+}
+.float_interactive_collection_svg{
+    display: flex;
+    margin-right: 5px;
+    align-self: center;
+}
+.float_interactive_share{
+    display: flex;
+    margin-right: 5px;
+    position: relative;
+    cursor: pointer;
+}
+.float_interactive_share_svg{
+    display: flex;
+    align-self: center;
+    margin-right: 5px;
+}
+.float_interactive_share_box{
+    position: absolute;
+    width: 150px;
+    height: 50px;
+    
+    right: -75px;
+    bottom: 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 100;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.float_interactive_share_box_title{
+    margin-top:5px;
+}
+.float_interactive_share_box_copylink{
+    margin-top:5px;
+    cursor: pointer;
+}
+/*回复框*/
+.reply_message_box{
+    align-self: self-start;
+    width: 100%;
+    position: relative;
+}
+.subreply_box{
+    position: relative;
+}
+.comment_section_details_details_reply{
+    cursor: pointer;
+}
+.reply_message_reply
+{
+    cursor: pointer;
+}
+.reply_user_username_details{
+   position: absolute;
+   top: 0px;
+   left:50px;
+}
