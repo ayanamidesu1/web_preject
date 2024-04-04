@@ -624,6 +624,7 @@ function relistening() {
 }
 
 //多重循环的视线击事件监听
+/*
 document.addEventListener("DOMContentLoaded", function () {
     var main_pages = document.querySelectorAll('.comment_section');
     main_pages.forEach(function (main_page) {
@@ -650,7 +651,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     });
-});
+});*/
 //已经弃用
 /*
 document.addEventListener("DOMContentLoaded", function () {
@@ -801,7 +802,6 @@ document.addEventListener("DOMContentLoaded", function(){
         <div class="temp_reply_message_inputbox"><textarea placeholder="输入评论"></textarea></div>  
         <div class="temp_reply_message_sendbtn">发送</div>  
     </div>`;
-
     listenpage.addEventListener('click', function(event){
         var target = event.target;
         if(target.classList.contains('reply_message_reply')) {
@@ -821,7 +821,6 @@ document.addEventListener("DOMContentLoaded", function(){
             }
         }
     });
-    
     // 创建 MutationObserver 实例
     var observer = new MutationObserver(function(mutations) {
         mutations.forEach(function(mutation) {
@@ -846,11 +845,108 @@ document.addEventListener("DOMContentLoaded", function(){
             }
         });
     });
-
     // 监听 .comment_section 的子节点变化
     observer.observe(listenpage, { childList: true, subtree: true });
-
 });
+
+document.addEventListener('DOMContentLoaded', function(){
+    var model = `<div class="reply_message_box"><div class="temp_reply_message_box" >
+        <div class="comment_section_input">
+            <div class="send_user_avatar"><img src="image/101092272_p0.jpg"></div>
+            <div class="comment_section_input_box"><textarea class="textarea" placeholder="发表评论"></textarea></div>
+            <div class="comment_section_input_sendbtn" id="second_sendbtn"><b>发送</b></div>
+        </div>
+        </div>
+    </div>`;
+    var main = document.querySelector('.comment_section');
+    main.addEventListener('click', function(event){
+        var target = event.target;
+        if(target.classList.contains('comment_section_details_details_reply'))
+        {
+            var parentUser = target.closest('.comment_section_details_details_time');
+            console.log(parentUser,target.textContent);
+            if (parentUser) {
+                var replybtn = parentUser.nextElementSibling;
+                if (target.textContent.trim() == '回复') {
+                    // 添加模板，作为兄弟元素插入
+                    parentUser.insertAdjacentHTML('afterend', model);
+                    target.textContent = '收起';
+                    console.log(parentUser);
+                } else if (target.textContent.trim() == '收起') {
+                    // 删除所有模板
+                    var replyMessageBoxes = document.querySelectorAll('.temp_reply_message_box');
+                    replyMessageBoxes.forEach(function(box) {
+                        box.remove();
+                    });
+                    target.textContent = '回复';
+                    console.log(parentUser);
+                }
+            }
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function(){
+    var main = document.querySelector('.comment_section');
+    
+    // 创建 MutationObserver 实例，传入回调函数
+    var observer = new MutationObserver(function(mutationsList, observer) {
+        // 遍历每个变化
+        mutationsList.forEach(function(mutation) {
+            // 检查是否有节点被添加
+            if (mutation.type === 'childList') {
+                // 遍历每个添加的节点
+                mutation.addedNodes.forEach(function(addedNode) {
+                    // 如果添加的节点是临时回复框
+                    if (addedNode.classList && addedNode.classList.contains('temp_reply_message')) {
+                        // 为发送按钮添加功能
+                        var sendBtn = addedNode.querySelector('.temp_reply_message_sendbtn');
+                        sendBtn.addEventListener('click', function() {
+                            // 处理发送按钮点击事件
+                            temp_handleSendButtonClick(addedNode);
+                        });
+                    }
+                });
+            }
+        });
+    });
+
+    // 监听树的变化
+    observer.observe(main, { childList: true, subtree: true });
+});
+
+// 处理发送按钮点击事件的函数
+function temp_handleSendButtonClick(replyBox) {
+    var inputText = replyBox.querySelector('textarea').value;
+    var datetime = getdate();
+    
+    // 创建评论模板
+    var model = `<div class="subreply_box">
+    <div class="reply_user_avatar"><img src="image/101779890_p0.jpg"></div>
+    <div class="reply_user_username">
+        <div class="reply_user_username_details">username</div>
+        <div class="reply_message_details">${inputText}</div>
+        <div class="reply_message_details_time">${datetime}
+            <div class="reply_message_reply">&nbsp;回复</div>
+        </div>
+    </div>
+</div>`;
+    
+    // 获取要插入的位置
+    var parentUser = replyBox.previousElementSibling;
+    // 插入评论模板
+    parentUser.insertAdjacentHTML('afterend', model);
+
+    // 清空回复框中的内容
+    replyBox.querySelector('textarea').value = '';
+    
+    // 删除所有的临时输入框
+    var replyMessageBoxes = document.querySelectorAll('.temp_reply_message');
+    replyMessageBoxes.forEach(function(box) {
+        box.remove();
+    });
+}
+
 
 
 

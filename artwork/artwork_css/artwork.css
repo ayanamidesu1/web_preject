@@ -784,6 +784,10 @@ background:linear-gradient(to left,rgba(80,80,80,0.5),rgba(80,80,80,0));
 .reply_message_box{
     align-self: self-start;
     width: 100%;
+    position: relative;
+}
+.subreply_box{
+    position: relative;
 }
 .comment_section_details_details_reply{
     cursor: pointer;
