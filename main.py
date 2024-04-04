@@ -3,6 +3,7 @@ import tornado.web
 import tornado.websocket
 import tornado.ioloop
 import tornado.template
+from model.connect_sqlsever import  connMysql
 
 # WebSocket 处理器
 class WSHandler(tornado.websocket.WebSocketHandler):
@@ -33,7 +34,16 @@ def make_app():
 
 if __name__ == "__main__":
     app = make_app()
+    conn = connMysql
+    db_ipaddr = '127.0.0.1'
+    db_name = 'web_user'
+    db_username = 'root'
+    db_password = 'root'
+
+    conn = connMysql()
+    conn.connect(db_ipaddr, db_name, db_username, db_password)
     app.listen(8888)
     print("服务器启动成功，请访问 http://localhost:8888")
     tornado.ioloop.IOLoop.current().start()
+
 
