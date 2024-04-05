@@ -1,24 +1,84 @@
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-    <title>注册</title>
-    </head>
-    <style type="text/css">
-        body{
-            background-image: url("image/105716156_p0.jpg");
-            background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    overflow: hidden;
-    position: relative;
-        }
-    </style>
-    <body>
-        <div class="register">
 
-        </div>
-    </body>
-    <script>
-        var websocket=new websocket("ws://localhost:8888/websocket");
-    </script>
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+</head>
+<style type="text/css">
+    body {
+        background-image: url("image/105716156_p0.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .register {
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+        background-color: rgba(255, 255, 255, 1);
+        border-radius: 20px;
+        align-self: flex-start;
+        align-items: flex-start;
+        height: 50%;
+        width: 300px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: relative;
+    }
+
+    .mt {
+        margin-top: 10px;
+    }
+</style>
+
+<body>
+    <div class="register">
+        <form id="register" method="post">
+            <div style="margin-top: 20px;">用户名：<div class="mt"><input type="text" placeholder="用户名"></div>
+            </div>
+            <div class="mt">密码：<div class="mt"><input type="password" placeholder="密码"></div>
+            </div>
+            <div class="mt">确认密码：<div class="mt"><input type="password" placeholder="确认密码"></div>
+            </div>
+            <div class="mt">邮箱：<div class="mt"><input type="text" placeholder="邮箱"></div>
+            </div>
+            <div class="mt">手机号：<div class="mt"><input type="text" placeholder="手机号"></div>
+            </div>
+            <div class="mt">头像：<div class="mt"><input type="file" placeholder="头像">
+                    <div><input type="submit" value="提交"></div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+<script>
+    var websocket = new WebSocket("ws://localhost:8888/websocket");
+    document.getElementById("register").addEventListener("submit", function(event) {
+    event.preventDefault(); // 阻止表单提交的默认行为
+
+    var fileInput = document.querySelector('input[type="file"]');
+    var file = fileInput.files[0];
+
+    var formData = new FormData();
+    formData.append("file", file);
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "/register"); // 此处的地址应该是文件上传的路由
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            console.log("文件上传成功");
+        } else {
+            console.error("文件上传失败");
+        }
+    };
+    xhr.send(formData);
+});
+
+</script>
+
 </html>
