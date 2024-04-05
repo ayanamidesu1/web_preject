@@ -36,9 +36,11 @@ document.addEventListener('DOMContentLoaded',function(event){
 socket.onmessage = function(event) {
     var data=JSON.parse(event.data);
     if(data.status=="success"){
-        window.location.href = "../web_preject/index.html";
+        window.location.href = "http://127.0.0.1:8888";
+        alert("登录成功");
     }else{
         alert("用户名或密码错误");
+        return 0;
     }
 };
 
