@@ -59,11 +59,12 @@ class subpageHandler(tornado.web.RequestHandler):
         self.render("artwork/1111.html")
 
 
-
 class FileUploadHandler(tornado.web.RequestHandler):
     UPLOAD_DIR = "user_uploadavatar"
+
     def get(self):
         self.render("register.html")
+
     def post(self):
         # 检查是否有文件上传
         if 'file' in self.request.files:
@@ -85,9 +86,24 @@ class FileUploadHandler(tornado.web.RequestHandler):
 
             # 返回成功信息给客户端
             self.write("文件上传成功")
+
+            # 获取注册信息
+            username = self.get_argument("username")
+            password = self.get_argument("password")
+            email = self.get_argument("email")
+            phone = self.get_argument("phone")
+
+            # 执行数据库插入操作
+            self.insertuserinfo(username, password, email, phone, fname)
         else:
             self.write("没有上传文件")
 
+    def insertuserinfo(self, username, password, email, phone, filename):
+        conn = connMysql()  # 假设这是你的数据库连接类
+        conn.conn()  # 假设这是连接数据库的方法
+        sql_insert = f"insert into user_table (username, password, email, phone, avatar) values ('{username}', '{password}', '{email}', '{phone}', '{filename}')"
+        conn.execute(sql_insert)  # 假设这是执行 SQL 语句的方法
+        conn.close()  # 假设这是关闭数据库连接的方法
 
 
 def make_app():
