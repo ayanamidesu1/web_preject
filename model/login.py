@@ -24,3 +24,6 @@ class do_select_query:
                 return json_data
         finally:
             print("关闭数据库连接")
+
+    def  close_conn(self, conn):
+        conn.close()

@@ -22,9 +22,10 @@
         border-radius: 20px;
         align-self: flex-start;
         align-items: flex-start;
-        height: 50%;
+        height: auto;
         width: 300px;
         position: absolute;
+        justify-content: center;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -34,49 +35,102 @@
     .mt {
         margin-top: 10px;
     }
+    .complete{
+        width: 80%;
+        background-color: rgba(12, 152, 245,1);
+        border-radius: 15px;
+        text-align: center;
+    }
 </style>
 
 <body>
     <div class="register">
-        <form id="register" method="post">
-            <div style="margin-top: 20px;">用户名：<div class="mt"><input type="text" placeholder="用户名"></div>
+        <form id="register" method="post" style="align-self: self-end;">
+            <div style="margin-top: 20px;">用户名：<div class="mt"><input value="username" id="username" name="username" type="text" placeholder="用户名"></div>
             </div>
-            <div class="mt">密码：<div class="mt"><input type="password" placeholder="密码"></div>
+            <div class="mt">性别：<select id="sex" name="sex">
+                <option value="男">男</option>
+                <option value="女">女</option>
+            </select></div>
+            <div class="mt">密码：<div class="mt"><input name="password" id="password" type="password" placeholder="密码"></div>
             </div>
-            <div class="mt">确认密码：<div class="mt"><input type="password" placeholder="确认密码"></div>
+            <div class="mt">确认密码：<div class="mt"><input id="sure_password" type="password" placeholder="确认密码"></div>
             </div>
-            <div class="mt">邮箱：<div class="mt"><input type="text" placeholder="邮箱"></div>
+            <div class="mt">邮箱：<div class="mt"><input id="email" name="email" type="text" placeholder="邮箱"></div>
             </div>
-            <div class="mt">手机号：<div class="mt"><input type="text" placeholder="手机号"></div>
+            <div class="mt">手机号：<div class="mt"><input id="phone" name="phone" type="text" placeholder="手机号"></div>
             </div>
-            <div class="mt">头像：<div class="mt"><input type="file" placeholder="头像">
-                    <div><input type="submit" value="提交"></div>
+            <div class="mt">头像：<div class="mt"><input id="avatar" name="avatar" type="file" placeholder="头像">
                 </div>
             </div>
+            <div class="complete" style="margin-top: 10px;">完成</div>
         </form>
     </div>
 </body>
 <script>
     var websocket = new WebSocket("ws://localhost:8888/websocket");
-    document.getElementById("register").addEventListener("submit", function(event) {
-    event.preventDefault(); // 阻止表单提交的默认行为
+    document.addEventListener("DOMContentLoaded", function(event) {
+    var complete = document.querySelector(".complete");
+    complete.addEventListener("click", function(event) {
+        event.preventDefault(); // 阻止默认行为
 
-    var fileInput = document.querySelector('input[type="file"]');
-    var file = fileInput.files[0];
+        // 获取表单数据
+        var username = document.getElementById("username").value;
+        var sex=document.getElementById("sex").value;
+        var password = document.getElementById("password").value;
+        var sure_password = document.getElementById("sure_password").value;
+        var email = document.getElementById("email").value;
+        var phone = document.getElementById("phone").value;
+        var fileInput = document.getElementById("avatar");
+        var file = fileInput.files[0];
 
-    var formData = new FormData();
-    formData.append("file", file);
-
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "/register"); // 此处的地址应该是文件上传的路由
-    xhr.onload = function() {
-        if (xhr.status === 200) {
-            console.log("文件上传成功");
-        } else {
-            console.error("文件上传失败");
+        // 检查密码是否匹配
+        if (password !== sure_password) {
+            alert("密码不匹配");
+            return;
         }
-    };
-    xhr.send(formData);
+
+        // 构建要发送的消息
+        var message = {
+            username: username,
+            sex:sex,
+            password: password,
+            email: email,
+            phone: phone
+        };
+        console.log(message);
+
+        // 创建 FormData 对象，并添加文件和消息
+        var formData = new FormData();
+        formData.append("file", file);
+        formData.append("message", JSON.stringify(message));
+        formData.append("username",username);
+        console.log(formData);
+        formData.append("sex",sex);
+        formData.append("sure_password",sure_password);
+        formData.append("password",password);
+        formData.append("email",email);
+        formData.append("phone",phone);
+
+        // 发送数据到服务器
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/register");
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                var response = xhr.responseText;
+                console.log(response);
+                if (response == "success") {
+                    alert("注册成功");
+                    window.location.href = "/login_page";
+                } else {
+                    alert("注册失败");
+                }
+            } else {
+                alert("注册失败");
+            }
+        };
+        xhr.send(formData);
+    });
 });
 
 </script>

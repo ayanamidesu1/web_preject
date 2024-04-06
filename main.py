@@ -85,25 +85,62 @@ class FileUploadHandler(tornado.web.RequestHandler):
                 f.write(body)
 
             # 返回成功信息给客户端
-            self.write("文件上传成功")
+            print("文件上传成功")
+            src_filename = "user_uploadavatar/" + fname
+            print(src_filename)
 
             # 获取注册信息
             username = self.get_argument("username")
+            print(username)
             password = self.get_argument("password")
+            print(password)
+            sure_password = self.get_argument("sure_password")
+            print(sure_password)
+            if password != sure_password:
+                self.write("两次输入的密码不一致")
+                return 0
+            sex = self.get_argument("sex")
             email = self.get_argument("email")
             phone = self.get_argument("phone")
 
             # 执行数据库插入操作
-            self.insertuserinfo(username, password, email, phone, fname)
+            self.insertuserinfo(username, sex, password, email, phone, src_filename)
         else:
-            self.write("没有上传文件")
+            username = self.get_body_argument("username", default=None)
+            if username is None:
+                self.write("没有提供用户名")
+                return
+            # 获取其他表单数据
+            password = self.get_body_argument("password", default=None)
+            sex = self.get_body_argument("sex", default=None)
+            email = self.get_body_argument("email", default=None)
+            phone = self.get_body_argument("phone", default=None)
+            self.write("没有上传文件，但获取到了其他表单数据")
 
-    def insertuserinfo(self, username, password, email, phone, filename):
-        conn = connMysql()  # 假设这是你的数据库连接类
-        conn.conn()  # 假设这是连接数据库的方法
-        sql_insert = f"insert into user_table (username, password, email, phone, avatar) values ('{username}', '{password}', '{email}', '{phone}', '{filename}')"
-        conn.execute(sql_insert)  # 假设这是执行 SQL 语句的方法
-        conn.close()  # 假设这是关闭数据库连接的方法
+    def insertuserinfo(self, username_1, sex_1, password_1, email_1, phone_1, filename_1):
+        # 创建数据库连接
+        db = do_select_query()
+        conn = db.conn()
+
+        # 构建 SQL 插入语句
+        sql_insert = ("INSERT INTO user_table (`username`, `sex`, `password`, `user_avatar`, `email`, `phone_number`) "
+                      "VALUES (%s, %s, %s, %s, %s, %s)")
+        values = (username_1, sex_1, password_1, filename_1, email_1, phone_1)
+
+        try:
+            # 执行 SQL 插入操作
+            with conn.cursor() as cursor:
+                cursor.execute(sql_insert, values)
+            # 提交事务
+            conn.commit()
+            self.write("success")
+        except Exception as e:
+            # 发生异常时输出错误信息
+            print("插入用户信息时发生异常：", e)
+            self.write("插入失败，请检查输入数据")
+        finally:
+            # 关闭数据库连接
+            db.close_conn(conn)
 
 
 def make_app():
@@ -112,7 +149,7 @@ def make_app():
         (r"/websocket", WSHandler),
         (r"/login_page", LoginHandler),
         (r"/sub_page", subpageHandler),
-        (r"/register",FileUploadHandler),
+        (r"/register", FileUploadHandler),
         (r"/artwork/(.*)", tornado.web.StaticFileHandler, {"path": "H:/web_preject/artwork"}),
         (r"/artwork_js/(.*)", tornado.web.StaticFileHandler, {"path": "H:/web_preject/artwork/artwork_js"}),
         (r"/artwork_css/(.*)", tornado.web.StaticFileHandler, {"path": "H:/web_preject/artwork/artwork_css"}),
