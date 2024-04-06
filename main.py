@@ -143,6 +143,40 @@ class FileUploadHandler(tornado.web.RequestHandler):
             db.close_conn(conn)
 
 
+class resetpasswordHandler(tornado.web.RequestHandler):
+    def get(self):
+        self.render("resetpassword.html")
+
+    def post(self):
+        username = self.get_argument("username", default=None)
+        print(username)
+        email = self.get_argument("email", default=None)
+        print(email)
+        phone = self.get_argument("phone", default=None)
+        print(phone)
+        newpassword = self.get_argument("password", default=None)
+        print(newpassword)
+        password = self.get_argument("sure_password", default=None)
+        print(password)
+        if newpassword != password:
+            return 0
+        self.do_select_query(username, email, phone, password)
+    def do_select_query(self, username, email, phone, password):
+        db = do_select_query()
+        conn = db.conn()
+        update_sql = "UPDATE user_table SET password = %s WHERE username = %s and email = %s OR phone_number = %s"
+        values = (password, username, email, phone)
+        try:
+            cursor = conn.cursor()
+            cursor.execute(update_sql, values)
+            conn.commit()
+            self.write("success")
+        except Exception as e:
+            print("更新用户信息时发生异常：", e)
+            self.write("更新失败，请检查输入数据")
+        finally:
+            conn.close()
+
 def make_app():
     return tornado.web.Application([
         (r"/", MainHandler),
@@ -150,6 +184,7 @@ def make_app():
         (r"/login_page", LoginHandler),
         (r"/sub_page", subpageHandler),
         (r"/register", FileUploadHandler),
+        (r"/resetpassword", resetpasswordHandler),
         (r"/artwork/(.*)", tornado.web.StaticFileHandler, {"path": "H:/web_preject/artwork"}),
         (r"/artwork_js/(.*)", tornado.web.StaticFileHandler, {"path": "H:/web_preject/artwork/artwork_js"}),
         (r"/artwork_css/(.*)", tornado.web.StaticFileHandler, {"path": "H:/web_preject/artwork/artwork_css"}),
