@@ -13,6 +13,7 @@
     top:50%;
     left: 50%;
     transform:translate(-50%,-50%);
+    overflow: hidden;
 }
 body{
     background-image: url(../image/105716156_p0.jpg);
@@ -78,4 +79,18 @@ body{
     cursor: pointer;
     text-align: center;
     border-radius: 15px;
+}
+.back_rootpage{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    cursor: pointer;
+    background-color: rgba(173, 221, 253, 1);
+    width:100px;
+    height: 25px;
+    border-radius: 15px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }

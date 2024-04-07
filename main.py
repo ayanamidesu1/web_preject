@@ -161,6 +161,7 @@ class resetpasswordHandler(tornado.web.RequestHandler):
         if newpassword != password:
             return 0
         self.do_select_query(username, email, phone, password)
+
     def do_select_query(self, username, email, phone, password):
         db = do_select_query()
         conn = db.conn()
@@ -176,6 +177,7 @@ class resetpasswordHandler(tornado.web.RequestHandler):
             self.write("更新失败，请检查输入数据")
         finally:
             conn.close()
+
 
 def make_app():
     return tornado.web.Application([

@@ -14,6 +14,20 @@
         position: relative;
     }
 
+    .back_rootpage{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    cursor: pointer;
+    background-color: rgba(173, 221, 253, 1);
+    width:100px;
+    height: 25px;
+    border-radius: 15px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
     .register {
         display: flex;
         flex-direction: column;
@@ -44,6 +58,7 @@
 </style>
 
 <body>
+    <div class="back_rootpage">回到主页</div>
     <div class="register">
         <form id="register" method="post" style="align-self: self-end;">
             <div style="margin-top: 20px;">用户名：<div class="mt"><input value="username" id="username" name="username" type="text" placeholder="用户名"></div>
@@ -69,6 +84,14 @@
 </body>
 <script>
     var websocket = new WebSocket("ws://localhost:8888/websocket");
+
+    document.addEventListener('DOMContentLoaded',function(event){
+    var back_rootpage=document.querySelector('.back_rootpage');
+    back_rootpage.addEventListener('click',function(event){
+        window.location.href = "http://127.0.0.1:8888";
+    });
+});
+
     document.addEventListener("DOMContentLoaded", function(event) {
     var complete = document.querySelector(".complete");
     complete.addEventListener("click", function(event) {

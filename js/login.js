@@ -10,6 +10,13 @@ socket.onopen = function(event) {
     
 };
 
+document.addEventListener('DOMContentLoaded',function(event){
+    var back_rootpage=document.querySelector('.back_rootpage');
+    back_rootpage.addEventListener('click',function(event){
+        window.location.href = "http://127.0.0.1:8888";
+    });
+});
+
 // 当接收到消息时执行的函数
 socket.onmessage = function(event) {
     console.log("收到消息：" + event.data);
