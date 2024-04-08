@@ -1,0 +1,307 @@
+.main{
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.head{
+    display: flex;
+    justify-content: space-between;
+    border:1px solid red;
+    height: 5%;
+    background-color: rgb(226, 225, 225);
+    width: 100%;
+    height: 60px;
+}
+.show_more{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    align-self: center;
+    border: 1px solid red;
+    overflow: hidden;
+    width:40px;
+    margin-left:5px;
+    cursor: pointer;
+    height: 50%;
+    position: relative;
+    cursor: pointer;   
+}
+.show_more:hover{
+    background-color: rgba(109, 106, 106, 1);
+    border-radius: 50;
+    overflow: hidden;
+}
+.show_more svg{
+    width:35px;
+    height: auto;
+    object-fit: cover;
+}
+.show_more_dropdown{
+    position: fixed;
+    border: 1px solid red;
+    left: 7.5px;
+    top:10px;
+    width:190px;
+    height: 95%;
+    background-color: rgba(190,190,190,1);
+    display: flex;
+    cursor:auto;
+}
+.show_more_dropdown_mainpage
+{
+    display: flex;
+    flex-direction: column;
+}
+.show_more_dropdown_mainpage_ico{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    margin-top:5px;
+    position: fixed;
+    z-index: 10;
+}
+.dropdown_head_ico{
+    width:15% ;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.dropdown_head_ico svg{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.dropdown_head_img{
+    width: 70%;
+}
+.dropdown_head_img img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.show_more_dropdown_mainpage_content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+}
+.head_icon{
+    width:10%;
+    border: 1px solid red;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+    flex-direction: row;
+    height: 100%;
+}
+.head_icon img{
+    width:100%;
+    height: auto;
+    object-fit: cover;
+}
+.head_input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    border: 1px solid red;
+    width:50%;
+    position: relative;
+    background-color: rgba(109, 106, 106, 0.5);
+    border-radius: 10px;
+    height: 70%;
+}
+.head_input input{
+    width: 85%;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+    position: absolute;
+    left: 0px;
+    background:transparent;
+}
+.input_searchico{
+    width: 8%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    right: 0px;
+    cursor: pointer;
+    border: 1px solid red;
+}
+.input_searchico svg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.more_work{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+    border-radius: 15px;
+    overflow: hidden;
+    width: 10%;
+    height: 70%;
+    align-self: center;
+    cursor: pointer;
+    background-color: rgba(190,190,190,1);
+}
+.more_work_text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+    width: 80%;
+}
+.more_work_ico{
+    width: 20%;
+    height: 100%;
+}
+.more_work_ico svg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.more_work_dropdown{
+    display: flex;
+    
+    flex-direction: column;
+    position: absolute;
+    top:65px;
+    width: 20%;
+    border: 1px solid red;
+    background-color: rgb(228, 223, 223);
+    transition: max-height 0.5s ease-in-out;
+    scroll-behavior: smooth;
+    overflow: hidden;
+}
+.more_work_dropdown_sub{
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+    margin-top:5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    position: relative;
+}
+.more_work_dropdown_sub:hover{
+    cursor: pointer;
+    background-color: rgba(109, 106, 106, 0.5);
+}
+.more_work_dropdown_ico{
+    width: 20%;
+    height: 100%;
+    border: 1px solid red;
+    position: absolute;
+    left: 0px;
+    top:0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}
+.more_work_dropdown_ico svg{
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+}
+.head_usermessage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid red;
+    width: 4%;
+    position: relative;
+}
+.message_ico{
+    display: flex;
+    width: 80%;
+    height: 80%;
+    align-items: center;
+    justify-content: center;
+}
+.message_ico svg{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.head_notice{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid red;
+    width: 4%;
+    position: relative;
+}
+.head_notice_ico{
+    display: flex;
+    width: 80%;
+    height: 80%;
+    align-items: center;
+    justify-content: center;
+}
+.head_notice_ico svg{
+    width: 90%;
+    height: auto;
+    object-fit: cover;
+}
+.avatar{
+    width: 8%;
+    height: 50px;
+    border: 1px solid red;
+    display: flex;
+    position: relative;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.head_user_avatar{
+    width:80%;
+    height: 50px;
+    align-self: center;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    border-radius: 60%;
+    overflow: hidden;
+}
+.head_user_avatar_img{
+    width:100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+
+}
+.head_user_avatar_img img{
+    width: 100%;
+    height: auto;
+    object-fit: auto;
+}
+.head_user_avatar_dropdown_ico{
+    display: flex;
+    width: 20%;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid red;
+    margin-left: 0px;
+}
+.head_user_avatar_dropdown_ico_svg{
+    width: 100%;
+    height: 20px;
+}
+.head_user_avatar_dropdown_ico_svg svg{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}

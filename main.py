@@ -6,7 +6,7 @@ import tornado.template
 from model.connect_sqlsever import connMysql
 from model.login import do_select_query
 import json
-
+from model.sub_page import *
 
 # WebSocket 处理器
 class WSHandler(tornado.websocket.WebSocketHandler):
@@ -154,6 +154,8 @@ class resetpasswordHandler(tornado.web.RequestHandler):
         print(email)
         phone = self.get_argument("phone", default=None)
         print(phone)
+        sex = self.get_argument("sex", default=None)
+        print(sex)
         newpassword = self.get_argument("password", default=None)
         print(newpassword)
         password = self.get_argument("sure_password", default=None)
@@ -187,6 +189,7 @@ def make_app():
         (r"/sub_page", subpageHandler),
         (r"/register", FileUploadHandler),
         (r"/resetpassword", resetpasswordHandler),
+        (r"/usercent",user_center),
         (r"/artwork/(.*)", tornado.web.StaticFileHandler, {"path": "H:/web_preject/artwork"}),
         (r"/artwork_js/(.*)", tornado.web.StaticFileHandler, {"path": "H:/web_preject/artwork/artwork_js"}),
         (r"/artwork_css/(.*)", tornado.web.StaticFileHandler, {"path": "H:/web_preject/artwork/artwork_css"}),
@@ -199,6 +202,7 @@ def make_app():
 
 
 if __name__ == "__main__":
+
     app = make_app()
     app.listen(8888)
     print("服务器启动成功，请访问 http://localhost:8888")
