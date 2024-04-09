@@ -7,18 +7,19 @@
 .head{
     display: flex;
     justify-content: space-between;
-    border:1px solid red;
+    
     height: 5%;
-    background-color: rgb(226, 225, 225);
+    /*background-color: rgb(226, 225, 225);*/
     width: 100%;
     height: 60px;
+    z-index: 10;
 }
 .show_more{
     display: flex;
     justify-content: flex-start;
     align-items: center;
     align-self: center;
-    border: 1px solid red;
+    
     overflow: hidden;
     width:40px;
     margin-left:5px;
@@ -37,7 +38,7 @@
 }
 .show_more_dropdown{
     position: fixed;
-    border: 1px solid red;
+    
     left: 7.5px;
     top:10px;
     width:190px;
@@ -45,13 +46,14 @@
     background-color: rgba(250,240,240,0.1);
     display: flex;
     cursor:auto;
+    z-index: 10;
 }
 .show_more_dropdown_mainpage
 {
     display: flex;
     flex-direction: column;
     width: 100%;
-    border: 1px solid red;
+    
     padding-top:32%;
     
 }
@@ -62,7 +64,7 @@
     align-self: center;
     justify-content: center;
     position: fixed;
-    border: 1px solid red;
+    
 }
 .dropdown_head_ico{
     width:15% ;
@@ -87,7 +89,9 @@
     flex-direction: column;
     width: 100%;
     height: auto;
-    background-color: rgba(190,190,190,1);
+    background-color: rgb(235, 234, 234);
+    padding: 5px;
+    border-radius: 5px;
 }
 .show_more_dropdown_mainpage_content_ico{
     width:35px;
@@ -100,7 +104,7 @@
 
 .head_icon{
     width:10%;
-    border: 1px solid red;
+    
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -118,10 +122,10 @@
     justify-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid red;
+    
     width:50%;
     position: relative;
-    background-color: rgba(109, 106, 106, 0.5);
+    background-color: rgba(219, 217, 217, 0.5);
     border-radius: 20px;
     height: 65%;
 }
@@ -142,7 +146,7 @@
     position: absolute;
     right: 0px;
     cursor: pointer;
-    border: 1px solid red;
+    
 }
 .input_searchico svg{
     width: 100%;
@@ -153,20 +157,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid red;
+    
     border-radius: 15px;
     overflow: hidden;
     width: 10%;
     height: 60%;
     align-self: center;
     cursor: pointer;
-    background-color: rgba(190,190,190,1);
+    background-color: rgba(243,240,240,1);
 }
 .more_work_text{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid red;
+    
     width: 80%;
 }
 .more_work_ico{
@@ -180,13 +184,14 @@
 }
 .more_work_dropdown{
     display: flex;
-    
+    z-index: 10;
     flex-direction: column;
     position: absolute;
     top:65px;
     width: 20%;
-    border: 1px solid red;
-    background-color: rgb(228, 223, 223);
+    padding:5px;
+    border-radius: 15px;
+    background-color: rgb(238, 238, 238);
     transition: max-height 0.5s ease-in-out;
     scroll-behavior: smooth;
     overflow: hidden;
@@ -196,7 +201,7 @@
     height: 50px;
     justify-content: center;
     align-items: center;
-    border: 1px solid red;
+    
     margin-top:5px;
     margin-bottom: 5px;
     cursor: pointer;
@@ -209,7 +214,7 @@
 .more_work_dropdown_ico{
     width: 20%;
     height: 100%;
-    border: 1px solid red;
+    
     position: absolute;
     left: 0px;
     top:0px;
@@ -247,22 +252,24 @@
 }
 .show_more_dropdown_content_more_content{
     position: absolute;
-    left: 0px;
-    top:30px;
+    left: -5px;
+    top:25px;
     display: flex;
+    padding:5px;
+    border-radius: 15px;
     flex-direction: column;
     width: 100%;
-    background-color: rgba(190,190,190,1);
+    background-color: rgb(236, 236, 236);
 }
 .hv:hover{
-    background-color: rgba(109, 106, 106, 0.5);
+    background-color: rgba(209, 207, 207, 0.5);
     cursor: pointer;
 }
 .head_usermessage{
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid red;
+    
     width: 4%;
     position: relative;
     height: 35px;
@@ -285,7 +292,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid red;
+    
     width: 4%;
     position: relative;
     height: 35px;
@@ -307,7 +314,7 @@
 .avatar{
     width: 8%;
     height: 50px;
-    border: 1px solid red;
+    
     display: flex;
     position: relative;
     align-items: center;
@@ -320,7 +327,7 @@
     width:50px;
     height: 50px;
     align-self: center;
-    border: 1px solid red;
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -346,7 +353,7 @@
     width: 20%;
     align-items: center;
     justify-content: center;
-    border: 1px solid red;
+    
     margin-left: 0px;
 }
 .head_user_avatar_dropdown_ico_svg{
@@ -361,14 +368,17 @@
 .avatar_subpage{
     position: absolute;
     top:60px;
-    border:1px solid red;
+    
     width:260px;
-    height: 485px;
+    height: 525px;
     margin-right: 130px;
     display:  flex;
     flex-direction: column;
     cursor:auto;
-    background-color: rgba(190,190,190,1);
+    background-color: rgb(240, 240, 240);
+    border-radius: 15px;
+    padding:5px;
+    z-index: 10;
 }
 .avatar_subpage_fllowing_info{
     display: flex;

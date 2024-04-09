@@ -15,150 +15,132 @@ $(document).ready(function() {
 });
 
 $(document).ready(function(){
-    var show_btn=$(".show_more_dropdown_content_more_content_btn");
-    var mainpage=$(".show_more_dropdown_content_more_content");
-    var hidden_btn=(".show_more_dropdown_content_more_content_hidden");
-    show_btn.click(function(){
+    var show_btn = $(".show_more_dropdown_content_more_content_btn");
+    var mainpage = $(".show_more_dropdown_content_more_content");
+    var ico=$("#dropdown_show_more_btn");
+    var text=$(".show_more_dropdown_content_more_content_btn");
+    var hidden_btn=$(".show_more_dropdown_content_more_content_hidden");
+    
+    show_btn.click(function(event){
+        event.stopPropagation(); // 阻止事件冒泡
         mainpage.slideToggle(200);
+        show_btn.css("display","none");
+        ico.css("display","none");
     });
+    ico.click(function(event){
+        event.stopPropagation();
+        mainpage.slideToggle(200);
+        show_btn.css("display","none");
+        ico.css("display","none");
+    });
+
     $(document).click(function(event){
-        if(!$(event.target).closest('.show_more_dropdown_content_more_content').length)
-        {
+        if (!$(event.target).closest('.show_more_dropdown_content_more_content').length ||$(event.target).closest(".show_more_dropdown_content_more_content_hidden").length) {
             mainpage.slideUp(200);
+            show_btn.css("display","flex");
+            ico.css("display","flex");
         }
     });
 });
 
 
-document.addEventListener("DOMContentLoaded", function() {  
-    var mainpage = document.querySelector(".show_more_dropdown");  
-    var show_btn = document.getElementById("show_more_btn");  
-    var animationDuration = 300; // 动画持续时间，单位毫秒  
-    var isAnimating = false;  
-  
-    function animate(startMargin, endMargin, callback) {  
-        var start = null;  
-        var initialMarginLeft = startMargin;  
-  
-        function step(timestamp) {  
-            if (!start) start = timestamp;  
-            var progress = timestamp - start;  
-            var percentage = Math.min(progress / animationDuration, 1);  
-            var newMarginLeft = initialMarginLeft + (endMargin - initialMarginLeft) * percentage;  
-            mainpage.style.marginLeft = newMarginLeft + '%';  
-  
-            if (percentage < 1) {  
-                window.requestAnimationFrame(step);  
-            } else {  
-                if (callback) {  
-                    callback();  
-                }  
-            }  
-        }  
-  
-        window.requestAnimationFrame(step);  
-    }  
-  
-    show_btn.addEventListener("click", function() {  
-        if (mainpage.style.display === "none" || parseInt(mainpage.style.marginLeft, 10) === -100) {  
-            // 展开动画  
-            mainpage.style.display = "block";  
-            animate(-100, 0, function() {  
-                isAnimating = false;  
-            });  
-            isAnimating = true;  
-        } else if (!isAnimating) {  
-            // 收起动画  
-            animate(0, -100, function() {  
-                mainpage.style.display = "none";  
-                isAnimating = false;  
-            });  
-            isAnimating = true;  
-        }  
-    });  
-  
-    document.addEventListener('click', function(event) {  
-        var target = event.target;  
-  
-        while (target != null) {  
-            if (target === show_btn || target.classList.contains("show_more_dropdown")) {  
-                return;  
-            }  
-            target = target.parentElement;  
-        }  
-  
-        if (!isAnimating) {  
-            // 如果点击了页面其他部分，则执行收起动画  
-            animate(0, -100, function() {  
-                mainpage.style.display = "none";  
-            });  
-            isAnimating = true;  
-        }  
-    });  
+
+
+$(document).ready(function() {
+    var mainpage = $(".show_more_dropdown");
+    var show_btn = $("#show_more_btn");
+    var animationDuration = 300; // 动画持续时间，单位毫秒
+    var isAnimating = false;
+
+    function animate(startMargin, endMargin, callback) {
+        mainpage.animate({marginLeft: endMargin + '%'}, {
+            duration: animationDuration,
+            progress: function() {
+                isAnimating = true;
+            },
+            complete: function() {
+                isAnimating = false;
+                if (callback) {
+                    callback();
+                }
+            }
+        });
+    }
+
+    show_btn.click(function() {
+        if (mainpage.css('display') === 'none' || parseInt(mainpage.css('marginLeft'), 10) === -100) {
+            // 展开动画
+            mainpage.css('display', 'block');
+            animate(-100, 0);
+        } else if (!isAnimating) {
+            // 收起动画
+            animate(0, -100, function() {
+                mainpage.css('display', 'none');
+            });
+        }
+    });
+
+    $(document).click(function(event) {
+        var target = $(event.target);
+        // 检查点击的目标元素是否是按钮或下拉框的子元素
+        if (!target.is(show_btn) && !target.closest('.show_more_dropdown').length) {
+            if (!isAnimating) {
+                animate(0, -100, function() {
+                    mainpage.css('display', 'none');
+                });
+            }
+        }
+    });
 });
 
-document.addEventListener("DOMContentLoaded", function() {  
-    var switch_btn = document.querySelector(".avatar_btn");  
-    var mainpage = document.querySelector(".avatar_subpage");  
-    var animationDuration = 300; // 动画持续时间，单位毫秒  
-    var isAnimating = false;  
-  
-    function animate(startMargin, endMargin, callback) {  
-        var start = null;  
-        var initialMarginTop = startMargin;  
-  
-        function step(timestamp) {  
-            if (!start) start = timestamp;  
-            var progress = timestamp - start;  
-            var percentage = Math.min(progress / animationDuration, 1);  
-            var newMarginTop = initialMarginTop + (endMargin - initialMarginTop) * percentage;  
-            mainpage.style.marginTop = newMarginTop + 'px'; // 修改为px单位，假设您想要以像素为单位进行动画  
-  
-            if (percentage < 1) {  
-                window.requestAnimationFrame(step);  
-            } else {  
-                if (callback) {  
-                    callback();  
-                }  
-            }  
-        }  
-  
-        window.requestAnimationFrame(step);  
-    }  
-  
-    switch_btn.addEventListener("click", function() {  
-        if (mainpage.style.display === "none" || parseInt(mainpage.style.marginTop, 10) <= -mainpage.offsetHeight) {  
-            // 展开动画  
-            mainpage.style.display = "block";  
-            mainpage.style.marginTop = -mainpage.offsetHeight + 'px'; // 初始设置为完全隐藏在屏幕下方  
-            animate(-mainpage.offsetHeight, 0, function() {  
-                isAnimating = false;  
-            });  
-            isAnimating = true;  
-        } else if (!isAnimating) {  
-            // 收起动画  
-            animate(0, -mainpage.offsetHeight, function() {  
-                mainpage.style.display = "none";  
-                isAnimating = false;  
-            });  
-            isAnimating = true;  
-        }  
-    });  
-  
-    document.addEventListener('click', function(event) {  
-        var target = event.target;  
-  
-        while (target != null) {  
-            if (target === switch_btn || target.classList.contains("avatar_subpage")) {  
-                return;  
-            }  
-            target = target.parentElement;  
-        }  
-        if (!isAnimating) {   
-            animate(0, -mainpage.offsetHeight, function() {  
-                mainpage.style.display = "none";  
-            });  
-            isAnimating = true;  
-        }  
-    });  
+
+$(document).ready(function() {
+    var switch_btn = $(".avatar_btn");
+    var mainpage = $(".avatar_subpage");
+    var animationDuration = 300; // 动画持续时间，单位毫秒
+    var isAnimating = false;
+
+    function animate(startMargin, endMargin, callback) {
+        mainpage.stop().animate({marginTop: endMargin}, {
+            duration: animationDuration,
+            progress: function() {
+                isAnimating = true;
+            },
+            complete: function() {
+                isAnimating = false;
+                if (callback) {
+                    callback();
+                }
+            }
+        });
+    }
+
+    switch_btn.click(function() {
+        if (mainpage.css("display") === "none" || parseInt(mainpage.css("marginTop"), 10) <= -mainpage.outerHeight()) {
+            // 展开动画
+            mainpage.css("display", "block").css("marginTop", -mainpage.outerHeight());
+            animate(-mainpage.outerHeight(), 0);
+        } else if (!isAnimating) {
+            // 收起动画
+            animate(0, -mainpage.outerHeight(), function() {
+                mainpage.css("display", "none");
+            });
+        }
+    });
+
+    $(document).click(function(event) {
+        if (!$(event.target).closest('.avatar_btn, .avatar_subpage').length && !isAnimating) {
+            animate(0, -mainpage.outerHeight(), function() {
+                mainpage.css("display", "none");
+            });
+        }
+    });
+});
+
+//跳转部分
+document.addEventListener("DOMContentLoaded",function(){
+    var head_icon=document.querySelector(".head_icon");
+    head_icon.addEventListener("click",function(){
+        window.location.href="http://127.0.0.1:8888";
+    });
 });

@@ -320,6 +320,7 @@ scroll-behavior: smooth;
   width: 100%;  
   overflow: hidden;
 	display: flex;
+	margin-top:10px;
 }  
 .container a{
 	text-decoration: none; 
