@@ -27,10 +27,8 @@
     position: relative;
     cursor: pointer;   
 }
-.show_more:hover{
-    background-color: rgba(109, 106, 106, 1);
-    border-radius: 50;
-    overflow: hidden;
+#show_more_btn:hover{
+    background-color: rgba(190,190,190,1);
 }
 .show_more svg{
     width:35px;
@@ -44,7 +42,7 @@
     top:10px;
     width:190px;
     height: 95%;
-    background-color: rgba(190,190,190,1);
+    background-color: rgba(250,240,240,0.1);
     display: flex;
     cursor:auto;
 }
@@ -52,16 +50,19 @@
 {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    border: 1px solid red;
+    padding-top:32%;
+    
 }
 .show_more_dropdown_mainpage_ico{
     display: flex;
-    width: 100%;
+    width: 190px;
     align-items: center;
     align-self: center;
     justify-content: center;
-    margin-top:5px;
     position: fixed;
-    z-index: 10;
+    border: 1px solid red;
 }
 .dropdown_head_ico{
     width:15% ;
@@ -69,12 +70,12 @@
     cursor: pointer;
 }
 .dropdown_head_ico svg{
-    width: 100%;
+    width: 28px;
     height: auto;
     object-fit: cover;
 }
 .dropdown_head_img{
-    width: 70%;
+    width: 160px;
 }
 .dropdown_head_img img{
     width: 100%;
@@ -86,7 +87,17 @@
     flex-direction: column;
     width: 100%;
     height: auto;
+    background-color: rgba(190,190,190,1);
 }
+.show_more_dropdown_mainpage_content_ico{
+    width:35px;
+    height: 35px;
+    object-fit: cover;
+}
+.mt{
+    margin-top:5px;
+}
+
 .head_icon{
     width:10%;
     border: 1px solid red;
@@ -111,8 +122,8 @@
     width:50%;
     position: relative;
     background-color: rgba(109, 106, 106, 0.5);
-    border-radius: 10px;
-    height: 70%;
+    border-radius: 20px;
+    height: 65%;
 }
 .head_input input{
     width: 85%;
@@ -126,7 +137,7 @@
 }
 .input_searchico{
     width: 8%;
-    height: 100%;
+    height: 70%;
     overflow: hidden;
     position: absolute;
     right: 0px;
@@ -146,7 +157,7 @@
     border-radius: 15px;
     overflow: hidden;
     width: 10%;
-    height: 70%;
+    height: 60%;
     align-self: center;
     cursor: pointer;
     background-color: rgba(190,190,190,1);
@@ -212,6 +223,41 @@
     height: 90%;
     object-fit: cover;
 }
+.show_more_dropdown_mainpage_content_more_ico{
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    left: 10px;
+}
+.show_more_dropdown_mainpage_content_more_ico svg{
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+}
+.show_more_dropdown_mainpage_content_more{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    cursor: pointer;
+}
+.show_more_dropdown_mainpage_content_more:hover{
+    background-color: rgba(109, 106, 106, 0);
+}
+.show_more_dropdown_content_more_content{
+    position: absolute;
+    left: 0px;
+    top:30px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgba(190,190,190,1);
+}
+.hv:hover{
+    background-color: rgba(109, 106, 106, 0.5);
+    cursor: pointer;
+}
 .head_usermessage{
     display: flex;
     align-items: center;
@@ -219,6 +265,9 @@
     border: 1px solid red;
     width: 4%;
     position: relative;
+    height: 35px;
+    align-items: center;
+    align-self: center;
 }
 .message_ico{
     display: flex;
@@ -239,6 +288,9 @@
     border: 1px solid red;
     width: 4%;
     position: relative;
+    height: 35px;
+    align-items: center;
+    align-self: center;
 }
 .head_notice_ico{
     display: flex;
@@ -262,9 +314,10 @@
     align-self: center;
     justify-content: center;
     cursor: pointer;
+    position: relative;
 }
 .head_user_avatar{
-    width:80%;
+    width:50px;
     height: 50px;
     align-self: center;
     border: 1px solid red;
@@ -304,4 +357,42 @@
     width: 100%;
     height: auto;
     object-fit: cover;
+}
+.avatar_subpage{
+    position: absolute;
+    top:60px;
+    border:1px solid red;
+    width:260px;
+    height: 485px;
+    margin-right: 130px;
+    display:  flex;
+    flex-direction: column;
+    cursor:auto;
+    background-color: rgba(190,190,190,1);
+}
+.avatar_subpage_fllowing_info{
+    display: flex;
+}
+.avatar_subpage_fllowing{
+    display: flex;
+    flex-direction: column;
+}
+.avatar_subpage_fans{
+    display: flex;
+    flex-direction: column;
+}
+.avatar_subpage_avatar{
+    display: flex;
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    border-radius: 50%;
+    align-items: center;
+    align-self: self-start;
+    justify-content: center;
+}
+.avatar_subpage_avatar img{
+    width: 100%;
+    height: auto;
+    object-fit: 100%;
 }
