@@ -431,7 +431,7 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="delete hv">
+                    <div class="delete hv" @click="delete_btn">
                         <div class="delete_svg">
                             <svg t="1712824303622" class="icon" viewBox="0 0 1024 1024" version="1.1"
                                 xmlns="http://www.w3.org/2000/svg" p-id="6943" width="200" height="200">
@@ -459,9 +459,23 @@
                             </div>
                         </div>
                     </div>
-                    <div class="edit_box_background">
+                    <div class="edit_box_background" @click="upload_img">
                         <img src="image/87930967_p1.jpg">
+                        <div class="edit_box_background_upload">
+                            <div class="edit_box_background_upload_svg">
+                                <svg t="1712831428605" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5687"
+                                    width="200" height="200">
+                                    <path
+                                        d="M896 160H128c-17.67 0-32 14.33-32 32v640c0 17.67 14.33 32 32 32h768c17.67 0 32-14.33 32-32V192c0-17.67-14.33-32-32-32z m-32 64v472.01l-227.2-170.4c-16.97-12.72-40.62-12.72-57.59 0l-98.58 73.92L349.2 494.39c-16.47-13.19-39.27-14.19-56.81-2.39L160 581.02V224h704zM160 800V658.16l158.36-106.48 161.02 128.8L608 584l256 192v24H160z"
+                                        fill="#333333" p-id="5688"></path>
+                                    <path
+                                        d="M704 480c52.94 0 96-43.06 96-96s-43.06-96-96-96-96 43.06-96 96 43.06 96 96 96z m0-128c17.64 0 32 14.36 32 32s-14.36 32-32 32-32-14.36-32-32 14.36-32 32-32z"
+                                        fill="#333333" p-id="5689"></path>
+                                </svg>
+                            </div>
+                        </div>
                     </div>
+
                     <div class="edit_box_imginfo">
                         <div class="edit_box_imginfo_left">
                             <div class="mt">适用格式</div>
@@ -493,10 +507,13 @@
                         <div class="edit_box_tips_text">请不要上传R-18或使用规则中禁止投稿的作品。如果您上传了相关图片，设置可能会被清除。</div>
                     </div>
                     <div class="edit_box_button">
-                        <div class="edit_box_button_agree"><b>同意并上传</b></div>
+                        <div class="edit_box_button_agree" @click="done_upload"><b>同意并上传</b></div>
                         <div class="edit_box_button_cancel" @click="hidden_btn"><b>取消</b></div>
                     </div>
                 </div>
+            </div>
+            <div>
+
             </div>
         </div>
     </div>
