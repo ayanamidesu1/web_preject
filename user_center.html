@@ -574,7 +574,7 @@
                         <div class="edit_userinfo_box_background_img">
                             <img src="image/87930967_p1.jpg">
                         </div>
-                        <div class="edit_userinfo_box_background_img_editbtn hv">
+                        <div class="edit_userinfo_box_background_img_editbtn hv" @click="edit_btn">
                             <div class="edit_userinfo_box_background_img_editbtn_svg">
                                 <svg t="1712824253105" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4177" width="200"
                                     height="200" class="icon">
@@ -592,7 +592,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="edit_userinfo_box_background_img_deletebtn hv">
+                        <div class="edit_userinfo_box_background_img_deletebtn hv" @click="delete_btn">
                             <div class="edit_userinfo_box_background_img_deletebtn_svg">
                                 <svg t="1712824303622" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6943" width="200"
                                     height="200" class="icon">
@@ -603,12 +603,85 @@
                             </div>
                         </div>
                     </div>
+                    <div class="avatar_edit_box_background" v-show="avatar_editbox_show">
+                        <div class="avatar_edit_box">
+                            <div class="avatar_edit_box_title_box">
+                                <div class="avatar_edit_box_title">个人头像</div>
+                                <div class="avatar_edit_box_title_close" @click='hidden_avatar_edit_box'>
+                                    <div class="avatar_edit_box_title_close_ico">
+                                        <svg t="1712826554067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                            p-id="7101" width="200" height="200" class="icon">
+                                            <path
+                                                d="M1012.485757 119.748126L904.251874 11.514243a38.38081 38.38081 0 0 0-54.50075 0L537.331334 321.631184a36.845577 36.845577 0 0 1-53.733133 0L174.248876 11.514243a38.38081 38.38081 0 0 0-54.50075 0L11.514243 119.748126a38.38081 38.38081 0 0 0 0 54.50075l307.046477 310.884557a36.845577 36.845577 0 0 1 0 53.733134l-307.046477 310.884557a38.38081 38.38081 0 0 0 0 54.50075l108.233883 108.233883a38.38081 38.38081 0 0 0 54.50075 0l310.884557-307.046477a38.38081 38.38081 0 0 1 53.733134 0l310.884557 307.046477a38.38081 38.38081 0 0 0 54.50075 0l108.233883-108.233883a38.38081 38.38081 0 0 0 0-54.50075L701.601199 537.331334a38.38081 38.38081 0 0 1 0-53.733133l307.046477-310.884558a38.38081 38.38081 0 0 0 3.838081-52.965517z"
+                                                p-id="7102"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="avatar_edit_box_backgroundimg">
+                                <div class="avatar_edit_box_background_img">
+                                    <img src="image/87930967_p1.jpg">
+                                </div>
+                                <div class="avatar_edit_box_background_img_hv">
+                                    <div class="avatar_edit_box_background_img_hv_ico">
+                                        <svg t="1712831428605" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                            p-id="5687" width="200" height="200" class="icon">
+                                            <path
+                                                d="M896 160H128c-17.67 0-32 14.33-32 32v640c0 17.67 14.33 32 32 32h768c17.67 0 32-14.33 32-32V192c0-17.67-14.33-32-32-32z m-32 64v472.01l-227.2-170.4c-16.97-12.72-40.62-12.72-57.59 0l-98.58 73.92L349.2 494.39c-16.47-13.19-39.27-14.19-56.81-2.39L160 581.02V224h704zM160 800V658.16l158.36-106.48 161.02 128.8L608 584l256 192v24H160z"
+                                                fill="rgba(255,255,255,1)" p-id="5688"></path>
+                                            <path
+                                                d="M704 480c52.94 0 96-43.06 96-96s-43.06-96-96-96-96 43.06-96 96 43.06 96 96 96z m0-128c17.64 0 32 14.36 32 32s-14.36 32-32 32-32-14.36-32-32 14.36-32 32-32z"
+                                                fill="rgba(255,255,255,1)" p-id="5689"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="avatar_edit_box_background_img_hv_text"><b>上传头像</b></div>
+                                </div>
+                            </div>
+                            <div class="avatar_edit_box_fileinfo">
+                                <div class="avatar_edit_box_fileinfo_left">
+                                    <b>适用格式</b><br>
+                                    <b>最大文件容量</b>
+                                </div>
+                                <div class="avatar_edit_box_fileinfo_right">
+                                    JPEG/PNG/GIF<br>
+                                    5MB
+                                </div>
+                            </div>
+                            <div class="avatar_edit_box_openvip">
+                                <div class="avatar_edit_box_openvip_text">开通ILLWeb高级会员，即可将GIF动图设为个人头像。</div>
+                                <div class="avatar_edit_box_openvip_btn"><b>成为ILLWeb高级会员</b></div>
+                            </div>
+                            <div class="avatar_edit_box_tips">
+                                <div class="avatar_edit_box_tips_ico">
+                                    <svg t="1712828336654" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4579" width="200"
+                                        height="200" class="icon">
+                                        <path
+                                            d="M512 1024c-281.6 0-512-230.4-512-512s230.4-512 512-512 512 230.4 512 512-230.4 512-512 512z m0-938.666667c-234.666667 0-426.666667 192-426.666667 426.666667s192 426.666667 426.666667 426.666667 426.666667-192 426.666667-426.666667-192-426.666667-426.666667-426.666667z m0 512c-25.6 0-42.666667-17.066667-42.666667-42.666666v-298.666667c0-25.6 17.066667-42.666667 42.666667-42.666667s42.666667 17.066667 42.666667 42.666667v298.666667c0 21.333333-17.066667 42.666667-42.666667 42.666666z m0 81.066667c25.6 0 46.933333 21.333333 46.933333 46.933333s-21.333333 46.933333-46.933333 46.933334-46.933333-21.333333-46.933333-46.933334 21.333333-46.933333 46.933333-46.933333z"
+                                            fill="#666666" p-id="4580"></path>
+                                    </svg>
+                                </div>
+                                <div class="avatar_edit_box_tips_text">
+                                    上传的图片将会裁切为圆形，并显示于个人资料中。
+                                </div>
+                            </div>
+                            <div class="avatar_edit_box_warning">
+                                <div class="avatar_edit_box_warning_text">
+                                    请不要上传R-18或使用规则中禁止投稿的作品。如果您上传了相关图片，设置可能会被清除。
+                                </div>
+                            </div>
+                            <div class="avatar_edit_box_btn">
+                                <div class="avatar_edit_box_btn_done">确定</div>
+                                <div class="avatar_edit_box_btn_cancel" @click="hidden_avatar_edit_box">取消</div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="edit_userinfo_box_avatar">
+                        
                         <div>个人头像</div>
                         <div class="edit_userinfo_box_avatar_img">
                             <img src="image/80662332_p0(1).png">
                         </div>
-                        <div class="edit_userinfo_box_avatar_img_editbtn hv">
+                        <div class="edit_userinfo_box_avatar_img_editbtn hv" @click="avatar_editbox_show=true">
                             <div class="edit_userinfo_box_avatar_img_editbtn_svg">
                                 <svg t="1712824253105" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4177" width="200"
                                     height="200" class="icon">
@@ -676,9 +749,10 @@
                                 </select>
                             </div>
                         </div>
+                        
                     </div>
                     <div class="edit_userinfo_box_add_contact_information hv">
-                        <div class="edit_userinfo_box_add_contact_information_btn hv">
+                        <div class="edit_userinfo_box_add_contact_information_btn hv" @click="add_contact">
                             新增联系方式
                         </div>
                     </div>
@@ -830,6 +904,16 @@
                         <div class="edit_userinfo_box_sava_btn">保存修改</div>
                         <div class="edit_userinfo_box_sava_btn_cancel" @click="close_user_info_box">取消</div>
                     </div>
+                </div>
+            </div>
+            <div class="switch_box">
+                <div class="switch_box_indexpage" v-bind:style="indexpage_style" @click="switch_box_btn('indexpage')"><b>主页</b></div>
+                <div class="switch_box_collection" v-bind:style="collection_style" @click="switch_box_btn('collection')"><b>收藏</b></div>
+            </div>
+            <div class="switch_box_content_1">
+                <div class="switch_box_content_1_title">
+                    <div class="switch_box_content_1_title_left"><b>精选</b></div>
+                    <div class="switch_box_content_1_title_right"><b>设置精选</b></div>
                 </div>
             </div>
         </div>

@@ -788,3 +788,333 @@
     background-color: rgba(199, 197, 197,0.5);
     cursor:pointer;
 }
+/*编辑个人资料*/
+.avatar_edit_box_background {
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    z-index: 12;
+    width: 100vw;
+    height: 100vh;
+    top:0px;
+}
+
+.avatar_edit_box {
+    width: 25vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid red;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.avatar_edit_box_title_box {
+    display: flex;
+    margin-top: 5px;
+    border: 1px solid red;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    width: 100%;
+    height: 25px;
+    position: relative;
+}
+
+.avatar_edit_box_title_close {
+    display: flex;
+    width: 25px;
+    height: 25px;
+    overflow: hidden;
+    position: absolute;
+    right: 0px;
+}
+
+.avatar_edit_box_title_close:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.avatar_edit_box_title_close_ico {
+    width: 25px;
+    height: 25px;
+    display: flex;
+}
+
+.avatar_edit_box_title_close_ico svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.avatar_edit_box_backgroundimg {
+    width: 100%;
+    height: auto;
+    position: relative;
+    border: 1px solid red;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    align-self: center;
+}
+
+.avatar_edit_box_background_img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.avatar_edit_box_background_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.avatar_edit_box_background_img_hv {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+}
+
+.avatar_edit_box_background_img_hv:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: 0.15s;
+    opacity: 1;
+}
+
+.avatar_edit_box_background_img_hv_ico {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+}
+
+.avatar_edit_box_background_img_hv_ico svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    fill: rgba(255, 255, 255, 1);
+}
+
+.avatar_edit_box_background_img_hv_text {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 1);
+}
+
+.avatar_edit_box_fileinfo {
+    display: flex;
+    margin-top: 10px;
+    position: relative;
+    justify-content: space-between;
+    width: 90%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.avatar_edit_box_fileinfo_left .avatar_edit_box_fileinfo_right {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 90%;
+}
+
+.avatar_edit_box_openvip {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    width: 90%;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    background-color: rgb(223, 223, 223);
+    padding: 5px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.avatar_edit_box_openvip_btn {
+    width: 50%;
+    min-width:200px;
+    height: auto;
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 15px;
+    background-color: #fd9e16;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+
+.avatar_edit_box_openvip_btn:hover {
+    cursor: pointer;
+}
+
+.avatar_edit_box_tips {
+    display: flex;
+    margin-top: 10px;
+    width: 90%;
+    margin-left: 10px;
+    margin-right: 10px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    text-align: center;
+    background-color: rgb(223, 223, 223);
+    border-radius: 15px;
+    padding: 5px;
+}
+
+.avatar_edit_box_warning {
+    display: flex;
+    margin-top: 10px;
+    width: 90%;
+    margin-left: 10px;
+    margin-right: 10px;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    text-align: center;
+    padding: 5px;
+}
+.avatar_edit_box_btn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    width: 90%;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    padding:5px;
+    text-align: center;
+}
+.avatar_edit_box_btn_done{
+    width: 100%;
+    margin-top:5px;
+    background-color: rgba(0,150,250,1);
+    border-radius: 15px;
+    padding: 5px;
+}
+.avatar_edit_box_btn_done:hover{
+    cursor: pointer;
+}
+.avatar_edit_box_btn_cancel{
+    width: 100%;
+    margin-top:5px;
+    background-color: rgba(200,200,200,1);
+    border-radius: 15px;
+    padding: 5px;
+}
+.avatar_edit_box_btn_cancel:hover{
+    cursor: pointer;
+}
+.avatar_edit_box_tips_ico{
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+.avatar_edit_box_tips_ico svg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.switch_box{
+    display: flex;
+    margin-top: 15px;
+    border:1px solid red;
+    width: 100%;
+    height: 30px;
+
+}
+.switch_box_indexpage{
+    display: flex;
+    width: 80px;
+    height:auto;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    opacity: 0.8;
+}
+.switch_box_indexpage:hover{
+    cursor: pointer;
+    transition: 0.15s;
+    opacity: 1;
+}
+.switch_box_collection{
+    display: flex;
+    width: 80px;
+    height:auto;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    opacity: 0.8;
+}
+.switch_box_collection:hover{
+    cursor: pointer;
+    transition: 0.15s;
+    opacity: 1;
+}
+.switch_box_content_1{
+    display: flex;
+    flex-direction: column;
+    border:1px solid red;
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+    padding: 5px;
+}
+.switch_box_content_1_title{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    border:1px solid red;
+}
+.switch_box_content_1_title_left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    padding:5px;
+}
+.switch_box_content_1_title_right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    padding:5px;
+}
