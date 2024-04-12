@@ -515,7 +515,7 @@
             <div>
 
             </div>
-            <div class="user_info_box">
+            <div class="user_info_box" >
                 <div class="user_info_box_avatar">
                     <div class="user_info_box_avatar_img">
                         <img src="image/80662332_p0(1).png">
@@ -544,7 +544,7 @@
                     <div class="user_info_box_info_signature mt">查看个人资料</div>
                 </div>
                 <div class="user_info_box_edit_box">
-                    <div class="user_info_box_edit">
+                    <div class="user_info_box_edit" @click="open_user_info_box">
                         <div class="user_info_box_edit_btn"> 编辑个人资料</div>
                     </div>
                     <div class="user_info_box_share hv">
@@ -558,35 +558,90 @@
                         </div>
                     </div>
                 </div>
-                <div class="edit_userinfo_box">
+                <div class="edit_userinfo_box" v-show="user_info_box_show">
                     <div class="edit_userinfo_box_title">
                         <div class="edit_userinfo_box_title_text">编辑个人资料</div>
-                        <div class="edit_userinfo_box_title_close"></div>
+                        <div class="edit_userinfo_box_title_close" @click="close_user_info_box">
+                            <svg t="1712826554067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7101" width="200"
+                                height="200" class="icon">
+                                <path
+                                    d="M1012.485757 119.748126L904.251874 11.514243a38.38081 38.38081 0 0 0-54.50075 0L537.331334 321.631184a36.845577 36.845577 0 0 1-53.733133 0L174.248876 11.514243a38.38081 38.38081 0 0 0-54.50075 0L11.514243 119.748126a38.38081 38.38081 0 0 0 0 54.50075l307.046477 310.884557a36.845577 36.845577 0 0 1 0 53.733134l-307.046477 310.884557a38.38081 38.38081 0 0 0 0 54.50075l108.233883 108.233883a38.38081 38.38081 0 0 0 54.50075 0l310.884557-307.046477a38.38081 38.38081 0 0 1 53.733134 0l310.884557 307.046477a38.38081 38.38081 0 0 0 54.50075 0l108.233883-108.233883a38.38081 38.38081 0 0 0 0-54.50075L701.601199 537.331334a38.38081 38.38081 0 0 1 0-53.733133l307.046477-310.884558a38.38081 38.38081 0 0 0 3.838081-52.965517z"
+                                    p-id="7102"></path>
+                            </svg>
+                        </div>
                     </div>
                     <div class="edit_userinfo_box_background">
-                        <div class="edit_userinfo_box_background_img"></div>
-                        <div class="edit_userinfo_box_background_img_editbtn"></div>
-                        <div class="edit_userinfo_box_background_img_deletebtn"></div>
+                        <div class="edit_userinfo_box_background_img">
+                            <img src="image/87930967_p1.jpg">
+                        </div>
+                        <div class="edit_userinfo_box_background_img_editbtn hv">
+                            <div class="edit_userinfo_box_background_img_editbtn_svg">
+                                <svg t="1712824253105" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4177" width="200"
+                                    height="200" class="icon">
+                                    <path
+                                        d="M239.104 928.256A894.976 894.976 0 0 1 133.12 921.6a51.2 51.2 0 0 1-44.544-44.544c-5.12-42.496-26.624-256 57.344-340.992L529.92 153.6a231.936 231.936 0 0 1 328.192 328.192l-384 384c-52.224 51.2-154.624 62.464-235.008 62.464z m-51.2-102.4c81.408 5.12 184.832 0 215.552-31.232L785.92 409.6a131.584 131.584 0 0 0 0-183.808 134.144 134.144 0 0 0-183.808 0l-384 384c-30.208 29.184-36.352 133.12-31.744 214.016z"
+                                        p-id="4178"></path>
+                                    <path d="M523.264 231.424l256 256" fill="#FFFFFF" p-id="4179"></path>
+                                    <path
+                                        d="M779.264 538.624a51.2 51.2 0 0 1-36.352-15.36l-256-256a51.2 51.2 0 0 1 0-72.192 51.2 51.2 0 0 1 72.704 0l256 256a51.2 51.2 0 0 1-36.352 87.552z"
+                                        p-id="4180"></path>
+                                    <path d="M181.76 572.416l256 256" fill="#FFFFFF" p-id="4181"></path>
+                                    <path
+                                        d="M437.76 879.616a51.2 51.2 0 0 1-35.84-14.848l-256-256a51.2 51.2 0 0 1 0-72.192 51.2 51.2 0 0 1 72.192 0l256 256a51.2 51.2 0 0 1 0 72.192 51.2 51.2 0 0 1-36.352 14.848zM819.2 939.52h-204.8a51.2 51.2 0 0 1 0-102.4h204.8a51.2 51.2 0 0 1 0 102.4z"
+                                        p-id="4182"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="edit_userinfo_box_background_img_deletebtn hv">
+                            <div class="edit_userinfo_box_background_img_deletebtn_svg">
+                                <svg t="1712824303622" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6943" width="200"
+                                    height="200" class="icon">
+                                    <path
+                                        d="M984 80H660.8c0-44.8-35.2-80-80-80h-136c-44.8 0-80 35.2-80 80H40C17.6 80 0 97.6 0 120S17.6 160 40 160h944c22.4 0 40-17.6 40-40S1006.4 80 984 80zM888 236.8h-752c-35.2 0-64 28.8-64 64V960c0 35.2 28.8 64 64 64h752c35.2 0 64-28.8 64-64V300.8c0-35.2-28.8-64-64-64zM307.2 788.8c0 24-20.8 41.6-43.2 40-20.8-1.6-36.8-20.8-36.8-41.6V472c0-20.8 16-40 36.8-41.6 24-1.6 43.2 16 43.2 40v318.4z m244.8 0c0 24-20.8 41.6-43.2 40-20.8-1.6-36.8-20.8-36.8-41.6V472c0-20.8 16-40 36.8-41.6 24-1.6 43.2 16 43.2 40v318.4z m244.8 0c0 24-20.8 41.6-43.2 40-20.8-1.6-36.8-20.8-36.8-41.6V472c0-20.8 16-40 36.8-41.6 24-1.6 43.2 16 43.2 40v318.4z"
+                                        p-id="6944"></path>
+                                </svg>
+                            </div>
+                        </div>
                     </div>
                     <div class="edit_userinfo_box_avatar">
                         <div>个人头像</div>
-                        <div class="edit_userinfo_box_avatar_img"></div>
-                        <div class="edit_userinfo_box_avatar_img_editbtn"></div>
+                        <div class="edit_userinfo_box_avatar_img">
+                            <img src="image/80662332_p0(1).png">
+                        </div>
+                        <div class="edit_userinfo_box_avatar_img_editbtn hv">
+                            <div class="edit_userinfo_box_avatar_img_editbtn_svg">
+                                <svg t="1712824253105" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4177" width="200"
+                                    height="200" class="icon">
+                                    <path
+                                        d="M239.104 928.256A894.976 894.976 0 0 1 133.12 921.6a51.2 51.2 0 0 1-44.544-44.544c-5.12-42.496-26.624-256 57.344-340.992L529.92 153.6a231.936 231.936 0 0 1 328.192 328.192l-384 384c-52.224 51.2-154.624 62.464-235.008 62.464z m-51.2-102.4c81.408 5.12 184.832 0 215.552-31.232L785.92 409.6a131.584 131.584 0 0 0 0-183.808 134.144 134.144 0 0 0-183.808 0l-384 384c-30.208 29.184-36.352 133.12-31.744 214.016z"
+                                        p-id="4178"></path>
+                                    <path d="M523.264 231.424l256 256" fill="#FFFFFF" p-id="4179"></path>
+                                    <path
+                                        d="M779.264 538.624a51.2 51.2 0 0 1-36.352-15.36l-256-256a51.2 51.2 0 0 1 0-72.192 51.2 51.2 0 0 1 72.704 0l256 256a51.2 51.2 0 0 1-36.352 87.552z"
+                                        p-id="4180"></path>
+                                    <path d="M181.76 572.416l256 256" fill="#FFFFFF" p-id="4181"></path>
+                                    <path
+                                        d="M437.76 879.616a51.2 51.2 0 0 1-35.84-14.848l-256-256a51.2 51.2 0 0 1 0-72.192 51.2 51.2 0 0 1 72.192 0l256 256a51.2 51.2 0 0 1 0 72.192 51.2 51.2 0 0 1-36.352 14.848zM819.2 939.52h-204.8a51.2 51.2 0 0 1 0-102.4h204.8a51.2 51.2 0 0 1 0 102.4z"
+                                        p-id="4182"></path>
+                                </svg>
+                            </div>
+                        </div>
                     </div>
                     <div class="edit_userinfo_box_name">
                         <div>昵称</div>
-                        <div class="edit_userinfo_box_name_text">
+                        <div class="edit_userinfo_box_name_text mt">
                             <input placeholder="请输入昵称">
                             <div class="edit_userinfo_box_name_text_maxlen">3/15</div>
                         </div>
                     </div>
                     <div class="edit_userinfo_box_self_introduction">
-                        <div>
+                        <div class="edit_userinfo_box_self_introduction_title">个人简介</div>
+                        <div class="edit_userinfo_box_self_introduction_text mt">
                             <textarea placeholder="这个人很懒什么都没有写"></textarea>
                         </div>
                     </div>
                     <div class="edit_userinfo_box_person_website">
-                        <div>个人网站</div>
+                        <div class="edit_userinfo_box_person_website_title">个人网站</div>
                         <div class="edit_userinfo_box_person_website_text">
                             <input placeholder="请输入个人网站">
                         </div>
@@ -601,7 +656,14 @@
                                 <select>
                                     <option>
                                         <div class="edit_userinfo_box_contact_information_text_choose_box">
-                                            <div class="edit_userinfo_box_contact_information_text_choose_ico"></div>
+                                            <div class="edit_userinfo_box_contact_information_text_choose_ico">
+                                                <svg t="1712890771404" class="icon" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2340"
+                                                    width="200" height="200">
+                                                    <path
+                                                        d="M483.84768 867.808C466.37568 885.792 441.73568 896 415.87968 896 390.05568 896 365.41568 885.792 347.94368 867.808L27.46368 547.552C-9.17632 508.864-9.17632 450.336 27.46368 411.648 44.26368 394.944 67.30368 385.088 91.68768 384.256 118.72768 383.008 144.93568 393.024 163.46368 411.648L415.87968 664 860.61568 219.552C878.31168 201.952 902.88768 192 928.58368 192 954.24768 192 978.82368 201.952 996.51968 219.552 1033.15968 258.208 1033.15968 316.704 996.51968 355.36L483.84768 867.808Z"
+                                                        p-id="2341"></path>
+                                                </svg>
+                                            </div>
                                             <div class="edit_userinfo_box_contact_information_text_choose_text">QQ</div>
                                         </div>
                                     </option>
@@ -615,17 +677,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="edit_userinfo_box_add_contact_information">
-                        <div class="edit_userinfo_box_add_contact_information_btn">
+                    <div class="edit_userinfo_box_add_contact_information hv">
+                        <div class="edit_userinfo_box_add_contact_information_btn hv">
                             新增联系方式
                         </div>
                     </div>
                     <div class="edit_userinfo_box_sex">
                         <div class="edit_userinfo_box_sex_title">性别</div>
                         <div class="edit_userinfo_box_sex_choose">
-                            <input type="radio" value="男" name="sex">
-                            <input type="radio" value="女" name="sex">
-                            <input type="radio" value="保密" name="sex">
+                            <input type="radio" value="男" name="sex">男性
+                            <input type="radio" value="女" name="sex">女性
+                            <input type="radio" value="保密" name="sex">保密
                             <div class="edit_userinfo_box_sex_all_look">
                                 <select>
                                     <option>
@@ -674,9 +736,100 @@
                                 </select>
 
                             </div>
+                            <div class="edit_userinfo_box_address_choose_city">
+                                <select>
+                                    <option>
+                                        <div class="edit_userinfo_box_address_choose_city_box">
+                                            <div class="edit_userinfo_box_address_choose_city_ico"></div>
+                                            <div class="edit_userinfo_box_address_choose_city_text">北京市</div>
+                                        </div>
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="edit_userinfo_box_address_choose_all_look">
+                                <select>
+                                    <option>
+                                        <div class="edit_userinfo_box_address_choose_all_look_box">
+                                            <div class="edit_userinfo_box_address_choose_all_look_ico"></div>
+                                            <div class="edit_userinfo_box_address_choose_all_look_text">所有人可见</div>
+                                        </div>
+                                    </option>
+                                    <option>
+                                        <div class="edit_userinfo_box_address_choose_all_look_box">
+                                            <div class="edit_userinfo_box_address_choose_all_look_ico"></div>
+                                            <div class="edit_userinfo_box_address_choose_all_look_text">好p友可见</div>
+                                        </div>
+                                    </option> <option>
+                                        <div class="edit_userinfo_box_address_choose_all_look_box">
+                                            <div class="edit_userinfo_box_address_choose_all_look_ico"></div>
+                                            <div class="edit_userinfo_box_address_choose_all_look_text">不可见</div>
+                                        </div>
+                                    </option>
+                                </select>
+                            </div>
                         </div>
                     </div>
-
+                    <div class="edit_userinfo_box_birthday">
+                        <div class="edit_userinfo_box_birthday_title">生日</div>
+                        <div class="edit_userinfo_box_birthday_choose_box">
+                            <div class="edit_userinfo_box_birthday_choose_year">
+                                <select>
+                                    <option>
+                                        <div class="edit_userinfo_box_birthday_choose_year_box">
+                                            <div class="edit_userinfo_box_birthday_choose_year_ico"></div>
+                                            <div class="edit_userinfo_box_birthday_choose_year_text">1990年</div>
+                                        </div>
+                                    </option>
+                                </select>
+                                </div>
+                                <div class="edit_userinfo_box_birthday_choose_month">
+                                    <select>
+                                        <option>
+                                            <div class="edit_userinfo_box_birthday_choose_month_box">
+                                                <div class="edit_userinfo_box_birthday_choose_month_ico"></div>
+                                                <div class="edit_userinfo_box_birthday_choose_month_text">01月</div>
+                                            </div>
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="edit_userinfo_box_birthday_choose_day">
+                                    <select>
+                                        <option>
+                                            <div class="edit_userinfo_box_birthday_choose_day_box">
+                                                <div class="edit_userinfo_box_birthday_choose_day_ico"></div>
+                                                <div class="edit_userinfo_box_birthday_choose_day_text">01日</div>
+                                            </div>
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="edit_userinfo_box_birthday_choose_all_look">
+                                    <select>
+                                        <option>
+                                            <div class="edit_userinfo_box_birthday_choose_all_look_box">
+                                                <div class="edit_userinfo_box_birthday_choose_all_look_ico"></div>
+                                                <div class="edit_userinfo_box_birthday_choose_all_look_text">所有人可见</div>
+                                            </div>
+                                        </option>
+                                        <option>
+                                            <div class="edit_userinfo_box_birthday_choose_all_look_box">
+                                                <div class="edit_userinfo_box_birthday_choose_all_look_ico"></div>
+                                                <div class="edit_userinfo_box_birthday_choose_all_look_text">好p友可见</div>
+                                            </div>
+                                        </option>
+                                        <option>
+                                            <div class="edit_userinfo_box_birthday_choose_all_look_box">
+                                                <div class="edit_userinfo_box_birthday_choose_all_look_ico"></div>
+                                                <div class="edit_userinfo_box_birthday_choose_all_look_text">不可见</div>
+                                            </div>
+                                        </option>
+                                    </select>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="edit_userinfo_box_sava">
+                        <div class="edit_userinfo_box_sava_btn">保存修改</div>
+                        <div class="edit_userinfo_box_sava_btn_cancel" @click="close_user_info_box">取消</div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -4,6 +4,7 @@ var vm=new Vue ({
     el:'.main_content',
     data:{
         edit_box_background_color_show:false,
+        user_info_box_show:false,
     },
     computed:{
         
@@ -32,6 +33,12 @@ var vm=new Vue ({
         },
         upload_img:function(){
             console.log("选择完成");
+        },
+        close_user_info_box:function(){
+            this.user_info_box_show=false;
+        },
+        open_user_info_box:function(){
+            this.user_info_box_show=true;
         }
     }
 })
