@@ -43,9 +43,22 @@ var vm=new Vue ({
             'border-top': "4px solid rgba(0, 150, 250, 1)",
             opacity: 1
         },
-        
+        action:{
+            'background-color': 'rgba(200,200,200,0.5)',
+            'border-radius': '15px',
+            position: 'absolute',
+            left: 109.5,
+            width:'90px',
+            height: '40px',
+        },
+        /*
         indexpage_use:true,
         collection_use:false,
+        mainpage_width:document.querySelector('.switch_box_content_1_content_addpage_box_switch_box').offsetWidth,
+        margin_width:10,
+        padding_width:10,
+        left:this.action.left,
+        add_width:mainpage_width/(4)+2.5,*/
     },
     
     computed:{
@@ -104,7 +117,87 @@ var vm=new Vue ({
                 this.collection_style=temp;
                 this.indexpage_style=null;
             }
-        }
+        },
+        //切换动画
+        switch_box_action:function(type){
+            
+            switch(type)
+            {
+                case 0:
+                    this.action_animation(0);
+                    break;
+                case 1:
+                    this.action_animation(1);
+                    break;
+                case 2:
+                    this.action_animation(2);
+                    break;
+                case 3:
+                    this.action_animation(3);
+                    break;
+            };
+            
+        },
+         action_animation(type){
+            var mainpage_width=document.querySelector('.switch_box_content_1_content_addpage_box_switch_box').offsetWidth;
+           
+            var margin_width=10;
+            var padding_width=10;
+            console.log(mainpage_width);
+            console.log(type);
+            var left=this.action.left;
+            console.log(left);
+            var add_width=mainpage_width/(4)+2.5;
+            console.log(add_width);
+            var now_left=this.action.left;
+            switch(type)
+            {
+                case 0:
+                    var target_left=2.5;
+                    this.do_action(this.action.left,target_left);
+                    this.action.left=target_left;
+                    break;
+                case 1:
+                    var target_left=add_width-2.5;
+                    this.do_action(this.action.left,target_left);
+                    this.action.left=target_left;
+                    break;
+                case 2:
+                    var target_left=add_width*2-2.5*2;
+                    this.do_action(this.action.left,target_left);
+                    this.action.left=target_left;
+                    break;
+                case 3:
+                    var target_left=add_width*3-2.5*3;
+                    this.do_action(this.action.left,target_left);
+                    this.action.left=target_left;
+                    break;
+            }
+        },
+        do_action(now_left, target_left, steps = 0) {
+            if (now_left == target_left || steps >= 60) {
+                this.action.left = target_left; // 确保递归完成后更新值
+                return;
+            }
+            
+            if (now_left < target_left) {
+                var step_len=(target_left-now_left)/60;
+                console.log(step_len)
+                var temp = now_left + step_len;
+                this.action.left = temp;
+                setTimeout(() => this.do_action(temp, target_left, steps + 1), 0.1); // 使用箭头函数保持 this 上下文
+            } else {
+                var step_len=(now_left-target_left)/60;
+                var temp = now_left - step_len;
+                this.action.left = temp;
+                setTimeout(() => this.do_action(temp, target_left, steps + 1), 0.1); // 使用箭头函数保持 this 上下文
+                /*if (temp == target_left) {
+                    console.log('结束');
+                }*/
+            }
+            /*console.log(now_left, target_left, '开始前left和结束后left');*/
+        },
+        
     }
 });
 
