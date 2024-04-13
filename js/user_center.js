@@ -120,107 +120,39 @@ var vm=new Vue ({
             }
         },
         //切换动画
-        switch_box_action:function(type){
-            
-            switch(type)
-            {
+        switch_box_action: function(type) {
+            var mainpage_width = document.querySelector('.switch_box_content_1_content_addpage_box_switch_box').offsetWidth;
+            var add_width = mainpage_width / 4 + 2.5;
+            var target_left = 0;
+
+            switch (type) {
                 case 0:
-                    this.action_animation(0);
+                    target_left = 2.5;
                     break;
                 case 1:
-                    this.action_animation(1);
+                    target_left = add_width - 2.5;
                     break;
                 case 2:
-                    this.action_animation(2);
+                    target_left = add_width * 2 - 2.5 * 2;
                     break;
                 case 3:
-                    this.action_animation(3);
-                    break;
-            };
-            
-        },
-         action_animation(type){
-            var mainpage_width=document.querySelector('.switch_box_content_1_content_addpage_box_switch_box').offsetWidth;
-           
-            var margin_width=10;
-            var padding_width=10;
-            console.log(mainpage_width);
-            console.log(type);
-            var left=this.action.left;
-            console.log(left);
-            var add_width=mainpage_width/(4)+2.5;
-            console.log(add_width);
-            var now_left=this.action.left;
-            switch(type)
-            {
-                case 0:
-                    var target_left=2.5;
-                    if(this.action.left>=target_left){
-                        this.step_len=(this.action.left-target_left)/60;
-                    }
-                    else{
-                        this.step_len=(target_left-this.action.left)/60;
-                    }
-                    this.do_action(this.action.left,target_left);
-                    this.action.left=target_left;
-                    break;
-                case 1:
-                    var target_left=add_width-2.5;
-                    if(this.action.left>=target_left){
-                        this.step_len=(this.action.left-target_left)/60;
-                    }
-                    else{
-                        this.step_len=(target_left-this.action.left)/60;
-                    }
-                    this.do_action(this.action.left,target_left);
-                    this.action.left=target_left;
-                    break;
-                case 2:
-                    var target_left=add_width*2-2.5*2;
-                    if(this.action.left>=target_left){
-                        this.step_len=(this.action.left-target_left)/60;
-                    }
-                    else{
-                        this.step_len=(target_left-this.action.left)/60;
-                    }
-                    this.do_action(this.action.left,target_left);
-                    this.action.left=target_left;
-                    break;
-                case 3:
-                    var target_left=add_width*3-2.5*3;
-                    if(this.action.left>=target_left){
-                        this.step_len=(this.action.left-target_left)/60;
-                    }
-                    else{
-                        this.step_len=(target_left-this.action.left)/60;
-                    }
-                    this.do_action(this.action.left,target_left);
-                    this.action.left=target_left;
+                    target_left = add_width * 3 - 2.5 * 3;
                     break;
             }
+
+            this.step_len = Math.abs(this.action.left - target_left) / 60;
+            this.do_action(this.action.left, target_left);
+            this.action.left = target_left;
         },
-        do_action(now_left, target_left, steps = 0) {
+        do_action: function(now_left, target_left, steps = 0) {
             if (now_left == target_left || steps >= 60) {
-                this.action.left = target_left; // 确保递归完成后更新值
+                this.action.left = target_left;
                 return;
             }
-            
-            if (now_left < target_left) {
-                var step_len=this.step_len;
-                console.log(step_len)
-                var temp = now_left + step_len;
-                this.action.left = temp;
-                setTimeout(() => this.do_action(temp, target_left, steps + 1), 0.1); // 使用箭头函数保持 this 上下文
-            } else {
-                var step_len=this.step_len;
-                var temp = now_left - step_len;
-                this.action.left = temp;
-                setTimeout(() => this.do_action(temp, target_left, steps + 1), 0.1); // 使用箭头函数保持 this 上下文
-                /*if (temp == target_left) {
-                    console.log('结束');
-                }*/
-            }
-            /*console.log(now_left, target_left, '开始前left和结束后left');*/
+
+            var temp = now_left < target_left ? now_left + this.step_len : now_left - this.step_len;
+            this.action.left = temp;
+            setTimeout(() => this.do_action(temp, target_left, steps + 1), 0.1);
         },
         
     }
