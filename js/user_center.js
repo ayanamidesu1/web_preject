@@ -47,11 +47,18 @@ var vm=new Vue ({
             'background-color': 'rgba(200,200,200,0.5)',
             'border-radius': '15px',
             position: 'absolute',
-            left: 109.5,
+            left: 2.5,
             width:'90px',
             height: '40px',
         },
         step_len:0,
+        ill_show:true,
+        novel_show:false,
+        invited_draft_show:false,
+        function_testing_show:false,
+        addpage_show:false,
+        switch_box_content_1:true,
+        switch_box_content_2:false,
         /*
         indexpage_use:true,
         collection_use:false,
@@ -113,10 +120,14 @@ var vm=new Vue ({
             if(type=='indexpage'){
                 this.indexpage_style=temp;
                 this.collection_style=null;
+                this.switch_box_content_1=true;
+                this.switch_box_content_2=false;
             }
             else{
                 this.collection_style=temp;
                 this.indexpage_style=null;
+                this.switch_box_content_1=false;
+                this.switch_box_content_2=true;
             }
         },
         //切换动画
@@ -128,21 +139,37 @@ var vm=new Vue ({
             switch (type) {
                 case 0:
                     target_left = 2.5;
+                    this.ill_show = true;
+                    this.novel_show = false;
+                    this.invited_draft_show = false;
+                    this.function_testing_show = false;
                     break;
                 case 1:
                     target_left = add_width - 2.5;
+                    this.ill_show = false;
+                    this.novel_show = true;
+                    this.invited_draft_show = false;
+                    this.function_testing_show = false;
                     break;
                 case 2:
                     target_left = add_width * 2 - 2.5 * 2;
+                    this.ill_show = false;
+                    this.novel_show = false;
+                    this.invited_draft_show = true;
+                    this.function_testing_show = false;
                     break;
                 case 3:
                     target_left = add_width * 3 - 2.5 * 3;
+                    this.ill_show = false;
+                    this.novel_show = false;
+                    this.invited_draft_show = false;
+                    this.function_testing_show = true;
                     break;
             }
 
             this.step_len = Math.abs(this.action.left - target_left) / 60;
             this.do_action(this.action.left, target_left);
-            this.action.left = target_left;
+            //this.action.left = target_left;
         },
         do_action: function(now_left, target_left, steps = 0) {
             if (now_left == target_left || steps >= 60) {
@@ -152,9 +179,16 @@ var vm=new Vue ({
 
             var temp = now_left < target_left ? now_left + this.step_len : now_left - this.step_len;
             this.action.left = temp;
-            setTimeout(() => this.do_action(temp, target_left, steps + 1), 0.1);
+            setTimeout(() => this.do_action(temp, target_left, steps + 1), 0.08);
         },
-        
+       show_addpage_show:function(){
+           if(this.addpage_show==true){
+               this.addpage_show=false;
+           }
+           else{
+               this.addpage_show=true;
+           }
+       },
     }
 });
 
