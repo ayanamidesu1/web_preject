@@ -57,8 +57,16 @@ var vm=new Vue ({
         invited_draft_show:false,
         function_testing_show:false,
         addpage_show:false,
-        switch_box_content_1:true,
-        switch_box_content_2:false,
+        switch_box_content_1:false,
+        switch_box_content_2:true,
+        temp:{
+            'background-color':'rgba(199, 197, 197,0.5)',
+        },
+        switch_box_content_2_title_1:{ 'background-color':'rgba(199, 197, 197,0.5)',},
+        switch_box_content_2_title_2:"",
+        switch_box_content_2_title_3:"",
+        switch_box_content_2_title_4:"",
+       
         /*
         indexpage_use:true,
         collection_use:false,
@@ -189,6 +197,35 @@ var vm=new Vue ({
                this.addpage_show=true;
            }
        },
+       switch_box_content_2_title_btn:function(type)
+       {
+        switch(type){
+            case 1:
+                this.switch_box_content_2_title_1=this.temp;
+                this.switch_box_content_2_title_2="";
+                this.switch_box_content_2_title_3="";
+                this.switch_box_content_2_title_4="";
+                break;
+            case 2:
+                this.switch_box_content_2_title_1="";
+                this.switch_box_content_2_title_2=this.temp;
+                this.switch_box_content_2_title_3="";
+                this.switch_box_content_2_title_4="";
+                break;
+            case 3:
+                this.switch_box_content_2_title_1="";
+                this.switch_box_content_2_title_2="";
+                this.switch_box_content_2_title_3=this.temp;
+                this.switch_box_content_2_title_4="";
+                break;
+                case 4:
+                this.switch_box_content_2_title_1="";
+                this.switch_box_content_2_title_2="";
+                this.switch_box_content_2_title_3="";
+                this.switch_box_content_2_title_4=this.temp;
+                break;
+        }
+       }
     }
 });
 

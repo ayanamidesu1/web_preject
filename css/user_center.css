@@ -1378,3 +1378,97 @@
     padding: 5px;
     position: relative;
 }
+.switch_box_content_2_title{
+    width: 98%;
+    height: auto;
+    margin-top:10px;
+    padding:5px;
+    border:1px solid red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center;
+}
+.switch_box_content_2_title_switchpage,.switch_box_content_2_title_switchopen{
+    display: flex;
+    justify-content: center;
+    width: auto;
+    padding: 5px;
+    border:1px solid red;
+}
+.switch_box_content_2_title_switchpage_tag1,.switch_box_content_2_title_switchpage_tag2{
+    display: flex;
+    margin-right: 10px;
+    border-radius: 20px;
+    padding:5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.switch_box_content_2_title_switchpage_tag1:hover,.switch_box_content_2_title_switchpage_tag2:hover{
+    cursor: pointer;
+}
+.switch_box_content_2_title_switchopen_tag1,.switch_box_content_2_title_switchopen_tag2{
+    display: flex;
+    margin-right: 10px;
+    border-radius: 20px;
+    
+    padding:5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.switch_box_content_2_title_switchopen_tag1:hover,.switch_box_content_2_title_switchopen_tag2:hover{
+    cursor: pointer;
+}
+.switch_box_content_2_content_1_page{
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+    height: auto;
+    flex-grow: 1;
+    align-items: center;
+    align-self: center;
+    border:1px solid red;
+    margin-top:5px;
+    padding:5px;
+}
+.switch_box_content_2_content_1_page_title{
+    display: flex;
+    width: 98%;
+    height: auto;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center;
+    border:1px solid red;
+    margin-top:5px;
+    padding:5px;
+}
+.switch_box_content_2_content_1_page_title_text{
+    display: flex;
+    font-weight: bold;
+    font-size: 18px;
+}
+.switch_box_content_2_content_1_page_title_collection{
+    display: flex;
+    padding: 5px;
+}
+.switch_box_content_2_content_1_page_title_collection_icon{
+    display: flex;
+    width: 20px;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    margin-right: 5px;
+}
+.switch_box_content_2_content_1_page_title_collection_icon:hover{
+    cursor: pointer;
+}
+.switch_box_content_2_content_1_page_title_collection_icon svg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
