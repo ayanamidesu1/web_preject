@@ -51,6 +51,7 @@ var vm=new Vue ({
             width:'90px',
             height: '40px',
         },
+        step_len:0,
         /*
         indexpage_use:true,
         collection_use:false,
@@ -154,21 +155,45 @@ var vm=new Vue ({
             {
                 case 0:
                     var target_left=2.5;
+                    if(this.action.left>=target_left){
+                        this.step_len=(this.action.left-target_left)/60;
+                    }
+                    else{
+                        this.step_len=(target_left-this.action.left)/60;
+                    }
                     this.do_action(this.action.left,target_left);
                     this.action.left=target_left;
                     break;
                 case 1:
                     var target_left=add_width-2.5;
+                    if(this.action.left>=target_left){
+                        this.step_len=(this.action.left-target_left)/60;
+                    }
+                    else{
+                        this.step_len=(target_left-this.action.left)/60;
+                    }
                     this.do_action(this.action.left,target_left);
                     this.action.left=target_left;
                     break;
                 case 2:
                     var target_left=add_width*2-2.5*2;
+                    if(this.action.left>=target_left){
+                        this.step_len=(this.action.left-target_left)/60;
+                    }
+                    else{
+                        this.step_len=(target_left-this.action.left)/60;
+                    }
                     this.do_action(this.action.left,target_left);
                     this.action.left=target_left;
                     break;
                 case 3:
                     var target_left=add_width*3-2.5*3;
+                    if(this.action.left>=target_left){
+                        this.step_len=(this.action.left-target_left)/60;
+                    }
+                    else{
+                        this.step_len=(target_left-this.action.left)/60;
+                    }
                     this.do_action(this.action.left,target_left);
                     this.action.left=target_left;
                     break;
@@ -181,13 +206,13 @@ var vm=new Vue ({
             }
             
             if (now_left < target_left) {
-                var step_len=(target_left-now_left)/60;
+                var step_len=this.step_len;
                 console.log(step_len)
                 var temp = now_left + step_len;
                 this.action.left = temp;
                 setTimeout(() => this.do_action(temp, target_left, steps + 1), 0.1); // 使用箭头函数保持 this 上下文
             } else {
-                var step_len=(now_left-target_left)/60;
+                var step_len=this.step_len;
                 var temp = now_left - step_len;
                 this.action.left = temp;
                 setTimeout(() => this.do_action(temp, target_left, steps + 1), 0.1); // 使用箭头函数保持 this 上下文
