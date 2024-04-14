@@ -73,6 +73,7 @@ var vm = new Vue({
         setpublic: '设置为私密',
         setcollection: '取消收藏',
         settag: '设置标签',
+        author_introduction_show:true,
     },
 
     computed: {
