@@ -1,4 +1,4 @@
-var model=`<div class="edit_userinfo_box_contact_information_text">
+var model = `<div class="edit_userinfo_box_contact_information_text">
 <div class="edit_userinfo_box_contact_information_text_fun">
     <input placeholder="请输入联系方式">
 </div>
@@ -27,119 +27,113 @@ var model=`<div class="edit_userinfo_box_contact_information_text">
 </div>
 </div>`;
 
-var vm=new Vue ({
-    el:'.main_content',
-    data:{
-        edit_box_background_color_show:false,
-        user_info_box_show:false,
-        avatar_editbox_show:false,
+var vm = new Vue({
+    el: '.main_content',
+    data: {
+        edit_box_background_color_show: false,
+        user_info_box_show: false,
+        avatar_editbox_show: false,
         indexpage_style: {
             'border-top': "4px solid rgba(0, 150, 250, 1)",
             opacity: 1
         },
-        collection_style:{
+        collection_style: {
         },
-        temp:{
+        temp: {
             'border-top': "4px solid rgba(0, 150, 250, 1)",
             opacity: 1
         },
-        action:{
+        action: {
             'background-color': 'rgba(200,200,200,0.5)',
             'border-radius': '15px',
             position: 'absolute',
             left: 2.5,
-            width:'90px',
+            width: '90px',
             height: '40px',
         },
-        step_len:0,
-        ill_show:true,
-        novel_show:false,
-        invited_draft_show:false,
-        function_testing_show:false,
-        addpage_show:false,
-        switch_box_content_1:false,
-        switch_box_content_2:true,
-        temp:{
-            'background-color':'rgba(199, 197, 197,0.5)',
+        step_len: 0,
+        ill_show: true,
+        novel_show: false,
+        invited_draft_show: false,
+        function_testing_show: false,
+        addpage_show: false,
+        switch_box_content_1: false,
+        switch_box_content_2: true,
+        temp: {
+            'background-color': 'rgba(199, 197, 197,0.5)',
         },
-        switch_box_content_2_title_1:{ 'background-color':'rgba(199, 197, 197,0.5)',},
-        switch_box_content_2_title_2:"",
-        switch_box_content_2_title_3:"",
-        switch_box_content_2_title_4:"",
-       
-        /*
-        indexpage_use:true,
-        collection_use:false,
-        mainpage_width:document.querySelector('.switch_box_content_1_content_addpage_box_switch_box').offsetWidth,
-        margin_width:10,
-        padding_width:10,
-        left:this.action.left,
-        add_width:mainpage_width/(4)+2.5,*/
+        switch_box_content_2_title_1: { 'background-color': 'rgba(199, 197, 197,0.5)', },
+        switch_box_content_2_title_2: "",
+        switch_box_content_2_title_3: "",
+        switch_box_content_2_title_4: "",
+        switch_box_content_2_love_show_1: true,
+        switch_box_content_2_love_show_2: false,
+        content_box_privacy: false,
+        content_box_title: false,
+        setpublic: '设置为私密',
+        setcollection: '取消收藏',
+        settag: '设置标签',
     },
-    
-    computed:{
-        
+
+    computed: {
+
     },
-    methods:{
-        edit_btn:function()
-        {
+    methods: {
+        edit_btn: function () {
             console.log('test');
-            this.edit_box_background_color_show=true;
+            this.edit_box_background_color_show = true;
         },
-        hidden_btn:function()
-        {
-            this.edit_box_background_color_show=false;
+        hidden_btn: function () {
+            this.edit_box_background_color_show = false;
         },
-        delete_btn:function()
-        {
-            if(window.confirm('是否删除该图片？')){
+        delete_btn: function () {
+            if (window.confirm('是否删除该图片？')) {
                 console.log("删除确认");
             }
-            else{
+            else {
                 console.log("删除取消");
             }
         },
-        done_upload:function(){
+        done_upload: function () {
             console.log("上传完成");
         },
-        upload_img:function(){
+        upload_img: function () {
             console.log("选择完成");
         },
-        close_user_info_box:function(){
-            this.user_info_box_show=false;
+        close_user_info_box: function () {
+            this.user_info_box_show = false;
         },
-        open_user_info_box:function(){
-            this.user_info_box_show=true;
+        open_user_info_box: function () {
+            this.user_info_box_show = true;
         },
-        hidden_avatar_edit_box:function(){
-            this.avatar_editbox_show=false;
+        hidden_avatar_edit_box: function () {
+            this.avatar_editbox_show = false;
             console.log("test");
         },
-        add_contact()
-        {
-            var targetdiv=document.querySelectorAll('.edit_userinfo_box_contact_information');
-            targetdiv.forEach(function(target){
-                target.insertAdjacentHTML('beforeend',model);
+        add_contact() {
+            var targetdiv = document.querySelectorAll('.edit_userinfo_box_contact_information');
+            targetdiv.forEach(function (target) {
+                target.insertAdjacentHTML('beforeend', model);
             });
-            
+
         },
-        switch_box_btn:function(type){
-            temp=this.temp;
-            if(type=='indexpage'){
-                this.indexpage_style=temp;
-                this.collection_style=null;
-                this.switch_box_content_1=true;
-                this.switch_box_content_2=false;
+        switch_box_btn: function (type) {
+            temp = this.temp;
+            if (type == 'indexpage') {
+                this.indexpage_style = temp;
+                this.collection_style = null;
+                this.switch_box_content_1 = true;
+                this.switch_box_content_2 = false;
             }
-            else{
-                this.collection_style=temp;
-                this.indexpage_style=null;
-                this.switch_box_content_1=false;
-                this.switch_box_content_2=true;
+            else {
+                this.collection_style = temp;
+                this.indexpage_style = null;
+                this.switch_box_content_1 = false;
+                this.switch_box_content_2 = true;
             }
         },
         //切换动画
-        switch_box_action: function(type) {
+        switch_box_action: function (type) {
             var mainpage_width = document.querySelector('.switch_box_content_1_content_addpage_box_switch_box').offsetWidth;
             var add_width = mainpage_width / 4 + 2.5;
             var target_left = 0;
@@ -179,7 +173,7 @@ var vm=new Vue ({
             this.do_action(this.action.left, target_left);
             //this.action.left = target_left;
         },
-        do_action: function(now_left, target_left, steps = 0) {
+        do_action: function (now_left, target_left, steps = 0) {
             if (now_left == target_left || steps >= 60) {
                 this.action.left = target_left;
                 return;
@@ -189,43 +183,103 @@ var vm=new Vue ({
             this.action.left = temp;
             setTimeout(() => this.do_action(temp, target_left, steps + 1), 0.08);
         },
-       show_addpage_show:function(){
-           if(this.addpage_show==true){
-               this.addpage_show=false;
-           }
-           else{
-               this.addpage_show=true;
-           }
-       },
-       switch_box_content_2_title_btn:function(type)
-       {
-        switch(type){
-            case 1:
-                this.switch_box_content_2_title_1=this.temp;
-                this.switch_box_content_2_title_2="";
-                this.switch_box_content_2_title_3="";
-                this.switch_box_content_2_title_4="";
-                break;
-            case 2:
-                this.switch_box_content_2_title_1="";
-                this.switch_box_content_2_title_2=this.temp;
-                this.switch_box_content_2_title_3="";
-                this.switch_box_content_2_title_4="";
-                break;
-            case 3:
-                this.switch_box_content_2_title_1="";
-                this.switch_box_content_2_title_2="";
-                this.switch_box_content_2_title_3=this.temp;
-                this.switch_box_content_2_title_4="";
-                break;
+        show_addpage_show: function () {
+            if (this.addpage_show == true) {
+                this.addpage_show = false;
+            }
+            else {
+                this.addpage_show = true;
+            }
+        },
+        switch_box_content_2_title_btn: function (type) {
+            switch (type) {
+                case 1:
+                    this.switch_box_content_2_title_1 = this.temp;
+                    this.switch_box_content_2_title_2 = "";
+                    this.switch_box_content_2_title_3 = "";
+                    this.switch_box_content_2_title_4 = "";
+                    break;
+                case 2:
+                    this.switch_box_content_2_title_1 = "";
+                    this.switch_box_content_2_title_2 = this.temp;
+                    this.switch_box_content_2_title_3 = "";
+                    this.switch_box_content_2_title_4 = "";
+                    break;
+                case 3:
+                    this.switch_box_content_2_title_1 = "";
+                    this.switch_box_content_2_title_2 = "";
+                    this.switch_box_content_2_title_3 = this.temp;
+                    this.switch_box_content_2_title_4 = "";
+                    break;
                 case 4:
-                this.switch_box_content_2_title_1="";
-                this.switch_box_content_2_title_2="";
-                this.switch_box_content_2_title_3="";
-                this.switch_box_content_2_title_4=this.temp;
-                break;
-        }
-       }
+                    this.switch_box_content_2_title_1 = "";
+                    this.switch_box_content_2_title_2 = "";
+                    this.switch_box_content_2_title_3 = "";
+                    this.switch_box_content_2_title_4 = this.temp;
+                    break;
+            }
+        },
+        jump_imgpage: function () {
+            console.log("跳转图片详情页");
+        },
+        edit_imglook: function () {
+            console.log("修改图片公开");
+            var mainPage = document.querySelector('.switch_box_content_2_content_1_page_content_box_title');
+            if (this.content_box_title == true) {
+                this.content_box_title = false;
+                console.log('fa');
+            } else {
+                this.content_box_title = true;
+                console.log('t');
+            }
+            document.addEventListener('click', this.handleClickOutside);
+        },
+        handleClickOutside: function (event) {
+            var mainPage = document.querySelector('.switch_box_content_2_content_1_page_content_box_title');
+            var show_btn = document.querySelector('.switch_box_content_2_content_1_page_content_box_img_edit');
+            if (!mainPage.contains(event.target) && !show_btn.contains(event.target)) {
+                this.content_box_title = false;
+                console.log('点击主窗口外部，关闭窗口');
+                document.removeEventListener('click', this.handleClickOutside);
+            }
+        },
+
+        switch_box_content_2_love_show_1_btn: function () {
+            console.log('test');
+            if (this.switch_box_content_2_love_show_1 == true) {
+                this.switch_box_content_2_love_show_2 = true;
+                this.switch_box_content_2_love_show_1 = false;
+            }
+            else {
+                this.switch_box_content_2_love_show_1 = true;
+                this.switch_box_content_2_love_show_2 = false;
+            }
+        },
+        setpublic_btn:function(){
+            if(this.content_box_privacy==false){
+                this.content_box_privacy=true;
+                this.setpublic='设置为公开';
+            }
+            else{
+                this.content_box_privacy=false;
+                this.setpublic='设置为私密';
+            }
+        },
+        setcollection_btn:function(){
+            if(this.setcollection=='取消收藏'){
+                this.setcollection='收藏';
+                this.switch_box_content_2_love_show_1=false;
+                this.switch_box_content_2_love_show_2=true;
+            }
+            else{
+                this.setcollection='取消收藏';
+                this.switch_box_content_2_love_show_1=true;
+                this.switch_box_content_2_love_show_2=false;
+            }
+        },
+        settag_btn:function(){
+            console.log('设置标签');
+        },
     }
 });
 
