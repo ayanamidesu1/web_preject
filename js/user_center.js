@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable vue/no-dupe-keys */
 var model = `<div class="edit_userinfo_box_contact_information_text">
 <div class="edit_userinfo_box_contact_information_text_fun">
     <input placeholder="请输入联系方式">
@@ -27,9 +29,30 @@ var model = `<div class="edit_userinfo_box_contact_information_text">
 </div>
 </div>`;
 
+
+Vue.component('sub-main-usercenter-selected-works', {
+    props: ['item'],
+    template: `
+        <div class="sub_main_usercenter_selected_works">
+            <div class="sub_main_usercenter_selected_works_img">
+                <img :src="item.imgsrc">
+                <div class="sub_main_usercenter_selected_works_ico">
+                <svg t="1713083347358" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="9142" width="200" height="200" class="icon">
+                    <path d="M783.1 831.7H347c-34.1 0-61.8-27.7-61.8-61.8V197.7c0-34.1 27.7-61.8 61.8-61.8h436c34.1 0 61.8 27.7 61.8 61.8V770c0 34-27.7 61.7-61.7 61.7zM347 163.9c-18.6 0-33.8 15.1-33.8 33.8V770c0 18.6 15.1 33.8 33.8 33.8h436c18.6 0 33.8-15.1 33.8-33.8V197.7c0-18.6-15.1-33.8-33.8-33.8H347z" fill="#263554" p-id="9143"></path>
+                    <path d="M654.1 916.1H244.7c-37.2 0-67.5-27.9-67.5-62.3V291.5c0-34.3 30.3-62.3 67.5-62.3H296c7.7 0 14 6.3 14 14s-6.3 14-14 14h-51.3c-21.8 0-39.5 15.4-39.5 34.3v562.3c0 18.9 17.7 34.3 39.5 34.3h409.4c17 0 30.8-13.8 30.8-30.8v-39.5c0-7.7 6.3-14 14-14s14 6.3 14 14v39.5c0 32.4-26.4 58.8-58.8 58.8z" fill="#263554" p-id="9144"></path>
+                </svg>
+                <div>{{ item.imgnum }}</div>
+            </div>
+            </div>
+        </div>`,
+});
+
+
+// eslint-disable-next-line no-unused-vars, no-undef
 var vm = new Vue({
     el: '.main_content',
-    data: {
+    data: function() {
+return {
         edit_box_background_color_show: false,
         user_info_box_show: false,
         avatar_editbox_show: false,
@@ -59,6 +82,7 @@ var vm = new Vue({
         addpage_show: false,
         switch_box_content_1: false,
         switch_box_content_2: true,
+        // eslint-disable-next-line no-dupe-keys
         temp: {
             'background-color': 'rgba(199, 197, 197,0.5)',
         },
@@ -74,7 +98,13 @@ var vm = new Vue({
         setcollection: '取消收藏',
         settag: '设置标签',
         author_introduction_show:true,
-    },
+        items:[
+            {imgsrc:'image/117349407_p0_master1200.jpg',imgnum:3},
+            {imgsrc:'image/117214493_p0_master1200.jpg',imgnum:1},
+            {imgsrc:'image/116707350_p0_master1200.jpg',imgnum:2},
+        ],
+    };
+},
 
     computed: {
 
@@ -225,6 +255,7 @@ var vm = new Vue({
         },
         edit_imglook: function () {
             console.log("修改图片公开");
+            // eslint-disable-next-line no-unused-vars
             var mainPage = document.querySelector('.switch_box_content_2_content_1_page_content_box_title');
             if (this.content_box_title == true) {
                 this.content_box_title = false;
@@ -280,6 +311,9 @@ var vm = new Vue({
         },
         settag_btn:function(){
             console.log('设置标签');
+        },
+        template(){
+            return this.sub_usercenter_model;
         },
     }
 });

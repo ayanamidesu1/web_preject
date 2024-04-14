@@ -10,6 +10,7 @@
 <script src="js/jQuery.js"></script>
 <script src="js/vue.js"></script>
 
+
 <body>
     <div class="main">
 
@@ -1155,7 +1156,54 @@
                                 </div>
                                 <div class="switch_box_content_2_content_1_page_content_box_userbox_name">用户名</div>
                                 <div class="switch_box_content_2_content_1_page_content_box_userbox_author_introduction" v-show="author_introduction_show">
-                                    
+                                    <div class="sub_main_usercenter">
+                                        <div class="sub_main_usercenter_background">
+                                            <div class="sub_main_usercenter_background_img">
+                                                <img src="image/97165605_p0.jpg">
+                                            </div>
+                                            <div class="sub_main_usercenter_background_img_back">
+
+                                            </div>
+                                        </div>
+                                        <div class="sub_main_usercenter_avatar">
+                                            <div class="sub_main_usercenter_avatar_img">
+                                                <img src="image/ma.png">
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="sub_main_usercenter_name">Date锶氚麻酱</div>
+                                        <div class="sub_main_usercenter_introduction">
+                                            <div class="sub_main_usercenter_introduction_text">
+                                                手工绘画，我会继续努力的，谢谢你能够喜欢我的作品，下面是联系方式，QQ号336…
+                                            </div>
+                                            <div class="sub_main_usercenter_introduction_btn">
+                                                查看个人资料
+                                            </div>
+                                        </div>
+                                        <div class="sub_main_usercenter_follow">已关注</div>
+                                        <div class="sub_main_usercenter_selected_works_box">
+                                            <!--
+                                            <div class="sub_main_usercenter_selected_works">
+                                                <div class="sub_main_usercenter_selected_works_img">
+                                                    <img src="image/117349407_p0_master1200.jpg">
+                                                </div>
+                                                <div class="sub_main_usercenter_selected_works_ico">
+                                                    <svg t="1713083347358" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="9142" width="200"
+                                                        height="200" class="icon">
+                                                        <path
+                                                            d="M783.1 831.7H347c-34.1 0-61.8-27.7-61.8-61.8V197.7c0-34.1 27.7-61.8 61.8-61.8h436c34.1 0 61.8 27.7 61.8 61.8V770c0 34-27.7 61.7-61.7 61.7zM347 163.9c-18.6 0-33.8 15.1-33.8 33.8V770c0 18.6 15.1 33.8 33.8 33.8h436c18.6 0 33.8-15.1 33.8-33.8V197.7c0-18.6-15.1-33.8-33.8-33.8H347z"
+                                                            fill="#263554" p-id="9143"></path>
+                                                        <path
+                                                            d="M654.1 916.1H244.7c-37.2 0-67.5-27.9-67.5-62.3V291.5c0-34.3 30.3-62.3 67.5-62.3H296c7.7 0 14 6.3 14 14s-6.3 14-14 14h-51.3c-21.8 0-39.5 15.4-39.5 34.3v562.3c0 18.9 17.7 34.3 39.5 34.3h409.4c17 0 30.8-13.8 30.8-30.8v-39.5c0-7.7 6.3-14 14-14s14 6.3 14 14v39.5c0 32.4-26.4 58.8-58.8 58.8z"
+                                                            fill="#263554" p-id="9144"></path>
+                                                    </svg>
+                                                    <div>2</div>
+                                                </div>
+                                            </div>-->
+                                            <sub-main-usercenter-selected-works v-for="(item, index) in items" :key="index" :item="item"></sub-main-usercenter-selected-works>
+                                        </div>
+                                        
+                                    </div>
                                 </div>
                             </div>
                         </div>
