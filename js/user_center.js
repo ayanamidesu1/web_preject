@@ -97,12 +97,13 @@ return {
         setpublic: '设置为私密',
         setcollection: '取消收藏',
         settag: '设置标签',
-        author_introduction_show:true,
+        author_introduction_show:false,
         items:[
             {imgsrc:'image/117349407_p0_master1200.jpg',imgnum:3},
             {imgsrc:'image/117214493_p0_master1200.jpg',imgnum:1},
             {imgsrc:'image/116707350_p0_master1200.jpg',imgnum:2},
         ],
+        timeoutid:null,
     };
 },
 
@@ -314,6 +315,17 @@ return {
         },
         template(){
             return this.sub_usercenter_model;
+        },
+        showsubusercenter(){
+            this.timeoutid=setTimeout(()=>{
+                this.author_introduction_show=true;
+            },500);
+        },
+        hidesubusercenter(){
+            this.timeoutid=setTimeout(()=>{
+                this.author_introduction_show=false;
+            },500);
+            
         },
     }
 });
