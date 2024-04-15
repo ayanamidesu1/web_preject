@@ -317,9 +317,18 @@ return {
             return this.sub_usercenter_model;
         },
         showsubusercenter(){
+            
+            var windows_hidth=window.innerHeight;
+            console.log(windows_hidth);
+            
             this.timeoutid=setTimeout(()=>{
                 this.author_introduction_show=true;
+                
             },500);
+            var sub_windows_hidth=document.querySelector('.switch_box_content_2_content_1_page_content_box_userbox_author_introduction').innerHeight;
+            console.log(sub_windows_hidth);
+            var test_height=document.querySelector('.sub_main_usercenter').innerHeight;
+            console.log(test_height);
         },
         hidesubusercenter(){
             this.timeoutid=setTimeout(()=>{
