@@ -47,6 +47,11 @@ Vue.component('sub-main-usercenter-selected-works', {
         </div>`,
 });
 
+Vue.component('switch_box_content_2_content_1_page_content_box_userbox_author_introduction',{
+    props:['item'],
+    template:`<div>test</div>`,
+});
+
 
 // eslint-disable-next-line no-unused-vars, no-undef
 var vm = new Vue({
