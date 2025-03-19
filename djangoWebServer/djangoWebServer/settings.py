@@ -52,6 +52,10 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173',
     'https://localhost:2000',
     'http://localhost:2000',
+'https://localhost:2001',
+    'http://localhost:2001',
+    'https://127.0.0.1:2001',
+    'http://127.0.0.1:2001',
 ]
 CORS_ALLOW_METHODS = [
     'DELETE',
@@ -98,6 +102,10 @@ CSRF_TRUSTED_ORIGINS = [
     'http://localhost:5173/',
     'https://localhost:2000',
     'http://localhost:2000',
+    'https://localhost:2001',
+    'http://localhost:2001',
+    'https://127.0.0.1:2001',
+    'http://127.0.0.1:2001',
 ]
 
 # Application definition

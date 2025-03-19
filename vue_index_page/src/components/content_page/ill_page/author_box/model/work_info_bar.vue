@@ -66,8 +66,8 @@ onMounted(async () => {
         <span>{{ work_info.data[0].brief_introduction }}</span>
       </div>
       <div class="tags_box">
-        <span class="age_classification" v-if="age_classification !== '16'">
-          <span>R-{{ age_classification }}</span>
+        <span class="age_classification" v-if="work_info.data[0].age_classification !== '16'">
+          <span>R-{{ work_info.data[0].age_classification }}</span>
         </span>
         <div class="tag_item">
           <div class="tag" v-for="(item, index) in work_tags" :key="index">
