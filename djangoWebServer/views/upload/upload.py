@@ -106,9 +106,9 @@ class UploadFile(View):
             self.age_classification = img_class_age.classify_r18(file_bytes)
             age_temp_arr.append(self.age_classification)
 
-            if self.age_classification <= 0.55:
+            if self.age_classification <= 0.10:
                 temp.append(1)  # 非 R18
-            elif self.age_classification >= 0.75:
+            elif self.age_classification>=  0.25:
                 temp.append(-1)  # R18
             else:
                 temp.append(0)  # 待审

@@ -17,7 +17,8 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      '@assets': path.resolve(process.cwd(), 'src/assets'),  // 将 @assets 映射到 src/assets
+      '@': path.resolve(process.cwd(), 'src')  // 可选：同时配置 @ 别名指向 src 根目录
     }
   },
   server: {

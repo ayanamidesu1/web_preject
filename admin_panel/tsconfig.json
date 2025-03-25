@@ -5,6 +5,12 @@
     "module": "ESNext",
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
+    "baseUrl": ".",  // 基础路径
+    "paths": {  // 路径映射
+      "@assets/*": ["src/assets/*"],
+      "@/*": ["src/*"]  // 如果配置了 @ 别名，可一并添加
+    },
+
 
     /* Bundler mode */
     "moduleResolution": "bundler",
