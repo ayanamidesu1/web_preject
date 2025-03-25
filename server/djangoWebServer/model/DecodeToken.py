@@ -2,7 +2,7 @@ import json
 import jwt
 from django.utils.deprecation import MiddlewareMixin
 from django.http import JsonResponse
-from ..log.log import Logger
+from log.log import Logger
 from datetime import datetime, timezone
 from django.conf import settings
 

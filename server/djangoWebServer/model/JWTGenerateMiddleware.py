@@ -2,7 +2,7 @@ import json
 import jwt
 from django.utils.deprecation import MiddlewareMixin
 from django.http import JsonResponse
-from ..log.log import Logger
+from log.log import Logger
 from datetime import datetime, timezone
 from django.db import connection
 from django.conf import settings
@@ -25,7 +25,6 @@ class JWTGenerateMiddleware(MiddlewareMixin):
             now = datetime.now(timezone.utc)
             login_key = data.get('login_key')
             password = data.get('password')
-
             if not login_key or not password:
                 return JsonResponse({'code': 400, 'msg': '参数错误'}, status=400)
 
@@ -33,7 +32,7 @@ class JWTGenerateMiddleware(MiddlewareMixin):
             with connection.cursor() as cursor:
                 login_sql = '''
                     SELECT * FROM users 
-                    WHERE (user_id=%s OR username=%s OR email=%s OR phone=%s) AND password=%s
+                    WHERE (userid=%s OR username=%s OR email=%s OR phone=%s) AND password=%s
                 '''
                 cursor.execute(login_sql, (login_key, login_key, login_key, login_key, password))
                 result = cursor.fetchone()
@@ -47,17 +46,18 @@ class JWTGenerateMiddleware(MiddlewareMixin):
 
                 # 生成 JWT payload
                 payload = {
-                    'user_id': user_data.get('user_id'),
+                    'user_id': user_data.get('userid'),
                     'username': user_data.get('username'),
                     'email': user_data.get('email'),
                     'phone': user_data.get('phone'),
                     'sex': user_data.get('sex'),
-                    'avatar': user_data.get('avatar'),
-                    'user_level': user_data.get('user_level',1),
-                    'background': user_data.get('background'),
+                    'avatar': user_data.get('user_avatar'),
+                    'user_level': user_data.get('account_permissions',0),
+                    'background': user_data.get('user_back_img'),
                     'now': now.isoformat(),
                     'is_login': True,
-                    'status':user_data.get('status',0)
+                    'status':user_data.get('account_status',0),
+                    'vip':user_data.get('vip',0)
                 }
 
                 # 返回带有 JWT 的响应

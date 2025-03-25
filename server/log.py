@@ -5,7 +5,7 @@ from datetime import datetime
 
 
 class Logger:
-    def __init__(self, log_dir="H:/forum_log/log/", max_bytes=10 * 1024 * 1024, backup_count=5):
+    def __init__(self, log_dir="H:/web_project/log/", max_bytes=10 * 1024 * 1024, backup_count=5):
         # 检查 H 盘是否存在，不存在则使用 C 盘
         if not os.path.exists("H:/"):
             log_dir = "C:/forum_log/log/"

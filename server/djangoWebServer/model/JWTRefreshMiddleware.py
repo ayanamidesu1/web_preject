@@ -4,7 +4,7 @@ from django.utils.deprecation import MiddlewareMixin
 from django.http import JsonResponse
 
 from .DecodeToken import JWTUser
-from ..log.log import Logger
+from log.log import Logger
 from datetime import datetime, timezone, timedelta
 from django.conf import settings
 

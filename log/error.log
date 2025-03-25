@@ -16,3 +16,23 @@
 2024-09-16 17:28:06
 2024-09-16 17:28:44,487 - ERROR - 服务器内部错误；127.0.0.1 在 2024-09-16T17:28:44 请求了 /get_browse_history/GetHistory/, 请求内容为: {"userid":""},错误信息：'work_id'
 2024-09-16 17:28:44
+2025-03-26 02:34:13,348 - ERROR - JWT生成失败: check_password() missing 1 required positional argument: 'encoded'
+2025-03-26 02:34:13
+2025-03-26 02:34:13,348 - ERROR - JWT生成失败: check_password() missing 1 required positional argument: 'encoded'
+2025-03-26 02:34:13
+2025-03-26 02:34:13,348 - ERROR - JWT生成失败: check_password() missing 1 required positional argument: 'encoded'
+2025-03-26 02:34:13
+2025-03-26 02:34:13,348 - ERROR - JWT生成失败: check_password() missing 1 required positional argument: 'encoded'
+2025-03-26 02:34:13
+2025-03-26 02:34:13,348 - ERROR - JWT生成失败: check_password() missing 1 required positional argument: 'encoded'
+2025-03-26 02:34:13
+2025-03-26 02:44:49,790 - ERROR - JWT生成失败: 'Settings' object has no attribute 'JWT_EXPIRATION_DELTA'
+2025-03-26 02:44:49
+2025-03-26 02:44:49,790 - ERROR - JWT生成失败: 'Settings' object has no attribute 'JWT_EXPIRATION_DELTA'
+2025-03-26 02:44:49
+2025-03-26 02:44:49,790 - ERROR - JWT生成失败: 'Settings' object has no attribute 'JWT_EXPIRATION_DELTA'
+2025-03-26 02:44:49
+2025-03-26 02:44:49,790 - ERROR - JWT生成失败: 'Settings' object has no attribute 'JWT_EXPIRATION_DELTA'
+2025-03-26 02:44:49
+2025-03-26 02:44:49,790 - ERROR - JWT生成失败: 'Settings' object has no attribute 'JWT_EXPIRATION_DELTA'
+2025-03-26 02:44:49
