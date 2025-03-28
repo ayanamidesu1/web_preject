@@ -12,7 +12,7 @@
       <div class="list" ref="list">
         <div class="item" v-for="(item, index) in props.msg_list" :key="index">
           <div v-if="props.msg_type === 'image'" class="image_item" @click="chose_item(item.id)">
-            <img :src="'https://www.sunyuanling.com/image/comic/thumbnail/' + item.content_file_list.split(/[,，]/)[0]"
+            <img :src="'https://www.sunyuanling.com/server/static/image/comic/thumbnail/' + item.content_file_list.split(/[,，]/)[0]"
               class="image">
             <div class="age_tag" v-if="item.age_classification >= 17">R-{{ item.age_classification }}</div>
             <div class="page_count" v-if="item.content_file_list.split(/[,，]/).length > 1">
@@ -25,7 +25,7 @@
           </div>
           <div class="user_info" @click="jump_to_other_user_center(item.belong_to_userid,item)">
             <div class="user_avatar">
-              <img :src="'https://www.sunyuanling.com/image/avatar_thumbnail/' + item.belong_to_avatar">
+              <img :src="'https://www.sunyuanling.com/server/static/image/avatar_thumbnail/' + item.belong_to_avatar">
             </div>
             <div class="username">
               <span>{{ item.belong_to_user }}</span>
@@ -40,6 +40,8 @@
 <script setup>
 import { ref, onMounted, defineProps, defineEmits } from 'vue';
 import { useStore } from 'vuex';
+import {useRouter} from 'vue-router'
+const router = useRouter()
 const store = useStore();
 //进入指定用户的用户中心
 function jump_to_other_user_center(userid,item)
@@ -94,7 +96,8 @@ const set_tag_color = () => {
 
 const emit = defineEmits(['chose_item']);
 const chose_item = (item) => {
-  emit('chose_item', item);
+  //emit('chose_item', item);
+  router.push(`/comic_content?id=${item}`)
 };
 
 // Easing function for smooth animation

@@ -21,7 +21,7 @@ async function edit_userinfo({
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": "Bearer " + localStorage.getItem("token"),
+                "Authorization": "token " + localStorage.getItem("token"),
             },
             credentials: "include",
             body: JSON.stringify({

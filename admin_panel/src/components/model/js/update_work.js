@@ -4,7 +4,7 @@ async function update_ill_work_status(work_status, work_id) {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + localStorage.getItem('token')
+                'Authorization': 'token ' + localStorage.getItem('token')
             },
             body: JSON.stringify({
                 work_status: work_status,
@@ -25,7 +25,7 @@ async function update_comic_work_status(work_status, work_id) {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + localStorage.getItem('token')
+                'Authorization': 'token ' + localStorage.getItem('token')
             },
             body: JSON.stringify({
                 work_status: work_status,
@@ -46,7 +46,7 @@ async function update_novel_work_status(work_status, work_id) {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + localStorage.getItem('token')
+                'Authorization': 'token ' + localStorage.getItem('token')
             },
             body: JSON.stringify({
                 work_status: work_status,
@@ -68,7 +68,7 @@ async function update_novel_chapter_status(work_status, work_id,chapter_id) {
             method:'post',
             headers:{
                 'Content-Type':'application/json',
-                'Authorization':'Bearer '+localStorage.getItem('token')
+                'Authorization':'token '+localStorage.getItem('token')
             },
             body:JSON.stringify({
                 work_status:work_status,
@@ -91,7 +91,7 @@ async function delete_comment(comment_id_list) {
             method:'post',
             headers:{
                 'Content-Type':'application/json',
-                'Authorization':'Bearer '+localStorage.getItem('token')
+                'Authorization':'token '+localStorage.getItem('token')
             },
             body:JSON.stringify({
                 comment_id_list:comment_id_list
@@ -111,7 +111,7 @@ async function update_comment(comment_id,content){
             method:'post',
             headers:{
                 'Content-Type':'application/json',
-                'Authorization':'Bearer '+localStorage.getItem('token')
+                'Authorization':'token '+localStorage.getItem('token')
             },
             body:JSON.stringify({
                 comment_id:comment_id,

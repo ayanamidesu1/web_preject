@@ -26,10 +26,10 @@
           <span class="count_result">{{user_count}}</span>
         </div>
       </div>
-      <ill_page :ill_data="ill_list" v-show="ill_page_show" @work_count="set_work_count"></ill_page>
-      <comic_page :comic_data='comic_list' v-show="comic_page_show" @work_count="set_work_count"></comic_page>
-      <novel_page :novel_data="novel_list" v-show="novel_page_show" @work_count="set_work_count"></novel_page>
-      <user_page :user_data="userinfo_list" v-show="user_page_show" @work_count="set_work_count"></user_page>
+      <ill_page :ill_data="ill_list" v-show="ill_page_show" @work_count="set_work_count" @close="close_btn_click()"></ill_page>
+      <comic_page :comic_data='comic_list' v-show="comic_page_show" @work_count="set_work_count" @close="close_btn_click()"></comic_page>
+      <novel_page :novel_data="novel_list" v-show="novel_page_show" @work_count="set_work_count" @close="close_btn_click()"></novel_page>
+      <user_page :user_data="userinfo_list" v-show="user_page_show" @work_count="set_work_count" @close="close_btn_click()"></user_page>
     </div>
   </div>
 </template>
@@ -73,7 +73,7 @@ let tag_background_color_list = ['rgb(129, 126, 200)', 'rgb(126, 172, 200)', 'rg
   'rgb(200, 146, 126)'
   , 'rgb(126, 178, 200)', 'rgb(200, 173, 126)', 'rgb(126, 171, 200)', 'rgb(194, 200, 126)'
 ]
-let search_result_cover = ref('https://www.sunyuanling.com/image/thumbnail/120282888_p0.jpg')
+let search_result_cover = ref('https://www.sunyuanling.com/server/static/image/thumbnail/120282888_p0.jpg')
 
 let ill_page_show = ref(true)
 let comic_page_show = ref(false)
@@ -192,7 +192,7 @@ async function get_search_data(data) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + localStorage.getItem('token')
+        'Authorization': 'token ' + localStorage.getItem('token')
       },
       body: JSON.stringify({
         'search_key': data
@@ -270,7 +270,7 @@ function set_work_count(item)
   top: 65px;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 65px);
   z-index: 15;
   background-color: rgba(255, 255, 255, 1);
   overflow: auto;
@@ -282,8 +282,9 @@ function set_work_count(item)
   height: 35px;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  right: 30px;
+  position: sticky;
+  left: 100%;
+  top:20px;
 }
 
 .close_btn:hover {

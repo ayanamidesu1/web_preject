@@ -139,7 +139,7 @@ const observer = new IntersectionObserver(async (entries) => {
   threshold: 0
 })
 
-const getAvatarUrl = (avatar) => `https://www.sunyuanling.com/image/avatar_thumbnail/${avatar}`
+const getAvatarUrl = (avatar) => `https://www.sunyuanling.com/server/static/image/avatar_thumbnail/${avatar}`
 
 const getWorkName = (item) => {
   if (item.work_type === 'ill') {

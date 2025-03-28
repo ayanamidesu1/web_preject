@@ -4,7 +4,7 @@
         <div class="item_list">
             <div class="item" v-for="(item, index) in ill_item" :key="index">
                 <div class="work_cover">
-                    <img :src="'https://www.sunyuanling.com/image/thumbnail/' + item.work.content_file_list.split(/[,，]/)[0]"
+                    <img :src="'https://www.sunyuanling.com/server/static/image/thumbnail/' + item.work.content_file_list.split(/[,，]/)[0]"
                         alt="封面">
                     <div class="page_count">
                         <span>{{ item.work.content_file_list.split(/[,，]/).length }}</span>

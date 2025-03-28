@@ -25,7 +25,7 @@ class GetAllWorkData(View):
             now = datetime.now().strftime('%Y-%m-%dT%H:%M:%S')
             data = json.loads(request.body.decode('utf-8'))
             ago_days = data.get('ago_date')
-            userid = getattr(request, 'userid', None)  # 从中间件获取userid
+            userid = request.user.id  # 从中间件获取userid
             print(data)
 
             if not userid:

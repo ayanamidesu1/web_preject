@@ -2,26 +2,31 @@
     <div class="user_page">
         <div class="content">
             <div class="item_box">
+                <div class="item" v-for="(item,index) in data" :key="index">
+                    <user_search_result :userid="item.userid" @close="exit"></user_search_result>
+                </div>
+            </div>
+            <div class="item_box" v-if="false">
                 <div class="item" v-for="(item, index) in data" :key="index">
-                    <div class="user_avatar">
-                        <img :src="'https://www.sunyuanling.com/image/avatar_thumbnail/' + item.user_avatar">
+                    <div class="user_avatar" @click="jump_to_user_center(item.userid)">
+                        <img :src="'https://www.sunyuanling.com/server/static/image/avatar_thumbnail/' + item.user_avatar">
                     </div>
                     <div class="user_info">
-                        <div class="user_name">
+                        <div class="user_name" @click="jump_to_user_center(item.userid)">
                             <span>{{ item.username }}</span>
                         </div>
                         <div class="user_work" v-if="show_work_list.length > 0">
                             <div class="user_work_for" v-for="(work, workIndex) in show_work_list" :key="workIndex">
                                 <div class="item_img" v-if="work.Illustration_id">
-                                    <img :src="'https://www.sunyuanling.com/image/thumbnail/' + work.content_file_list.split(/[,，]/)[0]"
+                                    <img :src="'https://www.sunyuanling.com/server/static/image/thumbnail/' + work.content_file_list.split(/[,，]/)[0]"
                                         @click="jump_to_page('ill', work.Illustration_id)">
                                 </div>
                                 <div class="item_img" v-else-if="work.id">
-                                    <img :src="'https://www.sunyuanling.com/image/comic/thumbnail/' + work.content_file_list.split(/[,，]/)[0]"
+                                    <img :src="'https://www.sunyuanling.com/server/static/image/comic/thumbnail/' + work.content_file_list.split(/[,，]/)[0]"
                                         @click="jump_to_page('comic', work.id)">
                                 </div>
                                 <div class="item_img" v-else-if="work.work_id">
-                                    <img :src="'https://www.sunyuanling.com/image/novel/thumbnail/' + work.work_cover"
+                                    <img :src="'https://www.sunyuanling.com/server/static/image/novel/thumbnail/' + work.work_cover"
                                         @click="jump_to_page('novel', work.work_id)">
                                 </div>
                             </div>
@@ -41,8 +46,13 @@
 </template>
 
 <script setup>
-import { ref, watch, onMounted, defineProps,defineEmits } from 'vue';
+import { ref, watch, onMounted, defineProps,defineEmits,computed } from 'vue';
 import * as cookies from '../../../../../../../model/cookies.js'
+import { useStore } from '@assets/model/store/index';
+import { useRouter } from 'vue-router';
+import user_search_result from '../model/user_search_result.vue';
+const router = useRouter();
+const store = useStore();
 
 const props = defineProps({
     user_data: {
@@ -54,9 +64,11 @@ const props = defineProps({
 const data = ref(props.user_data);
 const work_list = ref({});
 const show_work_list = ref([]);
-const userid = JSON.parse(cookies.get_cookie('userinfo')).userid;
+const userid = computed(()=>{
+   return  store.$state.user.userid
+})
 
-const emit=defineEmits(['work_count']);
+const emit=defineEmits(['work_count','close']);
 watch(() => props.user_data, async (newValue) => {
     data.value = newValue;
     await get_work_list();
@@ -77,7 +89,7 @@ async function get_work_info(userid) {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + localStorage.getItem('token')
+                'Authorization': 'token ' + localStorage.getItem('token')
             },
             body: JSON.stringify({ userid })
         });
@@ -119,10 +131,10 @@ async function get_follow_list(id, target_id) {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + localStorage.getItem('token')
+                'Authorization': 'token ' + localStorage.getItem('token')
             },
             body: JSON.stringify({
-                userid: userid,
+                userid: userid.value,
                 target_id: target_id,
             })
         })
@@ -147,7 +159,7 @@ async function set_follow_status() {
     try {
 
         for (let i = 0; i < data.value.length; i++) {
-            temp = await get_follow_list(userid, data.value[i].userid);
+            temp = await get_follow_list(userid.value, data.value[i].userid);
             if (temp.length != 0) {
                 data.value[i].follow_status = true
             }
@@ -160,6 +172,7 @@ async function set_follow_status() {
         console.log(e)
     }
 }
+
 function set_work_list() {
     show_work_list.value = [];
     const user_work_list = Object.values(work_list.value).flat();
@@ -189,6 +202,17 @@ function jump_to_page(type, id) {
     console.log(id);
     console.log(type);
     //window.location.href='https://localhost:3002/?id='+id+'&work_type='type'
+    emit('close')
+    router.push(`/other_user_center?id=${id}`)
+}
+//跳转个人中心
+function jump_to_user_center(id) {
+    emit('close')
+    router.push(`/other_user_center?id=${id}`)
+}
+//退出
+function exit() {
+    emit('close')
 }
 //关注或者取消关注
 async function follow(target_username,target_id)
@@ -197,12 +221,12 @@ async function follow(target_username,target_id)
         method:'POST',
         headers:{
             'Content-Type':'application/json',
-            'Authorization':'Bearer '+localStorage.getItem('token')
+            'Authorization':'token '+localStorage.getItem('token')
         },
         body:JSON.stringify({
             target_username:target_username,
             target_id:target_id,
-            userid:userid,
+            userid:userid.value,
             username:JSON.parse(cookies.get_cookie('userinfo')).username,
         })
     })
@@ -256,6 +280,7 @@ async function follow(target_username,target_id)
 
 .user_avatar {
     width: 50px;
+    cursor: pointer;
 }
 
 .user_avatar img {
@@ -275,6 +300,7 @@ async function follow(target_username,target_id)
 
 .user_name {
     font-weight: bold;
+    cursor: pointer;
 }
 
 .user_work {

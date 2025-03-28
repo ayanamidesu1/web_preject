@@ -97,7 +97,7 @@ const template_cover = ref(['template_1.jpg', 'template_2.jpg', 'template_3.jpg'
 ]);
 
 function set_template_cover_path() {
-    const path = 'https://www.sunyuanling.com/image/novel/cover_material/';
+    const path = 'https://www.sunyuanling.com/server/static/image/novel/cover_material/';
     return template_cover.value.map(cover => path + cover);
 }
 
@@ -118,7 +118,7 @@ const work_info = ref({
     age_classification: '',
     work_status: '',
     choose_cover_path: '',
-    token: token,
+    token: localStorage.getItem('token'),
     user_info: user_info,
     cover_type: 'default_cover',
 });
@@ -207,7 +207,7 @@ async function set_send_work_info() {
         const res = await fetch('https://www.sunyuanling.com/api/file/UploadNewSeries/', {
             method: 'POST',
             headers: {
-                'Authorization': 'Bearer ' +localStorage.getItem('token')
+                'Authorization': 'token ' +localStorage.getItem('token')
             },
             body: file
         })

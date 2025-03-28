@@ -1,7 +1,7 @@
 from base_api import BaseApi
 from django.http import JsonResponse
 from django.db import connection, transaction, DatabaseError
-from djangoProject.log.log import Logger
+from log.log import Logger
 from datetime import datetime
 from .format_html import FormatHtml
 
@@ -9,6 +9,7 @@ from .format_html import FormatHtml
 class AddComment(BaseApi):
     logger = Logger()
     f_html = FormatHtml()
+
     def post(self, request, *args, **kwargs):
         try:
             # 验证用户登录状态
@@ -23,7 +24,7 @@ class AddComment(BaseApi):
             content = data.get('content', '').strip()
             if not content:
                 return JsonResponse({'code': 400, 'msg': '评论内容不能为空'}, status=400)
-            content=self.f_html.format_html(content)
+            content = self.f_html.format_html(content)
             is_main = data.get('is_main', True)
             reply_comment_id = data.get('reply_comment_id')  # 父评论ID
             reply_work_id = data.get('reply_work_id')  # 所属作品ID
@@ -61,9 +62,15 @@ class AddComment(BaseApi):
                     )
                     if cursor.rowcount != 1:
                         raise DatabaseError('评论添加失败')
+                    new_comment_id = cursor.execute("SELECT LAST_INSERT_ID()")
+                    new_comment_id = cursor.fetchone()[0]
+                    now = datetime.now().isoformat()
 
                 # 提交事务并返回成功消息
-                return JsonResponse({'code': 200, 'msg': '评论添加成功'},status=200)
+                return JsonResponse({'code': 200, 'msg': '评论添加成功', "data": {
+                    'comment_id': new_comment_id,
+                    'create_time': now
+                }}, status=200)
 
         except DatabaseError as e:
             print(e)

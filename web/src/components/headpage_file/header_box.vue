@@ -4,14 +4,10 @@
   </div>
 </template>
 
-<script>
+<script setup>
 // eslint-disable-next-line no-unused-vars
 import { ref, reactive, toRefs, watch, onMounted, onUnmounted } from 'vue';
 import head_title from './file/head_title.vue';
-export default {
-  name: 'header_box',
-  components:{head_title},
-}
 </script>
 
 <script setup>

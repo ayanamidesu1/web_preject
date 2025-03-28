@@ -10,7 +10,7 @@
     <scroll_box_copy :msg_list="work_tags" :msg_type="'tags'" v-if="work_tags.length > 0" />
     <div class="work_item_list">
       <div class="work_item" v-for="(item, index) in all_work_list" :key="index">
-        <img :src="'https://www.sunyuanling.com/image/novel/thumbnail/' + item.work_cover" alt="Work Thumbnail"
+        <img :src="'https://www.sunyuanling.com/server/static/image/novel/thumbnail/' + item.work_cover" alt="Work Thumbnail"
           class="thumbnail" @click="chose_item({ 'work_type': 'novel', 'work_id': item.work_id })">
         <span class="work_name">{{ item.work_name }}</span>
       </div>
@@ -27,6 +27,8 @@ import { ref, defineProps, onMounted, defineEmits } from 'vue'
 import { get_workinfo, get_user_all_worklist } from '../../../js/get_workinfo'
 import scroll_box_copy from './model/scroll_box_copy.vue';
 import { useStore } from 'vuex'
+import { useRouter } from 'vue-router';
+const router = useRouter();
 const store = useStore()
 
 const props = defineProps({
@@ -48,13 +50,7 @@ const props = defineProps({
 const emit = defineEmits(['choose_item'])
 
 function chose_item(item) {
-  store.commit('SET_CONTENT_PAGE', {
-    key: 'novel_page',
-    value: true
-  })
-  store.commit('SET_SINGLE_PAGE_STATUS', { key: 'content_index_page', value: true })
-  store.commit('SET_WORK_ID', item.work_id)
-  store.commit('SET_WORK_TYPE', item.work_type)
+  router.push(`/novel_content?id=${item.work_id}`)
 }
 
 const work_tags = ref([]);

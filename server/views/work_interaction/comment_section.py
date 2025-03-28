@@ -25,7 +25,7 @@ class AddCommentSection(View):
         try:
             data = json.loads(request.body.decode('utf-8'))
             token = data.get('token')
-            user_id=getattr(request,'userid',None)
+            user_id=request.user.id
             key = data.get('key')
             admin_userid = 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb'
             if not user_id:
@@ -107,7 +107,7 @@ class LikeComment(View):
             print(data)
             operate = data.get('operate')
             token = data.get('token')
-            userid=getattr(request,'userid',None)
+            userid=request.user.id
             print(token)
             admin_userid = 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb'
             if not userid:
@@ -251,7 +251,7 @@ class GetCommentSection(View):
         try:
             data = json.loads(request.body.decode('utf-8'))
             token = data.get('token')
-            user_id=getattr(request, 'userid', None)
+            user_id=request.user.id
             key = data.get('key')
             work_id = data.get('work_id')
             work_type = data.get('work_type')

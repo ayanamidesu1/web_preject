@@ -16,7 +16,7 @@
               <div class="work_info_box">
                 <span>插画作品</span>
                 <div class="work_info">
-                  <img :src="'https://www.sunyuanling.com/image/content_thumbnail/' +
+                  <img :src="'https://www.sunyuanling.com/server/static/image/content_thumbnail/' +
                     item.work_info[0].content_file_list.split(/[,，]/)[0]" class="image"
                     @click="chose_item({ 'work_type': 'ill', 'work_id': item.work_id })">
                   <div class="info_box">
@@ -30,7 +30,7 @@
               <div class="work_info_box">
                 <span>漫画作品</span>
                 <div class="work_info">
-                  <img :src="'https://www.sunyuanling.com/image/comic/content_thumbnail/' +
+                  <img :src="'https://www.sunyuanling.com/server/static/image/comic/content_thumbnail/' +
                     item.work_info[0].content_file_list.split(/[,，]/)[0]"
                     @click="chose_item({ 'work_type': 'comic', 'work_id': item.work_id })">
                   <div class="info_box">
@@ -44,7 +44,7 @@
               <div class="work_info_box">
                 <span>小说作品</span>
                 <div class="work_info">
-                  <img :src="'https://www.sunyuanling.com/image/novel/thumbnail/' + item.work_info[0].work_cover"
+                  <img :src="'https://www.sunyuanling.com/server/static/image/novel/thumbnail/' + item.work_info[0].work_cover"
                     @click="chose_item({ 'work_type': 'novel', 'work_id': item.work_id })">
                   <div class="info_box">
                     <span style="font-size: 18px;font-weight:bold;">{{ item.work_info[0].work_name }}</span>

@@ -18,7 +18,7 @@
     <div class="content">
       <div class="item" v-for="(item, index) in novel_work_list" :key="index">
         <div class="novel_cover">
-          <img :src="'https://www.sunyuanling.com/image/novel/thumbnail/' + item.work_cover" alt="小说作品封面">
+          <img :src="'https://www.sunyuanling.com/server/static/image/novel/thumbnail/' + item.work_cover" alt="小说作品封面">
           <div class="show_novel_work_content" @click="show_novel_content_page(item.work_id)">
             <span>查看小说详情</span>
           </div>
@@ -77,7 +77,7 @@
     <div class="novel_content_page" v-if="content_info_list">
       <div class="novel_info">
         <div class="content_novel_cover">
-          <img :src="'https://www.sunyuanling.com/image/novel/thumbnail/' + title_list[0].work_cover" alt="小说封面">
+          <img :src="'https://www.sunyuanling.com/server/static/image/novel/thumbnail/' + title_list[0].work_cover" alt="小说封面">
         </div>
 
         <div class="novel_info_item_box">

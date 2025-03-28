@@ -107,10 +107,10 @@ async function get_user_series_list() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + localStorage.getItem('token')
+        'Authorization': 'token ' + localStorage.getItem('token')
       },
       body: JSON.stringify({
-        token: token,
+        token: localStorage.getItem('token'),
       })
     });
     if (!res.ok) {
@@ -140,10 +140,10 @@ async function upload_chapter() {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + localStorage.getItem('token')
+        'Authorization': 'token ' + localStorage.getItem('token')
       },
       body: JSON.stringify({
-        token: token,
+        token: localStorage.getItem('token'),
         series_name: select_item.value,
         chapter_name: work_title.value,
         content: temp,

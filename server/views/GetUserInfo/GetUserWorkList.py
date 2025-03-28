@@ -22,7 +22,7 @@ class GetUserWorkList(View):
     def post(self, request, *args, **kwargs):
         try:
             data = json.loads(request.body.decode('utf-8'))
-            userid = getattr(request, 'userid', None)
+            userid = request.user.id
             offset = data.get('offset', 0)
             limit = data.get('limit', 10000)
             get_userid=data.get('userid',None)

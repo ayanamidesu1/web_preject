@@ -5,7 +5,7 @@
       <div class="content" :class="item.is_main ? '' : 'is_reply'">
         <div class="user_info">
           <div class="avatar">
-            <img :src="'https://www.sunyuanling.com/image/avatar_thumbnail/' + item.user_avatar" alt="avatar">
+            <img :src="'https://www.sunyuanling.com/server/static/image/avatar_thumbnail/' + item.user_avatar" alt="avatar">
           </div>
         </div>
         <div class="msg_content">
@@ -47,7 +47,7 @@
               <div class="content">
                 <div class="user_info">
                   <div class="avatar">
-                    <img :src="'https://www.sunyuanling.com/image/avatar_thumbnail/' + reply.user_avatar" alt="avatar">
+                    <img :src="'https://www.sunyuanling.com/server/static/image/avatar_thumbnail/' + reply.user_avatar" alt="avatar">
                   </div>
                 </div>
                 <div class="msg_content">

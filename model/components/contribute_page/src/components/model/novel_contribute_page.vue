@@ -14,7 +14,7 @@
             </div>
             <div class="item">
                 <div class="work_cover">
-                    <img src="https://www.sunyuanling.com/image/thumbnail/93414753_p0.jpg" alt="作品封面">
+                    <img src="https://www.sunyuanling.com/server/static/image/thumbnail/93414753_p0.jpg" alt="作品封面">
                 </div>
                 <div class="work_info">
                     <div class="work_info_item">

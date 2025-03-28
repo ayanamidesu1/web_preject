@@ -69,7 +69,7 @@ const get_notice_info = async () => {
       },
       body: JSON.stringify({
         operate_type: 'search',
-        token: token,
+        token: localStorage.getItem('token'),
       }),
     });
 
@@ -98,7 +98,7 @@ const updateNotice = async (item) => {
       },
       body: JSON.stringify({
         operate_type: 'update',
-        token: token,
+        token: localStorage.getItem('token'),
         id: item.id,
         title: item.title,
         content: item.content,

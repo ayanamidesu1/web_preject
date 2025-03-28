@@ -5,11 +5,11 @@ async function get_notice_info(token,operate_type='search'){
                 method:'post',
                 headers:{
                     'Content-Type':'application/json',
-                    'Authorization':'Bearer '+localStorage.getItem('token'),
+                    'Authorization':'token '+localStorage.getItem('token'),
                 },
                 body:JSON.stringify({
                     operate_type:operate_type,
-                    token:token,
+                    token:localStorage.getItem('token'),
                 })
             }
         )

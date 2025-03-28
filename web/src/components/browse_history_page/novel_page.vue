@@ -4,7 +4,7 @@
         <div class="item_list">
             <div class="item" v-for="(item, index) in novel_item" :key="index">
                 <div class="work_cover">
-                    <img :src="'https://www.sunyuanling.com/image/novel/thumbnail/' + item.work.work_cover"
+                    <img :src="'https://www.sunyuanling.com/server/static/image/novel/thumbnail/' + item.work.work_cover"
                         alt="封面">
                     <div class="age_classification" v-if="item.work.age_classification >= 18">
                         <span>{{ item.work.age_classification }}</span>

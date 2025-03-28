@@ -5,7 +5,7 @@ async function admin_login(jwtToken=10086, userid = 10086, password = 10086) {
             headers: {
                 'Content-Type': 'application/json',
                 // 将 JWT Token 放在 Authorization 头部
-                'Authorization': `Bearer ${jwtToken||''}`
+                'Authorization': `token ${jwtToken||''}`
             },
             credentials: 'include', // 确保 cookies 被包含在请求中
             body: JSON.stringify({

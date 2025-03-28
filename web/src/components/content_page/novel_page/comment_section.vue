@@ -50,7 +50,7 @@ let token = 'sunyuanling'
 let msg_info = ref({
   work_id: props.work_id,
   work_type: props.work_type,
-  token: token,
+  token: localStorage.getItem('token'),
   send_userid: '',
   is_root_comment: 1,
   content: '',

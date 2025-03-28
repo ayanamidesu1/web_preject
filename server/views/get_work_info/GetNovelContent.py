@@ -26,7 +26,7 @@ class GetNovelContent(View):
         try:
             data = json.loads(request.body.decode('utf-8'))
             token = data.get('token')
-            userid=getattr(request, 'userid', None)
+            userid=request.user.id
             if not token and not userid:
                 self.logger.warning(self.request_path(request) + 'token缺失，请求数据为：' + str(data))
                 return JsonResponse({'status': 'error', 'message': 'token缺失或者用户未登录'}, status=400)

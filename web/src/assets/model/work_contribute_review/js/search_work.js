@@ -4,7 +4,7 @@ async function search_ill_work(search_key="", work_status="all") {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',  // 修正为 'Content-Type'
-                'Authorization': 'Bearer ' + localStorage.getItem('token')
+                'Authorization': 'token ' + localStorage.getItem('token')
             },
             body: JSON.stringify({
                 search_key: search_key,
@@ -24,7 +24,7 @@ async function search_comic_work(search_key="", work_status="all") {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',  // 修正为 'Content-Type'
-                'Authorization': 'Bearer ' + localStorage.getItem('token')
+                'Authorization': 'token ' + localStorage.getItem('token')
             },
             body: JSON.stringify({
                 search_key: search_key,
@@ -44,7 +44,7 @@ async function search_novel_work(search_key="", work_status="all") {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',  // 修正为 'Content-Type'
-                'Authorization': 'Bearer ' + localStorage.getItem('token')
+                'Authorization': 'token ' + localStorage.getItem('token')
             },
             body: JSON.stringify({
                 search_key: search_key,

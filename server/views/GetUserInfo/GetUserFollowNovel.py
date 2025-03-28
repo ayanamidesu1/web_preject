@@ -11,7 +11,7 @@ class GetUserFollowNovel(View):
     def post(self,request,*args,**kwargs):
         try:
             data=json.loads(request.body.decode('utf-8'))
-            userid=data['userid']
+            userid=request.user.id
             follow_user_id_list=[]
             with connection.cursor() as cursor:
                 sql='select follow_user_id from user_follow where user_id=%s'

@@ -20,7 +20,7 @@
     <div class="content">
       <div class="item" v-for="(item, index) in ill_worklist" :key="index">
         <div class="ill_cover">
-          <img :src="'https://www.sunyuanling.com/image/thumbnail/' + item.content_file_list.split(/[,，]/)[0]"
+          <img :src="'https://www.sunyuanling.com/server/static/image/thumbnail/' + item.content_file_list.split(/[,，]/)[0]"
             alt="插画作品封面">
           <span @click="show_ill(item)" class="show_ill_content_btn">查看详情</span>
         </div>
@@ -70,7 +70,7 @@
       </button>
     </div>
     <div class="ill_img" v-for="(item, index) in ill_list" :key="index">
-      <img :src="'https://www.sunyuanling.com/image/' + item" alt="作品">
+      <img :src="'https://www.sunyuanling.com/server/static/image/' + item" alt="作品">
     </div>
   </div>
 </template>

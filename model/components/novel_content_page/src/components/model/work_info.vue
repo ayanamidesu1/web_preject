@@ -3,7 +3,7 @@
     <div class="content">
       <div class="work_info_item">
         <div class="work_cover">
-          <img :src="'https://www.sunyuanling.com/image/novel/' + work_info[0].work_cover">
+          <img :src="'https://www.sunyuanling.com/server/static/image/novel/' + work_info[0].work_cover">
         </div>
         <div class="author_info">
           <div class="info">
@@ -35,7 +35,7 @@
         </div>
         <div class="author_box">
             <div class="author_avatar">
-              <img :src="'https://www.sunyuanling.com/image/avatar_thumbnail/'+author_info.user_avatar">
+              <img :src="'https://www.sunyuanling.com/server/static/image/avatar_thumbnail/'+author_info.user_avatar">
             </div>
             <div class="author_name">
               <span>{{author_info.username}}</span>

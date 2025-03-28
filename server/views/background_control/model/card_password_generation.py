@@ -77,7 +77,7 @@ class CardPasswordGeneration(View):
 
     # 处理POST请求
     def post(self, request, *args, **kwargs):
-        userid = getattr(request, 'userid', None)
+        userid = request.user.id
         is_authenticated = getattr(request, 'is_authenticated', None)
 
         if not is_authenticated:

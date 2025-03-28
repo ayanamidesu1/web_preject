@@ -14,7 +14,7 @@
             </div>
             <div class="item" v-for="(item, index) in work_list" :key="index">
                 <div class="work_cover">
-                    <img :src="'https://www.sunyuanling.com/image/thumbnail/' + item.content_file_list.split(/[,，]/)[0]"
+                    <img :src="'https://www.sunyuanling.com/server/static/image/thumbnail/' + item.content_file_list.split(/[,，]/)[0]"
                         alt="作品封面">
                 </div>
                 <div class="work_info">

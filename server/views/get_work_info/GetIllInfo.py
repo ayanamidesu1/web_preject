@@ -23,7 +23,7 @@ class GetIllInfo(View):
         try:
             data = json.loads(request.body.decode('utf-8'))
             sql = '''
-            SELECT illustration_work.*,users.user_avatar as author_avatar 
+            SELECT illustration_work.*,users.user_avatar as author_avatar ,Illustration_id as work_id
             FROM illustration_work left join  users on illustration_work.belong_to_user_id=users.userid 
             where Illustration_id=%s and work_approved=1
             '''

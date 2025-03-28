@@ -2,7 +2,7 @@
     <div class="user_info" v-if="user_info">
         <div class="content">
             <div class="user_avatar">
-                <img :src="'https://www.sunyuanling.com/image/avatar_thumbnail/' + user_info.user_avatar" alt="用户头像">
+                <img :src="'https://www.sunyuanling.com/server/static/image/avatar_thumbnail/' + user_info.user_avatar" alt="用户头像">
             </div>
             <div class="info_box">
                 <span class="username" style="font-weight: bold;font-size:20px;">
@@ -59,7 +59,7 @@ async function get_follow_status() {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + localStorage.getItem('token')
+                'Authorization': 'token ' + localStorage.getItem('token')
             },
             body: JSON.stringify({
                 target_id: props.user_info.userid
@@ -93,7 +93,7 @@ async function follow() {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + localStorage.getItem('token')
+                'Authorization': 'token ' + localStorage.getItem('token')
             },
             body: JSON.stringify({
                 target_id: props.user_info.userid,

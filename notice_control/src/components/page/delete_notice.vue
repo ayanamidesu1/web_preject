@@ -63,7 +63,7 @@ async function get_notice_info() {
       },
       body: JSON.stringify({
         operate_type: 'search',
-        token: token,
+        token: localStorage.getItem('token'),
         page: page.value,
         per_page: per_page.value
       })
@@ -97,7 +97,7 @@ async function delete_notice(id) {
       body: JSON.stringify({
         operate_type: 'delete',
         id: id,
-        token: token
+        token: localStorage.getItem('token')
       })
     });
     if (res.ok) {

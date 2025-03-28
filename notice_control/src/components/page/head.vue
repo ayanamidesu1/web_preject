@@ -9,7 +9,7 @@
     <div class="user_box" v-if="user_info" @mouseover="showDropdown" @mouseleave="hideDropdown">
       <span>{{ user_info.username }}</span>
       <div class="user_avatar" @click="drop_down">
-        <img :src="'https://www.sunyuanling.com/image/avatar_thumbnail/' + user_info.user_avatar">
+        <img :src="'https://www.sunyuanling.com/server/static/image/avatar_thumbnail/' + user_info.user_avatar">
       </div>
       <div class="drop_down_svg">
         <img :src="temp_svg" class="icon">
@@ -22,7 +22,7 @@
         </div>
         <div class="drop_down_item">
           <div class="user_avatar">
-            <img :src="'https://www.sunyuanling.com/image/avatar_thumbnail/' + user_info.user_avatar">
+            <img :src="'https://www.sunyuanling.com/server/static/image/avatar_thumbnail/' + user_info.user_avatar">
           </div>
         </div>
         <div class="drop_down_item" @click="logout">

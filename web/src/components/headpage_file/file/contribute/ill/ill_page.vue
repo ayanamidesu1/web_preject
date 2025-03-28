@@ -130,7 +130,7 @@ async function submit_work() {
     const res = await fetch('https://www.sunyuanling.com/api/file/UploadFile/', {  
       method: 'POST',  
       headers: {  
-        'Authorization': 'Bearer ' + localStorage.getItem('token'),  
+        'Authorization': 'token ' + localStorage.getItem('token'),  
       },
       body: formData, // 直接使用 FormData  
     });  

@@ -16,7 +16,7 @@
       <div class="item_box">
         <div class="item" v-for="(item, index) in data" :key="index">
           <div class="novel_cover" @click="jump_to_page(item.work_id)">
-            <img :src="'https://www.sunyuanling.com/image/novel/thumbnail/'+item.work_cover">
+            <img :src="'https://www.sunyuanling.com/server/static/image/novel/thumbnail/'+item.work_cover">
           </div>
           <div class="novel_info">
             <div class="novel_title">
@@ -56,6 +56,8 @@ export default {
 
 <script setup>
 import { useStore } from 'vuex'
+import {useRouter} from 'vue-router'
+const router=useRouter()
 const store = new useStore()
 let novel_data = defineProps({
   novel_data: {
@@ -66,7 +68,7 @@ let novel_data = defineProps({
   }
 })
 let data = ref(novel_data.novel_data)
-const emit=defineEmits(['work_count'])
+const emit=defineEmits(['work_count','close'])
 watch(() => novel_data.novel_data,async (newValue, oldValue) => {
   data.value = newValue;
   await set_avatar();
@@ -82,7 +84,7 @@ async function get_author_avatar(userid){
     method:'POST',
     headers:{
       'Content-Type':'application/json',
-      'Authorization': 'Bearer ' + localStorage.getItem('token')
+      'Authorization': 'token ' + localStorage.getItem('token')
     },
     body:JSON.stringify({
       userid:userid
@@ -93,7 +95,7 @@ async function get_author_avatar(userid){
     const data=await res.json()
     if (data.status=='success')
   {
-    return 'https://www.sunyuanling.com/image/avatar_thumbnail/'+data.data[0].user_avatar
+    return 'https://www.sunyuanling.com/server/static/image/avatar_thumbnail/'+data.data[0].user_avatar
   }
   }
 }
@@ -108,15 +110,8 @@ async function set_avatar()
 //带参跳转
 function jump_to_page(id)
 {
-  console.log(id)
-  //window.location.href='https://localhost:3002/?work_id='+id+'&type=novel';
-  store.commit('SET_CONTENT_PAGE', {
-    key: 'novel_page',
-    value: true
-  })
-  store.commit('SET_SINGLE_PAGE_STATUS',{key:'content_index_page',value:true})
-  store.commit('SET_WORK_ID',id)
-  store.commit('SET_WORK_TYPE','novel')
+  emit('close')
+  router.push(`/novel_content?id=${id}`)
 }
 </script>
 

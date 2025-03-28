@@ -23,7 +23,7 @@ class GetUserFollowWorkTags(View):
             data = json.loads(request.body.decode('utf-8'))
             token = data.get('token')
             admin_userid = 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb'
-            userid=getattr(request,'userid',None)
+            userid=request.user.id
             with connection.cursor() as cursor:
                 if not userid:
                     if not token:

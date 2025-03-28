@@ -1,6 +1,6 @@
 from django.http import JsonResponse
 from base_api import BaseApi
-from djangoProject.log.log import Logger
+from log.log import Logger
 
 
 class GetMoreReplyComment(BaseApi):
@@ -23,14 +23,14 @@ class GetMoreReplyComment(BaseApi):
                 return JsonResponse({'code': 400, 'msg': 'limit 或 offset 参数无效'}, status=400)
 
             sql = '''
-            select comment.*,comment.id as comment_id ,users.user_id as user_id,users.username as username,users.avatar
+            select comment.*,comment.id as comment_id ,users.userid as userid,users.username as username,users.user_avatar
              as user_avatar,
             EXISTS(
             select 1 from comment_interaction
             where comment_interaction.operate_user_id=%s and comment_interaction.operate_type='like' and 
             comment_interaction.comment_id=comment.id
             ) as is_like
-              from comment left join users on users.user_id=comment.user_id
+              from comment left join users on users.userid=comment.user_id
               LEFT JOIN (
                     SELECT 
                         comment_interaction.comment_id AS comment_id,

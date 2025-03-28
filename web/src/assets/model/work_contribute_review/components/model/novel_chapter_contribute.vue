@@ -20,7 +20,7 @@
             </div>
             <div class="work_info">
                 <div class="work_cover">
-                    <img :src="'https://www.sunyuanling.com/image/novel/thumbnail/' + novel_info.work_cover" alt="作品封面">
+                    <img :src="'https://www.sunyuanling.com/server/static/image/novel/thumbnail/' + novel_info.work_cover" alt="作品封面">
                 </div>
                 <div class="info">
                     <div class="info_item">

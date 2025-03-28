@@ -12,7 +12,7 @@
       <div class="list" ref="list">
         <div class="item" v-for="(item, index) in props.msg_list" :key="index">
           <div v-if="props.msg_type === 'image'" class="image_item" @click="chose_item(item.work_info.id)">
-            <img :src="'https://www.sunyuanling.com/image/comic/thumbnail/' + item.work_info.content_file_list.split(/[,，]/)[0]"
+            <img :src="'https://www.sunyuanling.com/server/static/image/comic/thumbnail/' + item.work_info.content_file_list.split(/[,，]/)[0]"
               class="image">
             <div class="age_tag" v-if="item.work_info.age_classification >= 17">R-{{ item.work_info.age_classification }}</div>
             <div class="page_count" v-if="item.work_info.content_file_list.split(/[,，]/).length > 1">
@@ -25,7 +25,7 @@
           </div>
           <div class="user_info" @click="jump_to_other_user_center(item.author_info.author_id,item)">
             <div class="user_avatar">
-              <img :src="'https://www.sunyuanling.com/image/avatar_thumbnail/' + item.author_info.author_avatar">
+              <img :src="'https://www.sunyuanling.com/server/static/image/avatar_thumbnail/' + item.author_info.author_avatar">
             </div>
             <div class="username">
               <span>{{ item.author_info.author_username }}</span>

@@ -8,7 +8,7 @@ async function get_all_work_data(token, ago_date = null) {
             },
             body: JSON.stringify(
                 {
-                    token: token,
+                    token: localStorage.getItem('token'),
                     ago_date: ago_date,
                 }
             )
@@ -40,7 +40,7 @@ async function get_appoint_work_data(token, ago_date = 7, work_id, work_type) {
             },
             body: JSON.stringify(
                 {
-                    token: token,
+                    token: localStorage.getItem('token'),
                     ago_date: ago_date,
                     work_id: work_id,
                     work_type: work_type,

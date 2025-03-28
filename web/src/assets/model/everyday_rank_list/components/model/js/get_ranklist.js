@@ -5,7 +5,7 @@ async function get_rank_list(work_type='ill',token)
             method:'post',
             headers:{
                 'Content-Type':'application/json',
-                'Authorization':'Bearer '+localStorage.getItem('token')
+                'Authorization':'token '+localStorage.getItem('token')
             },
             body:JSON.stringify({
                 work_type:work_type

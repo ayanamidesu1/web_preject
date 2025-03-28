@@ -12,7 +12,7 @@ class register(BaseApi):
         try:
             file_name = f"{self.get_uuid()}.png"
             path=os.path.join(settings.BASE_DIR,'static','img',file_name)
-            thumbnail_path=os.path.join(settings.BASE_DIR,'static','avatar_thumbnail',file_name)
+            thumbnail_path=os.path.join(settings.BASE_DIR,'static','image','avatar_thumbnail',file_name)
             file=request.FILES.get('file')
             if file is None:
                 return JsonResponse({'code':400,'msg':'请上传文件'},status=400)

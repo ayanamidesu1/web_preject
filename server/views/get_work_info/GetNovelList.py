@@ -23,7 +23,7 @@ class GetNovelList(View):
         try:
             data = json.loads(request.body.decode('utf-8'))
             print(data)
-            userid = getattr(request, 'userid', None)
+            userid = request.user.id
             work_id = data.get('work_id')
 
             if not userid:

@@ -24,7 +24,7 @@ class GetPreviewCover(View):
         try:
             coverhand = CoverHandle()
             data = json.loads(request.body.decode('utf-8'))
-            userid=getattr(request,'userid',None)
+            userid=request.user.id
 
             title = data.get('title', '实例标题')
             template_name = data.get('template_name', 'template_1')

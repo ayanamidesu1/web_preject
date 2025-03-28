@@ -4,7 +4,7 @@ async function search_ill_work(search_key, work_status = 'all', limit = 10, offs
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + localStorage.getItem('token')
+                'Authorization': 'token ' + localStorage.getItem('token')
             },
             body: JSON.stringify({
                 search_key: search_key,
@@ -27,7 +27,7 @@ async function search_comic_work(search_key, work_status = 'all', limit = 10, of
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + localStorage.getItem('token')
+                'Authorization': 'token ' + localStorage.getItem('token')
             },
             body: JSON.stringify({
                 search_key: search_key,
@@ -50,7 +50,7 @@ async function search_novel_work(search_key, work_status = 'all', limit = 10, of
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + localStorage.getItem('token')
+                'Authorization': 'token ' + localStorage.getItem('token')
             },
             body: JSON.stringify({
                 search_type: search_key,
@@ -73,7 +73,7 @@ async function search_comment(limit=10,offset=0,comment_id=null,work_id=null,wor
             method:'post',
             headers:{
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + localStorage.getItem('token')
+                'Authorization': 'token ' + localStorage.getItem('token')
             },
             body:JSON.stringify({
                 limit:limit,

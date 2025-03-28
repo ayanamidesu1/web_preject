@@ -34,9 +34,9 @@ const get_preview_cover = async () => {
     try {
         const res = await fetch('https://www.sunyuanling.com/api/file/GetPreviewCover/', {
             method: 'post',
-            headers: { 'Content-Type': 'application/json' ,'Authorization': 'Bearer ' +localStorage.getItem('token')},
+            headers: { 'Content-Type': 'application/json' ,'Authorization': 'token ' +localStorage.getItem('token')},
             body: JSON.stringify({
-                token: token,
+                token: localStorage.getItem('token'),
                 template_name: props.template_name,
                 title: props.title
             })
@@ -64,7 +64,7 @@ const update_cover_img = async () => {
         };
         reader.readAsDataURL(props.file);
     } else if (props.title || props.template_name) {
-        cover_img_src.value = 'https://www.sunyuanling.com/image/novel/temp_cover/' + await get_preview_cover();
+        cover_img_src.value = 'https://www.sunyuanling.com/server/static/image/novel/temp_cover/' + await get_preview_cover();
         console.log('服务器绘制封面');
     } else {
         cover_img_src.value = ''; // 清空封面预览

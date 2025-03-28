@@ -3,11 +3,11 @@ async function get_all_user_work(token){
         const res=await fetch('https://www.sunyuanling.com/api/GetUserInfo/GetUserWorkList/',{
             method:'post',
             headers:{
-                'Authorization': 'Bearer ' + localStorage.getItem('token'),
+                'Authorization': 'token ' + localStorage.getItem('token'),
                 'Content-Type':'application/json'
             },
             body:JSON.stringify({
-                token:token
+                token:localStorage.getItem('token')
             })
         })
         if(res.ok)

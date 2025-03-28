@@ -5,9 +5,9 @@ import uuid
 
 from bs4 import BeautifulSoup
 
-from djangoProject.model.format_img import ReWriteImg
-from djangoProject.log.log import Logger
-from djangoProject.settings import BASE_DIR
+from format_img import ReWriteImg
+from log.log import Logger
+from djangoWebServer.settings import BASE_DIR
 
 
 class FormatHtml:

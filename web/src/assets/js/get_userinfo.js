@@ -4,10 +4,10 @@ async function get_user_follow_work_tags(token) {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization':'Bearer '+localStorage.getItem('token')
+                'Authorization':'token '+localStorage.getItem('token')
             },
             body: JSON.stringify({
-                token: token
+                token: localStorage.getItem('token')
             })
         })
         if (res.ok) {
@@ -32,10 +32,10 @@ async function get_userinfo(token = null, userid = null) {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization':'Bearer '+localStorage.getItem('token')
+                'Authorization':'token '+localStorage.getItem('token')
             },
             body: JSON.stringify({
-                token: token,
+                token: localStorage.getItem('token'),
                 userid: userid
             })
         })

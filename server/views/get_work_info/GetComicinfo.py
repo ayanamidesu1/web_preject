@@ -24,7 +24,7 @@ class GetComicinfo(View):
         now = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
         try:
             data = json.loads(request.body.decode('utf-8'))
-            sql = 'select * from comic where id=%s and work_approved=1'
+            sql = 'select *,id as work_id from comic where id=%s and work_approved=1'
             work_id = data.get('work_id')
             with connection.cursor() as cursor:
                 cursor.execute(sql, (work_id,))

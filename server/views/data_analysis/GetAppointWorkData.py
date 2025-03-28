@@ -24,7 +24,7 @@ class GetAppointWorkData(View):
         try:
             now = datetime.now().strftime('%Y-%m-%dT%H:%M:%S')
             data = json.loads(request.body.decode('utf-8'))
-            userid = getattr(request, 'userid', None)  # 从 request 中获取 userid
+            userid = request.user.id  # 从 request 中获取 userid
             ago_days = int(data.get('ago_date', 7))  # 默认值为 7 天
             work_id = data.get('work_id')
             work_type = data.get('work_type')

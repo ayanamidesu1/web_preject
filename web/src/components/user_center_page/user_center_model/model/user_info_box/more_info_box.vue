@@ -9,7 +9,7 @@
                 </div>
             </div>
             <div class="user_avatar">
-                <img :src="'https://www.sunyuanling.com/image/avatar_thumbnail/' + user_info.user_avatar" alt="用户头像">
+                <img :src="'https://www.sunyuanling.com/server/static/image/avatar_thumbnail/' + user_info.user_avatar" alt="用户头像">
             </div>
             <div class="address">
                 <img class="icon" src="https://www.sunyuanling.com/assets/location.svg" alt="地址图标">

@@ -26,7 +26,7 @@ class GetUserFollowList(BaseView):
             data = json.loads(request.body.decode('utf-8'))
             userid = data.get('userid')
             if userid is None:
-                userid=getattr(request,'userid',None)
+                userid=request.user.id
             target_id = data.get('target_id')
 
             if not userid:
@@ -60,7 +60,7 @@ class UserAddFollow(BaseView):
     def post(self, request, *args, **kwargs):
         try:
             data = json.loads(request.body.decode('utf-8'))
-            userid=getattr(request,'userid',None)
+            userid=request.user.id
             if userid:
                 with connection.cursor() as cursor:
                     sql = 'select userid,username from users where userid=%s'
@@ -75,6 +75,8 @@ class UserAddFollow(BaseView):
                 userid = data.get('userid')
                 username = data.get('username')
             target_id = data.get('target_id')
+            if userid==target_id:
+                return JsonResponse({'status': 'warn', 'message': '不能关注自己'}, status=200)
             target_username = data.get('target_username')
 
             if not userid :

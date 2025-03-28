@@ -4,12 +4,12 @@ async function get_comment(work_id,work_type,token,limit=5,offset=0){
             method:'POST',
             headers:{
                 'Content-Type':'application/json',
-                'Authorization': 'Bearer ' + localStorage.getItem('token'),
+                'Authorization': 'token ' + localStorage.getItem('token'),
             },
             body:JSON.stringify({
                 work_id:work_id,
                 work_type:work_type,
-                token:token,
+                token:localStorage.getItem('token'),
                 limit:limit,
                 offset:offset
             })
@@ -44,12 +44,12 @@ async function add_comment(work_id,work_type,token,send_userid,is_root_comment,c
             method:'POST',
             headers:{
                 'Content-Type':'application/json',
-                'Authorization': 'Bearer ' + localStorage.getItem('token'),
+                'Authorization': 'token ' + localStorage.getItem('token'),
             },
             body:JSON.stringify({
                 work_id:work_id,
                 work_type:work_type,
-                token:token,
+                token:localStorage.getItem('token'),
                 send_userid:send_userid,
                 is_root_comment:is_root_comment,
                 content:content,
@@ -86,12 +86,12 @@ async function like_comment(comment_id,operate,token,work_type,work_id){
             method:'POST',
             headers:{
                 'Content-Type':'application/json',
-                'Authorization': 'Bearer ' + localStorage.getItem('token'),
+                'Authorization': 'token ' + localStorage.getItem('token'),
             },
             body:JSON.stringify({
                 comment_id:comment_id,
                 operate:operate,
-                token:token,
+                token:localStorage.getItem('token'),
                 work_type:work_type,
                 work_id:work_id
             })

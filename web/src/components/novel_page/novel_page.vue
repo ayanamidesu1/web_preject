@@ -4,7 +4,7 @@
     <div class="novel_list">
       <div class="novel_item" v-for="(item,index) in novel_info_list" :key="index">
         <div class="novel_cover" @click="open_novel_page(item.work_id)">
-          <img :src="'https://www.sunyuanling.com/image/novel/thumbnail/'+item.work_cover">
+          <img :src="'https://www.sunyuanling.com/server/static/image/novel/thumbnail/'+item.work_cover">
         </div>
         <div class="novel_info">
           <div class="novel_state mt">
@@ -15,7 +15,7 @@
           </div>
           <div class="novel_userinfo  mt" @click="jump_to_other_user_center(item.belong_to_userid,item)">
             <div class="novel_useravatar">
-              <img :src="'https://www.sunyuanling.com/image/'+item.belong_to_avatar">
+              <img :src="'https://www.sunyuanling.com/server/static/image/'+item.belong_to_avatar">
             </div>
             <div class="novel_username">
               <span>{{item.belong_to_username}}</span>
@@ -41,29 +41,20 @@
     </div>
     <h4>推荐的小说作品</h4>
     <div class="recommend_page" style="max-height: 1200px; overflow:hidden;">
-      <recommendation_novel :token="token" :work_type="'novel'"></recommendation_novel>
+      <recommendation_novel></recommendation_novel>
     </div>
     <h4>小说排行榜</h4>
     <ranking></ranking>
   </div>
 </template>
 
-<script>
-// eslint-disable-next-line no-unused-vars
-import { ref, reactive, toRefs, watch, onMounted, onUnmounted ,computed} from 'vue';
+<script setup>
+import { ref,  onMounted, computed} from 'vue';
 import recommendation_novel from './recommendation_novel.vue';
 import ranking from './ranking.vue';
-export default {
-  name: 'novel_page',
-  components:{recommendation_novel,ranking},
-}
-</script>
-
-<script setup>
-import * as cookies from '../../../../model/cookies.js'
-import { useStore } from 'vuex';
+import { useStore } from '@/assets/model/store'
 const store=useStore();
-let token=computed(()=>store.getters.token)
+
 //进入指定用户的用户中心
 function jump_to_other_user_center(userid,item)
 {
@@ -74,7 +65,9 @@ function jump_to_other_user_center(userid,item)
 let word_count=ref('1111');
 let read_time=ref('12');
 let like_count=ref('45');
-let userinfo=ref(JSON.parse(cookies.get_cookie('userinfo')))
+let userinfo=computed(()=>{
+  return store.$state.user
+})
 
 //获取用户关注的用户的小说信息
 let novel_info_list=ref([])
@@ -85,7 +78,7 @@ async function get_novel_list(){
       method:'post',
       headers:{
         'Content-Type':'application/json',
-        'Authorization': 'Bearer ' + localStorage.getItem('token'),
+        'Authorization': 'token ' + localStorage.getItem('token'),
       },
       body:JSON.stringify({
         userid:userinfo.value.userid,
@@ -116,7 +109,7 @@ async function get_author_avatar(userid) {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + localStorage.getItem('token'),
+        'Authorization': 'token ' + localStorage.getItem('token'),
       },
       body: JSON.stringify({
         userid: userid,

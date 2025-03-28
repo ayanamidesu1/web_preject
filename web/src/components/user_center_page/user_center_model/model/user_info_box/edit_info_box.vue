@@ -9,7 +9,7 @@
                 </div>
             </div>
             <div class="user_background">
-                <user_background :user_back_img="'https://www.sunyuanling.com/image/' + temp_user_info.user_back_img"></user_background>
+                <user_background :user_back_img="'https://www.sunyuanling.com/server/static/image/' + temp_user_info.user_back_img"></user_background>
             </div>
             <span class="b">个人头像</span>
             <div class="avatar">
@@ -75,12 +75,12 @@ const props = defineProps({
 
 const emit = defineEmits(['close_page']);
 const temp_user_info = ref({ ...props.user_info });
-const avatarImgUrl = ref(`https://www.sunyuanling.com/image/avatar_thumbnail/${temp_user_info.value.user_avatar}`);
+const avatarImgUrl = ref(`https://www.sunyuanling.com/server/static/image/avatar_thumbnail/${temp_user_info.value.user_avatar}`);
 const files=ref()
 
 watch(() => props.user_info, (newInfo) => {
     temp_user_info.value = { ...newInfo };
-    avatarImgUrl.value = `https://www.sunyuanling.com/image/avatar_thumbnail/${newInfo.user_avatar}`;
+    avatarImgUrl.value = `https://www.sunyuanling.com/server/static/image/avatar_thumbnail/${newInfo.user_avatar}`;
 });
 
 function updateBirthday(event) {

@@ -1,6 +1,6 @@
 <template>
   <div class="illustration_page">
-    <scroll_box :msg_type="'tags'" :msg_list="tags_list.data" v-if="shouldShowScrollBox"></scroll_box>
+    <scroll_box_1 :msg_type="'tags'" :msg_list="tags_list.data" v-if="tags_list.data.length>0" style="max-height:100px;"></scroll_box_1>
     <h3>用户关注的作品</h3>
     <scroll_box v-if="follow_illustrations_list" :msg_list="follow_illustrations_list" @chose_item="go_to_illustration_page"></scroll_box>
     <h4>推荐的作品</h4>
@@ -11,8 +11,9 @@
 </template>
 
 <script setup>
-import { useStore } from 'vuex';
+import { useStore } from '@/assets/model/store/index';
 import scroll_box from './model/scroll_box.vue'
+import scroll_box_1 from '../models/scroll_box.vue';
 import { ref, reactive, toRefs, watch, onMounted, onUnmounted,computed } from 'vue';
 import recommendation from './recommendation.vue';
 import ranking from './ranking.vue';
@@ -24,13 +25,14 @@ const tags_list = ref({
   data: []
 });
 
-const shouldShowScrollBox = computed(() => {
-  return tags_list.value.data.length > 0 && tags_list.value!== null && tags_list.value!== undefined;
+
+
+let user_info = computed(()=>{
+  return store.$state.user
+})
+let token = computed(() =>{
+  return localStorage.getItem('token')
 });
-
-
-let user_info = ref(JSON.parse(cookies.get_cookie('userinfo')))
-let token = computed(() => store.getters.token);
 
 //获取用户关注用户的插画作品列表
 let follow_illustrations_list = ref([])
@@ -40,13 +42,14 @@ async function get_follow_illustrations_list() {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization':'Bearer '+localStorage.getItem('token')
+        'Authorization':'token '+localStorage.getItem('token')
       },
       body: JSON.stringify({
         userid: user_info.value.userid,
       })
     })
     const data = await res.json()
+    console.log(data)
     if (data.status == 'success') {
       follow_illustrations_list.value = data.data;
       for (let i = 0; i < follow_illustrations_list.value.length; i++) {
@@ -69,7 +72,7 @@ async function get_author_avatar(userid) {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization':'Bearer '+localStorage.getItem('token')
+        'Authorization':'token '+localStorage.getItem('token')
       },
       body: JSON.stringify({
         userid: userid,

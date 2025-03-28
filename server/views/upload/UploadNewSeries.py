@@ -65,7 +65,7 @@ class UploadNewSeries(View):
             work_info=json.loads(work_info)
             cover_type = work_info.get('cover_type')
             token = work_info.get('token')
-            userid=getattr(request,'userid',None)
+            userid=request.user.id
             user_info = work_info.get('user_info')
             print(user_info)
             belong_to_user_id = user_info.get('userid')
@@ -76,7 +76,7 @@ class UploadNewSeries(View):
 
             if cover_type == 'default_cover':
                 user_choose_cover_path = work_info.get('user_choose_cover_path')
-                src = 'https://www.sunyuanling.com/image/novel/temp_cover/'
+                src = 'https://www.sunyuanling.com/server/static/image/novel/temp_cover/'
                 try:
                     file_name = os.path.basename(user_choose_cover_path.replace(src, ''))
                     temp_file_path = self.cover_temp_path + file_name

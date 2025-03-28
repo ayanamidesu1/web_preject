@@ -1,6 +1,6 @@
 from base_api import BaseApi
 from django.http import JsonResponse
-from djangoProject.log.log import Logger
+from log.log import Logger
 
 
 class GetMoreMainComment(BaseApi):
@@ -39,7 +39,7 @@ class GetMoreMainComment(BaseApi):
                     comment.reply_work_type AS reply_work_type,
                     COALESCE(like_count_table.like_count, 0) AS like_count,
                     user_table.username AS username,
-                    user_table.avatar AS avatar,
+                    user_table.user_avatar AS avatar,
                     EXISTS(
                         SELECT 1 FROM comment_interaction 
                         WHERE comment_interaction.comment_id = comment.id 
@@ -55,7 +55,7 @@ class GetMoreMainComment(BaseApi):
                     WHERE comment_interaction.operate_type = 'like'
                     GROUP BY comment_interaction.comment_id
                 ) AS like_count_table ON comment.id = like_count_table.comment_id
-                LEFT JOIN users AS user_table ON comment.user_id = user_table.user_id
+                LEFT JOIN users AS user_table ON comment.user_id = user_table.userid
                 WHERE comment.is_main = '1' AND comment.reply_work_id = %s AND comment.reply_work_type = %s
                 order by comment.create_time
                 LIMIT %s OFFSET %s;
@@ -74,10 +74,10 @@ class GetMoreMainComment(BaseApi):
                     reply.reply_work_type AS reply_work_type,
                     COALESCE(like_count_table.like_count, 0) AS like_count,
                     user_table.username AS username,
-                    user_table.avatar AS avatar,
+                    user_table.user_avatar AS avatar,
                     reply_target_user_table.username AS reply_username,
-                    reply_target_user_table.avatar AS reply_avatar,
-                    reply_target_user_table.user_id AS reply_user_id,
+                    reply_target_user_table.user_avatar AS reply_avatar,
+                    reply_target_user_table.userid AS reply_user_id,
                     EXISTS(
                         SELECT 1 FROM comment_interaction 
                         WHERE comment_interaction.comment_id = reply.id 
@@ -93,8 +93,8 @@ class GetMoreMainComment(BaseApi):
                     WHERE comment_interaction.operate_type = 'like'
                     GROUP BY comment_interaction.comment_id
                 ) AS like_count_table ON reply.id = like_count_table.comment_id
-                LEFT JOIN users AS user_table ON reply.user_id = user_table.user_id
-                LEFT JOIN users AS reply_target_user_table ON reply.reply_user_id = reply_target_user_table.user_id
+                LEFT JOIN users AS user_table ON reply.user_id = user_table.userid
+                LEFT JOIN users AS reply_target_user_table ON reply.reply_user_id = reply_target_user_table.userid
                 WHERE reply.is_main = '0' AND reply.reply_comment_id = %s order by reply.create_time
                 LIMIT %s OFFSET %s;
             '''

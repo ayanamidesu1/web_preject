@@ -5,7 +5,7 @@ async function get_worklist(offset = 0, limit = 3) {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': 'Bearer ' + localStorage.getItem('token')
+                    'Authorization': 'token ' + localStorage.getItem('token')
                 },
                 body: JSON.stringify({
                     offset: offset,
@@ -27,7 +27,7 @@ async function get_chapter_list(work_id) {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + localStorage.getItem('token')
+                'Authorization': 'token ' + localStorage.getItem('token')
             },
             body: JSON.stringify({
                 work_id: work_id
@@ -46,7 +46,7 @@ async function get_novel_info(work_id) {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + localStorage.getItem('token')
+                'Authorization': 'token ' + localStorage.getItem('token')
             },
 
             body: JSON.stringify({

@@ -12,7 +12,7 @@
       <div class="list" ref="list">
         <div class="item" v-for="(item, index) in props.msg_list" :key="index">
           <div v-if="props.msg_type === 'image'" class="image_item" @click="chose_item(item.Illustration_id)">
-            <img :src="'https://www.sunyuanling.com/image/thumbnail/' + item.content_file_list.split(/[,，]/)[0]"
+            <img :src="'https://www.sunyuanling.com/server/static/image/thumbnail/' + item.content_file_list.split(/[,，]/)[0]"
               class="image">
             <div class="age_tag" v-if="item.age_classification >= 17">R-{{ item.age_classification }}</div>
             <div class="page_count" v-if="item.content_file_list.split(/[,，]/).length > 1">
@@ -25,7 +25,7 @@
           </div>
           <div class="user_info" @click="jump_to_other_user_center(item.belong_to_user_id,item)">
             <div class="user_avatar">
-              <img :src="'https://www.sunyuanling.com/image/avatar_thumbnail/' + item.user_avatar">
+              <img :src="'https://www.sunyuanling.com/server/static/image/avatar_thumbnail/' + item.user_avatar">
             </div>
             <div class="username">
               <span>{{ item.belong_to_user }}</span>
@@ -39,8 +39,10 @@
 
 <script setup>
 import { ref, onMounted, defineProps, defineEmits } from 'vue';
-import { useStore } from 'vuex';
+import { useRouter } from 'vue-router';
+import { useStore } from '@assets/model/store/index';
 const store = useStore();
+const router = useRouter();
 
 const props = defineProps({
   left_btn: {
@@ -87,7 +89,8 @@ const set_tag_color = () => {
 
 const emit = defineEmits(['chose_item']);
 const chose_item = (item) => {
-  emit('chose_item', item);
+  //emit('chose_item', item);
+  router.push(`/ill_content?id=${item}`)
 };
 
 // Easing function for smooth animation
@@ -125,9 +128,7 @@ const scrollRight = () => {
 //用户详情页跳转
 function jump_to_other_user_center(userid,item)
 {
-  store.commit('SET_OTHER_USERID',userid)
-  store.commit('SET_SINGLE_PAGE_STATUS',{'key':'other_user_center_page','value':true})
-  console.log(userid)
+  router.push(`/other_user_center?id=${userid}`)
 }
 
 onMounted(() => {

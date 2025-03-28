@@ -10,7 +10,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # 配置静态网页的代理
 STATIC_URL = '/static/'
 
-
 SECRET_KEY = 'django-insecure-ypu2=#s5wqperumf6kmmi=eb4)u=#sror+nsa*kq$dfkhm7-a-'
 
 # token对称加密秘钥
@@ -55,10 +54,12 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173',
     'https://localhost:2000',
     'http://localhost:2000',
-'https://localhost:2001',
+    'https://localhost:2001',
     'http://localhost:2001',
     'https://127.0.0.1:2001',
     'http://127.0.0.1:2001',
+    'https://127.0.0.1:2234',
+    'http://127.0.0.1:2234',
 ]
 CORS_ALLOW_METHODS = [
     'DELETE',
@@ -67,6 +68,8 @@ CORS_ALLOW_METHODS = [
     'PATCH',
     'POST',
     'PUT',
+    #ws连接
+    'CONNECT',
 ]
 CORS_ALLOW_HEADERS = [
     'accept',
@@ -78,6 +81,10 @@ CORS_ALLOW_HEADERS = [
     'user-agent',
     'x-csrftoken',
     'x-requested-with',
+    'x-token',
+    'x-token-refresh',
+    #ws连接
+    'content-type',
 ]
 
 # 添加信任的 CSRF 域名
@@ -109,6 +116,8 @@ CSRF_TRUSTED_ORIGINS = [
     'http://localhost:2001',
     'https://127.0.0.1:2001',
     'http://127.0.0.1:2001',
+    'https://127.0.0.1:2234',
+    'http://127.0.0.1:2234',
 ]
 
 # Application definition
@@ -137,7 +146,6 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'views.get_browse_history',
 ]
-
 
 ASGI_APPLICATION = 'djangoWebServer.asgi.application'
 
@@ -205,7 +213,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
@@ -216,7 +223,6 @@ SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),  # 根据需要设置有效期
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
 }
-
 
 LANGUAGE_CODE = 'en-us'
 
@@ -235,5 +241,3 @@ SESSION_COOKIE_AGE = 60 * 60  # 30 分钟 = 1800 秒
 
 # 如果需要在浏览器关闭时过期
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
-
-

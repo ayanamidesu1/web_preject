@@ -27,6 +27,7 @@
 <script setup lang="ts">   
 // eslint-disable-next-line no-unused-vars
 import {ref,} from 'vue';
+import { useRouter } from 'vue-router';
 let username_in = ref('');  
 let password_in = ref('');  
 let get_message = ref('');

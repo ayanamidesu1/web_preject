@@ -22,7 +22,7 @@ class GetUserWorkSeries(View):
     def post(self, request, *args, **kwargs):
         try:
             data = json.loads(request.body.decode('utf-8'))
-            userid = getattr(request,'userid',None)
+            userid = request.user.id
 
             with connection.cursor() as cursor:
                 cursor.execute('select * from novel_work where belong_to_userid=%s', userid)

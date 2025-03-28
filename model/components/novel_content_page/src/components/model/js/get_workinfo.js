@@ -7,7 +7,7 @@ async function get_workinfo(token,work_id)
                 'Content-Type':'application/json'
             },
             body:JSON.stringify({
-                token:token,
+                token:localStorage.getItem('token'),
                 work_id:work_id
             })
         })
@@ -42,7 +42,7 @@ async function get_novel_content(token,work_id,title)
                 'Content-Type':'application/json'
             },
             body:JSON.stringify({
-                token:token,
+                token:localStorage.getItem('token'),
                 work_id:work_id,
                 title:title
             })

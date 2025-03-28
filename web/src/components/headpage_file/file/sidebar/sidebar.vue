@@ -7,7 +7,7 @@
                 <div class="sidebar_content_item_icon">
                     <img src="https://www.sunyuanling.com/assets/photo.svg" class="icon">
                 </div>
-                <div class="sidebar_content_item_text"><span>插画</span></div>
+                <div class="sidebar_content_item_text"><span><router-link to="/">插画</router-link></span></div>
             </div>
             <div class="sidebar_content_item" @click="switch_index_page(0)">
                 <div class="sidebar_content_item_icon">
@@ -19,13 +19,13 @@
                 <div class="sidebar_content_item_icon">
                     <img src="https://www.sunyuanling.com/assets/comic.svg" class="icon">
                 </div>
-                <div class="sidebar_content_item_text"><span>漫画</span></div>
+                <div class="sidebar_content_item_text"><span><router-link to="/comic">漫画</router-link></span></div>
             </div>
             <div class="sidebar_content_item" @click="switch_index_page(2)">
                 <div class="sidebar_content_item_icon">
                     <img class="icon" src="https://www.sunyuanling.com/assets/novel.svg">
                 </div>
-                <div class="sidebar_content_item_text"><span>小说</span></div>
+                <div class="sidebar_content_item_text"><span><router-link to="/novel">小说</router-link></span></div>
             </div>
             <br>
             <div class="sidebar_content_item">
@@ -184,11 +184,11 @@ async function get_notice() {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + localStorage.getItem('token'),
+                'Authorization': 'token ' + localStorage.getItem('token'),
             },
             body: JSON.stringify({
                 operate_type: 'search',
-                token: token,
+                token: localStorage.getItem('token'),
             })
         })
         if (res.ok) {

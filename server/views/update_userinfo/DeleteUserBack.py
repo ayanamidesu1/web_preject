@@ -23,7 +23,7 @@ class DeleteUserBack(View):
         try:
             # 解析请求数据
             data = json.loads(request.body.decode('utf-8'))
-            userid = getattr(request, 'userid', None)
+            userid = request.user.id
 
             if not userid:
                 self.logger.warning(self.request_path(request) + ' 请求失败，用户ID缺失')

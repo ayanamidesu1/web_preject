@@ -4,10 +4,10 @@ async function watch_work(work_id,a_token,work_type,work_name) {
             method: 'post',
             headers: {
                 'Content-type': 'application/json',
-                'Authorization': 'Bearer ' + localStorage.getItem('token'),
+                'Authorization': 'token ' + localStorage.getItem('token'),
             },
             body: JSON.stringify({
-                token: a_token,
+                token: localStorage.getItem('token'),
                 work_id: work_id,
                 work_type: work_type,
                 work_name: work_name,
@@ -37,12 +37,12 @@ async function like_work(work_id, operate_type, token, work_type, work_name) {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + localStorage.getItem('token'),
+                'Authorization': 'token ' + localStorage.getItem('token'),
             },
             body: JSON.stringify({
                 work_id: work_id,
                 operate_type: operate_type,
-                token: token,
+                token: localStorage.getItem('token'),
                 work_type: work_type,
                 work_name: work_name,
             })
@@ -71,12 +71,12 @@ async function collect_work(work_id, operate_type, token, work_type, work_name) 
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + localStorage.getItem('token'),
+                'Authorization': 'token ' + localStorage.getItem('token'),
             },
             body: JSON.stringify({
                 work_id: work_id,
                 operate_type: operate_type,
-                token: token,
+                token: localStorage.getItem('token'),
                 work_type: work_type,
                 work_name: work_name,
             })

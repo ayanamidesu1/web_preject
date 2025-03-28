@@ -14,7 +14,7 @@ class GetUserFollowToIll(View):
     def post(self, request, *args, **kwargs):
         try:
             data = json.loads(request.body.decode('utf-8'))
-            userid = data.get('userid')
+            userid = request.user.id
 
             if not userid:
                 return JsonResponse({'status': 'error', 'message': 'userid is required'}, status=400)

@@ -8,7 +8,7 @@
         </div>
     </div>
     <div class="content">
-        <img :src="'https://www.sunyuanling.com/image/'+img_src" alt="搜索图片">
+        <img :src="'https://www.sunyuanling.com/server/static/image/'+img_src" alt="搜索图片">
     </div>
   </div>
 </template>

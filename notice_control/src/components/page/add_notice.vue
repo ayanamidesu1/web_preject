@@ -89,7 +89,7 @@ async function add_notice() {
         status:status.value,
         is_important:is_important.value,
         operate_type: type.value,
-        token:token.value,
+        token:localStorage.getItem('token').value,
       })
     })
     if (res.ok) {

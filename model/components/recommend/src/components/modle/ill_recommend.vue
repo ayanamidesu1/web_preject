@@ -4,7 +4,7 @@
             <div class="item" v-for="(item, index) in work_info" :key="index">
                 <div class="work_cover" @click="choose_item(item.Illustration_id)">
                     <img class="cover_img"
-                        :src="'https://www.sunyuanling.com/image/thumbnail/' + item.content_file_list.split(/[,，]/)[0]">
+                        :src="'https://www.sunyuanling.com/server/static/image/thumbnail/' + item.content_file_list.split(/[,，]/)[0]">
                     <div class="page_count" v-if="item.content_file_list.split(/[,，]/).length > 1">
                         <img class="icon" src="https://www.sunyuanling.com/assets/page_count.svg">
                        {{ item.content_file_list.split(/[,，]/).length }}
@@ -19,7 +19,7 @@
                 <div class="author_info" @click="choose_user(item.author_info.userid)" v-if="item.author_info">
                     <div class="author_avatar">
                         <img class="author_avatar"
-                            :src="'https://www.sunyuanling.com/image/avatar_thumbnail/' + item.author_info.user_avatar">
+                            :src="'https://www.sunyuanling.com/server/static/image/avatar_thumbnail/' + item.author_info.user_avatar">
                     </div>
                     <div class="author_name">
                         {{ item.author_info.username }}

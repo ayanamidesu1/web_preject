@@ -1,5 +1,5 @@
 <script setup>
-import { ref, defineProps, onMounted } from 'vue'
+import { ref, defineProps, onMounted ,watchEffect} from 'vue'
 import work_info from './model/work_info.vue';
 import directory_page from './model/directory_page.vue';
 import { get_workinfo, get_novel_content } from './model/js/get_workinfo';
@@ -16,6 +16,9 @@ let props = defineProps({
     default: ''
   }
 })
+
+
+
 let data = ref()
 let author_info = ref()
 let work_list = ref()
@@ -25,7 +28,14 @@ let work_title = ref('')
 let novel_brief_introduction_page=ref(true)
 let novel_content_page_show = ref(false)
 let chapter_index=ref(0)
-
+watchEffect(async () => {
+  if(props.work_id){
+    data.value = await get_workinfo(null,props.work_id)
+  author_info.value = data.value.author_info
+  work_list.value = data.value.work_list
+  word_count.value = data.value.word_count
+  }
+})
 
 onMounted(async () => {
   data.value = await get_workinfo(props.token, props.work_id)
@@ -41,9 +51,6 @@ async function get_chapter(item) {
   novel_brief_introduction_page.value = false
   novel_content_page_show.value = true
 }
-
-
-
 </script>
 
 <template>

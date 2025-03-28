@@ -10,7 +10,7 @@
     <scroll_box_copy :msg_list="work_tags" :msg_type="'tags'" v-if="work_tags.length > 0" />
     <div class="work_item_list">
       <div class="work_item" v-for="(item, index) in all_work_list" :key="index">
-        <img :src="'https://www.sunyuanling.com/image/thumbnail/' + item.content_file_list.split(/[，,]/)[0]"
+        <img :src="'https://www.sunyuanling.com/server/static/image/thumbnail/' + item.content_file_list.split(/[，,]/)[0]"
          alt="Work Thumbnail" class="thumbnail" @click="chose_item({ 'work_type': 'ill', 'work_id': item.Illustration_id})">
         <span class="work_name">{{ item.name }}</span>
       </div>

@@ -2,14 +2,16 @@
     <div class="header_box">
         <div class="header_box_back mt">
             <div class="header_box_background">
-                <div class="header_box_background_img"><img :src="header_box_background_src"></div>
+                <div class="header_box_background_img"><img :src="api.s_base_url+'image/'+(user.user_back_img||'default_back.png')"></div>
             </div>
-            <div class="header_box_avatar" style="cursor:pointer;" @click="jump_usercenter">
-                <div class="header_box_avatar_img"><img :src="header_box_avatar_src"></div>
-            </div>
+            <router-link to="/self_user_center">
+                <div class="header_box_avatar" style="cursor:pointer;" @click="jump_usercenter">
+                    <div class="header_box_avatar_img"><img :src="api.s_base_url+'image/avatar_thumbnail/'+user.user_avatar"></div>
+                </div>
+            </router-link>
         </div>
-        <div class="header_box_username mt"><span>{{ username }}</span></div>
-        <div class="header_box_userid mt"><span>{{ userid }}</span></div>
+        <div class="header_box_username mt"><span>{{ user.username }}</span></div>
+        <div class="header_box_userid mt"><span>@{{ user.userid }}</span></div>
         <div class="header_box_userdata mt">
             <div class="header_box_user_fldata" style="cursor:pointer;">
                 <span>{{ follow_num }}</span>
@@ -34,139 +36,42 @@
     </div>
 </template>
 
-<script>
-// eslint-disable-next-line no-unused-vars
-import { ref, reactive, toRefs, watch, onMounted, onUnmounted } from 'vue';
-import * as cookies from '../../../../../../model/cookies.js'
-//import user_index from '../../../user_collection/user_index.vue';
-export default {
-    name: 'header_box',
-}
-</script>
-
 <script setup>
-import { useStore } from 'vuex';
+//import { useStore } from 'vuex';
+import { ref, reactive, toRefs, watch, onMounted, onUnmounted,computed } from 'vue'
+import { useRouter } from 'vue-router';
+import { useStore } from '@assets/model/store';
+import { BaseApi } from '@/base_api';
+const api=new BaseApi();
 const store = useStore();
+const router = useRouter();
 
-let header_box_background_src = ref("https://www.sunyuanling.com/image/97165605_p0.jpg")
-let header_box_avatar_src = ref("https://www.sunyuanling.com/image/87328997_p0.jpg")
-let username = ref("孙源玲")
-let userid = ref('@' + "userid")
+const user=computed(()=>{
+    return store.$state.user;
+})
+
 let follow_num = ref(100)
 let fans_num = ref(100)
 
-//测试用cookie数据
-//cookies.set_cookie("user_name", "admin")
-//cookies.set_cookie("user_id", "f575b4d3-0683-11ef-adf4-00ffc6b98bdb")
+//获取粉丝和管理数量和列表
+async function get_fans_and_follow_num() {
+    let res=await api.post('GetUserInfo/GetUserFollow/',{
 
-let user_info = ref([])
-user_info.value = cookies.get_cookie('userinfo')
-user_info.value = JSON.parse(user_info.value)
-//获取用户的所有基本信息
-async function getUserInfo() {
-    try {
-        const res = await fetch('https://www.sunyuanling.com/api/GetUserInfo/GetAllUserInfo/', {
-            method: "post",
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + localStorage.getItem('token'),
-            },
-            body: JSON.stringify({
-                userid: user_info.value.userid,
-            })
-        })
-        const data = await res.json()
-        if (data.status == 'success') {
-            user_info.value = data.data[0]
-            setUserinfo();
-        }
-        else {
-            console.log(data.meesage)
-        }
+    })
+    if(res.status==200){
+       follow_num.value=res.result.data.follow_count
+       fans_num.value=res.result.data.fans_count
     }
-    catch (err) {
-        console.log(err)
+    else{
+        console.log(res)
     }
 }
 
-//获取用户粉丝列表
-async function getFansList() {
-    try {
-        const res = await fetch('https://www.sunyuanling.com/api/GetUserInfo/GetUserFans/', {
-            method: 'post',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + localStorage.getItem('token'),
-            },
-            body: JSON.stringify({
-                userid: user_info.value.userid
-            })
-        })
-        const data = await res.json()
-        if (res.ok) {
-            if (data.status == 'success') {
-                fans_num.value = data.data.length
-            }
-            else {
-                console.log(data.message)
-            }
-        }
-        else{
-            console.error('连接错误')
-        }
-    }
-    catch (err) {
-        console.log(err)
-    }
-}
-//获取关注列表
-async function getFollowList(){
-    try{
-        const res=await fetch('https://www.sunyuanling.com/api/GetUserInfo/GetUserFollow/',{
-            method:'post',
-            headers:{
-                'Content-Type':'application/json',
-                'Authorization': 'Bearer ' + localStorage.getItem('token'),
-            },
-            body:JSON.stringify({
-                userid:user_info.value.userid
-            })
-        })
-        const data=await res.json()
-        if(res.ok){
-            if(data.status=='success'){
-                follow_num.value=data.data.length
-            }
-            else{
-                console.log(data.message)
-            }
-        }
-        else{
-            console.error('连接错误')
-        }
-    }
-    catch(err){
-        console.log(err)
-    }
-}
-
-async function setUserinfo() {
-    username.value = user_info.value.username;
-    userid.value = '@' + user_info.value.userid;
-    await getFollowList();
-    await getFansList();
-    header_box_avatar_src.value = "https://www.sunyuanling.com/image/" + user_info.value.user_avatar;
-    header_box_background_src.value = "https://www.sunyuanling.com/image/" + user_info.value.user_back_img;
-}
-
-onMounted(() => {
-    getUserInfo();
+onMounted(async() => {
+    await get_fans_and_follow_num();
 })
 
 function jump_usercenter() {
-    console.log("用户中心跳转");
-    //window.location.href="https://localhost:8888/usercenter";
-    store.commit('SET_SINGLE_PAGE_STATUS',{'key':'user_center_page','value':true})
 }
 
 function open_data_analysis(){
@@ -188,20 +93,10 @@ function open_history(){
 //退出登录
 function logout() {
     console.log("退出登录");
-    clearAllCookies();
-    window.location.href = "https://localhost:3000";
+    localStorage.removeItem('token');
+    window.location.href = "/login";
 
 }
-//清空cookies
-function clearAllCookies() {
-    const cookies = document.cookie.split(';');
-
-    cookies.forEach(cookie => {
-        const [name, _] = cookie.split('=');
-        document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
-    });
-}
-
 </script>
 
 <style scoped>

@@ -19,7 +19,7 @@ class GetChapterList(View):
         return render(request,'404.html',status=404)
 
     def post(self,request,*args,**kwargs):
-        userid=getattr(request,'userid',None)
+        userid=request.user.id
         if userid is None:
             self.logger.warning(self.request_path(request)+'用户未登录')
             return JsonResponse({'status':'success','message':'用户未登录'},status=401)

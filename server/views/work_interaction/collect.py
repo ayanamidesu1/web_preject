@@ -25,7 +25,7 @@ class Collect(View):
         try:
             data = json.loads(request.body.decode('utf-8'))
             token = data.get('token')
-            userid=getattr(request,'userid',None)
+            userid=request.user.id
 
             if not userid:
                 with connection.cursor() as cursor:

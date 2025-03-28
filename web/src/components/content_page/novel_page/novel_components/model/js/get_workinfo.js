@@ -5,10 +5,10 @@ async function get_workinfo(token,work_id)
             method:'post',
             headers:{
                 'Content-Type':'application/json',
-                'Authorization': 'Bearer ' + localStorage.getItem('token')
+                'Authorization': 'token ' + localStorage.getItem('token')
             },
             body:JSON.stringify({
-                token:token,
+                token:localStorage.getItem('token'),
                 work_id:work_id
             })
         })
@@ -41,10 +41,10 @@ async function get_novel_content(token,work_id,title)
             method:'post',
             headers:{
                 'Content-Type':'application/json',
-                'Authorization': 'Bearer ' + localStorage.getItem('token')
+                'Authorization': 'token ' + localStorage.getItem('token')
             },
             body:JSON.stringify({
-                token:token,
+                token:localStorage.getItem('token'),
                 work_id:work_id,
                 title:title
             })

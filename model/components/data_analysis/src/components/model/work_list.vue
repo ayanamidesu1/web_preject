@@ -5,7 +5,7 @@
               <h3>插画</h3>
               <div class="item" v-for="(item, index) in ill_list" :key="index">
                   <div class="item_img" @click="choose_item({'work_id': item.Illustration_id, 'work_type': 'ill'})">
-                      <img :src="'https://www.sunyuanling.com/image/thumbnail/' + item.content_file_list.split(/[,，]/)[0]">
+                      <img :src="'https://www.sunyuanling.com/server/static/image/thumbnail/' + item.content_file_list.split(/[,，]/)[0]">
                       <div class="page_count">
                           <span>{{ item.content_file_list.split(/[,，]/).length }}</span>
                       </div>
@@ -25,7 +25,7 @@
               <h3>漫画</h3>
               <div class="item" v-for="(item, index) in comic_list" :key="index">
                   <div class="item_img" @click="choose_item({'work_id': item.id, 'work_type': 'comic'})">
-                      <img :src="'https://www.sunyuanling.com/image/comic/thumbnail/' + item.content_file_list.split(/[,，]/)[0]">
+                      <img :src="'https://www.sunyuanling.com/server/static/image/comic/thumbnail/' + item.content_file_list.split(/[,，]/)[0]">
                       <div class="page_count">
                           <span>{{ item.content_file_list.split(/[,，]/).length }}</span>
                       </div>
@@ -45,7 +45,7 @@
               <h3>小说</h3>
               <div class="item" v-for="(item, index) in novel_list" :key="index">
                   <div class="work_cover">
-                      <img :src="'https://www.sunyuanling.com/image/novel/thumbnail/' + item.work_cover"
+                      <img :src="'https://www.sunyuanling.com/server/static/image/novel/thumbnail/' + item.work_cover"
                           @click="choose_item({'work_id': item.work_id, 'work_type': 'novel'})">
                       <div class="age_tag" v-if="item.age_classification >= 18">
                           {{ item.age_classification }}

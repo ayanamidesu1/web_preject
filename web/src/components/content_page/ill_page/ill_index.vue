@@ -5,7 +5,7 @@
             <div class="item_box">
                 <div class="item" v-for="(item, index) in work_info.content_file_list.split(/[,，]/)" :key="index">
                     <div class="img_box" v-if="index < max_img_len">
-                        <img :src="'https://www.sunyuanling.com/image/content_thumbnail/' + item" class="item_img"
+                        <img :src="'https://www.sunyuanling.com/server/static/image/content_thumbnail/' + item" class="item_img"
                             @click="show_work_info(item)">
                     </div>
                 </div>
@@ -28,15 +28,11 @@
                 <author_info_bottom :author_id="work_info.belong_to_user_id" @chose_item="get_choose_item" :key="work_id"></author_info_bottom>
             </div>
             <div class="comment_section">
-                <comment_section :work_type="'ill'" :token="token" :work_id="String(work_id)" 
-                :user_avatar_path="user_avatar_path"
-                :key="work_id">
-
-                </comment_section>
+                <comment_box :item="{work_id:work_id,work_type:'ill'}" :key="work_id"></comment_box>
             </div>
             <h3>推荐插画作品</h3>
             <div class="recommend_page">
-                <recommend :work_type="'ill'" :token="store_token"></recommend>
+                <recommend :work_type="'ill'"></recommend>
             </div>
         </div>
         <div class="author_info_box" v-if="work_info">
@@ -52,8 +48,8 @@
 </template>
 
 <script setup>
-import { ref, watch, onMounted, defineProps,onUnmounted,nextTick,computed } from 'vue';
-import { useStore } from 'vuex';
+import { ref, watch, onMounted, defineProps,onUnmounted,nextTick,computed ,watchEffect} from 'vue';
+import { useStore } from '@assets/model/store/index';
 import go_back from '../go_back.vue';
 import img_content_page from '../img_content_page/img_content_page.vue';
 import author_info from './author_box/author_info.vue';
@@ -61,13 +57,16 @@ import author_info_bottom from './author_box/model/author_info.vue'
 import interaction from './author_box/model/interaction_bar.vue'
 import work_info_box from './author_box/model/work_info_bar.vue'
 import comment_section from './comment_section.vue'
-import * as cookies from '@/assets/js/cookies'
 import * as user_interaction from '@/assets/js/interaction'
 import recommend from '@/assets/model/recommend_page/modle/index.vue'
-
+import { useRouter } from 'vue-router';
+import comment_box from '@assets/model/comment_box/comment_box.vue';
+const router = useRouter();
 
 const store = useStore();
-const work_id = ref('');
+const work_id = computed(()=>{
+    return router.currentRoute.value.query.id
+});
 const work_info = ref();
 const img_content_page_show = ref(false);
 const item_path = ref('');
@@ -75,8 +74,7 @@ let max_img_len = ref(1)
 let show_more_btn = ref(null)
 let fixed_interaction = ref(null)
 let float_interaction = ref(null)
-let store_token = computed(()=>store.getters.token)
-let token=store_token.value
+let token=localStorage.getItem('token')
 let like_status = ref(false)
 let collect_status = ref(false)
 let work_data = ref({
@@ -84,7 +82,9 @@ let work_data = ref({
     'collect': '100',
     'watch': '100'
 })
-let user_avatar_path=ref(JSON.parse(cookies.get_cookie('userinfo')).user_avatar)
+let user_avatar_path=computed(()=>{
+    return store.$state.user.user_avatar
+})
 
 console.log(user_avatar_path.value)
 //接收子组件状态
@@ -152,12 +152,13 @@ onMounted(() => {
     scrollToTop();
 });
 
+watchEffect(async () => {
+    if(work_id.value){
+        scrollToTop();
+        await get_work_info();
+    }
+})
 
-watch(() => store.getters.work_id,async (newValue) => {
-    work_id.value = newValue;
-    scrollToTop();
-    await get_work_info();
-});
 
 onUnmounted(() => {
     window.removeEventListener('scroll', handleScroll);
@@ -169,17 +170,8 @@ function show_all_img() {
     max_img_len.value = work_info.value.content_file_list.split(/[,，]/).length + 1;
 }
 
-const props = defineProps({
-    work_id: {
-        type: String,
-        default: '1'
-    }
-});
-
-
 
 onMounted(async () => {
-    work_id.value = store.getters.work_id;
     await get_work_info();
     await user_interaction.watch_work(parseInt(work_id.value,), token, 'ill', work_info.value.name);
     //请求点赞状态
@@ -210,7 +202,7 @@ async function get_work_info() {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + localStorage.getItem('token'),
+                'Authorization': 'token ' + localStorage.getItem('token'),
             },
             body: JSON.stringify({
                 work_id: work_id.value
@@ -233,8 +225,7 @@ async function get_work_info() {
 // 查看作品详情
 function show_work_info(item) {
     img_content_page_show.value = true;
-    item_path.value = `https://www.sunyuanling.com/image/${item}`;
-    store.commit('SET_ITEM_PATH', item)
+    item_path.value = `https://www.sunyuanling.com/server/static/image/${item}`;
 }
 
 watch(img_content_page_show, (newValue) => {

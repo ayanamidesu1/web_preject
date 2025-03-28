@@ -4,7 +4,7 @@ async function get_userinfo(token) {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + token
+                'Authorization': 'token ' + token
             },
             body: JSON.stringify({
                 'token': token

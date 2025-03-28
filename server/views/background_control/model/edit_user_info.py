@@ -60,7 +60,7 @@ class EditUserInfo(View):
     def post(self, request, *args, **kwargs):
         try:
             data = json.loads(request.body.decode('utf-8'))
-            operate_userid = str(getattr(request, 'userid', None))
+            operate_userid = str(request.user.id)
             is_authenticated = getattr(request, 'is_authenticated', None)
 
             if is_authenticated is False:

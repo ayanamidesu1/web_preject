@@ -1,11 +1,11 @@
 <template>
-    <div class="ill_index" ref="ill_index">
+    <div class="comic_index" ref="comic_index">
         <go_back></go_back>
         <div class="content" v-if="work_info">
             <div class="item_box">
                 <div class="item" v-for="(item, index) in work_info.content_file_list.split(/[,，]/)" :key="index">
                     <div class="img_box" v-if="index < max_img_len">
-                        <img :src="'https://www.sunyuanling.com/image/comic/content_thumbnail/' + item" class="item_img"
+                        <img :src="'https://www.sunyuanling.com/server/static/image/content_thumbnail/' + item" class="item_img"
                             @click="show_work_info(item)">
                     </div>
                 </div>
@@ -25,23 +25,20 @@
             </div>
             <work_info_box :work_data="work_data" :work_create_time="work_info.create_time" :work_id="work_id"></work_info_box>
             <div class="author_info_box_bottom" v-if="work_info">
-                <author_info_bottom :author_id="work_info.belong_to_userid" @chose_item="get_choose_item"></author_info_bottom>
+                <author_info_bottom :author_id="work_info.belong_to_userid" @chose_item="get_choose_item" :key="work_id"></author_info_bottom>
             </div>
             <div class="comment_section">
-                <comment_section :work_type="'comic'" :token="token" :work_id="String(work_id)" 
-                :user_avatar_path="user_avatar_path"
-                :key="work_id">
-
-                </comment_section>
+                <comment_box :item="{work_id:work_id,work_type:'comic'}" :key="work_id"></comment_box>
             </div>
-            <div class="recommend_box" style="width: 150%; max-width:85vw;">
-                <h3>推荐漫画作品</h3>
-                <recommend :token="store_token" :work_type="'comic'"></recommend>
+            <h3>推荐漫画作品</h3>
+            <div class="recommend_page">
+                <recommend :work_type="'comic'"></recommend>
             </div>
         </div>
         <div class="author_info_box" v-if="work_info">
-            <author_info :author_id="work_info.belong_to_userid" @chose_item="get_choose_item"></author_info>
+            <author_info :author_id="work_info.belong_to_userid" @chose_item="get_choose_item" :key="work_info.belong_to_user_id"></author_info>
         </div>
+       
         
     </div>
     <img_content_page :item_path="item_path" v-if="img_content_page_show" @close_img_content_page="close_content_page">
@@ -51,22 +48,24 @@
 </template>
 
 <script setup>
-import { ref, watch, onMounted, defineProps,onUnmounted,nextTick ,computed} from 'vue';
-import { useStore } from 'vuex';
+import { ref, watch, onMounted, defineProps,onUnmounted,nextTick,computed ,watchEffect} from 'vue';
+import { useStore } from '@assets/model/store/index';
 import go_back from '../go_back.vue';
 import img_content_page from '../img_content_page/img_content_page.vue';
 import author_info from './author_box/author_info.vue';
 import author_info_bottom from './author_box/model/author_info.vue'
 import interaction from './author_box/model/interaction_bar.vue'
 import work_info_box from './author_box/model/work_info_bar.vue'
-import comment_section from './comment_section.vue'
-import * as cookies from '@/assets/js/cookies'
 import * as user_interaction from '@/assets/js/interaction'
 import recommend from '@/assets/model/recommend_page/modle/index.vue'
-
+import { useRouter } from 'vue-router';
+import comment_box from '@assets/model/comment_box/comment_box.vue';
+const router = useRouter();
 
 const store = useStore();
-const work_id = ref('');
+const work_id = computed(()=>{
+    return router.currentRoute.value.query.id
+});
 const work_info = ref();
 const img_content_page_show = ref(false);
 const item_path = ref('');
@@ -74,8 +73,7 @@ let max_img_len = ref(1)
 let show_more_btn = ref(null)
 let fixed_interaction = ref(null)
 let float_interaction = ref(null)
-let token = cookies.get_cookie("token");
-let store_token=computed(()=>store.getters.token)
+let token=localStorage.getItem('token')
 let like_status = ref(false)
 let collect_status = ref(false)
 let work_data = ref({
@@ -83,7 +81,10 @@ let work_data = ref({
     'collect': '100',
     'watch': '100'
 })
-let user_avatar_path=ref(JSON.parse(cookies.get_cookie('userinfo')).user_avatar)
+let user_avatar_path=computed(()=>{
+    return store.$state.user.user_avatar
+})
+
 console.log(user_avatar_path.value)
 //接收子组件状态
 async function get_like_status(item) {
@@ -136,15 +137,6 @@ function handleScroll() {
     }
 }
 
-onMounted(() => {
-    float_interaction_bar(true); // 初始调用
-    window.addEventListener('scroll', handleScroll);
-});
-
-onUnmounted(() => {
-    window.removeEventListener('scroll', handleScroll);
-    float_interaction_bar(false); // 清理状态
-});
 function scrollToTop() {
     window.scrollTo({
         top: 0,
@@ -152,10 +144,24 @@ function scrollToTop() {
     });
 }
 
-watch(() => store.getters.work_id,async (newValue) => {
-    work_id.value = newValue;
+onMounted(() => {
+    float_interaction_bar(true); // 初始调用
+    window.addEventListener('scroll', handleScroll);
+    //加载时自动滚动到最上方
     scrollToTop();
-    await get_work_info();
+});
+
+watchEffect(async () => {
+    if(work_id.value){
+        scrollToTop();
+        await get_work_info();
+    }
+})
+
+
+onUnmounted(() => {
+    window.removeEventListener('scroll', handleScroll);
+    float_interaction_bar(false); // 清理状态
 });
 
 //查看更多按钮实现
@@ -163,23 +169,8 @@ function show_all_img() {
     max_img_len.value = work_info.value.content_file_list.split(/[,，]/).length + 1;
 }
 
-const props = defineProps({
-    work_id: {
-        type: String,
-        default: '1'
-    }
-});
-
-watch(() => props.work_id, (newValue) => {
-    work_id.value = newValue;
-});
-
-watch(() => store.getters.work_id, (newValue) => {
-    work_id.value = newValue;
-});
 
 onMounted(async () => {
-    work_id.value = store.getters.work_id;
     await get_work_info();
     await user_interaction.watch_work(parseInt(work_id.value,), token, 'comic', work_info.value.name);
     //请求点赞状态
@@ -210,7 +201,7 @@ async function get_work_info() {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + localStorage.getItem('token')
+                'Authorization': 'token ' + localStorage.getItem('token'),
             },
             body: JSON.stringify({
                 work_id: work_id.value
@@ -220,6 +211,7 @@ async function get_work_info() {
             const data = await res.json();
             if (data.status === 'success') {
                 work_info.value = data.data[0];
+                console.log(work_info.value)
             } else {
                 console.log(data.message);
             }
@@ -231,9 +223,8 @@ async function get_work_info() {
 
 // 查看作品详情
 function show_work_info(item) {
-    item_path.value =`https://www.sunyuanling.com/image/comic/${item}`;
-    store.commit('SET_ITEM_PATH', item)
     img_content_page_show.value = true;
+    item_path.value = `https://www.sunyuanling.com/server/static/image/${item}`;
 }
 
 watch(img_content_page_show, (newValue) => {
@@ -250,21 +241,19 @@ function close_content_page() {
 //获取子组件传递的作品ID并设置在本页面
 async function get_choose_item(item) {
     work_id.value = item.work_id;
-    console.log(work_id.value);
     await user_interaction.watch_work(work_id.value, token, 'comic', work_info.value.name);
 }
 
 </script>
 
 <style scoped>
-.ill_index {
+.comic_index {
     display: flex;
     width: 85%;
     height: auto;
     margin: 10px auto;
     background-color: rgba(0, 0, 0, 0.05);
     border-radius: 10px;
-    overflow: hidden;
 }
 
 .content {
@@ -306,10 +295,10 @@ async function get_choose_item(item) {
 .author_info_box {
     display: flex;
     width: 30%;
-    max-width: 30%;
-    min-width: 30%;
     height: auto;
     padding-right: 10px;
+    max-width: 30%;
+    min-width: 30%;
 }
 .author_info_box_bottom{
     display: flex;
@@ -362,5 +351,10 @@ async function get_choose_item(item) {
 .comment_section{
     width: 100%;
     margin-top: 10px;
+}
+.recommend_page{
+    width: 85vw;
+    display: flex;
+    margin:5px auto;
 }
 </style>

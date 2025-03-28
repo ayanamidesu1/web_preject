@@ -5,10 +5,10 @@ async function get_recommend(token,work_type,work_offset,work_limit)
             method:'POST',
             headers:{
                 'Content-Type':'application/json',
-                'Authorization':'Bearer '+localStorage.getItem('token')
+                'Authorization':'token '+localStorage.getItem('token')
             },
             body:JSON.stringify({
-                token:token,
+                token:localStorage.getItem('token'),
                 work_type:work_type,
                 work_offset:work_offset,
                 work_limit:work_limit

@@ -2,24 +2,26 @@
     <div class="ill_recommend">
         <div class="content">
             <div class="item" v-for="(item, index) in work_info" :key="index">
-                <div class="work_cover" @click="choose_item(item.Illustration_id)">
-                    <img class="cover_img"
-                        :src="'https://www.sunyuanling.com/image/thumbnail/' + item.content_file_list.split(/[,，]/)[0]">
-                    <div class="page_count" v-if="item.content_file_list.split(/[,，]/).length > 1">
-                        <img class="icon" src="https://www.sunyuanling.com/assets/page_count.svg">
-                        {{ item.content_file_list.split(/[,，]/).length }}
+                <router-link :to="`/ill_content?id=${item.Illustration_id}`">
+                    <div class="work_cover" @click="choose_item(item.Illustration_id)">
+                        <img class="cover_img"
+                            :src="'https://www.sunyuanling.com/server/static/image/thumbnail/' + item.content_file_list.split(/[,，]/)[0]">
+                        <div class="page_count" v-if="item.content_file_list.split(/[,，]/).length > 1">
+                            <img class="icon" src="https://www.sunyuanling.com/assets/page_count.svg">
+                            {{ item.content_file_list.split(/[,，]/).length }}
+                        </div>
+                        <div class="age_tag" v-if="item.age_classification != 16">
+                            R-{{ item.age_classification }}
+                        </div>
                     </div>
-                    <div class="age_tag" v-if="item.age_classification != 16">
-                        R-{{ item.age_classification }}
-                    </div>
-                </div>
+                </router-link>
                 <div class="work_info">
                     <span>{{ item.name }}</span>
                 </div>
                 <div class="author_info" @click="choose_user(item.author_info.userid)" v-if="item.author_info">
                     <div class="author_avatar">
                         <img class="author_avatar"
-                            :src="'https://www.sunyuanling.com/image/avatar_thumbnail/' + item.author_info.user_avatar">
+                            :src="'https://www.sunyuanling.com/server/static/image/avatar_thumbnail/' + item.author_info.user_avatar">
                     </div>
                     <div class="author_name">
                         {{ item.author_info.username }}
@@ -45,11 +47,6 @@ const props = defineProps({
 })
 const emit = defineEmits(['choose_item', 'choose_user'])
 function choose_item(item) {
-    console.log(item)
-    emit('choose_item', item)
-    store.commit('SET_CONTENT_PAGE', { key: 'ill_page', value: true })
-    store.commit('SET_SINGLE_PAGE_STATUS', { key: 'content_index_page', value: true })
-    store.commit('SET_WORK_ID', item)
 }
 function choose_user(item) {
     console.log(item)

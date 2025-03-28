@@ -3,7 +3,7 @@
         <div class="content">
             <div class="item" v-for="(item,index) in work_info" :key="index" >
                 <div class="work_cover" @click="choose_item(item.work_id)">
-                    <img class="cover_img" :src="'https://www.sunyuanling.com/image/novel/thumbnail/'+item.work_cover">
+                    <img class="cover_img" :src="'https://www.sunyuanling.com/server/static/image/novel/thumbnail/'+item.work_cover">
                 </div>
                 <div class="work_info">
                     <div class="work_name">
@@ -19,7 +19,7 @@
                     </div>
                     <div class="author_info" @click="choose_user(item.author_info.userid)">
                         <div class="author_avatar">
-                            <img class="avatar_img" :src="'https://www.sunyuanling.com/image/avatar_thumbnail/'+item.author_info.user_avatar">
+                            <img class="avatar_img" :src="'https://www.sunyuanling.com/server/static/image/avatar_thumbnail/'+item.author_info.user_avatar">
                         </div>
                         <div class="author_name">
                             <span>{{item.author_info.username}}</span>

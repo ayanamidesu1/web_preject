@@ -4,7 +4,7 @@ async function get_ill_worklist(limit = 10, offset = 0) {
             method: "post",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer ${localStorage.getItem("token")}`
+                "Authorization": `token ${localStorage.getItem("token")}`
             },
             body: JSON.stringify({
                 limit: limit,
@@ -24,7 +24,7 @@ async function get_comic_worklist(limit = 10, offset = 0) {
             method: "post",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer ${localStorage.getItem("token")}`
+                "Authorization": `token ${localStorage.getItem("token")}`
             },
             body: JSON.stringify({
                 limit: limit,
@@ -45,7 +45,7 @@ async function get_novel_work_list(limit = 10, offset = 0) {
             method: "post",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer ${localStorage.getItem("token")}`
+                "Authorization": `token ${localStorage.getItem("token")}`
             },
             body: JSON.stringify({
                 limit: limit,
@@ -66,7 +66,7 @@ async function get_novel_work_content_list(work_id, limit = 10, offset = 0) {
             method: "post",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer ${localStorage.getItem("token")}`
+                "Authorization": `token ${localStorage.getItem("token")}`
             },
             body: JSON.stringify({
                 work_id: work_id,
@@ -88,7 +88,7 @@ async function get_comment_list(limit = 10, offset = 0) {
             method: "post",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer ${localStorage.getItem("token")}`
+                "Authorization": `token ${localStorage.getItem("token")}`
             },
             body: JSON.stringify({
                 limit: limit,

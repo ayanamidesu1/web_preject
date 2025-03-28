@@ -6,7 +6,7 @@
             <span>欢迎管理员：{{username}}</span>
           </div>
           <div class="user_avatar">
-            <img src="https://www.sunyuanling.com/image/avatar_thumbnail/65014220_p0.jpg" alt="User Avatar">
+            <img src="https://www.sunyuanling.com/server/static/image/avatar_thumbnail/65014220_p0.jpg" alt="User Avatar">
           </div>
         </div>
         <div class="logout" @click="logout">

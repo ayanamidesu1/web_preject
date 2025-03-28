@@ -36,3 +36,1042 @@
 2025-03-26 02:44:49
 2025-03-26 02:44:49,790 - ERROR - JWT生成失败: 'Settings' object has no attribute 'JWT_EXPIRATION_DELTA'
 2025-03-26 02:44:49
+2025-03-26 11:06:58,687 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:06:58.686129，请求IP：127.0.0.1 @ 2025-03-26T11:06:58.686129
+2025-03-26 11:06:58
+2025-03-26 11:06:58,687 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:06:58.686129，请求IP：127.0.0.1 @ 2025-03-26T11:06:58.686129
+2025-03-26 11:06:58
+2025-03-26 11:06:58,687 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:06:58.686129，请求IP：127.0.0.1 @ 2025-03-26T11:06:58.686129
+2025-03-26 11:06:58
+2025-03-26 11:06:58,687 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:06:58.686129，请求IP：127.0.0.1 @ 2025-03-26T11:06:58.686129
+2025-03-26 11:06:58
+2025-03-26 11:06:58,687 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:06:58.686129，请求IP：127.0.0.1 @ 2025-03-26T11:06:58.686129
+2025-03-26 11:06:58
+2025-03-26 11:07:21,999 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:07:21.999226，请求IP：127.0.0.1 @ 2025-03-26T11:07:21.999226
+2025-03-26 11:07:21
+2025-03-26 11:07:21,999 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:07:21.999226，请求IP：127.0.0.1 @ 2025-03-26T11:07:21.999226
+2025-03-26 11:07:21
+2025-03-26 11:07:21,999 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:07:21.999226，请求IP：127.0.0.1 @ 2025-03-26T11:07:21.999226
+2025-03-26 11:07:21
+2025-03-26 11:07:21,999 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:07:21.999226，请求IP：127.0.0.1 @ 2025-03-26T11:07:21.999226
+2025-03-26 11:07:21
+2025-03-26 11:07:21,999 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:07:21.999226，请求IP：127.0.0.1 @ 2025-03-26T11:07:21.999226
+2025-03-26 11:07:21
+2025-03-26 11:07:25,611 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:07:25.611321，请求IP：127.0.0.1 @ 2025-03-26T11:07:25.611321
+2025-03-26 11:07:25
+2025-03-26 11:07:25,611 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:07:25.611321，请求IP：127.0.0.1 @ 2025-03-26T11:07:25.611321
+2025-03-26 11:07:25
+2025-03-26 11:07:25,611 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:07:25.611321，请求IP：127.0.0.1 @ 2025-03-26T11:07:25.611321
+2025-03-26 11:07:25
+2025-03-26 11:07:25,611 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:07:25.611321，请求IP：127.0.0.1 @ 2025-03-26T11:07:25.611321
+2025-03-26 11:07:25
+2025-03-26 11:07:25,611 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:07:25.611321，请求IP：127.0.0.1 @ 2025-03-26T11:07:25.611321
+2025-03-26 11:07:25
+2025-03-26 11:09:02,499 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:09:02.499386，请求IP：127.0.0.1 @ 2025-03-26T11:09:02.499386
+2025-03-26 11:09:02
+2025-03-26 11:09:02,499 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:09:02.499386，请求IP：127.0.0.1 @ 2025-03-26T11:09:02.499386
+2025-03-26 11:09:02
+2025-03-26 11:09:02,499 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:09:02.499386，请求IP：127.0.0.1 @ 2025-03-26T11:09:02.499386
+2025-03-26 11:09:02
+2025-03-26 11:09:02,499 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:09:02.499386，请求IP：127.0.0.1 @ 2025-03-26T11:09:02.499386
+2025-03-26 11:09:02
+2025-03-26 11:09:02,499 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:09:02.499386，请求IP：127.0.0.1 @ 2025-03-26T11:09:02.499386
+2025-03-26 11:09:02
+2025-03-26 11:09:06,845 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:09:06.845145，请求IP：127.0.0.1 @ 2025-03-26T11:09:06.845145
+2025-03-26 11:09:06
+2025-03-26 11:09:06,845 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:09:06.845145，请求IP：127.0.0.1 @ 2025-03-26T11:09:06.845145
+2025-03-26 11:09:06
+2025-03-26 11:09:06,845 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:09:06.845145，请求IP：127.0.0.1 @ 2025-03-26T11:09:06.845145
+2025-03-26 11:09:06
+2025-03-26 11:09:06,845 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:09:06.845145，请求IP：127.0.0.1 @ 2025-03-26T11:09:06.845145
+2025-03-26 11:09:06
+2025-03-26 11:09:06,845 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:09:06.845145，请求IP：127.0.0.1 @ 2025-03-26T11:09:06.845145
+2025-03-26 11:09:06
+2025-03-26 11:10:17,838 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:10:17.838596，请求IP：127.0.0.1 @ 2025-03-26T11:10:17.838596
+2025-03-26 11:10:17
+2025-03-26 11:10:17,838 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:10:17.838596，请求IP：127.0.0.1 @ 2025-03-26T11:10:17.838596
+2025-03-26 11:10:17
+2025-03-26 11:10:17,838 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:10:17.838596，请求IP：127.0.0.1 @ 2025-03-26T11:10:17.838596
+2025-03-26 11:10:17
+2025-03-26 11:10:17,838 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:10:17.838596，请求IP：127.0.0.1 @ 2025-03-26T11:10:17.838596
+2025-03-26 11:10:17
+2025-03-26 11:10:17,838 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:10:17.838596，请求IP：127.0.0.1 @ 2025-03-26T11:10:17.838596
+2025-03-26 11:10:17
+2025-03-26 11:10:43,392 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:10:43.392572，请求IP：127.0.0.1 @ 2025-03-26T11:10:43.392572
+2025-03-26 11:10:43
+2025-03-26 11:10:43,392 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:10:43.392572，请求IP：127.0.0.1 @ 2025-03-26T11:10:43.392572
+2025-03-26 11:10:43
+2025-03-26 11:10:43,392 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:10:43.392572，请求IP：127.0.0.1 @ 2025-03-26T11:10:43.392572
+2025-03-26 11:10:43
+2025-03-26 11:10:43,392 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:10:43.392572，请求IP：127.0.0.1 @ 2025-03-26T11:10:43.392572
+2025-03-26 11:10:43
+2025-03-26 11:10:43,392 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:10:43.392572，请求IP：127.0.0.1 @ 2025-03-26T11:10:43.392572
+2025-03-26 11:10:43
+2025-03-26 11:10:57,150 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:10:57.150503，请求IP：127.0.0.1 @ 2025-03-26T11:10:57.150503
+2025-03-26 11:10:57
+2025-03-26 11:10:57,150 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:10:57.150503，请求IP：127.0.0.1 @ 2025-03-26T11:10:57.150503
+2025-03-26 11:10:57
+2025-03-26 11:10:57,150 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:10:57.150503，请求IP：127.0.0.1 @ 2025-03-26T11:10:57.150503
+2025-03-26 11:10:57
+2025-03-26 11:10:57,150 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:10:57.150503，请求IP：127.0.0.1 @ 2025-03-26T11:10:57.150503
+2025-03-26 11:10:57
+2025-03-26 11:10:57,150 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:10:57.150503，请求IP：127.0.0.1 @ 2025-03-26T11:10:57.150503
+2025-03-26 11:10:57
+2025-03-26 11:11:41,791 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:11:41.791438，请求IP：127.0.0.1 @ 2025-03-26T11:11:41.791438
+2025-03-26 11:11:41
+2025-03-26 11:11:41,791 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:11:41.791438，请求IP：127.0.0.1 @ 2025-03-26T11:11:41.791438
+2025-03-26 11:11:41
+2025-03-26 11:11:41,791 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:11:41.791438，请求IP：127.0.0.1 @ 2025-03-26T11:11:41.791438
+2025-03-26 11:11:41
+2025-03-26 11:11:41,791 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:11:41.791438，请求IP：127.0.0.1 @ 2025-03-26T11:11:41.791438
+2025-03-26 11:11:41
+2025-03-26 11:11:41,791 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:11:41.791438，请求IP：127.0.0.1 @ 2025-03-26T11:11:41.791438
+2025-03-26 11:11:41
+2025-03-26 11:12:19,604 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:12:19.604351，请求IP：127.0.0.1 @ 2025-03-26T11:12:19.604351
+2025-03-26 11:12:19
+2025-03-26 11:12:19,604 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:12:19.604351，请求IP：127.0.0.1 @ 2025-03-26T11:12:19.604351
+2025-03-26 11:12:19
+2025-03-26 11:12:19,604 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:12:19.604351，请求IP：127.0.0.1 @ 2025-03-26T11:12:19.604351
+2025-03-26 11:12:19
+2025-03-26 11:12:19,604 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:12:19.604351，请求IP：127.0.0.1 @ 2025-03-26T11:12:19.604351
+2025-03-26 11:12:19
+2025-03-26 11:12:19,604 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:12:19.604351，请求IP：127.0.0.1 @ 2025-03-26T11:12:19.604351
+2025-03-26 11:12:19
+2025-03-26 11:16:29,909 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:16:29.909119，请求IP：127.0.0.1 @ 2025-03-26T11:16:29.909119
+2025-03-26 11:16:29
+2025-03-26 11:16:29,909 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:16:29.909119，请求IP：127.0.0.1 @ 2025-03-26T11:16:29.909119
+2025-03-26 11:16:29
+2025-03-26 11:16:29,909 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:16:29.909119，请求IP：127.0.0.1 @ 2025-03-26T11:16:29.909119
+2025-03-26 11:16:29
+2025-03-26 11:16:29,909 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:16:29.909119，请求IP：127.0.0.1 @ 2025-03-26T11:16:29.909119
+2025-03-26 11:16:29
+2025-03-26 11:16:29,909 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:16:29.909119，请求IP：127.0.0.1 @ 2025-03-26T11:16:29.909119
+2025-03-26 11:16:29
+2025-03-26 11:16:38,886 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:16:38.886467，请求IP：127.0.0.1 @ 2025-03-26T11:16:38.886467
+2025-03-26 11:16:38
+2025-03-26 11:16:38,886 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:16:38.886467，请求IP：127.0.0.1 @ 2025-03-26T11:16:38.886467
+2025-03-26 11:16:38
+2025-03-26 11:16:38,886 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:16:38.886467，请求IP：127.0.0.1 @ 2025-03-26T11:16:38.886467
+2025-03-26 11:16:38
+2025-03-26 11:16:38,886 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:16:38.886467，请求IP：127.0.0.1 @ 2025-03-26T11:16:38.886467
+2025-03-26 11:16:38
+2025-03-26 11:16:38,886 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:16:38.886467，请求IP：127.0.0.1 @ 2025-03-26T11:16:38.886467
+2025-03-26 11:16:38
+2025-03-26 11:17:59,501 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:17:59.501958，请求IP：127.0.0.1 @ 2025-03-26T11:17:59.501958
+2025-03-26 11:17:59
+2025-03-26 11:17:59,501 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:17:59.501958，请求IP：127.0.0.1 @ 2025-03-26T11:17:59.501958
+2025-03-26 11:17:59
+2025-03-26 11:17:59,501 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:17:59.501958，请求IP：127.0.0.1 @ 2025-03-26T11:17:59.501958
+2025-03-26 11:17:59
+2025-03-26 11:17:59,501 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:17:59.501958，请求IP：127.0.0.1 @ 2025-03-26T11:17:59.501958
+2025-03-26 11:17:59
+2025-03-26 11:17:59,501 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:17:59.501958，请求IP：127.0.0.1 @ 2025-03-26T11:17:59.501958
+2025-03-26 11:17:59
+2025-03-26 11:19:31,765 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:19:31.765973，请求IP：127.0.0.1 @ 2025-03-26T11:19:31.765973
+2025-03-26 11:19:31
+2025-03-26 11:19:31,765 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:19:31.765973，请求IP：127.0.0.1 @ 2025-03-26T11:19:31.765973
+2025-03-26 11:19:31
+2025-03-26 11:19:31,765 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:19:31.765973，请求IP：127.0.0.1 @ 2025-03-26T11:19:31.765973
+2025-03-26 11:19:31
+2025-03-26 11:19:31,765 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:19:31.765973，请求IP：127.0.0.1 @ 2025-03-26T11:19:31.765973
+2025-03-26 11:19:31
+2025-03-26 11:19:31,765 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:19:31.765973，请求IP：127.0.0.1 @ 2025-03-26T11:19:31.765973
+2025-03-26 11:19:31
+2025-03-26 11:21:46,107 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:21:46.107755，请求IP：127.0.0.1 @ 2025-03-26T11:21:46.107755
+2025-03-26 11:21:46
+2025-03-26 11:21:46,107 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:21:46.107755，请求IP：127.0.0.1 @ 2025-03-26T11:21:46.107755
+2025-03-26 11:21:46
+2025-03-26 11:21:46,107 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:21:46.107755，请求IP：127.0.0.1 @ 2025-03-26T11:21:46.107755
+2025-03-26 11:21:46
+2025-03-26 11:21:46,107 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:21:46.107755，请求IP：127.0.0.1 @ 2025-03-26T11:21:46.107755
+2025-03-26 11:21:46
+2025-03-26 11:21:46,107 - ERROR - 'JWTUser' object has no attribute 'userid'，请求时间：2025-03-26T11:21:46.107755，请求IP：127.0.0.1 @ 2025-03-26T11:21:46.107755
+2025-03-26 11:21:46
+2025-03-26 16:49:01,764 - ERROR - 数据库错误: (1366, "Incorrect integer value: 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb' for column 'user_id' at row 1")
+2025-03-26 16:49:01
+2025-03-26 16:49:01,764 - ERROR - 数据库错误: (1366, "Incorrect integer value: 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb' for column 'user_id' at row 1")
+2025-03-26 16:49:01
+2025-03-26 16:49:01,764 - ERROR - 数据库错误: (1366, "Incorrect integer value: 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb' for column 'user_id' at row 1")
+2025-03-26 16:49:01
+2025-03-26 16:49:01,764 - ERROR - 数据库错误: (1366, "Incorrect integer value: 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb' for column 'user_id' at row 1")
+2025-03-26 16:49:01
+2025-03-26 16:49:01,764 - ERROR - 数据库错误: (1366, "Incorrect integer value: 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb' for column 'user_id' at row 1")
+2025-03-26 16:49:01
+2025-03-26 16:49:01,764 - ERROR - 数据库错误: (1366, "Incorrect integer value: 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb' for column 'user_id' at row 1")
+2025-03-26 16:49:01
+2025-03-26 16:49:01,764 - ERROR - 数据库错误: (1366, "Incorrect integer value: 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb' for column 'user_id' at row 1")
+2025-03-26 16:49:01
+2025-03-26 16:49:01,764 - ERROR - 数据库错误: (1366, "Incorrect integer value: 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb' for column 'user_id' at row 1")
+2025-03-26 16:49:01
+2025-03-26 16:49:01,764 - ERROR - 数据库错误: (1366, "Incorrect integer value: 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb' for column 'user_id' at row 1")
+2025-03-26 16:49:01
+2025-03-26 16:49:01,764 - ERROR - 数据库错误: (1366, "Incorrect integer value: 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb' for column 'user_id' at row 1")
+2025-03-26 16:49:01
+2025-03-26 16:52:11,466 - ERROR - 服务器错误: unhashable type: 'dict'
+2025-03-26 16:52:11
+2025-03-26 16:52:11,466 - ERROR - 服务器错误: unhashable type: 'dict'
+2025-03-26 16:52:11
+2025-03-26 16:52:11,466 - ERROR - 服务器错误: unhashable type: 'dict'
+2025-03-26 16:52:11
+2025-03-26 16:52:11,466 - ERROR - 服务器错误: unhashable type: 'dict'
+2025-03-26 16:52:11
+2025-03-26 16:52:11,466 - ERROR - 服务器错误: unhashable type: 'dict'
+2025-03-26 16:52:11
+2025-03-26 16:52:11,466 - ERROR - 服务器错误: unhashable type: 'dict'
+2025-03-26 16:52:11
+2025-03-26 16:52:11,466 - ERROR - 服务器错误: unhashable type: 'dict'
+2025-03-26 16:52:11
+2025-03-26 16:52:11,466 - ERROR - 服务器错误: unhashable type: 'dict'
+2025-03-26 16:52:11
+2025-03-26 16:52:11,466 - ERROR - 服务器错误: unhashable type: 'dict'
+2025-03-26 16:52:11
+2025-03-26 16:52:11,466 - ERROR - 服务器错误: unhashable type: 'dict'
+2025-03-26 16:52:11
+2025-03-27 21:01:23,573 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''ec6866d3-128c-4281-8fef-76beb6b29508'' at line 1")
+SQL: 
+            update messages set receiver_read_status='已读' where sender_id=%s and receiver_id%s 
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-03-27 21:01:23
+2025-03-27 21:01:23,573 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''ec6866d3-128c-4281-8fef-76beb6b29508'' at line 1")
+SQL: 
+            update messages set receiver_read_status='已读' where sender_id=%s and receiver_id%s 
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-03-27 21:01:23
+2025-03-27 21:01:23,573 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''ec6866d3-128c-4281-8fef-76beb6b29508'' at line 1")
+SQL: 
+            update messages set receiver_read_status='已读' where sender_id=%s and receiver_id%s 
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-03-27 21:01:23
+2025-03-27 21:01:23,573 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''ec6866d3-128c-4281-8fef-76beb6b29508'' at line 1")
+SQL: 
+            update messages set receiver_read_status='已读' where sender_id=%s and receiver_id%s 
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-03-27 21:01:23
+2025-03-27 21:01:23,573 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''ec6866d3-128c-4281-8fef-76beb6b29508'' at line 1")
+SQL: 
+            update messages set receiver_read_status='已读' where sender_id=%s and receiver_id%s 
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-03-27 21:01:23
+2025-03-27 21:01:23,573 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''ec6866d3-128c-4281-8fef-76beb6b29508'' at line 1")
+SQL: 
+            update messages set receiver_read_status='已读' where sender_id=%s and receiver_id%s 
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-03-27 21:01:23
+2025-03-27 21:01:23,573 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''ec6866d3-128c-4281-8fef-76beb6b29508'' at line 1")
+SQL: 
+            update messages set receiver_read_status='已读' where sender_id=%s and receiver_id%s 
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-03-27 21:01:23
+2025-03-27 21:01:23,573 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''ec6866d3-128c-4281-8fef-76beb6b29508'' at line 1")
+SQL: 
+            update messages set receiver_read_status='已读' where sender_id=%s and receiver_id%s 
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-03-27 21:01:23
+2025-03-27 21:01:23,573 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''ec6866d3-128c-4281-8fef-76beb6b29508'' at line 1")
+SQL: 
+            update messages set receiver_read_status='已读' where sender_id=%s and receiver_id%s 
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-03-27 21:01:23
+2025-03-27 21:01:23,573 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''ec6866d3-128c-4281-8fef-76beb6b29508'' at line 1")
+SQL: 
+            update messages set receiver_read_status='已读' where sender_id=%s and receiver_id%s 
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-03-27 21:01:23
+2025-03-27 21:01:23,586 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''ec6866d3-128c-4281-8fef-76beb6b29508'' at line 1")，请求时间：2025-03-27T21:01:23.586375，请求IP：127.0.0.1 @ 2025-03-27T21:01:23.586375
+2025-03-27 21:01:23
+2025-03-27 21:01:23,586 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''ec6866d3-128c-4281-8fef-76beb6b29508'' at line 1")，请求时间：2025-03-27T21:01:23.586375，请求IP：127.0.0.1 @ 2025-03-27T21:01:23.586375
+2025-03-27 21:01:23
+2025-03-27 21:01:23,586 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''ec6866d3-128c-4281-8fef-76beb6b29508'' at line 1")，请求时间：2025-03-27T21:01:23.586375，请求IP：127.0.0.1 @ 2025-03-27T21:01:23.586375
+2025-03-27 21:01:23
+2025-03-27 21:01:23,586 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''ec6866d3-128c-4281-8fef-76beb6b29508'' at line 1")，请求时间：2025-03-27T21:01:23.586375，请求IP：127.0.0.1 @ 2025-03-27T21:01:23.586375
+2025-03-27 21:01:23
+2025-03-27 21:01:23,586 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''ec6866d3-128c-4281-8fef-76beb6b29508'' at line 1")，请求时间：2025-03-27T21:01:23.586375，请求IP：127.0.0.1 @ 2025-03-27T21:01:23.586375
+2025-03-27 21:01:23
+2025-03-27 21:01:23,586 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''ec6866d3-128c-4281-8fef-76beb6b29508'' at line 1")，请求时间：2025-03-27T21:01:23.586375，请求IP：127.0.0.1 @ 2025-03-27T21:01:23.586375
+2025-03-27 21:01:23
+2025-03-27 21:01:23,586 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''ec6866d3-128c-4281-8fef-76beb6b29508'' at line 1")，请求时间：2025-03-27T21:01:23.586375，请求IP：127.0.0.1 @ 2025-03-27T21:01:23.586375
+2025-03-27 21:01:23
+2025-03-27 21:01:23,586 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''ec6866d3-128c-4281-8fef-76beb6b29508'' at line 1")，请求时间：2025-03-27T21:01:23.586375，请求IP：127.0.0.1 @ 2025-03-27T21:01:23.586375
+2025-03-27 21:01:23
+2025-03-27 21:01:23,586 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''ec6866d3-128c-4281-8fef-76beb6b29508'' at line 1")，请求时间：2025-03-27T21:01:23.586375，请求IP：127.0.0.1 @ 2025-03-27T21:01:23.586375
+2025-03-27 21:01:23
+2025-03-27 21:01:23,586 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''ec6866d3-128c-4281-8fef-76beb6b29508'' at line 1")，请求时间：2025-03-27T21:01:23.586375，请求IP：127.0.0.1 @ 2025-03-27T21:01:23.586375
+2025-03-27 21:01:23
+2025-03-28 17:20:13,621 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:13
+2025-03-28 17:20:13,622 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:13
+2025-03-28 17:20:13,621 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:13
+2025-03-28 17:20:13,622 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:13
+2025-03-28 17:20:13,621 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:13
+2025-03-28 17:20:13,622 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:13
+2025-03-28 17:20:13,621 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:13
+2025-03-28 17:20:13,622 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:13
+2025-03-28 17:20:13,621 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:13
+2025-03-28 17:20:13,622 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:13
+2025-03-28 17:20:13,621 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:13
+2025-03-28 17:20:13,622 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:13
+2025-03-28 17:20:13,621 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:13
+2025-03-28 17:20:13,622 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:13
+2025-03-28 17:20:13,621 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:13
+2025-03-28 17:20:13,622 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:13
+2025-03-28 17:20:13,621 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:13
+2025-03-28 17:20:13,622 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:13
+2025-03-28 17:20:13,621 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:13
+2025-03-28 17:20:13,622 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:13
+2025-03-28 17:20:13,646 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.646583，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.646583
+2025-03-28 17:20:13
+2025-03-28 17:20:13,646 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.646583，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.646583
+2025-03-28 17:20:13
+2025-03-28 17:20:13,646 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.646583，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.646583
+2025-03-28 17:20:13
+2025-03-28 17:20:13,646 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.646583，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.646583
+2025-03-28 17:20:13
+2025-03-28 17:20:13,646 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.646583，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.646583
+2025-03-28 17:20:13
+2025-03-28 17:20:13,646 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.646583，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.646583
+2025-03-28 17:20:13
+2025-03-28 17:20:13,646 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.646583，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.646583
+2025-03-28 17:20:13
+2025-03-28 17:20:13,646 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.646583，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.646583
+2025-03-28 17:20:13
+2025-03-28 17:20:13,646 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.646583，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.646583
+2025-03-28 17:20:13
+2025-03-28 17:20:13,646 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.646583，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.646583
+2025-03-28 17:20:13
+2025-03-28 17:20:13,646 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.646583，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.646583
+2025-03-28 17:20:13
+2025-03-28 17:20:13,646 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.646583，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.646583
+2025-03-28 17:20:13
+2025-03-28 17:20:13,646 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.646583，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.646583
+2025-03-28 17:20:13
+2025-03-28 17:20:13,646 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.646583，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.646583
+2025-03-28 17:20:13
+2025-03-28 17:20:13,646 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.646583，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.646583
+2025-03-28 17:20:13
+2025-03-28 17:20:13,646 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.646583，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.646583
+2025-03-28 17:20:13
+2025-03-28 17:20:13,646 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.646583，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.646583
+2025-03-28 17:20:13
+2025-03-28 17:20:13,646 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.646583，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.646583
+2025-03-28 17:20:13
+2025-03-28 17:20:13,646 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.646583，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.646583
+2025-03-28 17:20:13
+2025-03-28 17:20:13,646 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.646583，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.646583
+2025-03-28 17:20:13
+2025-03-28 17:20:13,946 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-03-28 17:20:13
+2025-03-28 17:20:13,946 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-03-28 17:20:13
+2025-03-28 17:20:13,946 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-03-28 17:20:13
+2025-03-28 17:20:13,946 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-03-28 17:20:13
+2025-03-28 17:20:13,946 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-03-28 17:20:13
+2025-03-28 17:20:13,946 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-03-28 17:20:13
+2025-03-28 17:20:13,946 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-03-28 17:20:13
+2025-03-28 17:20:13,946 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-03-28 17:20:13
+2025-03-28 17:20:13,946 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-03-28 17:20:13
+2025-03-28 17:20:13,946 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-03-28 17:20:13
+2025-03-28 17:20:13,946 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-03-28 17:20:13
+2025-03-28 17:20:13,946 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-03-28 17:20:13
+2025-03-28 17:20:13,946 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-03-28 17:20:13
+2025-03-28 17:20:13,946 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-03-28 17:20:13
+2025-03-28 17:20:13,946 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-03-28 17:20:13
+2025-03-28 17:20:13,946 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-03-28 17:20:13
+2025-03-28 17:20:13,946 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-03-28 17:20:13
+2025-03-28 17:20:13,946 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-03-28 17:20:13
+2025-03-28 17:20:13,946 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-03-28 17:20:13
+2025-03-28 17:20:13,956 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.956558，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.956558
+2025-03-28 17:20:13
+2025-03-28 17:20:13,957 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.957555，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.957555
+2025-03-28 17:20:13
+2025-03-28 17:20:13,956 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.956558，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.956558
+2025-03-28 17:20:13
+2025-03-28 17:20:13,956 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.956558，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.956558
+2025-03-28 17:20:13
+2025-03-28 17:20:13,957 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.957555，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.957555
+2025-03-28 17:20:13
+2025-03-28 17:20:13,956 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.956558，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.956558
+2025-03-28 17:20:13
+2025-03-28 17:20:13,957 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.957555，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.957555
+2025-03-28 17:20:13
+2025-03-28 17:20:13,956 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.956558，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.956558
+2025-03-28 17:20:13
+2025-03-28 17:20:13,957 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.957555，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.957555
+2025-03-28 17:20:13
+2025-03-28 17:20:13,957 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.957555，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.957555
+2025-03-28 17:20:13
+2025-03-28 17:20:13,956 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.956558，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.956558
+2025-03-28 17:20:13
+2025-03-28 17:20:13,957 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.957555，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.957555
+2025-03-28 17:20:13
+2025-03-28 17:20:13,956 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.956558，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.956558
+2025-03-28 17:20:13
+2025-03-28 17:20:13,957 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.957555，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.957555
+2025-03-28 17:20:13
+2025-03-28 17:20:13,956 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.956558，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.956558
+2025-03-28 17:20:13
+2025-03-28 17:20:13,957 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.957555，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.957555
+2025-03-28 17:20:13
+2025-03-28 17:20:13,956 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.956558，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.956558
+2025-03-28 17:20:13
+2025-03-28 17:20:13,957 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.957555，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.957555
+2025-03-28 17:20:13
+2025-03-28 17:20:13,956 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.956558，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.956558
+2025-03-28 17:20:13
+2025-03-28 17:20:13,957 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:13.957555，请求IP：127.0.0.1 @ 2025-03-28T17:20:13.957555
+2025-03-28 17:20:13
+2025-03-28 17:20:35,323 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:35
+2025-03-28 17:20:35,323 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:35
+2025-03-28 17:20:35,323 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:35
+2025-03-28 17:20:35,323 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:35
+2025-03-28 17:20:35,323 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:35
+2025-03-28 17:20:35,323 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:35
+2025-03-28 17:20:35,323 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:35
+2025-03-28 17:20:35,323 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:35
+2025-03-28 17:20:35,323 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:35
+2025-03-28 17:20:35,323 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:35
+2025-03-28 17:20:35,323 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:35
+2025-03-28 17:20:35,323 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:35
+2025-03-28 17:20:35,323 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:35
+2025-03-28 17:20:35,323 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:35
+2025-03-28 17:20:35,323 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:35
+2025-03-28 17:20:35,323 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:35
+2025-03-28 17:20:35,323 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:35
+2025-03-28 17:20:35,323 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:35
+2025-03-28 17:20:35,323 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:35
+2025-03-28 17:20:35,323 - ERROR - SQL Error: not enough arguments for format string
+SQL: 
+            SELECT * FROM messages 
+            WHERE (sender_id = %s AND receiver_id = %s) 
+               OR (sender_id = %s AND receiver_id = %s) 
+               AND type = 'one_to_one' 
+            ORDER BY id 
+            LIMIT %s OFFSET %s
+            
+Params: ('f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'ec6866d3-128c-4281-8fef-76beb6b29508', 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb')
+2025-03-28 17:20:35
+2025-03-28 17:20:35,334 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:35.334616，请求IP：127.0.0.1 @ 2025-03-28T17:20:35.334616
+2025-03-28 17:20:35
+2025-03-28 17:20:35,334 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:35.334616，请求IP：127.0.0.1 @ 2025-03-28T17:20:35.334616
+2025-03-28 17:20:35
+2025-03-28 17:20:35,334 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:35.334616，请求IP：127.0.0.1 @ 2025-03-28T17:20:35.334616
+2025-03-28 17:20:35
+2025-03-28 17:20:35,334 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:35.334616，请求IP：127.0.0.1 @ 2025-03-28T17:20:35.334616
+2025-03-28 17:20:35
+2025-03-28 17:20:35,334 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:35.334616，请求IP：127.0.0.1 @ 2025-03-28T17:20:35.334616
+2025-03-28 17:20:35
+2025-03-28 17:20:35,334 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:35.334616，请求IP：127.0.0.1 @ 2025-03-28T17:20:35.334616
+2025-03-28 17:20:35
+2025-03-28 17:20:35,334 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:35.334616，请求IP：127.0.0.1 @ 2025-03-28T17:20:35.334616
+2025-03-28 17:20:35
+2025-03-28 17:20:35,334 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:35.334616，请求IP：127.0.0.1 @ 2025-03-28T17:20:35.334616
+2025-03-28 17:20:35
+2025-03-28 17:20:35,334 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:35.334616，请求IP：127.0.0.1 @ 2025-03-28T17:20:35.334616
+2025-03-28 17:20:35
+2025-03-28 17:20:35,334 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:35.334616，请求IP：127.0.0.1 @ 2025-03-28T17:20:35.334616
+2025-03-28 17:20:35
+2025-03-28 17:20:35,334 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:35.334616，请求IP：127.0.0.1 @ 2025-03-28T17:20:35.334616
+2025-03-28 17:20:35
+2025-03-28 17:20:35,334 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:35.334616，请求IP：127.0.0.1 @ 2025-03-28T17:20:35.334616
+2025-03-28 17:20:35
+2025-03-28 17:20:35,334 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:35.334616，请求IP：127.0.0.1 @ 2025-03-28T17:20:35.334616
+2025-03-28 17:20:35
+2025-03-28 17:20:35,334 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:35.334616，请求IP：127.0.0.1 @ 2025-03-28T17:20:35.334616
+2025-03-28 17:20:35
+2025-03-28 17:20:35,334 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:35.334616，请求IP：127.0.0.1 @ 2025-03-28T17:20:35.334616
+2025-03-28 17:20:35
+2025-03-28 17:20:35,334 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:35.334616，请求IP：127.0.0.1 @ 2025-03-28T17:20:35.334616
+2025-03-28 17:20:35
+2025-03-28 17:20:35,334 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:35.334616，请求IP：127.0.0.1 @ 2025-03-28T17:20:35.334616
+2025-03-28 17:20:35
+2025-03-28 17:20:35,334 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:35.334616，请求IP：127.0.0.1 @ 2025-03-28T17:20:35.334616
+2025-03-28 17:20:35
+2025-03-28 17:20:35,334 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:35.334616，请求IP：127.0.0.1 @ 2025-03-28T17:20:35.334616
+2025-03-28 17:20:35
+2025-03-28 17:20:35,334 - ERROR - not enough arguments for format string，请求时间：2025-03-28T17:20:35.334616，请求IP：127.0.0.1 @ 2025-03-28T17:20:35.334616
+2025-03-28 17:20:35

@@ -25,7 +25,7 @@
                     <div class="ill_item" v-for="(item, index) in work_list.ill" :key="index">
                         <div class="item_page_img" @click="handleItemClick(item, 'ill')">
                             <img
-                                :src="'https://www.sunyuanling.com/image/thumbnail/' + item.content_file_list.split(/[,，]/)[0]">
+                                :src="'https://www.sunyuanling.com/server/static/image/thumbnail/' + item.content_file_list.split(/[,，]/)[0]">
                             <div class="correct_box"
                                 :class="includesLoose(select_work.ill, item.Illustration_id) ? 'correct_box_choose' : ''"
                                 v-if="includesLoose(select_work.ill, item.Illustration_id)">
@@ -40,7 +40,7 @@
                 <div class="novel_item_list">
                     <div class="novel_item" v-for="(item, index) in work_list.novel" :key="index">
                         <div class="item_page_img" @click="handleItemClick(item, 'novel')">
-                            <img :src="'https://www.sunyuanling.com/image/novel/thumbnail/' + item.work_cover">
+                            <img :src="'https://www.sunyuanling.com/server/static/image/novel/thumbnail/' + item.work_cover">
                             <div class="correct_box"
                                 :class="includesLoose(select_work.novel, item.work_id) ? 'correct_box_choose' : ''"
                                 v-if="includesLoose(select_work.novel, item.work_id)">
@@ -56,7 +56,7 @@
                     <div class="comic_item" v-for="(item, index) in work_list.comic" :key="index">
                         <div class="item_page_img" @click="handleItemClick(item, 'comic')">
                             <img
-                                :src="'https://www.sunyuanling.com/image/comic/thumbnail/' + item.content_file_list.split(/[,，]/)[0]">
+                                :src="'https://www.sunyuanling.com/server/static/image/comic/thumbnail/' + item.content_file_list.split(/[,，]/)[0]">
                             <div class="correct_box"
                                 :class="includesLoose(select_work.comic, item.id) ? 'correct_box_choose' : ''"
                                 v-if="includesLoose(select_work.comic, item.id)">

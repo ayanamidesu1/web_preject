@@ -3,7 +3,7 @@
         <div class="content">
             <div class="item" v-for="(item,index) in work_info" :key="index" >
                 <div class="work_cover" @click="choose_item(item.work_id)">
-                    <img class="cover_img" :src="'https://www.sunyuanling.com/image/novel/thumbnail/'+item.work_cover">
+                    <img class="cover_img" :src="'https://www.sunyuanling.com/server/static/image/novel/thumbnail/'+item.work_cover">
                 </div>
                 <div class="work_info">
                     <div class="work_name">
@@ -19,7 +19,7 @@
                     </div>
                     <div class="author_info" @click="choose_user(item.author_info.userid)">
                         <div class="author_avatar">
-                            <img class="avatar_img" :src="'https://www.sunyuanling.com/image/avatar_thumbnail/'+item.author_info.user_avatar">
+                            <img class="avatar_img" :src="'https://www.sunyuanling.com/server/static/image/avatar_thumbnail/'+item.author_info.user_avatar">
                         </div>
                         <div class="author_name">
                             <span>{{item.author_info.username}}</span>
@@ -35,6 +35,8 @@
 // eslint-disable-next-line no-unused-vars
 import { ref, defineProps, defineEmits, computed } from 'vue'
 import { useStore } from 'vuex';
+import { useRouter } from 'vue-router';
+const router = useRouter();
 const store = useStore();
 const props = defineProps({
     work_info: {
@@ -46,11 +48,7 @@ const props = defineProps({
 })
 const emit = defineEmits(['choose_item','choose_user'])
 function choose_item(item) {
-    console.log(item)
-    emit('choose_item', item)
-    store.commit('SET_CONTENT_PAGE', { key: 'novel_page', value: true })
-    store.commit('SET_SINGLE_PAGE_STATUS', { key: 'content_index_page', value: true })
-    store.commit('SET_WORK_ID', item)
+    router.push(`/novel_content?id=${item}`)
 }
 function choose_user(item){
     console.log(item)

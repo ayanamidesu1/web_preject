@@ -9,12 +9,15 @@ from ..log.log import Logger
 from datetime import datetime
 import json
 from PIL import Image, ImageOps
+from django.conf import settings
+from base_api import BaseApi
+from format_img import ReWriteImg
 
 
-class UpdateUserInfo(View):
+class UpdateUserInfo(BaseApi):
     logger = Logger()
-    target_path = 'H:/web_project/image/'
-    thumbnail_path = 'H:/web_project/image/avatar_thumbnail/'
+    target_path = os.path.join(settings.BASE_DIR, 'static', 'image')
+    thumbnail_path = os.path.join(settings.BASE_DIR, 'static', 'image', 'content_thumbnail')
     allowed_formats = {'jpg': b'\xff\xd8\xff', 'jpeg': b'\xff\xd8\xff', 'png': b'\x89PNG\r\n', 'tiff': b'II*\x00',
                        'webp': b'RIFF\x00\x00\x00\x00WEBP'}
     max_file_size = 1024 * 1024 * 8  # 最大文件容量 8MB
@@ -25,19 +28,12 @@ class UpdateUserInfo(View):
         now = datetime.now().strftime('%Y-%m-%dT%H:%M:%S')
         return f'{request_ip}在{now}请求了{request_path}'
 
-    def get(self, request):
-        self.logger.warning(self.request_path(request) + '非法GET请求，请求数据为：' + str(request.GET))
-        return JsonResponse({'status': 'error', 'message': '非法请求'}, status=403)
-
     def post(self, request, *args, **kwargs):
         now = datetime.now().strftime('%Y-%m-%dT%H:%M:%S')
         try:
             files = request.FILES.getlist('files')
-            print('files:', files)
             data = json.loads(request.POST.get('data', '{}'))
-            admin_userid = 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb'
-            token = data.get('token')
-            userid=getattr(request, 'userid', None)
+            userid = request.user.id
 
             with connection.cursor() as cursor:
                 userinfo = data
@@ -48,37 +44,23 @@ class UpdateUserInfo(View):
 
                 filename = None
                 cursor.execute('SELECT user_avatar FROM users WHERE userid=%s', [userid])
-                filename=cursor.fetchone()[0]
+                filename = cursor.fetchone()[0]
 
                 # 处理上传的文件
                 if files:
                     for file in files:
-                        if not self.validate_file_size(file, request):
-                            self.logger.warning(self.request_path(request) + '文件超出大小限制，文件名为：' + file.name)
-                            return JsonResponse({'status': 'file_error', 'message': '文件超出大小限制'}, status=400)
-
-                        ext = self.validate_image_format(file, request)
-                        if not ext:
-                            self.logger.warning(self.request_path(request) + '文件格式不支持，文件名为：' + file.name)
-                            return JsonResponse({'status': 'file_error', 'message': '文件格式不支持'}, status=400)
-
-                        filename = f"{self.create_uuid()}.{ext}"
-                        print('文件名：', filename)
-                        file_path = os.path.join(self.target_path, filename)
-                        if not self.save_to_file(file, file_path, request):
-                            return JsonResponse({'status': 'file_error', 'message': '文件保存失败'}, status=500)
-
-                        # 生成并保存缩略图
-                        thumbnail_buffer = self.img_file_convert(file, 200, 200)
-                        thumbnail_path = os.path.join(self.thumbnail_path, filename)
-                        if not self.save_to_file(thumbnail_buffer, thumbnail_path, request):
-                            return JsonResponse({'status': 'file_error', 'message': '缩略图保存失败'}, status=500)
-
-                        # 处理并保存原图
-                        img_file = self.process_image(file)
-                        img_path = os.path.join(self.target_path, filename)
-                        if not self.save_to_file(img_file, img_path, request):
-                            return JsonResponse({'status': 'file_error', 'message': '文件保存失败'}, status=500)
+                        re_write=ReWriteImg(file=file,width=200,height=200,max_size=10*1024*1024)
+                        filename=f'{self.get_uuid()}.png'
+                        if not re_write.check_file_size():
+                           return JsonResponse({'status': 'error', 'message': '文件大小超过10MB'}, status=400)
+                        if not re_write.is_safe_image():
+                            return JsonResponse({'status': 'error', 'message': '文件格式错误'}, status=400)
+                        target_path=os.path.join(settings.BASE_DIR,'static','image',filename)
+                        avatar_thumbnail=os.path.join(settings.BASE_DIR,'static','image','avatar_thumbnail',filename)
+                        file=re_write.copy_paste()
+                        thumbnail_file=re_write.process_image()
+                        if not self.save_file(target_path,file) or not self.save_file(avatar_thumbnail,thumbnail_file):
+                            return JsonResponse({'status': 'error', 'message': '文件保存失败'}, status=500)
 
                 # 更新用户信息
                 sql = ('UPDATE users SET username=%s, user_self_introduction=%s, user_address=%s, birthday=%s,'
@@ -98,9 +80,6 @@ class UpdateUserInfo(View):
             print(e)
             self.logger.error(self.request_path(request) + '请求数据为：' + str(request.POST) + '，错误信息为：' + str(e))
             return JsonResponse({'status': 'error', 'message': '服务器错误'}, status=500)
-
-    def create_uuid(self):
-        return str(uuid.uuid4())
 
     def validate_image_format(self, file, request):
         try:
@@ -140,16 +119,6 @@ class UpdateUserInfo(View):
             self.logger.error(self.request_path(request) + '文件保存失败，错误信息为：' + str(e))
             return False
 
-    def process_image(self, file):
-        img = Image.open(file)
-        original_format = img.format  # 获取原始图像格式
-        if img.mode == 'RGBA':
-            img = img.convert('RGB')
-        img = img.resize(img.size, Image.LANCZOS)
-        buffer = BytesIO()
-        img.save(buffer, format=original_format, quality=100, subsampling=0)
-        buffer.seek(0)
-        return buffer
 
     def img_file_convert(self, file, width, height):
         img = Image.open(file)

@@ -24,7 +24,7 @@ class GetUserCollect(View):
             data = json.loads(request.body.decode("utf-8"))
             token = data.get('token')
             userid = data.get('userid')
-            middleware_userid=getattr(request, 'userid', None)
+            middleware_userid=request.user.id
 
 
             if not token and not userid:

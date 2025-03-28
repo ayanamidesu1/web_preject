@@ -54,7 +54,7 @@ async function delete_user_back(token) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                token: token
+                token: localStorage.getItem('token')
             })
         });
 
@@ -114,11 +114,11 @@ async function update_user_select_work(token, select_work) {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + token
+                'Authorization': 'token ' + token
             },
             body: JSON.stringify({
                 select_work: select_work,
-                token: token
+                token: localStorage.getItem('token')
             })
         })
         if (res.ok) {
@@ -146,7 +146,7 @@ async function update_user_collect_work(token, collect_id, work_type, operate, o
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': 'Bearer ' + token
+                    'Authorization': 'token ' + token
                 },
                 body: JSON.stringify({
                     'token': token,

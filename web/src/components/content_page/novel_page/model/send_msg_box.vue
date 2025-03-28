@@ -1,7 +1,7 @@
 <template>
   <div class="send_msg_box">
     <div class="user_avatar">
-        <img class="avatar_img" :src="'https://www.sunyuanling.com/image/avatar_thumbnail/'+user_avatar_path">
+        <img class="avatar_img" :src="'https://www.sunyuanling.com/server/static/image/avatar_thumbnail/'+user_avatar_path">
     </div>
     <auto_textarea v-model="content"></auto_textarea>
     <div class="send_btn" @click="send_msg">

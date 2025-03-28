@@ -7,7 +7,7 @@ async function get_all_user_work(token){
                 'Content-Type':'application/json'
             },
             body:JSON.stringify({
-                token:token
+                token:localStorage.getItem('token')
             })
         })
         if(res.ok)

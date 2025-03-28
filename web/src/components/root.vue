@@ -11,7 +11,7 @@
       <header_box v-if="load_reading"></header_box>
       <index v-if="load_reading&&index_page_show"></index>
       <div class="loading" v-if="!load_reading">
-        <img class="icon" src="https://www.sunyuanling.com/image/loading.gif">
+        <img class="icon" src="https://www.sunyuanling.com/server/static/image/loading.gif">
       </div>
       <upload_page v-if="upload_page_show" />
       <content_index_page v-if="content_index_page_show"/>
@@ -23,7 +23,7 @@
 
     </div>
     <div v-else class="loading">
-      <img class="icon" src="https://www.sunyuanling.com/image/loading.gif">
+      <img class="icon" src="https://www.sunyuanling.com/server/static/image/loading.gif">
       <p>正在加载...</p>
     </div>
   </template>
@@ -85,7 +85,7 @@
         method: 'post',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${localStorage.getItem('token') }`
+          'Authorization': `token ${localStorage.getItem('token') }`
         },
         body: JSON.stringify({
           userid: null,
@@ -120,7 +120,7 @@
         method: 'post',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${localStorage.getItem('token')}`
+          'Authorization': `token ${localStorage.getItem('token')}`
         },
         body: JSON.stringify({
           userid: null,

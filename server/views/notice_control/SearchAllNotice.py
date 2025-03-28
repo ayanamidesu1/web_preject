@@ -44,7 +44,7 @@ class NoticeOperations(View):
             data = json.loads(request.body.decode('utf-8'))
             print('公告：',data)
             operate_type = data.get('operate_type')
-            userid = getattr(request,'userid',None)
+            userid = request.user.id
             username=''
             if userid:
                 with connection.cursor() as cursor:

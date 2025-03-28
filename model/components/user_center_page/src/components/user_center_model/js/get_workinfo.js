@@ -16,7 +16,7 @@ async function get_workinfo(token, work_list) {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
-                        token: token,
+                        token: localStorage.getItem('token'),
                         work_id: workId
                     })
                 };
@@ -71,7 +71,7 @@ async function get_user_all_worklist(token)
             {
                 method:'POST',
                 body:JSON.stringify({
-                    token:token
+                    token:localStorage.getItem('token')
                 })
             }
         )
@@ -99,7 +99,7 @@ async function get_user_collect_worklist(token){
         const res=await fetch('https://www.sunyuanling.com/api/GetUserInfo/GetUserCollect/',{
             method:'POST',
             body:JSON.stringify({
-                token:token
+                token:localStorage.getItem('token')
             })
         })
         if (res.ok)

@@ -14,10 +14,10 @@ async function get_workinfo(token, work_list) {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': 'Bearer ' + localStorage.getItem('token')
+                        'Authorization': 'token ' + localStorage.getItem('token')
                     },
                     body: JSON.stringify({
-                        token: token,
+                        token: localStorage.getItem('token'),
                         work_id: workId
                     })
                 };
@@ -73,10 +73,10 @@ async function get_user_all_worklist(token)
                 method:'POST',
                 headers:{
                     'Content-Type':'application/json',
-                    'Authorization': 'Bearer ' + localStorage.getItem('token')
+                    'Authorization': 'token ' + localStorage.getItem('token')
                 },
                 body:JSON.stringify({
-                    token:token
+                    token:localStorage.getItem('token')
                 })
             }
         )
@@ -105,10 +105,10 @@ async function get_user_collect_worklist(token){
             method:'POST',
             headers:{
                 'Content-Type':'application/json',
-                'Authorization': 'Bearer ' + localStorage.getItem('token')
+                'Authorization': 'token ' + localStorage.getItem('token')
             },
             body:JSON.stringify({
-                token:token
+                token:localStorage.getItem('token')
             })
         })
         if (res.ok)

@@ -30,6 +30,8 @@
 
 <script setup>
 import { ref, onMounted, defineProps, defineEmits, watch } from 'vue';
+import { useRouter } from 'vue-router';
+const router = useRouter();
 
 const props = defineProps({
   left_btn: {
@@ -84,7 +86,8 @@ watch(() => props.msg_list, () => {
 
 const emit = defineEmits(['chose_item']);
 const chose_item = (item) => {
-  emit('chose_item', item);
+  //emit('chose_item', item);
+  router.push(`ill_content?id=${item.work_id}`);
 };
 
 // Easing function for smooth animation
@@ -134,7 +137,7 @@ async function get_work_info(work_id) {
         method: 'post',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer ' + localStorage.getItem('token')
+          'Authorization': 'token ' + localStorage.getItem('token')
         },
         body: JSON.stringify({
           work_id: work_id

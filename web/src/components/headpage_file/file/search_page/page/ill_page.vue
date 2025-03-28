@@ -22,9 +22,11 @@
             <img class="icon" src="https://www.sunyuanling.com/assets/page_count.svg" style="margin-right:5px;">
             <span>{{ item.content_file_list.split(/[,，]/).length }}</span>
           </div>
-          <img class="ill_img"
-            :src="'https://www.sunyuanling.com/image/thumbnail/' + item.content_file_list.split(/[,，]/)[0]"
+          <router-link :to="`/ill_content?id=${item.Illustration_id}`">
+            <img class="ill_img"
+            :src="'https://www.sunyuanling.com/server/static/image/thumbnail/' + item.content_file_list.split(/[,，]/)[0]"
             @click="jump_to_page(item.Illustration_id)">
+          </router-link>
           <span class="work_title">{{ item.name }}</span>
           <div class="author_info">
             <img class="author_avatar" :src="item.avatar">
@@ -38,16 +40,11 @@
   </div>
 </template>
 
-<script>
-// eslint-disable-next-line no-unused-vars
-import { ref, reactive, toRefs, watch, onMounted, onUnmounted, defineEmits, defineProps } from 'vue';
-export default {
-  name: 'ill_page',
-}
-</script>
-
 <script setup>
 import {useStore} from 'vuex'
+import { ref, reactive, toRefs, watch, onMounted, onUnmounted, defineEmits, defineProps } from 'vue';
+import { useRouter } from 'vue-router'
+const router = useRouter()
 const store = new useStore()
 let ill_data = defineProps({
   ill_data: {
@@ -58,7 +55,7 @@ let ill_data = defineProps({
   }
 })
 let data = ref(ill_data.ill_data)
-const emit=defineEmits(['work_count'])
+const emit=defineEmits(['work_count','close'])
 watch(() => ill_data.ill_data, async (newValue, oldValue) => {
   data.value = newValue;
   await set_avatar();
@@ -74,7 +71,7 @@ async function get_author_avatar(userid) {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + localStorage.getItem('token')
+      'Authorization': 'token ' + localStorage.getItem('token')
     },
     body: JSON.stringify({
       userid: userid
@@ -83,7 +80,7 @@ async function get_author_avatar(userid) {
   if (res.ok) {
     const data = await res.json()
     if (data.status == 'success') {
-      return 'https://www.sunyuanling.com/image/avatar_thumbnail/' + data.data[0].user_avatar
+      return 'https://www.sunyuanling.com/server/static/image/avatar_thumbnail/' + data.data[0].user_avatar
     }
   }
 }
@@ -96,15 +93,9 @@ async function set_avatar() {
 
 //带参跳转
 function jump_to_page(id) {
+  emit('close')
   console.log(id)
-  //window.location.href='https://localhost:3002/?work_id='+id+'&work_type=ill';
-  store.commit('SET_CONTENT_PAGE', {
-    key: 'ill_page',
-    value: true
-  })
-  store.commit('SET_SINGLE_PAGE_STATUS',{key:'content_index_page',value:true})
-  store.commit('SET_WORK_ID',id)
-  store.commit('SET_WORK_TYPE','ill')
+  router.push(`ill_content?id=${id}`)
 }
 </script>
 

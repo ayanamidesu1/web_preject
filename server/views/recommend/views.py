@@ -29,7 +29,7 @@ class recommend(View):
     def post(self, request, *args, **kwargs):
         try:
             data = json.loads(request.body.decode('utf-8'))
-            userid=getattr(request, 'userid',None)
+            userid=request.user.id
             token = data.get('token')
             work_type = data.get('work_type')
             work_offset = data.get('work_offset')
@@ -70,7 +70,7 @@ class recommend(View):
                 return JsonResponse({'status': 'success', 'data': work_info_list}, status=200)
 
         except json.JSONDecodeError as e:
-            print(e)
+            print('获取推荐信息错误\n',e)
             self.logger.error(self.request_path(request) + '请求数据格式错误：' + str(e))
             return JsonResponse({'status': 'error', 'message': '请求数据格式错误'}, status=400)
         except Exception as e:

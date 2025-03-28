@@ -4,7 +4,7 @@ async function get_history(limit=100,offset=0) {
             method:'post',
             headers:{
                 'Content-Type':'application/json',
-                'Authorization':'Bearer '+localStorage.getItem('token')
+                'Authorization':'token '+localStorage.getItem('token')
             },
             body:JSON.stringify({
                 'userid':'',

@@ -23,7 +23,7 @@
             <span>{{item.content_file_list.split(/[,，]/).length}}</span>
           </div>
           <div class="comic_cover" @click="jump_to_page(item.id)">
-            <img :src="'https://www.sunyuanling.com/image/comic/thumbnail/'+item.content_file_list.split(/[,，]/)[0]">
+            <img :src="'https://www.sunyuanling.com/server/static/image/comic/thumbnail/'+item.content_file_list.split(/[,，]/)[0]">
           </div>
           <div class="comic_title">
             <span>{{item.work_name}}</span>
@@ -52,6 +52,8 @@ export default {
 
 <script setup>
 import {useStore} from 'vuex'
+import { useRouter } from 'vue-router';
+const router = useRouter();
 const store = new useStore()
 let comic_data=defineProps({
     comic_data:{
@@ -62,7 +64,7 @@ let comic_data=defineProps({
     }
 })
 let data=ref(comic_data.comic_data)
-const emit=defineEmits(['work_count'])
+const emit=defineEmits(['work_count','close'])
 watch(()=>comic_data.comic_data,async (newValue,oldValue)=>{
     data.value=newValue;
     await set_avatar()
@@ -78,7 +80,7 @@ async function get_author_avatar(userid){
     method:'POST',
     headers:{
       'Content-Type':'application/json',
-      'Authorization': 'Bearer ' + localStorage.getItem('token')
+      'Authorization': 'token ' + localStorage.getItem('token')
     },
     body:JSON.stringify({
       userid:userid
@@ -89,7 +91,7 @@ async function get_author_avatar(userid){
     const data=await res.json()
     if (data.status=='success')
   {
-    return 'https://www.sunyuanling.com/image/avatar_thumbnail/'+data.data[0].user_avatar
+    return 'https://www.sunyuanling.com/server/static/image/avatar_thumbnail/'+data.data[0].user_avatar
   }
   }
 }
@@ -104,15 +106,8 @@ async function set_avatar()
 //带参跳转
 function jump_to_page(id)
 {
-  console.log(id)
-  //window.location.href='https://localhost:3002/?id='+id+'&work_type=comic'
-  store.commit('SET_CONTENT_PAGE', {
-    key: 'comic_page',
-    value: true
-  })
-  store.commit('SET_SINGLE_PAGE_STATUS',{key:'content_index_page',value:true})
-  store.commit('SET_WORK_ID',id)
-  store.commit('SET_WORK_TYPE','comic')
+  emit('close')
+  router.push(`/comic_content?id=${id}`)
 }
 </script>
 

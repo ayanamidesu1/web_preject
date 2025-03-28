@@ -1,7 +1,6 @@
 <!-- eslint-disable no-useless-catch -->
 <template>
     <div class="back">
-        
         <div class="login_page">
             <h1>登录</h1>
             <div class="username_input">
@@ -26,7 +25,13 @@
 
 <script setup lang="ts">   
 // eslint-disable-next-line no-unused-vars
-import {ref,} from 'vue';
+import {ref,onMounted,computed} from 'vue';
+import {useStore} from '@assets/model/store/index';
+import { BaseApi } from '@/base_api';
+
+const store = useStore();
+const api= new BaseApi();
+
 let username_in = ref('');  
 let password_in = ref('');  
 let get_message = ref('');

@@ -51,7 +51,7 @@ class UploadNewChapter(View):
     def post(self, request, *args, **kwargs):
         try:
             data = json.loads(request.body.decode('utf-8'))
-            userid = getattr(request, 'userid', None)
+            userid = request.user.id
             if not userid:
                 return JsonResponse({'status': 'error', 'message': 'token无效，请重新登陆'}, status=401)
 

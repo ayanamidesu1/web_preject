@@ -69,7 +69,7 @@
               </div>
               <div class="author_info">
                 <div class="author_avatar">
-                  <img :src="'https://www.sunyuanling.com/image/avatar_thumbnail/' + item.authorinfo.user_avatar"
+                  <img :src="'https://www.sunyuanling.com/server/static/image/avatar_thumbnail/' + item.authorinfo.user_avatar"
                     alt="作者头像">
                 </div>
                 <div class="author_name">
@@ -192,7 +192,7 @@ function get_work_type(type) {
 
 function get_image_src(item) {
   const { type, work_info } = item
-  const baseUrl = 'https://www.sunyuanling.com/image/'
+  const baseUrl = 'https://www.sunyuanling.com/server/static/image/'
   if (type === 'novel') {
     return `${baseUrl}novel/thumbnail/${work_info.work_cover}`
   } else if (type === 'ill') {

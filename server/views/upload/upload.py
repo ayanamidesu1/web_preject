@@ -50,7 +50,7 @@ class UploadFile(View):
             work_info = json.loads(work_info_json)
             work_type = work_info.get('work_type')
             #token = work_info.get('token')
-            userid = getattr(request,'userid',None)
+            userid = request.user.id
             tags = work_info.get('work_tags')
 
             tag_list = ','.join(tag.strip() for tag in tags)

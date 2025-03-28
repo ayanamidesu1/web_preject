@@ -3,7 +3,7 @@
     <div class="content">
       <div class="author_info" >
         <div class="author_avatar" @click="jump_to_other_user_center(author_info.userid,author_info)">
-          <img :src="'https://www.sunyuanling.com/image/avatar_thumbnail/' + author_info.user_avatar">
+          <img :src="'https://www.sunyuanling.com/server/static/image/avatar_thumbnail/' + author_info.user_avatar">
         </div>
         <div class="author_name">
           <span>{{ author_info.username }}</span>
@@ -27,6 +27,8 @@
 import { ref, defineProps, onMounted ,defineEmits,watch} from 'vue';
 import * as cookies from "@/assets/js/cookies";
 import scroll_box from './scroll_box_bottom.vue';
+import { useRouter } from 'vue-router';
+const router = useRouter();
 
 import { useStore } from 'vuex';
 const store = useStore();
@@ -52,7 +54,7 @@ async function fetchData(url, data) {
   try {
     const response = await fetch(url, {
       method: 'post',
-      headers: { 'Content-Type': 'application/json' ,'Authorization': 'Bearer ' + localStorage.getItem('token'),},
+      headers: { 'Content-Type': 'application/json' ,'Authorization': 'token ' + localStorage.getItem('token'),},
       body: JSON.stringify(data),
     });
     if (response.ok) {
@@ -70,7 +72,7 @@ async function fetchData(url, data) {
 async function fetchAuthorData() {
   const [authorInfo, followInfo, authorWork] = await Promise.all([
     fetchData('https://www.sunyuanling.com/api/GetUserInfo/GetAllUserInfo/', { userid: props.author_id }),
-    fetchData('https://www.sunyuanling.com/api/GetUserInfo/GetUserFollow/', { token: token }),
+    fetchData('https://www.sunyuanling.com/api/GetUserInfo/GetUserFollow/', { token: localStorage.getItem('token') }),
     fetchData('https://www.sunyuanling.com/api/GetUserInfo/GetUserWorkList/', { userid: props.author_id }),
   ]);
 
@@ -89,7 +91,7 @@ async function fetchAuthorData() {
 
   if (authorWork.status === 'success') {
     author_other_work_list_path.value = authorWork.data.ill.map(item => ({
-      item_path: 'https://www.sunyuanling.com/image/thumbnail/' + item.content_file_list.split(/[,，]/)[0],
+      item_path: 'https://www.sunyuanling.com/server/static/image/thumbnail/' + item.content_file_list.split(/[,，]/)[0],
       Illustration_id: item.Illustration_id
     }));
   } else {
@@ -104,7 +106,7 @@ function is_follow() {
 
 async function follow_author() {
   const data = await fetchData('https://www.sunyuanling.com/api/GetUserInfo/UserAddFollow/', {
-    token: token,
+    token: localStorage.getItem('token'),
     target_id: author_info.value.userid,
     target_username: author_info.value.username
   });
@@ -121,8 +123,7 @@ function get_choose_item(item) {
 }
 
 function jump_to_other_user_center(userid, item) {
-  store.commit('SET_OTHER_USERID', userid);
-  store.commit('SET_SINGLE_PAGE_STATUS', { key: 'other_user_center_page', value: true });
+  router.push(`/other_user_center?id=${userid}`);
 }
 
 onMounted(() => {

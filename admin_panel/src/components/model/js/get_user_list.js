@@ -4,7 +4,7 @@ async function get_user_list(offset=0,limit=10){
             method:'post',
             headers:{
                 'Content-Type':'application/json',
-                'Authorization':`Bearer ${localStorage.getItem('token')}`
+                'Authorization':`token ${localStorage.getItem('token')}`
             },
             credentials:'include',
             body:JSON.stringify({

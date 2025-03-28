@@ -1,0 +1,19 @@
+{
+    "name": "sunyuanling/web-project",
+    "description": "My ill web project configuration",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Sunyuanling\\WebProject\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "孙源玲",
+            "email": "3442153944@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

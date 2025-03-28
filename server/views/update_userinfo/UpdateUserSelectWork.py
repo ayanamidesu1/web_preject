@@ -22,7 +22,7 @@ class UpdateUserSelectWork(View):
         try:
             data = json.loads(request.body.decode('utf-8'))
             select_work = data.get('select_work')
-            userid = getattr(request, 'userid', None)  # 只从中间件获取userid
+            userid = request.user.id  # 只从中间件获取userid
 
             if not userid:
                 self.logger.warning(self.request_path(request) + ' 用户未登录：请求数据为：' + str(request.body))

@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/no-unused-components -->
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-    <div class="title" v-if="user_info">
+    <div class="title">
         <div class="show_more">
             <div class="show_more_icon" @click="switch_show_sidebar">
                 <img src="https://www.sunyuanling.com/assets/more.svg" class="icon">
@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="index_jump_img ml">
-            <a href="https://localhost:3002/"><img :src="index_jump_img_src"></a>
+            <a href="/"><img :src="api.s_base_url+'image/'+'主页.png'"></a>
         </div>
         <div class="input_box" ref="input_box">
             <input v-model="search_data" placeholder="搜索作品" @focus="input_box_focus">
@@ -33,15 +33,15 @@
 
         </div>
         <div class="message ml mr">
-            <div class="message_icon" @click="chat_page_show_click()">
+            <router-link to="/chat">
                 <img class="icon" src="https://www.sunyuanling.com/assets/message.svg">
-            </div>
+            </router-link>
         </div>
         <div class="notice ml mr" @click="show_notice()" @blur="notice_box_blur" ref="notice_box">
             <div class="notice_icon">
                 <img class="icon" src="https://www.sunyuanling.com/assets/notice.svg">
             </div>
-            <div class="notice_box" v-if="notice_info&&show_notice_box" @click="get_notice_info()">
+            <div class="notice_box" v-if="notice_info&&show_notice_box">
                 <div class="notice_item" v-for="(item,index) in notice_info" :key="index">
                     <div class="notice_title">{{item.title}}</div>
                     <div class="notice_content">{{item.content}}</div>
@@ -51,13 +51,12 @@
         </div>
         <div class="useravatar ml mr" @click="useravatar_show_btn">
             <div class="useravatar_img">
-                <img :src="avatar_img_src">
+                <img :src="api.s_base_url+'image/avatar_thumbnail/'+(user.user_avatar||'default_avatar.png')">
             </div>
             <div class="useravatar_icon ml">
                <img class="icon" src="https://www.sunyuanling.com/assets/drop_down.svg">
             </div>
         </div>
-        <chat_page class="chat_page" v-if="chat_page_show" @close_page="close_chat_page"></chat_page>
         <header_box v-show="header_box_show"></header_box><!--这是头像，不是标题栏-->
         <search_page_index :search_item="search_data" @close_msg="close_search_page"
         ref="search_page_click"
@@ -67,61 +66,54 @@
 </template>
 
 <script setup>
-import {useStore} from 'vuex'
+//import {useStore} from 'vuex'
+import { useStore } from '@assets/model/store/index'
+import { BaseApi } from '@/base_api'
 import {get_notice_info} from '@/assets/js/get_notice'
-import {get_userinfo} from '@/assets/js/get_userinfo'
 import { onMounted, ref,watch,computed } from 'vue'
 import sidebar from './sidebar/sidebar.vue'
 import submission_work_box from './submission_work_box/submission_work_box.vue'
 import header_box from './header_box/header_box.vue'
-import chat_page from './chat_page/chat_page.vue'
 import * as cookies from '../../../../../model/cookies.js'
 import search_page_index from './search_page/search_page_index.vue'
 const store = useStore()
+const api=new BaseApi()
+const user=computed(()=>{
+    return store.$state.user
+})
 
-let index_jump_img_src = ref('https://www.sunyuanling.com/image/主页.png')
 let submission_text = ref('投稿作品')
-let avatar_img_src = ref('https://www.sunyuanling.com/image/avatar_thumbnail/87328997_p0.jpg')
 let join_vip_text = ref('加入ILLWeb会员')
 let show_sidebar = ref(false)
 let action_left = ref('left:0px;')
 let submission_work_box_show = ref(false)
 let header_box_show=ref(false)
-let chat_page_show=computed(()=>store.getters.chat_page)
+let chat_page_show=ref(null)
 let user_info=ref([])
 let search_data=ref()//搜索数据
 user_info.value=JSON.parse(cookies.get_cookie('userinfo'))
-let search_show_status=computed(()=>store.getters.search_page);
+let search_show_status=ref(null)
 let input_box=ref(null)
 let search_page_click=ref(null)
 let notice_box=ref(null)
 let notice_info=ref()
-let store_token=computed(()=>store.getters.token)
-let token=store_token.value
+
 onMounted(async()=>{
     await get_notice_info()
-    notice_info.value=await get_notice_info(token,'search')
-    let temp=''
-    temp=await get_userinfo(cookies.get_cookie('token'))
-    console.log(temp)
-    avatar_img_src.value='https://www.sunyuanling.com/image/avatar_thumbnail/'+temp[0].user_avatar
+    notice_info.value=await get_notice_info(null,'search')
 })
-watch(()=>store.getters.token,async ()=>{
-    await get_notice_info()
-    notice_info.value=await get_notice_info(token,'search')
-    let temp=''
-    temp=await get_userinfo(cookies.get_cookie('token'))
-    console.log(temp)
-    avatar_img_src.value='https://www.sunyuanling.com/image/avatar_thumbnail/'+temp[0].user_avatar
-})
+// watch(()=>store.getters.token,async ()=>{
+//     await get_notice_info()
+//     notice_info.value=await get_notice_info(token,'search')
+//     let temp=''
+//     temp=await get_userinfo(cookies.get_cookie('token'))
+//     console.log(temp)
+//     avatar_img_src.value='https://www.sunyuanling.com/server/static/image/avatar_thumbnail/'+temp[0].user_avatar
+// })
 //公告信息框的显示和隐藏
 let show_notice_box=ref(false)
-function show_notice(){
-    if(token!=undefined&&token!=''){
-        
+function show_notice(){ 
         show_notice_box.value=!show_notice_box.value;
-    }
-   
 }
 function notice_box_blur()
 {
@@ -161,15 +153,15 @@ async function search_data_updata(){
 }
 //获取焦点时显示搜索页面，失去焦点时隐藏搜索页面
 function input_box_focus(){
-   // search_show_status.value=true;
-    store.commit('SET_SINGLE_PAGE_STATUS',{key:'search_page',value:true})
+    search_show_status.value=true;
+    //store.commit('SET_SINGLE_PAGE_STATUS',{key:'search_page',value:true})
 }
 
 //接收搜索页面的关闭消息
 function close_search_page(item){
     console.log(item);
-    //search_show_status.value=false;
-    store.commit('SET_SINGLE_PAGE_STATUS',{key:'search_page',value:false})
+    search_show_status.value=false;
+    //store.commit('SET_SINGLE_PAGE_STATUS',{key:'search_page',value:false})
     search_data.value=null;
 }
 

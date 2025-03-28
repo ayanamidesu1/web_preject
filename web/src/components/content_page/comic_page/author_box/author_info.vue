@@ -3,7 +3,7 @@
     <div class="content">
       <div class="author_info" @click="jump_to_other_user_center(author_info.userid, author_info)">
         <div class="author_avatar">
-          <img :src="'https://www.sunyuanling.com/image/avatar_thumbnail/' + author_info.user_avatar">
+          <img :src="'https://www.sunyuanling.com/server/static/image/avatar_thumbnail/' + author_info.user_avatar">
         </div>
         <div class="author_name">
           <span>{{ author_info.username }}</span>
@@ -51,7 +51,7 @@ async function fetchData(url, data) {
   try {
     const response = await fetch(url, {
       method: 'post',
-      headers: { 'Content-Type': 'application/json','Authorization': 'Bearer ' + localStorage.getItem('token') },
+      headers: { 'Content-Type': 'application/json','Authorization': 'token ' + localStorage.getItem('token') },
       body: JSON.stringify(data),
     });
     if (response.ok) {
@@ -69,7 +69,7 @@ async function fetchData(url, data) {
 async function fetchAuthorData() {
   const [authorInfo, followInfo, authorWork] = await Promise.all([
     fetchData('https://www.sunyuanling.com/api/GetUserInfo/GetAllUserInfo/', { userid: props.author_id }),
-    fetchData('https://www.sunyuanling.com/api/GetUserInfo/GetUserFollow/', { token: token }),
+    fetchData('https://www.sunyuanling.com/api/GetUserInfo/GetUserFollow/', { token: localStorage.getItem('token') }),
     fetchData('https://www.sunyuanling.com/api/GetUserInfo/GetUserWorkList/', { userid: props.author_id }),
   ]);
 
@@ -89,7 +89,7 @@ async function fetchAuthorData() {
   if (authorWork.status === 'success') {
     console.log(authorWork.data.comic)
     author_other_work_list_path.value = authorWork.data.comic.map(item => ({
-      item_path: 'https://www.sunyuanling.com/image/comic/thumbnail/' + item.content_file_list.split(/[,，]/)[0],
+      item_path: 'https://www.sunyuanling.com/server/static/image/comic/thumbnail/' + item.content_file_list.split(/[,，]/)[0],
       work_id: item.id
     }));
     console.log(author_other_work_list_path.value)
@@ -105,7 +105,7 @@ function is_follow() {
 
 async function follow_author() {
   const data = await fetchData('https://www.sunyuanling.com/api/GetUserInfo/UserAddFollow/', {
-    token: token,
+    token: localStorage.getItem('token'),
     target_id: author_info.value.userid,
     target_username: author_info.value.username
   });

@@ -71,7 +71,7 @@
     </div>
     <div class="loading" v-else-if="!work_content">
         <div class="loading_content">加载中...</div>
-        <img src="https://www.sunyuanling.com/image/loading.gif">
+        <img src="https://www.sunyuanling.com/server/static/image/loading.gif">
     </div>
 </template>
 

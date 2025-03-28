@@ -22,7 +22,7 @@ class SearchNovelWork(View):
 
     def post(self, request, *args, **kwargs):
         try:
-            userid = getattr(request, 'userid', None)
+            userid = request.user.id
             if not userid:
                 self.logger.warning(f'{self.request_path(request)}；用户未登录')
                 return JsonResponse({'status': 'error', 'message': '用户未登录'}, status=401)

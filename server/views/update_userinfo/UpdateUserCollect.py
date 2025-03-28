@@ -21,7 +21,7 @@ class UpdateUserCollect(View):
     def post(self, request, *args, **kwargs):
         try:
             data = json.loads(request.body.decode('utf-8'))
-            userid = getattr(request, 'userid', None)  # 只从中间件获取userid
+            userid = request.user.id  # 只从中间件获取userid
             collect_id = data.get('collect_id')
             work_type = data.get('work_type')
             operate = data.get('operate')

@@ -24,7 +24,7 @@ class AdminLogin(View):
     def post(self, request, *args, **kwargs):
         try:
             data = json.loads(request.body.decode('utf-8'))
-            userid = str(getattr(request, 'userid', None))
+            userid = str(request.user.id)
             token = str(getattr(request, 'token', None))
             is_authenticated = getattr(request, 'is_authenticated', False)
             userinfo = str(getattr(request, 'userinfo', None))

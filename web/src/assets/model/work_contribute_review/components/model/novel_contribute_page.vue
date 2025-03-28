@@ -14,7 +14,7 @@
             </div>
             <div class="item" v-for="(item, index) in work_list" :key="index">
                 <div class="work_cover">
-                    <img :src="'https://www.sunyuanling.com/image/novel/thumbnail/' + item.work_cover" alt="作品封面">
+                    <img :src="'https://www.sunyuanling.com/server/static/image/novel/thumbnail/' + item.work_cover" alt="作品封面">
                     <div class="show_work_chapter" @click="show_chapter_page(item.work_id)">
                         <span>查看作品的章节</span>
                     </div>

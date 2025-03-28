@@ -46,7 +46,7 @@ class JWTGenerateMiddleware(MiddlewareMixin):
 
                 # 生成 JWT payload
                 payload = {
-                    'user_id': user_data.get('userid'),
+                    'userid': user_data.get('userid'),
                     'username': user_data.get('username'),
                     'email': user_data.get('email'),
                     'phone': user_data.get('phone'),

@@ -12,10 +12,10 @@ class VerifyToken(MiddlewareMixin):
         print(request.path)
         # 只处理 /verify/ 请求，其他请求不做处理
         if request.method != 'POST' or request.path != '/verify/':
-            print('不处理')
+            #print('不处理')
             return None  # 非 POST 请求或路径不匹配时不处理
         if request.path == '/verify/':
-            print('验证Token')
+            #print('验证Token')
             try:
                 # 从请求头中提取 Authorization 字段
                 auth_header = request.META.get('HTTP_AUTHORIZATION')

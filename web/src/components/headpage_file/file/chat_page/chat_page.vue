@@ -34,7 +34,7 @@
             <div class="list_content_item" v-for="(item,index) in group_info_list" :key="index"
             @click="select_friend_or_group('group', item)">
               <div class="user_avatar">
-                <img class="avatar" v-lazy="'https://www.sunyuanling.com/image/'+item.group_avatar">
+                <img class="avatar" v-lazy="'https://www.sunyuanling.com/server/static/image/'+item.group_avatar">
               </div>
               <span>{{item.group_name}}</span>
             </div>
@@ -53,7 +53,7 @@
         <div class="chat_content_head" v-else-if="chat_content_info.group_name!=''&&chat_content_info.group_name!=null&&chat_content_info.group_name!=undefined">
           <div class="friend_avatar"
             style="margin-left: 10px;margin-right: 10px;width:60px;height:60px;border-radius: 50%;">
-            <img class="avatar" :src="'https://www.sunyuanling.com/image/'+chat_content_info.group_avatar"
+            <img class="avatar" :src="'https://www.sunyuanling.com/server/static/image/'+chat_content_info.group_avatar"
               style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;">
           </div>
           <span>{{ chat_content_info.group_name }}</span>
@@ -69,7 +69,7 @@
                 <span style="word-break: break-all;">{{ item.content }}</span>
               </div>
               <div class="receive_avatar" style="margin-left: 10px;display: flex;align-items: center;">
-                <img class="avatar" :src="'https://www.sunyuanling.com/image/'+userinfo.user_avatar"
+                <img class="avatar" :src="'https://www.sunyuanling.com/server/static/image/'+userinfo.user_avatar"
                   style="width: 50px; height: 50px; object-fit: cover; border-radius: 50%;">
               </div>
             </div>
@@ -96,7 +96,7 @@
                 <span style="word-break: break-all;">{{ item.content }}</span>
               </div>
               <div class="receive_avatar" style="margin-left: 10px;display: flex;align-items: center;">
-                <img class="avatar" :src="'https://www.sunyuanling.com/image/'+userinfo.user_avatar"
+                <img class="avatar" :src="'https://www.sunyuanling.com/server/static/image/'+userinfo.user_avatar"
                   style="width: 50px; height: 50px; object-fit: cover; border-radius: 50%;">
               </div>
             </div>
@@ -191,7 +191,7 @@ async function get_user_friend_list(id) {
         method: 'post',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer ' + localStorage.getItem('token')
+          'Authorization': 'token ' + localStorage.getItem('token')
         },
         body: JSON.stringify({
           userid: userId
@@ -239,7 +239,7 @@ async function get_user_group_list(id) {
           method:'post',
           headers:{
             'Content-Type':'application/json',
-            'Authorization': 'Bearer ' + localStorage.getItem('token')
+            'Authorization': 'token ' + localStorage.getItem('token')
           },
           body:JSON.stringify({
             userid:userId
@@ -283,7 +283,7 @@ async function get_user_info_by_id(type, userid) {
         method: 'post',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer ' + localStorage.getItem('token')
+          'Authorization': 'token ' + localStorage.getItem('token')
         },
         body: JSON.stringify({
           userid: userid
@@ -292,8 +292,8 @@ async function get_user_info_by_id(type, userid) {
       if (res.ok) {
         const data = await res.json();
         if (data.status === 'success') {
-          chatpage_friend_avatar.value = 'https://www.sunyuanling.com/image/' + data.data[0].user_avatar;
-          return 'https://www.sunyuanling.com/image/' + data.data[0].user_avatar;
+          chatpage_friend_avatar.value = 'https://www.sunyuanling.com/server/static/image/' + data.data[0].user_avatar;
+          return 'https://www.sunyuanling.com/server/static/image/' + data.data[0].user_avatar;
         } else {
           console.log(data.message);
         }
@@ -377,7 +377,7 @@ async function get_group_info_by_id(group_id)
       method:'post',
       headers:{
         'Content-Type':'application/json',
-        'Authorization': 'Bearer ' + localStorage.getItem('token')
+        'Authorization': 'token ' + localStorage.getItem('token')
       },
       body:JSON.stringify({
         group_id:group_id,
@@ -466,7 +466,7 @@ async function get_history_msg(type, userid, to_user_id = null, group_id = null)
         method: 'post',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer ' + localStorage.getItem('token')
+          'Authorization': 'token ' + localStorage.getItem('token')
         },
         body: JSON.stringify({
           msg_type: 'friend',
@@ -495,7 +495,7 @@ async function get_history_msg(type, userid, to_user_id = null, group_id = null)
         method: 'post',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer ' + localStorage.getItem('token')
+          'Authorization': 'token ' + localStorage.getItem('token')
         },
         body: JSON.stringify({
           msg_type: 'group',

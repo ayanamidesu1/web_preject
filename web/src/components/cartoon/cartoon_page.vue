@@ -4,7 +4,7 @@
     <scroll_box :msg_list="comic_list" v-if="comic_list" @chose_item="open_comic_page"></scroll_box>
     <h4>推荐作品</h4>
     <div class="recommend_page" style="max-height: 900px; overflow:hidden;">
-      <recommendation_cartoon :token="token" :work_type="'comic'"></recommendation_cartoon>
+      <recommendation_cartoon ></recommendation_cartoon>
     </div>
       <h4>排行榜</h4>
       <ranking></ranking>
@@ -12,26 +12,17 @@
 
 </template>
 
-<script>
-// eslint-disable-next-line no-unused-vars
+<script setup>
+import { useStore } from '@assets/model/store/index';
+import scroll_box from './model/scroll_box.vue';
 import { ref, reactive, toRefs, watch, onMounted, onUnmounted,computed } from 'vue';
 import recommendation_cartoon from './recommendation_cartoon.vue';
 import ranking from './ranking.vue';
-export default {
-  name: 'cartoon_page',
-  components:{recommendation_cartoon,ranking,},
-}
-</script>
-<script setup>
-import * as cookies from '../../../../model/cookies.js'
-import { useStore } from 'vuex';
-import scroll_box from './model/scroll_box.vue';
 const store = useStore()
-let userinfo=ref(JSON.parse(cookies.get_cookie('userinfo')))
-console.log(userinfo.value)
+let userinfo=computed(()=>{
+  return store.$state.user
+})
 let comic_list=ref([])
-
-let token = computed(() => store.getters.token);
 //获取用户关注的漫画作品列表
 async function get_comic_list(){
   try{
@@ -39,7 +30,7 @@ async function get_comic_list(){
       method:'post',
       headers:{
         'Content-Type':'application/json',
-        'Authorization': 'Bearer ' + localStorage.getItem('token'),
+        'Authorization': 'token ' + localStorage.getItem('token'),
       },
       body:JSON.stringify({
         userid:userinfo.value.userid,
@@ -70,7 +61,7 @@ async function get_author_avatar(userid) {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + localStorage.getItem('token'),
+        'Authorization': 'token ' + localStorage.getItem('token'),
       },
       body: JSON.stringify({
         userid: userid,

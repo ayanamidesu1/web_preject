@@ -25,7 +25,7 @@ class Watch(View):
         try:
             data = json.loads(request.body.decode('utf-8'))
             print(data)
-            userid=getattr(request,'userid',None)
+            userid=request.user.id
             token = data.get('token')
             if not userid:
                 with connection.cursor() as cursor:

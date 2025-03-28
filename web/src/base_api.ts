@@ -1,15 +1,17 @@
 export class BaseApi {
     private base_url: string
     private token: string
+    public s_base_url: string
     constructor(base_url: string = 'https://www.sunyuanling.com/api/') {
         this.base_url = base_url;
         this.token = this.get_token();
-      }
-    private get_token(): string{
-        return  localStorage.getItem('token') || ''
+        this.s_base_url = 'https://www.sunyuanling.com/server/static/'
+    }
+    private get_token(): string {
+        return localStorage.getItem('token') || ''
     }
 
-    public async post(api = '', data: Object): Promise<{result:Object, status:number}>{
+    public async post(api = '', data: Object): Promise<{ result: Object, status: number }> {
         try {
             const token = this.get_token()
             const res = await fetch(this.base_url + api, {
@@ -30,65 +32,106 @@ export class BaseApi {
 
     }
     //一些常用的api
-    public async get_user_info_by_id(id:string):Promise<{result:Object, status:number}>{
-        try{
-            return this.post('api/user/GetUserInfoByID/', {target_id:id})
+    //获取用户对于目标用户的关注状态
+    public async get_follow_status(user_id: string): Promise<Boolean> {
+        let res = await this.post('GetUserInfo/GetUserFollowStatus', {
+            target_id: user_id
+        })
+        console.log(res)
+        if (res.status == 200) {
+            if (res.result.status == 0) {
+                return false
+            }
+            if (res.result.status == 1) {
+                return true
+            }
         }
-        catch(err){
-            console.log(err)
-            return {result:{}, status:500}
-        }
+        return false
     }
-    public async get_notice_by_id(send_user_id:string,limit:number=10,offset:number=0):Promise<{result:Object, status:number}>{
-        return this.post('api/user/GetNoticeByID/',{
-            send_user_id:send_user_id,
-            limit:limit,
-            offset:offset
+    public async get_self_info(): Promise<{ result: Object, status: number }> {
+        return this.post('GetUserInfo/GetSelfInfo', {
+
         })
     }
+    //新增关注
+    public async add_follow(user_id: string): Promise<{ result: Object, status: number }> {
+        let res = await this.post('GetUserInfo/UserAddFollow/', {
+            target_id: user_id
+        })
+        return res.result
+    }
+
+    public async verify_login(): Promise<{ result: Object, status: number }> {
+        return this.post('/verify/', {})
+    }
     //通用时间格式化函数
-    public formatTimeAgo(dateTimeStr: string): string {
-        // 统一处理两种时间格式
-        const standardized = dateTimeStr.replace('T', ' ');
-        const targetTime = new Date(standardized);
-        const now = new Date(); 
-        
-        // 时间差（毫秒）
-        const diff = now.getTime() - targetTime.getTime();
-        const seconds = Math.floor(diff / 1000);
-        
-        // 时间单位计算
-        const intervals = {
-          年: 31536000,
-          月: 2592000, // 按30天算
-          周: 604800,
-          天: 86400,
-          小时: 3600,
-          分钟: 60,
-          秒: 1
-        };
-      
-        // 超过1个月（按30天算）显示具体日期
-        if (diff > 30 * 24 * 3600 * 1000) {
-          return `${targetTime.getFullYear()}年${
-            targetTime.getMonth() + 1}月${targetTime.getDate()}日`;
-        }
-      
-        // 计算相对时间
-        let counter;
-        for (const [unit, secondsInUnit] of Object.entries(intervals)) {
-          counter = Math.floor(seconds / secondsInUnit);
-          if (counter > 0) {
-            if (unit === '月') { // 单独处理月
-              return counter + unit + '前';
+    public formatTimeAgo(dateTimeInput: string | Date | number): string {
+        try {
+            // 参数类型转换 --------------------------------------
+            let dateTimeStr: string;
+            
+            if (typeof dateTimeInput === 'string') {
+                dateTimeStr = dateTimeInput;
+            } else if (dateTimeInput instanceof Date) {
+                dateTimeStr = dateTimeInput.toISOString();
+            } else if (typeof dateTimeInput === 'number') {
+                dateTimeStr = new Date(dateTimeInput).toISOString();
+            } else {
+                return '刚刚';
             }
-            return counter + unit + (counter > 1 ? '' : '') + '前';
-          }
+    
+            // 标准化时间格式 ------------------------------------
+            const standardized = dateTimeStr
+                .replace('T', ' ')
+                .replace(/\.\d+Z?$/, (match) => {
+                    const millis = match.slice(1, 4).padEnd(3, '0');
+                    return `.${millis}`;
+                });
+    
+            // 日期有效性校验 ------------------------------------
+            const targetTime = new Date(standardized);
+            if (isNaN(targetTime.getTime())) {
+                return '刚刚';
+            }
+    
+            // 时间差计算 ----------------------------------------
+            const now = new Date();
+            const diff = now.getTime() - targetTime.getTime();
+            const seconds = Math.floor(diff / 1000);
+    
+            // 超过30天显示具体日期 -------------------------------
+            if (diff > 30 * 24 * 3600 * 1000) {
+                return `${targetTime.getFullYear()}年${
+                    targetTime.getMonth() + 1}月${
+                    targetTime.getDate()}日`;
+            }
+    
+            // 时间单位计算 --------------------------------------
+            const intervals = {
+                年: 31536000,
+                月: 2592000, // 30天
+                周: 604800,
+                天: 86400,
+                小时: 3600,
+                分钟: 60,
+                秒: 1
+            };
+    
+            for (const [unit, secondsInUnit] of Object.entries(intervals)) {
+                const counter = Math.floor(seconds / secondsInUnit);
+                if (counter > 0) {
+                    return `${counter}${unit}前`;
+                }
+            }
+    
+            return '刚刚';
+        } catch (err) {
+            console.error('时间格式化失败:', err);
+            return '刚刚';
         }
-        
-        return '刚刚';
-      }
-      public change_img(node: HTMLImageElement, file: File): Promise<string> {
+    }
+    
+    public change_img(node: HTMLImageElement, file: File): Promise<string> {
         return new Promise((resolve, reject) => {
             // 增强类型校验
             if (!(node instanceof HTMLImageElement)) {
