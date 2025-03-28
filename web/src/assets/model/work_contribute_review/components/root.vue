@@ -1,10 +1,8 @@
-<!-- eslint-disable vue/multi-word-component-names -->
 <script setup>
 import { ref,defineProps } from 'vue'
 import ill_contribute_page from './model/ill_contribute_page.vue';
 import comic_contribute_page from './model/comic_contribute_page.vue';
 import novel_contribute_page from './model/novel_contribute_page.vue';
-import go_back from '../../go_back.vue';
 
 const props=defineProps({
   userid:{

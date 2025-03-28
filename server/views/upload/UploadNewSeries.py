@@ -9,15 +9,19 @@ import json
 import os
 import magic
 from ..log.log import Logger
+from django.conf import settings
 
 class UploadNewSeries(View):
     logger = Logger()
 
     ALLOWED_EXTENSIONS = {'.jpg', '.jpeg', '.png', '.tiff'}
     MAX_FILE_SIZE = 50 * 1024 * 1024  # 50 MB
-    cover_temp_path = 'H:/web_project/image/novel/temp_cover/'
-    cover_target_path = 'H:/web_project/image/novel/'
-    cover_thumbnail_path = 'H:/web_project/image/novel/thumbnail/'
+    #cover_temp_path = 'H:/web_project/image/novel/temp_cover/'
+    cover_temp_path=os.path.join(settings.BASE_DIR, 'static', 'image', 'novel','temp_cover','')
+    #cover_target_path = 'H:/web_project/image/novel/'
+    cover_target_path=os.path.join(settings.BASE_DIR, 'static', 'image', 'novel','')
+    #cover_thumbnail_path = 'H:/web_project/image/novel/thumbnail/'
+    cover_thumbnail_path=os.path.join(settings.BASE_DIR, 'static', 'image', 'novel','thumbnail','')
     now = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
     sql = ('INSERT INTO novel_work(work_name, belong_to_username, belong_to_userid, work_series, work_tags, '
            'age_classification, work_cover, author_say, work_create_time, brief_introduction, work_status, '
@@ -123,7 +127,6 @@ class UploadNewSeries(View):
                     return JsonResponse({'status': 'success', 'message': '上传成功'})
 
             return JsonResponse({'status': 'success', 'message': '上传成功'})
-
         except json.JSONDecodeError as e:
             self.logger.error(self.request_path(request) + '请求参数错误' + '请求参数' + work_info+str(e))
             print(e)

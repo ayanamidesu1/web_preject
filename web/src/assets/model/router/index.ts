@@ -62,6 +62,26 @@ const routes=[
                     path:'/chat',
                     name:'chat',
                     component:()=>import('@/components/chat_page/chat_box.vue')//聊天
+                },
+                {
+                    path:'/upload_ill',
+                    name:'upload_ill',
+                    component:()=>import('@/components/headpage_file/file/contribute/ill/ill_page.vue')//上传插画
+                },
+                {
+                    path:'/upload_comic',
+                    name:'upload_comic',
+                    component:()=>import('@/components/headpage_file/file/contribute/comic/comic_page.vue')//上传漫画
+                },
+                {
+                    path:'/upload_novel',
+                    name:'upload_novel',
+                    component:()=>import('@/components/headpage_file/file/contribute/novel/novel_page.vue')//上传小说
+                },
+                {
+                    path:'/upload_status',
+                    name:'upload_status',
+                    component:()=>import('@/assets/model/work_contribute_review/components/root.vue')//上传状态
                 }
                ] 
             }

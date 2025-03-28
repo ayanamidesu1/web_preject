@@ -1,8 +1,14 @@
+from django.conf import settings
+import os
+
 settings = {
     'paths': {
-        'ill': ('H:/web_project/image/', 'H:/web_project/image/thumbnail/'),
-        'comic': ('H:/web_project/image/comic/', 'H:/web_project/image/comic/thumbnail/'),
-        'novel': ('H:/web_project/image/novel/', 'H:/web_project/image/novel/thumbnail/')
+        'ill': (os.path.join(settings.BASE_DIR,'static','image',''),
+                os.path.join(settings.BASE_DIR,'static','image','thumbnail','')),
+        'comic': (os.path.join(settings.BASE_DIR,'static','image','comic',''),
+                  os.path.join(settings.BASE_DIR,'static','image','comic','thumbnail','')),
+        'novel': (os.path.join(settings.BASE_DIR,'static','image','novel',''),
+                  os.path.join(settings.BASE_DIR,'static','image','novel','thumbnail',''))
     },
     'queries': {
         'ill': ('INSERT INTO illustration_work (name, content_file_list, belong_to_user, belong_to_user_id, '

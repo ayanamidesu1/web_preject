@@ -44,16 +44,22 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue';
+import { ref, watch,computed } from 'vue';
 import ill_page_info from './ill_work_info.vue';
 import * as cookies from '@/assets/js/cookies'
+import { BaseApi } from '@/base_api';
+import { useStore } from '@assets/model/store';
+
+const store = useStore()
+const api=new BaseApi()
 
 let temp_file_list = ref([]);
 let file_size = ref(0);
 let file_count = ref(0);
 let work_info = ref({});
-let userinfo = ref(JSON.parse(cookies.get_cookie('userinfo')))
-console.log(userinfo.value)
+let userinfo=computed(()=>{
+  return store.$state.user
+})
 
 //接收子组件信息
 function get_sub_work_info(info) {

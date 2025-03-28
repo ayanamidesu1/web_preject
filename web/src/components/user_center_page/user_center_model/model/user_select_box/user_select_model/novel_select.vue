@@ -48,6 +48,7 @@ function chose_item(item) {
   store.commit('SET_SINGLE_PAGE_STATUS', { key: 'content_index_page', value: true })
   store.commit('SET_WORK_ID', item.work_id)
   store.commit('SET_WORK_TYPE', item.work_type)
+  window.location.href=`/novel_content?id=${item.work_id}`
 }
 
 const work_tags = ref([]);

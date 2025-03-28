@@ -85,11 +85,14 @@ import switch_btn from '../../../../models/switch_btn.vue';
 import scroll_box from '../../../../models/scroll_box.vue';
 import preview_cover from './preview_cover.vue'
 import is_original from './is_original.vue';
-import { ref, watch, defineEmits } from 'vue';
+import { ref, watch, defineEmits,computed } from 'vue';
 import * as cookies from '@/assets/js/cookies'
+import { useStore } from '@assets/model/store';
+const store = useStore();
 
-let token = cookies.get_cookie('token');
-let user_info = JSON.parse(cookies.get_cookie('userinfo'));
+let user_info = computed(()=>{
+    return store.$state.user;
+})
 const emit = defineEmits(['close_create_new_series', 'new_series_info']);
 const new_series_info = ref({});
 const template_cover = ref(['template_1.jpg', 'template_2.jpg', 'template_3.jpg', 'template_4.jpg', 'template_5.jpg',

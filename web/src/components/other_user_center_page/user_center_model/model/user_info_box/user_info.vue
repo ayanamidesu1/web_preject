@@ -28,6 +28,9 @@
                 <div class="follow_btn" @click="follow()" :class="follow_status ? 'is_follow' : 'not_follow'">
                     <span>{{ (follow_status == true ? '已关注' : '关注') }}</span>
                 </div>
+                <div class="chat_btn" @click="chat()">
+                    <span>发起私聊</span>
+                </div>
             </div>
         </div>
         <more_info_box :user_info="user_info" v-if="more_info_box_show" @close_page="more_info_box_show = false">
@@ -38,6 +41,12 @@
 <script setup>
 import { ref, defineProps, onMounted } from 'vue';
 import more_info_box from './more_info_box.vue';
+import {useRouter} from 'vue-router'
+import { BaseApi } from '@/base_api';
+
+const router = useRouter();
+const api = new BaseApi();
+
 const props = defineProps({
     user_info: {
         type: Object,
@@ -120,6 +129,26 @@ async function follow() {
         console.log(e);
     }
 }
+
+//发起私聊
+async function chat(){
+    let target_user_id=router.currentRoute.value.query.id;
+    try{
+        let res=await api.post('GetUserInfo/AddChatList',{
+            target_user_id:target_user_id
+        })
+        if(res.status==200){
+            router.push('/chat')
+        }
+        else{
+            console.log(res)
+        }
+    }
+    catch(e){
+        console.log(e);
+    }
+}
+
 onMounted(async () => {
     await get_follow_status();
 })
@@ -216,16 +245,17 @@ onMounted(async () => {
 }
 
 .follow_box {
-    width: 100px;
+    width: 200px;
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     align-self: center;
+    gap:10px;
 }
 
 .follow_btn {
-    width: 100%;
+    width: fit-content;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -245,7 +275,20 @@ onMounted(async () => {
     transition: all 0.2s;
     transform: translateY(-2px);
 }
-
+.chat_btn{
+    padding: 5px 10px;
+    background-color: rgb(0, 150, 250);
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+.chat_btn:hover{
+    opacity: 0.8;
+    transition: all 0.2s;
+    transform: translateY(-2px)
+}
 .is_follow {
     background-color: rgba(133, 133, 133, 1);
 }

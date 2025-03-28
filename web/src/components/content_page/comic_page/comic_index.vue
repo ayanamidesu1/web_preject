@@ -5,8 +5,8 @@
             <div class="item_box">
                 <div class="item" v-for="(item, index) in work_info.content_file_list.split(/[,，]/)" :key="index">
                     <div class="img_box" v-if="index < max_img_len">
-                        <img :src="'https://www.sunyuanling.com/server/static/image/content_thumbnail/' + item" class="item_img"
-                            @click="show_work_info(item)">
+                        <img :src="'https://www.sunyuanling.com/server/static/image/comic/content_thumbnail/' + item" class="item_img"
+                            @click="show_work_info('comic/'+item)">
                     </div>
                 </div>
                 <div class="show_more_btn"

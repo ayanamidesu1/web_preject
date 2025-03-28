@@ -1,6 +1,9 @@
+import os
+from django.conf import settings
+
 cover_dict = {
     'template_1': {
-        'path': 'H:/web_project/image/novel/cover_material/template_1.jpg',
+        'path': os.path.join(settings.BASE_DIR, 'static', 'image', 'novel','cover_material', 'template_1.jpg'),
         'text': '标题示例',
         'x': [150, 500],
         'y': [150, 750],
@@ -8,10 +11,10 @@ cover_dict = {
         'font-color': '#dfae76',
         'direction': 'vertical',
         'align': 'vertical-center',
-        'font': 'H:/web_project/font/AaDongQiChangYueYangLouJi-2.ttf'
+        'font': os.path.join(settings.BASE_DIR, 'static', 'font', 'AaDongQiChangYueYangLouJi-2.ttf')
     },
     'template_2': {
-        'path': 'H:/web_project/image/novel/cover_material/template_2.jpg',
+        'path': os.path.join(settings.BASE_DIR, 'static', 'image', 'novel', 'cover_material', 'template_2.jpg'),
         'text': '标题示例',
         'x': [50, 600],
         'y': [200, 400],
@@ -21,10 +24,10 @@ cover_dict = {
         'gradient-model': 'line-random',
         'direction': 'transverse',
         'align': 'transverse-center',
-        'font': 'H:/web_project/font/AaMaoZhuaShaoNv-2.ttf'
+        'font': os.path.join(settings.BASE_DIR, 'static', 'font', 'AaMaoZhuaShaoNv-2.ttf')
     },
     'template_3': {
-        'path': 'H:/web_project/image/novel/cover_material/template_3.jpg',
+        'path': os.path.join(settings.BASE_DIR, 'static', 'image', 'novel', 'cover_material', 'template_3.jpg'),
         'text': '标题示例',
         'x': [425, 580],
         'y': [300, 800],
@@ -34,10 +37,10 @@ cover_dict = {
         'gradient-model': 'line',
         'direction': 'vertical',
         'align': 'vertical-center',
-        'font': 'H:/web_project/font/AaZhuNiWoMingMeiXiangChunTian-2.ttf'
+        'font': os.path.join(settings.BASE_DIR, 'static', 'font', 'AaZhuNiWoMingMeiXiangChunTian-2.ttf')
     },
     'template_4': {
-        'path': 'H:/web_project/image/novel/cover_material/template_4.jpg',
+        'path': os.path.join(settings.BASE_DIR, 'static', 'image', 'novel', 'cover_material', 'template_4.jpg'),
         'text': '标题示例',
         'x': [100, 500],
         'y': [100, 750],
@@ -47,10 +50,10 @@ cover_dict = {
         'gradient-model': 'line',
         'direction': 'transverse',
         'align': 'transverse-center',
-        'font': 'H:/web_project/font/XiangJiaoXiaoXingYunLingGanTi-2.ttf'
+        'font': os.path.join(settings.BASE_DIR, 'static', 'font', 'XiangJiaoXiaoXingYunLingGanTi-2.ttf')
     },
     'template_5': {
-        'path': 'H:/web_project/image/novel/cover_material/template_5.jpg',
+        'path': os.path.join(settings.BASE_DIR, 'static', 'image', 'novel', 'cover_material', 'template_5.jpg'),
         'text': '标题示例',
         'x': [235, 400],
         'y': [125, 750],
@@ -60,10 +63,10 @@ cover_dict = {
         'gradient-model': 'line',
         'direction': 'vertical',
         'align': 'vertical-center',
-        'font': 'H:/web_project/font/yibiyihuachaoheiti-2.ttf'
+        'font': os.path.join(settings.BASE_DIR, 'static', 'font', 'yibiyihuachaoheiti-2.ttf')
     },
     'template_6': {
-        'path': 'H:/web_project/image/novel/cover_material/template_6.jpg',
+        'path': os.path.join(settings.BASE_DIR, 'static', 'image', 'novel', 'cover_material', 'template_6.jpg'),
         'text': '标题示例',
         'x': [125, 550],
         'y': [125, 675],
@@ -73,10 +76,10 @@ cover_dict = {
         'gradient-direction': ['left', 'right'],
         'gradient-model': 'line',
         'align': 'transverse-center',
-        'font': 'H:/web_project/font/ZiHunJianQiShouShu(ShangYongXuShouQuan)-2.ttf'
+        'font': os.path.join(settings.BASE_DIR, 'static', 'font', 'ZiHunJianQiShouShu(ShangYongXuShouQuan)-2.ttf')
     },
     'template_7': {
-        'path': 'H:/web_project/image/novel/cover_material/template_7.jpg',
+        'path': os.path.join(settings.BASE_DIR, 'static', 'image', 'novel', 'cover_material', 'template_7.jpg'),
         'text': '标题示例',
         'x': [50, 575],
         'y': [250, 625],
@@ -86,7 +89,7 @@ cover_dict = {
         'gradient-model': 'line-random',
         'direction': 'transverse',
         'align': 'transverse-center',
-        'font': 'H:/web_project/font/AaDongQiChangYueYangLouJi-2.ttf'
+        'font': os.path.join(settings.BASE_DIR, 'static', 'font', 'AaDongQiChangYueYangLouJi-2.ttf')
     },
-    'temp_path': 'H:/web_project/image/novel/temp_cover',
+    'temp_path': os.path.join(settings.BASE_DIR, 'static', 'image', 'novel', 'temp_cover', '')
 }

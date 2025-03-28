@@ -39,11 +39,13 @@ class GetPreviewCover(View):
             return JsonResponse({'status': 'success', 'message': '成功', 'cover_path': temp_cover_path}, status=200)
 
         except json.JSONDecodeError as e:
+            print(e)
             self.logger.error(
                 self.request_path(request) + ' 请求方式 POST ' + ' 请求数据 ' + str(request.body) + ' 错误信息 ' + str(
                     e))
             return JsonResponse({'status': 'error', 'message': '请求数据格式错误'}, status=400)
         except Exception as e:
+            print(e)
             self.logger.error(
                 self.request_path(request) + ' 请求方式 POST ' + ' 请求数据 ' + str(request.body) + ' 错误信息 ' + str(
                     e))

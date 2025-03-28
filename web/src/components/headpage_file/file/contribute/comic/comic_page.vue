@@ -44,16 +44,19 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue';
+import { ref, watch,computed } from 'vue';
 import comic_work_info from './comic_work_info.vue';
 import * as cookies from '@/assets/js/cookies'
+import { useStore } from '@assets/model/store';
+const store = useStore();
 
 let temp_file_list = ref([]);
 let file_size = ref(0);
 let file_count = ref(0);
 let work_info = ref({});
-let userinfo = ref(JSON.parse(cookies.get_cookie('userinfo')))
-console.log(userinfo.value)
+let userinfo = computed(()=>{
+  return store.$state.user
+})
 
 //接收子组件信息
 function get_sub_work_info(info) {
@@ -233,6 +236,7 @@ async function submit_work() {
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   gap: 10px;
   width: 100%;
+  align-items: center;
 }
 
 .work_item {
@@ -259,8 +263,15 @@ async function submit_work() {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  background-color: rgba(233, 233, 233,0.5);
+  position: relative;
+  border-radius: 10px;
 }
-
+.add_work_btn img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
 .add_work_btn:hover {
   opacity: 0.8;
   transition: 0.2s;

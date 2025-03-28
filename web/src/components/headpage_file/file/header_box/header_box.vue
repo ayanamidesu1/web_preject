@@ -81,8 +81,7 @@ function open_data_analysis(){
 
 //投稿作品页面
 function open_contribute(){
-    console.log("投稿作品页面跳转");
-    store.commit('SET_SINGLE_PAGE_STATUS',{'key':'work_contribute_page','value':true})
+    router.push('/upload_status')
 }
 
 //打开历史浏览页面
