@@ -24,7 +24,7 @@
         </div>
         <br>
         <div class="data_analysis mt hv" @click="open_data_analysis()"><span>数据分析</span></div>
-        <div class="appointment_management mt hv"><span>约稿管理</span></div>
+        <div class="appointment_management mt hv"><router-link to="/com_an_article"><span>约稿管理</span></router-link></div>
         <div class="mt hv" @click="open_contribute()"><span>投稿作品状态</span></div>
         <br>
         <div class="browseing_history mt hv" @click="open_history()"><span>浏览历史</span></div>

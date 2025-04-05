@@ -82,7 +82,13 @@ const routes=[
                     path:'/upload_status',
                     name:'upload_status',
                     component:()=>import('@/assets/model/work_contribute_review/components/root.vue')//上传状态
-                }
+                },
+                {
+                    path:'/com_an_article',
+                    name:'com_an_article',
+                    component:()=>import('@/components/commission_an_article/com_an_article.vue')//委托创作,约稿
+                },
+                
                ] 
             }
         ]

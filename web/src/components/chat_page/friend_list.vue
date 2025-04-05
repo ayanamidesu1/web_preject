@@ -1,5 +1,11 @@
 <template>
   <div class="friend_list">
+    <div class="friend_item">
+        <div class="friend_info">
+            <img src="https://www.sunyuanling.com/server/static/svg/管理员.svg" alt="头像">
+            <span style="display:flex;flex-direction:column;justify-content:center">系统通知</span>
+        </div>
+    </div>
     <div class="friend_item" v-for="(item,index) in chat_list" :key="index">
         <div class="friend_info" @click="select_friend(item)">
             <img :src="api.s_base_url+'/image/avatar_thumbnail/'+(item.avatar||'default.jpg')" alt="头像">
@@ -67,6 +73,7 @@ async function check_online() {
         target_user_ids: ids,
         type: 'heart_beats'
     }));
+    
 
     // 清空已经超时的用户的在线状态
     setTimeout(() => {
@@ -86,8 +93,8 @@ async function check_online() {
 nextTick(() => {
     chat_store.$state.ws.onmessage = (e) => {
         let data = JSON.parse(e.data);
-        if (data.type === 'group_heartbeat_ack') {
-            let online_user_id = data.from_user;
+        if (data.type == 'group_heartbeat_ack') {
+            let online_user_id = data.from;
 
             // 更新对应用户的心跳状态
             const user = chat_list.value.find((item) => item.target_user_id === online_user_id);

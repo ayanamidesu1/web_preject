@@ -31,18 +31,20 @@ urlpatterns = [
     # 作品互动的主接口
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
-    path('update/',include('views.update_userinfo.url')),
+    path('update/', include('views.update_userinfo.url')),
     #更新操作接口的入口
-    path('recommend/',include('views.recommend.url')),
+    path('recommend/', include('views.recommend.url')),
     #推荐系统
-    path('rank_list/',include('views.rankling_list.url')),
+    path('rank_list/', include('views.rankling_list.url')),
     #排行榜
-    path('data_analysis/',include('views.data_analysis.url')),
+    path('data_analysis/', include('views.data_analysis.url')),
     #数据分析
-    path('admin_control/',include('views.background_control.url')),
+    path('admin_control/', include('views.background_control.url')),
     #管理员后台管理
-    path('get_browse_history/',include('views.get_browse_history.url')),
+    path('get_browse_history/', include('views.get_browse_history.url')),
     #获取浏览记录
-    path('register/',register.as_view(),name='register'),
+    path('register/', register.as_view(), name='register'),
     # 注册接口
+    path('api/', include('api.url'), name='api'),
+    # api接口暂时负责约稿相关事宜
 ]

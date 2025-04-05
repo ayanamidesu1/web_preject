@@ -23,40 +23,62 @@ const chatStore = useChatStore();
 const store = useStore();
 const api=new BaseApi();
 //wss连接配置
-const ws_url=`wss://127.0.0.1:2234/chat?token=${localStorage.getItem('token')}`
+const ws_url = `wss://127.0.0.1:2234/chat?token=${localStorage.getItem('token')}`
+const MAX_RETRIES = 3 // 最大重试次数
+const RETRY_DELAY = 5000 // 重试间隔(ms)
+let retryCount = 0
 
-//创建ws连接并设置5s重试
-function createWebSocket() {
-    chatStore.$state.ws = new WebSocket(ws_url);
-    chatStore.$state.ws.onopen = function () {
-      console.log("WebSocket连接成功");
-    }
-    //连接失败重试
-    chatStore.$state.ws.onerror = function () {
-      console.log("WebSocket连接失败，尝试重连...");
-      setTimeout(createWebSocket, 5000);
-    };
-    //退出重试
-    chatStore.$state.ws.onclose = function () {
-      console.log("WebSocket连接关闭，尝试重连...");
-      setTimeout(createWebSocket, 5000);
-    }
-    //接收消息
-    chatStore.$state.ws.onmessage = function (event) {
-      let data = JSON.parse(event.data);
-      //console.log(data);
-    }
+// WebSocket管理
+function initWebSocket() {
+  // 清理现有连接
+  if (chatStore.$state.ws) {
+    chatStore.$state.ws.onclose = null
+    chatStore.$state.ws.close()
+  }
+
+  chatStore.$state.ws = new WebSocket(ws_url)
+  
+  chatStore.$state.ws.onopen = () => {
+    console.log("WebSocket连接成功")
+    retryCount = 0 // 重置重试计数器
+  }
+  
+  chatStore.$state.ws.onmessage = (event) => {
+    const data = JSON.parse(event.data)
+    // 处理业务消息...
+  }
+  
+  chatStore.$state.ws.onerror = () => {
+    console.error("WebSocket连接错误")
+    scheduleReconnect()
+  }
+  
+  chatStore.$state.ws.onclose = () => {
+    console.log("WebSocket连接关闭")
+    scheduleReconnect()
+  }
 }
 
+function scheduleReconnect() {
+  if (retryCount >= MAX_RETRIES) {
+    console.warn(`已达到最大重试次数(${MAX_RETRIES})，停止自动重连`)
+    return
+  }
+  
+  retryCount++
+  console.log(`将在${RETRY_DELAY/1000}秒后尝试第${retryCount}次重连...`)
+  setTimeout(initWebSocket, RETRY_DELAY)
+}
 
-let chat_show=computed(()=>{
-  return chatStore.now_chat_user==null?false:true;
+onMounted(() => {
+  initWebSocket()
 })
-onMounted(()=>{
-  createWebSocket();
-})
-onUnmounted(()=>{
-  chatStore.$state.ws.close();
+
+onUnmounted(() => {
+  if (chatStore.$state.ws) {
+    chatStore.$state.ws.onclose = null // 防止触发重连
+    chatStore.$state.ws.close()
+  }
 })
 
 </script>
