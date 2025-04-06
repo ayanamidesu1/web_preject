@@ -38,7 +38,6 @@
 // eslint-disable-next-line no-unused-vars
 import { ref, reactive, toRefs, watch, onMounted, onUnmounted, defineProps, defineEmits, defineExpose } from 'vue';
 // eslint-disable-next-line no-unused-vars
-import * as cookies from '../../../../../../model/cookies.js'
 import ill_page from './page/ill_page.vue'
 import comic_page from './page/comic_page.vue'
 import novel_page from './page/novel_page.vue'

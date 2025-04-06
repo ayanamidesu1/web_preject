@@ -130,7 +130,6 @@
 </template>
 <script>
 import { onMounted, ref } from 'vue'
-import * as cookies from '../../../../../../model/cookies.js'
 import {useStore} from 'vuex'
 export default {
     // eslint-disable-next-line vue/multi-word-component-names
@@ -140,7 +139,7 @@ export default {
 <script setup>
 let show_more_content = ref(false);
 let show_more = ref(true);
-let token = cookies.get_cookie('token')
+let token = null;
 let notice_content = ref()
 const store = useStore()
 

@@ -1,58 +1,27 @@
-from django.db import connection
 from django.http import JsonResponse
-from django.views import View
-from django.shortcuts import render
-from .log.log import Logger
-from datetime import datetime
-import json
-from .authentication import Authentication
+from base_api import  BaseApi
 
-
-class GetIllList(View):
-    authentication = Authentication()
-    logger = Logger()
-
-    def _request_path(self, request):
-        request_path = request.get_full_path()
-        request_ip = request.META['REMOTE_ADDR']
-        now = datetime.now().strftime('%Y-%m-%dT%H:%M:%S')
-        return f'{request_ip}在{now}请求了{request_path}'
-
-    def get(self, request):
-        self.logger.warning(self._request_path(request) + '非法GET请求，请求数据为：' + str(request.GET))
-        return render(request, '404.html', status=404)
-
-    def post(self, request, *args, **kwargs):
+class GetIllList(BaseApi):
+    def post(self, request, *args, **kwargs) -> JsonResponse:
         try:
-            data = json.loads(request.body.decode('utf-8'))
-            userid = str(request.user.id)
-            is_authenticated = getattr(request, 'is_authenticated', None)
-            if is_authenticated:
-                with connection.cursor() as cursor:
-                    sql = '''select account_permissions from users where userid=%s'''
-                    cursor.execute(sql, (userid,))
-                    account_permissions = cursor.fetchone()[0]
-                    if account_permissions in ['1', '2', 1, 2]:
-                        offset = data.get('offset')
-                        limit = data.get('limit')
-                        sql = ('select illustration_work.*,users.userid,users.user_avatar,users.username'
-                               ' from illustration_work '
-                               'left join users on users.userid=illustration_work.belong_to_user_id limit %s offset %s')
-                        cursor.execute(sql, (limit, offset))
-                        result = cursor.fetchall()
-                        columns = [col[0] for col in cursor.description]
-                        rows = [dict(zip(columns, row)) for row in result]
-                        count_sql = '''select count(*) from illustration_work'''
-                        cursor.execute(count_sql)
-                        total = cursor.fetchone()[0]
-                        return JsonResponse({'status': 'success', 'message': '请求成功',
-                                             'data': {'work_list': rows, 'work_type': 'ill', 'total': total},
-                                             'status_code': 200},
-                                            status=200)
-                return JsonResponse({'status': 'error', 'message': '权限不足', 'data': None, 'status_code': 403},
-                                    status=403)
+            if request.user.is_login is False or request.user.role not in ['admin','sys_admin']:
+                return JsonResponse({'status':'error','code':403,'message':'权限不足','msg':'权限不足','data':None},status=403)
+            data=self.format_request(request)
+            limit = data.get('limit',10)
+            offset = data.get('offset',0)
+            sql='''
+            select illustration_work.*,username,userid,user_avatar from illustration_work
+            left join users on users.userid=illustration_work.belong_to_user_id
+             limit %s offset %s
+            '''
+            total_sql='''select count(*) total from illustration_work'''
+            result = self.execute_sql(sql, (limit, offset), return_results=True)
+            total = self.execute_sql(total_sql, return_results=True)[0]['total']
+            return JsonResponse({'status':'success','code':200,
+                                 'message':'请求成功','msg':'请求成功','data':{'work_list':result,'total':total}},status=200)
         except Exception as e:
-            print('\n', e)
-            self.logger.error(self._request_path(request) + '请求失败，错误信息为：' + str(e))
-            return JsonResponse({'status': 'error', 'message': '请求失败', 'data': None, 'status_code': 500},
-                                status=500)
+            print(e)
+            self.error_log(e,request)
+            return JsonResponse({'status':'error','code':500,'message':'服务器错误','msg':'服务器错误','data':None},status=500)
+
+

@@ -22,9 +22,7 @@
 <script setup>
 import { ref } from 'vue';
 import { admin_login } from './js/login.js'
-import { useStore } from 'vuex';
 
-const store = useStore();
 const username = ref('');
 const password = ref('');
 
@@ -33,17 +31,14 @@ const handleLogin = async () => {
     let result = await admin_login(null, username.value, password.value)
     localStorage.setItem('token', result.token);
     console.log(result)
-    if (result.token) {
-        store.commit('set_root_data', { 'key': 'token', 'value': result.token })
-        store.commit('change_page',{'page_key':'login_page','value':false})
-        store.commit('change_page',{'page_key':'ill_control_page','value':true})
-        store.commit('set_root_data',{'key':'user_info','value':result.user_info})
+    console.log(`用户名: ${username.value}, 密码: ${password.value}`);
+    if (result.code==200){
+        window.location.href='/'
     }
     else{
-        alert(result.message)
+        console.warn('登录失败，请检查用户名和密码')
+        console.log(result)
     }
-    console.log(`用户名: ${username.value}, 密码: ${password.value}`);
-    
 };
 </script>
 

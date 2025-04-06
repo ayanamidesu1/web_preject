@@ -62,17 +62,18 @@
         <span>加载中……</span>
       </div>
     </div>
-  </div>
-  <div class="show_ill_content" v-if="show_ill_content">
-    <div class="close">
-      <button @click="show_ill_content = false">
-        <img src="https://www.sunyuanling.com/assets/close.svg" alt="关闭" class="icon">
-      </button>
+    <div class="show_ill_content" v-if="show_ill_content">
+      <div class="close">
+        <button @click="show_ill_content = false">
+          <img src="https://www.sunyuanling.com/assets/close.svg" alt="关闭" class="icon">
+        </button>
+      </div>
+      <div class="ill_img" v-for="(item, index) in ill_list" :key="index">
+        <img :src="'https://www.sunyuanling.com/server/static/image/' + item" alt="作品">
+      </div>
     </div>
-    <div class="ill_img" v-for="(item, index) in ill_list" :key="index">
-      <img :src="'https://www.sunyuanling.com/server/static/image/' + item" alt="作品">
-    </div>
   </div>
+  
 </template>
 
 <script setup>

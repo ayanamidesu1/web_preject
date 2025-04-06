@@ -47,7 +47,6 @@
 
 <script setup>
 import { ref, watch, onMounted, defineProps,defineEmits,computed } from 'vue';
-import * as cookies from '../../../../../../../model/cookies.js'
 import { useStore } from '@assets/model/store/index';
 import { useRouter } from 'vue-router';
 import user_search_result from '../model/user_search_result.vue';
@@ -227,7 +226,7 @@ async function follow(target_username,target_id)
             target_username:target_username,
             target_id:target_id,
             userid:userid.value,
-            username:JSON.parse(cookies.get_cookie('userinfo')).username,
+            username:null
         })
     })
     if(res.ok)

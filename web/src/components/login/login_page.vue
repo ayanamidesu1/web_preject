@@ -15,7 +15,7 @@
                     
                 </div>
                 <div class="reset_password_btn">
-                    <span class="reset_password_btn_text">忘记密码？</span>
+                    <router-link to="/reset_password"><span class="reset_password_btn_text">忘记密码？</span></router-link>
                 </div>
             </div>
             <div class="login_btn" @click="login"><span>登录</span></div>

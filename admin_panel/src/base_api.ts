@@ -62,7 +62,7 @@ export class BaseApi {
     }
 
     public async verify_login(): Promise<{ result: Object, status: number }> {
-        return this.post('verify/', {})
+        return this.post('/verify/', {})
     }
     //通用时间格式化函数
     public formatTimeAgo(dateTimeInput: string | Date | number): string {

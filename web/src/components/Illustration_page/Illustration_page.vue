@@ -17,7 +17,6 @@ import scroll_box_1 from '../models/scroll_box.vue';
 import { ref, reactive, toRefs, watch, onMounted, onUnmounted,computed } from 'vue';
 import recommendation from './recommendation.vue';
 import ranking from './ranking.vue';
-import * as cookies from '../../../../model/cookies.js'
 import { get_user_follow_work_tags } from '@/assets/js/get_userinfo';
 const store = useStore()
 
@@ -95,7 +94,7 @@ async function get_author_avatar(userid) {
 }
 onMounted(async () => {
   get_follow_illustrations_list()
-  let tagsData = await get_user_follow_work_tags(cookies.get_cookie('token'));
+  let tagsData = await get_user_follow_work_tags(null);
   tags_list.value = tagsData;
 })
 

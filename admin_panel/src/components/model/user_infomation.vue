@@ -124,9 +124,7 @@
 import { ref, defineProps, defineEmits, computed } from 'vue';
 import search_img from './search_img.vue'
 import { edit_userinfo } from './js/edit_userinfo';
-import { useStore } from 'vuex';
 
-const store = useStore();
 
 const props = defineProps({
     user_info: {
@@ -139,8 +137,8 @@ const user_info = ref(props.user_info);
 const emit = defineEmits(['close_page']);
 const search_src = ref('')
 const search_img_show = ref(false)
-const account_permissions_edit = computed(() => store.getters.root_data.user_info.account_permissions == '2' ? false : true)
-console.log(store.getters.root_data.user_info.account_permissions)
+const account_permissions_edit = ref(false)
+
 const default_avatar = '65014220_p0.jpg'
 const default_back_img = '20240525174916_f4f4acc7280f4eabb9fc1712929c3ccc.png'
 

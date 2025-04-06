@@ -3,23 +3,24 @@
   <div class="sidebar">
     <div class="content">
         <div class="item">
-            <span @click="choose_page('user_control_page')">用户管理</span>
-            <span @click="choose_page('ill_control_page')">插画作品审核</span>
-            <span @click="choose_page('comic_control_page')">漫画作品审核</span>
-            <span @click="choose_page('novel_control_page')">小说作品审核</span>
-            <span @click="choose_page('commection_control_page')">评论管理</span>
+            <span :class="{is_active:now_page==0}" @click="switch_page('/',0)">用户管理</span>
+            <span :class="{is_active:now_page==1}" @click="switch_page('/ill',1)">插画作品审核</span>
+            <span :class="{is_active:now_page==2}" @click="switch_page('/comic',2)">漫画作品审核</span>
+            <span :class="{is_active:now_page==3}" @click="switch_page('/novel',3)">小说作品审核</span>
+            <span :class="{is_active:now_page==4}" @click="switch_page('/comment',4)">评论管理</span>
         </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { useStore } from 'vuex';
-
-const store = useStore();
-
-function choose_page(page_name){
-  store.commit('change_page',{'page_key':page_name,'page_value':true})
+import {ref} from 'vue'
+import {useRouter} from 'vue-router'
+const router=useRouter()
+let now_page=ref(0)
+function switch_page(page_name,index){
+  now_page.value=index;
+  router.push(page_name)
 }
 
 </script>
@@ -27,14 +28,13 @@ function choose_page(page_name){
 <style scoped>
   .sidebar{
     width:150px;
-    height: auto;
+    height: fit-content;
     background-color:rgba(100, 100, 100, 0.5);
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-    position: fixed;
-    top:80px;
-    left: 10px;
+    position:sticky;
+    top:0;
     z-index:5;
   }
   .content{
@@ -66,6 +66,13 @@ function choose_page(page_name){
     justify-content: center;
   }
   .item span:hover{
+    background-color: rgba(133,133,133,1);
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.05);
+    transform: translateY(-2px);
+  }
+  .is_active{
     background-color: rgba(133,133,133,1);
     border-radius: 10px;
     transition: all 0.2s ease-in-out;

@@ -23,13 +23,14 @@ class JWTUser:
         self.is_login = payload.get('is_login', False)
         self.status = payload.get('status',0)
         self.vip = payload.get('vip',0)
+        self.role = payload.get('role','user')
 
     def __str__(self):
         return (f"JWTUser(id={self.id}, username={self.username}, "
                 f"email={self.email}, phone={self.phone}, "
                 f"sex={self.sex}, avatar={self.avatar}, "
                 f"user_level={self.user_level}, background={self.background},is_login={self.is_login},"
-                f"status={self.status},vip={self.vip})")
+                f"status={self.status},vip={self.vip},role={self.role})")
 
 class DecodeToken(MiddlewareMixin):
     """JWT 解码中间件"""
@@ -42,6 +43,7 @@ class DecodeToken(MiddlewareMixin):
                 # 未提供 Token，设置默认匿名用户对象
                 request.user = JWTUser({})
                 request.user.is_login = False
+                request.is_login = False
                 #print('未提供Token，不处理')
                 return None
 
@@ -56,6 +58,7 @@ class DecodeToken(MiddlewareMixin):
             # 将解码后的用户信息作为 JWTUser 对象附加到 request.user
             request.user = JWTUser(decoded_payload)
             request.user.is_login = True
+            request.is_login = True
             return None  # 允许请求继续
 
         except Exception as e:

@@ -21,15 +21,6 @@
   
   <script setup>
   import { ref } from 'vue'
-  import { useStore } from 'vuex';
-  
-  const store = useStore();
-  
-  // 退出登录操作，清空 store 中的 token，并且设置 login 页面为 true
-  function logout() {
-    store.commit('change_page', { page_key: 'login_page', page_value: true });
-    store.commit('set_root_data', { key: 'token', value: '' });
-  }
   
   let username = ref('admin');
   </script>

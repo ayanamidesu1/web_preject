@@ -23,11 +23,13 @@ const chatStore = useChatStore();
 const store = useStore();
 const api=new BaseApi();
 //wss连接配置
-const ws_url = `wss://127.0.0.1:2234/chat?token=${localStorage.getItem('token')}`
+const ws_url = `wss://www.sunyuanling.com/ws/chat?token=${localStorage.getItem('token')}`
 const MAX_RETRIES = 3 // 最大重试次数
 const RETRY_DELAY = 5000 // 重试间隔(ms)
 let retryCount = 0
-
+let chat_show=computed(()=>{
+  return chatStore.now_chat_user==null?false:true;
+})
 // WebSocket管理
 function initWebSocket() {
   // 清理现有连接

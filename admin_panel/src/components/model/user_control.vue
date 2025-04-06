@@ -50,6 +50,7 @@ import { get_user_list } from './js/get_user_list';
 import { ref, onMounted, computed, watch, onUnmounted } from 'vue';
 import user_infomation from './user_infomation.vue';
 
+
 const user_infomation_show = ref(false);
 const user_list = ref([]);
 const user_data = ref([]);
@@ -132,6 +133,7 @@ onUnmounted(() => {
     padding: 20px;
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 h1 {

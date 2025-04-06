@@ -1,10 +1,11 @@
 <script setup>
-import root from './components/root.vue'
+//import root from './components/root.vue'
+import {useRouter} from 'vue-router'
 </script>
 
 <template>
-
-  <root msg="Vite + Vue" />
+  <router-view></router-view>
+  <!-- <root msg="Vite + Vue" /> -->
 </template>
 
 <style scoped>

@@ -6,6 +6,17 @@ from .log.log import Logger
 from datetime import datetime
 import json
 from django.shortcuts import render
+from base_api import BaseApi
+
+class EditUserInfo_new(BaseApi):
+    def post(self, request, *args, **kwargs) -> JsonResponse:
+        try:
+            if request.user.role not in ['admin','sys_admin'] and request.user.is_login is False:
+                return JsonResponse({'code':403,'msg':'权限不足','message':'权限不足','status':'error'},status=403)
+        except Exception as e:
+            self.error_log(e,request)
+            print(e)
+            return JsonResponse({'code':500,'msg':'服务器错误','message':'服务器错误','status':'error'},status=500)
 
 
 class EditUserInfo(View):

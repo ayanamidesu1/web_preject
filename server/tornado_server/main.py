@@ -35,6 +35,11 @@ class ChatWebSocketHandler(BaseConnect,DjangoApi):
 
     async def open(self):
         """异步处理连接建立"""
+        # 1. 强制检查 WebSocket 协议头
+        if self.request.headers.get("Upgrade", "").lower() != "websocket":
+            await self.close(code=400, reason="Invalid protocol")
+            return
+
         self.auth_token = self.get_argument("token")
         self.user_role=self.get_argument("role",'user')
         if self.user_role=='admin':
@@ -114,7 +119,7 @@ class ChatWebSocketHandler(BaseConnect,DjangoApi):
 
     async def _forward_message(self, msg_data):
         """转发消息给接收方"""
-        receiver_conn = self.connected_users.get(msg_data['target_user_id'])
+        #receiver_conn = self.connected_users.get(msg_data['target_user_id'])
         r_conn=self.get_connection(msg_data['target_user_id'],pool_name='default', conn_type='conn')
         if r_conn:
             print("发送消息给接收方")
@@ -125,9 +130,9 @@ class ChatWebSocketHandler(BaseConnect,DjangoApi):
             'message_id': self._generate_message_id()
         }
 
-        if receiver_conn:
-            await receiver_conn.write_message(formatted_msg)
-            await self.write_message({'status': 'delivered'})
+        #if receiver_conn:
+            #await receiver_conn.write_message(formatted_msg)
+            #await self.write_message({'status': 'delivered'})
         if r_conn:
             await r_conn.write_message(formatted_msg)
             await self.write_message({'status': 'delivered'})

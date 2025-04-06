@@ -74,7 +74,6 @@ import { onMounted, ref,watch,computed } from 'vue'
 import sidebar from './sidebar/sidebar.vue'
 import submission_work_box from './submission_work_box/submission_work_box.vue'
 import header_box from './header_box/header_box.vue'
-import * as cookies from '../../../../../model/cookies.js'
 import search_page_index from './search_page/search_page_index.vue'
 const store = useStore()
 const api=new BaseApi()
@@ -91,7 +90,6 @@ let header_box_show=ref(false)
 let chat_page_show=ref(null)
 let user_info=ref([])
 let search_data=ref()//搜索数据
-user_info.value=JSON.parse(cookies.get_cookie('userinfo'))
 let search_show_status=ref(null)
 let input_box=ref(null)
 let search_page_click=ref(null)

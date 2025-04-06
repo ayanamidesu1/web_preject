@@ -1,5 +1,4 @@
 import { createStore } from 'vuex';
-import * as cookies from 'H:/web_project/model/cookies.js';
 
 const MAX_STACK_DEPTH = 500; // 设置页面状态栈的最大深度
 

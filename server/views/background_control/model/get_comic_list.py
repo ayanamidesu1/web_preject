@@ -1,76 +1,32 @@
-from django.db import connection
 from django.http import JsonResponse
-from django.shortcuts import render
-from django.views import View
-import json
-from datetime import datetime
-from .log.log import Logger
+from base_api import BaseApi
 
-logger = Logger()
-
-class GetComicList(View):
-    def _request_path(self, request):
-        request_path = request.path
-        request_ip = request.META.get('REMOTE_ADDR', '0.0.0.0')
-        now = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
-        return f'{request_ip}在{now}请求了{request_path}'
-
-    def get(self, request):
-        logger.warning(f'{self._request_path(request)} - 非法GET请求，请求内容为：{request.GET}')
-        return render(request, '404.html', status=404)
-
-    def post(self, request, *args, **kwargs):
+class GetComicList(BaseApi):
+    def post(self, request, *args, **kwargs) -> JsonResponse:
         try:
-            data = json.loads(request.body.decode('utf-8'))
-            userid = str(request.user.id)
-            is_authenticated = getattr(request, 'is_authenticated', None)
-
-            if not is_authenticated:
-                logger.warning(f'{self._request_path(request)} - 用户未登录，非法访问')
-                return JsonResponse({'status': 'error', 'message': '未登录'}, status=401)
-
+            if request.user.is_login is False or request.user.role not in ['admin', 'sys_admin']:
+                return JsonResponse(
+                    {'status': 'error', 'code': 403, 'message': '权限不足', 'msg': '权限不足', 'data': None},
+                    status=403)
+            data = self.format_request(request)
             limit = data.get('limit', 10)
             offset = data.get('offset', 0)
-
-            with connection.cursor() as cursor:
-                # 获取用户权限
-                cursor.execute('SELECT account_permissions FROM users WHERE userid = %s', [userid])
-                account_permissions = cursor.fetchone()
-
-                if not account_permissions or account_permissions[0] not in ['1', '2', 1, 2]:
-                    logger.warning(f'{self._request_path(request)} - 非授权人员访问')
-                    return JsonResponse({'status': 'error', 'message': '权限不足'}, status=403)
-
-                # 查询漫画列表
-                sql = ('SELECT comic.*, users.userid, users.user_avatar, users.username '
-                       'FROM comic '
-                       'LEFT JOIN users ON users.userid = comic.belong_to_userid '
-                       'ORDER BY comic.create_time DESC '
-                       'LIMIT %s OFFSET %s')
-
-                cursor.execute(sql, [limit, offset])
-                result = cursor.fetchall()
-
-                if result:
-                    columns = [col[0] for col in cursor.description]
-                    rows = [dict(zip(columns, row)) for row in result]
-                    # 查询总数
-                    cursor.execute('SELECT COUNT(*) FROM comic')
-                    total = cursor.fetchone()[0]
-                    return JsonResponse({
-                        'status': 'success',
-                        'data': {
-                            'work_list': rows,
-                            'total': total
-                        }
-                    }, status=200)
-                else:
-                    return JsonResponse({'status': 'success', 'data': []}, status=200)
-
-        except json.JSONDecodeError:
-            logger.error(f'{self._request_path(request)} - 请求数据格式错误')
-            return JsonResponse({'status': 'error', 'message': '无效的JSON数据'}, status=400)
-
+            sql = '''
+            select comic.*,userid,username,user_avatar from comic
+            left join users on users.userid=comic.belong_to_userid
+             limit %s offset %s
+            '''
+            total_sql = '''select count(*) total from comic'''
+            result = self.execute_sql(sql, (limit, offset), return_results=True)
+            total = self.execute_sql(total_sql, return_results=True)[0]['total']
+            return JsonResponse({'status': 'success', 'code': 200,
+                                 'message': '请求成功', 'msg': '请求成功',
+                                 'data': {'work_list': result, 'total': total}}, status=200)
         except Exception as e:
-            logger.error(f'{self._request_path(request)} - 服务器错误: {str(e)}')
-            return JsonResponse({'status': 'error', 'message': '服务器错误'}, status=500)
+            print(e)
+            self.error_log(e, request)
+            return JsonResponse(
+                {'status': 'error', 'code': 500, 'message': '服务器错误', 'msg': '服务器错误', 'data': None},
+                status=500)
+
+

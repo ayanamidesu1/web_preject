@@ -43,6 +43,16 @@ class JWTGenerateMiddleware(MiddlewareMixin):
                 # 将查询结果格式化为字典
                 user_data = dict(zip([col[0] for col in cursor.description], result))
                 #print(user_data)
+                role = 'user'
+                print('用户权限为：{}'.format(user_data.get('account_permissions')))
+                permissions =int( user_data.get('account_permissions', 0))
+                if permissions == 0:
+                    role = 'user'
+                if permissions == 1:
+                    role = 'admin'
+                if permissions == 2:
+                    role = 'sys_admin'
+                print('赋予用户权限未：{}'.format(role))
 
                 # 生成 JWT payload
                 payload = {
@@ -52,12 +62,13 @@ class JWTGenerateMiddleware(MiddlewareMixin):
                     'phone': user_data.get('phone'),
                     'sex': user_data.get('sex'),
                     'avatar': user_data.get('user_avatar'),
-                    'user_level': user_data.get('account_permissions',0),
+                    'user_level': user_data.get('account_permissions', 0),
                     'background': user_data.get('user_back_img'),
                     'now': now.isoformat(),
                     'is_login': True,
-                    'status':user_data.get('account_status',0),
-                    'vip':user_data.get('vip',0)
+                    'status': user_data.get('account_status', 0),
+                    'vip': user_data.get('vip', 0),
+                    'role': role
                 }
 
                 # 返回带有 JWT 的响应

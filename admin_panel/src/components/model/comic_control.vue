@@ -62,17 +62,18 @@
         <span>加载中……</span>
       </div>
     </div>
-  </div>
-  <div class="show_ill_content" v-if="show_comic_content">
-    <div class="close">
-      <button @click="show_comic_content = false">
-        <img src="https://www.sunyuanling.com/assets/close.svg" alt="关闭" class="icon">
-      </button>
+    <div class="show_ill_content" v-if="show_comic_content">
+      <div class="close">
+        <button @click="show_comic_content = false">
+          <img src="https://www.sunyuanling.com/assets/close.svg" alt="关闭" class="icon">
+        </button>
+      </div>
+      <div class="ill_img" v-for="(item, index) in comic_list" :key="index">
+        <img :src="'https://www.sunyuanling.com/server/static/image/comic/' + item" alt="作品">
+      </div>
     </div>
-    <div class="ill_img" v-for="(item, index) in comic_list" :key="index">
-      <img :src="'https://www.sunyuanling.com/server/static/image/comic/' + item" alt="作品">
-    </div>
   </div>
+ 
 </template>
 
 
