@@ -7,6 +7,7 @@
     <div class="chat_content">
       <span><strong>聊天</strong></span>
       <chat_content v-if="chat_show"></chat_content>
+      <sys_notice v-else></sys_notice>
     </div>
   </div>
 </template>
@@ -16,6 +17,7 @@
 import { ref,onMounted, computed, onUnmounted } from 'vue'
 import friend_list from './friend_list.vue';
 import chat_content from './chat_content.vue';
+import sys_notice from './sys_notice.vue';
 import { useChatStore } from './chat_store';
 import { BaseApi } from '@/base_api';
 import { useStore } from '@assets/model/store';
@@ -47,6 +49,7 @@ function initWebSocket() {
   
   chatStore.$state.ws.onmessage = (event) => {
     const data = JSON.parse(event.data)
+    //console.log("收到消息:", data)
     // 处理业务消息...
   }
   

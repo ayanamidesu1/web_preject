@@ -26,9 +26,9 @@ class UpdateIll(View):
         try:
             data = json.loads(request.body.decode('utf-8'))
             userid = str(request.user.id)
-            is_authenticated = getattr(request, 'is_authenticated', None)
+            is_login = getattr(request, 'is_login', None)
 
-            if is_authenticated:
+            if is_login:
                 # 查询用户权限
                 sql = '''SELECT account_permissions FROM users WHERE userid=%s'''
                 with connection.cursor() as cursor:

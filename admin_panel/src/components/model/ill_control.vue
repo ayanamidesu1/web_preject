@@ -4,7 +4,7 @@
     <div class="control_box" ref="content">
       <div class="search_box">
         <span>搜索：</span>
-        <input type="text" placeholder="请输入搜索内容" v-model="search_key">
+        <input type="text" placeholder="请输入搜索内容" v-model="search_key" />
         <button @click="performSearch">搜索</button>
       </div>
       <div class="work_status">
@@ -20,9 +20,16 @@
     <div class="content">
       <div class="item" v-for="(item, index) in ill_worklist" :key="index">
         <div class="ill_cover">
-          <img :src="'https://www.sunyuanling.com/server/static/image/thumbnail/' + item.content_file_list.split(/[,，]/)[0]"
-            alt="插画作品封面">
-          <span @click="show_ill(item)" class="show_ill_content_btn">查看详情</span>
+          <img
+            :src="
+              'https://www.sunyuanling.com/server/static/image/thumbnail/' +
+              item.content_file_list.split(/[,，]/)[0]
+            "
+            alt="插画作品封面"
+          />
+          <span @click="show_ill(item)" class="show_ill_content_btn"
+            >查看详情</span
+          >
         </div>
         <div class="ill_info">
           <div class="info_item">
@@ -35,7 +42,10 @@
           </div>
           <div class="info_item">
             <span>作品标签：</span>
-            <span v-for="(tag_item, index) in item.work_tags.split(/[,，]/)" :key="index">
+            <span
+              v-for="(tag_item, index) in item.work_tags.split(/[,，]/)"
+              :key="index"
+            >
               {{ tag_item }}
             </span>
           </div>
@@ -49,15 +59,45 @@
           </div>
           <div class="info_item">
             <span>作品状态：</span>
-            <span>{{ item.work_approved == 1 ? '已通过' : item.work_approved == 0 ? '未通过' : '待审核' }}</span>
+            <span>{{
+              item.work_approved == 1
+                ? "已通过"
+                : item.work_approved == 0
+                ? "未通过"
+                : "待审核"
+            }}</span>
           </div>
           <div class="work_action">
-            <button @click="update_work_status(1, item.Illustration_id)">通过</button>
-            <button @click="update_work_status(0, item.Illustration_id)">不通过</button>
+            <button
+              @click="
+                update_work_status(
+                  1,
+                  item.Illustration_id,
+                  item.belong_to_user_id
+                )
+              "
+            >
+              通过
+            </button>
+            <button
+              @click="
+                update_work_status(
+                  0,
+                  item.Illustration_id,
+                  item.belong_to_user_id
+                )
+              "
+            >
+              不通过
+            </button>
           </div>
         </div>
       </div>
-      <div class="scroll_tag" ref="scroll_tag" style="width:1px;height:1px;overflow:hidden;"></div>
+      <div
+        class="scroll_tag"
+        ref="scroll_tag"
+        style="width: 1px; height: 1px; overflow: hidden"
+      ></div>
       <div class="loading" v-if="loading">
         <span>加载中……</span>
       </div>
@@ -65,106 +105,154 @@
     <div class="show_ill_content" v-if="show_ill_content">
       <div class="close">
         <button @click="show_ill_content = false">
-          <img src="https://www.sunyuanling.com/assets/close.svg" alt="关闭" class="icon">
+          <img
+            src="https://www.sunyuanling.com/assets/close.svg"
+            alt="关闭"
+            class="icon"
+          />
         </button>
       </div>
       <div class="ill_img" v-for="(item, index) in ill_list" :key="index">
-        <img :src="'https://www.sunyuanling.com/server/static/image/' + item" alt="作品">
+        <img
+          :src="'https://www.sunyuanling.com/server/static/image/' + item"
+          alt="作品"
+        />
       </div>
     </div>
   </div>
-  
 </template>
 
 <script setup>
-import { ref, onMounted, watch, onUnmounted } from 'vue'
-import { get_ill_worklist } from './js/get_work_list'
-import { search_ill_work } from './js/search_work'
-import { update_ill_work_status } from './js/update_work'
+import { ref, onMounted, watch, onUnmounted } from "vue";
+import { get_ill_worklist } from "./js/get_work_list";
+import { search_ill_work } from "./js/search_work";
+import { update_ill_work_status } from "./js/update_work";
+import { useStore } from "@/model/store/store";
+const store = useStore();
 
-const ill_worklist = ref([])
-const work_list_info = ref()
-const limit = ref(5)
-const offset = ref(0)
-const total = ref(0)
-const show_ill_content = ref(false)
-const ill_list = ref([])
-const search_key = ref('')
-const work_status = ref('all')
-const loading = ref(false)
+const ill_worklist = ref([]);
+const work_list_info = ref();
+const limit = ref(5);
+const offset = ref(0);
+const total = ref(0);
+const show_ill_content = ref(false);
+const ill_list = ref([]);
+const search_key = ref("");
+const work_status = ref("all");
+const loading = ref(false);
 
 function show_ill(item) {
-  ill_list.value = item.content_file_list.split(/[,，]/)
-  show_ill_content.value = true
+  ill_list.value = item.content_file_list.split(/[,，]/);
+  show_ill_content.value = true;
 }
 
 // 获取作品列表
 async function get_worklist() {
-  let response = await get_ill_worklist(limit.value, offset.value)
-  console.log(response)
-  work_list_info.value = response
+  let response = await get_ill_worklist(limit.value, offset.value);
+  console.log(response);
+  work_list_info.value = response;
   if (offset.value == 0) {
-    ill_worklist.value = response.data.work_list
+    ill_worklist.value = response.data.work_list;
   } else {
-    ill_worklist.value = [...ill_worklist.value, ...response.data.work_list]
+    ill_worklist.value = [...ill_worklist.value, ...response.data.work_list];
   }
-  total.value = response.data.total
+  total.value = response.data.total;
 }
 
 // 搜索实现
 async function search_ill() {
-  offset.value = 0 // 重置偏移量
-  let response = await search_ill_work(search_key.value, work_status.value, limit.value, offset.value)
-  ill_worklist.value = response.data.work_list
-  total.value = response.data.total
+  offset.value = 0; // 重置偏移量
+  let response = await search_ill_work(
+    search_key.value,
+    work_status.value,
+    limit.value,
+    offset.value
+  );
+  ill_worklist.value = response.data.work_list;
+  total.value = response.data.total;
 }
 
 watch([search_key, work_status], async () => {
-  await search_ill()
-})
+  await search_ill();
+});
 
 function performSearch() {
-  search_ill()
+  search_ill();
 }
 
 // 更新作品状态
-async function update_work_status(work_status, work_id) {
-  let data = await update_ill_work_status(work_status, work_id)
-  if (data.status === 'success') {
-    alert('修改成功')
-    offset.value = 0 // 重置偏移量
-    await get_worklist()
+async function update_work_status(work_status, work_id, user_id) {
+  let data = await update_ill_work_status(work_status, work_id);
+  if (data.status === "success") {
+    alert("修改成功");
+    offset.value = 0; // 重置偏移量
+    await get_worklist();
   } else {
-    alert(data.message)
+    alert(data.message);
   }
+  send_ill_review_msg(user_id, work_id, work_status);
 }
 
 // 滚动加载
-let scroll_tag = ref(null)
-let content = ref(null)
-const observer = new IntersectionObserver(async (entries) => {
-  if (entries[0].isIntersecting && !loading.value && ill_worklist.value.length < total.value) {
-    loading.value = true;
-    offset.value += limit.value; // 增加偏移量
-    await get_worklist(); // 加载更多内容
-    loading.value = false;
+let scroll_tag = ref(null);
+let content = ref(null);
+const observer = new IntersectionObserver(
+  async (entries) => {
+    if (
+      entries[0].isIntersecting &&
+      !loading.value &&
+      ill_worklist.value.length < total.value
+    ) {
+      loading.value = true;
+      offset.value += limit.value; // 增加偏移量
+      await get_worklist(); // 加载更多内容
+      loading.value = false;
+    }
+  },
+  {
+    root: null,
+    rootMargin: "400px",
+    threshold: 0,
   }
-}, {
-  root: null,
-  rootMargin: '400px',
-  threshold: 0
-});
+);
+
+//向目标用于发送审核消息
+async function send_ill_review_msg(user_id, work_id, work_status) {
+  const msg = {
+    target_user_id: user_id,
+    content: {
+      work_id: work_id,
+      work_status: work_status,
+      work_type: "ill",
+      msg_type: "ill_review",
+      msg: work_status == 1 ? "作品审核通过" : "作品审核未通过",
+    },
+    type: "review_msg",
+  };
+
+  try {
+    // 直接发送对象，无需手动序列化
+    if (store.$state.ws?.readyState === WebSocket.OPEN) {
+      store.$state.ws.send(JSON.stringify(msg));
+      console.log("审核消息发送成功", msg);
+    } else {
+      console.error("WebSocket 连接未就绪");
+      // 可选：重连机制或消息队列
+    }
+  } catch (error) {
+    console.error("消息发送失败:", error);
+  }
+}
+
 //const observer=null
 onMounted(async () => {
   await get_worklist();
-
-
   observer.observe(scroll_tag.value);
-})
+});
 
 onUnmounted(() => {
   observer.disconnect();
-})
+});
 </script>
 
 

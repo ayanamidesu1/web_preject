@@ -71,7 +71,7 @@ class TokenAuthMiddleware:
             if request.content_type == 'multipart/form-data':
                 return None
             # 如果请求已经附带了用户信息和 token，直接返回
-            if hasattr(request, 'userinfo') and hasattr(request, 'token') and hasattr(request, 'is_authenticated'):
+            if hasattr(request, 'userinfo') and hasattr(request, 'token') and hasattr(request, 'is_login'):
                 request.userinfo = json.loads(request.userinfo)
                 return None
 
@@ -92,7 +92,7 @@ class TokenAuthMiddleware:
                     request.userid = userid
                     request.role = role
                     request.token = encrypted_new_token  # 使用新生成并加密的 token
-                    request.is_authenticated = True
+                    request.is_login = True
 
                     return None
                 else:

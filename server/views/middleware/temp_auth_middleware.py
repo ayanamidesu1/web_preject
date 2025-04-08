@@ -116,7 +116,7 @@ class TempAuthMiddleware:
             if request.content_type == 'multipart/form-data':
                 return self.get_response(request)
             # 如果请求已经通过认证，则跳过临时用户创建
-            if hasattr(request, 'is_authenticated') and request.is_authenticated:
+            if hasattr(request, 'is_login') and request.is_login:
                 return self.get_response(request)
 
             # 获取客户端的IP地址
@@ -140,7 +140,7 @@ class TempAuthMiddleware:
                 new_token = encrypt_token(create_jwt_token(userid))
                 c_token=encrypt_token(new_token)
                 request.token = c_token
-                request.is_authenticated = True
+                request.is_login = True
             else:
                 return JsonResponse({'status': 'error', 'message': '创建临时用户失败'}, status=500)
 

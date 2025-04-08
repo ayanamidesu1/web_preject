@@ -25,9 +25,9 @@ class UpdateComment(View):
         try:
             data = json.loads(request.body.decode('utf-8'))
             userid = str(request.user.id)
-            is_authenticated = getattr(request, 'is_authenticated', None)
+            is_login = getattr(request, 'is_login', None)
 
-            if not is_authenticated:
+            if not is_login:
                 self.logger.warning(f'未登录用户尝试访问：{self._request_path(request)}')
                 return JsonResponse({'status': 'fail', 'message': '未登录'}, status=401)
 

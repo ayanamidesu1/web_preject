@@ -24,7 +24,9 @@ class GetNovelInfo(View):
         now = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
         try:
             data = json.loads(request.body.decode('utf-8'))
-            sql = 'select * from novel_work where work_id=%s and work_approved=1'
+            sql = '''select novel_work.*,users.user_avatar as avatar,novel_work.belong_to_userid as author_id from novel_work
+             left join users on users.userid=novel_work.belong_to_userid
+             where work_id=%s and work_approved=1'''
             #获取作品字数
             get_novel_count='SELECT SUM(CHAR_LENGTH(content)) AS work_count FROM novel_content WHERE belong_to_series_id=%s'
 

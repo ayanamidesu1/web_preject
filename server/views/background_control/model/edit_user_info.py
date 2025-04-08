@@ -7,150 +7,80 @@ from datetime import datetime
 import json
 from django.shortcuts import render
 from base_api import BaseApi
+#Django哈希密码生成
+from django.contrib.auth.hashers import make_password, check_password
 
-class EditUserInfo_new(BaseApi):
+
+class EditUserInfo(BaseApi):
     def post(self, request, *args, **kwargs) -> JsonResponse:
         try:
-            if request.user.role not in ['admin','sys_admin'] and request.user.is_login is False:
-                return JsonResponse({'code':403,'msg':'权限不足','message':'权限不足','status':'error'},status=403)
-        except Exception as e:
-            self.error_log(e,request)
-            print(e)
-            return JsonResponse({'code':500,'msg':'服务器错误','message':'服务器错误','status':'error'},status=500)
+            # 权限验证（保持原有逻辑）
+            if request.user.role not in ['admin', 'sys_admin'] and request.user.is_login is False:
+                return JsonResponse({'code': 403, 'msg': '权限不足', 'status': 'error'}, status=403)
 
+            data = self.format_request(request)
+            userid = data.get('userid')
+            operate_user_id = request.user.id
 
-class EditUserInfo(View):
-    authentication = Authentication()
-    logger = Logger()
+            # 参数校验（保持原有逻辑）
+            if not userid:
+                return JsonResponse({'code': 400, 'msg': '缺少userid', 'status': 'error'}, status=400)
 
-    def _request_path(self, request):
-        request_path = request.path
-        request_ip = request.META['REMOTE_ADDR']
-        now = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        return f'{request_ip}在{now}请求了{request_path}'
+            # 获取目标用户信息（保持原有逻辑）
+            target_user_info = self.execute_sql(
+                '''SELECT * FROM users WHERE userid=%s''',
+                [userid]
+            )[0]
 
-    def _log_and_return(self, request, level, message, data=None, status=200):
-        log_message = f'{self._request_path(request)} {message}'
-        if data:
-            log_message += f'，请求数据为：{data}'
-        getattr(self.logger, level)(log_message)
-        return JsonResponse({'status': 'error', 'message': message}, status=status)
+            if not target_user_info:
+                return JsonResponse({'code': 400, 'msg': '用户不存在', 'status': 'error'}, status=400)
 
-    def _get_user_info(self, cursor, userid):
-        sql = '''
-            SELECT username, user_avatar, user_address, password, user_back_img,
-                   phone, email, user_self_website, sex, select_work, occupation,
-                   birthday, vip, account_status, account_permissions
-            FROM users
-            WHERE userid = %s
-        '''
-        cursor.execute(sql, (userid,))
-        columns = [column[0] for column in cursor.description]
-        row = cursor.fetchone()
-        return dict(zip(columns, row)) if row else None
+            # 权限级别检查（保持原有逻辑）
+            account_permissions = int(target_user_info.get('account_permissions', 0))
+            operate_user_ac = 2 if request.user.role == 'sys_admin' else 1 if request.user.role == 'admin' else 0
 
-    def _update_user_info(self, cursor, user_data, userid, is_super_admin, target_user_permissions):
-        update_fields = '''
-            username = %(username)s, user_avatar = %(user_avatar)s, user_address = %(user_address)s, 
-            password = %(password)s, user_back_img = %(user_back_img)s, phone = %(phone)s, 
-            email = %(email)s, user_self_website = %(user_self_website)s, sex = %(sex)s, 
-            select_work = %(select_work)s, occupation = %(occupation)s, birthday = %(birthday)s, 
-            vip = %(vip)s, account_status = %(account_status)s
-        '''
-        # 只有在操作者为超级管理员且目标用户权限低于操作者时才允许更新权限字段
-        if is_super_admin and target_user_permissions < 2:
-            update_fields += ', account_permissions = %(account_permissions)s'
+            if account_permissions >= operate_user_ac:
+                return JsonResponse({'code': 403, 'msg': '权限不足', 'status': 'error'}, status=403)
 
-        sql = f'UPDATE users SET {update_fields} WHERE userid = %(userid)s'
-        cursor.execute(sql, user_data)
+            # 构建更新数据（与旧接口相同的字段获取逻辑）
+            update_fields = {
+                'username': data.get('username', target_user_info['username']),
+                'user_avatar': data.get('user_avatar', target_user_info['user_avatar']),
+                'user_address': data.get('user_address', target_user_info['user_address']),
+                'password': make_password(data.get('password')) if data.get('password') else target_user_info[
+                    'password'],
+                'user_back_img': data.get('user_back_img', target_user_info['user_back_img']),
+                'phone': data.get('phone', target_user_info['phone']),
+                'email': data.get('email', target_user_info['email']),
+                'user_self_website': data.get('user_self_website', target_user_info['user_self_website']),
+                'sex': data.get('sex', target_user_info['sex']),
+                'select_work': data.get('select_work', target_user_info['select_work']),
+                'occupation': data.get('occupation', target_user_info['occupation']),
+                'birthday': data.get('birthday', target_user_info['birthday']),
+                'vip': data.get('vip', target_user_info['vip']),
+                'account_status': data.get('account_status', target_user_info['account_status']),
+                'account_permissions': data.get('account_permissions', target_user_info['account_permissions'])
+                if operate_user_ac == 2 else target_user_info['account_permissions']
+            }
 
-    def get(self, request):
-        self.logger.warning(self._request_path(request) + '非法GET请求，请求数据为：' + str(request.GET))
-        return render(request, '404.html', status=404)
+            # 动态生成更新SQL（保持与旧接口相同的安全更新方式）
+            set_clause = ', '.join([f"{k}=%s" for k in update_fields.keys()])
+            params = list(update_fields.values()) + [userid]
 
-    def post(self, request, *args, **kwargs):
-        try:
-            data = json.loads(request.body.decode('utf-8'))
-            operate_userid = str(request.user.id)
-            is_authenticated = getattr(request, 'is_authenticated', None)
+            affected_rows = self.execute_sql(
+                f'''UPDATE users SET {set_clause} WHERE userid=%s''',
+                params,
+                False
+            )
 
-            if is_authenticated is False:
-                return JsonResponse({'status':'error','message':'用户未登录'},status=401)
-
-            with connection.cursor() as cursor:
-                # 获取操作者的权限
-                cursor.execute('SELECT account_permissions FROM users WHERE userid=%s', (operate_userid,))
-                account_permissions = int(cursor.fetchone()[0])
-
-                if account_permissions is None:
-                    return self._log_and_return(request, 'warning', '操作用户不存在')
-
-                # 权值为0的用户直接返回权限不足
-                if account_permissions == 0:
-                    return self._log_and_return(request, 'warning', '权限不足', status=403)
-
-                userid = data.get('userid')
-                if not userid:
-                    return self._log_and_return(request, 'warning', '缺少被操作用户的userid')
-
-                user_info = self._get_user_info(cursor, userid)
-                if not user_info:
-                    return self._log_and_return(request, 'warning', '用户不存在')
-
-                target_user_permissions = int(user_info['account_permissions'])
-
-                # 权限检查：普通管理员不能操作比自己权限高或同级的用户
-                if account_permissions == 1 and target_user_permissions >= account_permissions:
-                    return self._log_and_return(request, 'warning', '权限不足，无法修改此用户的信息', status=403)
-
-                # 防止用户修改自己的权限
-                if operate_userid == userid or (account_permissions == 2 and target_user_permissions == 2):
-                    data['account_permissions'] = target_user_permissions
-
-                # 根据条件设置 account_permissions
-                if int(data.get('account_permissions', target_user_permissions)) < 2:
-                    data['account_permissions'] = data.get('account_permissions', target_user_permissions)
-                else:
-                    data['account_permissions'] = 0
-
-                update_data = {
-                    'userid': userid,
-                    'username': data.get('username', user_info['username']),
-                    'user_avatar': data.get('user_avatar', user_info['user_avatar']),
-                    'user_address': data.get('user_address', user_info['user_address']),
-                    'password': data.get('password', user_info['password']),
-                    'user_back_img': data.get('user_back_img', user_info['user_back_img']),
-                    'phone': data.get('phone', user_info['phone']),
-                    'email': data.get('email', user_info['email']),
-                    'user_self_website': data.get('user_self_website', user_info['user_self_website']),
-                    'sex': data.get('sex', user_info['sex']),
-                    'select_work': data.get('select_work', user_info['select_work']),
-                    'occupation': data.get('occupation', user_info['occupation']),
-                    'birthday': data.get('birthday', user_info['birthday']),
-                    'vip': data.get('vip', user_info['vip']),
-                    'account_status': data.get('account_status', user_info['account_status']),
-                    'account_permissions': data['account_permissions'],
-                    'current_userid': operate_userid
-                }
-
-                is_super_admin = account_permissions == 2
-
-                if account_permissions>target_user_permissions:
-                    self._update_user_info(cursor, update_data, userid, is_super_admin, target_user_permissions)
-                else:
-                    self._log_and_return(request, 'warning', '权限不足，无法修改此用户的信息', status=403)
-
-                if is_super_admin:
-                    self.logger.info(self._request_path(request) + '超级管理员修改用户信息，请求数据为：' + str(data))
-                else:
-                    self.logger.warning(
-                        self._request_path(request) + '非超级管理员，修改用户信息，请求数据为：' + str(data))
-
-                if cursor.rowcount >= 1:
-                    return JsonResponse({'status': 'success', 'message': '修改成功'})
-                else:
-                    return self._log_and_return(request, 'warning', '没有修改任何信息', data)
+            if affected_rows == 1:
+                return JsonResponse({'code': 200, 'msg': '修改成功', 'status': 'success'})
+            return JsonResponse({'code': 500, 'msg': '更新失败', 'status': 'error'}, status=500)
 
         except Exception as e:
             print(e)
-            return self._log_and_return(request, 'error', '服务器发生错误', str(e), status=500)
+            self.error_log(e, request)
+            return JsonResponse({'code': 500, 'msg': '服务器错误', 'status': 'error'}, status=500)
+
+
+

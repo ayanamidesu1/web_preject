@@ -26,10 +26,10 @@ class AdminLogin(View):
             data = json.loads(request.body.decode('utf-8'))
             userid = str(request.user.id)
             token = str(getattr(request, 'token', None))
-            is_authenticated = getattr(request, 'is_login', False)
+            is_login = getattr(request, 'is_login', False)
             userinfo = str(getattr(request, 'user', None))
 
-            if is_authenticated:
+            if is_login:
                 # 确保 userinfo 是一个字典或可序列化对象
                 print('userinfo:', userinfo)
                 if isinstance(userinfo, bytes):

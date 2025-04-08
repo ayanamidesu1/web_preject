@@ -12,7 +12,7 @@
     <div class="content" ref="content">
       <div ref="check_point" style="display:line-block;width:100%;height:1px;opacity:0;"></div>
         <div class="msg" v-for="(item,index) in msg_list" :key="index" ref="messagesContainer">
-            <div class="receiver" v-if="item.sender_id==user.target_user_id">
+            <div class="receiver" v-if="item.sender_id==user.target_user_id &&item.msg_type!='review_msg'">
                 <div class="user_info">
                   <img :src="api.s_base_url+'image/avatar_thumbnail/'+(user.avatar||'default.jpg')" 
                        alt="头像" 
@@ -24,20 +24,36 @@
                 </div>
                 <div class="msg_content">
                   <div class="bubble">
+                    <span>{{item.content.type}}</span>
                     <p class="text">{{item.content}}</p>
                     <span class="time">{{api.formatTimeAgo(item.time)}}</span>
                   </div>
                 </div>
               </div>
       
-              <div class="sender" v-if="item.sender_id==self_user.userid">
-                
+              <div class="sender" v-if="item.sender_id==self_user.userid &&item.msg_type!='review_msg'">                
                 <img :src="api.s_base_url+'image/avatar_thumbnail/'+(self_user.avatar||'default.jpg')" 
                      alt="头像" 
                      class="avatar">
                      <div class="msg_content">
                   <div class="bubble self">
                     <p class="text">{{item.content}}</p>
+                    <span class="time">{{api.formatTimeAgo(item.time)}}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="receiver" v-if="item.msg_type=='review_msg'">
+                <div class="user_info">
+                  <img :src="api.s_base_url+'svg/管理员.svg'" alt="头像" class="avatar" width="30px" height="30px">
+                  <div class="user_meta">
+                    <span class="username">管理员消息</span>
+                  </div>
+                </div>
+                <div class="msg_content">
+                  <div class="bubble self">
+                    <p class="text">
+                      <review_msg :msg="JSON.parse(item.content)" :time="item.time"></review_msg>
+                    </p>
                     <span class="time">{{api.formatTimeAgo(item.time)}}</span>
                   </div>
                 </div>
@@ -53,34 +69,45 @@
 
 
 <script setup>
-import { ref,onMounted,watchEffect,computed,onUnmounted,nextTick } from 'vue'
+import { ref, onMounted, watchEffect, computed, onUnmounted, nextTick } from 'vue'
 import { useRouter } from 'vue-router'
 import { useChatStore } from './chat_store';
 import { useStore } from '@assets/model/store';
 import { BaseApi } from '@/base_api';
+import review_msg from './review_msg.vue';
 
 const store = useStore()
 const chatStore = useChatStore()
 const router = useRouter()
-const api=new BaseApi()
-const msg_list=ref([])
-let limit=7
-let offset=0
-let total=0
-let date=new Date()
-let self_user=computed(()=>{
+const api = new BaseApi()
+const msg_list = ref([])
+let limit = 7
+let offset = 0
+let total = 0
+let date = new Date()
+
+// 使用ref存储定时器和监听器引用
+const offlineTimer = ref(null)
+const messageListener = ref(null)
+const heartbeatListener = ref(null)
+const heartbeatInterval = ref(null)
+
+const self_user = computed(() => {
     return store.$state.user
 })
-const user=computed(()=>{
+
+const user = computed(() => {
     return chatStore.$state.now_chat_user
 })
-const user_online=ref(false)
-let msg=ref()
-const messagesContainer = ref(null)
-let check_point=ref(null)
-let content=ref(null)
 
-let obs = new IntersectionObserver(async (entries) => {
+const user_online = ref(false)
+let msg = ref()
+const messagesContainer = ref(null)
+let check_point = ref(null)
+let content = ref(null)
+
+// 创建IntersectionObserver
+const obs = new IntersectionObserver(async (entries) => {
     if (entries[0].isIntersecting && total > msg_list.value.length) {
         const container = messagesContainer.value
         const oldHeight = container.scrollHeight
@@ -88,11 +115,9 @@ let obs = new IntersectionObserver(async (entries) => {
         offset += limit
         const res = await get_history_msg(user.value.target_user_id, limit, offset)
         
-        // 将新消息插入数组末尾
-        msg_list.value.unshift(...res.data.reverse()) // 先反转，再插入头部
+        msg_list.value.unshift(...res.data.reverse())
         total = res.total
         
-        // 保持滚动位置
         await nextTick()
         container.scrollTop = container.scrollHeight - oldHeight
     }
@@ -101,148 +126,185 @@ let obs = new IntersectionObserver(async (entries) => {
     rootMargin: '50px 0px 0px 0px'
 })
 
-//请求历史消息
-async function get_history_msg(user_id,limit=10,offset=0){
-    let res=await api.post('GetUserInfo/GetMsgList',{
-        target_id:user_id,
-        limit:limit,
-        offset:offset
+// 请求历史消息
+async function get_history_msg(user_id, limit = 10, offset = 0) {
+    let res = await api.post('GetUserInfo/GetMsgList', {
+        target_id: user_id,
+        limit: limit,
+        offset: offset
     })
-    if(res.status==200){
+    if (res.status == 200) {
         return res.result
     }
-    return []
+    return { data: [], total: 0 }
 }
+
 // 增强的输入处理
 const handleEnter = (event) => {
-  if (event.shiftKey || event.ctrlKey || event.altKey) {
-    // 组合键换行
-    msg.value += '\n'
-  } else {
-    if (!event.repeat) send_msg()
-    event.preventDefault()
-  }
+    if (event.shiftKey || event.ctrlKey || event.altKey) {
+        msg.value += '\n'
+    } else {
+        if (!event.repeat) send_msg()
+        event.preventDefault()
+    }
 }
+
 // 发送消息
-async function send_msg(){
-  if(msg.value){
-    console.log('发送消息',msg.value)
-    chatStore.$state.ws.send(JSON.stringify({
-      target_user_id:user.value.target_user_id,
-      content:msg.value,
-      chat_type:'one_to_one',
-      group_id:null,
-      type:'msg'
-    }))
-    scrollToBottom()
-  }
-  msg_list.value.push({
-    sender_id:self_user.value.userid,
-    content:msg.value,
-    time:date.getTime(),
-    id:date.getTime(),
-    receiver_id:user.value.target_user_id,
-    receiver_read_status:'未读'
-  })
-  msg.value=''
+async function send_msg() {
+    if (msg.value) {
+        console.log('发送消息', msg.value)
+        chatStore.$state.ws.send(JSON.stringify({
+            target_user_id: user.value.target_user_id,
+            content: msg.value,
+            chat_type: 'one_to_one',
+            group_id: null,
+            type: 'msg'
+        }))
+        scrollToBottom()
+    }
+    msg_list.value.push({
+        sender_id: self_user.value.userid,
+        content: msg.value,
+        time: date.getTime(),
+        id: date.getTime(),
+        receiver_id: user.value.target_user_id,
+        receiver_read_status: '未读'
+    })
+    msg.value = ''
 }
-chatStore.$state.ws.addEventListener('message', function (e) {
+
+// 滚动到底部
+function scrollToBottom() {
+    nextTick(() => {
+        if (content.value) {
+            content.value.scrollTo({
+                top: content.value.scrollHeight,
+                behavior: 'smooth'
+            });
+        }
+    });
+}
+
+// 消息处理函数
+function handleIncomingMessage(e) {
     let data = JSON.parse(e.data)
-    if (data.type=='heartbeat_notify'||data.type=='heartbeat_ack') return;
-    console.log('收到消息', data)
-    if (data.sender == user.value.target_user_id) {
+    if (data.type == 'heartbeat_notify' || data.type == 'heartbeat_ack') return;
+    
+    if (data.sender == user.value?.target_user_id) {
+      console.log('收到消息', data)
         msg_list.value.push({
             sender_id: data.sender,
             content: data.content,
             time: data.timestamp,
             id: data.message_id,
             receiver_id: self_user.value.user_id,
-            receiver_read_status: '未读'
+            receiver_read_status: '未读',
+            msg_type:'user'
         })
         scrollToBottom()
     }
-})
+    if(data.msg_type=='review_msg'){
+      console.log('收到审核消息', data)
+      let content=data.content
+      msg_list.value.push({
+        'msg_type':data.msg_type,
+        'content':content,
+        'time':data.time,
+        'type':'review_msg',
+      })
+  }
+}
 
-// 修改消息监听器中的心跳处理
-chatStore.$state.ws.addEventListener('message', function (e) {
+// 心跳处理函数
+function handleHeartbeat(e) {
     let data = JSON.parse(e.data)
     if (data.type == 'heartbeat_notify') {
-        // 确认心跳来源
         if (data.from_user === user.value?.target_user_id) {
             user_online.value = true
             
-            // 清除旧定时器
-            if (window.offlineTimer) clearTimeout(window.offlineTimer)
+            if (offlineTimer.value) clearTimeout(offlineTimer.value)
             
-            // 设置3秒离线判定
-            window.offlineTimer = setTimeout(() => {
+            offlineTimer.value = setTimeout(() => {
                 user_online.value = false
-                console.log('3秒未收到心跳，用户离线')
+                console.log('15秒未收到心跳，用户离线')
             }, 15000)
         }
     }
-})
-
-//建立目标用户心跳循环监察
-async function create_heart_beat(){
-  if(user.value){
-    chatStore.$state.ws.send(JSON.stringify({
-      target_user_id:user.value.target_user_id,
-      content:'',
-      chat_type:'one_to_on1',
-      "type":'heart_beat'
-    }))
-  }
-  setTimeout(()=>{
-    create_heart_beat()
-  },10000)
 }
 
-// 滚动到底部
-function scrollToBottom() {
-  nextTick(() => {
-    if (content.value) {
-      content.value.scrollTo({
-        top: content.value.scrollHeight,
-        behavior: 'smooth'  // 使用平滑滚动
-      });
+// 建立目标用户心跳循环检查
+function create_heart_beat() {
+    if (user.value) {
+        chatStore.$state.ws.send(JSON.stringify({
+            target_user_id: user.value.target_user_id,
+            content: '',
+            chat_type: 'one_to_one',
+            type: 'heart_beat'
+        }))
     }
-  });
 }
 
-
-onMounted(async ()=>{
-    if(!user.value){
+onMounted(async () => {
+    if (!user.value) {
         router.push('/chat')
     }
-    let res=await get_history_msg(user.value.target_user_id,limit,offset)
-    //翻转消息列表
-    msg_list.value=res.data.reverse()
-    total=res.total
-    nextTick(()=>{
-      scrollToBottom()
+    
+    let res = await get_history_msg(user.value.target_user_id, limit, offset)
+    msg_list.value = res.data.reverse()
+    total = res.total
+    
+    nextTick(() => {
+        scrollToBottom()
     })
-   //监听消息列表
-   obs.observe(check_point.value)
-})
-watchEffect(async()=>{
-    if(user.value){
-        let res=await get_history_msg(user.value.target_user_id,limit,offset)
-    msg_list.value=res.data
-    total=res.total
-    }
-    chatStore.$state.ws.send(JSON.stringify({
-      target_user_id:user.value.target_user_id,
-      content:'',
-      chat_type:'one_to_on1',
-      "type":'heart_beat'
-    }))
-    create_heart_beat()
-})
-onUnmounted(()=>{
-    obs.disconnect()
+    
+    // 监听消息列表
+    obs.observe(check_point.value)
+    
+    // 添加消息监听器
+    messageListener.value = handleIncomingMessage
+    chatStore.$state.ws.addEventListener('message', messageListener.value)
+    
+    // 添加心跳监听器
+    heartbeatListener.value = handleHeartbeat
+    chatStore.$state.ws.addEventListener('message', heartbeatListener.value)
+    
+    // 启动心跳循环
+    heartbeatInterval.value = setInterval(() => {
+        create_heart_beat()
+    }, 10000)
 })
 
+watchEffect(async () => {
+    if (user.value) {
+        let res = await get_history_msg(user.value.target_user_id, limit, offset)
+        msg_list.value = res.data
+        total = res.total
+    }
+})
+
+onUnmounted(() => {
+    // 清理所有资源
+    obs.disconnect()
+    
+    // 移除消息监听器
+    if (messageListener.value) {
+        chatStore.$state.ws.removeEventListener('message', messageListener.value)
+    }
+    
+    // 移除心跳监听器
+    if (heartbeatListener.value) {
+        chatStore.$state.ws.removeEventListener('message', heartbeatListener.value)
+    }
+    
+    // 清除定时器
+    if (offlineTimer.value) {
+        clearTimeout(offlineTimer.value)
+    }
+    
+    if (heartbeatInterval.value) {
+        clearInterval(heartbeatInterval.value)
+    }
+})
 </script>
 
 <style scoped lang="scss">

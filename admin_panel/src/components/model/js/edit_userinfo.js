@@ -23,7 +23,6 @@ async function edit_userinfo({
                 "Content-Type": "application/json",
                 "Authorization": "token " + localStorage.getItem("token"),
             },
-            credentials: "include",
             body: JSON.stringify({
                 userid,
                 username,

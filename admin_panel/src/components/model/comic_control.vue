@@ -19,12 +19,12 @@
     </div>
     <div class="content">
       <div class="item" v-for="(item, index) in work_list" :key="index">
-        <div class="ill_cover">
+        <div class="comic_cover">
           <img :src="'https://www.sunyuanling.com/server/static/image/comic/thumbnail/' + item.content_file_list.split(/[,，]/)[0]"
             alt="漫画作品封面">
-          <span @click="show_ill(item)" class="show_ill_content_btn">查看详情</span>
+          <span @click="show_comic(item)" class="show_comic_content_btn">查看详情</span>
         </div>
-        <div class="ill_info">
+        <div class="comic_info">
           <div class="info_item">
             <span>标题：</span>
             <span>{{ item.work_name }}</span>
@@ -52,8 +52,8 @@
             <span>{{ item.work_approved == 1 ? '已通过' : item.work_approved == 0 ? '未通过' : '待审核' }}</span>
           </div>
           <div class="work_action">
-            <button @click="update_work_status(1, item.id)">通过</button>
-            <button @click="update_work_status(0, item.id)">不通过</button>
+            <button @click="update_work_status(1, item.id,item.userid)">通过</button>
+            <button @click="update_work_status(0, item.id,item.userid)">不通过</button>
           </div>
         </div>
       </div>
@@ -62,13 +62,13 @@
         <span>加载中……</span>
       </div>
     </div>
-    <div class="show_ill_content" v-if="show_comic_content">
+    <div class="show_comic_content" v-if="show_comic_content">
       <div class="close">
         <button @click="show_comic_content = false">
           <img src="https://www.sunyuanling.com/assets/close.svg" alt="关闭" class="icon">
         </button>
       </div>
-      <div class="ill_img" v-for="(item, index) in comic_list" :key="index">
+      <div class="comic_img" v-for="(item, index) in comic_list" :key="index">
         <img :src="'https://www.sunyuanling.com/server/static/image/comic/' + item" alt="作品">
       </div>
     </div>
@@ -82,6 +82,9 @@ import { ref, onMounted, watch, onUnmounted } from 'vue'
 import { get_comic_worklist } from './js/get_work_list'
 import { search_comic_work } from './js/search_work'
 import { update_comic_work_status } from './js/update_work'
+import { useStore } from '@/model/store/store'
+
+const store = useStore()
 
 const work_info_list = ref()
 const limit = ref(5)
@@ -95,7 +98,7 @@ const comic_list = ref([])
 const loading = ref(false)
 
 
-function show_ill(item) {
+function show_comic(item) {
   comic_list.value = item.content_file_list.split(/[,，]/)
   show_comic_content.value = true
 }
@@ -125,17 +128,47 @@ watch([search_key, work_status], async () => {
 })
 
 //更新作品状态
-async function update_work_status(work_status, work_id) {
+async function update_work_status(work_status, work_id,user_id) {
   let data = await update_comic_work_status(work_status, work_id)
   if (data.status == 'success') {
     alert('修改成功'),
-      await get_comic_list()
+    await get_comic_list()
+    send_comic_review_msg(user_id, work_id, work_status)
   }
   else {
     alert(data.message)
   }
   await get_comic_list()
 }
+
+//向目标用于发送审核消息
+async function send_comic_review_msg(user_id, work_id, work_status) {
+  const msg = {
+    target_user_id: user_id,
+    content: {
+      work_id: work_id,
+      work_status: work_status,
+      work_type: "comic",
+      msg_type: "comic_review",
+      msg: work_status == 1 ? "作品审核通过" : "作品审核未通过",
+    },
+    type: "review_msg",
+  };
+
+  try {
+    // 直接发送对象，无需手动序列化
+    if (store.$state.ws?.readyState === WebSocket.OPEN) {
+      store.$state.ws.send(JSON.stringify(msg));
+      console.log("审核消息发送成功", msg);
+    } else {
+      console.error("WebSocket 连接未就绪");
+      // 可选：重连机制或消息队列
+    }
+  } catch (error) {
+    console.error("消息发送失败:", error);
+  }
+}
+
 let scroll_tag = ref(null)
 const obsserver = new IntersectionObserver(async (entries) => {
   if (entries[0].isIntersecting && total.value > work_list.value.length) {
@@ -187,7 +220,7 @@ onUnmounted(() => {
   overflow-y: auto;
 }
 
-.ill_cover {
+.comic_cover {
   width: 200px;
   height: 100%;
   overflow: hidden;
@@ -199,14 +232,14 @@ onUnmounted(() => {
   text-align: center;
 }
 
-.ill_cover img {
+.comic_cover img {
   width: 200px;
   height: 200px;
   object-fit: cover;
   border-radius: 15px;
 }
 
-.ill_info {
+.comic_info {
   width: 100%;
   height: auto;
   display: flex;
@@ -232,7 +265,7 @@ onUnmounted(() => {
   color: #333;
 }
 
-.show_ill_content {
+.show_comic_content {
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -251,7 +284,7 @@ onUnmounted(() => {
   overflow-x: auto;
 }
 
-.ill_img {
+.comic_img {
   width: auto;
   height: auto;
   max-width: 80%;
@@ -264,7 +297,7 @@ onUnmounted(() => {
   margin: 10px;
 }
 
-.ill_img img {
+.comic_img img {
   width: auto;
   height: auto;
   max-width: 100%;
@@ -361,7 +394,7 @@ onUnmounted(() => {
   transition: all 0.2s ease-in-out;
 }
 
-.show_ill_content_btn {
+.show_comic_content_btn {
   width: 100px;
   height: 40px;
   cursor: pointer;
@@ -373,7 +406,7 @@ onUnmounted(() => {
   align-items: center;
 }
 
-.show_ill_content_btn:hover {
+.show_comic_content_btn:hover {
   background-color: rgb(0, 150, 250);
   opacity: 0.8;
   color: white;

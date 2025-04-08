@@ -9,6 +9,7 @@ from .GetNovelList import GetNovelList
 from .SearchComicWork import SearchComicWork
 from .SearchIllWork import SearchIllWork
 from .SearchNovleWork import SearchNovelWork
+from .get_chapter_info import GetChapterInfo
 
 urlpatterns = [
     path('GetIllInfo/', GetIllInfo.as_view(), name='GetIllInfo'),
@@ -28,5 +29,7 @@ urlpatterns = [
     path('SearchComicWork/', SearchComicWork.as_view(), name='SearchComicWork'),
     #为前端的漫画作品搜索和作品状态筛选提供支持
     path('SearchNovelWork/', SearchNovelWork.as_view(), name='SearchNovelWork'),
-    #为前端的小说作品搜索和作品状态筛选提供支持
+    # 为前端的小说作品搜索和作品状态筛选提供支持
+    path('GetChapterInfo',GetChapterInfo.as_view(),name='GetChapterInfo'),
+    #获取章节信息
 ]

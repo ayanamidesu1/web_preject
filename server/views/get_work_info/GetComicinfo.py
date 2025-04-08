@@ -24,22 +24,37 @@ class GetComicinfo(View):
         now = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
         try:
             data = json.loads(request.body.decode('utf-8'))
-            sql = 'select *,id as work_id from comic where id=%s and work_approved=1'
+
+            # 修正后的SQL查询
+            sql = '''
+            SELECT comic.*, comic.id as work_id, 
+                   u.user_avatar as avatar, 
+                   comic.belong_to_userid as author_id 
+            FROM comic 
+            LEFT JOIN users u ON u.userid = comic.belong_to_userid 
+            WHERE comic.id = %s AND work_approved = 1
+            '''
+
             work_id = data.get('work_id')
             with connection.cursor() as cursor:
                 cursor.execute(sql, (work_id,))
                 result = cursor.fetchall()
+
                 if not result:
                     self.logger.info(self.request_path(request) + '获取失败，请求数据为：' + str(request.body))
                     return JsonResponse({'status': 'error', 'message': '获取失败'}, status=404)
+
                 columns = [desc[0] for desc in cursor.description]
                 rows = [dict(zip(columns, row)) for row in result]
                 self.logger.info(self.request_path(request) + '获取成功，请求数据为：' + str(request.body))
+
             return JsonResponse({'status': 'success', 'message': '获取成功', 'data': rows}, status=200)
+
         except json.JSONDecodeError as e:
             print(e)
             self.logger.error(self.request_path(request) + str(e) + '请求数据为：' + str(request.body))
             return JsonResponse({'status': 'error', 'message': '请求数据格式错误'}, status=400)
+
         except Exception as e:
             print(e)
             self.logger.error(self.request_path(request) + str(e) + '请求数据为：' + str(request.body))

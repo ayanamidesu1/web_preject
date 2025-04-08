@@ -88,6 +88,12 @@ class BaseApi(View):
             )
             raise  # 抛出异常供上层处理
 
+    def execute_sql_many(self, sql, params_list):
+        """执行批量SQL操作"""
+        with connection.cursor() as cursor:
+            cursor.executemany(sql, params_list)
+            return cursor.rowcount
+
     def is_login(self, request) -> Union[JsonResponse, bool]:
         user = request.user
         if not user.is_login:

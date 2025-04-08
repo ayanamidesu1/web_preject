@@ -23,6 +23,7 @@ from .get_chat_list import GetChatList
 from .get_follow_list import GetFollowList
 from .get_msg_list import GetMsgList
 from .get_self_info import GetSelfInfo
+from .get_sys_msg_list import get_sys_msg_list
 from .get_user_follow_status import GetUserFollowStatus
 from .get_user_info_by_id import GetUserInfoById
 from .login import Login
@@ -92,4 +93,6 @@ urlpatterns = [
     # 更新聊天列表
     path('AddMsg', AddMsg.as_view(), name='AddMsg'),
     # 新增消息
+    path('get_sys_msg_list',get_sys_msg_list.as_view(),name='get_sys_msg_list'),
+    # 获取系统消息
 ]

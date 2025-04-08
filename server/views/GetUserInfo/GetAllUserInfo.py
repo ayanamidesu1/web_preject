@@ -56,10 +56,10 @@ class GetAllUserInfo(View):
     def post(self, request, *args, **kwargs):
         try:
             # 如果已通过中间件认证
-            is_authenticated = getattr(request, 'is_authenticated', False)
+            is_login = getattr(request, 'is_login', False)
             userid = getattr(request, 'id', None)
             #print(f'中间件认证通过，用户ID为：{str(userid)}')
-            #print(f'中间件通过状态为：{str(is_authenticated)}')
+            #print(f'中间件通过状态为：{str(is_login)}')
             data=json.loads(request.body.decode('utf-8'))
             get_userid=data.get('userid',None)
             if get_userid:
@@ -70,7 +70,7 @@ class GetAllUserInfo(View):
                 else:
                     self.logger.warning(f'No data found for request: {data}')
                     return JsonResponse({'status': 'failure', 'message': 'No data found'}, status=404)
-            if is_authenticated:
+            if is_login:
                 rows = self.fetch_user_data(userid=userid)
                 if rows:
                     self.logger.info(f'POST request success: {rows}')

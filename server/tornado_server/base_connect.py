@@ -385,7 +385,7 @@ class BaseConnect(tornado.websocket.WebSocketHandler):
 
         with cls._pool_lock:
             for pool_name, connections in cls.connected_users.items():
-                print("连接池: {}，连接列表：{}".format(pool_name, connections))
+                #print("连接池: {}，连接列表：{},连接数：{}".format(pool_name, connections, len(connections)))
                 for user_id, conn in list(connections.items()):
                     try:
                         if isinstance(conn, tornado.websocket.WebSocketHandler):

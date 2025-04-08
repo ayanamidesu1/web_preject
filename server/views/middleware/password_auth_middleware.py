@@ -163,7 +163,7 @@ class PasswordAuthMiddleware:
             request.userinfo = json.dumps(user_info)
             request.userid = userid
             request.token = e_token
-            request.is_authenticated = True
+            request.is_login = True
             request.role = login_type
             return None
         else:

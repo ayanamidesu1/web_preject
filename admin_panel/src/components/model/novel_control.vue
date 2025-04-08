@@ -57,8 +57,8 @@
             <span>{{ item.work_approved == 1 ? '已上架' : item.work_approved == 0 ? '未上架' : '未审核' }}</span>
           </div>
           <div class="novel_work_control">
-            <span class="novel_work_control_btn" @click="update_work_status(1, item.work_id)">上架</span>
-            <span class="novel_work_control_btn" @click="update_work_status(0, item.work_id)">下架</span>
+            <span class="novel_work_control_btn" @click="update_work_status(1, item.work_id,item.userid)">上架</span>
+            <span class="novel_work_control_btn" @click="update_work_status(0, item.work_id,item.userid)">下架</span>
           </div>
         </div>
       </div>
@@ -67,78 +67,79 @@
         加载中……
       </div>
     </div>
-  </div>
-  <div class="show_novel_content_page" v-if="show_novel_content_page_show">
-    <div class="close" @click="show_novel_content_page_show = false">
-      <div class="close_btn">
-        <img src="https://www.sunyuanling.com/assets/close.svg" alt="退出">
+    <div class="show_novel_content_page" v-if="show_novel_content_page_show">
+      <div class="close" @click="show_novel_content_page_show = false">
+        <div class="close_btn">
+          <img src="https://www.sunyuanling.com/assets/close.svg" alt="退出">
+        </div>
+      </div>
+      <div class="novel_content_page" v-if="content_info_list">
+        <div class="novel_info">
+          <div class="content_novel_cover">
+            <img :src="'https://www.sunyuanling.com/server/static/image/novel/thumbnail/' + title_list[0].work_cover" alt="小说封面">
+          </div>
+  
+          <div class="novel_info_item_box">
+            <div class="info_item_box">
+              <span>作品名称：{{ title_list[0].work_name }}</span>
+              <span>作品类型：{{ title_list[0].is_series }}</span>
+              <span>作者：{{ title_list[0].username }}</span>
+              <span>作品字数：{{ content_info_list.total_word_count }}</span>
+            </div>
+          </div>
+        </div>
+        <div class="novel_info_item_control">
+          <div class="novel_info_item_control_search">
+            <span>搜索：</span>
+            <input type="text" placeholder="请输入章节名/ID" v-model="chapter_search_key">
+            <span style="width:auto;height:auto;padding:5px 10px;background-color:rgba(0,150,250);
+            color:white;border-radius:5px;cursor:pointer;" @click="search_chapter">搜索</span>
+          </div>
+          <div class="chapter_status">
+            <span>章节审核状态：</span>
+            <select v-model="selectedStatus">
+              <option value="all">全部</option>
+              <option value="1">通过</option>
+              <option value="0">未通过</option>
+              <option value="2">未审核</option>
+            </select>
+          </div>
+          <div class="novel_info_item_control_all">
+            <span>批量操作</span>
+            <select v-model="selectAll">
+              <option value="all">全选</option>
+              <option value="all_none">取消全选</option>
+            </select>
+          </div>
+          <div class="novel_info_item_control_btn">
+            <span @click="update_novel_chapter_status_list(1)">批量通过</span>
+            <span @click="update_novel_chapter_status_list(0)">批量未通过</span>
+          </div>
+        </div>
+        <div class="title_list">
+          <div class="title_item" v-for="(item, index) in filteredTitles" :key="index">
+            <span>章节名称：&nbsp;{{ item.title }}</span>
+            <span>章节审核状态：&nbsp;
+              <span
+                :class="item.chapter_approved == 1 ? 'chapter_is_pass' : (item.chapter_approved == 0 ? 'chapter_not_pass' : 'chapter_none_pass')">
+                {{ item.chapter_approved == 1 ? '通过' : item.chapter_approved == 0 ? '未通过' : '未审核' }}</span>
+            </span>
+            <div class="read_content" @click="set_red_box_content(item.content)">
+              阅读章节
+            </div>
+            选择该节：<input type="checkbox" v-model="choose_chapter_list" :value="item">
+          </div>
+          <div class="read_box" v-if="read_box_show">
+            <div class="close" @click="read_box_show = false" style="right: 50px;top:50px;">
+              <img src="https://www.sunyuanling.com/assets/close.svg" alt="关闭">
+            </div>
+            <span v-html="read_box_content"></span>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="novel_content_page" v-if="content_info_list">
-      <div class="novel_info">
-        <div class="content_novel_cover">
-          <img :src="'https://www.sunyuanling.com/server/static/image/novel/thumbnail/' + title_list[0].work_cover" alt="小说封面">
-        </div>
-
-        <div class="novel_info_item_box">
-          <div class="info_item_box">
-            <span>作品名称：{{ title_list[0].work_name }}</span>
-            <span>作品类型：{{ title_list[0].is_series }}</span>
-            <span>作者：{{ title_list[0].username }}</span>
-            <span>作品字数：{{ content_info_list.total_word_count }}</span>
-          </div>
-        </div>
-      </div>
-      <div class="novel_info_item_control">
-        <div class="novel_info_item_control_search">
-          <span>搜索：</span>
-          <input type="text" placeholder="请输入章节名/ID" v-model="chapter_search_key">
-          <span style="width:auto;height:auto;padding:5px 10px;background-color:rgba(0,150,250);
-          color:white;border-radius:5px;cursor:pointer;" @click="search_chapter">搜索</span>
-        </div>
-        <div class="chapter_status">
-          <span>章节审核状态：</span>
-          <select v-model="selectedStatus">
-            <option value="all">全部</option>
-            <option value="1">通过</option>
-            <option value="0">未通过</option>
-            <option value="2">未审核</option>
-          </select>
-        </div>
-        <div class="novel_info_item_control_all">
-          <span>批量操作</span>
-          <select v-model="selectAll">
-            <option value="all">全选</option>
-            <option value="all_none">取消全选</option>
-          </select>
-        </div>
-        <div class="novel_info_item_control_btn">
-          <span @click="update_novel_chapter_status_list(1)">批量通过</span>
-          <span @click="update_novel_chapter_status_list(0)">批量未通过</span>
-        </div>
-      </div>
-      <div class="title_list">
-        <div class="title_item" v-for="(item, index) in filteredTitles" :key="index">
-          <span>章节名称：&nbsp;{{ item.title }}</span>
-          <span>章节审核状态：&nbsp;
-            <span
-              :class="item.chapter_approved == 1 ? 'chapter_is_pass' : (item.chapter_approved == 0 ? 'chapter_not_pass' : 'chapter_none_pass')">
-              {{ item.chapter_approved == 1 ? '通过' : item.chapter_approved == 0 ? '未通过' : '未审核' }}</span>
-          </span>
-          <div class="read_content" @click="set_red_box_content(item.content)">
-            阅读章节
-          </div>
-          选择该节：<input type="checkbox" v-model="choose_chapter_list" :value="item">
-        </div>
-        <div class="read_box" v-if="read_box_show">
-          <div class="close" @click="read_box_show = false" style="right: 50px;top:50px;">
-            <img src="https://www.sunyuanling.com/assets/close.svg" alt="关闭">
-          </div>
-          <span v-html="read_box_content"></span>
-        </div>
-      </div>
-    </div>
   </div>
+  
 </template>
 
 <script setup>
@@ -146,7 +147,9 @@ import { get_novel_work_list, get_novel_work_content_list } from './js/get_work_
 import { ref, onMounted, watch, onUnmounted, computed } from 'vue'
 import { search_novel_work } from './js/search_work'
 import { update_novel_work_status, update_novel_chapter_status } from './js/update_work'
+import { useStore } from '@/model/store/store'
 
+const store = useStore()
 const novel_info_list = ref([])
 const novel_work_list = ref([])
 const limit = ref(10)
@@ -194,6 +197,7 @@ async function update_novel_chapter_status_list(status) {
     let res = await update_novel_chapter_status(status, work_id, chapter_id)
     if (res.status == 'success') {
       alert('更新成功')
+      send_comic_chapter_review_msg(choose_chapter_list.value[0].userid, work_id, chapter_id, status)
     }
     else {
       alert(res.message)
@@ -202,7 +206,59 @@ async function update_novel_chapter_status_list(status) {
   else {
     console.log('请选择章节')
   }
+}
+//向目标用于发送审核消息
+async function send_novel_review_msg(user_id, work_id, work_status) {
+  const msg = {
+    target_user_id: user_id,
+    content: {
+      work_id: work_id,
+      work_status: work_status,
+      work_type: "novel",
+      msg_type: "novel_review",
+      msg: work_status == 1 ? "作品审核通过" : "作品审核未通过",
+    },
+    type: "review_msg",
+  };
 
+  try {
+    // 直接发送对象，无需手动序列化
+    if (store.$state.ws?.readyState === WebSocket.OPEN) {
+      store.$state.ws.send(JSON.stringify(msg));
+      console.log("审核消息发送成功", msg);
+    } else {
+      console.error("WebSocket 连接未就绪");
+      // 可选：重连机制或消息队列
+    }
+  } catch (error) {
+    console.error("消息发送失败:", error);
+  }
+}
+//发送章节审核消息
+async function send_comic_chapter_review_msg(user_id, work_id, chapter_ids, work_status) {
+  const msg={
+    target_user_id: user_id,
+    content: {
+      work_id: work_id,
+      chapter_id: chapter_ids,
+      work_status: work_status,
+      work_type: "novel",
+      msg_type: "novel_chapter_review",
+      msg: work_status == 1 ? "章节审核通过" : "章节审核未通过",
+    },
+    type: "review_msg",
+  }
+  try {
+    if (store.$state.ws?.readyState === WebSocket.OPEN) {
+      store.$state.ws.send(JSON.stringify(msg));
+      console.log("章节审核消息发送成功", msg);
+    } else {
+      console.error("WebSocket 连接未就绪");
+    }
+  }
+  catch (error) {
+    console.error("消息发送失败:", error);
+  }
 }
 
 // 过滤章节列表
@@ -285,11 +341,12 @@ async function get_title_list(work_id) {
 }
 
 //更新小说状态
-async function update_work_status(status, work_id) {
+async function update_work_status(status, work_id,user_id) {
   let res = await update_novel_work_status(status, work_id)
   if (res.status == 'success') {
     await get_novel_work()
     alert('更新成功')
+    send_novel_review_msg(user_id, work_id, status)
   }
   else {
     alert(res.message)

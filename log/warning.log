@@ -1390,3 +1390,313 @@ Params: None
 2025-04-07 00:26:15
 2025-04-07 00:26:15,727 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'comic' at line 1")，请求时间：2025-04-07T00:26:15.727252，请求IP：127.0.0.1 @ 2025-04-07T00:26:15.727252
 2025-04-07 00:26:15
+2025-04-07 11:55:42,668 - WARNING - 非法get请求，请求时间：2025-04-07T11:55:42.668313，请求IP：127.0.0.1 @ 2025-04-07T11:55:42.668313
+2025-04-07 11:55:42
+2025-04-07 11:55:42,668 - WARNING - 非法get请求，请求时间：2025-04-07T11:55:42.668313，请求IP：127.0.0.1 @ 2025-04-07T11:55:42.668313
+2025-04-07 11:55:42
+2025-04-07 11:55:42,668 - WARNING - 非法get请求，请求时间：2025-04-07T11:55:42.668313，请求IP：127.0.0.1 @ 2025-04-07T11:55:42.668313
+2025-04-07 11:55:42
+2025-04-07 11:55:42,668 - WARNING - 非法get请求，请求时间：2025-04-07T11:55:42.668313，请求IP：127.0.0.1 @ 2025-04-07T11:55:42.668313
+2025-04-07 11:55:42
+2025-04-07 11:55:42,668 - WARNING - 非法get请求，请求时间：2025-04-07T11:55:42.668313，请求IP：127.0.0.1 @ 2025-04-07T11:55:42.668313
+2025-04-07 11:55:42
+2025-04-07 11:55:42,668 - WARNING - 非法get请求，请求时间：2025-04-07T11:55:42.668313，请求IP：127.0.0.1 @ 2025-04-07T11:55:42.668313
+2025-04-07 11:55:42
+2025-04-07 11:55:42,668 - WARNING - 非法get请求，请求时间：2025-04-07T11:55:42.668313，请求IP：127.0.0.1 @ 2025-04-07T11:55:42.668313
+2025-04-07 11:55:42
+2025-04-07 11:55:42,668 - WARNING - 非法get请求，请求时间：2025-04-07T11:55:42.668313，请求IP：127.0.0.1 @ 2025-04-07T11:55:42.668313
+2025-04-07 11:55:42
+2025-04-07 11:55:42,668 - WARNING - 非法get请求，请求时间：2025-04-07T11:55:42.668313，请求IP：127.0.0.1 @ 2025-04-07T11:55:42.668313
+2025-04-07 11:55:42
+2025-04-07 11:55:42,668 - WARNING - 非法get请求，请求时间：2025-04-07T11:55:42.668313，请求IP：127.0.0.1 @ 2025-04-07T11:55:42.668313
+2025-04-07 11:55:42
+2025-04-07 14:13:33,522 - ERROR - not all arguments converted during string formatting，请求时间：2025-04-07T14:13:33.522578，请求IP：127.0.0.1 @ 2025-04-07T14:13:33.522578
+2025-04-07 14:13:33
+2025-04-07 14:13:33,522 - ERROR - not all arguments converted during string formatting，请求时间：2025-04-07T14:13:33.522578，请求IP：127.0.0.1 @ 2025-04-07T14:13:33.522578
+2025-04-07 14:13:33
+2025-04-07 14:13:33,522 - ERROR - not all arguments converted during string formatting，请求时间：2025-04-07T14:13:33.522578，请求IP：127.0.0.1 @ 2025-04-07T14:13:33.522578
+2025-04-07 14:13:33
+2025-04-07 14:13:33,522 - ERROR - not all arguments converted during string formatting，请求时间：2025-04-07T14:13:33.522578，请求IP：127.0.0.1 @ 2025-04-07T14:13:33.522578
+2025-04-07 14:13:33
+2025-04-07 14:13:33,522 - ERROR - not all arguments converted during string formatting，请求时间：2025-04-07T14:13:33.522578，请求IP：127.0.0.1 @ 2025-04-07T14:13:33.522578
+2025-04-07 14:13:33
+2025-04-07 14:13:33,522 - ERROR - not all arguments converted during string formatting，请求时间：2025-04-07T14:13:33.522578，请求IP：127.0.0.1 @ 2025-04-07T14:13:33.522578
+2025-04-07 14:13:33
+2025-04-07 14:13:33,522 - ERROR - not all arguments converted during string formatting，请求时间：2025-04-07T14:13:33.522578，请求IP：127.0.0.1 @ 2025-04-07T14:13:33.522578
+2025-04-07 14:13:33
+2025-04-07 14:13:33,522 - ERROR - not all arguments converted during string formatting，请求时间：2025-04-07T14:13:33.522578，请求IP：127.0.0.1 @ 2025-04-07T14:13:33.522578
+2025-04-07 14:13:33
+2025-04-07 14:13:33,522 - ERROR - not all arguments converted during string formatting，请求时间：2025-04-07T14:13:33.522578，请求IP：127.0.0.1 @ 2025-04-07T14:13:33.522578
+2025-04-07 14:13:33
+2025-04-07 14:13:33,522 - ERROR - not all arguments converted during string formatting，请求时间：2025-04-07T14:13:33.522578，请求IP：127.0.0.1 @ 2025-04-07T14:13:33.522578
+2025-04-07 14:13:33
+2025-04-07 14:14:04,160 - ERROR - not all arguments converted during string formatting，请求时间：2025-04-07T14:14:04.160232，请求IP：127.0.0.1 @ 2025-04-07T14:14:04.160232
+2025-04-07 14:14:04
+2025-04-07 14:14:04,160 - ERROR - not all arguments converted during string formatting，请求时间：2025-04-07T14:14:04.160232，请求IP：127.0.0.1 @ 2025-04-07T14:14:04.160232
+2025-04-07 14:14:04
+2025-04-07 14:14:04,160 - ERROR - not all arguments converted during string formatting，请求时间：2025-04-07T14:14:04.160232，请求IP：127.0.0.1 @ 2025-04-07T14:14:04.160232
+2025-04-07 14:14:04
+2025-04-07 14:14:04,160 - ERROR - not all arguments converted during string formatting，请求时间：2025-04-07T14:14:04.160232，请求IP：127.0.0.1 @ 2025-04-07T14:14:04.160232
+2025-04-07 14:14:04
+2025-04-07 14:14:04,160 - ERROR - not all arguments converted during string formatting，请求时间：2025-04-07T14:14:04.160232，请求IP：127.0.0.1 @ 2025-04-07T14:14:04.160232
+2025-04-07 14:14:04
+2025-04-07 14:14:04,160 - ERROR - not all arguments converted during string formatting，请求时间：2025-04-07T14:14:04.160232，请求IP：127.0.0.1 @ 2025-04-07T14:14:04.160232
+2025-04-07 14:14:04
+2025-04-07 14:14:04,160 - ERROR - not all arguments converted during string formatting，请求时间：2025-04-07T14:14:04.160232，请求IP：127.0.0.1 @ 2025-04-07T14:14:04.160232
+2025-04-07 14:14:04
+2025-04-07 14:14:04,160 - ERROR - not all arguments converted during string formatting，请求时间：2025-04-07T14:14:04.160232，请求IP：127.0.0.1 @ 2025-04-07T14:14:04.160232
+2025-04-07 14:14:04
+2025-04-07 14:14:04,160 - ERROR - not all arguments converted during string formatting，请求时间：2025-04-07T14:14:04.160232，请求IP：127.0.0.1 @ 2025-04-07T14:14:04.160232
+2025-04-07 14:14:04
+2025-04-07 14:14:04,160 - ERROR - not all arguments converted during string formatting，请求时间：2025-04-07T14:14:04.160232，请求IP：127.0.0.1 @ 2025-04-07T14:14:04.160232
+2025-04-07 14:14:04
+2025-04-07 16:21:09,297 - ERROR - SQL Error: dict can not be used as parameter
+SQL: 
+            insert into messages (sender_id, receiver_id, group_id, content, time, receiver_read_status, type) VALUES 
+            (%s,%s,%s,%s,%s,%s,%s)
+            
+Params: ['f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'all', None, {'title': '测试', 'content': '测试'}, datetime.datetime(2025, 4, 7, 16, 21, 9, 292836), '未读', 'one_to_more']
+2025-04-07 16:21:09
+2025-04-07 16:21:09,297 - ERROR - SQL Error: dict can not be used as parameter
+SQL: 
+            insert into messages (sender_id, receiver_id, group_id, content, time, receiver_read_status, type) VALUES 
+            (%s,%s,%s,%s,%s,%s,%s)
+            
+Params: ['f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'all', None, {'title': '测试', 'content': '测试'}, datetime.datetime(2025, 4, 7, 16, 21, 9, 292836), '未读', 'one_to_more']
+2025-04-07 16:21:09
+2025-04-07 16:21:09,297 - ERROR - SQL Error: dict can not be used as parameter
+SQL: 
+            insert into messages (sender_id, receiver_id, group_id, content, time, receiver_read_status, type) VALUES 
+            (%s,%s,%s,%s,%s,%s,%s)
+            
+Params: ['f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'all', None, {'title': '测试', 'content': '测试'}, datetime.datetime(2025, 4, 7, 16, 21, 9, 292836), '未读', 'one_to_more']
+2025-04-07 16:21:09
+2025-04-07 16:21:09,297 - ERROR - SQL Error: dict can not be used as parameter
+SQL: 
+            insert into messages (sender_id, receiver_id, group_id, content, time, receiver_read_status, type) VALUES 
+            (%s,%s,%s,%s,%s,%s,%s)
+            
+Params: ['f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'all', None, {'title': '测试', 'content': '测试'}, datetime.datetime(2025, 4, 7, 16, 21, 9, 292836), '未读', 'one_to_more']
+2025-04-07 16:21:09
+2025-04-07 16:21:09,297 - ERROR - SQL Error: dict can not be used as parameter
+SQL: 
+            insert into messages (sender_id, receiver_id, group_id, content, time, receiver_read_status, type) VALUES 
+            (%s,%s,%s,%s,%s,%s,%s)
+            
+Params: ['f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'all', None, {'title': '测试', 'content': '测试'}, datetime.datetime(2025, 4, 7, 16, 21, 9, 292836), '未读', 'one_to_more']
+2025-04-07 16:21:09
+2025-04-07 16:21:09,297 - ERROR - SQL Error: dict can not be used as parameter
+SQL: 
+            insert into messages (sender_id, receiver_id, group_id, content, time, receiver_read_status, type) VALUES 
+            (%s,%s,%s,%s,%s,%s,%s)
+            
+Params: ['f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'all', None, {'title': '测试', 'content': '测试'}, datetime.datetime(2025, 4, 7, 16, 21, 9, 292836), '未读', 'one_to_more']
+2025-04-07 16:21:09
+2025-04-07 16:21:09,297 - ERROR - SQL Error: dict can not be used as parameter
+SQL: 
+            insert into messages (sender_id, receiver_id, group_id, content, time, receiver_read_status, type) VALUES 
+            (%s,%s,%s,%s,%s,%s,%s)
+            
+Params: ['f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'all', None, {'title': '测试', 'content': '测试'}, datetime.datetime(2025, 4, 7, 16, 21, 9, 292836), '未读', 'one_to_more']
+2025-04-07 16:21:09
+2025-04-07 16:21:09,297 - ERROR - SQL Error: dict can not be used as parameter
+SQL: 
+            insert into messages (sender_id, receiver_id, group_id, content, time, receiver_read_status, type) VALUES 
+            (%s,%s,%s,%s,%s,%s,%s)
+            
+Params: ['f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'all', None, {'title': '测试', 'content': '测试'}, datetime.datetime(2025, 4, 7, 16, 21, 9, 292836), '未读', 'one_to_more']
+2025-04-07 16:21:09
+2025-04-07 16:21:09,297 - ERROR - SQL Error: dict can not be used as parameter
+SQL: 
+            insert into messages (sender_id, receiver_id, group_id, content, time, receiver_read_status, type) VALUES 
+            (%s,%s,%s,%s,%s,%s,%s)
+            
+Params: ['f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'all', None, {'title': '测试', 'content': '测试'}, datetime.datetime(2025, 4, 7, 16, 21, 9, 292836), '未读', 'one_to_more']
+2025-04-07 16:21:09
+2025-04-07 16:21:09,297 - ERROR - SQL Error: dict can not be used as parameter
+SQL: 
+            insert into messages (sender_id, receiver_id, group_id, content, time, receiver_read_status, type) VALUES 
+            (%s,%s,%s,%s,%s,%s,%s)
+            
+Params: ['f575b4d3-0683-11ef-adf4-00ffc6b98bdb', 'all', None, {'title': '测试', 'content': '测试'}, datetime.datetime(2025, 4, 7, 16, 21, 9, 292836), '未读', 'one_to_more']
+2025-04-07 16:21:09
+2025-04-07 16:21:09,308 - ERROR - dict can not be used as parameter，请求时间：2025-04-07T16:21:09.308349，请求IP：127.0.0.1 @ 2025-04-07T16:21:09.308349
+2025-04-07 16:21:09
+2025-04-07 16:21:09,308 - ERROR - dict can not be used as parameter，请求时间：2025-04-07T16:21:09.308349，请求IP：127.0.0.1 @ 2025-04-07T16:21:09.308349
+2025-04-07 16:21:09
+2025-04-07 16:21:09,308 - ERROR - dict can not be used as parameter，请求时间：2025-04-07T16:21:09.308349，请求IP：127.0.0.1 @ 2025-04-07T16:21:09.308349
+2025-04-07 16:21:09
+2025-04-07 16:21:09,308 - ERROR - dict can not be used as parameter，请求时间：2025-04-07T16:21:09.308349，请求IP：127.0.0.1 @ 2025-04-07T16:21:09.308349
+2025-04-07 16:21:09
+2025-04-07 16:21:09,308 - ERROR - dict can not be used as parameter，请求时间：2025-04-07T16:21:09.308349，请求IP：127.0.0.1 @ 2025-04-07T16:21:09.308349
+2025-04-07 16:21:09
+2025-04-07 16:21:09,308 - ERROR - dict can not be used as parameter，请求时间：2025-04-07T16:21:09.308349，请求IP：127.0.0.1 @ 2025-04-07T16:21:09.308349
+2025-04-07 16:21:09
+2025-04-07 16:21:09,308 - ERROR - dict can not be used as parameter，请求时间：2025-04-07T16:21:09.308349，请求IP：127.0.0.1 @ 2025-04-07T16:21:09.308349
+2025-04-07 16:21:09
+2025-04-07 16:21:09,308 - ERROR - dict can not be used as parameter，请求时间：2025-04-07T16:21:09.308349，请求IP：127.0.0.1 @ 2025-04-07T16:21:09.308349
+2025-04-07 16:21:09
+2025-04-07 16:21:09,308 - ERROR - dict can not be used as parameter，请求时间：2025-04-07T16:21:09.308349，请求IP：127.0.0.1 @ 2025-04-07T16:21:09.308349
+2025-04-07 16:21:09
+2025-04-07 16:21:09,308 - ERROR - dict can not be used as parameter，请求时间：2025-04-07T16:21:09.308349，请求IP：127.0.0.1 @ 2025-04-07T16:21:09.308349
+2025-04-07 16:21:09
+2025-04-07 20:57:33,628 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")
+SQL: select count(*) as total from messages where receiver_id='all' or receiver_id=%s 
+Params: None
+2025-04-07 20:57:33
+2025-04-07 20:57:33,628 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")
+SQL: select count(*) as total from messages where receiver_id='all' or receiver_id=%s 
+Params: None
+2025-04-07 20:57:33
+2025-04-07 20:57:33,628 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")
+SQL: select count(*) as total from messages where receiver_id='all' or receiver_id=%s 
+Params: None
+2025-04-07 20:57:33
+2025-04-07 20:57:33,628 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")
+SQL: select count(*) as total from messages where receiver_id='all' or receiver_id=%s 
+Params: None
+2025-04-07 20:57:33
+2025-04-07 20:57:33,628 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")
+SQL: select count(*) as total from messages where receiver_id='all' or receiver_id=%s 
+Params: None
+2025-04-07 20:57:33
+2025-04-07 20:57:33,628 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")
+SQL: select count(*) as total from messages where receiver_id='all' or receiver_id=%s 
+Params: None
+2025-04-07 20:57:33
+2025-04-07 20:57:33,628 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")
+SQL: select count(*) as total from messages where receiver_id='all' or receiver_id=%s 
+Params: None
+2025-04-07 20:57:33
+2025-04-07 20:57:33,628 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")
+SQL: select count(*) as total from messages where receiver_id='all' or receiver_id=%s 
+Params: None
+2025-04-07 20:57:33
+2025-04-07 20:57:33,628 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")
+SQL: select count(*) as total from messages where receiver_id='all' or receiver_id=%s 
+Params: None
+2025-04-07 20:57:33
+2025-04-07 20:57:33,628 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")
+SQL: select count(*) as total from messages where receiver_id='all' or receiver_id=%s 
+Params: None
+2025-04-07 20:57:33
+2025-04-07 20:57:33,642 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")，请求时间：2025-04-07T20:57:33.642733，请求IP：127.0.0.1 @ 2025-04-07T20:57:33.642733
+2025-04-07 20:57:33
+2025-04-07 20:57:33,642 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")，请求时间：2025-04-07T20:57:33.642733，请求IP：127.0.0.1 @ 2025-04-07T20:57:33.642733
+2025-04-07 20:57:33
+2025-04-07 20:57:33,642 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")，请求时间：2025-04-07T20:57:33.642733，请求IP：127.0.0.1 @ 2025-04-07T20:57:33.642733
+2025-04-07 20:57:33
+2025-04-07 20:57:33,642 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")，请求时间：2025-04-07T20:57:33.642733，请求IP：127.0.0.1 @ 2025-04-07T20:57:33.642733
+2025-04-07 20:57:33
+2025-04-07 20:57:33,642 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")，请求时间：2025-04-07T20:57:33.642733，请求IP：127.0.0.1 @ 2025-04-07T20:57:33.642733
+2025-04-07 20:57:33
+2025-04-07 20:57:33,642 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")，请求时间：2025-04-07T20:57:33.642733，请求IP：127.0.0.1 @ 2025-04-07T20:57:33.642733
+2025-04-07 20:57:33
+2025-04-07 20:57:33,642 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")，请求时间：2025-04-07T20:57:33.642733，请求IP：127.0.0.1 @ 2025-04-07T20:57:33.642733
+2025-04-07 20:57:33
+2025-04-07 20:57:33,642 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")，请求时间：2025-04-07T20:57:33.642733，请求IP：127.0.0.1 @ 2025-04-07T20:57:33.642733
+2025-04-07 20:57:33
+2025-04-07 20:57:33,642 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")，请求时间：2025-04-07T20:57:33.642733，请求IP：127.0.0.1 @ 2025-04-07T20:57:33.642733
+2025-04-07 20:57:33
+2025-04-07 20:57:33,642 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")，请求时间：2025-04-07T20:57:33.642733，请求IP：127.0.0.1 @ 2025-04-07T20:57:33.642733
+2025-04-07 20:57:33
+2025-04-07 21:01:05,868 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")
+SQL: select count(*) as total from messages where receiver_id='all' or receiver_id=%s 
+Params: None
+2025-04-07 21:01:05
+2025-04-07 21:01:05,868 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")
+SQL: select count(*) as total from messages where receiver_id='all' or receiver_id=%s 
+Params: None
+2025-04-07 21:01:05
+2025-04-07 21:01:05,868 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")
+SQL: select count(*) as total from messages where receiver_id='all' or receiver_id=%s 
+Params: None
+2025-04-07 21:01:05
+2025-04-07 21:01:05,868 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")
+SQL: select count(*) as total from messages where receiver_id='all' or receiver_id=%s 
+Params: None
+2025-04-07 21:01:05
+2025-04-07 21:01:05,868 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")
+SQL: select count(*) as total from messages where receiver_id='all' or receiver_id=%s 
+Params: None
+2025-04-07 21:01:05
+2025-04-07 21:01:05,868 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")
+SQL: select count(*) as total from messages where receiver_id='all' or receiver_id=%s 
+Params: None
+2025-04-07 21:01:05
+2025-04-07 21:01:05,868 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")
+SQL: select count(*) as total from messages where receiver_id='all' or receiver_id=%s 
+Params: None
+2025-04-07 21:01:05
+2025-04-07 21:01:05,868 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")
+SQL: select count(*) as total from messages where receiver_id='all' or receiver_id=%s 
+Params: None
+2025-04-07 21:01:05
+2025-04-07 21:01:05,868 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")
+SQL: select count(*) as total from messages where receiver_id='all' or receiver_id=%s 
+Params: None
+2025-04-07 21:01:05
+2025-04-07 21:01:05,868 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")
+SQL: select count(*) as total from messages where receiver_id='all' or receiver_id=%s 
+Params: None
+2025-04-07 21:01:05
+2025-04-07 21:01:05,891 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")，请求时间：2025-04-07T21:01:05.890386，请求IP：127.0.0.1 @ 2025-04-07T21:01:05.890386
+2025-04-07 21:01:05
+2025-04-07 21:01:05,891 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")，请求时间：2025-04-07T21:01:05.890386，请求IP：127.0.0.1 @ 2025-04-07T21:01:05.890386
+2025-04-07 21:01:05
+2025-04-07 21:01:05,891 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")，请求时间：2025-04-07T21:01:05.890386，请求IP：127.0.0.1 @ 2025-04-07T21:01:05.890386
+2025-04-07 21:01:05
+2025-04-07 21:01:05,891 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")，请求时间：2025-04-07T21:01:05.890386，请求IP：127.0.0.1 @ 2025-04-07T21:01:05.890386
+2025-04-07 21:01:05
+2025-04-07 21:01:05,891 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")，请求时间：2025-04-07T21:01:05.890386，请求IP：127.0.0.1 @ 2025-04-07T21:01:05.890386
+2025-04-07 21:01:05
+2025-04-07 21:01:05,891 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")，请求时间：2025-04-07T21:01:05.890386，请求IP：127.0.0.1 @ 2025-04-07T21:01:05.890386
+2025-04-07 21:01:05
+2025-04-07 21:01:05,891 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")，请求时间：2025-04-07T21:01:05.890386，请求IP：127.0.0.1 @ 2025-04-07T21:01:05.890386
+2025-04-07 21:01:05
+2025-04-07 21:01:05,891 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")，请求时间：2025-04-07T21:01:05.890386，请求IP：127.0.0.1 @ 2025-04-07T21:01:05.890386
+2025-04-07 21:01:05
+2025-04-07 21:01:05,891 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")，请求时间：2025-04-07T21:01:05.890386，请求IP：127.0.0.1 @ 2025-04-07T21:01:05.890386
+2025-04-07 21:01:05
+2025-04-07 21:01:05,891 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1")，请求时间：2025-04-07T21:01:05.890386，请求IP：127.0.0.1 @ 2025-04-07T21:01:05.890386
+2025-04-07 21:01:05
+2025-04-07 22:19:14,982 - ERROR - 'id'，请求时间：2025-04-07T22:19:14.982236，请求IP：127.0.0.1 @ 2025-04-07T22:19:14.982236
+2025-04-07 22:19:14
+2025-04-07 22:19:14,982 - ERROR - 'id'，请求时间：2025-04-07T22:19:14.982236，请求IP：127.0.0.1 @ 2025-04-07T22:19:14.982236
+2025-04-07 22:19:14
+2025-04-07 22:19:14,982 - ERROR - 'id'，请求时间：2025-04-07T22:19:14.982236，请求IP：127.0.0.1 @ 2025-04-07T22:19:14.982236
+2025-04-07 22:19:14
+2025-04-07 22:19:14,982 - ERROR - 'id'，请求时间：2025-04-07T22:19:14.982236，请求IP：127.0.0.1 @ 2025-04-07T22:19:14.982236
+2025-04-07 22:19:14
+2025-04-07 22:19:14,982 - ERROR - 'id'，请求时间：2025-04-07T22:19:14.982236，请求IP：127.0.0.1 @ 2025-04-07T22:19:14.982236
+2025-04-07 22:19:14
+2025-04-07 22:19:14,982 - ERROR - 'id'，请求时间：2025-04-07T22:19:14.982236，请求IP：127.0.0.1 @ 2025-04-07T22:19:14.982236
+2025-04-07 22:19:14
+2025-04-07 22:19:14,982 - ERROR - 'id'，请求时间：2025-04-07T22:19:14.982236，请求IP：127.0.0.1 @ 2025-04-07T22:19:14.982236
+2025-04-07 22:19:14
+2025-04-07 22:19:14,982 - ERROR - 'id'，请求时间：2025-04-07T22:19:14.982236，请求IP：127.0.0.1 @ 2025-04-07T22:19:14.982236
+2025-04-07 22:19:14
+2025-04-07 22:19:14,982 - ERROR - 'id'，请求时间：2025-04-07T22:19:14.982236，请求IP：127.0.0.1 @ 2025-04-07T22:19:14.982236
+2025-04-07 22:19:14
+2025-04-07 22:19:14,982 - ERROR - 'id'，请求时间：2025-04-07T22:19:14.982236，请求IP：127.0.0.1 @ 2025-04-07T22:19:14.982236
+2025-04-07 22:19:14
+2025-04-07 22:19:30,447 - ERROR - 'id'，请求时间：2025-04-07T22:19:30.447216，请求IP：127.0.0.1 @ 2025-04-07T22:19:30.447216
+2025-04-07 22:19:30
+2025-04-07 22:19:30,447 - ERROR - 'id'，请求时间：2025-04-07T22:19:30.447216，请求IP：127.0.0.1 @ 2025-04-07T22:19:30.447216
+2025-04-07 22:19:30
+2025-04-07 22:19:30,447 - ERROR - 'id'，请求时间：2025-04-07T22:19:30.447216，请求IP：127.0.0.1 @ 2025-04-07T22:19:30.447216
+2025-04-07 22:19:30
+2025-04-07 22:19:30,447 - ERROR - 'id'，请求时间：2025-04-07T22:19:30.447216，请求IP：127.0.0.1 @ 2025-04-07T22:19:30.447216
+2025-04-07 22:19:30
+2025-04-07 22:19:30,447 - ERROR - 'id'，请求时间：2025-04-07T22:19:30.447216，请求IP：127.0.0.1 @ 2025-04-07T22:19:30.447216
+2025-04-07 22:19:30
+2025-04-07 22:19:30,447 - ERROR - 'id'，请求时间：2025-04-07T22:19:30.447216，请求IP：127.0.0.1 @ 2025-04-07T22:19:30.447216
+2025-04-07 22:19:30
+2025-04-07 22:19:30,447 - ERROR - 'id'，请求时间：2025-04-07T22:19:30.447216，请求IP：127.0.0.1 @ 2025-04-07T22:19:30.447216
+2025-04-07 22:19:30
+2025-04-07 22:19:30,447 - ERROR - 'id'，请求时间：2025-04-07T22:19:30.447216，请求IP：127.0.0.1 @ 2025-04-07T22:19:30.447216
+2025-04-07 22:19:30
+2025-04-07 22:19:30,447 - ERROR - 'id'，请求时间：2025-04-07T22:19:30.447216，请求IP：127.0.0.1 @ 2025-04-07T22:19:30.447216
+2025-04-07 22:19:30
+2025-04-07 22:19:30,447 - ERROR - 'id'，请求时间：2025-04-07T22:19:30.447216，请求IP：127.0.0.1 @ 2025-04-07T22:19:30.447216
+2025-04-07 22:19:30

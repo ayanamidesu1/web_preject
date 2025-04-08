@@ -40,13 +40,24 @@ class DjangoApi(websocket.WebSocketHandler):
             return False
 
     async def _store_message_via_api(self, msg_data):
-        """通过Django API存储消息"""
+        """
+        通过Django API存储消息
+        Args:
+            msg_data: 必须的消息格式为{
+            target_user_id：目标用户ID，一对一时
+            content：消息内容
+            chat_type：one_to_one|one_to_more|more_to_more
+            group_id:在群组内发送消息时
+            }
+        """
+
         http_client = httpclient.AsyncHTTPClient()
         body = {
-            'target_user_id': msg_data['target_user_id'],
-            'content': msg_data['content'],
-            'chat_type': msg_data['chat_type'],
-            'group_id': msg_data['group_id']
+            'target_user_id': msg_data.get('target_user_id'),
+            'content': msg_data.get('content'),
+            'chat_type': msg_data.get('chat_type'),
+            'group_id': msg_data.get('group_id'),
+            'msg_type':msg_data.get('msg_type', 'text')
         }
         print("向Django服务器发送请求到Django服务器...，{}".format(body))
         try:
@@ -82,13 +93,21 @@ class DjangoApi(websocket.WebSocketHandler):
         except Exception as e:
             print(f"[JWT ERROR] Decode failed: {str(e)}")
             raise
+
     def _parse_message(self, raw_msg):
-        """解析原始消息"""
+        """更健壮的消息解析"""
+        if not raw_msg or not isinstance(raw_msg, str):
+            print(f"无效消息内容: {repr(raw_msg)}")
+            return None
+
         try:
-            data = json.loads(raw_msg)
-            return data
-        except (json.JSONDecodeError, KeyError) as e:
-            print(e)
+            return json.loads(raw_msg)
+        except json.JSONDecodeError as e:
+            print(f"JSON 解析失败: {e}\n原始消息: {raw_msg}")
+            return None
+        except Exception as e:
+            print(f"消息处理异常: {e}")
+            return None
 
 
     async def _handle_api_error(self, response):

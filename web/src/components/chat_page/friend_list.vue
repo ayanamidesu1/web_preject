@@ -1,7 +1,7 @@
 <template>
   <div class="friend_list">
     <div class="friend_item">
-        <div class="friend_info">
+        <div class="friend_info" @click="select_sys_notice()">
             <img src="https://www.sunyuanling.com/server/static/svg/管理员.svg" alt="头像">
             <span style="display:flex;flex-direction:column;justify-content:center">系统通知</span>
         </div>
@@ -20,44 +20,34 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watchEffect, onUnmounted, nextTick } from 'vue';
-import { useStore } from '@assets/model/store/index';
-import { BaseApi } from '@/base_api';
-import { useRouter } from 'vue-router';
-import { useChatStore } from './chat_store';
+import { ref, onMounted, onUnmounted } from 'vue'
+import { useStore } from '@assets/model/store/index'
+import { BaseApi } from '@/base_api'
+import { useRouter } from 'vue-router'
+import { useChatStore } from './chat_store'
 
-const chat_store = useChatStore();
-const store = useStore();
-const router = useRouter();
-const api = new BaseApi();
+const chat_store = useChatStore()
+const store = useStore()
+const router = useRouter()
+const api = new BaseApi()
 
-let check_point = ref();
-let limit = ref(10);
-let offset = ref(0);
-let total = ref(0);
-let chat_list = ref([]);
-
-// 用于记录每个用户的心跳状态
-let heartbeats = ref({});
-
-// 获取聊天列表
-async function get_chat_list() {
-    let res = await api.post('GetUserInfo/GetChatList', {
-        limit: limit.value,
-        offset: offset.value
-    });
-    if (res.status == 200) {
-        console.log(res);
-        chat_list.value = res.result.data;
-        total.value = res.result.total;
-    } else {
-        console.log(res);
-    }
-}
+// 统一使用 target_user_id 作为键
+const chat_list = ref([])
+const heartbeats = ref({})
+const limit = ref(10)
+const offset = ref(0)
+const total = ref(0)
+const check_point = ref(null)
+let heartbeatTimer = null
+let checkTimer = null
 
 // 选择好友
 function select_friend(item) {
     chat_store.$state.now_chat_user = item;
+}
+//选择系统通知
+function select_sys_notice() {
+    chat_store.$state.now_chat_user = null;
 }
 
 // 删除该聊天
@@ -66,93 +56,92 @@ function delete_chat(item) {
     console.log(item);
 }
 
-// 检查聊天列表用户在线状态
-async function check_online() {
-    let ids = chat_list.value.map((item) => item.target_user_id);
+// 获取聊天列表
+async function get_chat_list() {
+  const res = await api.post('GetUserInfo/GetChatList', {
+    limit: limit.value,
+    offset: offset.value
+  })
+  
+  if (res.status === 200) {
+    chat_list.value = res.result.data.map(item => ({
+      ...item,
+      is_online: false // 初始化在线状态
+    }))
+    total.value = res.result.total
+  }
+}
+
+// 统一用户标识获取
+function get_user_id(item) {
+  return item.target_user_id || item.userid
+}
+
+// 检查在线状态
+function check_online() {
+  const ids = chat_list.value.map(get_user_id).filter(Boolean)
+  
+  if (ids.length > 0) {
     chat_store.$state.ws.send(JSON.stringify({
-        target_user_ids: ids,
-        type: 'heart_beats'
-    }));
+      target_user_ids: ids,
+      type: 'heart_beats'
+    }))
+  }
+
+  // 清除旧定时器
+  if (heartbeatTimer) clearTimeout(heartbeatTimer)
+  heartbeatTimer = setTimeout(check_online, 10000)
+}
+
+// 心跳超时检查
+function start_heartbeat_checker() {
+  checkTimer = setInterval(() => {
+    const now = Date.now()
+    chat_list.value.forEach(item => {
+      const userId = get_user_id(item)
+      const heartbeat = heartbeats.value[userId]
+      
+      if (heartbeat && now - heartbeat.timestamp <= 10000) {
+        item.is_online = true
+      } else {
+        item.is_online = false
+        if (heartbeat) delete heartbeats.value[userId]
+      }
+    })
+  }, 5000)
+}
+
+// WebSocket 消息处理
+function setup_websocket_handler() {
+  chat_store.$state.ws.onmessage = (e) => {
+    const data = JSON.parse(e.data)
     
-
-    // 清空已经超时的用户的在线状态
-    setTimeout(() => {
-        // 检查超时用户
-        chat_list.value.forEach((item) => {
-            if (!heartbeats.value[item.target_user_id] || !heartbeats.value[item.target_user_id].received) {
-                // 如果10秒内没有接收到心跳，设置为离线
-                item.is_online = false;
-            }
-        });
-
-        // 继续定时检查
-        check_online();
-    }, 10000);  // 每10秒发一次心跳检查
-}
-
-nextTick(() => {
-    chat_store.$state.ws.onmessage = (e) => {
-        let data = JSON.parse(e.data);
-        if (data.type == 'group_heartbeat_ack') {
-            let online_user_id = data.from;
-
-            // 更新对应用户的心跳状态
-            const user = chat_list.value.find((item) => item.target_user_id === online_user_id);
-            if (user) {
-                heartbeats.value[online_user_id] = { received: true, timestamp: Date.now() };
-                if (!user.is_online) {
-                    user.is_online = true;
-                }
-            }
+    if (data.type === 'group_heartbeat_ack') {
+      const userId = data.from_user || data.from // 兼容不同字段名
+      const user = chat_list.value.find(item => get_user_id(item) === userId)
+      
+      if (user) {
+        heartbeats.value[userId] = {
+          received: true,
+          timestamp: Date.now()
         }
-    };
-});
-
-// 监听用户的心跳超时
-function heartbeatTimeoutChecker() {
-    setInterval(() => {
-        Object.keys(heartbeats.value).forEach((userId) => {
-            const lastHeartbeat = heartbeats.value[userId];
-            if (lastHeartbeat && Date.now() - lastHeartbeat.timestamp > 10000) {  // 10秒未收到心跳
-                const user = chat_list.value.find((item) => item.target_user_id == userId);
-                if (user) {
-                    user.is_online = false;  // 设置为离线
-                }
-                delete heartbeats.value[userId];  // 清除超时用户
-            }
-        });
-    }, 5000);  // 每5秒检查一次
-}
-
-let obs = new IntersectionObserver(async (entries) => {
-    if (entries[0].isIntersecting) {
-        if (offset.value < total.value) {
-            offset.value += limit.value;
-            await get_chat_list();
-        }
+      }
     }
-}, {
-    root: check_point.value,
-    rootMargin: '0px',
-});
+  }
+}
 
 onMounted(async () => {
-    await get_chat_list();
-    obs.observe(check_point.value);
-
-    // 初始化用户的在线状态
-    chat_list.value.forEach((item) => {
-        item.is_online = false;
-    });
-
-    // 开始心跳检查
-    check_online();
-    heartbeatTimeoutChecker();
-});
+  await get_chat_list()
+  setup_websocket_handler()
+  check_online()
+  start_heartbeat_checker()
+})
 
 onUnmounted(() => {
-    obs.disconnect();
-});
+  if (heartbeatTimer) clearTimeout(heartbeatTimer)
+  if (checkTimer) clearInterval(checkTimer)
+  if (obs) obs.disconnect()
+})
 </script>
 
 <style scoped>

@@ -8,6 +8,8 @@
             <span :class="{is_active:now_page==2}" @click="switch_page('/comic',2)">漫画作品审核</span>
             <span :class="{is_active:now_page==3}" @click="switch_page('/novel',3)">小说作品审核</span>
             <span :class="{is_active:now_page==4}" @click="switch_page('/comment',4)">评论管理</span>
+            <span :class="{is_active:now_page==5}" @click="switch_page('/generate_password_card',5)">生成卡密</span>
+            <span :class="{is_active:now_page==6}" @click="switch_page('/send_notice',6)">全局通知发送</span>
         </div>
     </div>
   </div>

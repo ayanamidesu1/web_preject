@@ -41,8 +41,8 @@
             </div>
             <div v-if="loadingMore" class="loading">加载中...</div>
         </div>
+        <user_infomation v-if="user_infomation_show" :user_info="user_data_info" @close_page="close_user_info_page"></user_infomation>
     </div>
-    <user_infomation v-if="user_infomation_show" :user_info="user_data_info" @close_page="close_user_info_page"></user_infomation>
 </template>
 
 <script setup>

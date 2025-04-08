@@ -34,6 +34,18 @@ const routes=[
                                 path:'/novel',
                                 name:'novel',
                                 component:()=>import('@/components/model/novel_control.vue')
+                            },{
+                                path:'/comment',
+                                name:'comment',
+                                component:()=>import('@/components/model/commection_control.vue')
+                            },{
+                                path:'/generate_password_card',
+                                name:'generate_password_card',
+                                component:()=>import('@/components/model/generate_password_card.vue')
+                            },{
+                                path:'/send_notice',
+                                name:'send_notice',
+                                component:()=>import('@/components/model/send_notice.vue')
                             }
                         ]
                     }

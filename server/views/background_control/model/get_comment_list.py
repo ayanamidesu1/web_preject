@@ -1,109 +1,83 @@
-from django.db import connection, transaction
 from django.http import JsonResponse
-from django.views import View
-from django.shortcuts import render
-import json
-from datetime import datetime
-from .log.log import Logger
+from base_api import BaseApi
 
-
-class GetCommentList(View):
-    logger = Logger()
-
-    def _request_path(self, request):
-        request_path = request.path
-        request_ip = request.META.get('REMOTE_ADDR', '0.0.0.0')
-        now = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
-        content = request.body.decode('utf-8')
-        return f'{request_ip}在{now}请求了{request_path}, 请求内容为：{content}'
-
-    def get(self, request):
-        self.logger.warning(f'非法GET请求；{self._request_path(request)}')
-        return render(request, '404.html', status=404)
-
-    def post(self, request, *args, **kwargs):
+class GetCommentList(BaseApi):
+    def post(self, request, *args, **kwargs) -> JsonResponse:
         try:
-            data = json.loads(request.body.decode('utf-8'))
-            userid = str(request.user.id)
-            is_authenticated = getattr(request, 'is_authenticated', None)
+            # 权限验证（与样例完全一致的验证方式）
+            if request.user.is_login is False or request.user.role not in ['admin', 'sys_admin']:
+                return JsonResponse(
+                    {'status': 'error', 'code': 403, 'message': '权限不足', 'msg': '权限不足', 'data': None},
+                    status=403
+                )
 
-            if not is_authenticated:
-                self.logger.warning(f'未登录用户尝试访问：{self._request_path(request)}')
-                return JsonResponse({'status': 'fail', 'message': '未登录'}, status=401)
+            # 使用基类方法格式化请求数据
+            data = self.format_request(request)
+            limit = data.get('limit', 10)
+            offset = data.get('offset', 0)
 
-            # 检查用户权限
-            with connection.cursor() as cursor:
-                cursor.execute('SELECT account_permissions FROM users WHERE userid=%s', [userid])
-                account_permissions = cursor.fetchone()
+            # 主评论查询（保持样例SQL缩进风格）
+            main_sql = '''
+                SELECT 
+                    comment.*,
+                    users.userid,
+                    users.username,
+                    users.user_avatar
+                FROM comment
+                LEFT JOIN users ON users.userid = comment.user_id
+                ORDER BY comment.create_time DESC
+                LIMIT %s OFFSET %s
+            '''
+            comments = self.execute_sql(main_sql, (limit, offset), return_results=True)
 
-                if not account_permissions or account_permissions[0] not in ['1', '2', 1, 2]:
-                    self.logger.warning(f'用户权限不足：{self._request_path(request)}')
-                    return JsonResponse({'status': 'fail', 'message': '权限不足'}, status=403)
+            # 获取关联作品数据
+            for comment in comments:
+                work_type = comment.get('work_type')
+                work_id = comment.get('work_id')
+                comment['work_data'] = self._get_work_details(work_type, work_id)
 
-                limit = data.get('limit', 10)
-                offset = data.get('offset', 0)
-                sql = '''SELECT comment.*, users.userid, users.username, users.user_avatar
-                         FROM comment 
-                         LEFT JOIN users ON users.userid = comment.send_userid
-                         ORDER BY date DESC 
-                         LIMIT %s OFFSET %s'''
-                cursor.execute(sql, [limit, offset])
-                result = cursor.fetchall()
-                columns = [col[0] for col in cursor.description]
-                rows = [dict(zip(columns, row)) for row in result]
+            # 总数查询（保持样例风格）
+            count_sql = "SELECT COUNT(*) AS total FROM comment"
+            total = self.execute_sql(count_sql, return_results=True)[0]['total']
 
-                if result:
-                    # 获取评论总数
-                    count_sql = '''SELECT COUNT(*) FROM comment'''
-                    cursor.execute(count_sql)
-                    total = cursor.fetchone()[0]
-
-                    # 获取每条评论关联的作品详情
-                    for row in rows:
-                        work_type = row.get("work_type", None)
-                        work_id = row.get("work_id", None)
-                        work_data = {}
-
-                        if work_type == 'ill':
-                            work_sql = """SELECT * FROM illustration_work WHERE Illustration_id = %s"""
-                            cursor.execute(work_sql, [work_id])
-                            result = cursor.fetchone()
-                            if result:
-                                columns = [desc[0] for desc in cursor.description]
-                                work_data = dict(zip(columns, result))
-
-                        elif work_type == 'comic':
-                            work_sql = """SELECT * FROM comic WHERE id = %s"""
-                            cursor.execute(work_sql, [work_id])
-                            result = cursor.fetchone()
-                            if result:
-                                columns = [desc[0] for desc in cursor.description]
-                                work_data = dict(zip(columns, result))
-
-                        elif work_type == 'novel':
-                            work_sql = """SELECT * FROM novel_work WHERE work_id = %s"""
-                            cursor.execute(work_sql, [work_id])
-                            result = cursor.fetchone()
-                            if result:
-                                columns = [desc[0] for desc in cursor.description]
-                                work_data = dict(zip(columns, result))
-
-                        # 将作品详情附加到对应的评论
-                        row['work_data'] = work_data
-
-                    return JsonResponse({
-                        'status': 'success',
-                        'message': '获取成功',
-                        'data': {
-                            'comment_list': rows,
-                            'total': total
-                        }
-                    }, status=200)
-
-        except json.JSONDecodeError:
-            self.logger.error(f'请求数据格式错误：{self._request_path(request)}')
-            return JsonResponse({'status': 'fail', 'message': '无效的JSON数据'}, status=400)
+            # 保持完全一致的响应结构
+            return JsonResponse({
+                'status': 'success',
+                'code': 200,
+                'message': '请求成功',
+                'msg': '请求成功',
+                'data': {
+                    'comment_list': comments,
+                    'total': total
+                }
+            }, status=200)
 
         except Exception as e:
-            self.logger.error(f'服务器错误：{self._request_path(request)} - 错误详情：{str(e)}')
-            return JsonResponse({'status': 'fail', 'message': '服务器错误'}, status=500)
+            # 保持完全相同的错误处理方式
+            print(f'[COMMENT API ERROR] {str(e)}')
+            self.error_log(e, request)
+            return JsonResponse(
+                {'status': 'error', 'code': 500, 'message': '服务器错误', 'msg': '服务器错误', 'data': None},
+                status=500
+            )
+
+    def _get_work_details(self, work_type: str, work_id: int) -> dict:
+        """统一获取作品详情（使用基类方法）"""
+        type_mapping = {
+            'ill': ('illustration_work', 'Illustration_id'),
+            'comic': ('comic', 'id'),
+            'novel': ('novel_work', 'work_id')
+        }
+
+        if work_type not in type_mapping:
+            return {}
+
+        table_name, id_field = type_mapping[work_type]
+        sql = f'''
+            SELECT * 
+            FROM {table_name}
+            WHERE {id_field} = %s
+            LIMIT 1
+        '''
+        result = self.execute_sql(sql, (work_id,), return_results=True)
+        return result[0] if result else {}
