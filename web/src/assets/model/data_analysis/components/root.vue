@@ -16,7 +16,6 @@ const props=defineProps({
 <div class="root">
   <h1>作品数据分析</h1>
   <index :token="props.token"></index>
-  <go_back></go_back>
 </div>
 </template>
 

@@ -13,8 +13,11 @@ export default defineConfig({
     vue(),
     VueDevTools(),
     VueSetupExtend(),
-    mkcert()
+    mkcert(),
   ],
+  optimizeDeps: {
+    include: ['element-plus']
+  },
   resolve: {
     alias: {
       '@assets': path.resolve(process.cwd(), 'src/assets'),  // 将 @assets 映射到 src/assets

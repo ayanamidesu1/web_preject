@@ -7,6 +7,7 @@
             <router-link to="/self_user_center">
                 <div class="header_box_avatar" style="cursor:pointer;" @click="jump_usercenter">
                     <div class="header_box_avatar_img"><img :src="api.s_base_url+'image/avatar_thumbnail/'+user.user_avatar"></div>
+                    <img v-if="user.vip==1" class="vip_icon" src="https://www.sunyuanling.com/server/static/svg/VIP.svg" alt="VIP" />
                 </div>
             </router-link>
         </div>
@@ -24,9 +25,9 @@
         </div>
         <br>
         <div class="data_analysis mt hv" @click="open_data_analysis()"><span>数据分析</span></div>
-        <div class="appointment_management mt hv"><router-link to="/com_an_article"><span>约稿管理</span></router-link></div>
+        <div class="appointment_management mt hv" @click=" open_com_an_article()"><span>约稿管理</span></div>
         <div class="mt hv" @click="open_contribute()"><span>投稿作品状态</span></div>
-        <br>
+        <div class="mt hv" @click="open_wallet()">我的钱包</div>
         <div class="browseing_history mt hv" @click="open_history()"><span>浏览历史</span></div>
         <br>
         <div class="title mt"><span>Language</span></div>
@@ -75,8 +76,7 @@ function jump_usercenter() {
 }
 
 function open_data_analysis(){
-    console.log("数据分析跳转");
-    store.commit('SET_SINGLE_PAGE_STATUS',{'key':'data_analysis_page','value':true})
+    router.push('/data_analysis')
 }
 
 //投稿作品页面
@@ -84,9 +84,18 @@ function open_contribute(){
     router.push('/upload_status')
 }
 
+//打开约稿页面
+function open_com_an_article(){
+    router.push('/com_an_article')
+}
+//打开钱包页面
+function open_wallet(){
+    router.push('/wallet')
+}
+
 //打开历史浏览页面
 function open_history(){
-    store.commit('SET_SINGLE_PAGE_STATUS',{'key':'br_his_page','value':true})
+    router.push('/his_page')
 }
 
 //退出登录
@@ -191,7 +200,13 @@ function logout() {
     align-self: center;
     display: flex;
 }
-
+.vip_icon{
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    bottom: -10px;
+    left: 0px;
+}
 .header_box_avatar_img {
     width: 50px;
     height: 50px;

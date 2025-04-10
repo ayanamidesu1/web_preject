@@ -206,8 +206,8 @@ onMounted(async () => {
 
 <style scoped>
 .review_msg {
-  width: calc(100% - 100px);
-  min-width: 200px;
+  width: calc(100% - 50px);
+  min-width: 300px;
   padding: 10px;
   background: #fff;
   border-radius: 8px;

@@ -20,7 +20,7 @@
             </div>
         </div>
         <div class="join_vip ml mr">
-            <span>{{ join_vip_text }}</span>
+            <span><router-link to="/vip_welcome">{{ join_vip_text }}</router-link></span>
         </div>
         <div class="submission ml mr" @click="submission_work_box_show=!submission_work_box_show">
             <div class="submission_icon mr">
@@ -51,11 +51,12 @@
         </div>
         <div class="useravatar ml mr" @click="useravatar_show_btn">
             <div class="useravatar_img">
-                <img :src="api.s_base_url+'image/avatar_thumbnail/'+(user.user_avatar||'default_avatar.png')">
+                <img :src="api.s_base_url+'image/avatar_thumbnail/'+(user.user_avatar||'default_avatar.png')" width="46px" height="46px">
             </div>
             <div class="useravatar_icon ml">
                <img class="icon" src="https://www.sunyuanling.com/assets/drop_down.svg">
             </div>
+            <img class="vip_icon" v-if="user.vip==1" src="https://www.sunyuanling.com/server/static/svg/VIP.svg" width="15px" height="15px">
         </div>
         <header_box v-show="header_box_show"></header_box><!--这是头像，不是标题栏-->
         <search_page_index :search_item="search_data" @close_msg="close_search_page"
@@ -363,7 +364,7 @@ function animation_sidebar(startlo, endlo, step_len, step, do_time) {
 
 
 /*加入会员文字样式*/
-.join_vip {
+.join_vip a{
     font-size: 16px;
     color: rgb(253, 158, 22);
     align-self: center;
@@ -374,12 +375,13 @@ function animation_sidebar(startlo, endlo, step_len, step, do_time) {
     white-space: pre;
     width: auto;
     height: auto;
+    align-items: center;
 }
 
 /*用户头像样式*/
 .useravatar {
     display: flex;
-    
+    position: relative;
     width: 80px;
     height: 95%;
     align-self: center;
@@ -392,17 +394,20 @@ function animation_sidebar(startlo, endlo, step_len, step, do_time) {
 .useravatar_img {
     width: 46px;
     height: 46px;
-    
+    position: relative;
     overflow: hidden;
     border-radius: 50%;
 }
 
-.useravatar_img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+.vip_icon{
+    width:25px;
+    height:25px;
+    position: absolute;
+    top: 0px;
+    left: -10px;
+    z-index: 10;
 
+}
 .useravatar_icon {
     width: 20px;
     height: 20px;
@@ -478,6 +483,7 @@ function animation_sidebar(startlo, endlo, step_len, step, do_time) {
     margin-bottom: auto;
     margin-left: auto;
     margin-right: auto;
+    align-items: center;
 }
 
 .show_more {

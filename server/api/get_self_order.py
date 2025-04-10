@@ -12,12 +12,12 @@ class GetSelfOrder(BaseApi):
             limit=data.get('limit',10)
             offset=data.get('offset',0)
             sql='''
-            select * from `order` where target_user_id=%s order by time limit %s offset %s
+            select * from `order` where user_id=%s order by time limit %s offset %s
             '''
             results=self.execute_sql(sql, (user_id, limit, offset), return_results=True)
             total=self.execute_sql(f"""
-            select count(*) as total from `order` where target_user_id={user_id}
-            """)[0]['total']
+            select count(*) as total from `order` where user_id=%s
+            """, (user_id,))[0]['total']
             if results:
                 return JsonResponse({'code': 200, 'msg': '获取成功', 'data': results, 'total':total}, status=200)
             else:

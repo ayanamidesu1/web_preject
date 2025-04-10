@@ -88,7 +88,50 @@ const routes=[
                     name:'com_an_article',
                     component:()=>import('@/components/commission_an_article/com_an_article.vue')//委托创作,约稿
                 },
-                
+                {
+                    path:'/his_page',
+                    name:'his_page',
+                    component:()=>import('@/components/browse_history_page/br_his_index_page.vue')//浏览历史
+                },
+                {
+                    path:'/data_analysis',
+                    name:'data_analysis',
+                    component:()=>import('@assets/model/data_analysis/components/root.vue')//数据分析
+                },
+                {
+                    path:'/vip_welcome',
+                    name:'vip_welcome',
+                    component:()=>import('@/components/vip/vip_welcome.vue'),//VIP欢迎页,
+                    meta: {
+                        title: '会员支付 - 插画星球'
+                      }
+                },
+                {
+                    path:'/vip_pay',
+                    name:'vip_pay',
+                    component:()=>import('@/components/vip/pay.vue'),//会员支付,
+                    meta: {
+                        title: '会员支付 - 插画星球'
+                      }
+                },
+                {
+                    path:'/wallet',
+                    name:'wallet',
+                    component:()=>import('@/components/wallet/wallet_index.vue'),//钱包,
+                    meta: {
+                        title: '钱包 - 插画星球'
+                      }
+                },
+                {
+                    path:'/init_pay_account',
+                    name:'init_pay_account',
+                    component:()=>import('@/components/wallet/init_pat_account.vue'),//初始化支付账户,
+                },
+                {
+                    path:'/create_func',
+                    name:'create_func',
+                    component:()=>import('@/components/commission_an_article/sub_page/create_func.vue'),//创建约稿方案
+                }
                ] 
             }
         ]

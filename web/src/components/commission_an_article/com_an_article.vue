@@ -65,7 +65,7 @@ let page_index=ref(0)
 }
 .item{
     display: grid;
-    grid-template-columns: minmax(400px,70%) minmax(200px,25%);
+    grid-template-columns: minmax(300px,65%) minmax(300px,35%);
     gap:10px;
     height: 100%;
     min-height: 100%;

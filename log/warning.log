@@ -1700,3 +1700,2107 @@ Params: None
 2025-04-07 22:19:30
 2025-04-07 22:19:30,447 - ERROR - 'id'，请求时间：2025-04-07T22:19:30.447216，请求IP：127.0.0.1 @ 2025-04-07T22:19:30.447216
 2025-04-07 22:19:30
+2025-04-09 13:59:53,053 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,054 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,054 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,055 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,057 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,057 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,053 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,054 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,054 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,055 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,057 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,057 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,053 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,054 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,054 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,055 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,057 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,057 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,053 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,054 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,054 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,055 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,057 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,057 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,053 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,054 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,054 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,055 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,057 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,053 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,057 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,054 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,054 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,055 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,057 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,057 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,053 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,054 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,054 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,053 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,055 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,054 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,057 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,054 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,053 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,057 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,055 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,054 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,057 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,054 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,053 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,055 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,054 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,057 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,057 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,054 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,055 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,057 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,057 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,057 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,110 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,110 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,110 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,110 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,110 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,110 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,110 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,110 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,110 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,122 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,110 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,122 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,122 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,122 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,122 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,122 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,122 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,129 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,122 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,129 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,122 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,129 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,122 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,129 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,129 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,129 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,129 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,129 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,129 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 13:59:53,129 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 13:59:53
+2025-04-09 14:00:09,671 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,671 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,671 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,671 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,671 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,671 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,671 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,671 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,671 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,671 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,697 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,697 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,703 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,697 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,703 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,705 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,703 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,707 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,697 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,703 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,703 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,697 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,705 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,707 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,703 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,697 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,703 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,705 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,707 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,697 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,703 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,703 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,705 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,697 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,707 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,703 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,703 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,697 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,705 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,703 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,707 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,697 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,705 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,728 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,703 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,707 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,703 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,728 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,705 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,707 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,728 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,703 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,703 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,728 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,705 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,728 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,707 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,728 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,728 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,703 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,707 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,728 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,705 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,703 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,703 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,728 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,707 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,705 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,703 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,728 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,778 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,778 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,778 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,778 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,783 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,778 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,783 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,783 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,778 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,783 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,778 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,783 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,778 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,783 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,778 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,783 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,778 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,783 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,783 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:09,783 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:09
+2025-04-09 14:00:32,239 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,239 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,239 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,239 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,239 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,246 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,239 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,239 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,246 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,239 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,246 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,239 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,246 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,239 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,246 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,270 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,246 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,270 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,270 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,246 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,270 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,270 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,246 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,286 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,270 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,287 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,270 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,287 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,246 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,286 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,286 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,287 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,287 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,287 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,270 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,287 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,286 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,287 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,270 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,287 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,270 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,286 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,287 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,287 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,270 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,270 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,286 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,287 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,287 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,270 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,270 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,270 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,286 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,270 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,287 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,287 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,270 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,270 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,286 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,287 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,270 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,287 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,286 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,270 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,287 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,286 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,287 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,287 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,287 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,331 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,331 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,331 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,331 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,331 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,331 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,331 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,349 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,331 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,331 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,349 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,331 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,349 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,349 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,349 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,349 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,349 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,349 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,349 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:00:32,349 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'tuple'
+2025-04-09 14:00:32
+2025-04-09 14:01:24,833 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,834 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,833 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,834 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,833 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,834 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,833 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,834 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,833 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,834 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,833 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,834 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,833 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,851 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,834 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,851 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,851 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,851 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,851 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,833 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,851 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,834 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,851 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,833 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,834 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,851 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,834 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,851 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,881 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,881 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,881 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,881 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,881 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,881 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,881 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,881 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,881 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,900 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,881 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,900 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,900 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,900 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,900 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,900 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,900 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,900 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,900 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,900 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,915 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,915 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,915 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,915 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,915 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,925 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,915 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,925 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,925 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,915 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,925 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,915 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,925 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,915 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,925 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,915 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,925 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,925 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,925 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,925 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,975 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,975 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,975 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,975 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,981 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,975 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,981 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,975 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,981 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,975 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,981 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,975 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,981 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,975 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,981 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,975 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,981 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,981 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,981 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 14:01:24,981 - ERROR - Token 解码失败: unsupported operand type(s) for %: 'list' and 'str'
+2025-04-09 14:01:24
+2025-04-09 20:52:17,414 - ERROR - list index out of range，请求时间：2025-04-09T20:52:17.414845，请求IP：127.0.0.1 @ 2025-04-09T20:52:17.414845
+2025-04-09 20:52:17
+2025-04-09 20:52:17,414 - ERROR - list index out of range，请求时间：2025-04-09T20:52:17.414845，请求IP：127.0.0.1 @ 2025-04-09T20:52:17.414845
+2025-04-09 20:52:17
+2025-04-09 20:52:17,414 - ERROR - list index out of range，请求时间：2025-04-09T20:52:17.414845，请求IP：127.0.0.1 @ 2025-04-09T20:52:17.414845
+2025-04-09 20:52:17
+2025-04-09 20:52:17,414 - ERROR - list index out of range，请求时间：2025-04-09T20:52:17.414845，请求IP：127.0.0.1 @ 2025-04-09T20:52:17.414845
+2025-04-09 20:52:17
+2025-04-09 20:52:17,414 - ERROR - list index out of range，请求时间：2025-04-09T20:52:17.414845，请求IP：127.0.0.1 @ 2025-04-09T20:52:17.414845
+2025-04-09 20:52:17
+2025-04-09 20:52:17,414 - ERROR - list index out of range，请求时间：2025-04-09T20:52:17.414845，请求IP：127.0.0.1 @ 2025-04-09T20:52:17.414845
+2025-04-09 20:52:17
+2025-04-09 20:52:17,414 - ERROR - list index out of range，请求时间：2025-04-09T20:52:17.414845，请求IP：127.0.0.1 @ 2025-04-09T20:52:17.414845
+2025-04-09 20:52:17
+2025-04-09 20:52:17,414 - ERROR - list index out of range，请求时间：2025-04-09T20:52:17.414845，请求IP：127.0.0.1 @ 2025-04-09T20:52:17.414845
+2025-04-09 20:52:17
+2025-04-09 20:52:17,414 - ERROR - list index out of range，请求时间：2025-04-09T20:52:17.414845，请求IP：127.0.0.1 @ 2025-04-09T20:52:17.414845
+2025-04-09 20:52:17
+2025-04-09 20:52:17,414 - ERROR - list index out of range，请求时间：2025-04-09T20:52:17.414845，请求IP：127.0.0.1 @ 2025-04-09T20:52:17.414845
+2025-04-09 20:52:17
+2025-04-09 23:06:25,511 - ERROR - SQL Error: (1054, "Unknown column 'f575b4d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=f575b4d3-0683-11ef-adf4-00ffc6b98bdb
+            
+Params: None
+2025-04-09 23:06:25
+2025-04-09 23:06:25,511 - ERROR - SQL Error: (1054, "Unknown column 'f575b4d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=f575b4d3-0683-11ef-adf4-00ffc6b98bdb
+            
+Params: None
+2025-04-09 23:06:25
+2025-04-09 23:06:25,511 - ERROR - SQL Error: (1054, "Unknown column 'f575b4d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=f575b4d3-0683-11ef-adf4-00ffc6b98bdb
+            
+Params: None
+2025-04-09 23:06:25
+2025-04-09 23:06:25,511 - ERROR - SQL Error: (1054, "Unknown column 'f575b4d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=f575b4d3-0683-11ef-adf4-00ffc6b98bdb
+            
+Params: None
+2025-04-09 23:06:25
+2025-04-09 23:06:25,511 - ERROR - SQL Error: (1054, "Unknown column 'f575b4d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=f575b4d3-0683-11ef-adf4-00ffc6b98bdb
+            
+Params: None
+2025-04-09 23:06:25
+2025-04-09 23:06:25,511 - ERROR - SQL Error: (1054, "Unknown column 'f575b4d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=f575b4d3-0683-11ef-adf4-00ffc6b98bdb
+            
+Params: None
+2025-04-09 23:06:25
+2025-04-09 23:06:25,511 - ERROR - SQL Error: (1054, "Unknown column 'f575b4d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=f575b4d3-0683-11ef-adf4-00ffc6b98bdb
+            
+Params: None
+2025-04-09 23:06:25
+2025-04-09 23:06:25,511 - ERROR - SQL Error: (1054, "Unknown column 'f575b4d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=f575b4d3-0683-11ef-adf4-00ffc6b98bdb
+            
+Params: None
+2025-04-09 23:06:25
+2025-04-09 23:06:25,511 - ERROR - SQL Error: (1054, "Unknown column 'f575b4d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=f575b4d3-0683-11ef-adf4-00ffc6b98bdb
+            
+Params: None
+2025-04-09 23:06:25
+2025-04-09 23:06:25,511 - ERROR - SQL Error: (1054, "Unknown column 'f575b4d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=f575b4d3-0683-11ef-adf4-00ffc6b98bdb
+            
+Params: None
+2025-04-09 23:06:25
+2025-04-09 23:06:25,530 - ERROR - (1054, "Unknown column 'f575b4d3' in 'where clause'")，请求时间：2025-04-09T23:06:25.530767，请求IP：127.0.0.1 @ 2025-04-09T23:06:25.530767
+2025-04-09 23:06:25
+2025-04-09 23:06:25,530 - ERROR - (1054, "Unknown column 'f575b4d3' in 'where clause'")，请求时间：2025-04-09T23:06:25.530767，请求IP：127.0.0.1 @ 2025-04-09T23:06:25.530767
+2025-04-09 23:06:25
+2025-04-09 23:06:25,530 - ERROR - (1054, "Unknown column 'f575b4d3' in 'where clause'")，请求时间：2025-04-09T23:06:25.530767，请求IP：127.0.0.1 @ 2025-04-09T23:06:25.530767
+2025-04-09 23:06:25
+2025-04-09 23:06:25,530 - ERROR - (1054, "Unknown column 'f575b4d3' in 'where clause'")，请求时间：2025-04-09T23:06:25.530767，请求IP：127.0.0.1 @ 2025-04-09T23:06:25.530767
+2025-04-09 23:06:25
+2025-04-09 23:06:25,530 - ERROR - (1054, "Unknown column 'f575b4d3' in 'where clause'")，请求时间：2025-04-09T23:06:25.530767，请求IP：127.0.0.1 @ 2025-04-09T23:06:25.530767
+2025-04-09 23:06:25
+2025-04-09 23:06:25,530 - ERROR - (1054, "Unknown column 'f575b4d3' in 'where clause'")，请求时间：2025-04-09T23:06:25.530767，请求IP：127.0.0.1 @ 2025-04-09T23:06:25.530767
+2025-04-09 23:06:25
+2025-04-09 23:06:25,530 - ERROR - (1054, "Unknown column 'f575b4d3' in 'where clause'")，请求时间：2025-04-09T23:06:25.530767，请求IP：127.0.0.1 @ 2025-04-09T23:06:25.530767
+2025-04-09 23:06:25
+2025-04-09 23:06:25,530 - ERROR - (1054, "Unknown column 'f575b4d3' in 'where clause'")，请求时间：2025-04-09T23:06:25.530767，请求IP：127.0.0.1 @ 2025-04-09T23:06:25.530767
+2025-04-09 23:06:25
+2025-04-09 23:06:25,530 - ERROR - (1054, "Unknown column 'f575b4d3' in 'where clause'")，请求时间：2025-04-09T23:06:25.530767，请求IP：127.0.0.1 @ 2025-04-09T23:06:25.530767
+2025-04-09 23:06:25
+2025-04-09 23:06:25,530 - ERROR - (1054, "Unknown column 'f575b4d3' in 'where clause'")，请求时间：2025-04-09T23:06:25.530767，请求IP：127.0.0.1 @ 2025-04-09T23:06:25.530767
+2025-04-09 23:06:25
+2025-04-09 23:06:25,593 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:06:25
+2025-04-09 23:06:25,593 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:06:25
+2025-04-09 23:06:25,593 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:06:25
+2025-04-09 23:06:25,593 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:06:25
+2025-04-09 23:06:25,593 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:06:25
+2025-04-09 23:06:25,593 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:06:25
+2025-04-09 23:06:25,593 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:06:25
+2025-04-09 23:06:25,593 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:06:25
+2025-04-09 23:06:25,593 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:06:25
+2025-04-09 23:06:25,593 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:06:25
+2025-04-09 23:06:25,612 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:06:25.612895，请求IP：127.0.0.1 @ 2025-04-09T23:06:25.612895
+2025-04-09 23:06:25
+2025-04-09 23:06:25,612 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:06:25.612895，请求IP：127.0.0.1 @ 2025-04-09T23:06:25.612895
+2025-04-09 23:06:25
+2025-04-09 23:06:25,612 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:06:25.612895，请求IP：127.0.0.1 @ 2025-04-09T23:06:25.612895
+2025-04-09 23:06:25
+2025-04-09 23:06:25,612 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:06:25.612895，请求IP：127.0.0.1 @ 2025-04-09T23:06:25.612895
+2025-04-09 23:06:25
+2025-04-09 23:06:25,612 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:06:25.612895，请求IP：127.0.0.1 @ 2025-04-09T23:06:25.612895
+2025-04-09 23:06:25
+2025-04-09 23:06:25,612 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:06:25.612895，请求IP：127.0.0.1 @ 2025-04-09T23:06:25.612895
+2025-04-09 23:06:25
+2025-04-09 23:06:25,612 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:06:25.612895，请求IP：127.0.0.1 @ 2025-04-09T23:06:25.612895
+2025-04-09 23:06:25
+2025-04-09 23:06:25,612 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:06:25.612895，请求IP：127.0.0.1 @ 2025-04-09T23:06:25.612895
+2025-04-09 23:06:25
+2025-04-09 23:06:25,612 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:06:25.612895，请求IP：127.0.0.1 @ 2025-04-09T23:06:25.612895
+2025-04-09 23:06:25
+2025-04-09 23:06:25,612 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:06:25.612895，请求IP：127.0.0.1 @ 2025-04-09T23:06:25.612895
+2025-04-09 23:06:25
+2025-04-09 23:08:16,786 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:08:16
+2025-04-09 23:08:16,786 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:08:16
+2025-04-09 23:08:16,786 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:08:16
+2025-04-09 23:08:16,786 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:08:16
+2025-04-09 23:08:16,786 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:08:16
+2025-04-09 23:08:16,786 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:08:16
+2025-04-09 23:08:16,786 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:08:16
+2025-04-09 23:08:16,786 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:08:16
+2025-04-09 23:08:16,786 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:08:16
+2025-04-09 23:08:16,786 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:08:16
+2025-04-09 23:08:16,801 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:08:16.801070，请求IP：127.0.0.1 @ 2025-04-09T23:08:16.801070
+2025-04-09 23:08:16
+2025-04-09 23:08:16,801 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:08:16.801070，请求IP：127.0.0.1 @ 2025-04-09T23:08:16.801070
+2025-04-09 23:08:16
+2025-04-09 23:08:16,806 - ERROR - SQL Error: (1054, "Unknown column 'f575b4d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=f575b4d3-0683-11ef-adf4-00ffc6b98bdb
+            
+Params: None
+2025-04-09 23:08:16
+2025-04-09 23:08:16,801 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:08:16.801070，请求IP：127.0.0.1 @ 2025-04-09T23:08:16.801070
+2025-04-09 23:08:16
+2025-04-09 23:08:16,806 - ERROR - SQL Error: (1054, "Unknown column 'f575b4d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=f575b4d3-0683-11ef-adf4-00ffc6b98bdb
+            
+Params: None
+2025-04-09 23:08:16
+2025-04-09 23:08:16,801 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:08:16.801070，请求IP：127.0.0.1 @ 2025-04-09T23:08:16.801070
+2025-04-09 23:08:16
+2025-04-09 23:08:16,806 - ERROR - SQL Error: (1054, "Unknown column 'f575b4d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=f575b4d3-0683-11ef-adf4-00ffc6b98bdb
+            
+Params: None
+2025-04-09 23:08:16
+2025-04-09 23:08:16,801 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:08:16.801070，请求IP：127.0.0.1 @ 2025-04-09T23:08:16.801070
+2025-04-09 23:08:16
+2025-04-09 23:08:16,806 - ERROR - SQL Error: (1054, "Unknown column 'f575b4d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=f575b4d3-0683-11ef-adf4-00ffc6b98bdb
+            
+Params: None
+2025-04-09 23:08:16
+2025-04-09 23:08:16,801 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:08:16.801070，请求IP：127.0.0.1 @ 2025-04-09T23:08:16.801070
+2025-04-09 23:08:16
+2025-04-09 23:08:16,806 - ERROR - SQL Error: (1054, "Unknown column 'f575b4d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=f575b4d3-0683-11ef-adf4-00ffc6b98bdb
+            
+Params: None
+2025-04-09 23:08:16
+2025-04-09 23:08:16,801 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:08:16.801070，请求IP：127.0.0.1 @ 2025-04-09T23:08:16.801070
+2025-04-09 23:08:16
+2025-04-09 23:08:16,806 - ERROR - SQL Error: (1054, "Unknown column 'f575b4d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=f575b4d3-0683-11ef-adf4-00ffc6b98bdb
+            
+Params: None
+2025-04-09 23:08:16
+2025-04-09 23:08:16,801 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:08:16.801070，请求IP：127.0.0.1 @ 2025-04-09T23:08:16.801070
+2025-04-09 23:08:16
+2025-04-09 23:08:16,806 - ERROR - SQL Error: (1054, "Unknown column 'f575b4d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=f575b4d3-0683-11ef-adf4-00ffc6b98bdb
+            
+Params: None
+2025-04-09 23:08:16
+2025-04-09 23:08:16,801 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:08:16.801070，请求IP：127.0.0.1 @ 2025-04-09T23:08:16.801070
+2025-04-09 23:08:16
+2025-04-09 23:08:16,806 - ERROR - SQL Error: (1054, "Unknown column 'f575b4d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=f575b4d3-0683-11ef-adf4-00ffc6b98bdb
+            
+Params: None
+2025-04-09 23:08:16
+2025-04-09 23:08:16,801 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:08:16.801070，请求IP：127.0.0.1 @ 2025-04-09T23:08:16.801070
+2025-04-09 23:08:16
+2025-04-09 23:08:16,806 - ERROR - SQL Error: (1054, "Unknown column 'f575b4d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=f575b4d3-0683-11ef-adf4-00ffc6b98bdb
+            
+Params: None
+2025-04-09 23:08:16
+2025-04-09 23:08:16,806 - ERROR - SQL Error: (1054, "Unknown column 'f575b4d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=f575b4d3-0683-11ef-adf4-00ffc6b98bdb
+            
+Params: None
+2025-04-09 23:08:16
+2025-04-09 23:08:16,823 - ERROR - (1054, "Unknown column 'f575b4d3' in 'where clause'")，请求时间：2025-04-09T23:08:16.823973，请求IP：127.0.0.1 @ 2025-04-09T23:08:16.823973
+2025-04-09 23:08:16
+2025-04-09 23:08:16,823 - ERROR - (1054, "Unknown column 'f575b4d3' in 'where clause'")，请求时间：2025-04-09T23:08:16.823973，请求IP：127.0.0.1 @ 2025-04-09T23:08:16.823973
+2025-04-09 23:08:16
+2025-04-09 23:08:16,823 - ERROR - (1054, "Unknown column 'f575b4d3' in 'where clause'")，请求时间：2025-04-09T23:08:16.823973，请求IP：127.0.0.1 @ 2025-04-09T23:08:16.823973
+2025-04-09 23:08:16
+2025-04-09 23:08:16,823 - ERROR - (1054, "Unknown column 'f575b4d3' in 'where clause'")，请求时间：2025-04-09T23:08:16.823973，请求IP：127.0.0.1 @ 2025-04-09T23:08:16.823973
+2025-04-09 23:08:16
+2025-04-09 23:08:16,823 - ERROR - (1054, "Unknown column 'f575b4d3' in 'where clause'")，请求时间：2025-04-09T23:08:16.823973，请求IP：127.0.0.1 @ 2025-04-09T23:08:16.823973
+2025-04-09 23:08:16
+2025-04-09 23:08:16,823 - ERROR - (1054, "Unknown column 'f575b4d3' in 'where clause'")，请求时间：2025-04-09T23:08:16.823973，请求IP：127.0.0.1 @ 2025-04-09T23:08:16.823973
+2025-04-09 23:08:16
+2025-04-09 23:08:16,823 - ERROR - (1054, "Unknown column 'f575b4d3' in 'where clause'")，请求时间：2025-04-09T23:08:16.823973，请求IP：127.0.0.1 @ 2025-04-09T23:08:16.823973
+2025-04-09 23:08:16
+2025-04-09 23:08:16,823 - ERROR - (1054, "Unknown column 'f575b4d3' in 'where clause'")，请求时间：2025-04-09T23:08:16.823973，请求IP：127.0.0.1 @ 2025-04-09T23:08:16.823973
+2025-04-09 23:08:16
+2025-04-09 23:08:16,823 - ERROR - (1054, "Unknown column 'f575b4d3' in 'where clause'")，请求时间：2025-04-09T23:08:16.823973，请求IP：127.0.0.1 @ 2025-04-09T23:08:16.823973
+2025-04-09 23:08:16
+2025-04-09 23:08:16,823 - ERROR - (1054, "Unknown column 'f575b4d3' in 'where clause'")，请求时间：2025-04-09T23:08:16.823973，请求IP：127.0.0.1 @ 2025-04-09T23:08:16.823973
+2025-04-09 23:08:16
+2025-04-09 23:08:24,904 - ERROR - '<' not supported between instances of 'str' and 'datetime.datetime'，请求时间：2025-04-09T23:08:24.904998，请求IP：127.0.0.1 @ 2025-04-09T23:08:24.904998
+2025-04-09 23:08:24
+2025-04-09 23:08:24,904 - ERROR - '<' not supported between instances of 'str' and 'datetime.datetime'，请求时间：2025-04-09T23:08:24.904998，请求IP：127.0.0.1 @ 2025-04-09T23:08:24.904998
+2025-04-09 23:08:24
+2025-04-09 23:08:24,904 - ERROR - '<' not supported between instances of 'str' and 'datetime.datetime'，请求时间：2025-04-09T23:08:24.904998，请求IP：127.0.0.1 @ 2025-04-09T23:08:24.904998
+2025-04-09 23:08:24
+2025-04-09 23:08:24,904 - ERROR - '<' not supported between instances of 'str' and 'datetime.datetime'，请求时间：2025-04-09T23:08:24.904998，请求IP：127.0.0.1 @ 2025-04-09T23:08:24.904998
+2025-04-09 23:08:24
+2025-04-09 23:08:24,904 - ERROR - '<' not supported between instances of 'str' and 'datetime.datetime'，请求时间：2025-04-09T23:08:24.904998，请求IP：127.0.0.1 @ 2025-04-09T23:08:24.904998
+2025-04-09 23:08:24
+2025-04-09 23:08:24,904 - ERROR - '<' not supported between instances of 'str' and 'datetime.datetime'，请求时间：2025-04-09T23:08:24.904998，请求IP：127.0.0.1 @ 2025-04-09T23:08:24.904998
+2025-04-09 23:08:24
+2025-04-09 23:08:24,904 - ERROR - '<' not supported between instances of 'str' and 'datetime.datetime'，请求时间：2025-04-09T23:08:24.904998，请求IP：127.0.0.1 @ 2025-04-09T23:08:24.904998
+2025-04-09 23:08:24
+2025-04-09 23:08:24,904 - ERROR - '<' not supported between instances of 'str' and 'datetime.datetime'，请求时间：2025-04-09T23:08:24.904998，请求IP：127.0.0.1 @ 2025-04-09T23:08:24.904998
+2025-04-09 23:08:24
+2025-04-09 23:08:24,904 - ERROR - '<' not supported between instances of 'str' and 'datetime.datetime'，请求时间：2025-04-09T23:08:24.904998，请求IP：127.0.0.1 @ 2025-04-09T23:08:24.904998
+2025-04-09 23:08:24
+2025-04-09 23:08:24,904 - ERROR - '<' not supported between instances of 'str' and 'datetime.datetime'，请求时间：2025-04-09T23:08:24.904998，请求IP：127.0.0.1 @ 2025-04-09T23:08:24.904998
+2025-04-09 23:08:24
+2025-04-09 23:11:50,250 - ERROR - unconverted data remains: .585921，请求时间：2025-04-09T23:11:50.250179，请求IP：127.0.0.1 @ 2025-04-09T23:11:50.250179
+2025-04-09 23:11:50
+2025-04-09 23:11:50,250 - ERROR - unconverted data remains: .585921，请求时间：2025-04-09T23:11:50.250179，请求IP：127.0.0.1 @ 2025-04-09T23:11:50.250179
+2025-04-09 23:11:50
+2025-04-09 23:11:50,250 - ERROR - unconverted data remains: .585921，请求时间：2025-04-09T23:11:50.250179，请求IP：127.0.0.1 @ 2025-04-09T23:11:50.250179
+2025-04-09 23:11:50
+2025-04-09 23:11:50,250 - ERROR - unconverted data remains: .585921，请求时间：2025-04-09T23:11:50.250179，请求IP：127.0.0.1 @ 2025-04-09T23:11:50.250179
+2025-04-09 23:11:50
+2025-04-09 23:11:50,250 - ERROR - unconverted data remains: .585921，请求时间：2025-04-09T23:11:50.250179，请求IP：127.0.0.1 @ 2025-04-09T23:11:50.250179
+2025-04-09 23:11:50
+2025-04-09 23:11:50,250 - ERROR - unconverted data remains: .585921，请求时间：2025-04-09T23:11:50.250179，请求IP：127.0.0.1 @ 2025-04-09T23:11:50.250179
+2025-04-09 23:11:50
+2025-04-09 23:11:50,250 - ERROR - unconverted data remains: .585921，请求时间：2025-04-09T23:11:50.250179，请求IP：127.0.0.1 @ 2025-04-09T23:11:50.250179
+2025-04-09 23:11:50
+2025-04-09 23:11:50,250 - ERROR - unconverted data remains: .585921，请求时间：2025-04-09T23:11:50.250179，请求IP：127.0.0.1 @ 2025-04-09T23:11:50.250179
+2025-04-09 23:11:50
+2025-04-09 23:11:50,250 - ERROR - unconverted data remains: .585921，请求时间：2025-04-09T23:11:50.250179，请求IP：127.0.0.1 @ 2025-04-09T23:11:50.250179
+2025-04-09 23:11:50
+2025-04-09 23:11:50,250 - ERROR - unconverted data remains: .585921，请求时间：2025-04-09T23:11:50.250179，请求IP：127.0.0.1 @ 2025-04-09T23:11:50.250179
+2025-04-09 23:11:50
+2025-04-09 23:12:07,550 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:12:07
+2025-04-09 23:12:07,550 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:12:07
+2025-04-09 23:12:07,550 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:12:07
+2025-04-09 23:12:07,550 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:12:07
+2025-04-09 23:12:07,550 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:12:07
+2025-04-09 23:12:07,550 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:12:07
+2025-04-09 23:12:07,550 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:12:07
+2025-04-09 23:12:07,550 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:12:07
+2025-04-09 23:12:07,550 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:12:07
+2025-04-09 23:12:07,550 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:12:07
+2025-04-09 23:12:07,561 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:12:07.561368，请求IP：127.0.0.1 @ 2025-04-09T23:12:07.561368
+2025-04-09 23:12:07
+2025-04-09 23:12:07,561 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:12:07.561368，请求IP：127.0.0.1 @ 2025-04-09T23:12:07.561368
+2025-04-09 23:12:07
+2025-04-09 23:12:07,561 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:12:07.561368，请求IP：127.0.0.1 @ 2025-04-09T23:12:07.561368
+2025-04-09 23:12:07
+2025-04-09 23:12:07,561 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:12:07.561368，请求IP：127.0.0.1 @ 2025-04-09T23:12:07.561368
+2025-04-09 23:12:07
+2025-04-09 23:12:07,561 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:12:07.561368，请求IP：127.0.0.1 @ 2025-04-09T23:12:07.561368
+2025-04-09 23:12:07
+2025-04-09 23:12:07,561 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:12:07.561368，请求IP：127.0.0.1 @ 2025-04-09T23:12:07.561368
+2025-04-09 23:12:07
+2025-04-09 23:12:07,561 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:12:07.561368，请求IP：127.0.0.1 @ 2025-04-09T23:12:07.561368
+2025-04-09 23:12:07
+2025-04-09 23:12:07,561 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:12:07.561368，请求IP：127.0.0.1 @ 2025-04-09T23:12:07.561368
+2025-04-09 23:12:07
+2025-04-09 23:12:07,561 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:12:07.561368，请求IP：127.0.0.1 @ 2025-04-09T23:12:07.561368
+2025-04-09 23:12:07
+2025-04-09 23:12:07,561 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:12:07.561368，请求IP：127.0.0.1 @ 2025-04-09T23:12:07.561368
+2025-04-09 23:12:07
+2025-04-09 23:12:07,585 - ERROR - SQL Error: (1054, "Unknown column 'f575b4d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=f575b4d3-0683-11ef-adf4-00ffc6b98bdb
+            
+Params: None
+2025-04-09 23:12:07
+2025-04-09 23:12:07,585 - ERROR - SQL Error: (1054, "Unknown column 'f575b4d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=f575b4d3-0683-11ef-adf4-00ffc6b98bdb
+            
+Params: None
+2025-04-09 23:12:07
+2025-04-09 23:12:07,585 - ERROR - SQL Error: (1054, "Unknown column 'f575b4d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=f575b4d3-0683-11ef-adf4-00ffc6b98bdb
+            
+Params: None
+2025-04-09 23:12:07
+2025-04-09 23:12:07,585 - ERROR - SQL Error: (1054, "Unknown column 'f575b4d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=f575b4d3-0683-11ef-adf4-00ffc6b98bdb
+            
+Params: None
+2025-04-09 23:12:07
+2025-04-09 23:12:07,585 - ERROR - SQL Error: (1054, "Unknown column 'f575b4d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=f575b4d3-0683-11ef-adf4-00ffc6b98bdb
+            
+Params: None
+2025-04-09 23:12:07
+2025-04-09 23:12:07,585 - ERROR - SQL Error: (1054, "Unknown column 'f575b4d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=f575b4d3-0683-11ef-adf4-00ffc6b98bdb
+            
+Params: None
+2025-04-09 23:12:07
+2025-04-09 23:12:07,585 - ERROR - SQL Error: (1054, "Unknown column 'f575b4d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=f575b4d3-0683-11ef-adf4-00ffc6b98bdb
+            
+Params: None
+2025-04-09 23:12:07
+2025-04-09 23:12:07,585 - ERROR - SQL Error: (1054, "Unknown column 'f575b4d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=f575b4d3-0683-11ef-adf4-00ffc6b98bdb
+            
+Params: None
+2025-04-09 23:12:07
+2025-04-09 23:12:07,585 - ERROR - SQL Error: (1054, "Unknown column 'f575b4d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=f575b4d3-0683-11ef-adf4-00ffc6b98bdb
+            
+Params: None
+2025-04-09 23:12:07
+2025-04-09 23:12:07,585 - ERROR - SQL Error: (1054, "Unknown column 'f575b4d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=f575b4d3-0683-11ef-adf4-00ffc6b98bdb
+            
+Params: None
+2025-04-09 23:12:07
+2025-04-09 23:12:07,599 - ERROR - (1054, "Unknown column 'f575b4d3' in 'where clause'")，请求时间：2025-04-09T23:12:07.599475，请求IP：127.0.0.1 @ 2025-04-09T23:12:07.599475
+2025-04-09 23:12:07
+2025-04-09 23:12:07,599 - ERROR - (1054, "Unknown column 'f575b4d3' in 'where clause'")，请求时间：2025-04-09T23:12:07.599475，请求IP：127.0.0.1 @ 2025-04-09T23:12:07.599475
+2025-04-09 23:12:07
+2025-04-09 23:12:07,599 - ERROR - (1054, "Unknown column 'f575b4d3' in 'where clause'")，请求时间：2025-04-09T23:12:07.599475，请求IP：127.0.0.1 @ 2025-04-09T23:12:07.599475
+2025-04-09 23:12:07
+2025-04-09 23:12:07,599 - ERROR - (1054, "Unknown column 'f575b4d3' in 'where clause'")，请求时间：2025-04-09T23:12:07.599475，请求IP：127.0.0.1 @ 2025-04-09T23:12:07.599475
+2025-04-09 23:12:07
+2025-04-09 23:12:07,599 - ERROR - (1054, "Unknown column 'f575b4d3' in 'where clause'")，请求时间：2025-04-09T23:12:07.599475，请求IP：127.0.0.1 @ 2025-04-09T23:12:07.599475
+2025-04-09 23:12:07
+2025-04-09 23:12:07,599 - ERROR - (1054, "Unknown column 'f575b4d3' in 'where clause'")，请求时间：2025-04-09T23:12:07.599475，请求IP：127.0.0.1 @ 2025-04-09T23:12:07.599475
+2025-04-09 23:12:07
+2025-04-09 23:12:07,599 - ERROR - (1054, "Unknown column 'f575b4d3' in 'where clause'")，请求时间：2025-04-09T23:12:07.599475，请求IP：127.0.0.1 @ 2025-04-09T23:12:07.599475
+2025-04-09 23:12:07
+2025-04-09 23:12:07,599 - ERROR - (1054, "Unknown column 'f575b4d3' in 'where clause'")，请求时间：2025-04-09T23:12:07.599475，请求IP：127.0.0.1 @ 2025-04-09T23:12:07.599475
+2025-04-09 23:12:07
+2025-04-09 23:12:07,599 - ERROR - (1054, "Unknown column 'f575b4d3' in 'where clause'")，请求时间：2025-04-09T23:12:07.599475，请求IP：127.0.0.1 @ 2025-04-09T23:12:07.599475
+2025-04-09 23:12:07
+2025-04-09 23:12:07,599 - ERROR - (1054, "Unknown column 'f575b4d3' in 'where clause'")，请求时间：2025-04-09T23:12:07.599475，请求IP：127.0.0.1 @ 2025-04-09T23:12:07.599475
+2025-04-09 23:12:07
+2025-04-09 23:12:15,584 - ERROR - unconverted data remains: .585921，请求时间：2025-04-09T23:12:15.584533，请求IP：127.0.0.1 @ 2025-04-09T23:12:15.584533
+2025-04-09 23:12:15
+2025-04-09 23:12:15,584 - ERROR - unconverted data remains: .585921，请求时间：2025-04-09T23:12:15.584533，请求IP：127.0.0.1 @ 2025-04-09T23:12:15.584533
+2025-04-09 23:12:15
+2025-04-09 23:12:15,584 - ERROR - unconverted data remains: .585921，请求时间：2025-04-09T23:12:15.584533，请求IP：127.0.0.1 @ 2025-04-09T23:12:15.584533
+2025-04-09 23:12:15
+2025-04-09 23:12:15,584 - ERROR - unconverted data remains: .585921，请求时间：2025-04-09T23:12:15.584533，请求IP：127.0.0.1 @ 2025-04-09T23:12:15.584533
+2025-04-09 23:12:15
+2025-04-09 23:12:15,584 - ERROR - unconverted data remains: .585921，请求时间：2025-04-09T23:12:15.584533，请求IP：127.0.0.1 @ 2025-04-09T23:12:15.584533
+2025-04-09 23:12:15
+2025-04-09 23:12:15,584 - ERROR - unconverted data remains: .585921，请求时间：2025-04-09T23:12:15.584533，请求IP：127.0.0.1 @ 2025-04-09T23:12:15.584533
+2025-04-09 23:12:15
+2025-04-09 23:12:15,584 - ERROR - unconverted data remains: .585921，请求时间：2025-04-09T23:12:15.584533，请求IP：127.0.0.1 @ 2025-04-09T23:12:15.584533
+2025-04-09 23:12:15
+2025-04-09 23:12:15,584 - ERROR - unconverted data remains: .585921，请求时间：2025-04-09T23:12:15.584533，请求IP：127.0.0.1 @ 2025-04-09T23:12:15.584533
+2025-04-09 23:12:15
+2025-04-09 23:12:15,584 - ERROR - unconverted data remains: .585921，请求时间：2025-04-09T23:12:15.584533，请求IP：127.0.0.1 @ 2025-04-09T23:12:15.584533
+2025-04-09 23:12:15
+2025-04-09 23:12:15,584 - ERROR - unconverted data remains: .585921，请求时间：2025-04-09T23:12:15.584533，请求IP：127.0.0.1 @ 2025-04-09T23:12:15.584533
+2025-04-09 23:12:15
+2025-04-09 23:15:46,017 - ERROR - unconverted data remains: .585921，请求时间：2025-04-09T23:15:46.017579，请求IP：127.0.0.1 @ 2025-04-09T23:15:46.017579
+2025-04-09 23:15:46
+2025-04-09 23:15:46,017 - ERROR - unconverted data remains: .585921，请求时间：2025-04-09T23:15:46.017579，请求IP：127.0.0.1 @ 2025-04-09T23:15:46.017579
+2025-04-09 23:15:46
+2025-04-09 23:15:46,017 - ERROR - unconverted data remains: .585921，请求时间：2025-04-09T23:15:46.017579，请求IP：127.0.0.1 @ 2025-04-09T23:15:46.017579
+2025-04-09 23:15:46
+2025-04-09 23:15:46,017 - ERROR - unconverted data remains: .585921，请求时间：2025-04-09T23:15:46.017579，请求IP：127.0.0.1 @ 2025-04-09T23:15:46.017579
+2025-04-09 23:15:46
+2025-04-09 23:15:46,017 - ERROR - unconverted data remains: .585921，请求时间：2025-04-09T23:15:46.017579，请求IP：127.0.0.1 @ 2025-04-09T23:15:46.017579
+2025-04-09 23:15:46
+2025-04-09 23:15:46,017 - ERROR - unconverted data remains: .585921，请求时间：2025-04-09T23:15:46.017579，请求IP：127.0.0.1 @ 2025-04-09T23:15:46.017579
+2025-04-09 23:15:46
+2025-04-09 23:15:46,017 - ERROR - unconverted data remains: .585921，请求时间：2025-04-09T23:15:46.017579，请求IP：127.0.0.1 @ 2025-04-09T23:15:46.017579
+2025-04-09 23:15:46
+2025-04-09 23:15:46,017 - ERROR - unconverted data remains: .585921，请求时间：2025-04-09T23:15:46.017579，请求IP：127.0.0.1 @ 2025-04-09T23:15:46.017579
+2025-04-09 23:15:46
+2025-04-09 23:15:46,017 - ERROR - unconverted data remains: .585921，请求时间：2025-04-09T23:15:46.017579，请求IP：127.0.0.1 @ 2025-04-09T23:15:46.017579
+2025-04-09 23:15:46
+2025-04-09 23:15:46,017 - ERROR - unconverted data remains: .585921，请求时间：2025-04-09T23:15:46.017579，请求IP：127.0.0.1 @ 2025-04-09T23:15:46.017579
+2025-04-09 23:15:46
+2025-04-09 23:17:43,880 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:17:43
+2025-04-09 23:17:43,880 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:17:43
+2025-04-09 23:17:43,880 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:17:43
+2025-04-09 23:17:43,880 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:17:43
+2025-04-09 23:17:43,880 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:17:43
+2025-04-09 23:17:43,880 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:17:43
+2025-04-09 23:17:43,880 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:17:43
+2025-04-09 23:17:43,880 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:17:43
+2025-04-09 23:17:43,880 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:17:43
+2025-04-09 23:17:43,880 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:17:43
+2025-04-09 23:17:43,894 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:17:43.894501，请求IP：127.0.0.1 @ 2025-04-09T23:17:43.894501
+2025-04-09 23:17:43
+2025-04-09 23:17:43,894 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:17:43.894501，请求IP：127.0.0.1 @ 2025-04-09T23:17:43.894501
+2025-04-09 23:17:43
+2025-04-09 23:17:43,894 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:17:43.894501，请求IP：127.0.0.1 @ 2025-04-09T23:17:43.894501
+2025-04-09 23:17:43
+2025-04-09 23:17:43,894 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:17:43.894501，请求IP：127.0.0.1 @ 2025-04-09T23:17:43.894501
+2025-04-09 23:17:43
+2025-04-09 23:17:43,894 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:17:43.894501，请求IP：127.0.0.1 @ 2025-04-09T23:17:43.894501
+2025-04-09 23:17:43
+2025-04-09 23:17:43,894 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:17:43.894501，请求IP：127.0.0.1 @ 2025-04-09T23:17:43.894501
+2025-04-09 23:17:43
+2025-04-09 23:17:43,894 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:17:43.894501，请求IP：127.0.0.1 @ 2025-04-09T23:17:43.894501
+2025-04-09 23:17:43
+2025-04-09 23:17:43,894 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:17:43.894501，请求IP：127.0.0.1 @ 2025-04-09T23:17:43.894501
+2025-04-09 23:17:43
+2025-04-09 23:17:43,894 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:17:43.894501，请求IP：127.0.0.1 @ 2025-04-09T23:17:43.894501
+2025-04-09 23:17:43
+2025-04-09 23:17:43,894 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:17:43.894501，请求IP：127.0.0.1 @ 2025-04-09T23:17:43.894501
+2025-04-09 23:17:43
+2025-04-09 23:17:55,520 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:17:55
+2025-04-09 23:17:55,520 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:17:55
+2025-04-09 23:17:55,520 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:17:55
+2025-04-09 23:17:55,520 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:17:55
+2025-04-09 23:17:55,520 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:17:55
+2025-04-09 23:17:55,520 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:17:55
+2025-04-09 23:17:55,520 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:17:55
+2025-04-09 23:17:55,520 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:17:55
+2025-04-09 23:17:55,520 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:17:55
+2025-04-09 23:17:55,520 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:17:55
+2025-04-09 23:17:55,531 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:17:55.531764，请求IP：127.0.0.1 @ 2025-04-09T23:17:55.531764
+2025-04-09 23:17:55
+2025-04-09 23:17:55,531 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:17:55.531764，请求IP：127.0.0.1 @ 2025-04-09T23:17:55.531764
+2025-04-09 23:17:55
+2025-04-09 23:17:55,531 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:17:55.531764，请求IP：127.0.0.1 @ 2025-04-09T23:17:55.531764
+2025-04-09 23:17:55
+2025-04-09 23:17:55,531 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:17:55.531764，请求IP：127.0.0.1 @ 2025-04-09T23:17:55.531764
+2025-04-09 23:17:55
+2025-04-09 23:17:55,531 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:17:55.531764，请求IP：127.0.0.1 @ 2025-04-09T23:17:55.531764
+2025-04-09 23:17:55
+2025-04-09 23:17:55,531 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:17:55.531764，请求IP：127.0.0.1 @ 2025-04-09T23:17:55.531764
+2025-04-09 23:17:55
+2025-04-09 23:17:55,531 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:17:55.531764，请求IP：127.0.0.1 @ 2025-04-09T23:17:55.531764
+2025-04-09 23:17:55
+2025-04-09 23:17:55,531 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:17:55.531764，请求IP：127.0.0.1 @ 2025-04-09T23:17:55.531764
+2025-04-09 23:17:55
+2025-04-09 23:17:55,531 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:17:55.531764，请求IP：127.0.0.1 @ 2025-04-09T23:17:55.531764
+2025-04-09 23:17:55
+2025-04-09 23:17:55,531 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:17:55.531764，请求IP：127.0.0.1 @ 2025-04-09T23:17:55.531764
+2025-04-09 23:17:55
+2025-04-09 23:20:03,114 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:20:03
+2025-04-09 23:20:03,114 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:20:03
+2025-04-09 23:20:03,114 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:20:03
+2025-04-09 23:20:03,114 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:20:03
+2025-04-09 23:20:03,114 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:20:03
+2025-04-09 23:20:03,114 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:20:03
+2025-04-09 23:20:03,114 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:20:03
+2025-04-09 23:20:03,114 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:20:03
+2025-04-09 23:20:03,114 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:20:03
+2025-04-09 23:20:03,114 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:20:03
+2025-04-09 23:20:03,126 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:20:03.126306，请求IP：127.0.0.1 @ 2025-04-09T23:20:03.126306
+2025-04-09 23:20:03
+2025-04-09 23:20:03,126 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:20:03.126306，请求IP：127.0.0.1 @ 2025-04-09T23:20:03.126306
+2025-04-09 23:20:03
+2025-04-09 23:20:03,126 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:20:03.126306，请求IP：127.0.0.1 @ 2025-04-09T23:20:03.126306
+2025-04-09 23:20:03
+2025-04-09 23:20:03,126 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:20:03.126306，请求IP：127.0.0.1 @ 2025-04-09T23:20:03.126306
+2025-04-09 23:20:03
+2025-04-09 23:20:03,126 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:20:03.126306，请求IP：127.0.0.1 @ 2025-04-09T23:20:03.126306
+2025-04-09 23:20:03
+2025-04-09 23:20:03,126 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:20:03.126306，请求IP：127.0.0.1 @ 2025-04-09T23:20:03.126306
+2025-04-09 23:20:03
+2025-04-09 23:20:03,126 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:20:03.126306，请求IP：127.0.0.1 @ 2025-04-09T23:20:03.126306
+2025-04-09 23:20:03
+2025-04-09 23:20:03,126 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:20:03.126306，请求IP：127.0.0.1 @ 2025-04-09T23:20:03.126306
+2025-04-09 23:20:03
+2025-04-09 23:20:03,126 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:20:03.126306，请求IP：127.0.0.1 @ 2025-04-09T23:20:03.126306
+2025-04-09 23:20:03
+2025-04-09 23:20:03,126 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:20:03.126306，请求IP：127.0.0.1 @ 2025-04-09T23:20:03.126306
+2025-04-09 23:20:03
+2025-04-09 23:20:07,507 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:20:07
+2025-04-09 23:20:07,507 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:20:07
+2025-04-09 23:20:07,507 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:20:07
+2025-04-09 23:20:07,507 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:20:07
+2025-04-09 23:20:07,507 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:20:07
+2025-04-09 23:20:07,507 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:20:07
+2025-04-09 23:20:07,507 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:20:07
+2025-04-09 23:20:07,507 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:20:07
+2025-04-09 23:20:07,507 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:20:07
+2025-04-09 23:20:07,507 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:20:07
+2025-04-09 23:20:07,529 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:20:07.528774，请求IP：127.0.0.1 @ 2025-04-09T23:20:07.528774
+2025-04-09 23:20:07
+2025-04-09 23:20:07,529 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:20:07.528774，请求IP：127.0.0.1 @ 2025-04-09T23:20:07.528774
+2025-04-09 23:20:07
+2025-04-09 23:20:07,529 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:20:07.528774，请求IP：127.0.0.1 @ 2025-04-09T23:20:07.528774
+2025-04-09 23:20:07
+2025-04-09 23:20:07,529 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:20:07.528774，请求IP：127.0.0.1 @ 2025-04-09T23:20:07.528774
+2025-04-09 23:20:07
+2025-04-09 23:20:07,529 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:20:07.528774，请求IP：127.0.0.1 @ 2025-04-09T23:20:07.528774
+2025-04-09 23:20:07
+2025-04-09 23:20:07,529 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:20:07.528774，请求IP：127.0.0.1 @ 2025-04-09T23:20:07.528774
+2025-04-09 23:20:07
+2025-04-09 23:20:07,529 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:20:07.528774，请求IP：127.0.0.1 @ 2025-04-09T23:20:07.528774
+2025-04-09 23:20:07
+2025-04-09 23:20:07,529 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:20:07.528774，请求IP：127.0.0.1 @ 2025-04-09T23:20:07.528774
+2025-04-09 23:20:07
+2025-04-09 23:20:07,529 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:20:07.528774，请求IP：127.0.0.1 @ 2025-04-09T23:20:07.528774
+2025-04-09 23:20:07
+2025-04-09 23:20:07,529 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:20:07.528774，请求IP：127.0.0.1 @ 2025-04-09T23:20:07.528774
+2025-04-09 23:20:07
+2025-04-09 23:24:57,404 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:24:57
+2025-04-09 23:24:57,404 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:24:57
+2025-04-09 23:24:57,404 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:24:57
+2025-04-09 23:24:57,404 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:24:57
+2025-04-09 23:24:57,404 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:24:57
+2025-04-09 23:24:57,404 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:24:57
+2025-04-09 23:24:57,404 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:24:57
+2025-04-09 23:24:57,404 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:24:57
+2025-04-09 23:24:57,404 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:24:57
+2025-04-09 23:24:57,404 - ERROR - SQL Error: (1054, "Unknown column 'ec6866d3' in 'where clause'")
+SQL: 
+            select count(*) as total from `order` where target_user_id=ec6866d3-128c-4281-8fef-76beb6b29508
+            
+Params: None
+2025-04-09 23:24:57
+2025-04-09 23:24:57,414 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:24:57.414422，请求IP：127.0.0.1 @ 2025-04-09T23:24:57.414422
+2025-04-09 23:24:57
+2025-04-09 23:24:57,414 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:24:57.414422，请求IP：127.0.0.1 @ 2025-04-09T23:24:57.414422
+2025-04-09 23:24:57
+2025-04-09 23:24:57,414 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:24:57.414422，请求IP：127.0.0.1 @ 2025-04-09T23:24:57.414422
+2025-04-09 23:24:57
+2025-04-09 23:24:57,414 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:24:57.414422，请求IP：127.0.0.1 @ 2025-04-09T23:24:57.414422
+2025-04-09 23:24:57
+2025-04-09 23:24:57,414 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:24:57.414422，请求IP：127.0.0.1 @ 2025-04-09T23:24:57.414422
+2025-04-09 23:24:57
+2025-04-09 23:24:57,414 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:24:57.414422，请求IP：127.0.0.1 @ 2025-04-09T23:24:57.414422
+2025-04-09 23:24:57
+2025-04-09 23:24:57,414 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:24:57.414422，请求IP：127.0.0.1 @ 2025-04-09T23:24:57.414422
+2025-04-09 23:24:57
+2025-04-09 23:24:57,414 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:24:57.414422，请求IP：127.0.0.1 @ 2025-04-09T23:24:57.414422
+2025-04-09 23:24:57
+2025-04-09 23:24:57,414 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:24:57.414422，请求IP：127.0.0.1 @ 2025-04-09T23:24:57.414422
+2025-04-09 23:24:57
+2025-04-09 23:24:57,414 - ERROR - (1054, "Unknown column 'ec6866d3' in 'where clause'")，请求时间：2025-04-09T23:24:57.414422，请求IP：127.0.0.1 @ 2025-04-09T23:24:57.414422
+2025-04-09 23:24:57
+2025-04-10 10:32:07,828 - ERROR - SQL Error: unsupported format character 'S' (0x53) at index 130
+SQL: 
+                    insert into `order` (type,amount_of_money,user_id,time,goods_id,status,back)
+                    values (%s,%S,%s,%s,%s,%s,%s)
+                    
+Params: ['recharge', Decimal('1000.00000000'), 'ec6866d3-128c-4281-8fef-76beb6b29508', datetime.datetime(2025, 4, 10, 10, 32, 7, 774454), '4340ea45-a136-4af0-9bda-1d01ebc451ae', 1, '账户余额充值']
+2025-04-10 10:32:07
+2025-04-10 10:32:07,828 - ERROR - SQL Error: unsupported format character 'S' (0x53) at index 130
+SQL: 
+                    insert into `order` (type,amount_of_money,user_id,time,goods_id,status,back)
+                    values (%s,%S,%s,%s,%s,%s,%s)
+                    
+Params: ['recharge', Decimal('1000.00000000'), 'ec6866d3-128c-4281-8fef-76beb6b29508', datetime.datetime(2025, 4, 10, 10, 32, 7, 774454), '4340ea45-a136-4af0-9bda-1d01ebc451ae', 1, '账户余额充值']
+2025-04-10 10:32:07
+2025-04-10 10:32:07,828 - ERROR - SQL Error: unsupported format character 'S' (0x53) at index 130
+SQL: 
+                    insert into `order` (type,amount_of_money,user_id,time,goods_id,status,back)
+                    values (%s,%S,%s,%s,%s,%s,%s)
+                    
+Params: ['recharge', Decimal('1000.00000000'), 'ec6866d3-128c-4281-8fef-76beb6b29508', datetime.datetime(2025, 4, 10, 10, 32, 7, 774454), '4340ea45-a136-4af0-9bda-1d01ebc451ae', 1, '账户余额充值']
+2025-04-10 10:32:07
+2025-04-10 10:32:07,828 - ERROR - SQL Error: unsupported format character 'S' (0x53) at index 130
+SQL: 
+                    insert into `order` (type,amount_of_money,user_id,time,goods_id,status,back)
+                    values (%s,%S,%s,%s,%s,%s,%s)
+                    
+Params: ['recharge', Decimal('1000.00000000'), 'ec6866d3-128c-4281-8fef-76beb6b29508', datetime.datetime(2025, 4, 10, 10, 32, 7, 774454), '4340ea45-a136-4af0-9bda-1d01ebc451ae', 1, '账户余额充值']
+2025-04-10 10:32:07
+2025-04-10 10:32:07,828 - ERROR - SQL Error: unsupported format character 'S' (0x53) at index 130
+SQL: 
+                    insert into `order` (type,amount_of_money,user_id,time,goods_id,status,back)
+                    values (%s,%S,%s,%s,%s,%s,%s)
+                    
+Params: ['recharge', Decimal('1000.00000000'), 'ec6866d3-128c-4281-8fef-76beb6b29508', datetime.datetime(2025, 4, 10, 10, 32, 7, 774454), '4340ea45-a136-4af0-9bda-1d01ebc451ae', 1, '账户余额充值']
+2025-04-10 10:32:07
+2025-04-10 10:32:07,828 - ERROR - SQL Error: unsupported format character 'S' (0x53) at index 130
+SQL: 
+                    insert into `order` (type,amount_of_money,user_id,time,goods_id,status,back)
+                    values (%s,%S,%s,%s,%s,%s,%s)
+                    
+Params: ['recharge', Decimal('1000.00000000'), 'ec6866d3-128c-4281-8fef-76beb6b29508', datetime.datetime(2025, 4, 10, 10, 32, 7, 774454), '4340ea45-a136-4af0-9bda-1d01ebc451ae', 1, '账户余额充值']
+2025-04-10 10:32:07
+2025-04-10 10:32:07,828 - ERROR - SQL Error: unsupported format character 'S' (0x53) at index 130
+SQL: 
+                    insert into `order` (type,amount_of_money,user_id,time,goods_id,status,back)
+                    values (%s,%S,%s,%s,%s,%s,%s)
+                    
+Params: ['recharge', Decimal('1000.00000000'), 'ec6866d3-128c-4281-8fef-76beb6b29508', datetime.datetime(2025, 4, 10, 10, 32, 7, 774454), '4340ea45-a136-4af0-9bda-1d01ebc451ae', 1, '账户余额充值']
+2025-04-10 10:32:07
+2025-04-10 10:32:07,828 - ERROR - SQL Error: unsupported format character 'S' (0x53) at index 130
+SQL: 
+                    insert into `order` (type,amount_of_money,user_id,time,goods_id,status,back)
+                    values (%s,%S,%s,%s,%s,%s,%s)
+                    
+Params: ['recharge', Decimal('1000.00000000'), 'ec6866d3-128c-4281-8fef-76beb6b29508', datetime.datetime(2025, 4, 10, 10, 32, 7, 774454), '4340ea45-a136-4af0-9bda-1d01ebc451ae', 1, '账户余额充值']
+2025-04-10 10:32:07
+2025-04-10 10:32:07,828 - ERROR - SQL Error: unsupported format character 'S' (0x53) at index 130
+SQL: 
+                    insert into `order` (type,amount_of_money,user_id,time,goods_id,status,back)
+                    values (%s,%S,%s,%s,%s,%s,%s)
+                    
+Params: ['recharge', Decimal('1000.00000000'), 'ec6866d3-128c-4281-8fef-76beb6b29508', datetime.datetime(2025, 4, 10, 10, 32, 7, 774454), '4340ea45-a136-4af0-9bda-1d01ebc451ae', 1, '账户余额充值']
+2025-04-10 10:32:07
+2025-04-10 10:32:07,828 - ERROR - SQL Error: unsupported format character 'S' (0x53) at index 130
+SQL: 
+                    insert into `order` (type,amount_of_money,user_id,time,goods_id,status,back)
+                    values (%s,%S,%s,%s,%s,%s,%s)
+                    
+Params: ['recharge', Decimal('1000.00000000'), 'ec6866d3-128c-4281-8fef-76beb6b29508', datetime.datetime(2025, 4, 10, 10, 32, 7, 774454), '4340ea45-a136-4af0-9bda-1d01ebc451ae', 1, '账户余额充值']
+2025-04-10 10:32:07
+2025-04-10 10:32:07,838 - ERROR - unsupported format character 'S' (0x53) at index 130，请求时间：2025-04-10T10:32:07.838746，请求IP：127.0.0.1 @ 2025-04-10T10:32:07.838746
+2025-04-10 10:32:07
+2025-04-10 10:32:07,838 - ERROR - unsupported format character 'S' (0x53) at index 130，请求时间：2025-04-10T10:32:07.838746，请求IP：127.0.0.1 @ 2025-04-10T10:32:07.838746
+2025-04-10 10:32:07
+2025-04-10 10:32:07,838 - ERROR - unsupported format character 'S' (0x53) at index 130，请求时间：2025-04-10T10:32:07.838746，请求IP：127.0.0.1 @ 2025-04-10T10:32:07.838746
+2025-04-10 10:32:07
+2025-04-10 10:32:07,838 - ERROR - unsupported format character 'S' (0x53) at index 130，请求时间：2025-04-10T10:32:07.838746，请求IP：127.0.0.1 @ 2025-04-10T10:32:07.838746
+2025-04-10 10:32:07
+2025-04-10 10:32:07,838 - ERROR - unsupported format character 'S' (0x53) at index 130，请求时间：2025-04-10T10:32:07.838746，请求IP：127.0.0.1 @ 2025-04-10T10:32:07.838746
+2025-04-10 10:32:07
+2025-04-10 10:32:07,838 - ERROR - unsupported format character 'S' (0x53) at index 130，请求时间：2025-04-10T10:32:07.838746，请求IP：127.0.0.1 @ 2025-04-10T10:32:07.838746
+2025-04-10 10:32:07
+2025-04-10 10:32:07,838 - ERROR - unsupported format character 'S' (0x53) at index 130，请求时间：2025-04-10T10:32:07.838746，请求IP：127.0.0.1 @ 2025-04-10T10:32:07.838746
+2025-04-10 10:32:07
+2025-04-10 10:32:07,838 - ERROR - unsupported format character 'S' (0x53) at index 130，请求时间：2025-04-10T10:32:07.838746，请求IP：127.0.0.1 @ 2025-04-10T10:32:07.838746
+2025-04-10 10:32:07
+2025-04-10 10:32:07,838 - ERROR - unsupported format character 'S' (0x53) at index 130，请求时间：2025-04-10T10:32:07.838746，请求IP：127.0.0.1 @ 2025-04-10T10:32:07.838746
+2025-04-10 10:32:07
+2025-04-10 10:32:07,838 - ERROR - unsupported format character 'S' (0x53) at index 130，请求时间：2025-04-10T10:32:07.838746，请求IP：127.0.0.1 @ 2025-04-10T10:32:07.838746
+2025-04-10 10:32:07
+2025-04-10 10:36:57,590 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FOR UPDATE' at line 1")
+SQL: 
+            update money set balance=balance+%s,last_update=%s where user_id=%s FOR UPDATE
+            
+Params: (Decimal('1000.00000000'), datetime.datetime(2025, 4, 10, 10, 36, 57, 587562), 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-04-10 10:36:57
+2025-04-10 10:36:57,590 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FOR UPDATE' at line 1")
+SQL: 
+            update money set balance=balance+%s,last_update=%s where user_id=%s FOR UPDATE
+            
+Params: (Decimal('1000.00000000'), datetime.datetime(2025, 4, 10, 10, 36, 57, 587562), 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-04-10 10:36:57
+2025-04-10 10:36:57,590 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FOR UPDATE' at line 1")
+SQL: 
+            update money set balance=balance+%s,last_update=%s where user_id=%s FOR UPDATE
+            
+Params: (Decimal('1000.00000000'), datetime.datetime(2025, 4, 10, 10, 36, 57, 587562), 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-04-10 10:36:57
+2025-04-10 10:36:57,590 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FOR UPDATE' at line 1")
+SQL: 
+            update money set balance=balance+%s,last_update=%s where user_id=%s FOR UPDATE
+            
+Params: (Decimal('1000.00000000'), datetime.datetime(2025, 4, 10, 10, 36, 57, 587562), 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-04-10 10:36:57
+2025-04-10 10:36:57,590 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FOR UPDATE' at line 1")
+SQL: 
+            update money set balance=balance+%s,last_update=%s where user_id=%s FOR UPDATE
+            
+Params: (Decimal('1000.00000000'), datetime.datetime(2025, 4, 10, 10, 36, 57, 587562), 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-04-10 10:36:57
+2025-04-10 10:36:57,590 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FOR UPDATE' at line 1")
+SQL: 
+            update money set balance=balance+%s,last_update=%s where user_id=%s FOR UPDATE
+            
+Params: (Decimal('1000.00000000'), datetime.datetime(2025, 4, 10, 10, 36, 57, 587562), 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-04-10 10:36:57
+2025-04-10 10:36:57,590 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FOR UPDATE' at line 1")
+SQL: 
+            update money set balance=balance+%s,last_update=%s where user_id=%s FOR UPDATE
+            
+Params: (Decimal('1000.00000000'), datetime.datetime(2025, 4, 10, 10, 36, 57, 587562), 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-04-10 10:36:57
+2025-04-10 10:36:57,590 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FOR UPDATE' at line 1")
+SQL: 
+            update money set balance=balance+%s,last_update=%s where user_id=%s FOR UPDATE
+            
+Params: (Decimal('1000.00000000'), datetime.datetime(2025, 4, 10, 10, 36, 57, 587562), 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-04-10 10:36:57
+2025-04-10 10:36:57,590 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FOR UPDATE' at line 1")
+SQL: 
+            update money set balance=balance+%s,last_update=%s where user_id=%s FOR UPDATE
+            
+Params: (Decimal('1000.00000000'), datetime.datetime(2025, 4, 10, 10, 36, 57, 587562), 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-04-10 10:36:57
+2025-04-10 10:36:57,590 - ERROR - SQL Error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FOR UPDATE' at line 1")
+SQL: 
+            update money set balance=balance+%s,last_update=%s where user_id=%s FOR UPDATE
+            
+Params: (Decimal('1000.00000000'), datetime.datetime(2025, 4, 10, 10, 36, 57, 587562), 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-04-10 10:36:57
+2025-04-10 10:36:57,601 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FOR UPDATE' at line 1")，请求时间：2025-04-10T10:36:57.601174，请求IP：127.0.0.1 @ 2025-04-10T10:36:57.601174
+2025-04-10 10:36:57
+2025-04-10 10:36:57,601 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FOR UPDATE' at line 1")，请求时间：2025-04-10T10:36:57.601174，请求IP：127.0.0.1 @ 2025-04-10T10:36:57.601174
+2025-04-10 10:36:57
+2025-04-10 10:36:57,601 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FOR UPDATE' at line 1")，请求时间：2025-04-10T10:36:57.601174，请求IP：127.0.0.1 @ 2025-04-10T10:36:57.601174
+2025-04-10 10:36:57
+2025-04-10 10:36:57,601 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FOR UPDATE' at line 1")，请求时间：2025-04-10T10:36:57.601174，请求IP：127.0.0.1 @ 2025-04-10T10:36:57.601174
+2025-04-10 10:36:57
+2025-04-10 10:36:57,601 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FOR UPDATE' at line 1")，请求时间：2025-04-10T10:36:57.601174，请求IP：127.0.0.1 @ 2025-04-10T10:36:57.601174
+2025-04-10 10:36:57
+2025-04-10 10:36:57,601 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FOR UPDATE' at line 1")，请求时间：2025-04-10T10:36:57.601174，请求IP：127.0.0.1 @ 2025-04-10T10:36:57.601174
+2025-04-10 10:36:57
+2025-04-10 10:36:57,601 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FOR UPDATE' at line 1")，请求时间：2025-04-10T10:36:57.601174，请求IP：127.0.0.1 @ 2025-04-10T10:36:57.601174
+2025-04-10 10:36:57
+2025-04-10 10:36:57,601 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FOR UPDATE' at line 1")，请求时间：2025-04-10T10:36:57.601174，请求IP：127.0.0.1 @ 2025-04-10T10:36:57.601174
+2025-04-10 10:36:57
+2025-04-10 10:36:57,601 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FOR UPDATE' at line 1")，请求时间：2025-04-10T10:36:57.601174，请求IP：127.0.0.1 @ 2025-04-10T10:36:57.601174
+2025-04-10 10:36:57
+2025-04-10 10:36:57,601 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FOR UPDATE' at line 1")，请求时间：2025-04-10T10:36:57.601174，请求IP：127.0.0.1 @ 2025-04-10T10:36:57.601174
+2025-04-10 10:36:57
+2025-04-10 13:21:14,651 - ERROR - 'str' object has no attribute 'get'，请求时间：2025-04-10T13:21:14.651317，请求IP：127.0.0.1 @ 2025-04-10T13:21:14.651317
+2025-04-10 13:21:14
+2025-04-10 13:21:14,651 - ERROR - 'str' object has no attribute 'get'，请求时间：2025-04-10T13:21:14.651317，请求IP：127.0.0.1 @ 2025-04-10T13:21:14.651317
+2025-04-10 13:21:14
+2025-04-10 13:21:14,651 - ERROR - 'str' object has no attribute 'get'，请求时间：2025-04-10T13:21:14.651317，请求IP：127.0.0.1 @ 2025-04-10T13:21:14.651317
+2025-04-10 13:21:14
+2025-04-10 13:21:14,651 - ERROR - 'str' object has no attribute 'get'，请求时间：2025-04-10T13:21:14.651317，请求IP：127.0.0.1 @ 2025-04-10T13:21:14.651317
+2025-04-10 13:21:14
+2025-04-10 13:21:14,651 - ERROR - 'str' object has no attribute 'get'，请求时间：2025-04-10T13:21:14.651317，请求IP：127.0.0.1 @ 2025-04-10T13:21:14.651317
+2025-04-10 13:21:14
+2025-04-10 13:21:14,651 - ERROR - 'str' object has no attribute 'get'，请求时间：2025-04-10T13:21:14.651317，请求IP：127.0.0.1 @ 2025-04-10T13:21:14.651317
+2025-04-10 13:21:14
+2025-04-10 13:21:14,651 - ERROR - 'str' object has no attribute 'get'，请求时间：2025-04-10T13:21:14.651317，请求IP：127.0.0.1 @ 2025-04-10T13:21:14.651317
+2025-04-10 13:21:14
+2025-04-10 13:21:14,651 - ERROR - 'str' object has no attribute 'get'，请求时间：2025-04-10T13:21:14.651317，请求IP：127.0.0.1 @ 2025-04-10T13:21:14.651317
+2025-04-10 13:21:14
+2025-04-10 13:21:14,651 - ERROR - 'str' object has no attribute 'get'，请求时间：2025-04-10T13:21:14.651317，请求IP：127.0.0.1 @ 2025-04-10T13:21:14.651317
+2025-04-10 13:21:14
+2025-04-10 13:21:14,651 - ERROR - 'str' object has no attribute 'get'，请求时间：2025-04-10T13:21:14.651317，请求IP：127.0.0.1 @ 2025-04-10T13:21:14.651317
+2025-04-10 13:21:14
+2025-04-10 13:23:33,469 - ERROR - SQL Error: (1265, "Data truncated for column 'func_id' at row 1")
+SQL: 
+            INSERT INTO admin.commission_an_atricle 
+            (func_id, title, work_type, age_classification, introduce, 
+             tags, amount_of_money, cover, time, user_id) 
+            VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+            
+Params: ('933f9f81-a7b2-4878-8862-9f763a5ed205', '新建测试', 'illustration', 'all', '这是一个简单的要求', '测试,', 100.0, '1044fd24-9b33-4280-a6c6-fb801ac8d9e3.png', datetime.datetime(2025, 4, 10, 13, 23, 33, 451581), 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-04-10 13:23:33
+2025-04-10 13:23:33,469 - ERROR - SQL Error: (1265, "Data truncated for column 'func_id' at row 1")
+SQL: 
+            INSERT INTO admin.commission_an_atricle 
+            (func_id, title, work_type, age_classification, introduce, 
+             tags, amount_of_money, cover, time, user_id) 
+            VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+            
+Params: ('933f9f81-a7b2-4878-8862-9f763a5ed205', '新建测试', 'illustration', 'all', '这是一个简单的要求', '测试,', 100.0, '1044fd24-9b33-4280-a6c6-fb801ac8d9e3.png', datetime.datetime(2025, 4, 10, 13, 23, 33, 451581), 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-04-10 13:23:33
+2025-04-10 13:23:33,469 - ERROR - SQL Error: (1265, "Data truncated for column 'func_id' at row 1")
+SQL: 
+            INSERT INTO admin.commission_an_atricle 
+            (func_id, title, work_type, age_classification, introduce, 
+             tags, amount_of_money, cover, time, user_id) 
+            VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+            
+Params: ('933f9f81-a7b2-4878-8862-9f763a5ed205', '新建测试', 'illustration', 'all', '这是一个简单的要求', '测试,', 100.0, '1044fd24-9b33-4280-a6c6-fb801ac8d9e3.png', datetime.datetime(2025, 4, 10, 13, 23, 33, 451581), 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-04-10 13:23:33
+2025-04-10 13:23:33,469 - ERROR - SQL Error: (1265, "Data truncated for column 'func_id' at row 1")
+SQL: 
+            INSERT INTO admin.commission_an_atricle 
+            (func_id, title, work_type, age_classification, introduce, 
+             tags, amount_of_money, cover, time, user_id) 
+            VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+            
+Params: ('933f9f81-a7b2-4878-8862-9f763a5ed205', '新建测试', 'illustration', 'all', '这是一个简单的要求', '测试,', 100.0, '1044fd24-9b33-4280-a6c6-fb801ac8d9e3.png', datetime.datetime(2025, 4, 10, 13, 23, 33, 451581), 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-04-10 13:23:33
+2025-04-10 13:23:33,469 - ERROR - SQL Error: (1265, "Data truncated for column 'func_id' at row 1")
+SQL: 
+            INSERT INTO admin.commission_an_atricle 
+            (func_id, title, work_type, age_classification, introduce, 
+             tags, amount_of_money, cover, time, user_id) 
+            VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+            
+Params: ('933f9f81-a7b2-4878-8862-9f763a5ed205', '新建测试', 'illustration', 'all', '这是一个简单的要求', '测试,', 100.0, '1044fd24-9b33-4280-a6c6-fb801ac8d9e3.png', datetime.datetime(2025, 4, 10, 13, 23, 33, 451581), 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-04-10 13:23:33
+2025-04-10 13:23:33,469 - ERROR - SQL Error: (1265, "Data truncated for column 'func_id' at row 1")
+SQL: 
+            INSERT INTO admin.commission_an_atricle 
+            (func_id, title, work_type, age_classification, introduce, 
+             tags, amount_of_money, cover, time, user_id) 
+            VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+            
+Params: ('933f9f81-a7b2-4878-8862-9f763a5ed205', '新建测试', 'illustration', 'all', '这是一个简单的要求', '测试,', 100.0, '1044fd24-9b33-4280-a6c6-fb801ac8d9e3.png', datetime.datetime(2025, 4, 10, 13, 23, 33, 451581), 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-04-10 13:23:33
+2025-04-10 13:23:33,469 - ERROR - SQL Error: (1265, "Data truncated for column 'func_id' at row 1")
+SQL: 
+            INSERT INTO admin.commission_an_atricle 
+            (func_id, title, work_type, age_classification, introduce, 
+             tags, amount_of_money, cover, time, user_id) 
+            VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+            
+Params: ('933f9f81-a7b2-4878-8862-9f763a5ed205', '新建测试', 'illustration', 'all', '这是一个简单的要求', '测试,', 100.0, '1044fd24-9b33-4280-a6c6-fb801ac8d9e3.png', datetime.datetime(2025, 4, 10, 13, 23, 33, 451581), 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-04-10 13:23:33
+2025-04-10 13:23:33,469 - ERROR - SQL Error: (1265, "Data truncated for column 'func_id' at row 1")
+SQL: 
+            INSERT INTO admin.commission_an_atricle 
+            (func_id, title, work_type, age_classification, introduce, 
+             tags, amount_of_money, cover, time, user_id) 
+            VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+            
+Params: ('933f9f81-a7b2-4878-8862-9f763a5ed205', '新建测试', 'illustration', 'all', '这是一个简单的要求', '测试,', 100.0, '1044fd24-9b33-4280-a6c6-fb801ac8d9e3.png', datetime.datetime(2025, 4, 10, 13, 23, 33, 451581), 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-04-10 13:23:33
+2025-04-10 13:23:33,469 - ERROR - SQL Error: (1265, "Data truncated for column 'func_id' at row 1")
+SQL: 
+            INSERT INTO admin.commission_an_atricle 
+            (func_id, title, work_type, age_classification, introduce, 
+             tags, amount_of_money, cover, time, user_id) 
+            VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+            
+Params: ('933f9f81-a7b2-4878-8862-9f763a5ed205', '新建测试', 'illustration', 'all', '这是一个简单的要求', '测试,', 100.0, '1044fd24-9b33-4280-a6c6-fb801ac8d9e3.png', datetime.datetime(2025, 4, 10, 13, 23, 33, 451581), 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-04-10 13:23:33
+2025-04-10 13:23:33,469 - ERROR - SQL Error: (1265, "Data truncated for column 'func_id' at row 1")
+SQL: 
+            INSERT INTO admin.commission_an_atricle 
+            (func_id, title, work_type, age_classification, introduce, 
+             tags, amount_of_money, cover, time, user_id) 
+            VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+            
+Params: ('933f9f81-a7b2-4878-8862-9f763a5ed205', '新建测试', 'illustration', 'all', '这是一个简单的要求', '测试,', 100.0, '1044fd24-9b33-4280-a6c6-fb801ac8d9e3.png', datetime.datetime(2025, 4, 10, 13, 23, 33, 451581), 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-04-10 13:23:33
+2025-04-10 13:23:33,481 - ERROR - (1265, "Data truncated for column 'func_id' at row 1")，请求时间：2025-04-10T13:23:33.481656，请求IP：127.0.0.1 @ 2025-04-10T13:23:33.481656
+2025-04-10 13:23:33
+2025-04-10 13:23:33,481 - ERROR - (1265, "Data truncated for column 'func_id' at row 1")，请求时间：2025-04-10T13:23:33.481656，请求IP：127.0.0.1 @ 2025-04-10T13:23:33.481656
+2025-04-10 13:23:33
+2025-04-10 13:23:33,481 - ERROR - (1265, "Data truncated for column 'func_id' at row 1")，请求时间：2025-04-10T13:23:33.481656，请求IP：127.0.0.1 @ 2025-04-10T13:23:33.481656
+2025-04-10 13:23:33
+2025-04-10 13:23:33,481 - ERROR - (1265, "Data truncated for column 'func_id' at row 1")，请求时间：2025-04-10T13:23:33.481656，请求IP：127.0.0.1 @ 2025-04-10T13:23:33.481656
+2025-04-10 13:23:33
+2025-04-10 13:23:33,481 - ERROR - (1265, "Data truncated for column 'func_id' at row 1")，请求时间：2025-04-10T13:23:33.481656，请求IP：127.0.0.1 @ 2025-04-10T13:23:33.481656
+2025-04-10 13:23:33
+2025-04-10 13:23:33,481 - ERROR - (1265, "Data truncated for column 'func_id' at row 1")，请求时间：2025-04-10T13:23:33.481656，请求IP：127.0.0.1 @ 2025-04-10T13:23:33.481656
+2025-04-10 13:23:33
+2025-04-10 13:23:33,481 - ERROR - (1265, "Data truncated for column 'func_id' at row 1")，请求时间：2025-04-10T13:23:33.481656，请求IP：127.0.0.1 @ 2025-04-10T13:23:33.481656
+2025-04-10 13:23:33
+2025-04-10 13:23:33,481 - ERROR - (1265, "Data truncated for column 'func_id' at row 1")，请求时间：2025-04-10T13:23:33.481656，请求IP：127.0.0.1 @ 2025-04-10T13:23:33.481656
+2025-04-10 13:23:33
+2025-04-10 13:23:33,481 - ERROR - (1265, "Data truncated for column 'func_id' at row 1")，请求时间：2025-04-10T13:23:33.481656，请求IP：127.0.0.1 @ 2025-04-10T13:23:33.481656
+2025-04-10 13:23:33
+2025-04-10 13:23:33,481 - ERROR - (1265, "Data truncated for column 'func_id' at row 1")，请求时间：2025-04-10T13:23:33.481656，请求IP：127.0.0.1 @ 2025-04-10T13:23:33.481656
+2025-04-10 13:23:33
+2025-04-10 13:23:56,834 - ERROR - SQL Error: (1366, "Incorrect integer value: 'df4d93f0-2298-4f4d-9edf-0f2b14fc2424' for column 'func_id' at row 1")
+SQL: 
+            INSERT INTO admin.commission_an_atricle 
+            (func_id, title, work_type, age_classification, introduce, 
+             tags, amount_of_money, cover, time, user_id) 
+            VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+            
+Params: ('df4d93f0-2298-4f4d-9edf-0f2b14fc2424', '新建测试', 'illustration', 'all', '这是一个简单的要求', '测试,', 100.0, '1600cd28-c356-4a2d-8ed5-57c94e8fd88e.png', datetime.datetime(2025, 4, 10, 13, 23, 56, 824310), 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-04-10 13:23:56
+2025-04-10 13:23:56,834 - ERROR - SQL Error: (1366, "Incorrect integer value: 'df4d93f0-2298-4f4d-9edf-0f2b14fc2424' for column 'func_id' at row 1")
+SQL: 
+            INSERT INTO admin.commission_an_atricle 
+            (func_id, title, work_type, age_classification, introduce, 
+             tags, amount_of_money, cover, time, user_id) 
+            VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+            
+Params: ('df4d93f0-2298-4f4d-9edf-0f2b14fc2424', '新建测试', 'illustration', 'all', '这是一个简单的要求', '测试,', 100.0, '1600cd28-c356-4a2d-8ed5-57c94e8fd88e.png', datetime.datetime(2025, 4, 10, 13, 23, 56, 824310), 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-04-10 13:23:56
+2025-04-10 13:23:56,834 - ERROR - SQL Error: (1366, "Incorrect integer value: 'df4d93f0-2298-4f4d-9edf-0f2b14fc2424' for column 'func_id' at row 1")
+SQL: 
+            INSERT INTO admin.commission_an_atricle 
+            (func_id, title, work_type, age_classification, introduce, 
+             tags, amount_of_money, cover, time, user_id) 
+            VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+            
+Params: ('df4d93f0-2298-4f4d-9edf-0f2b14fc2424', '新建测试', 'illustration', 'all', '这是一个简单的要求', '测试,', 100.0, '1600cd28-c356-4a2d-8ed5-57c94e8fd88e.png', datetime.datetime(2025, 4, 10, 13, 23, 56, 824310), 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-04-10 13:23:56
+2025-04-10 13:23:56,834 - ERROR - SQL Error: (1366, "Incorrect integer value: 'df4d93f0-2298-4f4d-9edf-0f2b14fc2424' for column 'func_id' at row 1")
+SQL: 
+            INSERT INTO admin.commission_an_atricle 
+            (func_id, title, work_type, age_classification, introduce, 
+             tags, amount_of_money, cover, time, user_id) 
+            VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+            
+Params: ('df4d93f0-2298-4f4d-9edf-0f2b14fc2424', '新建测试', 'illustration', 'all', '这是一个简单的要求', '测试,', 100.0, '1600cd28-c356-4a2d-8ed5-57c94e8fd88e.png', datetime.datetime(2025, 4, 10, 13, 23, 56, 824310), 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-04-10 13:23:56
+2025-04-10 13:23:56,834 - ERROR - SQL Error: (1366, "Incorrect integer value: 'df4d93f0-2298-4f4d-9edf-0f2b14fc2424' for column 'func_id' at row 1")
+SQL: 
+            INSERT INTO admin.commission_an_atricle 
+            (func_id, title, work_type, age_classification, introduce, 
+             tags, amount_of_money, cover, time, user_id) 
+            VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+            
+Params: ('df4d93f0-2298-4f4d-9edf-0f2b14fc2424', '新建测试', 'illustration', 'all', '这是一个简单的要求', '测试,', 100.0, '1600cd28-c356-4a2d-8ed5-57c94e8fd88e.png', datetime.datetime(2025, 4, 10, 13, 23, 56, 824310), 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-04-10 13:23:56
+2025-04-10 13:23:56,834 - ERROR - SQL Error: (1366, "Incorrect integer value: 'df4d93f0-2298-4f4d-9edf-0f2b14fc2424' for column 'func_id' at row 1")
+SQL: 
+            INSERT INTO admin.commission_an_atricle 
+            (func_id, title, work_type, age_classification, introduce, 
+             tags, amount_of_money, cover, time, user_id) 
+            VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+            
+Params: ('df4d93f0-2298-4f4d-9edf-0f2b14fc2424', '新建测试', 'illustration', 'all', '这是一个简单的要求', '测试,', 100.0, '1600cd28-c356-4a2d-8ed5-57c94e8fd88e.png', datetime.datetime(2025, 4, 10, 13, 23, 56, 824310), 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-04-10 13:23:56
+2025-04-10 13:23:56,834 - ERROR - SQL Error: (1366, "Incorrect integer value: 'df4d93f0-2298-4f4d-9edf-0f2b14fc2424' for column 'func_id' at row 1")
+SQL: 
+            INSERT INTO admin.commission_an_atricle 
+            (func_id, title, work_type, age_classification, introduce, 
+             tags, amount_of_money, cover, time, user_id) 
+            VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+            
+Params: ('df4d93f0-2298-4f4d-9edf-0f2b14fc2424', '新建测试', 'illustration', 'all', '这是一个简单的要求', '测试,', 100.0, '1600cd28-c356-4a2d-8ed5-57c94e8fd88e.png', datetime.datetime(2025, 4, 10, 13, 23, 56, 824310), 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-04-10 13:23:56
+2025-04-10 13:23:56,834 - ERROR - SQL Error: (1366, "Incorrect integer value: 'df4d93f0-2298-4f4d-9edf-0f2b14fc2424' for column 'func_id' at row 1")
+SQL: 
+            INSERT INTO admin.commission_an_atricle 
+            (func_id, title, work_type, age_classification, introduce, 
+             tags, amount_of_money, cover, time, user_id) 
+            VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+            
+Params: ('df4d93f0-2298-4f4d-9edf-0f2b14fc2424', '新建测试', 'illustration', 'all', '这是一个简单的要求', '测试,', 100.0, '1600cd28-c356-4a2d-8ed5-57c94e8fd88e.png', datetime.datetime(2025, 4, 10, 13, 23, 56, 824310), 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-04-10 13:23:56
+2025-04-10 13:23:56,834 - ERROR - SQL Error: (1366, "Incorrect integer value: 'df4d93f0-2298-4f4d-9edf-0f2b14fc2424' for column 'func_id' at row 1")
+SQL: 
+            INSERT INTO admin.commission_an_atricle 
+            (func_id, title, work_type, age_classification, introduce, 
+             tags, amount_of_money, cover, time, user_id) 
+            VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+            
+Params: ('df4d93f0-2298-4f4d-9edf-0f2b14fc2424', '新建测试', 'illustration', 'all', '这是一个简单的要求', '测试,', 100.0, '1600cd28-c356-4a2d-8ed5-57c94e8fd88e.png', datetime.datetime(2025, 4, 10, 13, 23, 56, 824310), 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-04-10 13:23:56
+2025-04-10 13:23:56,834 - ERROR - SQL Error: (1366, "Incorrect integer value: 'df4d93f0-2298-4f4d-9edf-0f2b14fc2424' for column 'func_id' at row 1")
+SQL: 
+            INSERT INTO admin.commission_an_atricle 
+            (func_id, title, work_type, age_classification, introduce, 
+             tags, amount_of_money, cover, time, user_id) 
+            VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+            
+Params: ('df4d93f0-2298-4f4d-9edf-0f2b14fc2424', '新建测试', 'illustration', 'all', '这是一个简单的要求', '测试,', 100.0, '1600cd28-c356-4a2d-8ed5-57c94e8fd88e.png', datetime.datetime(2025, 4, 10, 13, 23, 56, 824310), 'ec6866d3-128c-4281-8fef-76beb6b29508')
+2025-04-10 13:23:56
+2025-04-10 13:23:56,846 - ERROR - (1366, "Incorrect integer value: 'df4d93f0-2298-4f4d-9edf-0f2b14fc2424' for column 'func_id' at row 1")，请求时间：2025-04-10T13:23:56.846873，请求IP：127.0.0.1 @ 2025-04-10T13:23:56.846873
+2025-04-10 13:23:56
+2025-04-10 13:23:56,846 - ERROR - (1366, "Incorrect integer value: 'df4d93f0-2298-4f4d-9edf-0f2b14fc2424' for column 'func_id' at row 1")，请求时间：2025-04-10T13:23:56.846873，请求IP：127.0.0.1 @ 2025-04-10T13:23:56.846873
+2025-04-10 13:23:56
+2025-04-10 13:23:56,846 - ERROR - (1366, "Incorrect integer value: 'df4d93f0-2298-4f4d-9edf-0f2b14fc2424' for column 'func_id' at row 1")，请求时间：2025-04-10T13:23:56.846873，请求IP：127.0.0.1 @ 2025-04-10T13:23:56.846873
+2025-04-10 13:23:56
+2025-04-10 13:23:56,846 - ERROR - (1366, "Incorrect integer value: 'df4d93f0-2298-4f4d-9edf-0f2b14fc2424' for column 'func_id' at row 1")，请求时间：2025-04-10T13:23:56.846873，请求IP：127.0.0.1 @ 2025-04-10T13:23:56.846873
+2025-04-10 13:23:56
+2025-04-10 13:23:56,846 - ERROR - (1366, "Incorrect integer value: 'df4d93f0-2298-4f4d-9edf-0f2b14fc2424' for column 'func_id' at row 1")，请求时间：2025-04-10T13:23:56.846873，请求IP：127.0.0.1 @ 2025-04-10T13:23:56.846873
+2025-04-10 13:23:56
+2025-04-10 13:23:56,846 - ERROR - (1366, "Incorrect integer value: 'df4d93f0-2298-4f4d-9edf-0f2b14fc2424' for column 'func_id' at row 1")，请求时间：2025-04-10T13:23:56.846873，请求IP：127.0.0.1 @ 2025-04-10T13:23:56.846873
+2025-04-10 13:23:56
+2025-04-10 13:23:56,846 - ERROR - (1366, "Incorrect integer value: 'df4d93f0-2298-4f4d-9edf-0f2b14fc2424' for column 'func_id' at row 1")，请求时间：2025-04-10T13:23:56.846873，请求IP：127.0.0.1 @ 2025-04-10T13:23:56.846873
+2025-04-10 13:23:56
+2025-04-10 13:23:56,846 - ERROR - (1366, "Incorrect integer value: 'df4d93f0-2298-4f4d-9edf-0f2b14fc2424' for column 'func_id' at row 1")，请求时间：2025-04-10T13:23:56.846873，请求IP：127.0.0.1 @ 2025-04-10T13:23:56.846873
+2025-04-10 13:23:56
+2025-04-10 13:23:56,846 - ERROR - (1366, "Incorrect integer value: 'df4d93f0-2298-4f4d-9edf-0f2b14fc2424' for column 'func_id' at row 1")，请求时间：2025-04-10T13:23:56.846873，请求IP：127.0.0.1 @ 2025-04-10T13:23:56.846873
+2025-04-10 13:23:56
+2025-04-10 13:23:56,846 - ERROR - (1366, "Incorrect integer value: 'df4d93f0-2298-4f4d-9edf-0f2b14fc2424' for column 'func_id' at row 1")，请求时间：2025-04-10T13:23:56.846873，请求IP：127.0.0.1 @ 2025-04-10T13:23:56.846873
+2025-04-10 13:23:56
