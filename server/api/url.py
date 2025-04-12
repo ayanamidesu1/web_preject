@@ -5,6 +5,7 @@ from .get_func_list import GetFuncList
 from .get_receiver_list import GetReceiverList
 from .get_self_func import GetSelfFunc
 from .get_self_order import GetSelfOrder
+from .get_send_list import GetSendList
 from .get_send_order import GetSendOrder
 from .get_target_func import GetTargetFunc
 from .get_wallet_info import getWalletInfo
@@ -35,4 +36,6 @@ urlpatterns=[
     # 获取约稿方案列表
     path('GetReceiverList',GetReceiverList.as_view(),name='GetReceiverList'),
     # 获取接收到的约稿方案列表
+    path('GetSendList', GetSendList.as_view(),name='GetSendList'),
+    # 获取发送的约稿方案列表
 ]

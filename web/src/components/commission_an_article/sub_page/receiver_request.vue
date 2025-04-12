@@ -27,8 +27,10 @@
             v-model="status_filter" 
             @change="fetchData"
             class="filter-select"
-          >
+          >        
             <option value="all">所有状态</option>
+            <option value="5">已拒绝</option>
+            <option value="4">等待委托人确定</option>
             <option value="3">待处理</option>
             <option value="1">已处理</option>
             <option value="2">创作中</option>
@@ -135,7 +137,9 @@ const statusTextMap = {
   0: '已取消',
   1: '已完成',
   2: '创作中',
-  3: '待处理'
+  3: '待处理',
+  4:'待确认',
+  5:'已拒绝'
 }
 
 // 状态样式类映射

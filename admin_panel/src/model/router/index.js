@@ -50,6 +50,10 @@ const routes=[
                                 path:'/send_msg',
                                 name:'send_msg',
                                 component:()=>import('@/components/model/send_msg/send.vue')//向目标用户发送消息
+                            },{
+                                path:'/order_page',
+                                name:'order_page',
+                                component:()=>import('@/components/model/order/order_page.vue')//订单查询和状态管理
                             }
                         ]
                     }

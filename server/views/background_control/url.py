@@ -10,6 +10,7 @@ from .model.get_comment_list import GetCommentList
 from .model.get_ill_list import GetIllList
 from .model.get_novel_content_list import GetNovelContentList
 from .model.get_novel_work import GetNovelWork
+from .model.get_order_list import GetOrderList
 from .model.get_userlist import GetUserList
 from .model.search_comic import SearchComic
 from .model.search_comment import SearchComment
@@ -21,6 +22,7 @@ from .model.update_comic_status import UpdateComic
 from .model.update_comment import UpdateComment
 from .model.update_novel_content import UpdateNovelContent
 from .model.update_novel_work import UpdateNovelWork
+from .model.update_order_status import UpdateOrderStatus
 
 urlpatterns = [
     path('AdminLogin/', AdminLogin.as_view(), name='AdminLogin'),
@@ -63,6 +65,10 @@ urlpatterns = [
     # 更新评论
     path('GeneratePasswordCard', GeneratePasswordCard.as_view(), name='GeneratePasswordCard'),
     # 生成密码卡
-    path('FilterCardPassword', FilterCardPassword.as_view(),name='FilterCardPassword'),
+    path('FilterCardPassword', FilterCardPassword.as_view(), name='FilterCardPassword'),
     # 筛选卡密
+    path('GetOrderList', GetOrderList.as_view(), name='GetOrderList'),
+    # 获取订单列表
+    path('UpdateOrderStatus', UpdateOrderStatus.as_view(), name='UpdateOrderStatus'),
+    # 更新订单状态
 ]

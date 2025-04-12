@@ -105,7 +105,7 @@
     <!-- 保持您原有的分页组件 -->
     <page
       :total="total"
-      :offset="offset"
+      :pageSize="limit"
       @page-change="add_more($event)"
     ></page>
   </div>
