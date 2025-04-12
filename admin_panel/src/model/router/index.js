@@ -46,6 +46,10 @@ const routes=[
                                 path:'/send_notice',
                                 name:'send_notice',
                                 component:()=>import('@/components/model/send_notice.vue')
+                            },{
+                                path:'/send_msg',
+                                name:'send_msg',
+                                component:()=>import('@/components/model/send_msg/send.vue')//向目标用户发送消息
                             }
                         ]
                     }

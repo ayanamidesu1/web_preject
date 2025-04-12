@@ -3,6 +3,7 @@ from django.urls import path
 from .model.admin_login import AdminLogin
 from .model.delete_comment import DeleteComment
 from .model.edit_user_info import EditUserInfo
+from .model.filter_card_password import FilterCardPassword
 from .model.generate_password_card import GeneratePasswordCard
 from .model.get_comic_list import GetComicList
 from .model.get_comment_list import GetCommentList
@@ -62,4 +63,6 @@ urlpatterns = [
     # 更新评论
     path('GeneratePasswordCard', GeneratePasswordCard.as_view(), name='GeneratePasswordCard'),
     # 生成密码卡
+    path('FilterCardPassword', FilterCardPassword.as_view(),name='FilterCardPassword'),
+    # 筛选卡密
 ]

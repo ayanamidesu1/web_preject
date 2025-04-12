@@ -6,6 +6,7 @@ export const useStore = defineStore('main',{
         target_user:{},
         //wss连接
         ws:undefined,
+        ws_ready:false,
     }),
     actions:{
 

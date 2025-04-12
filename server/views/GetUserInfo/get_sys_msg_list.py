@@ -11,11 +11,11 @@ class get_sys_msg_list(BaseApi):
             limit=data.get('limit',10)
             offset=data.get('offset',0)
             sql="""select * from messages where (receiver_id='all' or receiver_id=%s) 
-            and sender_id='f575b4d3-0683-11ef-adf4-00ffc6b98bdb' and msg_type IN ('all','review_msg')
+            and sender_id='f575b4d3-0683-11ef-adf4-00ffc6b98bdb' and msg_type IN ('all','review_msg','sys_msg')
              order by time desc limit %s offset %s """
             total=self.execute_sql("select count(*) as total from messages where (receiver_id='all' or receiver_id=%s)"
                                    "and sender_id='f575b4d3-0683-11ef-adf4-00ffc6b98bdb'"
-                                   " and msg_type IN ('all','review_msg')", (user_id,))[0]['total']
+                                   " and msg_type IN ('all','review_msg','sys_msg')", (user_id,))[0]['total']
             result=self.execute_sql(sql, (user_id,limit,offset))
             # 标记获取的消息为已读
             if result:

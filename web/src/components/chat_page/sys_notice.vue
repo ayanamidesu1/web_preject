@@ -13,21 +13,40 @@
 
     <div class="notice_container">
       <div class="notice_list">
-        <div class="check_point" ref="check_point" style="display:flex;width:100%;height:1px;opacity: 0;"></div>
+        <div
+          class="check_point"
+          ref="check_point"
+          style="display: flex; width: 100%; height: 1px; opacity: 0"
+        ></div>
         <div
           class="notice_item"
           v-for="(item, index) in sys_notice"
           :key="index"
           :class="{ unread: item.receiver_read_status === '未读' }"
         >
-        <review_msg :msg="item.content" :time="item.time" v-if="(item.msg_type=='review_msg')" :key="index"></review_msg>
-        <div v-else>
+          <review_msg
+            :msg="item.content"
+            :time="item.time"
+            v-if="item.msg_type == 'review_msg'"
+            :key="index"
+          ></review_msg>
+          <div v-if="item.msg_type == 'all'">
             <div class="notice_header">
-                <span class="notice_title">{{ item.content.title }}</span>
-                <span class="notice_time">{{ api.formatTimeAgo(item.time) }}</span>
-              </div>
-              <div class="notice_content">{{ item.content.content }}</div>
-        </div>
+              <span class="notice_title">{{ item.content.title }}</span>
+              <span class="notice_time">{{
+                api.formatTimeAgo(item.time)
+              }}</span>
+            </div>
+            <div class="notice_content">{{ item.content.content }}</div>
+          </div>
+          <div v-if="item.msg_type == 'sys_msg'">
+            <div class="notice_content">
+              <span>系统管理原消息：{{ item.content.text }}</span>
+              <span class="notice_time">{{
+                api.formatTimeAgo(item.time)
+              }}</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -35,7 +54,7 @@
 </template>
   
   <script setup>
-import { ref, onMounted, nextTick, onUnmounted,watchEffect } from "vue";
+import { ref, onMounted, nextTick, onUnmounted, watchEffect } from "vue";
 import { BaseApi } from "@/base_api";
 import { useChatStore } from "./chat_store";
 import review_msg from "./review_msg.vue";
@@ -49,12 +68,16 @@ let total = ref(0);
 let check_point = ref(null);
 let ws_ready = ref(false);
 
-async function ws_connect(){
+async function ws_connect() {
   // 实时消息通知
-  chat_store.$state.ws.addEventListener('message',(e)=>{
+  chat_store.$state.ws.addEventListener("message", (e) => {
     let data = JSON.parse(e.data);
     console.log(data);
-    if(data.msg_type=='all'||data.msg_type=='review_msg'){
+    if (
+      data.msg_type == "all" ||
+      data.msg_type == "review_msg" ||
+      data.msg_type == "sys_msg"
+    ) {
       console.log(data);
     }
     if (data.msg_type == "all") {
@@ -66,53 +89,61 @@ async function ws_connect(){
             : data.content,
       });
     }
-    if(data.msg_type=='review_msg'){
-        sys_notice.value.push({
-            ...data,
-            content: typeof data.content==="string"?JSON.parse(data.content.replace(/'/g, '"')):JSON.parse(data.content)
-        });
+    if (data.msg_type == "review_msg") {
+      sys_notice.value.push({
+        ...data,
+        content:
+          typeof data.content === "string"
+            ? JSON.parse(data.content.replace(/'/g, '"'))
+            : JSON.parse(data.content),
+      });
     }
-  })
+    if (data.msg_type == "sys_msg") {
+      sys_notice.value.push({
+        ...data,
+        content:
+          typeof data.content === "string"
+            ? JSON.parse(data.content.replace(/'/g, '"'))
+            : JSON.parse(data.content),
+      });
+    }
+  });
   console.log("WebSocket连接成功，监听消息");
-};
+}
 
-watchEffect(
-  ()=>{
-    
-    if(!chat_store.$state.ws){
-      console.log('websocket连接未就绪，等待中...')
-      return ;
-    }
-    try{
-      if(chat_store.$state.ws.readyState===WebSocket.OPEN){
-      ws_connect()
-      if(chat_store.$state.ws.onmessage){
-          console.log("WebSocket连接成功，监听消息，不再重试");
-          return ;
-        }
-    }else{
+watchEffect(() => {
+  if (!chat_store.$state.ws) {
+    console.log("websocket连接未就绪，等待中...");
+    return;
+  }
+  try {
+    if (chat_store.$state.ws.readyState === WebSocket.OPEN) {
+      ws_connect();
+      if (chat_store.$state.ws.onmessage) {
+        console.log("WebSocket连接成功，监听消息，不再重试");
+        return;
+      }
+    } else {
       console.log("WebSocket连接失败，正在重试...");
       setTimeout(() => {
-        ws_connect()
-        if(chat_store.$state.ws.onmessage){
+        ws_connect();
+        if (chat_store.$state.ws.onmessage) {
           console.log("WebSocket连接成功，监听消息，不再重试");
-          return ;
+          return;
         }
       }, 1000);
     }
-    }
-    catch(e){
-      console.error("WebSocket连接失败，正在重试...");
-      setTimeout(() => {        
-        ws_connect()
-        if(chat_store.$state.ws.onmessage){
-          console.log("WebSocket连接成功，监听消息，不再重试");
-          return ;
-        }
-      }, 1000);
-    }
+  } catch (e) {
+    console.error("WebSocket连接失败，正在重试...");
+    setTimeout(() => {
+      ws_connect();
+      if (chat_store.$state.ws.onmessage) {
+        console.log("WebSocket连接成功，监听消息，不再重试");
+        return;
+      }
+    }, 1000);
   }
-)
+});
 
 function safeParseContent(content) {
   if (typeof content !== "string") return content;
@@ -177,7 +208,7 @@ async function get_more_sys_notice() {
     if (res.status == 200) {
       sys_notice.value.push(...res.result.data);
       //按时间重排
-        sys_notice.value = sort_by_time(sys_notice.value);
+      sys_notice.value = sort_by_time(sys_notice.value);
       total.value = res.result.total;
     }
   } catch (e) {
@@ -185,32 +216,35 @@ async function get_more_sys_notice() {
   }
 }
 
-let observer = new IntersectionObserver((entries) => {
-  entries.forEach(async (entry) => {
-    if (entry.isIntersecting) {
-      await get_more_sys_notice();
-    }
-  });
-},{
+let observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(async (entry) => {
+      if (entry.isIntersecting) {
+        await get_more_sys_notice();
+      }
+    });
+  },
+  {
     root: null,
     rootMargin: "0px",
     threshold: 1.0,
-});
+  }
+);
 //通过time进行重排序，旧的消息在栈顶新的在栈底
-function sort_by_time(value){
-    return value.sort((a, b) => {
-        return new Date(a.time) - new Date(b.time);
-    });
+function sort_by_time(value) {
+  return value.sort((a, b) => {
+    return new Date(a.time) - new Date(b.time);
+  });
 }
 
 onMounted(() => {
   get_sys_notice();
-  
+
   observer.observe(check_point.value);
 });
 onUnmounted(() => {
   observer.disconnect(check_point.value);
-  chat_store.$state.ws.removeEventListener('notice_msg',(e)=>{})
+  chat_store.$state.ws.removeEventListener("notice_msg", (e) => {});
 });
 </script>
   
@@ -268,7 +302,7 @@ onUnmounted(() => {
   flex-direction: column;
   gap: 12px;
   max-height: calc(100vh - 300px);
-    overflow-y: auto;
+  overflow-y: auto;
 }
 
 .notice_item {

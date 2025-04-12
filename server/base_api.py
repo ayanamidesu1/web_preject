@@ -29,6 +29,7 @@ class BaseApi(View):
 
     def get_now(self):
         return datetime.now()
+
     def get_uuid(self):
         return str(uuid.uuid4())
 
@@ -53,6 +54,18 @@ class BaseApi(View):
             {'code': 405, 'msg': 'Method Not Allowed'},
             status=405
         )
+
+    def check_admin(self, request):
+        """检查管理员权限，否代表通过，是直接返回错误消息"""
+        if not request.user.is_login and request.user.role not in ['admin', 'sys_admin']:
+            return JsonResponse({'code': 403, 'msg': "权限问题"}, status=403)
+        return False
+
+    def check_user(self, request):
+        """检查用户权限，否代表通过，是直接返回错误消息"""
+        if not request.user.is_login:
+            return JsonResponse({'code': 401, 'msg': "用户未登录"}, status=401)
+        return False
 
     @transaction.atomic
     def execute_sql(

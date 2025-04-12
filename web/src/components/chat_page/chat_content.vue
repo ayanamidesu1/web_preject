@@ -58,6 +58,22 @@
                   </div>
                 </div>
               </div>
+              <div class="receiver" v-if="item.msg_type=='sys_msg'">
+                <div class="msg_content">
+                  <div class="user_info">
+                    <img :src="api.s_base_url+'svg/管理员.svg'" alt="头像" class="avatar" width="30px" height="30px">
+                    <div class="user_meta" style="align-items: center;">
+                      <span class="username">管理员消息</span>
+                    </div>
+                  </div>                  
+                  <div class="bubble">
+                    <span class="text">
+                      {{ JSON.parse(item.content).text }}
+                    </span>
+                    <div class="time">{{api.formatTimeAgo(item.time)}}</div>
+                  </div>                 
+                </div>                
+              </div>
         </div>
     </div>
     <div class="chat_input">

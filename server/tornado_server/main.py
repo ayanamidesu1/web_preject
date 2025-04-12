@@ -23,10 +23,10 @@ from django_api import DjangoApi
 from main_func import MainFunc
 
 
-class ChatWebSocketHandler(BaseConnect,DjangoApi):
+class ChatWebSocketHandler(BaseConnect, DjangoApi):
     #connected_users = {}  # 在线用户字典
-    admin_id='f575b4d3-0683-11ef-adf4-00ffc6b98bdb'
-    admin_connected_users = {} # 管理员连接池
+    admin_id = 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb'
+    admin_connected_users = {}  # 管理员连接池
 
     def __init__(self, application, request, **kwargs):
         super().__init__(application, request)
@@ -42,10 +42,10 @@ class ChatWebSocketHandler(BaseConnect,DjangoApi):
             return
 
         self.auth_token = self.get_argument("token")
-        self.user_role=self.get_argument("role",'user')
-        if self.user_role=='admin' or self.user_role=='sys_admin':
-            self.user_id=self.get_argument('user_id')
-            if self.user_id!='f575b4d3-0683-11ef-adf4-00ffc6b98bdb':
+        self.user_role = self.get_argument("role", 'user')
+        if self.user_role == 'admin' or self.user_role == 'sys_admin':
+            self.user_id = self.get_argument('user_id')
+            if self.user_id != 'f575b4d3-0683-11ef-adf4-00ffc6b98bdb':
                 await  self.close(code=4001, reason="非法管理员")
                 return
             #将admin_id加入到连接池中
@@ -152,6 +152,28 @@ class ChatWebSocketHandler(BaseConnect,DjangoApi):
                 })
                 if api_res.code != 200:
                     print(f"审核存储失败: {api_res}")
+            elif msg_data.get('type')=='sys_msg':
+                content=msg_data.get('content',{})
+                if not isinstance(content, dict):
+                    content = {'error': 'Invalid content format'}
+                content['type'] = 'sys_msg'
+                safe_msg = {
+                    "msg_type": "sys_msg",
+                    "content": json.dumps(content),
+                    "timestamp": current_time,
+                    "time": current_time
+                }
+                self.send_to_user(msg_data.get('target_user_id'), safe_msg, pool_name='default')
+                api_res = await self._store_message_via_api({
+                    'target_user_id': msg_data.get('target_user_id'),
+                    'content': json.dumps(content),
+                    'chat_type': 'one_to_one',
+                    'group_id': None,
+                    'msg_type': 'sys_msg'
+                })
+                if api_res.code != 200:
+                    print(f"系统消息存储失败: {api_res}")
+
             else:
                 print(f"未知类型: {msg_data.get('type')}")
 
@@ -169,7 +191,7 @@ class ChatWebSocketHandler(BaseConnect,DjangoApi):
     async def _forward_message(self, msg_data):
         """转发消息给接收方"""
         #receiver_conn = self.connected_users.get(msg_data['target_user_id'])
-        r_conn=self.get_connection(msg_data['target_user_id'],pool_name='default', conn_type='conn')
+        r_conn = self.get_connection(msg_data['target_user_id'], pool_name='default', conn_type='conn')
         if r_conn:
             print("发送消息给接收方")
         formatted_msg = {
@@ -180,8 +202,8 @@ class ChatWebSocketHandler(BaseConnect,DjangoApi):
         }
 
         #if receiver_conn:
-            #await receiver_conn.write_message(formatted_msg)
-            #await self.write_message({'status': 'delivered'})
+        #await receiver_conn.write_message(formatted_msg)
+        #await self.write_message({'status': 'delivered'})
         if r_conn:
             await r_conn.write_message(formatted_msg)
             await self.write_message({'status': 'delivered'})
@@ -213,11 +235,11 @@ class ChatWebSocketHandler(BaseConnect,DjangoApi):
             print(f"[JWT ERROR] Decode failed: {str(e)}")
             raise
 
-
     @staticmethod
     def _generate_message_id():
         """生成唯一消息ID（示例实现）"""
         return datetime.now().strftime("%Y%m%d%H%M%S%f")
+
 
 def make_app():
     return web.Application([
