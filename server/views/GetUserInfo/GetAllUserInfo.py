@@ -4,9 +4,42 @@ from django.views import View
 from django.db import connection
 from ..log.log import Logger
 from datetime import datetime
+from base_api import BaseApi
 
 
-class GetAllUserInfo(View):
+class GetAllUserInfo(BaseApi):
+    def post(self, request, *args, **kwargs) -> JsonResponse:
+        try:
+            user_info_sql='''select * from admin.users where userid=%s'''
+            fans_count_sql='''SELECT COUNT(*) as total FROM user_fans WHERE user_id = %s'''
+            follow_count_sql='''SELECT COUNT(*) as total FROM user_follow WHERE user_id = %s'''
+            if request.user.id:
+                result=self.execute_sql(user_info_sql,[request.user.id])
+                if result:
+                    result[0]['fans']=self.execute_sql(fans_count_sql,[request.user.id])[0]['total']
+                    result[0]['follow']=self.execute_sql(follow_count_sql,[request.user.id])[0]['total']
+                    return JsonResponse({'status': 'success', 'data': result},status=200)
+                else:
+                    return JsonResponse({'status': 'error', 'message': '用户不存在'}, status=404)
+            else:
+                data=self.format_request(request)
+                user_id=data.get('userid',None)
+                if not user_id:
+                    return JsonResponse({'status': 'error', 'message': '参数错误','code':400,'msg':'参数错误'}, status=400)
+                result=self.execute_sql(user_info_sql,[user_id])
+                if result:
+                    result[0]['fans']=self.execute_sql(fans_count_sql,[user_id])[0]['total']
+                    result[0]['follow']=self.execute_sql(follow_count_sql,[user_id])[0]['total']
+                    return JsonResponse({'status': 'success', 'data': result},status=200)
+                else:
+                    return JsonResponse({'status': 'error', 'message': '用户不存在'}, status=404)
+
+        except Exception as e:
+            print(e)
+            self.error_log(e,request)
+            return JsonResponse({'status': 'error', 'message': '服务器错误','code':500,'msg':'服务器错误'}, status=500)
+
+class GetAllUserInfo_old(View):
     logger = Logger()
 
     def request_path(self, request):
@@ -61,13 +94,16 @@ class GetAllUserInfo(View):
             #print(f'中间件认证通过，用户ID为：{str(userid)}')
             #print(f'中间件通过状态为：{str(is_login)}')
             data=json.loads(request.body.decode('utf-8'))
-            get_userid=data.get('userid',None)
-            if get_userid:
-                rows = self.fetch_user_data(userid=get_userid)
+            if userid is None:
+                userid=data.get('userid',None)
+            if userid:
+                rows = self.fetch_user_data(userid=userid)
                 if rows:
+                    print(f'POST request success: {rows}')
                     self.logger.info(f'POST request success: {rows}')
                     return JsonResponse({'status': 'success', 'data': rows})
                 else:
+                    print(f'No data found for request: {data}')
                     self.logger.warning(f'No data found for request: {data}')
                     return JsonResponse({'status': 'failure', 'message': 'No data found'}, status=404)
             if is_login:

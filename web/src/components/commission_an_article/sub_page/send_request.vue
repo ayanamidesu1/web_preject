@@ -233,7 +233,7 @@ const cancelOrder = async (orderId) => {
 
 // 查看订单详情
 const viewOrderDetail = (orderId) => {
-  router.push(`/order/detail/${orderId}`)
+  router.push(`/order_details?id=${orderId}`)
 }
 
 // 获取数据

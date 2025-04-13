@@ -79,6 +79,18 @@
             <span class="field-label">创建时间:</span>
             <span class="field-value">{{ formatTime(order.time) }}</span>
           </p>
+          <div class="order-field" v-if="order.status==3">
+            <span class="field-label">操作：</span>
+            <div class="field-value">
+              <span class="accept" @click="accept_order(order.id,'agree')">接受</span>
+              <span class="reject" @click="accept_order(order.id,'refuse')">拒绝</span>
+            </div>
+          </div>
+          <div class="order-field">
+            <div class="show_details" @click="show_order_details(order.id)">
+              <span>查看详情</span>
+            </div>
+          </div>
         </div>
       </div>
       
@@ -216,13 +228,36 @@ const fetchData = async () => {
   }
 }
 
+//是否接受约稿
+async function accept_order(id,type){
+  try{
+    let res=await api.post('api/ComAnArticleOperate',{
+      operate_type: type,
+      order_id: id
+    })
+    if(res.status===200){
+      alert('操作成功')
+      await fetchData()
+    }else{
+      alert('操作失败')
+    }
+  }catch(e){
+    console.log(e)
+  }
+}
+
+//调整订单详情
+function show_order_details(id){
+  router.push(`/order_details?id=${id}`)
+}
+
 // 初始化加载数据
 onMounted(() => {
   fetchData()
 })
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .receiver-request-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -373,7 +408,35 @@ onMounted(() => {
   color: #333;
   word-break: break-word;
 }
-
+.accept{
+  color: #fff;
+  background-color: #409EFF;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.reject{
+  color: #fff;
+  background-color: #F56C6C;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.show_details{
+  color: #409EFF;
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+  border-bottom: 1px dashed #409EFF;
+  transition: all 0.3s ease;
+  &:hover{
+    border-bottom: 1px solid #409EFF;
+  }
+}
 /* 状态样式 */
 .order-card.pending .order-status {
   background-color: #faad14;

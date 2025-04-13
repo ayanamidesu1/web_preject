@@ -31,6 +31,10 @@
                 <div class="chat_btn" @click="chat()">
                     <span>发起私聊</span>
                 </div>
+                <div class="add_work_order" @click="add_work_order(user_info.userid)">
+                    <img src="https://www.sunyuanling.com/server/static/svg/约稿.svg" alt="约稿" width="25px" height="25px">
+                    <span>发起约稿</span>
+                </div>
             </div>
         </div>
         <more_info_box :user_info="user_info" v-if="more_info_box_show" @close_page="more_info_box_show = false">
@@ -148,13 +152,17 @@ async function chat(){
         console.log(e);
     }
 }
+//发起约稿订单
+function add_work_order(user_id){
+    router.push(`/add_work_order?id=${user_id}`)
+}
 
 onMounted(async () => {
     await get_follow_status();
 })
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .user_info {
     display: flex;
     align-items: flex-start;
@@ -245,7 +253,7 @@ onMounted(async () => {
 }
 
 .follow_box {
-    width: 200px;
+    width: fit-content;
     height: 50px;
     display: flex;
     justify-content: center;
@@ -288,6 +296,29 @@ onMounted(async () => {
     opacity: 0.8;
     transition: all 0.2s;
     transform: translateY(-2px)
+}
+.add_work_order{
+    display: flex;
+    flex-direction: row;
+    gap:5px;
+    background-color: rgb(0, 150, 250);
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    transition: all 0.2s;
+    font-weight: bold;
+    &:hover{
+        opacity: 0.8;
+        transition: all 0.2s;
+        transform: translateY(-2px)
+    }
+    &:active{
+        opacity: 0.6;
+        transition: all 0.2s;
+        transform: translateY(-2px);
+        transform:scale(0.9)
+    }
 }
 .is_follow {
     background-color: rgba(133, 133, 133, 1);

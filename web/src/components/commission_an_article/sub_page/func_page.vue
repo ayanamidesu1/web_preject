@@ -37,7 +37,7 @@
 
         <!-- 无数据提示 -->
         <div v-if="!loading && func_list.length === 0" class="empty-tips">
-          <img src="https://www.sunyuanling.com/server/static/svg/" alt="无方案">
+          <img src="https://www.sunyuanling.com/server/static/svg/方案.svg" alt="无方案">
           <p>暂无约稿方案，快去创建一个吧~</p>
         </div>
       </div>

@@ -131,7 +131,17 @@ const routes=[
                     path:'/create_func',
                     name:'create_func',
                     component:()=>import('@/components/commission_an_article/sub_page/create_func.vue'),//创建约稿方案
-                }
+                },
+                {
+                    path:'/order_details',
+                    name:'order_details',
+                    component:()=>import('@/components/wallet/order_details.vue'),//订单详情
+                },
+                {
+                    path:'/add_work_order',
+                    name:'add_work_order',
+                    component:()=>import('@/components/create_work_order/add_work_order.vue'),//新增约稿申请。
+                },
                ] 
             }
         ]
