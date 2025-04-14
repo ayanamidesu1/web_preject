@@ -28,7 +28,7 @@
                 <div class="sidebar_content_item_text"><span><router-link to="/novel">小说</router-link></span></div>
             </div>
             <br>
-            <div class="sidebar_content_item">
+            <!-- <div class="sidebar_content_item">
                 <div class="sidebar_content_item_icon">
                     <img class="icon" src="https://www.sunyuanling.com/assets/people.svg">
                 </div>
@@ -91,7 +91,7 @@
                 <div class="show_more_text ml">
                     <span>查看更多</span>
                 </div>
-            </div>
+            </div> -->
             <div class="show_more_content" v-show="show_more_content">
 
                 <div class="show_more_content_item">
