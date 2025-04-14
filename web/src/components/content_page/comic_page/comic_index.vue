@@ -1,6 +1,5 @@
 <template>
     <div class="comic_index" ref="comic_index">
-        <go_back></go_back>
         <div class="content" v-if="work_info">
             <div class="item_box">
                 <div class="item" v-for="(item, index) in work_info.content_file_list.split(/[,，]/)" :key="index">

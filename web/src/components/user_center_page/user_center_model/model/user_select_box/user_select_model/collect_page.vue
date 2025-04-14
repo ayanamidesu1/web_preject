@@ -92,42 +92,24 @@ import { ref, defineProps, onMounted, computed, watch } from 'vue'
 import { get_user_collect_worklist } from '../../../js/get_workinfo'
 import { update_user_collect_work } from '../../../js/update_userinfo'
 import {useStore} from 'vuex'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 const store = useStore()
 
 //选择作品
-function choose_item(item)
-{
+const choose_item = (item) => {
   console.log(item)
-  if (item.work_type == 'ill') {
-        store.commit('SET_CONTENT_PAGE', {
-            key: 'ill_page',
-            value: true
-        })
-        store.commit('SET_SINGLE_PAGE_STATUS', { key: 'content_index_page', value: true })
-        store.commit('SET_WORK_ID', item.item.workid)
-        store.commit('SET_WORK_TYPE', item.work_type)
-    }
-    else if(item.work_type=='comic')
-    {
-        store.commit('SET_CONTENT_PAGE', {
-            key: 'comic_page',
-            value: true
-        })
-        store.commit('SET_SINGLE_PAGE_STATUS', { key: 'content_index_page', value: true })
-        store.commit('SET_WORK_ID', item.item.workid)
-        store.commit('SET_WORK_TYPE', item.work_type)
-    }
-    else if(item.work_type=='novel')
-    {
-        store.commit('SET_CONTENT_PAGE', {
-            key: 'novel_page',
-            value: true
-        })
-        store.commit('SET_SINGLE_PAGE_STATUS', { key: 'content_index_page', value: true })
-        store.commit('SET_WORK_ID', item.item.workid)
-        store.commit('SET_WORK_TYPE', item.work_type)
-    }
-}
+  if(item.work_type=='ill'){
+    router.push(`ill_content?id=${item.item.workid}`);
+  }
+  if(item.work_type=='comic'){
+    router.push(`comic_content?id=${item.item.workid}`);
+  }
+  if(item.work_type=='novel'){
+    router.push(`novel_content?id=${item.item.workid}`);
+  }
+};
 
 const props = defineProps({
   user_info: {

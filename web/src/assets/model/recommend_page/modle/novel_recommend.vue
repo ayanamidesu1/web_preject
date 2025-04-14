@@ -51,10 +51,7 @@ function choose_item(item) {
     router.push(`/novel_content?id=${item}`)
 }
 function choose_user(item){
-    console.log(item)
-    emit('choose_user', item)
-    store.commit('SET_OTHER_USERID', item)
-    store.commit('SET_SINGLE_PAGE_STATUS', { 'key': 'other_user_center_page', 'value': true })
+   router.push(`other_user_center?id=${item}`)
 }
 // eslint-disable-next-line no-unused-vars
 let work_cover = computed(() => props.work_info)

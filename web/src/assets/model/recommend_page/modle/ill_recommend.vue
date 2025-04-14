@@ -35,6 +35,8 @@
 <script setup>
 // eslint-disable-next-line no-unused-vars
 import { ref, defineProps, defineEmits, computed, onMounted } from 'vue'
+import {useRouter} from 'vue-router'
+const router = useRouter()
 import { useStore } from 'vuex';
 const store = useStore();
 const props = defineProps({
@@ -49,10 +51,7 @@ const emit = defineEmits(['choose_item', 'choose_user'])
 function choose_item(item) {
 }
 function choose_user(item) {
-    console.log(item)
-    emit('choose_user', item)
-    store.commit('SET_OTHER_USERID', item)
-    store.commit('SET_SINGLE_PAGE_STATUS', { 'key': 'other_user_center_page', 'value': true })
+    router.push(`/other_user_center?id=${item}`)
 }
 // eslint-disable-next-line no-unused-vars
 let work_cover = computed(() => props.work_info)

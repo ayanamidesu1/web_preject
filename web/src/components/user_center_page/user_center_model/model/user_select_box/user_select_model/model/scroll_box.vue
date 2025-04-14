@@ -67,6 +67,9 @@
 
 <script setup>
 import { ref, onMounted, defineProps, defineEmits } from 'vue';
+import {useRouter} from 'vue-router';
+
+const router = useRouter();
 
 const props = defineProps({
   left_btn: {
@@ -117,8 +120,15 @@ const set_tag_color = () => {
 
 const emit = defineEmits(['chose_item','open_select_box']);
 const chose_item = (item) => {
-  emit('chose_item', item);
-  console.log(item);
+  if(item.work_type=='ill'){
+    router.push(`ill_content?id=${item.work_id}`);
+  }
+  if(item.work_type=='comic'){
+    router.push(`comic_content?id=${item.work_id}`);
+  }
+  if(item.work_type=='novel'){
+    router.push(`novel_content?id=${item.work_id}`);
+  }
 };
 
 function open_select_box(){

@@ -1,6 +1,5 @@
 <template>
     <div class="novel_index" v-if="work_id">
-        <go_back></go_back>
         <novel_content_page :work_id="work_id"  :key="work_id"></novel_content_page>
          <comment_box :item="{work_type:'novel',work_id:work_id}"></comment_box>
         <h3>推荐小说作品</h3>

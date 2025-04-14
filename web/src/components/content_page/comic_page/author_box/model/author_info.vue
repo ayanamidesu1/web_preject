@@ -28,6 +28,9 @@ import { ref, defineProps, onMounted, defineEmits, watch } from 'vue';
 import * as cookies from "@/assets/js/cookies.js";
 import scroll_box from './scroll_box_bottom.vue';
 import { useStore } from 'vuex';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
 
 const store = useStore();
 const props = defineProps({
@@ -123,8 +126,7 @@ function get_choose_item(item) {
 }
 
 function jump_to_other_user_center(userid, item) {
-  store.commit('SET_OTHER_USERID', userid);
-  store.commit('SET_SINGLE_PAGE_STATUS', { key: 'other_user_center_page', value: true });
+  router.push(`other_user_center?id=${userid}`)
 }
 
 onMounted(() => {

@@ -43,6 +43,9 @@
 <script setup>
 import { ref, onMounted, defineProps, defineEmits } from 'vue';
 import { useStore } from 'vuex';
+import { useRouter } from 'vue-router';
+const router = useRouter();
+
 const store = useStore();
 //进入指定用户的用户中心
 function jump_to_other_user_center(userid,item)
@@ -97,14 +100,7 @@ const set_tag_color = () => {
 
 const emit = defineEmits(['chose_item']);
 const chose_item = (item) => {
-  emit('chose_item', item);
-  store.commit('SET_CONTENT_PAGE', {
-    key: 'comic_page',
-    value: true
-  })
-  store.commit('SET_SINGLE_PAGE_STATUS',{key:'content_index_page',value:true})
-  store.commit('SET_WORK_ID',item)
-  store.commit('SET_WORK_TYPE','comic')
+  router.push(`comic_content?id=${item}`)
 };
 
 // Easing function for smooth animation

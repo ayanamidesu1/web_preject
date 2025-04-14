@@ -23,13 +23,10 @@ class GetUserCollect(View):
         try:
             data = json.loads(request.body.decode("utf-8"))
             token = data.get('token')
-            userid = data.get('userid')
-            middleware_userid=request.user.id
+            userid = request.user.id
 
-
-            if not token and not userid:
-                self.logger.warning(self.request_path(request) + ' token 和 userid 均为空，请求数据为：' + str(data))
-                return JsonResponse({'status': 'error', 'message': 'token 和 userid 均为空'}, status=403)
+            if not request.user.id:
+                return JsonResponse({'status': 'error', 'message': '用户未登录'}, status=401)
 
             with connection.cursor() as cursor:
 
@@ -38,9 +35,6 @@ class GetUserCollect(View):
                     cursor.execute(
                         'SELECT * FROM user_collection_table WHERE userid=%s AND is_open=%s AND is_collection=%s',
                         [userid, 1, 1])
-                else:
-                    cursor.execute('SELECT * FROM user_collection_table WHERE userid=%s AND is_collection=%s',
-                                   [middleware_userid, 1])
 
                 collect_list = cursor.fetchall()
                 columns = [column[0] for column in cursor.description]

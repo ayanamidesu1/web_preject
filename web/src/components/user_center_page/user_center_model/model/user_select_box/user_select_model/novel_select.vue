@@ -24,8 +24,9 @@ import { ref, defineProps, onMounted, defineEmits } from 'vue'
 import { get_workinfo, get_user_all_worklist } from '../../../js/get_workinfo'
 import scroll_box_copy from './model/scroll_box_copy.vue';
 import { useStore } from 'vuex'
+import { useRouter } from 'vue-router';
 const store = useStore()
-
+const router = useRouter()
 const props = defineProps({
   user_info: {
     type: Object,
@@ -41,7 +42,8 @@ const props = defineProps({
 const emit = defineEmits(['choose_item'])
 
 function chose_item(item) {
-  window.location.href=`/novel_content?id=${item.work_id}`
+  //window.location.href=`/novel_content?id=${item.work_id}`
+  router.push(`/novel_content?id=${item.work_id}`)
 }
 
 const work_tags = ref([]);

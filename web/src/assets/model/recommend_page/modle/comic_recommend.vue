@@ -34,6 +34,9 @@
 // eslint-disable-next-line no-unused-vars
 import { ref, defineProps, defineEmits, computed } from 'vue'
 import { useStore } from 'vuex';
+import { useRouter } from 'vue-router';
+const router = useRouter();
+
 const store = useStore();
 const props = defineProps({
     work_info: {
@@ -45,17 +48,10 @@ const props = defineProps({
 })
 const emit = defineEmits(['choose_item', 'choose_user'])
 function choose_item(item) {
-    console.log(item)
-    emit('choose_item', item)
-    store.commit('SET_CONTENT_PAGE', { key: 'comic_page', value: true })
-    store.commit('SET_SINGLE_PAGE_STATUS', { key: 'content_index_page', value: true })
-    store.commit('SET_WORK_ID', item)
+    router.push(`/comic_content?id=${item}`)
 }
 function choose_user(item) {
-    console.log(item)
-    emit('choose_user', item)
-    store.commit('SET_OTHER_USERID', item)
-    store.commit('SET_SINGLE_PAGE_STATUS', { 'key': 'other_user_center_page', 'value': true })
+    router.push(`/other_user_center?id=${item}`)
 }
 // eslint-disable-next-line no-unused-vars
 let work_cover = computed(() => props.work_info)

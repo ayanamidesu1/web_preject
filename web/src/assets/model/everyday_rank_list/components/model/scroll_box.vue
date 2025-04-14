@@ -44,6 +44,8 @@
 import { ref, onMounted, defineProps, defineEmits } from 'vue';
 import { useStore } from 'vuex';
 const store = useStore();
+import { useRouter } from 'vue-router';
+const router = useRouter();
 
 const props = defineProps({
   left_btn: {
@@ -90,14 +92,7 @@ const set_tag_color = () => {
 
 const emit = defineEmits(['chose_item']);
 const chose_item = (item) => {
-  emit('chose_item', item);
-  store.commit('SET_CONTENT_PAGE', {
-    key: 'ill_page',
-    value: true
-  })
-  store.commit('SET_SINGLE_PAGE_STATUS',{key:'content_index_page',value:true})
-  store.commit('SET_WORK_ID',item)
-  store.commit('SET_WORK_TYPE','ill')
+  router.push(`/ill_content?id=${item}`)
 };
 
 // Easing function for smooth animation
@@ -135,9 +130,7 @@ const scrollRight = () => {
 //用户详情页跳转
 function jump_to_other_user_center(userid,item)
 {
-  store.commit('SET_OTHER_USERID',userid)
-  store.commit('SET_SINGLE_PAGE_STATUS',{'key':'other_user_center_page','value':true})
-  console.log(userid)
+  router.push(`/other_user_center?id=${userid}`)
 }
 
 onMounted(() => {
