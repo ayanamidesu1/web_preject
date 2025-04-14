@@ -18,7 +18,7 @@
                     <router-link to="/reset_password"><span class="reset_password_btn_text">忘记密码？</span></router-link>
                 </div>
             </div>
-            <div class="login_btn" @click="login"><span>登录</span></div>
+            <div class="login_btn" @click="login()"><span>登录</span></div>
         </div>
     </div>
 </template>
@@ -37,16 +37,17 @@ let password_in = ref('');
 let get_message = ref('');
 //登录
 async function login(){
+    console.log('login');
     if(username_in.value == '' || password_in.value == ''){
         alert('请输入用户名和密码');
+        console.log('请输入用户名和密码');
         return;
     }
     try{
         let res=await fetch('https://www.sunyuanling.com/api/login/',{
             method:'POST',
             headers:{
-                'Content-Type':'application/json'
-            
+                'Content-Type':'application/json'            
             },
             body:JSON.stringify({
                 login_key:username_in.value,

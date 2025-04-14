@@ -3844,3 +3844,223 @@ Params: ('df4d93f0-2298-4f4d-9edf-0f2b14fc2424', '新建测试', 'illustration', 'al
 2025-04-12 21:14:58
 2025-04-12 21:14:58,794 - ERROR - invalid literal for int() with base 10: ''，请求时间：2025-04-12T21:14:58.794349，请求IP：127.0.0.1 @ 2025-04-12T21:14:58.794349
 2025-04-12 21:14:58
+2025-04-14 17:25:41,136 - ERROR - list indices must be integers or slices, not str，请求时间：2025-04-14T17:25:41.136516，请求IP：127.0.0.1 @ 2025-04-14T17:25:41.136528
+2025-04-14 17:25:41
+2025-04-14 17:25:41,136 - ERROR - list indices must be integers or slices, not str，请求时间：2025-04-14T17:25:41.136516，请求IP：127.0.0.1 @ 2025-04-14T17:25:41.136528
+2025-04-14 17:25:41
+2025-04-14 17:25:41,136 - ERROR - list indices must be integers or slices, not str，请求时间：2025-04-14T17:25:41.136516，请求IP：127.0.0.1 @ 2025-04-14T17:25:41.136528
+2025-04-14 17:25:41
+2025-04-14 17:25:41,136 - ERROR - list indices must be integers or slices, not str，请求时间：2025-04-14T17:25:41.136516，请求IP：127.0.0.1 @ 2025-04-14T17:25:41.136528
+2025-04-14 17:25:41
+2025-04-14 17:25:41,136 - ERROR - list indices must be integers or slices, not str，请求时间：2025-04-14T17:25:41.136516，请求IP：127.0.0.1 @ 2025-04-14T17:25:41.136528
+2025-04-14 17:25:41
+2025-04-14 17:25:41,136 - ERROR - list indices must be integers or slices, not str，请求时间：2025-04-14T17:25:41.136516，请求IP：127.0.0.1 @ 2025-04-14T17:25:41.136528
+2025-04-14 17:25:41
+2025-04-14 17:25:41,136 - ERROR - list indices must be integers or slices, not str，请求时间：2025-04-14T17:25:41.136516，请求IP：127.0.0.1 @ 2025-04-14T17:25:41.136528
+2025-04-14 17:25:41
+2025-04-14 17:25:41,136 - ERROR - list indices must be integers or slices, not str，请求时间：2025-04-14T17:25:41.136516，请求IP：127.0.0.1 @ 2025-04-14T17:25:41.136528
+2025-04-14 17:25:41
+2025-04-14 17:25:41,136 - ERROR - list indices must be integers or slices, not str，请求时间：2025-04-14T17:25:41.136516，请求IP：127.0.0.1 @ 2025-04-14T17:25:41.136528
+2025-04-14 17:25:41
+2025-04-14 17:25:41,136 - ERROR - list indices must be integers or slices, not str，请求时间：2025-04-14T17:25:41.136516，请求IP：127.0.0.1 @ 2025-04-14T17:25:41.136528
+2025-04-14 17:25:41
+2025-04-14 18:16:22,003 - ERROR - 文件写入失败，错误信息：[Errno 2] No such file or directory: 'H:\\web_project\\server\\upload_file\\459ab93a-ae15-4d09-bcc0-667340e0f116.jpg'
+2025-04-14 18:16:22
+2025-04-14 18:16:22,003 - ERROR - 文件写入失败，错误信息：[Errno 2] No such file or directory: 'H:\\web_project\\server\\upload_file\\459ab93a-ae15-4d09-bcc0-667340e0f116.jpg'
+2025-04-14 18:16:22
+2025-04-14 18:16:22,003 - ERROR - 文件写入失败，错误信息：[Errno 2] No such file or directory: 'H:\\web_project\\server\\upload_file\\459ab93a-ae15-4d09-bcc0-667340e0f116.jpg'
+2025-04-14 18:16:22
+2025-04-14 18:16:22,003 - ERROR - 文件写入失败，错误信息：[Errno 2] No such file or directory: 'H:\\web_project\\server\\upload_file\\459ab93a-ae15-4d09-bcc0-667340e0f116.jpg'
+2025-04-14 18:16:22
+2025-04-14 18:16:22,003 - ERROR - 文件写入失败，错误信息：[Errno 2] No such file or directory: 'H:\\web_project\\server\\upload_file\\459ab93a-ae15-4d09-bcc0-667340e0f116.jpg'
+2025-04-14 18:16:22
+2025-04-14 18:16:22,003 - ERROR - 文件写入失败，错误信息：[Errno 2] No such file or directory: 'H:\\web_project\\server\\upload_file\\459ab93a-ae15-4d09-bcc0-667340e0f116.jpg'
+2025-04-14 18:16:22
+2025-04-14 18:16:22,003 - ERROR - 文件写入失败，错误信息：[Errno 2] No such file or directory: 'H:\\web_project\\server\\upload_file\\459ab93a-ae15-4d09-bcc0-667340e0f116.jpg'
+2025-04-14 18:16:22
+2025-04-14 18:16:22,003 - ERROR - 文件写入失败，错误信息：[Errno 2] No such file or directory: 'H:\\web_project\\server\\upload_file\\459ab93a-ae15-4d09-bcc0-667340e0f116.jpg'
+2025-04-14 18:16:22
+2025-04-14 18:16:22,003 - ERROR - 文件写入失败，错误信息：[Errno 2] No such file or directory: 'H:\\web_project\\server\\upload_file\\459ab93a-ae15-4d09-bcc0-667340e0f116.jpg'
+2025-04-14 18:16:22
+2025-04-14 18:16:22,003 - ERROR - 文件写入失败，错误信息：[Errno 2] No such file or directory: 'H:\\web_project\\server\\upload_file\\459ab93a-ae15-4d09-bcc0-667340e0f116.jpg'
+2025-04-14 18:16:22
+2025-04-14 18:20:13,873 - ERROR - 文件写入失败，错误信息：[Errno 2] No such file or directory: 'H:\\web_project\\server\\upload_file\\2c54e636-a8ec-4150-b124-a9cab845a087.jpg'
+2025-04-14 18:20:13
+2025-04-14 18:20:13,873 - ERROR - 文件写入失败，错误信息：[Errno 2] No such file or directory: 'H:\\web_project\\server\\upload_file\\2c54e636-a8ec-4150-b124-a9cab845a087.jpg'
+2025-04-14 18:20:13
+2025-04-14 18:20:13,873 - ERROR - 文件写入失败，错误信息：[Errno 2] No such file or directory: 'H:\\web_project\\server\\upload_file\\2c54e636-a8ec-4150-b124-a9cab845a087.jpg'
+2025-04-14 18:20:13
+2025-04-14 18:20:13,873 - ERROR - 文件写入失败，错误信息：[Errno 2] No such file or directory: 'H:\\web_project\\server\\upload_file\\2c54e636-a8ec-4150-b124-a9cab845a087.jpg'
+2025-04-14 18:20:13
+2025-04-14 18:20:13,873 - ERROR - 文件写入失败，错误信息：[Errno 2] No such file or directory: 'H:\\web_project\\server\\upload_file\\2c54e636-a8ec-4150-b124-a9cab845a087.jpg'
+2025-04-14 18:20:13
+2025-04-14 18:20:13,873 - ERROR - 文件写入失败，错误信息：[Errno 2] No such file or directory: 'H:\\web_project\\server\\upload_file\\2c54e636-a8ec-4150-b124-a9cab845a087.jpg'
+2025-04-14 18:20:13
+2025-04-14 18:20:13,873 - ERROR - 文件写入失败，错误信息：[Errno 2] No such file or directory: 'H:\\web_project\\server\\upload_file\\2c54e636-a8ec-4150-b124-a9cab845a087.jpg'
+2025-04-14 18:20:13
+2025-04-14 18:20:13,873 - ERROR - 文件写入失败，错误信息：[Errno 2] No such file or directory: 'H:\\web_project\\server\\upload_file\\2c54e636-a8ec-4150-b124-a9cab845a087.jpg'
+2025-04-14 18:20:13
+2025-04-14 18:20:13,873 - ERROR - 文件写入失败，错误信息：[Errno 2] No such file or directory: 'H:\\web_project\\server\\upload_file\\2c54e636-a8ec-4150-b124-a9cab845a087.jpg'
+2025-04-14 18:20:13
+2025-04-14 18:20:13,873 - ERROR - 文件写入失败，错误信息：[Errno 2] No such file or directory: 'H:\\web_project\\server\\upload_file\\2c54e636-a8ec-4150-b124-a9cab845a087.jpg'
+2025-04-14 18:20:13
+2025-04-14 18:22:54,416 - ERROR - 文件写入失败，错误信息：[Errno 2] No such file or directory: 'H:\\web_project\\server\\upload_file\\2c43edc9-c74d-4d84-b942-721ab8f37e40.jpg'
+2025-04-14 18:22:54
+2025-04-14 18:22:54,416 - ERROR - 文件写入失败，错误信息：[Errno 2] No such file or directory: 'H:\\web_project\\server\\upload_file\\2c43edc9-c74d-4d84-b942-721ab8f37e40.jpg'
+2025-04-14 18:22:54
+2025-04-14 18:22:54,416 - ERROR - 文件写入失败，错误信息：[Errno 2] No such file or directory: 'H:\\web_project\\server\\upload_file\\2c43edc9-c74d-4d84-b942-721ab8f37e40.jpg'
+2025-04-14 18:22:54
+2025-04-14 18:22:54,416 - ERROR - 文件写入失败，错误信息：[Errno 2] No such file or directory: 'H:\\web_project\\server\\upload_file\\2c43edc9-c74d-4d84-b942-721ab8f37e40.jpg'
+2025-04-14 18:22:54
+2025-04-14 18:22:54,416 - ERROR - 文件写入失败，错误信息：[Errno 2] No such file or directory: 'H:\\web_project\\server\\upload_file\\2c43edc9-c74d-4d84-b942-721ab8f37e40.jpg'
+2025-04-14 18:22:54
+2025-04-14 18:22:54,416 - ERROR - 文件写入失败，错误信息：[Errno 2] No such file or directory: 'H:\\web_project\\server\\upload_file\\2c43edc9-c74d-4d84-b942-721ab8f37e40.jpg'
+2025-04-14 18:22:54
+2025-04-14 18:22:54,416 - ERROR - 文件写入失败，错误信息：[Errno 2] No such file or directory: 'H:\\web_project\\server\\upload_file\\2c43edc9-c74d-4d84-b942-721ab8f37e40.jpg'
+2025-04-14 18:22:54
+2025-04-14 18:22:54,416 - ERROR - 文件写入失败，错误信息：[Errno 2] No such file or directory: 'H:\\web_project\\server\\upload_file\\2c43edc9-c74d-4d84-b942-721ab8f37e40.jpg'
+2025-04-14 18:22:54
+2025-04-14 18:22:54,416 - ERROR - 文件写入失败，错误信息：[Errno 2] No such file or directory: 'H:\\web_project\\server\\upload_file\\2c43edc9-c74d-4d84-b942-721ab8f37e40.jpg'
+2025-04-14 18:22:54
+2025-04-14 18:22:54,416 - ERROR - 文件写入失败，错误信息：[Errno 2] No such file or directory: 'H:\\web_project\\server\\upload_file\\2c43edc9-c74d-4d84-b942-721ab8f37e40.jpg'
+2025-04-14 18:22:54
+2025-04-14 19:26:02,464 - ERROR - SQL Error: (1052, "Column 'id' in where clause is ambiguous")
+SQL: select `order`.*,work_order.file  from admin.`order` 
+            left join work_order on work_order.order_id=`order`.id where id=%s
+Params: ['5']
+2025-04-14 19:26:02
+2025-04-14 19:26:02,464 - ERROR - SQL Error: (1052, "Column 'id' in where clause is ambiguous")
+SQL: select `order`.*,work_order.file  from admin.`order` 
+            left join work_order on work_order.order_id=`order`.id where id=%s
+Params: ['5']
+2025-04-14 19:26:02
+2025-04-14 19:26:02,464 - ERROR - SQL Error: (1052, "Column 'id' in where clause is ambiguous")
+SQL: select `order`.*,work_order.file  from admin.`order` 
+            left join work_order on work_order.order_id=`order`.id where id=%s
+Params: ['5']
+2025-04-14 19:26:02
+2025-04-14 19:26:02,464 - ERROR - SQL Error: (1052, "Column 'id' in where clause is ambiguous")
+SQL: select `order`.*,work_order.file  from admin.`order` 
+            left join work_order on work_order.order_id=`order`.id where id=%s
+Params: ['5']
+2025-04-14 19:26:02
+2025-04-14 19:26:02,464 - ERROR - SQL Error: (1052, "Column 'id' in where clause is ambiguous")
+SQL: select `order`.*,work_order.file  from admin.`order` 
+            left join work_order on work_order.order_id=`order`.id where id=%s
+Params: ['5']
+2025-04-14 19:26:02
+2025-04-14 19:26:02,464 - ERROR - SQL Error: (1052, "Column 'id' in where clause is ambiguous")
+SQL: select `order`.*,work_order.file  from admin.`order` 
+            left join work_order on work_order.order_id=`order`.id where id=%s
+Params: ['5']
+2025-04-14 19:26:02
+2025-04-14 19:26:02,464 - ERROR - SQL Error: (1052, "Column 'id' in where clause is ambiguous")
+SQL: select `order`.*,work_order.file  from admin.`order` 
+            left join work_order on work_order.order_id=`order`.id where id=%s
+Params: ['5']
+2025-04-14 19:26:02
+2025-04-14 19:26:02,464 - ERROR - SQL Error: (1052, "Column 'id' in where clause is ambiguous")
+SQL: select `order`.*,work_order.file  from admin.`order` 
+            left join work_order on work_order.order_id=`order`.id where id=%s
+Params: ['5']
+2025-04-14 19:26:02
+2025-04-14 19:26:02,464 - ERROR - SQL Error: (1052, "Column 'id' in where clause is ambiguous")
+SQL: select `order`.*,work_order.file  from admin.`order` 
+            left join work_order on work_order.order_id=`order`.id where id=%s
+Params: ['5']
+2025-04-14 19:26:02
+2025-04-14 19:26:02,464 - ERROR - SQL Error: (1052, "Column 'id' in where clause is ambiguous")
+SQL: select `order`.*,work_order.file  from admin.`order` 
+            left join work_order on work_order.order_id=`order`.id where id=%s
+Params: ['5']
+2025-04-14 19:26:02
+2025-04-14 19:26:02,486 - ERROR - (1052, "Column 'id' in where clause is ambiguous")，请求时间：2025-04-14T19:26:02.486656，请求IP：127.0.0.1 @ 2025-04-14T19:26:02.486667
+2025-04-14 19:26:02
+2025-04-14 19:26:02,486 - ERROR - (1052, "Column 'id' in where clause is ambiguous")，请求时间：2025-04-14T19:26:02.486656，请求IP：127.0.0.1 @ 2025-04-14T19:26:02.486667
+2025-04-14 19:26:02
+2025-04-14 19:26:02,486 - ERROR - (1052, "Column 'id' in where clause is ambiguous")，请求时间：2025-04-14T19:26:02.486656，请求IP：127.0.0.1 @ 2025-04-14T19:26:02.486667
+2025-04-14 19:26:02
+2025-04-14 19:26:02,486 - ERROR - (1052, "Column 'id' in where clause is ambiguous")，请求时间：2025-04-14T19:26:02.486656，请求IP：127.0.0.1 @ 2025-04-14T19:26:02.486667
+2025-04-14 19:26:02
+2025-04-14 19:26:02,486 - ERROR - (1052, "Column 'id' in where clause is ambiguous")，请求时间：2025-04-14T19:26:02.486656，请求IP：127.0.0.1 @ 2025-04-14T19:26:02.486667
+2025-04-14 19:26:02
+2025-04-14 19:26:02,486 - ERROR - (1052, "Column 'id' in where clause is ambiguous")，请求时间：2025-04-14T19:26:02.486656，请求IP：127.0.0.1 @ 2025-04-14T19:26:02.486667
+2025-04-14 19:26:02
+2025-04-14 19:26:02,486 - ERROR - (1052, "Column 'id' in where clause is ambiguous")，请求时间：2025-04-14T19:26:02.486656，请求IP：127.0.0.1 @ 2025-04-14T19:26:02.486667
+2025-04-14 19:26:02
+2025-04-14 19:26:02,486 - ERROR - (1052, "Column 'id' in where clause is ambiguous")，请求时间：2025-04-14T19:26:02.486656，请求IP：127.0.0.1 @ 2025-04-14T19:26:02.486667
+2025-04-14 19:26:02
+2025-04-14 19:26:02,486 - ERROR - (1052, "Column 'id' in where clause is ambiguous")，请求时间：2025-04-14T19:26:02.486656，请求IP：127.0.0.1 @ 2025-04-14T19:26:02.486667
+2025-04-14 19:26:02
+2025-04-14 19:26:02,486 - ERROR - (1052, "Column 'id' in where clause is ambiguous")，请求时间：2025-04-14T19:26:02.486656，请求IP：127.0.0.1 @ 2025-04-14T19:26:02.486667
+2025-04-14 19:26:02
+2025-04-14 19:26:14,844 - ERROR - SQL Error: (1052, "Column 'id' in where clause is ambiguous")
+SQL: select `order`.*,work_order.file  from admin.`order` 
+            left join work_order on work_order.order_id=`order`.id where id=%s
+Params: ['4']
+2025-04-14 19:26:14
+2025-04-14 19:26:14,844 - ERROR - SQL Error: (1052, "Column 'id' in where clause is ambiguous")
+SQL: select `order`.*,work_order.file  from admin.`order` 
+            left join work_order on work_order.order_id=`order`.id where id=%s
+Params: ['4']
+2025-04-14 19:26:14
+2025-04-14 19:26:14,844 - ERROR - SQL Error: (1052, "Column 'id' in where clause is ambiguous")
+SQL: select `order`.*,work_order.file  from admin.`order` 
+            left join work_order on work_order.order_id=`order`.id where id=%s
+Params: ['4']
+2025-04-14 19:26:14
+2025-04-14 19:26:14,844 - ERROR - SQL Error: (1052, "Column 'id' in where clause is ambiguous")
+SQL: select `order`.*,work_order.file  from admin.`order` 
+            left join work_order on work_order.order_id=`order`.id where id=%s
+Params: ['4']
+2025-04-14 19:26:14
+2025-04-14 19:26:14,844 - ERROR - SQL Error: (1052, "Column 'id' in where clause is ambiguous")
+SQL: select `order`.*,work_order.file  from admin.`order` 
+            left join work_order on work_order.order_id=`order`.id where id=%s
+Params: ['4']
+2025-04-14 19:26:14
+2025-04-14 19:26:14,844 - ERROR - SQL Error: (1052, "Column 'id' in where clause is ambiguous")
+SQL: select `order`.*,work_order.file  from admin.`order` 
+            left join work_order on work_order.order_id=`order`.id where id=%s
+Params: ['4']
+2025-04-14 19:26:14
+2025-04-14 19:26:14,844 - ERROR - SQL Error: (1052, "Column 'id' in where clause is ambiguous")
+SQL: select `order`.*,work_order.file  from admin.`order` 
+            left join work_order on work_order.order_id=`order`.id where id=%s
+Params: ['4']
+2025-04-14 19:26:14
+2025-04-14 19:26:14,844 - ERROR - SQL Error: (1052, "Column 'id' in where clause is ambiguous")
+SQL: select `order`.*,work_order.file  from admin.`order` 
+            left join work_order on work_order.order_id=`order`.id where id=%s
+Params: ['4']
+2025-04-14 19:26:14
+2025-04-14 19:26:14,844 - ERROR - SQL Error: (1052, "Column 'id' in where clause is ambiguous")
+SQL: select `order`.*,work_order.file  from admin.`order` 
+            left join work_order on work_order.order_id=`order`.id where id=%s
+Params: ['4']
+2025-04-14 19:26:14
+2025-04-14 19:26:14,844 - ERROR - SQL Error: (1052, "Column 'id' in where clause is ambiguous")
+SQL: select `order`.*,work_order.file  from admin.`order` 
+            left join work_order on work_order.order_id=`order`.id where id=%s
+Params: ['4']
+2025-04-14 19:26:14
+2025-04-14 19:26:14,848 - ERROR - (1052, "Column 'id' in where clause is ambiguous")，请求时间：2025-04-14T19:26:14.848549，请求IP：127.0.0.1 @ 2025-04-14T19:26:14.848573
+2025-04-14 19:26:14
+2025-04-14 19:26:14,848 - ERROR - (1052, "Column 'id' in where clause is ambiguous")，请求时间：2025-04-14T19:26:14.848549，请求IP：127.0.0.1 @ 2025-04-14T19:26:14.848573
+2025-04-14 19:26:14
+2025-04-14 19:26:14,848 - ERROR - (1052, "Column 'id' in where clause is ambiguous")，请求时间：2025-04-14T19:26:14.848549，请求IP：127.0.0.1 @ 2025-04-14T19:26:14.848573
+2025-04-14 19:26:14
+2025-04-14 19:26:14,848 - ERROR - (1052, "Column 'id' in where clause is ambiguous")，请求时间：2025-04-14T19:26:14.848549，请求IP：127.0.0.1 @ 2025-04-14T19:26:14.848573
+2025-04-14 19:26:14
+2025-04-14 19:26:14,848 - ERROR - (1052, "Column 'id' in where clause is ambiguous")，请求时间：2025-04-14T19:26:14.848549，请求IP：127.0.0.1 @ 2025-04-14T19:26:14.848573
+2025-04-14 19:26:14
+2025-04-14 19:26:14,848 - ERROR - (1052, "Column 'id' in where clause is ambiguous")，请求时间：2025-04-14T19:26:14.848549，请求IP：127.0.0.1 @ 2025-04-14T19:26:14.848573
+2025-04-14 19:26:14
+2025-04-14 19:26:14,848 - ERROR - (1052, "Column 'id' in where clause is ambiguous")，请求时间：2025-04-14T19:26:14.848549，请求IP：127.0.0.1 @ 2025-04-14T19:26:14.848573
+2025-04-14 19:26:14
+2025-04-14 19:26:14,848 - ERROR - (1052, "Column 'id' in where clause is ambiguous")，请求时间：2025-04-14T19:26:14.848549，请求IP：127.0.0.1 @ 2025-04-14T19:26:14.848573
+2025-04-14 19:26:14
+2025-04-14 19:26:14,848 - ERROR - (1052, "Column 'id' in where clause is ambiguous")，请求时间：2025-04-14T19:26:14.848549，请求IP：127.0.0.1 @ 2025-04-14T19:26:14.848573
+2025-04-14 19:26:14
+2025-04-14 19:26:14,848 - ERROR - (1052, "Column 'id' in where clause is ambiguous")，请求时间：2025-04-14T19:26:14.848549，请求IP：127.0.0.1 @ 2025-04-14T19:26:14.848573
+2025-04-14 19:26:14

@@ -66,9 +66,12 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch } from 'vue'
+import { ref, onMounted, watch,computed } from 'vue'
 import { get_worklist } from '../../js/get_worklist.js'
 import { search_ill_work } from '../../js/search_work'
+import {useStore} from '@assets/model/store'
+
+const store= useStore()
 
 let search_type = ref('')
 let work_list = ref([])
@@ -78,7 +81,9 @@ let page = ref(1)
 let all_page = ref(1)
 let all_count = ref(0)
 let title_choose_index = ref(0)
-let userinfo = ref(JSON.parse(localStorage.getItem('userinfo')))
+let userinfo = computed(()=>{
+    return store.$state.user
+})
 
 // 筛选作品状态
 function choose_item(index) {

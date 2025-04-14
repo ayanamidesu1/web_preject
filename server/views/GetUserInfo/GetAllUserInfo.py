@@ -13,7 +13,9 @@ class GetAllUserInfo(BaseApi):
             user_info_sql='''select * from admin.users where userid=%s'''
             fans_count_sql='''SELECT COUNT(*) as total FROM user_fans WHERE user_id = %s'''
             follow_count_sql='''SELECT COUNT(*) as total FROM user_follow WHERE user_id = %s'''
-            if request.user.id:
+            data = self.format_request(request)
+            user_id = data.get('userid', None)
+            if request.user.id and user_id is None:
                 result=self.execute_sql(user_info_sql,[request.user.id])
                 if result:
                     result[0]['fans']=self.execute_sql(fans_count_sql,[request.user.id])[0]['total']
@@ -22,8 +24,6 @@ class GetAllUserInfo(BaseApi):
                 else:
                     return JsonResponse({'status': 'error', 'message': '用户不存在'}, status=404)
             else:
-                data=self.format_request(request)
-                user_id=data.get('userid',None)
                 if not user_id:
                     return JsonResponse({'status': 'error', 'message': '参数错误','code':400,'msg':'参数错误'}, status=400)
                 result=self.execute_sql(user_info_sql,[user_id])

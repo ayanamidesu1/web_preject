@@ -80,6 +80,9 @@ class DjangoApi(websocket.WebSocketHandler):
         except httpclient.HTTPError as e:
             return e.response
 
+    def add_order(self,content):
+        pass
+
     def _decode_jwt(self):
         """增加解码日志"""
         try:

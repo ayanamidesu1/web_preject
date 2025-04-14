@@ -127,7 +127,6 @@ class ChatWebSocketHandler(BaseConnect, DjangoApi):
                 if api_res.code != 200:
                     print(f"通知存储失败: {api_res}")
 
-
             elif msg_data.get('type') == 'review_msg':
                 content = msg_data.get('content', {})
                 if not isinstance(content, dict):
@@ -152,8 +151,8 @@ class ChatWebSocketHandler(BaseConnect, DjangoApi):
                 })
                 if api_res.code != 200:
                     print(f"审核存储失败: {api_res}")
-            elif msg_data.get('type')=='sys_msg':
-                content=msg_data.get('content',{})
+            elif msg_data.get('type') == 'sys_msg':
+                content = msg_data.get('content', {})
                 if not isinstance(content, dict):
                     content = {'error': 'Invalid content format'}
                 content['type'] = 'sys_msg'
@@ -244,6 +243,7 @@ class ChatWebSocketHandler(BaseConnect, DjangoApi):
 def make_app():
     return web.Application([
         (r'/chat', ChatWebSocketHandler),
+
     ])
 
 

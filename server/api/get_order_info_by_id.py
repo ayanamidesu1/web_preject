@@ -11,7 +11,8 @@ class GetOrderInfoById(BaseApi):
             order_id = data.get('order_id')
             if not order_id:
                 return JsonResponse({'code': 400, 'msg': '缺少参数'}, status=400)
-            sql = '''select * from admin.`order` where id=%s'''
+            sql = '''select `order`.*,work_order.file  from admin.`order` 
+            left join work_order on work_order.order_id=`order`.id where `order`.id=%s'''
             result = self.execute_sql(sql, [order_id])[0]
             if not result:
                 return JsonResponse({'code': 400, 'msg': '订单不存在'}, status=400)

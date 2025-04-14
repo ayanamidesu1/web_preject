@@ -13,7 +13,7 @@ export default defineConfig({
     vue(),
     VueDevTools(),
     VueSetupExtend(),
-    mkcert(),
+    //mkcert(),
   ],
   optimizeDeps: {
     include: ['element-plus']
@@ -27,10 +27,10 @@ export default defineConfig({
   server: {
     port: 3002,
     host: true, // 使得服务器可以通过 IP 地址访问
-    https: {
-      key: fs.readFileSync(path.resolve(__dirname, 'H:/web_project/key/server.key')),
-      cert: fs.readFileSync(path.resolve(__dirname, 'H:/web_project/key/server.crt')),
-    },
+    // https: {
+    //   key: fs.readFileSync(path.resolve(__dirname, 'H:/web_project/key/server.key')),
+    //   cert: fs.readFileSync(path.resolve(__dirname, 'H:/web_project/key/server.crt')),
+    // },
     proxy: {
       '/api': {
         target: 'https://127.0.0.1:4434', // 代理的目标地址

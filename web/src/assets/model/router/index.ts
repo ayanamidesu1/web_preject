@@ -142,6 +142,15 @@ const routes=[
                     name:'add_work_order',
                     component:()=>import('@/components/create_work_order/add_work_order.vue'),//新增约稿申请。
                 },
+                {
+                    path:'/upload_work',
+                    name:'upload_work',
+                    component:()=>import('@/components/commission_an_article/sub_page/upload_work.vue'),//上传完成的稿件
+                },{
+                    path:'/sure_order',
+                    name:'sure_order',
+                    component:()=>import('@/components/commission_an_article/sub_page/sure_order.vue'),//确认插画订单
+                }
                ] 
             }
         ]

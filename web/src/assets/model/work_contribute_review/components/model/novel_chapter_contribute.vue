@@ -70,6 +70,9 @@
 <script setup>
 import { ref, defineProps, defineEmits, onMounted, computed } from 'vue';
 import { get_chapter_list, get_novel_info } from '../../js/get_worklist';
+import {useStore} from '@assets/model/store';
+
+const store = useStore()
 
 const props = defineProps({
     work_id: { default: 0 },
@@ -80,7 +83,9 @@ function close_page() {
     emits('close_page');
 }
 
-const userinfo = ref(JSON.parse(localStorage.getItem('userinfo')));
+const userinfo = computed(()=>{
+  return store.$state.user
+})
 let chapter_list = ref([]);
 let novel_info = ref();
 let search_type = ref('');

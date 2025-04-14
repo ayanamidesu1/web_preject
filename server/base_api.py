@@ -142,6 +142,7 @@ class BaseApi(View):
                         # 假设 file 是文件对象（如 open() 返回的文件流）
                         f.write(file.read())
         except Exception as e:
+            print(e)
             logger.error(f"文件写入失败，错误信息：{e}")
             return False
         return True

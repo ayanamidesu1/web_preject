@@ -101,6 +101,9 @@
           >
             查看详情
           </button>
+          <button v-if="order.status==4" class="action-button detail-button" @click="sure_order(order.id)">
+            去确认
+          </button>
         </div>
       </div>
       
@@ -224,6 +227,7 @@ const cancelOrder = async (orderId) => {
   try {
     const response = await api.post('api/CancelOrder', { order_id: orderId })
     if (response.status === 200) {
+      alert('取消订单')
       fetchData() // 刷新数据
     }
   } catch (error) {
@@ -234,6 +238,11 @@ const cancelOrder = async (orderId) => {
 // 查看订单详情
 const viewOrderDetail = (orderId) => {
   router.push(`/order_details?id=${orderId}`)
+}
+
+//确认订单完成
+const sure_order=(order_id)=>{
+  router.push(`/sure_order?id=${order_id}`)
 }
 
 // 获取数据

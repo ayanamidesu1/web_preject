@@ -86,6 +86,12 @@
               <span class="reject" @click="accept_order(order.id,'refuse')">拒绝</span>
             </div>
           </div>
+          <div class="order-field" v-if="order.status==2">
+            <div class="field-label">操作：</div>
+            <div class="field-value">
+              <span class="accept" @click="submit_work(order.id,order.user_id)">提交作品</span>
+            </div>
+          </div>
           <div class="order-field">
             <div class="show_details" @click="show_order_details(order.id)">
               <span>查看详情</span>
@@ -249,6 +255,11 @@ async function accept_order(id,type){
 //调整订单详情
 function show_order_details(id){
   router.push(`/order_details?id=${id}`)
+}
+
+//提交作品
+function submit_work(id,user_id){
+  router.push(`/upload_work?id=${id}&user_id=${user_id}`)
 }
 
 // 初始化加载数据

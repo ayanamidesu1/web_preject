@@ -74,6 +74,10 @@
         <h3 class="section-title">备注</h3>
         <div class="back-content">{{ order_info.back }}</div>
       </div>
+      <div class="section" v-if="order_info.status==4||order_info.status==1">
+        <h3 class="section-title">作品链接：</h3>
+        <a :href="'https://www.sunyuanling.com/server/static/upload_file/'+order_info.file">附件</a>
+      </div>
 
       <!-- 操作按钮 -->
       <div class="action-buttons">
