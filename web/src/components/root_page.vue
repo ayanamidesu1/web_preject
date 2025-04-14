@@ -15,8 +15,10 @@ import { ref,onMounted,computed } from 'vue'
 import header_box from './headpage_file/header_box.vue';
 import { useStore } from '@assets/model/store/index';
 import { BaseApi } from '@/base_api';
+import { useRouter } from 'vue-router';
 const store = useStore()
 const api=new BaseApi()
+const router=useRouter()
 
 onMounted(async ()=>{
   //登录验证
@@ -27,6 +29,7 @@ onMounted(async ()=>{
     store.$state.user=user.result.data
   }
   else{
+    window.location.href='/login'
     console.log('错误\n',result)
   }
   //获取用户信息
