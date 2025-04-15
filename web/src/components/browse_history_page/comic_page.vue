@@ -36,15 +36,14 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount, defineProps,defineEmits } from 'vue'
 import { useStore } from 'vuex'
+import { useRouter } from 'vue-router'
 
+const router = useRouter()
 const store = useStore()
 
 //打开内容页,并设置参数
 function open_comic_content_page(work_id){
-    store.commit('SET_WORK_ID',work_id)
-    store.commit('SET_SINGLE_PAGE_STATUS',{'key':'content_index_page','value':true})
-    //设置内容页为插画内容页
-    store.commit('SET_CONTENT_PAGE',{'key':'comic_page','value':true})
+    router.push(`/comic_content?id=${work_id}`)
 }
 
 // 定义传入的插画项目列表属性

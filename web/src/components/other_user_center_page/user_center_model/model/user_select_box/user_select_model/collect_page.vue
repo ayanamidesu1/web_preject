@@ -14,7 +14,7 @@
               <div class="item_1" v-for="(item,index_1) in value" :key="index_1">
                   <span class="title">{{item.work_name}}</span>
                   <span class="type">{{key}}&nbsp;{{key=='ill'?'插画':key=='comic'? '漫画':'小说'}}</span>
-                  <img class="image" :src="file_name(key,item)" alt="图像" width="150px" height="200px">
+                  <img class="image" :src="file_name(key,item)" alt="图像" width="150px" height="200px" @click="go_work_detail(key,item.work_id)">
                   <div class="user_info">
                       <div class="avatar">
                           <img :src="'https://www.sunyuanling.com/server/static/image/avatar_thumbnail/'+item.user_avatar" alt="头像">
@@ -102,6 +102,18 @@ const get_work_list=async ()=>{
 const load_more=async (target_page)=>{
   offset.value=(target_page-1)*limit.value
   get_work_list()
+}
+//跳转作品详情页
+const go_work_detail=(work_type,work_id)=>{
+    if(work_type=='novel'){
+        router.push(`novel_content?id=${work_id}`)
+    }
+    else if(work_type=='ill'){
+        router.push(`ill_content?id=${work_id}`)
+    }
+    else if(work_type=='comic'){
+        router.push(`comic_content?id=${work_id}`)
+    }
 }
 
 //格式化路径
@@ -199,6 +211,7 @@ onMounted(()=>{
                   width: 150px;
                   height: 200px;
                   object-fit: cover;
+                  cursor: pointer;
               }
               .user_info{
                   display: flex;
