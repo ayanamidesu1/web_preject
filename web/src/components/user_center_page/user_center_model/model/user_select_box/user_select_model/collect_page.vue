@@ -41,7 +41,7 @@
           <span>结束</span>
         </div>
       </div>
-      <div class="collect_list" v-if="filteredCollectWorklist.length">
+      <div class="collect_list" >
         <div class="collect_item" v-for="(item, index) in filteredCollectWorklist" :key="index">
           <div class="item_box" v-if="item.work_status === 'normal'">
             <div class="work_type">

@@ -6,7 +6,6 @@
     <user_select_box :user_info="user_info" :token="token"></user_select_box>
   </div>
 </div>
-<go_back></go_back>
 </template>
 <script setup>
 import {defineProps,ref,onMounted} from 'vue';

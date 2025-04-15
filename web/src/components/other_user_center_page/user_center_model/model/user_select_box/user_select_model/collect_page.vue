@@ -1,459 +1,245 @@
 <template>
   <div class="collect_page">
-    <div class="content">
-      <div class="is_open">
-        <div class="switch_work_type">
-          <span @click="work_show_type = 'all'"
-            :class="work_show_type == 'all' ? 'switch_work_type_choose' : ''">所有作品</span>
-          <span @click="work_show_type = 'ill'"
-            :class="work_show_type == 'ill' ? 'switch_work_type_choose' : ''">插画</span>
-          <span @click="work_show_type = 'comic'"
-            :class="work_show_type == 'comic' ? 'switch_work_type_choose' : ''">漫画</span>
-          <span @click="work_show_type = 'novel'"
-            :class="work_show_type == 'novel' ? 'switch_work_type_choose' : ''">小说</span>
-        </div>
-      </div>
-      <div class="title">
-        <span>作品</span>
-      </div>
-      <div class="collect_list" v-if="filteredCollectWorklist.length">
-        <div class="collect_item" v-for="(item, index) in filteredCollectWorklist" :key="index">
-          <div class="item_box" v-if="item.work_status === 'normal'">
-            <div class="work_type">
-              <span>{{ get_work_type(item.type) }}</span>
-            </div>
-            <div class="work_item">
-              <div class="image_container" @click="choose_item({'work_id':item.id,'work_type':item.type,'item':item})">
-                <img :src="get_image_src(item)" alt="作品封面">
-                <div class="age_tag" v-if="item.work_info.age_classification && item.work_info.age_classification > 18">
-                  <span class="age_num">{{ item.work_info.age_classification }}</span>
-                </div>
-                <div class="work_count" v-if="get_file_count(item) > 1">
-                  <span class="work_num">{{ get_file_count(item) }}</span>
-                </div>
-                <div class="choose_work_box" v-if="collect_control_box_show"
-                  @click="toggle_choose_collect_work_list(item)">
-                  <div class="choose_box"
-                    :style="{ backgroundColor: choose_collect_work_list.includes(item) ? 'rgba(0,150,250,1)' : '' }">
-                    <img class="icon" src="https://www.sunyuanling.com/assets/correct.svg">
-                  </div>
-                </div>
-              </div>
-              <div class="work_name">
-                <span>{{ item.type === 'ill' ? item.work_info.name : item.work_info.work_name }}</span>
-              </div>
-              <div class="author_info">
-                <div class="author_avatar">
-                  <img :src="'https://www.sunyuanling.com/server/static/image/avatar_thumbnail/' + item.authorinfo.user_avatar"
-                    alt="作者头像">
-                </div>
-                <div class="author_name">
-                  <span>{{ item.authorinfo.username }}</span>
-                </div>
-              </div>
-            </div>
+      收藏
+      <div class="menu_box">
+          <div class="menu_item">
+              <span @click="set_filter_data('work_type','all')">全部</span>
+              <span @click="set_filter_data('work_type','ill')">插画</span>
+              <span @click="set_filter_data('work_type','comic')">漫画</span>
+              <span @click="set_filter_data('work_type','novel')">小说</span>
           </div>
-        </div>
+      </div>        
+      <div class="work_list">
+          <div class="item" v-for="(value,key,index) in work_list" :key="index">
+              <div class="item_1" v-for="(item,index_1) in value" :key="index_1">
+                  <span class="title">{{item.work_name}}</span>
+                  <span class="type">{{key}}&nbsp;{{key=='ill'?'插画':key=='comic'? '漫画':'小说'}}</span>
+                  <img class="image" :src="file_name(key,item)" alt="图像" width="150px" height="200px">
+                  <div class="user_info">
+                      <div class="avatar">
+                          <img :src="'https://www.sunyuanling.com/server/static/image/avatar_thumbnail/'+item.user_avatar" alt="头像">
+                      </div>
+                      <span class="username">{{item.username}}</span>
+                  </div>
+                  <div class="choose_box" v-if="choose_status">
+                      <div class="choose_img" v-if="item.is_choose==0" @click="choose_work(key,index_1,item.work_type,1,item.work_id)">
+                          <img src="https://www.sunyuanling.com/server/static/svg/未选择.svg" alt="未选择">
+                      </div>
+                      <div class="is_choose" v-if="item.is_choose==1" @click="choose_work(key,index_1,item.work_type,0,item.work_id)">
+                          <img src="https://www.sunyuanling.com/server/static/svg/正确.svg" alt="正确">
+                      </div>
+                  </div>
+              </div>
+          </div>
       </div>
-      <div class="if_all_none" v-if="filteredCollectWorklist.length <= 1 || !filteredCollectWorklist">
-        <span>这里空空如也什么也没有</span>
-      </div>
-    </div>
+      <page :total="total" :pageSize="limit" @page-change="load_more($event)"></page>
   </div>
 </template>
 
 <script setup>
-import { ref, defineProps, onMounted, computed, watch } from 'vue'
-import { get_user_collect_worklist } from '../../../js/get_workinfo'
-import { update_user_collect_work } from '../../../js/update_userinfo'
-import {useStore} from 'vuex'
-import { useRouter } from 'vue-router'
-const router = useRouter()
-const store = useStore()
+import {ref,onMounted,computed} from 'vue'
+import {useRouter} from 'vue-router'
+import { useStore } from '@assets/model/store';
+import { BaseApi } from '@/base_api';
+import page from '@assets/model/page.vue';
 
-//选择作品
-function choose_item(item)
-{
-  if (item.work_type == 'ill') {
-        router.push(`/ill_content?id=${item.work_id}`)
+const store = useStore();
+const router = useRouter();
+const api=new BaseApi()
+
+const filter_work_list = computed(() => {
+  let result = work_list.value
+  //筛选作品公开状态
+  if (filter_open.value !== 'all') {
+      result = result.filter(item => item.is_open === (filter_open.value === 1 ? true : false))
+  }
+  //筛选作品类型
+  if (filter_type.value !== 'all') {
+      result = result.filter(item => item.work_type === filter_type.value)
+  }
+  return result
+})
+
+const choose_status=ref(false)
+const work_list=ref()
+let limit=ref(10)
+let offset=ref(0)
+let total=ref(0)
+let filter_data=ref({
+  is_open:'public',
+  work_type:'all'
+})
+
+//筛选作品
+async function set_filter_data(type,item){
+    if(type=='is_open'){
+        filter_data.value.is_open=item
     }
-    else if(item.work_type=='comic')
-    {
-       router.push(`/comic_content?id=${item.work_id}`)
+    else if(type=='work_type'){
+        filter_data.value.work_type=item
     }
-    else if(item.work_type=='novel')
-    {
-        router.push(`/novel_content?id=${item.work_id}`)
-    }
+    await get_work_list()
 }
-
-const props = defineProps({
-  user_info: {
-    type: Object,
-    default: () => ({})
-  },
-  token: {
-    type: String,
-    default: ''
-  },
-  userid:{
-    type: String,
-    default: ''
-  }
-})
-
-const collect_worklist = ref([])
-const open_work_show_status = ref(1)
-const work_show_type = ref('all')
-const collect_control_box_show = ref(false)
-const choose_collect_work_list = ref([])
-
-function toggle_choose_collect_work_list(item) {
-  const index = choose_collect_work_list.value.indexOf(item)
-  if (index > -1) {
-    choose_collect_work_list.value.splice(index, 1)
-  } else {
-    choose_collect_work_list.value.push(item)
-  }
-  console.log(choose_collect_work_list.value)
-}
-
-watch(collect_control_box_show, () => {
-  if (collect_control_box_show.value == false) {
-    choose_collect_work_list.value = []
-  }
-})
-
-onMounted(async () => {
-  collect_worklist.value = await get_user_collect_worklist(props.token,props.userid)
-  console.log(collect_worklist.value)
-})
-
-const filteredCollectWorklist = computed(() => {
-  return collect_worklist.value.filter(item => {
-    const matchesOpenStatus = item.is_open == open_work_show_status.value
-    const matchesWorkType = work_show_type.value === 'all' || item.type === work_show_type.value
-    return matchesOpenStatus && matchesWorkType
+//获取收藏作品
+const get_work_list=async ()=>{
+  let user_id=router.currentRoute.value.query.id
+  let res=await api.post('GetUserInfo/GetUserCollect_new',{
+      limit:limit.value,
+      offset:offset.value,
+      filter_data:filter_data.value,
+      user_id:user_id
   })
+  if(res.status==200){
+      console.log(res)
+      work_list.value=res.result.data.work_list
+      total.value=res.result.data.total
+  }
+  else{
+      console.log(res)
+  }
+}
+//加载更多
+const load_more=async (target_page)=>{
+  offset.value=(target_page-1)*limit.value
+  get_work_list()
+}
+
+//格式化路径
+const file_name=(work_type,item)=>{
+  let url='https://www.sunyuanling.com/server/static/image/'
+  if(work_type=='novel'){
+      return url+'novel/thumbnail/'+item.work_cover
+  }
+  else if(work_type=='ill'){
+      return url+'/thumbnail/'+item.content_file_list.split(/[,，]/)[0]
+  }
+  else if(work_type=='comic'){
+      return url+'/comic/thumbnail/'+item.content_file_list.split(/[，,]/)[0]
+  }
+}
+
+onMounted(()=>{
+  get_work_list()
 })
 
-function get_work_type(type) {
-  switch (type) {
-    case 'novel':
-      return '小说'
-    case 'ill':
-      return '插画'
-    case 'comic':
-      return '漫画'
-    default:
-      return '其他'
-  }
-}
-
-function get_image_src(item) {
-  const { type, work_info } = item
-  const baseUrl = 'https://www.sunyuanling.com/server/static/image/'
-  if (type === 'novel') {
-    return `${baseUrl}novel/thumbnail/${work_info.work_cover}`
-  } else if (type === 'ill') {
-    return `${baseUrl}thumbnail/${work_info.content_file_list.split(/[,，]/)[0]}`
-  } else if (type === 'comic') {
-    return `${baseUrl}comic/thumbnail/${work_info.content_file_list.split(/[，,]/)[0]}`
-  }
-  return ''
-}
-
-function get_file_count(item) {
-  const { content_file_list } = item.work_info
-  if (content_file_list) {
-    const files = content_file_list.split(/[,，]/)
-    return files.length
-  }
-  return 0
-}
 </script>
 
-
-
-<style scoped>
-.collect_page {
+<style lang="scss" scoped>
+.collect_page{
   display: flex;
   flex-direction: column;
-  padding: 20px;
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.is_open {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.switch_work_type,
-.switch_open_status {
-  display: flex;
-  gap: 10px;
-}
-
-.switch_work_type span,
-.switch_open_status span {
-  cursor: pointer;
-  padding: 5px 10px;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-  font-weight: 500;
-}
-
-.switch_work_type span:hover,
-.switch_open_status span:hover {
-  opacity: 0.8;
-  background-color: rgba(0, 150, 250, 1);
-  transform: scale(1.1);
-  transform: translateY(-2px);
-  color: white;
-  transition: all 0.2s ease-in-out;
-}
-
-.switch_work_type_choose {
-  background-color: rgba(0, 150, 250, 1);
-  color: white;
-}
-
-.switch_open_status {
-  margin-top: 10px;
-}
-
-.title {
-  font-size: 20px;
-  font-weight: bold;
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-}
-
-.collect_control_box {
-  display: flex;
-  justify-content: flex-start;
-  gap: 10px;
-  width: 100%;
-  margin-top: 10px;
-  height: auto;
-  position: relative;
-  padding: 5px 10px;
-}
-
-.control_item {
-  display: flex;
-  width: auto;
-  height: auto;
-  justify-content: center;
-  align-items: center;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: rgba(61, 61, 61, 0.5);
-  color: white;
-}
-
-.control_item:hover {
-  background-color: rgba(61, 61, 61, 0.8);
-  transition: all 0.2s ease-in-out;
-  transform: scale(1.1);
-  transform: translateY(-2px);
-}
-
-.collect_list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  width: 100%;
-  height: auto;
-  overflow-y: auto;
-}
-
-.collect_item {
-  box-sizing: border-box;
-  display: flex;
-}
-
-.item_box {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
-  overflow: hidden;
-  background: #fff;
-  width: 100%;
-  height: 100%;
-  margin: auto;
-  gap: 5px;
-  max-width: 220px;
-  max-height: 350px;
-  min-width: 200px;
-  min-height: 350px;
-}
-
-.work_type {
-  padding: 4px 8px;
-  border-radius: 4px;
-  width: 100%;
-  height: auto;
-}
-
-.image_container {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.image_container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 15px;
-}
-
-.choose_work_box {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  transition: all 0.3s;
-  border-radius: 15px;
-}
-
-.choose_work_box:hover {
-  background-color: rgba(0, 0, 0, 0.35);
-}
-
-.choose_work_box::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 100%;
-  width: 314%;
-  height: 314%;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  transition: transform 0.5s;
-  /* 扩散效果渐变 */
-}
-
-.choose_work_box:hover::after {
-  transform: translate(-50%, -50%) scale(1);
-}
-
-
-.choose_box {
-  width: 35px;
-  height: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.8);
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-  z-index: 2;
-}
-
-.choose_box img {
-  width: 25px;
-  height: 25px;
-  object-fit: cover;
-}
-
-.icon {
-  width: 25px;
-  height: 25px;
-  object-fit: cover;
-}
-
-.age_tag {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background: red;
-  color: white;
-  padding: 4px 8px;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 4px;
-}
-
-.work_count {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  padding: 4px 8px;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.work_item {
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-}
-
-.work_name {
-  margin-top: 10px;
-}
-
-.author_info {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.author_avatar img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.item_box_deleted {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-  width: 200px;
-  background: #f8d7da;
-  color: #721c24;
-  padding: 20px;
-  border-radius: 10px;
-  margin: auto;
-}
-
-.item_box_deleted_text {
-  text-align: center;
-}
-
-.if_all_none {
-  text-align: center;
-  font-size: 18px;
-  color: #888;
+  gap:10px;
+  .menu_box {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    
+      .menu_item,
+      .menu_item_sub {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+    
+      span {
+        padding: 6px 14px;
+        border-radius: 20px;
+        background-color: #f0f0f0;
+        cursor: pointer;
+        font-size: 14px;
+        color: #333;
+        border: 1px solid transparent;
+        transition: all 0.25s;
+      }
+    
+      span:hover {
+        background-color: rgb(0, 150, 250);
+        color: #fff;
+        transform: scale(1.05);
+      }
+    
+      span:active {
+        transform: scale(0.95);
+      }
+    
+      .active {
+        background-color: rgb(0, 150, 250);
+        color: #fff;
+        border: 1px solid rgb(0, 100, 200);
+      }
+    }
+    
+  .work_list{
+      display: flex;
+      flex-wrap: wrap;
+      gap:10px;
+      .item{
+          display: flex;
+          flex-wrap: wrap;
+          gap:10px;
+          min-width: 150px;
+          align-items: center;
+          justify-content: space-between;
+          .item_1{
+              display: flex;
+              flex-direction: column;
+              gap:10px;
+              position: relative;
+              padding: 10px;
+              .title{
+                  font-size: 18px;
+                  font-weight: bold;
+                  color: #333;
+              }
+              .type{
+                  font-size: 14px;
+                  color: #666;
+              }
+              .image{
+                  width: 150px;
+                  height: 200px;
+                  object-fit: cover;
+              }
+              .user_info{
+                  display: flex;
+                  align-items: center;
+                  gap:10px;
+                  .avatar{
+                      width: 30px;
+                      height: 30px;
+                      border-radius: 50%;
+                      overflow: hidden;
+                      img{
+                          width: 100%;
+                          height: 100%;
+                          object-fit: cover;
+                      }
+                  }
+                  .username{
+                      font-size: 14px;
+                      color: #666
+                  }
+              }
+              .choose_box{
+                  position: absolute;
+                  width: 100%;
+                  height: 100%;
+                  top:0px;
+                  left:0px;
+                  background-color:rgba(0,0,0,0.3);
+                  transition: all 0.2s;
+                  border-radius: 5px;
+                  img{
+                      position: absolute;
+                      bottom: 5px;
+                      right: 5px;
+                      width: 30px;
+                      height: 30px;
+                      cursor: pointer;
+                  }
+              }
+          }
+      }
+  }
 }
 </style>

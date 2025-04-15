@@ -18,7 +18,8 @@
         <user_index_select :user_info="user_info" :token="token" v-if="select_index_page==0"></user_index_select>
         <ill_select :user_info="user_info" :token="token" v-if="select_index_page==1"></ill_select>
         <novel_select :user_info="user_info" :token="token" v-if="select_index_page==2"></novel_select>
-        <collect_page :user_info="user_info" :token="token" v-if="select_index_page==3"></collect_page>
+        <!-- <collect_page :user_info="user_info" :token="token" v-if="select_index_page==3"></collect_page> -->
+         <collect_page_new v-if="select_index_page==3"></collect_page_new>
     </div>
   </div>
 </template>
@@ -29,6 +30,7 @@ import user_index_select from './user_select_model/user_index_select.vue'
 import ill_select from './user_select_model/ill_select.vue';
 import novel_select from './user_select_model/novel_select.vue';
 import collect_page from './user_select_model/collect_page.vue';
+import collect_page_new from './user_select_model/collect_page_new.vue';
 let props=defineProps({
     user_info:{
         type:Object,

@@ -4,6 +4,140 @@ from django.http import JsonResponse
 from ..log.log import Logger
 from datetime import datetime
 import json
+from base_api import BaseApi
+
+
+class GetUserCollect_new(BaseApi):
+    def post(self, request, *args, **kwargs) -> JsonResponse:
+        try:
+            if self.check_user(request):
+                return self.check_user(request)
+            user_id = str(request.user.id)
+            data = self.format_request(request)
+            if data.get('user_id'):
+                # 接口复用
+                user_id = data.get('user_id')
+            limit = int(data.get('limit', 10))
+            offset = int(data.get('offset', 0))
+            filter_data = data.get('filter_data', {})
+            work_type = filter_data.get('work_type', 'all')
+            is_open = filter_data.get('is_open', 'all')
+
+            # 构造动态SQL条件
+            where_clauses = ["userid = %s"]
+            params = [user_id]
+
+            if work_type != 'all':
+                where_clauses.append("type = %s")
+                params.append(work_type)
+
+            if is_open != 'all':
+                if is_open == 'public':
+                    where_clauses.append("is_open = '1'")
+                elif is_open == 'private':
+                    where_clauses.append("is_open = '0'")
+
+            where_clause = " AND ".join(where_clauses)
+
+            # SQL 构建
+            sql = f'''
+                SELECT *, user_collection_table.workid AS work_id
+                FROM user_collection_table
+                WHERE {where_clause}
+                LIMIT %s OFFSET %s
+            '''
+            params.extend([limit, offset])
+
+            total_sql = f'''
+                SELECT COUNT(*) AS total
+                FROM user_collection_table
+                WHERE {where_clause}
+            '''
+
+            rows = self.execute_sql(sql, params)
+            total = self.execute_sql(total_sql, params[:-2])[0]['total']
+            # 插画SQL
+            ill_sql = '''select illustration_work.*,illustration_work.Illustration_id as work_id ,users.userid as user_id,
+            users.username as username,users.user_avatar,illustration_work.name as work_name,u_c.workid as collect_id,
+            u_c.is_open as collect_is_open,u_c.is_collection as is_collect,u_c.type as work_type,0 as is_choose
+            from illustration_work left join users on users.userid=illustration_work.belong_to_user_id 
+            left join user_collection_table as u_c on u_c.workid=illustration_work.Illustration_id
+            where illustration_work.Illustration_id=%s'''
+            # 漫画SQL
+            comic_sql = '''select comic.*, comic.id as work_id,
+            users.userid as user_id,
+            users.username as username,
+            users.user_avatar,
+            comic.work_name as work_name,
+            u_c.workid as collect_id,
+            u_c.is_open as collect_is_open,
+            u_c.is_collection as is_collect,u_c.type as work_type,0 as is_choose
+            from comic
+            left join users on users.userid = comic.belong_to_userid
+            left join user_collection_table as u_c on u_c.workid = comic.id
+            where comic.id = %s
+            '''
+            # 小说SQL
+            novel_sql = '''select novel_work.*, novel_work.work_id as work_id,
+            users.userid as user_id,
+            users.username as username,
+            users.user_avatar,
+            novel_work.work_name as work_name,
+            u_c.workid as collect_id,
+            u_c.is_open as collect_is_open,
+            u_c.is_collection as is_collect,u_c.type as work_type,0 as is_choose
+            from novel_work
+            left join users on users.userid = novel_work.belong_to_userid
+            left join user_collection_table as u_c on u_c.workid = novel_work.work_id
+            where novel_work.work_id = %s
+            '''
+            work_list = {
+                'ill': [],
+                'comic': [],
+                'novel': []
+            }
+            for i in rows:
+                if i['type'] == 'ill':
+                    res=self.execute_sql(ill_sql,[i['work_id']])
+                    if res:
+                        work_list['ill'].append(res[0])
+                    else:
+                        continue
+                if i['type'] == 'comic':
+                    res=self.execute_sql(comic_sql, [i['work_id']])
+                    if res:
+                        work_list['comic'].append(res[0])
+                    else:
+                        continue
+                if i['type'] == 'novel':
+                    res=self.execute_sql(novel_sql,[i['work_id']])
+                    if res:
+                        work_list['novel'].append(res[0])
+                    else:
+                        continue
+            if len(work_list['ill']) > 0 or len(work_list['comic']) > 0 or len(work_list['novel']) > 0:
+                return JsonResponse({
+                    'code': 200,
+                    'msg': '获取成功',
+                    'data': {
+                        'work_list': work_list,
+                        'total': total
+                    }
+                })
+            else:
+                return JsonResponse({
+                    'code': 200,
+                    'msg': '获取成功，但无收藏内容',
+                    'data': {
+                        'work_list': work_list,
+                        'total': total
+                    }
+                })
+
+        except Exception as e:
+            print(e)
+            self.error_log(e, request)
+            return JsonResponse({'code': 500, 'msg': '服务器错误'}, status=500)
 
 
 class GetUserCollect(View):
@@ -23,10 +157,7 @@ class GetUserCollect(View):
         try:
             data = json.loads(request.body.decode("utf-8"))
             token = data.get('token')
-            userid = request.user.id
-
-            if not request.user.id:
-                return JsonResponse({'status': 'error', 'message': '用户未登录'}, status=401)
+            userid=data.get('userid')
 
             with connection.cursor() as cursor:
 

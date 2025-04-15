@@ -4,7 +4,7 @@ from django.urls import path
 from .GetFriendList import GetFriendList
 from .GetGroupList import GetGroupList, GroupControlInfo, GetGroupInfo
 from .GetSearch import GetSearch
-from .GetUserCollect import GetUserCollect
+from .GetUserCollect import GetUserCollect, GetUserCollect_new
 from .GetUserFans import GetUserFans
 from .GetUserFollow import GetUserFollow
 from .GetUserFollowList import GetUserFollowList, UserAddFollow
@@ -29,6 +29,7 @@ from .get_user_info_by_id import GetUserInfoById
 from .login import Login
 from .reset_password import ResetPassword
 from .update_chat_list import UpdateChatList
+from .update_collect_status import UpdateCollectStatus
 
 urlpatterns = [
     path('GetAllUserInfo/', GetAllUserInfo.as_view(), name='GetAllUserInfo'),
@@ -95,4 +96,8 @@ urlpatterns = [
     # 新增消息
     path('get_sys_msg_list',get_sys_msg_list.as_view(),name='get_sys_msg_list'),
     # 获取系统消息
+    path('GetUserCollect_new', GetUserCollect_new.as_view(),name='GetUserCollect_new'),
+    # 新的收藏获取接口
+    path('UpdateCollectStatus', UpdateCollectStatus.as_view(),name='UpdateCollectStatus'),
+    # 更新收藏状态
 ]
